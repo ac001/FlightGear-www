@@ -85,29 +85,38 @@ interface to external "proprietary" flight dynamics models:<BR>
  
  <OL>
   <LI> <A HREF="http://www.jsbsim.org"><STRONG>JSBSim</STRONG></A>:
-       This FDM uses tables to simulate the behavior of an
-       aircraft. This approach is in use by many commercial research
-       simulators and has the advantage that the reactions of the
-       aircraft are very close to the real aircraft within a known
-       range. If a simulated aircraft gets beyond that range the
-       outcome is unsure and often unpredictable.  </LI><BR>
+       JSBSim is a generic, 6DoF flight dynamics model for simulating
+       the motion of flight vehicles.  It is written in C++.  JSBSim
+       can be run in a standalone mode for batch runs, or it can be
+       the driver for a larger simulation program that includes a
+       visuals subsystem (such as FlightGear.)  In both cases,
+       aircraft are modeled in an XML configuration file, where the
+       mass properties, aerodynamic and flight control properties are
+       all defined.</LI><BR>
 
   <LI> <STRONG>YASim</STRONG>: This FDM is an integrated part of
-       FlightGear and uses a different approach by simulating the
-       effect of the airflow on the different parts of an aircraft.
-       The advantage of this approach is that it is possible to
-       perform the simulation based on geometry information and speed
-       settings of the aircraft.  </LI><BR>
+       FlightGear and uses a different approach than JSBSim by
+       simulating the effect of the airflow on the different parts of
+       an aircraft.  The advantage of this approach is that it is
+       possible to perform the simulation based on geometry and mass
+       information combined with more commonly available performance
+       numbers for an aircraft.  This allows for quickly constructing
+       a plausibly behaving aircraft that matches published
+       performance numbers without requiring all the traditional
+       aerodynamic test data.</LI><BR>
 
-  <LI> <A
-       HREF="http://www.aae.uiuc.edu/m-selig/"><STRONG>UIUC</STRONG></A>:
-       This FDM is based on <A
+  <LI> <A HREF="http://www.aae.uiuc.edu/m-selig/">
+       <STRONG>UIUC</STRONG></A>: This FDM is based on <A
        HREF="http://techreports.larc.nasa.gov/ltrs/PDF/NASA-95-tm110164.pdf">
        LaRCsim</A> originally written by the NASA. UIUC extends the
        code by allowing aircraft configuration files instead and by
        adding code for simulation of aircraft under icing
-       conditions.<P> UIUC (like JSBSim) uses lookup tables to
-       simulate an aircraft.  </LI><BR>
+       conditions.<P>
+
+       UIUC (like JSBSim) uses lookup tables to retrieve the component
+       aerodynamic force and moment coefficients for an
+       aircraft... and then uses these coefficients to calculate the
+       sum of the forces and moments acting on the aircraft.</LI><BR>
 
 </OL>
 
@@ -266,7 +275,7 @@ synchronization between displays.
     <a href="/docs.html">Documentation</a>
     <br>
     <br>
-    Last modified:  10/13/2003 <BR>
+    Last modified:  10/20/2003 <BR>
     <A HREF="http://www.menet.umn.edu/~curt/">Curtis L. Olson</A>
     <IMG ALIGN="MIDDLE" SRC="/email-fg.png">
   </div>
