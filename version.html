@@ -59,11 +59,43 @@
       <td id="page">
 <!-- Standard Header End -->
 
-<H1>FlightGear Flight Simulator Version Summary</H1> <BR>
+<H1>FlightGear Flight Simulator Version Summary</H1>
+
+<H3>July 29, 2004: Version 0.9.5 released</H3>
+  <UL>
+    <LI> New AIModel based air traffic subsystem (Durk Talsma)
+    <LI> Updates to the AIModel subsystem.
+    <LI> Switched audio subsystem from plib's "sl" to OpenAL.
+    <LI> Added support for SDL (pre-compile time configuration option.)
+    <LI> Threaded tile loader now enabled by default.
+    <LI> Overhauled Nav database code to directly support Robin Peel's
+         default format. 
+    <LI> Synced with latest JSBSim developments.
+    <LI> YASim now supports a nasal (script) based fuel management system.
+    <LI> YASim adds a simple turbo prop engine model.
+    <LI> Added an xml based gui/widget layout system for building dialog boxes.
+    <LI> Make gui windows dragable/repositionable.
+    <LI> Hide the mouse pointer when it sits idle.  Mouse pointer
+         reappears on any mouse motion.
+    <LI> The GPS module has been overhauled.
+    <LI> New joystick configurations added: Cyborg Evo, Top Gun Fox2
+         Pro USB, MacAlly iStick USB, SideWinder Precision Pro (on Windows.)
+    <LI> Updated aircraft: 747 dynamics model,
+         A-10, AN-225, B-52F, BAC-TSR2, T-37, T-38,
+         YF-23, Beech-99, BO-105 (helicopter), DC-3, F-104, F-16,
+         Fokker 50, Fokker 100, Pilatus PC-7. 
+    <LI> New aircraft: Concorde, MD-11, Spitfire IIA, TU-154.
+    <LI> Updated airport, runway, taxiway, windsock, beacon, and tower data.
+    <LI> Updated world scenery based on SRTM terrain data.  New
+         scenery includes accurate radio towers for the USA.
+    <LI> Fix a small bug in the "generic" export protocol.
+    <LI> Fix (workaround) the shrinking dialogs bug.
+    <LI> Delay FDM initialization until initial scenery is fully loaded.
+  </UL>
+
 
 <H3>March 26, 2004: Version 0.9.4 released</H3>
   <UL>
-
     <LI> Implement SimGear's (aka Andy's) Nasal scripting language in
          FlightGear and integrate with the FG property system.
     <LI> Many updates from David Culp and David Luff to the AI
