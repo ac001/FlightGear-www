@@ -1,4 +1,0 @@
-Here's an example of smooth shading.Surface normals are specified on a
-per-vertex basis, and OpenGL interpolates shading across the triangle for
-a nice smooth effect.  Notice the mountain in the distance that is barely
-visible through the nice smooth haze. :-)  

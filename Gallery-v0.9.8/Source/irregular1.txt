@@ -1,1 +1,0 @@
-Higher level of detail irregular grid of a region.

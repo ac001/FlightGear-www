@@ -1,3 +1,0 @@
-Another example.  If you look closely, you'll notice that this image has
-some display artifacts at the horizon ... eventually these will get cleaned
-up.

@@ -1,4 +1,0 @@
-Continued instrument panel progress - 
-<A HREF="mailto:MPT218@FAUPT212.PHYSIK.UNI-ERLANGEN.DE">Friedemann
-Reinhard</A> with the graphics by Michael Smith has begun
-working on a detailed Bonanza instrument panel.

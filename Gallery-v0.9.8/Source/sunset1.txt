@@ -1,5 +1,0 @@
-A nice sunset - This images demonstrates the pinkish orange glow in the
-sky that builds as the sun gets lower in the sky.  If you could only pan
-around (and you can if you are running the binary) you would see that
-the pink fades and the sky gets darker as you look towards the other side
-of the sky.  OpenGL is really, really cool. :-)

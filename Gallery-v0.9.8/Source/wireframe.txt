@@ -1,6 +1,0 @@
-A wire frame image showing an example of how the
-terrain is tesselated.  If you look closely you can see that
-polygon size is quite variable.  Terrain areas of greater
-complexity require a finer mesh to maintain a preset level of
-accuracy.  Also note, the moon is hiding below the surface, but
-is exposed because of the wireframe rendering.
