@@ -1689,7 +1689,7 @@ border="0" alt="Google"></img></a>
        <A HREF="index.html">http://www.flightgear.org</A>
        <P>
 
-  <H3>August 15, 1998: Version 0.52 released</H3>
+  <H3>August 15, 1998: Version 0.52 released.</H3>
     <UL>
       <LI> Stars added in 8 stages as sky gets darker for a smoother 
            more realistic transition.
@@ -1703,3 +1703,216 @@ border="0" alt="Google"></img></a>
       <LI> Added an --enable/disable-sound option.
       <LI> Added a pause key "p"
       <LI> Added command line options to specify initial position 
+           and orientation.
+      <LI> Added command line option to start in paused or unpaused state.
+    </UL>
+
+  <H3>July 21, 1998: Version 0.51 released.</H3>
+    <UL>
+      <LI> Translucent menus
+      <LI> Various HUD intensities so you can find something that is 
+           readable for the current conditions and lighting.
+      <LI> Tie visibility to far clip plane & view frustum culling so 
+           reducting visibility can increase frame rates by increasing 
+           what is culled.
+      <LI> Fixed stupid bug with misplaced initial position.
+      <LI> Hopefully fixed a bug when parsing system.fgfsrc on windoze.
+    </UL>
+    <P>
+
+  <H3>July 13, 1998: Version 0.50 released.</H3>
+    <UL>
+      <LI> HUD updates from Charlie Hotchkiss (ladder number rotate w/
+           ladder, control position indicators are back)
+      <LI> Only draw the PUI cursor if Mesa/Glide/Fullscreen.
+      <LI> Added mipmapping.
+      <LI> Calculate the model view transformation matrix once per
+           tile per iteration.  Then glLoadMatrixd() it for each
+	   fragment rather than calling push(), translate(), pop().
+      <LI> Added a basic splash screen.
+      <LI> Added support for switching between fullscreen and window
+           mode for Mesa/3dfx/glide.
+      <LI> added an enable/disable splash screen option.
+      <LI> added an enable/disable intro music option.
+      <LI> added an enable/disable instrument panel option.
+      <LI> added an enable/disable mouse pointer option.
+      <LI> Ground collision detection.  You can now land or test for
+           collision with any scenery surface.
+      <LI> Converted angle of attack scale into a radio altimeter.
+    </UL>
+
+  <H3>June 27, 1998: Version 0.49 released.</H3>
+    <UL>
+      <LI> Managment of multiple textures
+      <LI> Incorporated Friedemann Reinhard's initial panel code.
+      <LI> Fog mode is now GL_FOG_EXP2 instead of GL_FOG_LINEAR
+      <LI> Build the non-shared pieces of the FG sim as static libs.
+    </UL>
+
+  <H3>June 9, 1998: Version 0.48 released.</H3>
+    <UL>
+      <LI> Incorporated Steve Baker's PUI user interface library
+           written entirely on top of OpenGL.
+      <LI> Incorporated Steve Baker's Audio library which currently
+           only supports Linux, but a win32 port is very close to
+           being done.
+      <LI> Sort object fragments by material property before
+           rendering.  This will be a big help to performance when we
+           start including objects with a wide variety of material
+           properties and textures.
+      <LI> Overlapped scenery tiles to reduce the chance of an
+           occasional floating point precission induced gaps.
+      <LI> Fixed a bug in zlib exposed by Borland Win32 compiler.
+      <LI> Impose a maximum triangle area during scenery generation so
+           even very flat areas will get split into a few smaller sub
+           triangles.
+      <LI> Fine grained (fragment level) view frustum culling.
+      <LI> view transformation optimizations -- Norman Vine.
+      <LI> Fixed polygon winding problem in scenery generation, so all
+           tri-strips are wound counter clockwise (opengl default).
+    </UL>
+
+  <H3>May 18, 1998: Version 0.47 released.</H3>
+    <UL>
+      <LI> Added course (per tile) view frustum culling.
+      <LI> Added a command line option to specify --fg-root which will
+           override $FG_ROOT
+      <LI> Hard coded default locations for FG_ROOT for situations
+           when nothing is specified.  Unix =
+           /usr/local/lib/FlightGear Win32 = \FlightGear
+      <LI> Restructured the command line processing code so that it
+           can process these sames comands (one per line) out of a
+           config file.
+      <LI> Added a command line option to specify field of view.  This
+           is adjustable at run time using "X" and "x".  Supporting
+           code contributed by Norman Vine.
+    </UL>
+    <P>
+
+  <H3>May 11, 1998: Version 0.46 released.</H3>
+    <UL>
+      <LI> Complete C++ re-write of the HUD section.
+      <LI> Miscellaneous bug fixes and tweaks.
+    </UL>
+
+  <H3>May 7, 1998: Version 0.45 released.</H3>
+    <UL>
+      <LI> Added an option to enable/disable wireframe rendering.
+      <LI> Added an option to enable/disable fog/haze.
+      <LI> Added an option to enable/disable sky blending.
+      <LI> Added an option to select smooth/flat polygon shading.
+      <LI> Added an option to enable full-screen mode.
+      <LI> Added a visual frame rate counter on the HUD.  (Contributed
+           by Durk Talsma) 
+      <LI> Autopilot updates (Jeff Goeke-Smith)
+      <LI> Added an option to control the number of neighboring tiles
+           that are drawn 
+    </UL>
+
+ <H3>Apr 28, 1998: Version 0.44 released.</H3>
+    <UL>
+       <LI> Fixed a horrible bug that cause the time to be *WAY* off when
+       compiling with the CygWin32 compiler. <BR>
+       <LI> Wrapped up zlib so we can conditionally compile back in
+       normal behavior on systems that have trouble building zlib. <BR>
+       <LI> Minor adjustment to texture coordinate generation to reduce
+       texture swimming. <BR>
+       <LI> Added an option to enable/disable texture maps. <BR>
+       <LI> Minor transformation adjustments to try to keep scenery tiles
+       closer to (0, 0, 0).  GLfloats run out of precision at the
+       distances we need to model the earth, but we can do a bunch of
+       pre-transformations using double floats and then cast to
+       GLfloat once everything is close in where we have less
+       precision problems. <BR>
+       <LI> Add a command line option to set starting position by airport
+       ID. <BR>
+       <LI> Cleaned up initialization sequence to eliminate
+       interdependencies between sun position, lighting, and view
+       position.  This creates a valid single pass initialization
+       path. <BR>
+       <LI> Use already calculated LaRCsim values to create the
+       roll/pitch/yaw transformation matrix.
+    </UL>
+
+  <H3>Apr 23, 1998: Version 0.43 released.</H3>
+       Material
+       properties bug fixed when rendering terrain.  Bug in sky color
+       generation fixed.  Bug in fog color generation fixed.
+       Incorporated zlib on the fly decompression/compression support.
+       More code reorganization and clean ups.  Fixed up the 30 arcsec
+       DEM file preprocessor.  (World wide DEM's are available in this
+       format.)
+
+  <H3>Apr 14, 1998: Version 0.42 released.</H3>
+       This includes
+       a simple heading hold autopilot and code reorganizations and clean 
+       ups.
+
+  <H3>Apr 8, 1998: Version 0.41 released.</H3>
+       This includes
+       initial texture support and the Gnu automake/autoconf system.  A bug
+       in the terrain processing tools has been fixed so that the results
+       are no longer "bunk."
+
+  <H3>Mar 11 98</H3>
+       First FG binary (version 0.37) is
+       built against the SGI win32 OpenGL libraries.  This should
+       allow the use of accelerated drivers for specific 3d cards.
+
+  <H3>Mar 3 98</H3>
+       Version 0.37 of the terrain
+       processing tools is released.  This includes code to process
+       the 30 arcsec dem files with global coverage.
+
+  <H3>Jan 6 98</H3>
+       Version 0.22 of the code released.
+       Includes an MSVC++ make file for windoze weenies. :-)
+
+  <H3>Dec 30 97</H3>
+       Version 0.19 of code released.
+       Includes astronomical and lighting tweaks, plus the blended sky.
+
+  <H3>Dec 23 97</H3>
+       First stab at a nicely blended sky.
+
+  <H3>Dec 17 97</H3>
+       Version 0.18 of code released.
+       Includes mostly lighting fixes and organizational changes.
+
+  <H3>Dec 9 97</H3>
+       Version 0.15 of code released.  Includes
+       sun, moon, and planets.  More progress on terrain.
+
+  <H3>Oct 15 97</H3>
+       Work is progressing on the
+       adaptive, irregular terrain meshing algorithm.
+
+  <H3>Sep 23 97</N3>
+       Version 0.12 released.  Real stars
+       with accurate magnitudes and accurate placement for time &
+       position on the earth.  Also, accurate smooth day/night transitions.
+
+  <H3>Jul 17 97</H3>
+       First working Win32 binary is available.
+
+  <H3>Jul 3 97</H3>
+       Curt Olson has been working on some
+       prototype code to test some ideas relating to using the LaRCsim
+       flight model, OpenGL, USGS DEM data, and VRML.  
+
+  <H3>Jan 24 97</H3>
+       Check out the
+       <A HREF="http://www.midcoast.com/~techie/fgfs/fgfs.html">
+       Macintosh Division</A> of the Flight Gear Flight Simulator.
+
+<!-- Standard Footer Begin -->
+
+<HR>
+
+<ADDRESS>
+Last modified:  9/3/2002 <BR>
+<A HREF="http://www.menet.umn.edu/~curt/">Curtis L. Olson</A> <BR>
+<IMG SRC="http://www.flightgear.org/email-fg.png">
+</ADDRESS>
+
+<!-- Standard Footer End -->
