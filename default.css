@@ -84,7 +84,7 @@ padding:0px;
 clear:both;
 margin:0px;
 border:none;
-width:90%;
+width:100%;
 }
 /*The top flightgear banner*/
 #top{
@@ -119,6 +119,24 @@ border-bottom-width:1px;
 border-left-width:1px;
 border-right-width:1px;
 font-size:93%;
+}
+
+#section{
+background:white;
+padding-right:0px;
+padding-left:0px;
+border-style:solid;
+border-color:#d9e2e2;
+border-top-width:1px;
+border-bottom-width:1px;
+border-left-width:1px;
+border-right-width:1px;
+font-size:93%;
+}
+
+td#section{
+padding:10px;
+vertical-align:top;
 }
 
 /*The bottom links and copyright*/
