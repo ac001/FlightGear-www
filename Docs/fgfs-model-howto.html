@@ -330,14 +330,17 @@ to provide the property name:</P>
 &lt;animation>
  &lt;type>rotation&lt;/type>
  &lt;object-name>Rudder&lt;/object-name>
- &lt;property>/controls/rudder&lt;/property>
+ &lt;property>controls/rudder&lt;/property>
 &lt;/animation>
 </PRE></BLOCKQUOTE>
 
-<P>This example rotates the rudder according to the value of the
-<VAR>/controls/rudder</VAR> property (or at least, it will when we
+<P>Note the omission of the leading slash '/' when reffering to the property. 
+This assures that when the model is used for AI traffic the animations will 
+follow that of the AI controller instead of that of the user.<P>
+This example rotates the rudder according to the value of the
+<VAR>controls/rudder</VAR> property (or at least, it will when we
 specify the center and axis of rotation below); however,
-<VAR>/controls/rudder</VAR> is normalized from -1.0 to 1.0, and we
+<VAR>controls/rudder</VAR> is normalized from -1.0 to 1.0, and we
 probably want to rotate the rudder more than that; as a result, we
 need to use the <VAR>factor</VAR> property to do scaling.  For
 example, if the rudder on the actual aircraft rotates 18 degrees in
@@ -348,7 +351,7 @@ position from -18 degrees to 18 degrees:</P>
 &lt;animation>
  &lt;type>rotation&lt;/type>
  &lt;object-name>Rudder&lt;/object-name>
- &lt;property>/controls/rudder&lt;/property>
+ &lt;property>controls/rudder&lt;/property>
  &lt;factor>18&lt;/factor>
 &lt;/animation>
 </PRE></BLOCKQUOTE>
@@ -365,7 +368,7 @@ dead center; you could specify that like this:</P>
 &lt;animation>
  &lt;type>rotation&lt;/type>
  &lt;object-name>Rudder&lt;/object-name>
- &lt;property>/controls/rudder&lt;/property>
+ &lt;property>controls/rudder&lt;/property>
  &lt;offset>-0.01&lt;/offset>
  &lt;factor>18&lt;/factor>
 &lt;/animation>
@@ -381,7 +384,7 @@ complicated) example for the Cessna 310 landing gear:</P>
 &lt;animation>
  &lt;type>rotate&lt;/type>
  &lt;object-name>NoseWheel&lt;/object-name>
- &lt;property>/gear/gear[0]/position-norm&lt;/property>
+ &lt;property>gear/gear[0]/position-norm&lt;/property>
  &lt;factor>120&lt;/factor>
  &lt;offset>-1&lt;/offset>
  &lt;min>-90&lt;/min>
@@ -488,7 +491,7 @@ x-axis.  Here is an example for a rudder:</P>
 &lt;animation>
  &lt;type>rotate&lt;/type>
  &lt;object-name>Rudder&lt;/object-name>
- &lt;property>/controls/rudder&lt;/property>
+ &lt;property>controls/rudder&lt;/property>
  &lt;factor>18&lt;/factor>
  &lt;center>
   &lt;x-m>5.45&lt;/x-m>
@@ -569,7 +572,7 @@ the Cessna 172:</P>
 &lt;animation>
  &lt;type>rotate&lt;/type>
  &lt;object-name>Rudder&lt;/object-name>
- &lt;property>/controls/rudder&lt;/property>
+ &lt;property>controls/rudder&lt;/property>
  &lt;factor>18&lt;/factor>
  &lt;center>
   &lt;x-m>5.45&lt;/x-m>
@@ -591,7 +594,7 @@ propeller:</P>
 &lt;animation>
  &lt;type>spin&lt;/type>
  &lt;object-name>Propeller&lt;/object-name>
- &lt;property>/engines/engine[0]/rpm&lt;/property>
+ &lt;property>engines/engine[0]/rpm&lt;/property>
  &lt;center>
   &lt;x-m>0&lt;/x-m>
   &lt;y-m>0&lt;/y-m>
