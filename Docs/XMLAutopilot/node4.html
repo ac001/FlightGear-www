@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Integral</TITLE>
+<META NAME="description" CONTENT="Integral">
+<META NAME="keywords" CONTENT="XMLAutopilot">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="XMLAutopilot.css">
+
+<LINK REL="next" HREF="node5.html">
+<LINK REL="previous" HREF="node3.html">
+<LINK REL="up" HREF="node2.html">
+<LINK REL="next" HREF="node5.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html63"
+  HREF="node5.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html61"
+  HREF="node2.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html55"
+  HREF="node3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html64"
+  HREF="node5.html">Derivative</A>
+<B> Up:</B> <A NAME="tex2html62"
+  HREF="node2.html">Control Theory 101</A>
+<B> Previous:</B> <A NAME="tex2html56"
+  HREF="node3.html">Proportional</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00022000000000000000">
+Integral</A>
+</H2>
+
+<P>
+Unfortunately life is often more complicated than we'd like, and even
+in the case of a simple wing leveler, you encounter situations where
+the aircraft isn't perfectly trim and zero aileron deflection does not
+always equal zero roll motion.  In an aircraft such as a Cessna 172,
+the amount of aileron deflection needed to keep the wing level can
+vary with speed.  In these cases, a proportional only controller will
+stabilize out quickly, but will stabilize to the wrong value.  We need
+a way to drive the error in the proportional only controller to zero.
+
+<P>
+Enter the Integral component of the PID algorithm.  Remember back to
+your calculus days, integral refers to the area under a curve.  If you
+have a function, the integral of that function produces a second
+function which tells you the area under curve of the first function.
+
+<P>
+Fortunately we usually don't have a formula for the first function
+since it changes depending on external conditions (i.e. current
+speed in a car.)  That means we can't integrate this function directly
+and we are spared all the potentially messy calculus.
+
+<P>
+So we use an alternative approach to approximate the error under the
+process value curve.  At each time step we know <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ e_{n}$"></SPAN> which is the
+difference between the process value and the reference point.  If we
+multiply this distance times <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.png"
+ ALT="$ dt$"></SPAN> (the time step) we get an area which
+approximates the error under the curve just for this time step.  If we
+add these areas up over time, we get a very reasonable approximation
+of the area under the curve.
+
+<P>
+Essentially what this does is that the longer time passes with us not
+at our target value, the larger the sum of the (error <SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img11.png"
+ ALT="$ \cdot$"></SPAN> dt)'s becomes
+over time.  If we use this sum to push our output value (i.e. our
+accelerator position) then the longer we don't quite hit our target
+speed, the further the system pushes the accelerator pedal.  Over
+time, the integral component compensates for the error in the
+proportional component and the system stabilizes out at the desired
+speed.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html63"
+  HREF="node5.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html61"
+  HREF="node2.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html55"
+  HREF="node3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html64"
+  HREF="node5.html">Derivative</A>
+<B> Up:</B> <A NAME="tex2html62"
+  HREF="node2.html">Control Theory 101</A>
+<B> Previous:</B> <A NAME="tex2html56"
+  HREF="node3.html">Proportional</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Curtis L. Olson
+2004-02-01
+</ADDRESS>
+</BODY>
+</HTML>

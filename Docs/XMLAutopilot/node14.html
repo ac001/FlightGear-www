@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Trial and Error Tuning</TITLE>
+<META NAME="description" CONTENT="Trial and Error Tuning">
+<META NAME="keywords" CONTENT="XMLAutopilot">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="XMLAutopilot.css">
+
+<LINK REL="next" HREF="node15.html">
+<LINK REL="previous" HREF="node13.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node15.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html166"
+  HREF="node15.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html164"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html158"
+  HREF="node13.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html167"
+  HREF="node15.html">Ziegler-Nichols Method</A>
+<B> Up:</B> <A NAME="tex2html165"
+  HREF="node13.html">Autopilot Tuning</A>
+<B> Previous:</B> <A NAME="tex2html159"
+  HREF="node13.html">Autopilot Tuning</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00051000000000000000">
+Trial and Error Tuning</A>
+</H2>
+
+<P>
+The most basic method of tuning is the trial and error method. This
+method involves adjusting the proportional gain, the integral time and
+the derivative time until the performance is satisfactory. The three
+settings are often adjusted separately in order to see the effects of
+the different settings. This process can be time consuming.
+
+<P>
+It can be difficult to get started using the trial end error
+method. What kind of gains and times should one start out with? A
+typical approach for tuning a PID controller can be summarized as
+follows:
+
+<P>
+
+<OL>
+<LI>Eliminate integral and derivative action by setting the
+  derivative time, <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.png"
+ ALT="$ T_{d}$"></SPAN>, to its minimum value (zero) and the
+  integral time, <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.png"
+ ALT="$ T_{i}$"></SPAN> to its maximum value.
+
+<P>
+</LI>
+<LI>Set the proportional gain, <SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$ K_{P}$"></SPAN> to a low value
+  (0.5) and enable the controller.
+
+<P>
+</LI>
+<LI>Increase the proportional gain by small increments until
+  continuous cycling occurs after a small set-point or load
+  change. The term "continuous cycling" refers to a sustained
+  oscillation with constant amplitude.  At first it might be useful to
+  increment <SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$ K_{P}$"></SPAN> by an order of magnitude (i.e. multiply or divide
+  by 10) just to get yourself in the right ball park.  Then you might
+  consider doubling or dividing by two to get closer.
+
+<P>
+</LI>
+<LI>Reduce the gain by a factor of two.
+
+<P>
+</LI>
+<LI>Decrease the integral time until continuous cycling occurs
+  again. Set integral time, <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.png"
+ ALT="$ T_{i}$"></SPAN> to three times this value.  Note
+  that because of the way the formulas are constructed, a smaller
+  integral time means a larger integral component.
+
+<P>
+</LI>
+<LI>Increase derivative time, <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.png"
+ ALT="$ T_{d}$"></SPAN> until continuous cycling
+  occurs. Set derivative time to one-third of this value.  Note that
+  because of the way the formulas are constructed, a larger derivative
+  time means a larger derivative component (which is opposite from the
+  effect of changing <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.png"
+ ALT="$ T_{i}$"></SPAN>.
+</LI>
+</OL>
+
+<P>
+The proportional gain that results in continuous cycling in Step 3 is
+called the ultimate gain. In performing the experimental test to find
+the ultimate gain, it is important that the output does not
+saturate. If saturation occurs it is possible to get continuous
+cycling even though the gain is higher than the ultimate gain. This
+would then result in a too high gain in Step 4.
+
+<P>
+Disadvantages of the trial and error method include:
+
+<P>
+
+<UL>
+<LI>It is quite time consuming if a large number of trials are
+  required in order to find the ultimate gain and the integral and
+  derivative times that result in continuous cycling.
+
+<P>
+</LI>
+<LI>The method is not applicable to processes that are open-loop
+  unstable because such processes are typically unstable at both high
+  and low gain values and are stable for intermediate gain values.
+
+<P>
+</LI>
+<LI>Some simple processes do not have an ultimate gain.
+</LI>
+</UL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html166"
+  HREF="node15.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html164"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html158"
+  HREF="node13.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html167"
+  HREF="node15.html">Ziegler-Nichols Method</A>
+<B> Up:</B> <A NAME="tex2html165"
+  HREF="node13.html">Autopilot Tuning</A>
+<B> Previous:</B> <A NAME="tex2html159"
+  HREF="node13.html">Autopilot Tuning</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Curtis L. Olson
+2004-02-01
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Control Theory 101</TITLE>
+<META NAME="description" CONTENT="Control Theory 101">
+<META NAME="keywords" CONTENT="XMLAutopilot">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="XMLAutopilot.css">
+
+<LINK REL="next" HREF="node7.html">
+<LINK REL="previous" HREF="node1.html">
+<LINK REL="up" HREF="XMLAutopilot.html">
+<LINK REL="next" HREF="node3.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html39"
+  HREF="node3.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html37"
+  HREF="XMLAutopilot.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html31"
+  HREF="node1.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html40"
+  HREF="node3.html">Proportional</A>
+<B> Up:</B> <A NAME="tex2html38"
+  HREF="XMLAutopilot.html">FlightGear Autopilot: Theory, Configuration,</A>
+<B> Previous:</B> <A NAME="tex2html32"
+  HREF="node1.html">Introduction</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00020000000000000000">
+Control Theory 101</A>
+</H1>
+
+<P>
+I find control theory and PID algorithms very fascinating (at least at
+a simple level) so I want to share a few basics.  Although the
+FlightGear PID algorithm is a bit more sophisticated, effective
+control modules can be built  with just a few simple building blocks.
+
+<P>
+Typical autopilots are built using a PID algorithm.  PID stands for
+proportional, integral, and derivative.  Typically a PID controller
+manipulates one control output to force a process value towards a
+reference point.
+
+<P>
+Let me say that again an a bit different way.  Imagine a cruise
+control on a car.  We know the current speed.  We know the target
+speed.  And we know the accelerator position.  The cruise control will
+manipulate the accelerator position (control output) to try to make
+the current speed (process value) equal to the target speed (reference
+point.)  How the cruise control calculates what accelerator position
+is needed to hold the desired speed (even going up and down hills) is
+where the magic happens.
+
+<P>
+I'll explain the three components (proportional, integral, and
+derivative) of a PID controller next.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html41"
+  HREF="node3.html">Proportional</A>
+<LI><A NAME="tex2html42"
+  HREF="node4.html">Integral</A>
+<LI><A NAME="tex2html43"
+  HREF="node5.html">Derivative</A>
+<LI><A NAME="tex2html44"
+  HREF="node6.html">Combining P + I + D</A>
+</UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html39"
+  HREF="node3.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html37"
+  HREF="XMLAutopilot.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html31"
+  HREF="node1.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html40"
+  HREF="node3.html">Proportional</A>
+<B> Up:</B> <A NAME="tex2html38"
+  HREF="XMLAutopilot.html">FlightGear Autopilot: Theory, Configuration,</A>
+<B> Previous:</B> <A NAME="tex2html32"
+  HREF="node1.html">Introduction</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Curtis L. Olson
+2004-02-01
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Proportional</TITLE>
+<META NAME="description" CONTENT="Proportional">
+<META NAME="keywords" CONTENT="XMLAutopilot">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="XMLAutopilot.css">
+
+<LINK REL="next" HREF="node4.html">
+<LINK REL="previous" HREF="node2.html">
+<LINK REL="up" HREF="node2.html">
+<LINK REL="next" HREF="node4.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html53"
+  HREF="node4.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html51"
+  HREF="node2.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html45"
+  HREF="node2.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html54"
+  HREF="node4.html">Integral</A>
+<B> Up:</B> <A NAME="tex2html52"
+  HREF="node2.html">Control Theory 101</A>
+<B> Previous:</B> <A NAME="tex2html46"
+  HREF="node2.html">Control Theory 101</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00021000000000000000">
+Proportional</A>
+</H2>
+
+<P>
+All three components of the PID algorithm are driven by the difference
+between the process value (i.e. the current speed) and the reference
+point (i.e. the target speed.)  We will call this difference (of
+error) for one particular time step <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ e_{n}$"></SPAN>.  For that same time step,
+we call the process value <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$ y_{n}$"></SPAN> and the reference point <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.png"
+ ALT="$ r_{n}$"></SPAN>.
+
+<P>
+<!-- MATH
+ \begin{displaymath}
+e_{n} = r_{n} - y_{n}
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="106" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.png"
+ ALT="$\displaystyle e_{n} = r_{n} - y_{n} $">
+</DIV><P></P>
+
+<P>
+The output value (i.e. the accelerator position) is called <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.png"
+ ALT="$ u_{n}$"></SPAN>.
+
+<P>
+The proportional component simple calculates <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.png"
+ ALT="$ u_{n}$"></SPAN> based on the
+size of the error term <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ e_{n}$"></SPAN> by simply multiplying it by a constant,
+<SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$ K_{P}$"></SPAN>.
+
+<P>
+<!-- MATH
+ \begin{displaymath}
+u_{n} = K_{P} \cdot e_{n}
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="108" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$\displaystyle u_{n} = K_{P} \cdot e_{n} $">
+</DIV><P></P>
+
+<P>
+For simple situations, this all by itself can be a very effect control
+algorithm.  Typically this works best when you know that when <SPAN CLASS="MATH"><IMG
+ WIDTH="57" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$ e_{n} =
+0$"></SPAN> then <SPAN CLASS="MATH"><IMG
+ WIDTH="59" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ u_{n} = 0$"></SPAN>.  For example, imagine a simple wing leveler in an
+aircraft.  The process value is going to be bank angle, the reference
+point is going to be zero (zero bank angle means the wings are level.)
+Assume a well trimmed aircraft with neutral stability so that when the
+ailerons are zero there is no change in bank.  A proportional only
+control would set the aileron deflection inversely proportional to the
+bank angle.  As the bank angle gets closer to zero, the aileron
+deflection gets closer to zero.  Something as simple as this (a
+formula with one multiply operation) can be an amazingly effective and
+stable controller.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html53"
+  HREF="node4.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html51"
+  HREF="node2.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html45"
+  HREF="node2.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html54"
+  HREF="node4.html">Integral</A>
+<B> Up:</B> <A NAME="tex2html52"
+  HREF="node2.html">Control Theory 101</A>
+<B> Previous:</B> <A NAME="tex2html46"
+  HREF="node2.html">Control Theory 101</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Curtis L. Olson
+2004-02-01
+</ADDRESS>
+</BODY>
+</HTML>
