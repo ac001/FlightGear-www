@@ -1,6 +1,6 @@
 <?php
 
-$version = 0.3;
+$version = 0.4;
 
 //****************************************************
 //                                                   *
@@ -10,7 +10,7 @@ $version = 0.3;
 // July 2003, David P. Culp, davidculp2@comcast.net  *
 //                                                   * 
 //****************************************************
-// Updated: 16 July 2003, DPC
+// Updated: 5 Sep 2003, DPC - added prop transport
 
 
 //***** GET DATA FROM USER ***************************
@@ -67,6 +67,7 @@ switch($ac_type) {
   case 6: $ac_wingloading = 110.0; break;
   case 7: $ac_wingloading = 110.0; break;
   case 8: $ac_wingloading = 110.0; break;
+  case 9: $ac_wingloading = 57.0; break;
   }
 
 // if no wing area given, use wing loading to estimate
@@ -100,6 +101,7 @@ if ($ac_htailarea == 0) {
     case 6: $ac_htailarea = $ac_wingarea * 0.25; break;
     case 7: $ac_htailarea = $ac_wingarea * 0.25; break;
     case 8: $ac_htailarea = $ac_wingarea * 0.25; break;
+    case 9: $ac_htailarea = $ac_wingarea * 0.16; break;
     }
   }
 
@@ -115,6 +117,8 @@ if ($ac_htailarm == 0) {
     case 6: $ac_htailarm = $ac_length * 0.45; break;
     case 7: $ac_htailarm = $ac_length * 0.45; break;
     case 8: $ac_htailarm = $ac_length * 0.45; break;
+    case 9: $ac_htailarm = $ac_length * 0.50; break;
+   
     }
   }
 
@@ -130,6 +134,7 @@ if ($ac_vtailarea == 0) {
     case 6: $ac_vtailarea = $ac_wingarea * 0.20; break;
     case 7: $ac_vtailarea = $ac_wingarea * 0.20; break;
     case 8: $ac_vtailarea = $ac_wingarea * 0.20; break;
+    case 9: $ac_vtailarea = $ac_wingarea * 0.18; break;
     }
   }
 
@@ -145,6 +150,7 @@ if ($ac_vtailarm == 0) {
     case 6: $ac_vtailarm = $ac_length * 0.45; break;
     case 7: $ac_vtailarm = $ac_length * 0.45; break;
     case 8: $ac_vtailarm = $ac_length * 0.45; break;
+    case 9: $ac_vtailarm = $ac_length * 0.50; break;
     }
   }
 
@@ -161,6 +167,7 @@ switch($ac_type) {  // moment-of-inertia factors
   case 6: $Rx = 0.25;$Ry = 0.38;$Rz = 0.46; break;
   case 7: $Rx = 0.25;$Ry = 0.36;$Rz = 0.47; break;
   case 8: $Rx = 0.32;$Ry = 0.34;$Rz = 0.47; break;
+  case 9: $Rx = 0.32;$Ry = 0.35;$Rz = 0.47; break;
   }
 
 $ac_rawixx = ($ac_weight / 32.2)* pow(($Rx * $ac_wingspan / 2), 2);
@@ -191,6 +198,7 @@ if ($ac_emptyweight == 0) {
     case 6:  $ac_emptyweight = $ac_weight * .55;
     case 7:  $ac_emptyweight = $ac_weight * .52;
     case 8:  $ac_emptyweight = $ac_weight * .49;
+    case 9:  $ac_emptyweight = $ac_weight * .60;
     }
   }
 
@@ -219,6 +227,7 @@ switch($ac_type) {
   case 6: $ac_eyeptlocx = ($ac_length * 0.07) * 12; break;
   case 7: $ac_eyeptlocx = ($ac_length * 0.07) * 12; break;
   case 8: $ac_eyeptlocx = ($ac_length * 0.07) * 12; break;
+  case 9: $ac_eyeptlocx = ($ac_length * 0.08) * 12; break;
   }
 
 switch($ac_type) {
@@ -231,6 +240,7 @@ switch($ac_type) {
   case 6: $ac_eyeptlocy = -30; break;
   case 7: $ac_eyeptlocy = -30; break;
   case 8: $ac_eyeptlocy = -32; break;
+  case 9: $ac_eyeptlocy = -24; break;
   }
 
 switch($ac_type) {
@@ -243,6 +253,7 @@ switch($ac_type) {
   case 6: $ac_eyeptlocz = 70; break;
   case 7: $ac_eyeptlocz = 75; break;
   case 8: $ac_eyeptlocz = 80; break;
+  case 9: $ac_eyeptlocz = 65; break;
   }
 
 //***** LANDING GEAR *********************************
@@ -264,6 +275,7 @@ switch($ac_type) {
   case 6: $ac_gearlocy_main = $ac_wingspan * 0.09 * 12; break;
   case 7: $ac_gearlocy_main = $ac_wingspan * 0.09 * 12; break;
   case 8: $ac_gearlocy_main = $ac_wingspan * 0.09 * 12; break;
+  case 9: $ac_gearlocy_main = $ac_wingspan * 0.11 * 12; break;
   }
 
 // set main gear length (from aircraft centerline, extended)
@@ -445,6 +457,7 @@ switch($ac_type) {
   case 6: $ac_CLalpha = 4.4; break;
   case 7: $ac_CLalpha = 4.4; break;
   case 8: $ac_CLalpha = 4.4; break;
+  case 9: $ac_CLalpha = 4.9; break;
   }
 
 // estimate CL at zero alpha
@@ -458,6 +471,7 @@ switch($ac_type) {
   case 6: $ac_CL0 = 0.20; break;
   case 7: $ac_CL0 = 0.20; break;
   case 8: $ac_CL0 = 0.20; break;
+  case 9: $ac_CL0 = 0.24; break;
   }
 
 // estimate stall CL
@@ -474,6 +488,7 @@ switch($ac_type) {
   case 6: $ac_dCLflaps = 1.0; break;
   case 7: $ac_dCLflaps = 1.0; break;
   case 8: $ac_dCLflaps = 1.0; break;
+  case 9: $ac_dCLflaps = 0.400; break;
   }
 
 // some types have speedbrakes in wings, affecting lift
@@ -487,6 +502,7 @@ switch($ac_type) {
   case 6: $ac_dCLspeedbrake = -0.10; break;
   case 7: $ac_dCLspeedbrake = -0.09; break;
   case 8: $ac_dCLspeedbrake = -0.08; break;
+  case 9: $ac_dCLspeedbrake = 0.00; break;
   }
 
 // estimate lift due to elevator deflection
@@ -506,6 +522,7 @@ switch($ac_type) {
   case 6: $ac_CD0 = 0.020; break;
   case 7: $ac_CD0 = 0.019; break;
   case 8: $ac_CD0 = 0.017; break;
+  case 9: $ac_CD0 = 0.025; break;
   }
 
 // add gear drag if fixed gear
@@ -520,6 +537,7 @@ switch($ac_type) {
   case 6: $ac_CD0 += 0.002; break;
   case 7: $ac_CD0 += 0.002; break;
   case 8: $ac_CD0 += 0.002; break;
+  case 9: $ac_CD0 += 0.003; break;
   }
 }
 
@@ -534,6 +552,7 @@ switch($ac_type) {
   case 6: $ac_K = 0.042; break;
   case 7: $ac_K = 0.042; break;
   case 8: $ac_K = 0.042; break;
+  case 9: $ac_K = 0.039; break;
   }
 
 // CD flaps
@@ -547,6 +566,7 @@ switch($ac_type) {
   case 6: $ac_CDflaps = 0.059; break;
   case 7: $ac_CDflaps = 0.057; break;
   case 8: $ac_CDflaps = 0.055; break;
+  case 9: $ac_CDflaps = 0.035; break;
   }
 
 // estimate drag from landing gear down
@@ -560,6 +580,7 @@ switch($ac_type) {
   case 6: $ac_CDgear = 0.015; break;
   case 7: $ac_CDgear = 0.013; break;
   case 8: $ac_CDgear = 0.011; break;
+  case 9: $ac_CDgear = 0.023; break;
   }
 
 $ac_CDde = 0.04;             // elevator deflection
@@ -577,6 +598,7 @@ switch($ac_type) {
   case 6: $ac_Mcrit = 0.79; break;
   case 7: $ac_Mcrit = 0.79; break;
   case 8: $ac_Mcrit = 0.79; break;
+  case 9: $ac_Mcrit = 0.70; break;
   }
 
 //***** SIDE *************************************
@@ -600,6 +622,7 @@ switch($ac_type) {     // aileron
   case 6: $ac_Clda = 0.05; break;
   case 7: $ac_Clda = 0.04; break;
   case 8: $ac_Clda = 0.03; break;
+  case 9: $ac_Clda = 0.09; break;
   }
 $ac_Cldr = 0.01;       // rudder deflection
 
@@ -661,6 +684,12 @@ switch($ac_type) {
     $ac_Cmq = -21.0;       // pitch rate
     $ac_Cmadot = -4.0;     // alpha-dot
     break;
+  case  9: // multi-engine prop transport
+    $ac_Cmalpha = -0.4;    // per radian alpha
+    $ac_Cmde = -1.0;       // elevator deflection
+    $ac_Cmq = -22.0;       // pitch rate
+    $ac_Cmadot = -8.0;     // alpha-dot
+    break;
   }
 
 //***** YAW **************************************
@@ -681,6 +710,7 @@ switch($ac_type) {                   // adverse yaw
   case 6: $ac_Cnda = 0.0; break;
   case 7: $ac_Cnda = 0.0; break;
   case 8: $ac_Cnda = 0.0; break;
+  case 9: $ac_Cnda = -0.008; break;
   }
 
 
@@ -698,13 +728,14 @@ print("    name:          $ac_name\n");
 switch($ac_type) {
   case 0: print("    type:          glider\n"); break;
   case 1: print("    type:          light single\n"); break;
-  case 2: print("    type:          light twin, prop transport\n"); break;
+  case 2: print("    type:          light twin\n"); break;
   case 3: print("    type:          WWII fighter, subsonic sport, aerobatic\n"); break;
   case 4: print("    type:          single-engine transonic/supersonic fighter\n"); break;
   case 5: print("    type:          two-engine transonic/supersonic fighter\n"); break;
   case 6: print("    type:          two-engine transonic transport\n"); break;
   case 7: print("    type:          three-engine transonic transport\n"); break;
   case 8: print("    type:          four-engine transonic transport\n"); break;
+  case 9: print("    type:          multi-engine prop transport\n"); break;
   }
 print("    max weight:    $ac_weight lb\n");
 print("    wing span:     $ac_wingspan ft\n");
