@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>Proportional</TITLE>
-<META NAME="description" CONTENT="Proportional">
+<TITLE>PID Algorithm Implementation</TITLE>
+<META NAME="description" CONTENT="PID Algorithm Implementation">
 <META NAME="keywords" CONTENT="XMLAutopilot">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -20,145 +20,421 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <LINK REL="next" HREF="node4.html">
 <LINK REL="previous" HREF="node2.html">
-<LINK REL="up" HREF="node2.html">
+<LINK REL="up" HREF="XMLAutopilot.html">
 <LINK REL="next" HREF="node4.html">
 </HEAD>
 
 <BODY >
 
 <DIV CLASS="navigation"><!--Navigation Panel-->
-<A NAME="tex2html53"
+<A NAME="tex2html56"
   HREF="node4.html">
 <IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
-<A NAME="tex2html51"
-  HREF="node2.html">
+<A NAME="tex2html54"
+  HREF="XMLAutopilot.html">
 <IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
-<A NAME="tex2html45"
+<A NAME="tex2html48"
   HREF="node2.html">
 <IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
 <BR>
-<B> Next:</B> <A NAME="tex2html54"
-  HREF="node4.html">Integral</A>
-<B> Up:</B> <A NAME="tex2html52"
-  HREF="node2.html">Control Theory 101</A>
-<B> Previous:</B> <A NAME="tex2html46"
+<B> Next:</B> <A NAME="tex2html57"
+  HREF="node4.html">XML Autopilot Config File</A>
+<B> Up:</B> <A NAME="tex2html55"
+  HREF="XMLAutopilot.html">FlightGear Autopilot: Theory, Configuration,</A>
+<B> Previous:</B> <A NAME="tex2html49"
   HREF="node2.html">Control Theory 101</A>
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
 
-<H2><A NAME="SECTION00021000000000000000">
-Proportional</A>
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html58"
+  HREF="node3.html#SECTION00031000000000000000">Mathematical Formula</A>
+<LI><A NAME="tex2html59"
+  HREF="node3.html#SECTION00032000000000000000">Algorithm inputs</A>
+<LI><A NAME="tex2html60"
+  HREF="node3.html#SECTION00033000000000000000">Algorithm output</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION00030000000000000000">
+PID Algorithm Implementation</A>
+</H1>
+
+<P>
+The PID algorithm used for the FlightGear autopilot was provided by
+Roy Ovesen.  It is more sophisticated and approaches the problem a bit
+differently than the what I describe earlier.  Rather than dealing in
+absolute terms, it calculates a change in output based on the change
+in error.  It is able to ease into large control inputs rather than
+slam the controls full stop if there is a larger error term when it is
+activated.
+
+<P>
+Finally it handles the problem of integrator windup.  Integrator wind
+up can occur when the system simply can't get to the target value,
+even at full control input.  For instance a large truck commanded to
+go 90km/hr might slow to 70km/hr on a steep hill even at full
+throttle.  During this time while climbing the hill, the integrator
+term is accumulating a tremendous amount of error.  This is called
+integrator windup.  Once you hit the crest of the hill you have to
+overshoot the target speed for a while to ``unwind'' the integrator
+term (which at this point may have grown very large.)  This can cause
+you to significantly over-speed for as long as you were undershooting
+the target.  This can lead to many unsafe and unstable situations so
+``integrator windup'' is generally considered an undesirable effect.
+
+<P>
+
+<H2><A NAME="SECTION00031000000000000000">
+Mathematical Formula</A>
 </H2>
 
 <P>
-All three components of the PID algorithm are driven by the difference
-between the process value (i.e. the current speed) and the reference
-point (i.e. the target speed.)  We will call this difference (of
-error) for one particular time step <SPAN CLASS="MATH"><IMG
- WIDTH="22" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img1.png"
- ALT="$ e_{n}$"></SPAN>.  For that same time step,
-we call the process value <SPAN CLASS="MATH"><IMG
- WIDTH="23" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img2.png"
- ALT="$ y_{n}$"></SPAN> and the reference point <SPAN CLASS="MATH"><IMG
- WIDTH="22" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img3.png"
- ALT="$ r_{n}$"></SPAN>.
+The change in output, <!-- MATH
+ $\Delta u_{n}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="40" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$ \Delta u_{n}$"></SPAN>, for the current time step is
+calculated as follows:
 
 <P>
 <!-- MATH
  \begin{displaymath}
-e_{n} = r_{n} - y_{n}
+\Delta u_{n} = K_{P} \cdot \left[ (eP_{n} - eP_{n-1})
+     + \left(\frac{T_{s}}{T_{i}} \cdot e_{n}\right)
+     + \frac{T_{d}}{T_{s}} \cdot (eDf_{n} - 2 \cdot eDf_{n-1} + eDf_{n-2}) \right]
 \end{displaymath}
  -->
 <P></P>
 <DIV ALIGN="CENTER" CLASS="mathdisplay">
 <IMG
- WIDTH="106" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img4.png"
- ALT="$\displaystyle e_{n} = r_{n} - y_{n} $">
+ WIDTH="645" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.png"
+ ALT="$\displaystyle \Delta u_{n} = K_{P} \cdot \left[ (eP_{n} - eP_{n-1})
++ \left(\fr...
+...
++ \frac{T_{d}}{T_{s}} \cdot (eDf_{n} - 2 \cdot eDf_{n-1} + eDf_{n-2}) \right] $">
 </DIV><P></P>
 
 <P>
-The output value (i.e. the accelerator position) is called <SPAN CLASS="MATH"><IMG
+The absolute output, <SPAN CLASS="MATH"><IMG
  WIDTH="24" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
  SRC="img5.png"
- ALT="$ u_{n}$"></SPAN>.
+ ALT="$ u_{n}$"></SPAN> is then calculated as:
 
 <P>
-The proportional component simple calculates <SPAN CLASS="MATH"><IMG
- WIDTH="24" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img5.png"
- ALT="$ u_{n}$"></SPAN> based on the
-size of the error term <SPAN CLASS="MATH"><IMG
- WIDTH="22" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img1.png"
- ALT="$ e_{n}$"></SPAN> by simply multiplying it by a constant,
+<!-- MATH
+ \begin{displaymath}
+u_{n} = u_{n-1} + \Delta u_{n}
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="145" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img15.png"
+ ALT="$\displaystyle u_{n} = u_{n-1} + \Delta u_{n} $">
+</DIV><P></P>
+
+<P>
+Where:
+
+<P>
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="LEFT">Variable</TD>
+<TD ALIGN="LEFT">Description</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><!-- MATH
+ $\Delta u_{n}$
+ -->
 <SPAN CLASS="MATH"><IMG
+ WIDTH="40" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$ \Delta u_{n}$"></SPAN></TD>
+<TD ALIGN="LEFT">The incremental output</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
  WIDTH="32" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
  SRC="img6.png"
- ALT="$ K_{P}$"></SPAN>.
-
-<P>
-<!-- MATH
- \begin{displaymath}
-u_{n} = K_{P} \cdot e_{n}
-\end{displaymath}
+ ALT="$ K_{P}$"></SPAN></TD>
+<TD ALIGN="LEFT">Proportional gain</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="28" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.png"
+ ALT="$ eP$"></SPAN></TD>
+<TD ALIGN="LEFT">Proportional error with reference weighing</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><!-- MATH
+ $eP = \beta \cdot r_{n} - y_{n}$
  -->
-<P></P>
-<DIV ALIGN="CENTER" CLASS="mathdisplay">
-<IMG
- WIDTH="108" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
- SRC="img7.png"
- ALT="$\displaystyle u_{n} = K_{P} \cdot e_{n} $">
-</DIV><P></P>
+<SPAN CLASS="MATH"><IMG
+ WIDTH="137" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$ eP = \beta \cdot r_{n} - y_{n}$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">where:</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.png"
+ ALT="$ \beta$"></SPAN>: Weighing factor</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.png"
+ ALT="$ r_{n}$"></SPAN>: Reference (setpoint)</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$ y_{n}$"></SPAN>: Process value, measured</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ e_{n}$"></SPAN></TD>
+<TD ALIGN="LEFT">Error, <!-- MATH
+ $e_{n} = r_{n} - y_{n}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="106" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$ e_{n} = r_{n} - y_{n}$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img20.png"
+ ALT="$ T_{s}$"></SPAN></TD>
+<TD ALIGN="LEFT">Sampling interval (i.e. <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.png"
+ ALT="$ \Delta t$"></SPAN>)</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.png"
+ ALT="$ T_{i}$"></SPAN></TD>
+<TD ALIGN="LEFT">Integrator time</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.png"
+ ALT="$ T_{d}$"></SPAN></TD>
+<TD ALIGN="LEFT">Derivator time</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.png"
+ ALT="$ eDf$"></SPAN></TD>
+<TD ALIGN="LEFT">Derivate error with reference weighing and filtering</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><!-- MATH
+ $eDf_{n} = eDf_{n-1} / (\frac{T_{s}}{T_{f}} + 1) +
+eD_{n} \cdot \frac{T_{s}}{T_{f}} / (\frac{T_{s}}{T_{f}} + 1)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="373" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img25.png"
+ ALT="$ eDf_{n} = eDf_{n-1} / (\frac{T_{s}}{T_{f}} + 1) +
+eD_{n} \cdot \frac{T_{s}}{T_{f}} / (\frac{T_{s}}{T_{f}} + 1)$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">where:</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img26.png"
+ ALT="$ T_{f}$"></SPAN>: Filter time</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><!-- MATH
+ $T_{f} = \alpha \cdot T_{d}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="94" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img27.png"
+ ALT="$ T_{f} = \alpha \cdot T_{d}$"></SPAN> where <SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.png"
+ ALT="$ \alpha$"></SPAN> usually is set to 0.1</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="29" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img29.png"
+ ALT="$ eD$"></SPAN>: Unfiltered derivate error with reference weighing</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><!-- MATH
+ $eD = \gamma \cdot r_{n} - y_{n}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="138" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.png"
+ ALT="$ eD = \gamma \cdot r_{n} - y_{n}$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">where:</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img31.png"
+ ALT="$ \gamma$"></SPAN>: Weighing factor</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.png"
+ ALT="$ u_{n}$"></SPAN></TD>
+<TD ALIGN="LEFT">absolute output</TD>
+</TR>
+</TABLE>
 
 <P>
-For simple situations, this all by itself can be a very effect control
-algorithm.  Typically this works best when you know that when <SPAN CLASS="MATH"><IMG
- WIDTH="57" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img8.png"
- ALT="$ e_{n} =
-0$"></SPAN> then <SPAN CLASS="MATH"><IMG
- WIDTH="59" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img9.png"
- ALT="$ u_{n} = 0$"></SPAN>.  For example, imagine a simple wing leveler in an
-aircraft.  The process value is going to be bank angle, the reference
-point is going to be zero (zero bank angle means the wings are level.)
-Assume a well trimmed aircraft with neutral stability so that when the
-ailerons are zero there is no change in bank.  A proportional only
-control would set the aileron deflection inversely proportional to the
-bank angle.  As the bank angle gets closer to zero, the aileron
-deflection gets closer to zero.  Something as simple as this (a
-formula with one multiply operation) can be an amazingly effective and
-stable controller.
+
+<H2><A NAME="SECTION00032000000000000000">
+Algorithm inputs</A>
+</H2>
+
+<P>
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="LEFT">Variable</TD>
+<TD ALIGN="LEFT">Description</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$ y_{n}$"></SPAN></TD>
+<TD ALIGN="LEFT">Current process value</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.png"
+ ALT="$ r_{n}$"></SPAN></TD>
+<TD ALIGN="LEFT">Reference point</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.png"
+ ALT="$ \beta$"></SPAN></TD>
+<TD ALIGN="LEFT">Proportional weighing factor (default = 1)</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img31.png"
+ ALT="$ \gamma$"></SPAN></TD>
+<TD ALIGN="LEFT">Unfiltered derivative error weighing factor (default = 0)</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.png"
+ ALT="$ \alpha$"></SPAN></TD>
+<TD ALIGN="LEFT">Filter time weighing factor (default = 0.1)</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$ K_{P}$"></SPAN></TD>
+<TD ALIGN="LEFT">Proportional gain</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img20.png"
+ ALT="$ T_{s}$"></SPAN></TD>
+<TD ALIGN="LEFT">Sampling interval (i.e. <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.png"
+ ALT="$ \Delta t$"></SPAN>)</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.png"
+ ALT="$ T_{i}$"></SPAN></TD>
+<TD ALIGN="LEFT">Integrator time</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.png"
+ ALT="$ T_{d}$"></SPAN></TD>
+<TD ALIGN="LEFT">Derivator time</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.png"
+ ALT="$ u_{min}$"></SPAN></TD>
+<TD ALIGN="LEFT">Minimum output value for <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.png"
+ ALT="$ u_{n}$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="43" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img33.png"
+ ALT="$ u_{max}$"></SPAN></TD>
+<TD ALIGN="LEFT">Maximum output value for <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.png"
+ ALT="$ u_{n}$"></SPAN></TD>
+</TR>
+</TABLE>
+
+<P>
+
+<H2><A NAME="SECTION00033000000000000000">
+Algorithm output</A>
+</H2>
+
+<P>
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="LEFT">Variable</TD>
+<TD ALIGN="LEFT">Description</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.png"
+ ALT="$ u_{n}$"></SPAN></TD>
+<TD ALIGN="LEFT">Absolute output value</TD>
+</TR>
+</TABLE>
 
 <P>
 
 <DIV CLASS="navigation"><HR>
 <!--Navigation Panel-->
-<A NAME="tex2html53"
+<A NAME="tex2html56"
   HREF="node4.html">
 <IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
-<A NAME="tex2html51"
-  HREF="node2.html">
+<A NAME="tex2html54"
+  HREF="XMLAutopilot.html">
 <IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
-<A NAME="tex2html45"
+<A NAME="tex2html48"
   HREF="node2.html">
 <IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
 <BR>
-<B> Next:</B> <A NAME="tex2html54"
-  HREF="node4.html">Integral</A>
-<B> Up:</B> <A NAME="tex2html52"
-  HREF="node2.html">Control Theory 101</A>
-<B> Previous:</B> <A NAME="tex2html46"
+<B> Next:</B> <A NAME="tex2html57"
+  HREF="node4.html">XML Autopilot Config File</A>
+<B> Up:</B> <A NAME="tex2html55"
+  HREF="XMLAutopilot.html">FlightGear Autopilot: Theory, Configuration,</A>
+<B> Previous:</B> <A NAME="tex2html49"
   HREF="node2.html">Control Theory 101</A></DIV>
 <!--End of Navigation Panel-->
 <ADDRESS>
 Curtis L. Olson
-2004-02-01
+2004-02-02
 </ADDRESS>
 </BODY>
 </HTML>

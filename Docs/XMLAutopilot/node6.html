@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>Combining P + I + D</TITLE>
-<META NAME="description" CONTENT="Combining P + I + D">
+<TITLE>About this document ...</TITLE>
+<META NAME="description" CONTENT="About this document ...">
 <META NAME="keywords" CONTENT="XMLAutopilot">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -19,104 +19,55 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <LINK REL="STYLESHEET" HREF="XMLAutopilot.css">
 
 <LINK REL="previous" HREF="node5.html">
-<LINK REL="up" HREF="node2.html">
-<LINK REL="next" HREF="node7.html">
+<LINK REL="up" HREF="XMLAutopilot.html">
 </HEAD>
 
 <BODY >
 
 <DIV CLASS="navigation"><!--Navigation Panel-->
-<A NAME="tex2html81"
-  HREF="node7.html">
-<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
-<A NAME="tex2html79"
-  HREF="node2.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_g.png"> 
+<A NAME="tex2html92"
+  HREF="XMLAutopilot.html">
 <IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
-<A NAME="tex2html75"
+<A NAME="tex2html88"
   HREF="node5.html">
 <IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
 <BR>
-<B> Next:</B> <A NAME="tex2html82"
-  HREF="node7.html">PID Algorithm Implementation</A>
-<B> Up:</B> <A NAME="tex2html80"
-  HREF="node2.html">Control Theory 101</A>
-<B> Previous:</B> <A NAME="tex2html76"
-  HREF="node5.html">Derivative</A>
+<B> Up:</B> <A NAME="tex2html93"
+  HREF="XMLAutopilot.html">FlightGear Autopilot: Theory, Configuration,</A>
+<B> Previous:</B> <A NAME="tex2html89"
+  HREF="node5.html">Autopilot Tuning</A>
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A NAME="SECTION00024000000000000000">
-Combining P + I + D</A>
-</H2>
-
-<P>
-Here is a key point to understand.  The proportional component is very
-stable.  The Integral and Derivative components are very unstable.
-
-<P>
-If we build a proportional only controller, it will be very stable but
-will stabilize to the wrong value.  (i.e. if we want to go 90km/hr, it
-might stabilize out to 82km/hr.)
-
-<P>
-If we build an integral only controller it will quickly hit the target
-value, but will overshoot, then overcompensate, and will oscillate
-wildly around the target value.  It is very unstable.
-
-<P>
-The trick then is to combine these components together by summing
-them.  The actual output is equal to what the P component says the
-output should be plus what the I component says the output should be
-plus what the D component says the output should be.  You can assign a
-weighting value to each component to increase or decrease it's
-relative power to influence the final output value.
-
-<P>
-<!-- MATH
- \begin{displaymath}
-u_{n} = K_{P} \cdot uP_{n} + K_{I} \cdot uI_{n} + K_{D} \cdot uD_{n}
-\end{displaymath}
- -->
-<P></P>
-<DIV ALIGN="CENTER" CLASS="mathdisplay">
-<IMG
- WIDTH="311" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
- SRC="img12.png"
- ALT="$\displaystyle u_{n} = K_{P} \cdot uP_{n} + K_{I} \cdot uI_{n} + K_{D} \cdot uD_{n} $">
-</DIV><P></P>
-
-<P>
-As you can see, the actual math involved in a PID controller (while
-rooted in some deep theory) is actually quite simple to implement.
-The real trick for creating a well behaved PID controller and a well
-behaved autopilot is tuning the relative weights of each of the P, I,
-and D components.
-
-<P>
-
-<DIV CLASS="navigation"><HR>
-<!--Navigation Panel-->
-<A NAME="tex2html81"
-  HREF="node7.html">
-<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
-<A NAME="tex2html79"
-  HREF="node2.html">
-<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
-<A NAME="tex2html75"
-  HREF="node5.html">
-<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<H1><A NAME="SECTION00060000000000000000">
+About this document ...</A>
+</H1>
+ <STRONG>
+  FlightGear Autopilot: 
 <BR>
-<B> Next:</B> <A NAME="tex2html82"
-  HREF="node7.html">PID Algorithm Implementation</A>
-<B> Up:</B> <A NAME="tex2html80"
-  HREF="node2.html">Control Theory 101</A>
-<B> Previous:</B> <A NAME="tex2html76"
-  HREF="node5.html">Derivative</A></DIV>
-<!--End of Navigation Panel-->
+Theory, Configuration, and Tuning
+</STRONG><P>
+This document was generated using the
+<A HREF="http://www.latex2html.org/"><STRONG>LaTeX</STRONG>2<tt>HTML</tt></A> translator Version 2002-2-1 (1.70)
+<P>
+Copyright &#169; 1993, 1994, 1995, 1996,
+<A HREF="http://cbl.leeds.ac.uk/nikos/personal.html">Nikos Drakos</A>, 
+Computer Based Learning Unit, University of Leeds.
+<BR>
+Copyright &#169; 1997, 1998, 1999,
+<A HREF="http://www.maths.mq.edu.au/~ross/">Ross Moore</A>, 
+Mathematics Department, Macquarie University, Sydney.
+<P>
+The command line arguments were: <BR>
+ <STRONG>latex2html</STRONG> <TT>-local_icons -antialias -split +1 XMLAutopilot</TT>
+<P>
+The translation was initiated by Curtis L. Olson on 2004-02-02
+<BR><HR>
 <ADDRESS>
 Curtis L. Olson
-2004-02-01
+2004-02-02
 </ADDRESS>
 </BODY>
 </HTML>

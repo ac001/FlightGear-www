@@ -18,7 +18,7 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <LINK REL="STYLESHEET" HREF="XMLAutopilot.css">
 
-<LINK REL="next" HREF="node7.html">
+<LINK REL="next" HREF="node3.html">
 <LINK REL="previous" HREF="node1.html">
 <LINK REL="up" HREF="XMLAutopilot.html">
 <LINK REL="next" HREF="node3.html">
@@ -27,25 +27,40 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation"><!--Navigation Panel-->
-<A NAME="tex2html39"
+<A NAME="tex2html42"
   HREF="node3.html">
 <IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
-<A NAME="tex2html37"
+<A NAME="tex2html40"
   HREF="XMLAutopilot.html">
 <IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
-<A NAME="tex2html31"
+<A NAME="tex2html34"
   HREF="node1.html">
 <IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
 <BR>
-<B> Next:</B> <A NAME="tex2html40"
-  HREF="node3.html">Proportional</A>
-<B> Up:</B> <A NAME="tex2html38"
+<B> Next:</B> <A NAME="tex2html43"
+  HREF="node3.html">PID Algorithm Implementation</A>
+<B> Up:</B> <A NAME="tex2html41"
   HREF="XMLAutopilot.html">FlightGear Autopilot: Theory, Configuration,</A>
-<B> Previous:</B> <A NAME="tex2html32"
+<B> Previous:</B> <A NAME="tex2html35"
   HREF="node1.html">Introduction</A>
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html44"
+  HREF="node2.html#SECTION00021000000000000000">Proportional</A>
+<LI><A NAME="tex2html45"
+  HREF="node2.html#SECTION00022000000000000000">Integral</A>
+<LI><A NAME="tex2html46"
+  HREF="node2.html#SECTION00023000000000000000">Derivative</A>
+<LI><A NAME="tex2html47"
+  HREF="node2.html#SECTION00024000000000000000">Combining P + I + D</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
 
 <H1><A NAME="SECTION00020000000000000000">
 Control Theory 101</A>
@@ -78,44 +93,256 @@ I'll explain the three components (proportional, integral, and
 derivative) of a PID controller next.
 
 <P>
-<BR><HR>
-<!--Table of Child-Links-->
-<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
 
-<UL CLASS="ChildLinks">
-<LI><A NAME="tex2html41"
-  HREF="node3.html">Proportional</A>
-<LI><A NAME="tex2html42"
-  HREF="node4.html">Integral</A>
-<LI><A NAME="tex2html43"
-  HREF="node5.html">Derivative</A>
-<LI><A NAME="tex2html44"
-  HREF="node6.html">Combining P + I + D</A>
-</UL>
-<!--End of Table of Child-Links-->
+<H2><A NAME="SECTION00021000000000000000">
+Proportional</A>
+</H2>
+
+<P>
+All three components of the PID algorithm are driven by the difference
+between the process value (i.e. the current speed) and the reference
+point (i.e. the target speed.)  We will call this difference (of
+error) for one particular time step <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ e_{n}$"></SPAN>.  For that same time step,
+we call the process value <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$ y_{n}$"></SPAN> and the reference point <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.png"
+ ALT="$ r_{n}$"></SPAN>.
+
+<P>
+<!-- MATH
+ \begin{displaymath}
+e_{n} = r_{n} - y_{n}
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="106" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.png"
+ ALT="$\displaystyle e_{n} = r_{n} - y_{n} $">
+</DIV><P></P>
+
+<P>
+The output value (i.e. the accelerator position) is called <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.png"
+ ALT="$ u_{n}$"></SPAN>.
+
+<P>
+The proportional component simply calculates <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.png"
+ ALT="$ u_{n}$"></SPAN> based on the
+size of the error term <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ e_{n}$"></SPAN> by simply multiplying it by a constant,
+<SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$ K_{P}$"></SPAN>.
+
+<P>
+<!-- MATH
+ \begin{displaymath}
+u_{n} = K_{P} \cdot e_{n}
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="108" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$\displaystyle u_{n} = K_{P} \cdot e_{n} $">
+</DIV><P></P>
+
+<P>
+For simple situations, this all by itself can be a very effect control
+algorithm.  Typically this works best when you know that when <SPAN CLASS="MATH"><IMG
+ WIDTH="57" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$ e_{n} =
+0$"></SPAN> then <SPAN CLASS="MATH"><IMG
+ WIDTH="59" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ u_{n} = 0$"></SPAN>.  For example, imagine a simple wing leveler in an
+aircraft.  The process value is going to be bank angle, the reference
+point is going to be zero (zero bank angle means the wings are level.)
+Assume a well trimmed aircraft with neutral stability so that when the
+ailerons are zero there is no change in bank.  A proportional only
+control would set the aileron deflection inversely proportional to the
+bank angle.  As the bank angle gets closer to zero, the aileron
+deflection gets closer to zero.  Something as simple as this (a
+formula with one multiply operation) can be an amazingly effective and
+stable controller.
+
+<P>
+
+<H2><A NAME="SECTION00022000000000000000">
+Integral</A>
+</H2>
+
+<P>
+Unfortunately life is often more complicated than we'd like, and even
+in the case of a simple wing leveler, you encounter situations where
+the aircraft isn't perfectly trim and zero aileron deflection does not
+always equal zero roll motion.  In an aircraft such as a Cessna 172,
+the amount of aileron deflection needed to keep the wing level can
+vary with speed.  In these cases, a proportional only controller will
+stabilize out quickly, but will stabilize to the wrong value.  We need
+a way to drive the error in the proportional only controller to zero.
+
+<P>
+Enter the Integral component of the PID algorithm.  Remember back to
+your calculus days, integral refers to the area under a curve.  If you
+have a function, the integral of that function produces a second
+function which tells you the area under curve of the first function.
+
+<P>
+Fortunately we usually don't have a formula for the first function
+since it changes depending on external conditions (i.e. current
+speed in a car.)  That means we can't integrate this function directly
+and we are spared all the potentially messy calculus.
+
+<P>
+So we use an alternative approach to approximate the error under the
+process value curve.  At each time step we know <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ e_{n}$"></SPAN> which is the
+difference between the process value and the reference point.  If we
+multiply this distance times <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.png"
+ ALT="$ dt$"></SPAN> (the time step) we get an area which
+approximates the error under the curve just for this time step.  If we
+add these areas up over time, we get a very reasonable approximation
+of the area under the curve.
+
+<P>
+Essentially what this does is that the longer time passes with us not
+at our target value, the larger the sum of the (error <SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img11.png"
+ ALT="$ \cdot$"></SPAN> dt)'s becomes
+over time.  If we use this sum to push our output value (i.e. our
+accelerator position) then the longer we don't quite hit our target
+speed, the further the system pushes the accelerator pedal.  Over
+time, the integral component compensates for the error in the
+proportional component and the system stabilizes out at the desired
+speed.
+
+<P>
+
+<H2><A NAME="SECTION00023000000000000000">
+Derivative</A>
+</H2>
+
+<P>
+Hopefully someone else can chip in and add more explanation to this
+section.  But going back again to calculus.  The derivative of a
+function implies the rate of change of the function output.  If you
+know the function, you can take the derivative of that function to
+produce a second function.  For any point in time, the derivative
+function will tell you the rate of change (or slope) of the first
+function.
+
+<P>
+Conceptually, this makes sense in the context of a controller.  How
+quickly we are closing on our target value (i.e. the rate of change
+from each time step to the next) is an important piece of information
+that can help us build a more stable system that more quickly achieves
+the target value.
+
+<P>
+For a car cruise control, we are measuring velocity at each time
+step.  The rate of change of velocity is defined as acceleration (for
+those that remember your physics.)
+
+<P>
+Now don't you wish you took calculus and physics in school?  Or if you
+did take them, don't you wish you had been paying attention?  Me
+too. :-)
+
+<P>
+
+<H2><A NAME="SECTION00024000000000000000">
+Combining P + I + D</A>
+</H2>
+
+<P>
+Here is a key point to understand.  The proportional component is very
+stable.  The Integral and Derivative components are very unstable.
+
+<P>
+If we build a proportional only controller, it will be very stable but
+will stabilize to the wrong value.  (i.e. if we want to go 90km/hr, it
+might stabilize out to 82km/hr.)
+
+<P>
+If we build an integral only controller it will quickly hit the target
+value, but will overshoot, then overcompensate, and will oscillate
+wildly around the target value.  It is very unstable.
+
+<P>
+The trick then is to combine these components together by summing
+them.  The actual output is equal to what the P component says the
+output should be plus what the I component says the output should be
+plus what the D component says the output should be.  You can assign a
+weighting value to each component to increase or decrease it's
+relative power to influence the final output value.
+
+<P>
+<!-- MATH
+ \begin{displaymath}
+u_{n} = K_{P} \cdot uP_{n} + K_{I} \cdot uI_{n} + K_{D} \cdot uD_{n}
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<IMG
+ WIDTH="311" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.png"
+ ALT="$\displaystyle u_{n} = K_{P} \cdot uP_{n} + K_{I} \cdot uI_{n} + K_{D} \cdot uD_{n} $">
+</DIV><P></P>
+
+<P>
+As you can see, the actual math involved in a PID controller (while
+rooted in some deep theory) is actually quite simple to implement.
+The real trick for creating a well behaved PID controller and a well
+behaved autopilot is tuning the relative weights of each of the P, I,
+and D components.
+
+<P>
 
 <DIV CLASS="navigation"><HR>
 <!--Navigation Panel-->
-<A NAME="tex2html39"
+<A NAME="tex2html42"
   HREF="node3.html">
 <IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
-<A NAME="tex2html37"
+<A NAME="tex2html40"
   HREF="XMLAutopilot.html">
 <IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
-<A NAME="tex2html31"
+<A NAME="tex2html34"
   HREF="node1.html">
 <IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
 <BR>
-<B> Next:</B> <A NAME="tex2html40"
-  HREF="node3.html">Proportional</A>
-<B> Up:</B> <A NAME="tex2html38"
+<B> Next:</B> <A NAME="tex2html43"
+  HREF="node3.html">PID Algorithm Implementation</A>
+<B> Up:</B> <A NAME="tex2html41"
   HREF="XMLAutopilot.html">FlightGear Autopilot: Theory, Configuration,</A>
-<B> Previous:</B> <A NAME="tex2html32"
+<B> Previous:</B> <A NAME="tex2html35"
   HREF="node1.html">Introduction</A></DIV>
 <!--End of Navigation Panel-->
 <ADDRESS>
 Curtis L. Olson
-2004-02-01
+2004-02-02
 </ADDRESS>
 </BODY>
 </HTML>

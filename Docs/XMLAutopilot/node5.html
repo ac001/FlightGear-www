@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>Derivative</TITLE>
-<META NAME="description" CONTENT="Derivative">
+<TITLE>Autopilot Tuning</TITLE>
+<META NAME="description" CONTENT="Autopilot Tuning">
 <META NAME="keywords" CONTENT="XMLAutopilot">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -20,68 +20,343 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <LINK REL="next" HREF="node6.html">
 <LINK REL="previous" HREF="node4.html">
-<LINK REL="up" HREF="node2.html">
+<LINK REL="up" HREF="XMLAutopilot.html">
 <LINK REL="next" HREF="node6.html">
 </HEAD>
 
 <BODY >
 
 <DIV CLASS="navigation"><!--Navigation Panel-->
-<A NAME="tex2html73"
+<A NAME="tex2html83"
   HREF="node6.html">
 <IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
-<A NAME="tex2html71"
-  HREF="node2.html">
+<A NAME="tex2html81"
+  HREF="XMLAutopilot.html">
 <IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
-<A NAME="tex2html65"
+<A NAME="tex2html75"
   HREF="node4.html">
 <IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
 <BR>
-<B> Next:</B> <A NAME="tex2html74"
-  HREF="node6.html">Combining P + I</A>
-<B> Up:</B> <A NAME="tex2html72"
-  HREF="node2.html">Control Theory 101</A>
-<B> Previous:</B> <A NAME="tex2html66"
-  HREF="node4.html">Integral</A>
+<B> Next:</B> <A NAME="tex2html84"
+  HREF="node6.html">About this document ...</A>
+<B> Up:</B> <A NAME="tex2html82"
+  HREF="XMLAutopilot.html">FlightGear Autopilot: Theory, Configuration,</A>
+<B> Previous:</B> <A NAME="tex2html76"
+  HREF="node4.html">XML Autopilot Config File</A>
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
 
-<H2><A NAME="SECTION00023000000000000000">
-Derivative</A>
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html85"
+  HREF="node5.html#SECTION00051000000000000000">Trial and Error Tuning</A>
+<LI><A NAME="tex2html86"
+  HREF="node5.html#SECTION00052000000000000000">Ziegler-Nichols Method</A>
+<LI><A NAME="tex2html87"
+  HREF="node5.html#SECTION00053000000000000000">Tweaking Parameters Inside of FlightGear</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION00050000000000000000">
+Autopilot Tuning</A>
+</H1>
+
+<P>
+The first two theory and algorithm sections are there for people who
+want a bit of a deeper understanding of control theory and our
+particular PID implementation.  The xml and tuning sections are for
+people that just want to make the autopilot work.  The good news is
+that you can make workable autopilots without needing to understand
+the theory.
+
+<P>
+I would recommend that aircraft designers start by copying the
+autopilot configuration file from an existing similar aircraft.  In
+many cases you are done.  However, if there is no existing similar
+aircraft, or something doesn't work stably for you, you will most
+likely need to tune your autopilot modules.
+
+<P>
+
+<H2><A NAME="SECTION00051000000000000000">
+Trial and Error Tuning</A>
 </H2>
 
 <P>
-Hopefully someone else can chip in and add more explanation to this
-section.  But going back again to calculus.  The derivative of a
-function implies the rate of change of the function output.  If you
-know the function, you can take the derivative of that function to
-produce a second function.  For any point in time, the derivative
-function will tell you the rate of change (or slope) of the first
-function.
+The most basic method of tuning is the trial and error method. This
+method involves adjusting the proportional gain, the integral time and
+the derivative time until the performance is satisfactory. The three
+settings are often adjusted separately in order to see the effects of
+the different settings. This process can be time consuming.
 
 <P>
-Conceptually, this makes sense in the context of a controller.  How
-quickly we are closing on our target value (i.e. the rate of change
-from each time step to the next) is an important piece of information
-that can help us build a more stable system that more quickly achieves
-the target value.
+It can be difficult to get started using the trial end error
+method. What kind of gains and times should one start out with? A
+typical approach for tuning a PID controller can be summarized as
+follows:
 
 <P>
-For a car cruise control, we are measuring velocity at each time
-step.  The rate of change of velocity is defined as acceleration (for
-those that remember your physics.)
+
+<OL>
+<LI>Eliminate integral and derivative action by setting the
+  derivative time, <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.png"
+ ALT="$ T_{d}$"></SPAN>, to its minimum value (zero) and the
+  integral time, <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.png"
+ ALT="$ T_{i}$"></SPAN> to its maximum value.
 
 <P>
-Now don't you wish you took calculus and physics in school?  Or if you
-did take them, don't you wish you had been paying attention?  Me
-too. :-)
+</LI>
+<LI>Set the proportional gain, <SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$ K_{P}$"></SPAN> to a low value
+  (0.5) and enable the controller.
 
 <P>
-<BR><HR>
+</LI>
+<LI>Increase the proportional gain by small increments until
+  continuous cycling occurs after a small set-point or load
+  change. The term "continuous cycling" refers to a sustained
+  oscillation with constant amplitude.  At first it might be useful to
+  increment <SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$ K_{P}$"></SPAN> by an order of magnitude (i.e. multiply or divide
+  by 10) just to get yourself in the right ball park.  Then you might
+  consider doubling or dividing by two to get closer.
+
+<P>
+</LI>
+<LI>Reduce the gain by a factor of two.
+
+<P>
+</LI>
+<LI>Decrease the integral time until continuous cycling occurs
+  again. Set integral time, <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.png"
+ ALT="$ T_{i}$"></SPAN> to three times this value.  Note
+  that because of the way the formulas are constructed, a smaller
+  integral time means a larger integral component.
+
+<P>
+</LI>
+<LI>Increase derivative time, <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.png"
+ ALT="$ T_{d}$"></SPAN> until continuous cycling
+  occurs. Set derivative time to one-third of this value.  Note that
+  because of the way the formulas are constructed, a larger derivative
+  time means a larger derivative component (which is opposite from the
+  effect of changing <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.png"
+ ALT="$ T_{i}$"></SPAN>.
+</LI>
+</OL>
+
+<P>
+The proportional gain that results in continuous cycling in Step 3 is
+called the ultimate gain. In performing the experimental test to find
+the ultimate gain, it is important that the output does not
+saturate. If saturation occurs it is possible to get continuous
+cycling even though the gain is higher than the ultimate gain. This
+would then result in a too high gain in Step 4.
+
+<P>
+Disadvantages of the trial and error method include:
+
+<P>
+
+<UL>
+<LI>It is quite time consuming if a large number of trials are
+  required in order to find the ultimate gain and the integral and
+  derivative times that result in continuous cycling.
+
+<P>
+</LI>
+<LI>The method is not applicable to processes that are open-loop
+  unstable because such processes are typically unstable at both high
+  and low gain values and are stable for intermediate gain values.
+
+<P>
+</LI>
+<LI>Some simple processes do not have an ultimate gain.
+</LI>
+</UL>
+
+<P>
+
+<H2><A NAME="SECTION00052000000000000000">
+Ziegler-Nichols Method</A>
+</H2>
+
+<P>
+The Ziegler-Nichols methods of controller tuning are the "closed loop"
+and the "open loop" method. The closed loop method is quite similar to
+the trial and error method:
+
+<P>
+Steps 1-3 are the same as in the trial and error method.
+
+<P>
+Step 4. Take note of the ultimate gain <SPAN CLASS="MATH"><IMG
+ WIDTH="40" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img34.png"
+ ALT="$ K_{Pu}$"></SPAN>, and the ultimate
+period <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img35.png"
+ ALT="$ T_{u}$"></SPAN>. The ultimate period is the period of the oscillations.
+
+<P>
+Step 5. Calculate controller settings according to this table:
+
+<P>
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="LEFT">Controller</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$ K_{P}$"></SPAN></TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.png"
+ ALT="$ T_{i}$"></SPAN></TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.png"
+ ALT="$ T_{d}$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="LEFT">P</TD>
+<TD ALIGN="LEFT"><!-- MATH
+ $0.5 \cdot K_{Pu}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="77" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img36.png"
+ ALT="$ 0.5 \cdot K_{Pu}$"></SPAN></TD>
+<TD ALIGN="LEFT">inf.</TD>
+<TD ALIGN="LEFT">0</TD>
+</TR>
+<TR><TD ALIGN="LEFT">PI</TD>
+<TD ALIGN="LEFT"><!-- MATH
+ $0.45 \cdot K_{Pu}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="87" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img37.png"
+ ALT="$ 0.45 \cdot K_{Pu}$"></SPAN></TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="57" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img38.png"
+ ALT="$ T_{u}/1.2$"></SPAN></TD>
+<TD ALIGN="LEFT">0</TD>
+</TR>
+<TR><TD ALIGN="LEFT">PID</TD>
+<TD ALIGN="LEFT"><!-- MATH
+ $0.6 \cdot K_{Pu}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="77" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img39.png"
+ ALT="$ 0.6 \cdot K_{Pu}$"></SPAN></TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="43" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.png"
+ ALT="$ T_{u}/2$"></SPAN></TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="43" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img41.png"
+ ALT="$ T_{u}/8$"></SPAN></TD>
+</TR>
+</TABLE>
+
+<BR>
+<P>
+For more info on tuning and PID control systems follow this link:
+<BR><TT><A NAME="tex2html1"
+  HREF="http://www.jashaw.com/pid">http://www.jashaw.com/pid</A></TT>
+<P>
+
+<H2><A NAME="SECTION00053000000000000000">
+Tweaking Parameters Inside of FlightGear</A>
+</H2>
+
+<P>
+There is a slightly roundabout method for tweaking these parameters
+inside of FlightGear without needed to quit and restart.
+
+<P>
+
+<UL>
+<LI>Open the property browser and go to
+  <code>/autopilot/new-config/</code>.  There you will find an entry for
+  each PID controller.  They are numbered starting with zero and
+  correspond to the order specified in your <code>autopilot.xml</code>
+  config file.
+
+<P>
+</LI>
+<LI>Select the pid-controller that you would like to tweak.  The
+  entire set of parameters is available to be changed.  The structure
+  in the property browser exactly matches the structure in the config
+  file.
+
+<P>
+</LI>
+<LI>Make any needed tweak.  It's probably a good idea to only
+  change one parameter at a time.
+
+<P>
+</LI>
+<LI>Close the property browser and select
+  <code>Reconfig Autopilot</code> from the <code>Autopilot</code> menu.
+
+<P>
+</LI>
+<LI>Any parameter changes will take effect as soon as you select
+  <code>Reconfig Autopilot</code>.
+
+<P>
+</LI>
+<LI>Changing the property tree does nothing to your autopilot.xml
+  file so it's important to remember to edit your final tweaks into
+  the config file before you exit FlightGear and forget what they are.
+</LI>
+</UL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html83"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html81"
+  HREF="XMLAutopilot.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html75"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html84"
+  HREF="node6.html">About this document ...</A>
+<B> Up:</B> <A NAME="tex2html82"
+  HREF="XMLAutopilot.html">FlightGear Autopilot: Theory, Configuration,</A>
+<B> Previous:</B> <A NAME="tex2html76"
+  HREF="node4.html">XML Autopilot Config File</A></DIV>
+<!--End of Navigation Panel-->
 <ADDRESS>
 Curtis L. Olson
-2004-02-01
+2004-02-02
 </ADDRESS>
 </BODY>
 </HTML>

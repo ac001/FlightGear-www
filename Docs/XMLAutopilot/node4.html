@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>Integral</TITLE>
-<META NAME="description" CONTENT="Integral">
+<TITLE>XML Autopilot Config File</TITLE>
+<META NAME="description" CONTENT="XML Autopilot Config File">
 <META NAME="keywords" CONTENT="XMLAutopilot">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -20,111 +20,273 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <LINK REL="next" HREF="node5.html">
 <LINK REL="previous" HREF="node3.html">
-<LINK REL="up" HREF="node2.html">
+<LINK REL="up" HREF="XMLAutopilot.html">
 <LINK REL="next" HREF="node5.html">
 </HEAD>
 
 <BODY >
 
 <DIV CLASS="navigation"><!--Navigation Panel-->
-<A NAME="tex2html63"
+<A NAME="tex2html69"
   HREF="node5.html">
 <IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
-<A NAME="tex2html61"
-  HREF="node2.html">
+<A NAME="tex2html67"
+  HREF="XMLAutopilot.html">
 <IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
-<A NAME="tex2html55"
+<A NAME="tex2html61"
   HREF="node3.html">
 <IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
 <BR>
-<B> Next:</B> <A NAME="tex2html64"
-  HREF="node5.html">Derivative</A>
-<B> Up:</B> <A NAME="tex2html62"
-  HREF="node2.html">Control Theory 101</A>
-<B> Previous:</B> <A NAME="tex2html56"
-  HREF="node3.html">Proportional</A>
+<B> Next:</B> <A NAME="tex2html70"
+  HREF="node5.html">Autopilot Tuning</A>
+<B> Up:</B> <A NAME="tex2html68"
+  HREF="XMLAutopilot.html">FlightGear Autopilot: Theory, Configuration,</A>
+<B> Previous:</B> <A NAME="tex2html62"
+  HREF="node3.html">PID Algorithm Implementation</A>
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
 
-<H2><A NAME="SECTION00022000000000000000">
-Integral</A>
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html71"
+  HREF="node4.html#SECTION00041000000000000000">Specifying the Autopilot Configuration</A>
+<LI><A NAME="tex2html72"
+  HREF="node4.html#SECTION00042000000000000000">Configuration file overview</A>
+<LI><A NAME="tex2html73"
+  HREF="node4.html#SECTION00043000000000000000">PID Controller Specification</A>
+<LI><A NAME="tex2html74"
+  HREF="node4.html#SECTION00044000000000000000">Cascading Controllers</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION00040000000000000000">
+XML Autopilot Config File</A>
+</H1>
+
+<P>
+FlightGear implements this PID algorithm in a flexible and reusable
+way.  It reads an autopilot config file that can define any number of
+PID controllers.  Each controller can specify it's own process value,
+it's own reference point, any number of output values, as well as
+values for all the other tuning constants.
+
+<P>
+You can create cascading controllers by specify multiple PID
+controllers (all with the same enabling condition) where the output of
+the first stage is used as the input to the second, and the output of
+the second is used as the input to the third, etc.
+
+<P>
+
+<H2><A NAME="SECTION00041000000000000000">
+Specifying the Autopilot Configuration</A>
 </H2>
 
 <P>
-Unfortunately life is often more complicated than we'd like, and even
-in the case of a simple wing leveler, you encounter situations where
-the aircraft isn't perfectly trim and zero aileron deflection does not
-always equal zero roll motion.  In an aircraft such as a Cessna 172,
-the amount of aileron deflection needed to keep the wing level can
-vary with speed.  In these cases, a proportional only controller will
-stabilize out quickly, but will stabilize to the wrong value.  We need
-a way to drive the error in the proportional only controller to zero.
+The FlightGear
+<code>.../data/preferences.xml</code>
+file contains a reference to the default autopilot file:
 
 <P>
-Enter the Integral component of the PID algorithm.  Remember back to
-your calculus days, integral refers to the area under a curve.  If you
-have a function, the integral of that function produces a second
-function which tells you the area under curve of the first function.
+<PRE>
+ &lt;sim&gt;
+  &lt;systems&gt;
+   &lt;autopilot&gt;
+    &lt;path&gt;Aircraft/Generic/generic-autopilot.xml&lt;/path&gt;
+   &lt;/autopilot&gt;
+  &lt;/systems&gt;
+ &lt;/sim&gt;
+</PRE>
 
 <P>
-Fortunately we usually don't have a formula for the first function
-since it changes depending on external conditions (i.e. current
-speed in a car.)  That means we can't integrate this function directly
-and we are spared all the potentially messy calculus.
+If you would like to specify a different autopilot configuration file
+for a particular aircraft, you can override this definition in the
+aircraft's <code>&lt;aircraft&gt;-set.xml</code> file.
 
 <P>
-So we use an alternative approach to approximate the error under the
-process value curve.  At each time step we know <SPAN CLASS="MATH"><IMG
- WIDTH="22" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img1.png"
- ALT="$ e_{n}$"></SPAN> which is the
-difference between the process value and the reference point.  If we
-multiply this distance times <SPAN CLASS="MATH"><IMG
- WIDTH="21" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
- SRC="img10.png"
- ALT="$ dt$"></SPAN> (the time step) we get an area which
-approximates the error under the curve just for this time step.  If we
-add these areas up over time, we get a very reasonable approximation
-of the area under the curve.
+
+<H2><A NAME="SECTION00042000000000000000">
+Configuration file overview</A>
+</H2>
 
 <P>
-Essentially what this does is that the longer time passes with us not
-at our target value, the larger the sum of the (error <SPAN CLASS="MATH"><IMG
- WIDTH="10" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
- SRC="img11.png"
- ALT="$ \cdot$"></SPAN> dt)'s becomes
-over time.  If we use this sum to push our output value (i.e. our
-accelerator position) then the longer we don't quite hit our target
-speed, the further the system pushes the accelerator pedal.  Over
-time, the integral component compensates for the error in the
-proportional component and the system stabilizes out at the desired
-speed.
+The autopilot configuration file is a standard FlightGear <code>.xml</code>
+file.  It's basic structure is as follows:
+
+<P>
+<PRE>
+&lt;?xml version="1.0"?&gt;
+&lt;PropertyList&gt;
+  &lt;pid-controller&gt;
+    &lt;!-- First PID controller params --&gt;
+  &lt;/pid-controller&gt;
+  &lt;pid-controller&gt;
+    &lt;!-- Second PID controller params --&gt;
+  &lt;/pid-controller&gt;
+  &lt;pid-controller&gt;
+    &lt;!-- Third PID controller params --&gt;
+  &lt;/pid-controller&gt;
+  .
+  .
+  .
+&lt;/PropertyList&gt;
+</PRE>
+
+<P>
+
+<H2><A NAME="SECTION00043000000000000000">
+PID Controller Specification</A>
+</H2>
+
+<P>
+Each PID controller section can list a name, the input (or process)
+property, the target (or reference) property, and any number of output
+properties.  Here ``property'' means the name of an internal
+FlightGear property from the FG property system.  You also specify a
+property name and value that is check to see if the controller is
+activated or not, and you can turn debugging output on or off for this
+controller.  Finally there is a <code>&lt;config&gt;</code> section listing all
+the parameters you can tune.  Here is an example of a simple PID
+controller which holds a fixed pitch.
+
+<P>
+<PRE>
+ &lt;!-- Simple pitch hold --&gt; 
+ &lt;pid-controller&gt;
+    &lt;name&gt;Pitch hold&lt;/name&gt;
+    &lt;debug&gt;false&lt;/debug&gt;
+    &lt;enable&gt;
+      &lt;prop&gt;/autopilot/locks/altitude&lt;/prop&gt;
+      &lt;value&gt;pitch-hold&lt;/value&gt;
+    &lt;/enable&gt;
+    &lt;input&gt;
+      &lt;prop&gt;/orientation/pitch-deg&lt;/prop&gt;
+    &lt;/input&gt;
+    &lt;reference&gt;
+      &lt;prop&gt;/autopilot/settings/target-pitch-deg&lt;/prop&gt;
+    &lt;/reference&gt;
+    &lt;output&gt;
+      &lt;prop&gt;/controls/flight/elevator-trim&lt;/prop&gt;
+    &lt;/output&gt;
+    &lt;config&gt;
+      &lt;Kp&gt;-0.05&lt;/Kp&gt;      &lt;!-- proportional gain --&gt;
+      &lt;beta&gt;1.0&lt;/beta&gt;    &lt;!-- input value weighing factor --&gt;
+      &lt;alpha&gt;0.1&lt;/alpha&gt;  &lt;!-- low pass filter weighing factor --&gt;
+      &lt;gamma&gt;0.0&lt;/gamma&gt;  &lt;!-- input value weighing factor for --&gt;
+                          &lt;!-- unfiltered derivative error --&gt;
+      &lt;Ti&gt;1.0&lt;/Ti&gt;        &lt;!-- integrator time --&gt;
+      &lt;Td&gt;0.00001&lt;/Td&gt;    &lt;!-- derivator time --&gt;
+      &lt;u_min&gt;-1.0&lt;/u_min&gt; &lt;!-- minimum output clamp --&gt;
+      &lt;u_max&gt;1.0&lt;/u_max&gt;  &lt;!-- maximum output clamp --&gt;
+    &lt;/config&gt;
+   &lt;/pid-controller&gt;
+</PRE>
+
+<P>
+In this example we give the <code>&lt;pid-controller&gt;</code> a <code>&lt;name&gt;</code> of
+``Pitch Hold''.  This name is only used when outputting debug
+information.
+
+<P>
+You can set <code>&lt;debug&gt;</code> to be <code>true</code> or <code>false</code>.
+
+<P>
+The controller will be activated when ever
+<code>/autopilot/locks/altitude</code> has a value of <code>pitch-hold</code>.
+
+<P>
+The <code>&lt;input&gt;</code> (or process) value is
+<code>/orientation/pitch-deg</code>.  This is the value that we are trying
+to control indirectly via this PID controller.
+
+<P>
+The <code>&lt;reference&gt;</code> (or target) value is
+<code>/autopilot/settings/target-pitch-deg</code>.  The PID controller is
+trying to make the input value equal the reference value.  (In other
+words it is trying to make the error or difference between the two be
+as close to zero as possible.)
+
+<P>
+The <code>&lt;output&gt;</code> tag list the property where the output of the PID
+algorithm will be written.  This is typically something in the
+<code>/controls/</code> section of the property tree.  In this example, we
+know that adjusting elevator trim will affect the aircraft's pitch.
+We hope that the PID magic will figure out what trim setting will
+produce our target pitch.
+
+<P>
+Finally we have the <code>&lt;config&gt;</code> section.  Please see the xml comments
+in this example as well as the previous section for a more complete
+explanation of what they are and how they plug into and affect the PID
+algorithm.
+
+<P>
+
+<H2><A NAME="SECTION00044000000000000000">
+Cascading Controllers</A>
+</H2>
+
+<P>
+Cascading controllers are useful for more complex situations.
+Cascading controllers link the output from one PID unit as the input
+to another PID unit.
+
+<P>
+For example, a heading hold autopilot could be constructed with two
+PID units.  The first unit would have the current heading as the
+``process value'' and the target heading as the ``reference value''.
+It would output a ``target roll'' proportional to the heading error.
+The second unit would have the current roll angle as it's process
+value and the target roll as it's reference value.  Notice that in
+this case, the reference value can be a moving target.  The second PID
+controller would then output an aileron deflection to achieve the
+desired roll angle.
+
+<P>
+The autopilot system evaluates each PID controller in the order they
+are specified.  You are allowed to use (or make up) any property name
+for the <code>&lt;input&gt;</code>, <code>&lt;output&gt;</code>, and <code>&lt;reference&gt;</code>
+sections.
+
+<P>
+This allows you to easily build cascading controllers.  The
+generic-autopilot.xml file has several examples of these.  I usually
+choose a property name called <code>/autopilot/internal/abcdefg</code> as
+the intermediate value which is output from the first stage as input
+to the second stage.
+
+<P>
+It is important to think through your design very carefully so you can
+get the proper process value, reference value, and output value for
+each stage.
 
 <P>
 
 <DIV CLASS="navigation"><HR>
 <!--Navigation Panel-->
-<A NAME="tex2html63"
+<A NAME="tex2html69"
   HREF="node5.html">
 <IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
-<A NAME="tex2html61"
-  HREF="node2.html">
+<A NAME="tex2html67"
+  HREF="XMLAutopilot.html">
 <IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
-<A NAME="tex2html55"
+<A NAME="tex2html61"
   HREF="node3.html">
 <IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A>   
 <BR>
-<B> Next:</B> <A NAME="tex2html64"
-  HREF="node5.html">Derivative</A>
-<B> Up:</B> <A NAME="tex2html62"
-  HREF="node2.html">Control Theory 101</A>
-<B> Previous:</B> <A NAME="tex2html56"
-  HREF="node3.html">Proportional</A></DIV>
+<B> Next:</B> <A NAME="tex2html70"
+  HREF="node5.html">Autopilot Tuning</A>
+<B> Up:</B> <A NAME="tex2html68"
+  HREF="XMLAutopilot.html">FlightGear Autopilot: Theory, Configuration,</A>
+<B> Previous:</B> <A NAME="tex2html62"
+  HREF="node3.html">PID Algorithm Implementation</A></DIV>
 <!--End of Navigation Panel-->
 <ADDRESS>
 Curtis L. Olson
-2004-02-01
+2004-02-02
 </ADDRESS>
 </BODY>
 </HTML>
