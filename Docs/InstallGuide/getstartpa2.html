@@ -1,105 +1,59 @@
-
-<!-- Standard Header Begin -->
-<html>
-
-<head>
-  <title>FlightGear Flight Simulator</title>
-  <link rel="stylesheet" type="text/css" href="http://www.flightgear.org/default.css"> 
-</head>
-
-<body>
-  <div id="top">
-    <a href="http://www.flightgear.org/"><img id="titlebar" src="http://www.flightgear.org/images/fglogosm.jpg" alt=""></a>
-  </div>
-
-  <table id="global">
-    <tbody><tr>
-      <td id="menu">
-	<!-- Use a replacescript to update the menu -->
-	<h3>About</h3>
-	<a href="/index.html">Home</a><br>
-	<a href="/introduction.html">Introduction</a><br>
-	<a href="/overview.html">Overview</a><br>
-	<a href="/features.html">Features</a><br>
-	<!-- about.hook.1-->
-        <a href="/Gallery/index.shtml">Screenshots</a><br>
-	<!-- about.hook.2-->
-	<h3>Downloads</h3>
-	<a href="/Downloads/source.html">Source Code</a><br>
-	<a href="/Downloads/binary.html">Executables</a><br>
-	<a href="/Downloads/scenery.html">Worldwide Scenery</a><br>
-	<!-- downloads.hook.1-->
-	<!-- downloads.hook.2-->
-	<h3>Support</h3>
-	<a href="/version.html">Version Summary</a><br>
-	<a href="/hardwarereq.html">Hardware Requirements</a><br>
-	<a href="/docs.html">Documentation</a><br>
-	<a href="/places.html">Places to Fly</a><br>
-	<a href="/mail.html">Mailing Lists</a><br>
-	<a href="/Docs/FAQ.shtml">FAQ</a><br>
-	<!-- support.hook.1-->
-	<!-- support.hook.2-->
-	<h3>Links</h3>
-	<a href="/links.html">Related Websites</a><br>
-	<a href="/projects.html">Related Projects</a><br>
-	<!-- support.hook.1-->
-	<!-- support.hook.2-->
-	<h3>Contribute</h3>
-	<a href="/contributing.html">Contributing</a><br>
-	<a href="/cvs.html">CVS Resources</a><br>
-	<a href="/goals.html">Goals</a><br>
-	<a href="/thanks.html">Contributors</a><br>
-	<a href="/design.html">Design Proposals</a><br>
-	<a href="/events.html">Events</a><br>
-	<!-- support.hook.1-->
-	<!-- support.hook.2-->
-      </td>
-      <td id="page">
-<!-- Standard Header End -->
-   <DIV CLASS="crosslinks"><P CLASS="noindent"><H3><A 
-HREF="getstartch4.html" >[next]</A> <A 
-HREF="getstartch3.html" >[prev]</A> <A 
-HREF="getstartch3.htm#tailgetstartch3.html" >[prev-tail]</A> <A 
-HREF="getstartpa2.htm#tailgetstartpa2.html">[end]</A> <A 
-HREF="getstart.htm#getstartpa2.html" >[up]</A></H3> </P></DIV>
-   <H1 CLASS="partHead"><SPAN CLASS="titlemark">Part&nbsp;II<BR></SPAN><A 
-HREF="getstart.htm#QQ2-8-28" NAME="x8-28000II">Flying with <SPAN 
-CLASS="ptmbi7t---109">FlightGear</SPAN></A></H1>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>II Flying with FlightGear</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cis.ohio-state.edu/~gurari/TeX4ht/mn.html)"> 
+<!-- html,2,info,next,sections+ --> 
+<meta name="src" content="getstart.tex"> 
+<meta name="date" content="2002-12-15 21:48:00"> 
+<link rel="stylesheet" type="text/css" href="getstart.css"> 
+</head><body 
+>
+   <div class="crosslinks"><p class="noindent">[<a 
+href="getstartch4.html" >next</a>] [<a 
+href="getstartch3.html" >prev</a>] [<a 
+href="getstartch3.html#tailgetstartch3.html" >prev-tail</a>] [<a 
+href="#tailgetstartpa2.html">tail</a>] [<a 
+href="getstart.html#getstartpa2.html" >up</a>] </p></div>
+   <h1 class="partHead"><span class="titlemark">Part&nbsp;II<br></span><a 
+href="getstart.html#QQ2-8-28" name="x8-28000II">Flying with <span 
+class="ptmbi7t---109">FlightGear</span></a></h1>
                                                                      
 
                                                                      
-   <DIV CLASS="chapterTOCS">
-<BR>   <SPAN CLASS="chapterToc">4 <A 
-HREF="getstartch4.htm#x9-290004" NAME="QQ2-9-29">Takeoff: How to start the program</A></SPAN>
-<BR>   &nbsp;<SPAN CLASS="sectionToc">4.1 <A 
-HREF="getstartch4.htm#x9-300004.1" NAME="QQ2-9-30">Launching the simulator under Unix/Linux</A></SPAN>
-<BR>   &nbsp;<SPAN CLASS="sectionToc">4.2 <A 
-HREF="getstartch4.htm#x9-310004.2" NAME="QQ2-9-31">Launching the simulator under Windows</A></SPAN>
-<BR>   &nbsp;<SPAN CLASS="sectionToc">4.3 <A 
-HREF="getstartch4.htm#x9-320004.3" NAME="QQ2-9-32">Launching the simulator under Mac OS X</A></SPAN>
-<BR>   &nbsp;<SPAN CLASS="sectionToc">4.4 <A 
-HREF="getstartch4.htm#x9-330004.4" NAME="QQ2-9-33">Command line parameters</A></SPAN>
-<BR>   &nbsp;<SPAN CLASS="sectionToc">4.5 <A 
-HREF="getstartch4.htm#x9-460004.5" NAME="QQ2-9-46">Joystick support</A></SPAN>
-<BR>   &nbsp;<SPAN CLASS="sectionToc">4.6 <A 
-HREF="getstartch4.htm#x9-560004.6" NAME="QQ2-9-56">A glance over our hangar</A></SPAN>
-<BR>   <SPAN CLASS="chapterToc">5 <A 
-HREF="getstartch5.htm#x10-570005" NAME="QQ2-10-57">In-flight: All about instruments, keystrokes and menus</A></SPAN>
-<BR>   &nbsp;<SPAN CLASS="sectionToc">5.1 <A 
-HREF="getstartch5.htm#x10-580005.1" NAME="QQ2-10-58">Starting the engine</A></SPAN>
-<BR>   &nbsp;<SPAN CLASS="sectionToc">5.2 <A 
-HREF="getstartch5.htm#x10-590005.2" NAME="QQ2-10-59">Keyboard controls</A></SPAN>
-<BR>   &nbsp;<SPAN CLASS="sectionToc">5.3 <A 
-HREF="getstartch5.htm#x10-600005.3" NAME="QQ2-10-60">Menu entries</A></SPAN>
-<BR>   &nbsp;<SPAN CLASS="sectionToc">5.4 <A 
-HREF="getstartch5.htm#x10-610005.4" NAME="QQ2-10-61">The Instrument Panel</A></SPAN>
-<BR>   &nbsp;<SPAN CLASS="sectionToc">5.5 <A 
-HREF="getstartch5.htm#x10-620005.5" NAME="QQ2-10-62">The Head Up Display</A></SPAN>
-<BR>   &nbsp;<SPAN CLASS="sectionToc">5.6 <A 
-HREF="getstartch5.htm#x10-630005.6" NAME="QQ2-10-63">Mouse controlled actions</A></SPAN>
-<BR>   &nbsp;<SPAN CLASS="sectionToc">5.7 <A 
-HREF="getstartch5.htm#x10-640005.7" NAME="QQ2-10-64">Some further reading for student pilots</A></SPAN>
-   </DIV>
+   <div class="chapterTOCS">
+<br>   <span class="chapterToc">4 <a 
+href="getstartch4.html#x9-290004" name="QQ2-9-29">Takeoff: How to start the program</a></span>
+<br>   &nbsp;<span class="sectionToc">4.1 <a 
+href="getstartch4.html#x9-300004.1" name="QQ2-9-30">Launching the simulator under Unix/Linux</a></span>
+<br>   &nbsp;<span class="sectionToc">4.2 <a 
+href="getstartch4.html#x9-310004.2" name="QQ2-9-31">Launching the simulator under Windows</a></span>
+<br>   &nbsp;<span class="sectionToc">4.3 <a 
+href="getstartch4.html#x9-320004.3" name="QQ2-9-32">Launching the simulator under Mac OS X</a></span>
+<br>   &nbsp;<span class="sectionToc">4.4 <a 
+href="getstartch4.html#x9-330004.4" name="QQ2-9-33">Command line parameters</a></span>
+<br>   &nbsp;<span class="sectionToc">4.5 <a 
+href="getstartch4.html#x9-460004.5" name="QQ2-9-46">Joystick support</a></span>
+<br>   &nbsp;<span class="sectionToc">4.6 <a 
+href="getstartch4.html#x9-560004.6" name="QQ2-9-56">A glance over our hangar</a></span>
+<br>   <span class="chapterToc">5 <a 
+href="getstartch5.html#x10-570005" name="QQ2-10-57">In-flight: All about instruments, keystrokes and menus</a></span>
+<br>   &nbsp;<span class="sectionToc">5.1 <a 
+href="getstartch5.html#x10-580005.1" name="QQ2-10-58">Starting the engine</a></span>
+<br>   &nbsp;<span class="sectionToc">5.2 <a 
+href="getstartch5.html#x10-590005.2" name="QQ2-10-59">Keyboard controls</a></span>
+<br>   &nbsp;<span class="sectionToc">5.3 <a 
+href="getstartch5.html#x10-600005.3" name="QQ2-10-60">Menu entries</a></span>
+<br>   &nbsp;<span class="sectionToc">5.4 <a 
+href="getstartch5.html#x10-610005.4" name="QQ2-10-61">The Instrument Panel</a></span>
+<br>   &nbsp;<span class="sectionToc">5.5 <a 
+href="getstartch5.html#x10-620005.5" name="QQ2-10-62">The Head Up Display</a></span>
+<br>   &nbsp;<span class="sectionToc">5.6 <a 
+href="getstartch5.html#x10-630005.6" name="QQ2-10-63">Mouse controlled actions</a></span>
+<br>   &nbsp;<span class="sectionToc">5.7 <a 
+href="getstartch5.html#x10-640005.7" name="QQ2-10-64">Some further reading for student pilots</a></span>
+   </div>
                                                                      
 
                                                                      
@@ -107,33 +61,11 @@ HREF="getstartch5.htm#x10-640005.7" NAME="QQ2-10-64">Some further reading for st
                                                                      
 
                                                                      
-   <DIV CLASS="crosslinks"><P CLASS="noindent"><H3><A 
-HREF="getstartch4.html" >[next]</A> <A 
-HREF="getstartch3.html" >[prev]</A> <A 
-HREF="getstartch3.htm#tailgetstartch3.html" >[prev-tail]</A> <A 
-HREF="getstartpa2.html" >[front]</A> <A 
-HREF="getstart.htm#getstartpa2.html" >[up]</A></H3> </P></DIV><A 
-  NAME="tailgetstartpa2.html"></A>  
-<!-- Standard Footer Begin -->
-      </td></tr>
-    </tbody>
-  </table>
-  <br>
-  <div id="bottom">
-    <a href="/">Home</a> | 
-    Download:
-      <a href="/Downloads/binary.html">FGFS</a> -
-      <a href="/Downloads/source.html">Source</a> -
-      <a href="/Downloads/scenery.html">Scenery</a> |
-    <a href="/Gallery/index.shtml">Screenshots</a> |
-    <a href="/docs.html">Documentation</a>
-    <br>
-    <br>
-    Last modified:  8/12/2003 <BR>
-    <A HREF="http://www.menet.umn.edu/~curt/">Curtis L. Olson</A>
-    <IMG ALIGN="MIDDLE" SRC="/email-fg.png">
-  </div>
-</body>
-
-</html>
-<!-- Standard Footer End -->
+   <div class="crosslinks"><p class="noindent">[<a 
+href="getstartch4.html" >next</a>] [<a 
+href="getstartch3.html" >prev</a>] [<a 
+href="getstartch3.html#tailgetstartch3.html" >prev-tail</a>] [<a 
+href="getstartpa2.html" >front</a>] [<a 
+href="getstart.html#getstartpa2.html" >up</a>] </p></div><a 
+  name="tailgetstartpa2.html"></a>  
+</body></html> 
