@@ -1,0 +1,876 @@
+From owner-flight-gear  Wed Jun 12 09:17:33 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id JAA28879; Wed, 12 Jun 1996 09:15:52 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from meserv.me.umn.edu (meserv.me.umn.edu [134.84.196.1]) by calvin.infoplane.com (8.7.1/8.7.1) with SMTP id JAA28875 for <flight-gear@infoplane.com>; Wed, 12 Jun 1996 09:15:46 -0500
+Received: from kenai.me.umn.edu (kenai.me.umn.edu [134.84.197.42]) by meserv.me.umn.edu (8.6.11/8.6.11) with ESMTP id JAA09950 for <flight-gear@infoplane.com>; Wed, 12 Jun 1996 09:22:43 -0500
+Received: (clolson@localhost) by kenai.me.umn.edu (8.7.5/8.6.5) id JAA00484; Wed, 12 Jun 1996 09:22:40 -0500
+Date: Wed, 12 Jun 1996 09:22:40 -0500
+Message-Id: <199606121422.JAA00484@kenai.me.umn.edu>
+From: "Curtis L. Olson" <clolson@me.umn.edu>
+To: flight-gear@infoplane.com
+Subject: [comp.os.linux.announce] JLib 1.5 - Portable Graphics/Gaming Library
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Hey guys,
+
+Things have been kinda quite on this list lately.  Work + Life has
+been sucking up most of my time.  I saw the following announcement on
+comp.os.linux.announce.  I haven't yet had a chance to check this
+thing out, but maybe it might be useful for our project?
+
+later,
+
+Curt.
+-- 
+Curtis Olson   E-mail: clolson@me.umn.edu
+Try Linux!     WWW:    http://www.me.umn.edu/home/clolson/index.html
+
+
+------- Start of forwarded message -------
+From: Jon <jon@ams.co.nz>
+Subject: JLib 1.5 - Portable Graphics/Gaming Library
+Newsgroups: comp.os.linux.announce
+Date: Sat, 09 Jun 1996 21:28:39 GMT
+
+
+-----BEGIN PGP SIGNED MESSAGE-----
+
+Announcing the release of JLib version 1.5
+==========================================
+  I have uploaded to x2ftp.oulu.fi the file jlib_1-5.zip,  which is  
+version 1.5 of the JLib library.  I expect it to be moved to the
+pub/msdos/programming/djgpp2 directory,  where it will replace jlib_1-3.zip,
+which was an earlier version.
+
+What is JLib?
+=============
+
+One Line Description:
+  Portable Graphics/Gaming Library - DOS/Linux/X Windows/WATCOM.
+
+Many Line Description:
+  JLib is a gaming/graphics library for DOS (WATCOM or djgpp),Linux and
+X windows.  It provides simple graphics primitives,  offscreen buffers and
+sprite functions,  and includes documentation,  demos and miscellanious stuff.
+Currently 320x200,640x480 and 800x600 256 color targets are provided for
+dos,  linux,  X  and Watcom. X support is in development and currently lacks
+input handling facilities. Other targets are being added.
+
+  JLib comes as full C source code in a ready to build fashion (with 
+makefiles) to keep the archive size small.  Installation instructions are 
+included for all users.  It compiles under the latest V2 version of djgpp
+and should work fine with C++,  Windows, OS/2 etc.
+
+  JLib is 100% free,  therefore it comes with absolutely no warantee.  You 
+are free to use JLib code in any product subject to the terms described  
+in the included file "jlib.doc" (!=GPL).  JLib is copyright(c) 1995,1996 
+Jonathan Griffiths.
+
+Several features have been added from the previous release.
+Highlights include:
+
+ *  The first WATCOM targets,  welcome WATCOM users!
+ *  Brand new multi svgalib target for linux.
+ *  70 page word processed documentation.
+ *  Bug fixes and support for generic targets.
+ *  Some new primitives and palette operations.
+ *  Simplification of installation and building the library.
+
+Uploaded by the author,
+       Jon Griffiths.  jon@ams.co.nz 
+
+-----BEGIN PGP SIGNATURE-----
+Version: 2.6.2i
+
+iQCVAwUBMbtB4oQRll5MupLRAQFznAQAyn3tz/kj1Hl9IRqnjGczzVIgs/+Iej38
+FbgjUETF0fzvPrpBy4qiobS//0xblsUK7c/IJkxjhhn6dm8doMcz+Bdpya1jjOAt
+V8Z1dfec1vTGRTWdxm6ji1762dUloT8pQNx42er2FgF1F9GsPdOM8RkK8lZjx8y+
+zYhVqR/AQZY=
+=SR3k
+-----END PGP SIGNATURE-----
+
+-- 
+This article has been digitally signed by the moderator, using PGP.
+Finger wirzeniu@kruuna.helsinki.fi for PGP key needed for validating signature.
+Send submissions for comp.os.linux.announce to: linux-announce@news.ornl.gov
+PLEASE remember a short description of the software and the LOCATION.
+------- End of forwarded message -------
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Thu Jun 13 02:46:06 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id CAA01467; Thu, 13 Jun 1996 02:45:19 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from maude.state.net (NS.STATE.NET [204.75.238.240]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id CAA01459 for <flight-gear@infoplane.com>; Thu, 13 Jun 1996 02:45:09 -0500
+Received: from albert.ssl.berkeley.edu (albert.ssl.berkeley.edu [128.32.147.187]) by maude.state.net (8.7.3/8.7.2) with ESMTP id SAA00060 for <flight-gear@infoplane.com>; Wed, 12 Jun 1996 18:21:44 -0500 (CDT)
+Received: (korpela@localhost) by albert.ssl.berkeley.edu (8.7.5/CEA) id QAA16897; Wed, 12 Jun 1996 16:18:15 -0700 (PDT)
+From: "Eric J. Korpela" <korpela@ssl.Berkeley.EDU>
+Message-Id: <199606122318.QAA16897@albert.ssl.berkeley.edu>
+Subject: Re: [comp.os.linux.announce] JLib 1.5 - Portable Graphics/Gaming Library
+To: flight-gear@infoplane.com
+Date: Wed, 12 Jun 1996 16:18:15 -0700 (PDT)
+In-Reply-To: <199606121422.JAA00484@kenai.me.umn.edu> from "Curtis L. Olson" at Jun 12, 96 09:22:40 am
+X-Geek-Code: GAT d-(?) H s+:-- g+ p? au--- a- w++ v++(--) C+++ US+++ P- L 3 
+X-Geek-Cont1: E--- N++ K? W M- V -po+(--) Y+ t+ 5++ j? R- G? tv+ b++ D+ B---
+X-Geek-Cont2: e+++>++++ u- h--- f+(?) r+++ n+(---) y@(?) 
+X-PGP-ID: FF0C92DD
+X-PGP-Fingerprint: 96 BD 9D 77 12 FE 04 9B  3E F5 5B 8D 2D D1 4C 6B
+X-Mailer: ELM [version 2.4 PL25]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+> Things have been kinda quite on this list lately.  Work + Life has
+> been sucking up most of my time.  I saw the following announcement on
+> comp.os.linux.announce.  I haven't yet had a chance to check this
+> thing out, but maybe it might be useful for our project?
+
+Sounds great.  It'll probably save much duplication of effort.
+I'll check it out wghen I get back from vacation. (24th or so.)
+
+Eric 
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Thu Jun 13 08:53:10 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id IAA03484; Thu, 13 Jun 1996 08:52:52 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from meserv.me.umn.edu (meserv.me.umn.edu [134.84.196.1]) by calvin.infoplane.com (8.7.1/8.7.1) with SMTP id IAA03477 for <flight-gear@infoplane.com>; Thu, 13 Jun 1996 08:52:45 -0500
+Received: from kenai.me.umn.edu (kenai.me.umn.edu [134.84.197.42]) by meserv.me.umn.edu (8.6.11/8.6.11) with ESMTP id IAA25770 for <flight-gear@infoplane.com>; Thu, 13 Jun 1996 08:59:36 -0500
+Received: (clolson@localhost) by kenai.me.umn.edu (8.7.5/8.6.5) id IAA00503; Thu, 13 Jun 1996 08:59:34 -0500
+Date: Thu, 13 Jun 1996 08:59:34 -0500
+Message-Id: <199606131359.IAA00503@kenai.me.umn.edu>
+From: "Curtis L. Olson" <clolson@me.umn.edu>
+To: flight-gear@infoplane.com
+Subject: Re: [comp.os.linux.announce] JLib 1.5 - Portable Graphics/Gaming Library
+In-Reply-To: <199606122318.QAA16897@albert.ssl.berkeley.edu>
+References: <199606121422.JAA00484@kenai.me.umn.edu>
+	<199606122318.QAA16897@albert.ssl.berkeley.edu>
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Eric J. Korpela writes:
+> Sounds great.  It'll probably save much duplication of effort.
+> I'll check it out wghen I get back from vacation. (24th or so.)
+
+Another thing you guys might want to check out in relationship with
+the jlib multi-platform graphics libraries is:
+
+    ftp://x2ftp.oulu.fi/pub/msdos/programming/djgpp2/htgf_1-0.zip
+
+This is a simple (DOS) demo program which was written on top of these
+libraries.  It kind of reminded me of the Commanche? (heli-sim) style
+graphics.  The performance seemed very smooth on my 486 66/DX2
+although the program isn't doing a lot.
+
+Curt.
+-- 
+Curtis Olson   E-mail: clolson@me.umn.edu
+Try Linux!     WWW:    http://www.me.umn.edu/home/clolson/index.html
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Mon Jun 17 17:26:00 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id RAA03328; Mon, 17 Jun 1996 17:23:42 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from meserv.me.umn.edu (meserv.me.umn.edu [134.84.196.1]) by calvin.infoplane.com (8.7.1/8.7.1) with SMTP id RAA03324 for <flight-gear@infoplane.com>; Mon, 17 Jun 1996 17:23:37 -0500
+Received: from kenai.me.umn.edu (kenai.me.umn.edu [134.84.197.42]) by meserv.me.umn.edu (8.6.11/8.6.11) with ESMTP id RAA18899 for <flight-gear@infoplane.com>; Mon, 17 Jun 1996 17:32:55 -0500
+Received: (clolson@localhost) by kenai.me.umn.edu (8.7.5/8.6.5) id RAA03500; Mon, 17 Jun 1996 17:32:52 -0500
+Date: Mon, 17 Jun 1996 17:32:52 -0500
+Message-Id: <199606172232.RAA03500@kenai.me.umn.edu>
+From: "Curtis L. Olson" <clolson@me.umn.edu>
+To: flight-gear@infoplane.com
+Subject: Misc Musings ...
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Just a couple of things which I have been pondering the last couple
+days:
+
+One of the first things I think we should do is get a 3-D display
+engine running.  In doing this, we need to think about many issues
+including:
+
+- Are we going to write everything ourselves from the ground up, or
+  should we build on one of the available 2-D graphics libraries such
+  as jlib-1.5?  (I'm not aware of any freely available 3-D graphics
+  engines -- maybe we should package ours up when it is done ... )
+
+- Whatever we do, we need to make sure we can handle things like fog /
+  visibility effects, and texture mapping.  It would be nice if
+  whatever we do is portable, so flight-gear can run on multiple
+  platforms.
+
+- What approach are we going to use for hidden surface removal.  I
+  assume we won't just be running on machines that can do this in
+  hardware. :-)  My initial thoughts are that maybe we should
+  implement some sort of z-buffering in software.  Another option
+  would be to use some form of the painter's algorithm (draw furthest
+  away things first) however, I think sorting by distance might have a 
+  heavy performance penalty.
+
+- We need to consider how our scenery/objects will be stored and
+  organized.  This will probably influence how we design our 3-D
+  engine.
+
+So, do we have any 3-D graphics experts out there?  (If not, what are
+we doing writing a flight simulator?)  :-) :-) :-)
+
+Curt.
+-- 
+Curtis Olson   E-mail: clolson@me.umn.edu
+Try Linux!     WWW:    http://www.me.umn.edu/home/clolson/index.html
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Mon Jun 17 19:26:24 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id TAA03977; Mon, 17 Jun 1996 19:26:02 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from valleynet.com (sierra.valleynet.com [205.199.144.107]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id TAA03971 for <flight-gear@infoplane.com>; Mon, 17 Jun 1996 19:25:57 -0500
+Received: from cheetah.valleynet.com (cheetah.valleynet.com [206.43.252.100]) by valleynet.com (8.7.4/8.6.9) with SMTP id RAA19278 for <flight-gear@infoplane.com>; Mon, 17 Jun 1996 17:35:04 -0700 (PDT)
+From: robepps@valleynet.com (Robert Epps)
+To: flight-gear@infoplane.com
+Subject: Re: Misc Musings
+Date: Tue, 18 Jun 1996 00:35:00 GMT
+Message-ID: <31c5f6be.621255888@mail.valleynet.com>
+X-Mailer: Forte Agent .99e/32.227
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+>One of the first things I think we should do is get a 3-D display
+>engine running.  In doing this, we need to think about many issues
+>including:
+
+>- Are we going to write everything ourselves from the ground up, or
+>  should we build on one of the available 2-D graphics libraries such
+>  as jlib-1.5?  (I'm not aware of any freely available 3-D graphics
+>  engines -- maybe we should package ours up when it is done ... )
+
+>- Whatever we do, we need to make sure we can handle things like fog /
+>  visibility effects, and texture mapping.  It would be nice if
+>  whatever we do is portable, so flight-gear can run on multiple
+>  platforms.
+
+I'm not sure that Flight Gear needs to have a whole new 3D engine, as
+much as it needs to have a 3D API that can act as a thin layer over
+whatever 3D engine is available on the target platform.  I strongly
+believe that Flight Gear should be able to take advantage of such
+technologies as OpenGL and Direct3D under Windows, and QuickDraw 3D on
+the Mac, especially on machines that have 3D hardware.  (I don't know
+what equivalent technologies exist under Unix, other than OpenGL.)
+
+Of course, a baseline 3D engine should be written for those platforms
+where a 3D engine is not readily available, but I think that can be
+pursued as a separate project.
+
+BTW, I guess I should introduce myself, I've just joined this mailing
+list and am still getting up to speed on Flight Gear.  My name is
+Robert Epps, and I am a disciple of the Evil Empire (a Windows
+programmer).  My main area of interest is contributing to the 32-bit
+Windows version of Flight Gear.  (I frankly believe that DOS and
+16-bit Windows versions should not even be bothered with, because the
+DOS market is well covered by FS5, and 16-bit Windows is just too
+crippled for a highly graphical program like a flight simulator.)
+
+       --- Rob
+
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Mon Jun 24 18:12:05 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id SAA00369; Mon, 24 Jun 1996 18:06:58 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from maude.state.net ([204.75.238.240]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id SAA00348 for <flight-gear@infoplane.com>; Mon, 24 Jun 1996 18:06:37 -0500
+Received: from meserv.me.umn.edu (meserv.me.umn.edu [134.84.196.1]) by maude.state.net (8.7.3/8.7.2) with SMTP id MAA15369 for <flight-gear@infoplane.com>; Mon, 24 Jun 1996 12:37:47 -0500 (CDT)
+Received: from kenai.me.umn.edu (kenai.me.umn.edu [134.84.197.42]) by meserv.me.umn.edu (8.6.11/8.6.11) with ESMTP id MAA18784 for <flight-gear@infoplane.com>; Mon, 24 Jun 1996 12:34:19 -0500
+Received: (clolson@localhost) by kenai.me.umn.edu (8.7.5/8.6.5) id MAA31372; Mon, 24 Jun 1996 12:33:41 -0500
+Date: Mon, 24 Jun 1996 12:33:41 -0500
+Message-Id: <199606241733.MAA31372@kenai.me.umn.edu>
+From: "Curtis L. Olson" <clolson@me.umn.edu>
+To: flight-gear@infoplane.com
+Subject: Scenery Design?
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+I have a scenery design question for you all.
+
+I was flying FS5 this weekend and made an observation.  The FS5 world
+(obviously) is a flat plane with objects placed on top of it.  It
+would be great if Flight-Gear's terrain could be a polygon (triangle)
+mesh.  This would allow us to much more accurately represent the
+world.
+
+However, (and this is my observation) FS5's way of doing things is
+much simpler, and requires much less processing time than would a 3-d
+triangle mesh.
+
+To do the things the way I would like, you would really have to spend
+a huge effort doing hidden surface removal because conceivably, just
+about any surface could at some time be in front of any other surface.
+
+Two ways I can think of to do hidden surface removal on a DOS/Windows
+PC is to sort all the polygons individually by distance from the
+viewer, and then draw them from the furthest to the closest.  Sorting
+becomes excruciatingly slow as the number of polygons increases.  A
+triangle mesh would create lots of things to sort.  Another option
+would be to use a software z-buffer.  This technique keeps track of
+the depth (distance from viewer) of each pixel on the screen.  As you
+are drawing each pixel of (scan converting) each line or polygon, you
+check to see if that pixel is closer than the one that was already
+drawn (using the z-buffer).  If it isn't closer, you draw the pixel,
+and update the z-buffer, otherwise you just skip that pixel.  This way
+you can draw the polygons in any order.
+
+With FS5, though, things are much simpler.  I am speculating that for
+each frame update, they sort all of their objects (usually not to
+many) by distance from the viewer.  Then they draw out the ground
+(easy -- just slap on the bitmaps) and finish by drawing all their
+objects from furthest to closest.  This can still become slow if there
+are many objects, but I can envision a few little tricks to speed
+things up -- which they probably do.
+
+So finally, the question is how do we want to approach this.  Do we
+want to model our terrain using a triangle mesh?  This would pretty
+much require a full fledged 3-d graphic engine, and would probably not
+run to fast on machines without 3-d hardware support (i.e. high-end
+SGI's)  Or, do we want to mimic FS5's simpler approach?  This would be
+much easier to do on the programming side and would probably be able
+to run much faster in general.  It would also make it easier if we
+wanted to try to take advantage of all the wonderful scenery available
+in bgl format?
+
+I'd love to hear your thoughts,
+
+Thanks,
+
+Curt.
+-- 
+Curtis Olson   E-mail: clolson@me.umn.edu
+Try Linux!     WWW:    http://www.me.umn.edu/home/clolson/index.html
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Mon Jun 24 22:38:00 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id VAA01685; Mon, 24 Jun 1996 21:57:52 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from mailer.together.net (mailer.together.net [204.97.120.27]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id VAA01681 for <flight-gear@infoplane.com>; Mon, 24 Jun 1996 21:57:46 -0500
+Received: from sequoia.together.net (sequoia.together.net [204.97.120.25]) by mailer.together.net (8.7.5/8.6.12) with ESMTP id XAA17242 for <flight-gear@infoplane.com>; Mon, 24 Jun 1996 23:08:15 -0400
+Received: from ksplant (PORT-42-MAX-BTV-01.ramp.together.net [207.41.54.42]) by sequoia.together.net (8.7.5/8.6.12) with SMTP id XAA22484 for <flight-gear@infoplane.com>; Mon, 24 Jun 1996 23:08:11 -0400 (EDT)
+Message-Id: <199606250308.XAA22484@sequoia.together.net>
+Comments: Authenticated sender is <ksplant@together.net>
+From: "Kevin Plant" <ksplant@together.net>
+To: flight-gear@infoplane.com
+Date: Mon, 24 Jun 1996 23:04:48 +0000
+Subject: Re: Scenery Design?
+Priority: normal
+X-mailer: Pegasus Mail for Win32 (v2.31)
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+On 24 Jun 96 at 12:33, Curtis L. Olson wrote:
+
+> I have a scenery design question for you all.
+
+I'm by no means a scenery expert...yet <g>, but have had some 
+experience with 3d polys in my current scenery project.  So at the 
+risk of being an amateur, I'll share my views :-)
+ 
+> I was flying FS5 this weekend and made an observation.  The FS5 world
+> (obviously) is a flat plane with objects placed on top of it.  It
+> would be great if Flight-Gear's terrain could be a polygon (triangle)
+> mesh.  This would allow us to much more accurately represent the
+> world.
+
+My thought would be to keep the fs5 scheme of using flat tiles
+at least in Flight-Gears initial release.  As far as I know, we've just been 
+introduced to triangular mesh with Shiratti Commander and Hans 
+Meier's Mount and designers are finally laying down 3d mountains that 
+look like mountains. Once this catches on, and I think it already 
+has, 3dpoly util programmers will be refining their code and maybe 
+adding more bells and whistles?  This would allow you to let them 
+advance this technology (code) if you need more information on going 
+about this most efficiently?  I don't know how much you already know 
+about this :-)    Another reason, Curt you said it would be much 
+easier to allow current bgl formatted scenery to be used in F.G.  
+Again, maybe this might be better taken care of after F.G is out.
+It's the same approach I'm using in my scenery :-)  I'm building the
+basics first, and will continue to upgrade it once I have the first 
+release out.  Later will come more mountains, objects, houses, boats, 
+etc.  Just my thoughts.
+
+Getting back to triangular mesh, I'm about 1/3 done with the mountain 
+portion of my scenery project and I can tell you it's slow going 
+doing this manually.  I haven't used S.C to build mountains so I'm 
+not sure if Enrico instilled some sort of auto generating mechanism 
+or if it requires hand drawn mountains as Hans' program requires (up 
+to 4 layers high, each with it's own texture if desired).  Once the 
+initial release of F.G is out, perhaps you guys could spend the time 
+you might need researching and experimenting with the mathematics 
+that I would imagine are required to auto generate triangulated 
+landscapes.  Perhaps you could start out by using U.S.G.S data in 
+your computations, similar to Scbuild's road, river, lake, etc 
+compiling routines?
+
+I think it might be helphul to contact Hans Meier and let him know 
+what's going on.  I've come to know recently that he is quite a busy 
+guy, but would seem to give you the shirt off his back if you needed 
+it :-)  Maybe he's like to get on board?  I'm sure he'sd be a 
+valuable player here.  Also, you're chances of getting help are 
+better with Hans I think, because Enrico's S.C is commercial and 
+Mount is freeware. 
+
+Please let me know if decide to pursue involving Hans and you need 
+his e-mail address if you don't already have it.  It can also be 
+found in his Mount doc file.  Mount is at ftp.iup, however, I believe 
+that's an alpha version.  I'm sure he'd send you his 2nd test beta.  
+Also, if you'd like for me to invite him on the team, I'm in touch 
+with him semi-frequently.
+__________________________________
+Kevin Plant [ksplant@together.net]
+Burlington, VT USA [BTV]
+On the shores of Lake Champlain
+New England's West Coast
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Tue Jun 25 07:05:25 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id HAA02982; Tue, 25 Jun 1996 07:04:55 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from maude.state.net (NS.STATE.NET [204.75.238.240]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id HAA02973 for <flight-gear@infoplane.com>; Tue, 25 Jun 1996 07:04:42 -0500
+Received: from chava.netmedia.net.il (chava.netmedia.co.il [192.115.153.20]) by maude.state.net (8.7.3/8.7.2) with ESMTP id BAA25299 for <flight-gear@infoplane.com>; Tue, 25 Jun 1996 01:07:08 -0500 (CDT)
+Received: from LOCALNAME (cs31a7.netmedia.net.il [192.115.152.71]) by chava.netmedia.net.il (8.7.2/8.7.2) with SMTP id JAA16642 for <flight-gear@infoplane.com>; Tue, 25 Jun 1996 09:06:16 +0200 (IST)
+Date: Tue, 25 Jun 1996 09:06:16 +0200 (IST)
+Message-Id: <199606250706.JAA16642@chava.netmedia.net.il>
+X-Sender: sba@mail.netmedia.net.il
+X-Mailer: Windows Eudora Light Version 1.5.2
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+To: flight-gear@infoplane.com
+From: Shmuel Ben-Artzi <sba@netmedia.co.il>
+Subject: Re: Scenery Design?
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Curt,
+
+Just a couple of observations on this. The naval simulator Harpoon uses a
+Lambert Conformal Conic projection for its surface representations. These
+are based on Defense Mapping Agency Global Navigation Charts. The docs do
+point out, however, that this is possible in large part because most naval
+activity takes place in areas of the earth where little distortion is
+created by the conical representation. Also, Harpoon does not have to deal
+with the "look down" factor from FL 330 which exists in a flight simulator.
+On a polar flight, for instance, these distortions would be unacceptable.
+
+Certainly some government agencies, such as NASA, DMA amd others have
+already discovered ways of properly representing topographical features and
+structures on a simulated "globe". Obviously most of these have been
+designed for use on a mainframe of supercomputer. It's possible though, that
+some of the *principles* which they use could be downsized to the PC.
+
+And what about MS's Space Simulator. I haven't seen it yet, but is it
+possible that they have incorporated a better model for representing the
+Earth into it?
+
+Good luck. This will be one of the most important decisions and design tasks
+that your team will face.
+
+Shmuel
+
+
+At 12:33 24/6/96 -0500, you wrote:
+>I have a scenery design question for you all.
+>
+>I was flying FS5 this weekend and made an observation.  The FS5 world
+>(obviously) is a flat plane with objects placed on top of it.  It
+>would be great if Flight-Gear's terrain could be a polygon (triangle)
+>mesh.  This would allow us to much more accurately represent the
+>world.
+>
+
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Tue Jun 25 07:05:23 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id HAA02989; Tue, 25 Jun 1996 07:05:14 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from maude.state.net (NS.STATE.NET [204.75.238.240]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id HAA02983 for <Flight-Gear@infoplane.com>; Tue, 25 Jun 1996 07:04:55 -0500
+Received: from mailer.together.net (root@mailer.together.net [204.97.120.27]) by maude.state.net (8.7.3/8.7.2) with ESMTP id XAA23496 for <Flight-Gear@infoplane.com>; Mon, 24 Jun 1996 23:16:24 -0500 (CDT)
+Received: from sequoia.together.net (sequoia.together.net [204.97.120.25]) by mailer.together.net (8.7.5/8.6.12) with ESMTP id AAA17886 for <Flight-Gear@infoplane.com>; Tue, 25 Jun 1996 00:01:27 -0400
+Received: from ksplant (PORT-24-MAX-BTV-01.ramp.together.net [207.41.54.24]) by sequoia.together.net (8.7.5/8.6.12) with SMTP id AAA24481 for <Flight-Gear@infoplane.com>; Tue, 25 Jun 1996 00:01:23 -0400 (EDT)
+Message-Id: <199606250401.AAA24481@sequoia.together.net>
+Comments: Authenticated sender is <ksplant@together.net>
+From: "Kevin Plant" <ksplant@together.net>
+To: Flight-Gear@infoplane.com
+Date: Mon, 24 Jun 1996 23:58:00 +0000
+Subject: Re: Scenery Design?
+Priority: normal
+X-mailer: Pegasus Mail for Win32 (v2.31)
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+On 24 Jun 96 at 12:33, Curtis L. Olson wrote:
+
+> I have a scenery design question for you all.
+
+I'm by no means a scenery expert...yet <g>, but have had some 
+experience with 3d polys in my current scenery project.  So at the 
+risk of being an amateur, I'll share my views :-)
+ 
+> I was flying FS5 this weekend and made an observation.  The FS5 world
+> (obviously) is a flat plane with objects placed on top of it.  It
+> would be great if Flight-Gear's terrain could be a polygon (triangle)
+> mesh.  This would allow us to much more accurately represent the
+> world.
+
+My thought would be to keep the fs5 scheme of using flat tiles
+at least in Flight-Gears initial release.  As far as I know, we've just been 
+introduced to triangular mesh with Shiratti Commander and Hans 
+Meier's Mount and designers are finally laying down 3d mountains that 
+look like mountains. Once this catches on, and I think it already 
+has, 3dpoly util programmers will be refining their code and maybe 
+adding more bells and whistles?  This would allow you to let them 
+advance this technology (code) if you need more information on going 
+about this most efficiently?  I don't know how much you already know 
+about this :-)    Another reason, Curt you said it would be much 
+easier to allow current bgl formatted scenery to be used in F.G.  
+Again, maybe this might be better taken care of after F.G is out.
+It's the same approach I'm using in my scenery :-)  I'm building the
+basics first, and will continue to upgrade it once I have the first 
+release out.  Later will come more mountains, objects, houses, boats, 
+etc.  Just my thoughts.
+
+Getting back to triangular mesh, I'm about 1/3 done with the mountain 
+portion of my scenery project and I can tell you it's slow going 
+doing this manually.  I haven't used S.C to build mountains so I'm 
+not sure if Enrico instilled some sort of auto generating mechanism 
+or if it requires hand drawn mountains as Hans' program requires (up 
+to 4 layers high, each with it's own texture if desired).  Once the 
+initial release of F.G is out, perhaps you guys could spend the time 
+you might need researching and experimenting with the mathematics 
+that I would imagine are required to auto generate triangulated 
+landscapes.  Perhaps you could start out by using U.S.G.S data in 
+your computations, similar to Scbuild's road, river, lake, etc 
+compiling routines?
+
+I think it might be helphul to contact Hans Meier and let him know 
+what's going on.  I've come to know recently that he is quite a busy 
+guy, but would seem to give you the shirt off his back if you needed 
+it :-)  Maybe he's like to get on board?  I'm sure he'sd be a 
+valuable player here.  Also, you're chances of getting help are 
+better with Hans I think, because Enrico's S.C is commercial and 
+Mount is freeware. 
+
+Please let me know if decide to pursue involving Hans and you need 
+his e-mail address if you don't already have it.  It can also be 
+found in his Mount doc file.  Mount is at ftp.iup, however, I believe 
+that's an alpha version.  I'm sure he'd send you his 2nd test beta.  
+Also, if you'd like for me to invite him on the team, I'm in touch 
+with him semi-frequently.
+__________________________________
+Kevin Plant [ksplant@together.net]
+Burlington, VT USA [BTV]
+On the shores of Lake Champlain
+New England's West Coast
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Tue Jun 25 13:27:14 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id NAA04934; Tue, 25 Jun 1996 13:26:24 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from albert.ssl.berkeley.edu (albert.ssl.berkeley.edu [128.32.147.187]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id NAA04927 for <flight-gear@infoplane.com>; Tue, 25 Jun 1996 13:26:15 -0500
+Received: (korpela@localhost) by albert.ssl.berkeley.edu (8.7.5/CEA) id LAA08343; Tue, 25 Jun 1996 11:35:00 -0700 (PDT)
+From: "Eric J. Korpela" <korpela@ssl.Berkeley.EDU>
+Message-Id: <199606251835.LAA08343@albert.ssl.berkeley.edu>
+Subject: Re: Misc Musings ...
+To: flight-gear@infoplane.com
+Date: Tue, 25 Jun 1996 11:35:00 -0700 (PDT)
+In-Reply-To: <199606172232.RAA03500@kenai.me.umn.edu> from "Curtis L. Olson" at Jun 17, 96 05:32:52 pm
+X-Geek-Code: GAT d-(?) H s+:-- g+ p? au--- a- w++ v++(--) C+++ US+++ P- L 3 
+X-Geek-Cont1: E--- N++ K? W M- V -po+(--) Y+ t+ 5++ j? R- G? tv+ b++ D+ B---
+X-Geek-Cont2: e+++>++++ u- h--- f+(?) r+++ n+(---) y@(?) 
+X-PGP-ID: FF0C92DD
+X-PGP-Fingerprint: 96 BD 9D 77 12 FE 04 9B  3E F5 5B 8D 2D D1 4C 6B
+X-Mailer: ELM [version 2.4 PL25]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+> - Are we going to write everything ourselves from the ground up, or
+>   should we build on one of the available 2-D graphics libraries such
+>   as jlib-1.5?  (I'm not aware of any freely available 3-D graphics
+>   engines -- maybe we should package ours up when it is done ... )
+
+I haven't gotten a chance to look a jlib yet (Just got back from vacation)
+so I haven't seen how well it would handle some of the concepts I have
+floating in my head.  (Subbitmaps, etc.)  Too many graphics packages
+assume that a bitmap will be a contiguous memory region.  That's often
+not the case.
+
+> - Whatever we do, we need to make sure we can handle things like fog /
+>   visibility effects, and texture mapping.  It would be nice if
+>   whatever we do is portable, so flight-gear can run on multiple
+>   platforms.
+
+I've been thinking of how to implement fog/visibility effects.  It seems
+the best way is to modify palette entries (on 8 bit displays).  I think
+this means that pallette allocation is going to have to change as conditions
+change.  So whatever  library we use is going to have to allow us to
+allocate and deallocate palette entries.  In the case of a full palette,
+the allocation routine should give the closest match.  There should
+also be some sort of palette priority. (i.e. I NEED this color, but that
+one is just an added touch.)  Both clouds, fog, and haze can be simulated
+by semitransparent polygons.  The polygon is assigned a red, green, and
+blue transparency and luminance, and the colors of things behind are 
+multiplied by these transparencies and the luminance is added.  You can
+do some fairly realistic stuff like this.
+
+Texture mapping is generally implemented over the polygon graphics.  The
+polygon structure would contain a pointer to the texture bitmap.  Textures
+are displayed by ray casting (similar to ray tracing).  For each pixel
+the point of interection with the texture bitmap is calculated.  I think
+it's best to get the polygons working before worrying about texture mapping.
+
+> - What approach are we going to use for hidden surface removal.  I
+>   assume we won't just be running on machines that can do this in
+>   hardware. :-)  My initial thoughts are that maybe we should
+>   implement some sort of z-buffering in software.  Another option
+>   would be to use some form of the painter's algorithm (draw furthest
+>   away things first) however, I think sorting by distance might have a 
+>   heavy performance penalty.
+
+I've played around with this a bit in the past, and rough distance sorting
+seems to work best.  The quickest way of doing this seems to be defining
+a midpoint normal for each polygon.  First you eliminate all polygons with
+normals facing away from the viewer and those outsize the viewport, then you 
+calculate distance to the midpoint of the remaining polygons and sort to get 
+a z list of all the visible polygons.
+
+> - We need to consider how our scenery/objects will be stored and
+>   organized.  This will probably influence how we design our 3-D
+>   engine.
+
+I think a list like this would do the trick.....
+
+typedef struct _FG_SCN_RECORD {
+  FG_INT32  objtype;             /* code for type of object            */
+  FG_INT32  length;              /* length of this record              */
+  FG_INT32  lat0,lon0,lat1,lon1; /* lat/lon range where it is visibile */
+/* object date goes here */
+} FG_SCN_RECORD;
+
+typedef struct _FG_3DPOLY_RECORD {
+  FG_INT32  objtype;             /* set to FG_OBJ_3DPOLY               */
+  FG_INT32  length;              /* set to length of this record       */
+  FG_INT32  lat0,lon0,lat1,lon1; /* lat/lon range where it is visible  */
+  FG_INT32  color;               /* color of this polygon (RGB)        */
+  FG_I3VECT center;              /* polygon center                     */
+  FG_I3VECT normal;              /* polygon normal                     */
+  FG_INT32  n_vertices;          /* number of vertices                 */
+/* vertex list goes here */
+} FG_3DPOLY_RECORD;
+
+#define FG_OBJ_GROUP 0
+#define FG_OBJ_3DPOLY 1
+...etc...
+
+It's easily extended and allow for grouping of objects.  For example
+a group of polygons might look like this.  It's also fairly easy to scan.
+It's also easy to define a text scenery language for compilation.
+
+objtype=0
+length=length of this group
+lat0,lon0,lat1,lon1=  limits for this group
+  objtype=1
+  length=length of this polygon
+  lat0,lon0,lat1,lon1=  limits for this polygon
+  color=255 (as blue as blue can be)
+  center=               coordinates of polygon center
+  normal=               vector normal
+  n_vertices=3
+  vertex1,vertex2,vertex3
+ 
+  next polygon
+end of group
+
+Eric
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Tue Jun 25 13:52:58 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id NAA05074; Tue, 25 Jun 1996 13:52:55 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from albert.ssl.berkeley.edu (albert.ssl.berkeley.edu [128.32.147.187]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id NAA05070 for <flight-gear@infoplane.com>; Tue, 25 Jun 1996 13:52:43 -0500
+Received: (korpela@localhost) by albert.ssl.berkeley.edu (8.7.5/CEA) id MAA08664; Tue, 25 Jun 1996 12:01:27 -0700 (PDT)
+From: "Eric J. Korpela" <korpela@ssl.Berkeley.EDU>
+Message-Id: <199606251901.MAA08664@albert.ssl.berkeley.edu>
+Subject: Re: Scenery Design?
+To: flight-gear@infoplane.com
+Date: Tue, 25 Jun 1996 12:01:27 -0700 (PDT)
+In-Reply-To: <199606241733.MAA31372@kenai.me.umn.edu> from "Curtis L. Olson" at Jun 24, 96 12:33:41 pm
+X-Geek-Code: GAT d-(?) H s+:-- g+ p? au--- a- w++ v++(--) C+++ US+++ P- L 3 
+X-Geek-Cont1: E--- N++ K? W M- V -po+(--) Y+ t+ 5++ j? R- G? tv+ b++ D+ B---
+X-Geek-Cont2: e+++>++++ u- h--- f+(?) r+++ n+(---) y@(?) 
+X-PGP-ID: FF0C92DD
+X-PGP-Fingerprint: 96 BD 9D 77 12 FE 04 9B  3E F5 5B 8D 2D D1 4C 6B
+X-Mailer: ELM [version 2.4 PL25]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+
+> I have a scenery design question for you all.
+
+> I was flying FS5 this weekend and made an observation.  The FS5 world
+> (obviously) is a flat plane with objects placed on top of it.  It
+> would be great if Flight-Gear's terrain could be a polygon (triangle)
+> mesh.  This would allow us to much more accurately represent the
+> world.
+
+I agree.  It was my intention to somehow obatain a 1 nmi resolution
+ground level map for the world and use that as a basis for the scenery
+world. (It would be a semi rectangular mesh rather than triangular,
+but you get the point.)  In interesting areas the mesh could be finer.
+I was also thinking of determining ground polygon color by altitude
+and season.  (Although it would be nice to get a similar resolution
+map of the actual ground color.  Anyone have a digitized real-color
+world map? Both summer and winter?)
+
+
+
+> To do the things the way I would like, you would really have to spend
+> a huge effort doing hidden surface removal because conceivably, just
+> about any surface could at some time be in front of any other surface.
+
+If each polygon has a visibility range and other selection criteria,
+the number of calcuations to be done can be greatly reduced. (See my
+last message about using the polygon normal to get rid of invisible polygons.)
+
+(discussion of Z buffering deleted)
+
+(discussion of Z sorting deleted)
+
+In general, Z buffering in software works better if your number of
+polygons to be displayed is 10% of the number of pixels.  I don't think
+that'll be the case for our FS.  
+
+Another method that hasn't been discussed is ray casting.  For each display
+pixel you calculate the closest intercepted polygon.  I've never done it
+for more than a subsection of a display, though. (i.e. texture mapping
+a polygon.)
+
+As far as using BGL and FS4 scenery, I'd like to see modules that allowed
+it, but I don't think I'd like that to be our primary scenery method.
+
+Eric
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Thu Jun 27 12:48:42 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id MAA02149; Thu, 27 Jun 1996 12:41:35 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from meserv.me.umn.edu (meserv.me.umn.edu [134.84.196.1]) by calvin.infoplane.com (8.7.1/8.7.1) with SMTP id MAA02142 for <flight-gear@infoplane.com>; Thu, 27 Jun 1996 12:41:05 -0500
+Received: from kenai.me.umn.edu (kenai.me.umn.edu [134.84.197.42]) by meserv.me.umn.edu (8.6.11/8.6.11) with ESMTP id MAA24561 for <flight-gear@infoplane.com>; Thu, 27 Jun 1996 12:51:55 -0500
+Received: (clolson@localhost) by kenai.me.umn.edu (8.7.5/8.6.5) id MAA01569; Thu, 27 Jun 1996 12:51:56 -0500
+Date: Thu, 27 Jun 1996 12:51:56 -0500
+Message-Id: <199606271751.MAA01569@kenai.me.umn.edu>
+From: "Curtis L. Olson" <clolson@me.umn.edu>
+To: flight-gear@infoplane.com
+Subject: World modeling
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Flight-Gear developers,
+
+I was just looking at the code for a program called xearth-1.0.  It is
+a neat little utility (for Unix/X11) that displays a shaded view of
+the earth from any position, using either a mercator or orthographic
+projection.  It even knows the current sun position, and can shade out
+the dark portions of the earth.
+
+They use a very simple little idea which allows them to render the
+"globe" accurately, even if the view is directly over one of the
+poles.  I will attempt to describe the algorithm without understanding
+it 100%. :-) They run all the data points (outlines of continents,
+etc.)  through a simple transformation before displaying them.  For
+instance, you can just rotate all your coordinates by a constant value
+so that your current lat,lon equals 0,0.  Then you can proceed to
+display your surroundings with the assumption that lat = y, lon = x
+(or whichever way it goes).  They do things just a bit diffent than
+what I have described, but the ideas is basically the same.  The
+mercator projection centered on a point other than on the equator
+yields some interesting maps since the distortions aren't in the usual
+places.
+
+    (They store all their data points in (x,y,z) format, such that
+    each point will fall on the unit circle.  They then scale their
+    coordintate by 30000 and keep them as integers ... this probably
+    saves some calculations some where along the way)
+
+So, what do you think about doing something like this to modeling our
+world?
+
+Thanks,
+
+Curt.
+-- 
+Curtis Olson   E-mail: clolson@me.umn.edu
+Try Linux!     WWW:    http://www.me.umn.edu/home/clolson/index.html
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+

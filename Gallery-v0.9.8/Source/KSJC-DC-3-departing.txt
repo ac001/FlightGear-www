@@ -1,0 +1,2 @@
+A DC-3 departing KSJC.  Note mipmapping is turned off which preserves much
+more of the image detail, but also introduces aliasing artifacts.

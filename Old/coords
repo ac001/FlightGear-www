@@ -1,0 +1,51 @@
+From: "Eric J. Korpela" <korpela@ssl.Berkeley.EDU>
+To: fl182@cleveland.freenet.edu
+Subject: Coordinate system and our geometry library..........
+Date: Wed, 17 Apr 1996 10:18:55 -0700 (PDT)
+
+
+I've been doing some more thinking about things we can start doing now.
+I think one of the things we should do early on is define a coordinate
+system to use and define a library of functions that we're going to
+need.
+
+Here's my cooordinate system proposal:
+
+32 bit integer position vector:
+  north latitude, east longitude, and altitude (MSL)
+  units of -180./-LONG_MIN degrees (corresponds to about 1/215 meters)
+
+Benefits of this system:
+  Both linear distances and angles are in the same units.  (Can use same system
+    for roll pitch and yaw)
+  automatic wrap around (on most systems).
+  Integer math is faster than floating point.
+  Can limit precision (Why calculate tan(x) to 80 bits when 16 would suffice?)
+  "down" is always in the same direction. 
+  Simplifies some constants and conversions?
+    arc minute == nautical mile
+    1 radian == radius of earth
+
+Disadvantages:
+  Need to write some math library functions. (sin, cos, atan)
+  Have to worry about overflow.
+  Additional difficulty of fixed point math 
+    (renormalize after multiply or divide).
+  Have to convert to linear coordinates at times.
+  Differentiation and integration are a bit different in spherical coordinates.
+    (but we can ignore this on small scale problems.)
+
+If anyone has better ideas, let me know.
+
+-------------------------------------------------------------------------------
+Here's a list of some of the functions we need in our math library.
+Can you think of more?
+
+trig functions (sin, cos, tan, asin, acos, atan in whatever coordinate system)
+angular distance, linear distance (in whatever coordinate system we choose)
+2x2 matrix multiply (fixed point, 16bitx16bit=32bit, 32bitx32bit=64bit)
+3x3 matrix multiply ( "                                             " )
+4x4 matrix multiply ( "                                             " )
+2 vector dot and cross products. ( "                                " )
+3 vector dot and cross products. ( "                                " )
+

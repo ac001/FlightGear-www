@@ -1,0 +1,3 @@
+A satelite view, perched high above Miami, Florida.  This is an actual screen
+shot taken from with the FlightGear program.  It shows a variety of land cover
+and our extremely accurate coast lines.

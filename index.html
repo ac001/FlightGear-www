@@ -1,0 +1,246 @@
+ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+ <HTML LANG="en">
+ <HEAD>
+
+ <!--
+ index.html - FlightGear Home Page
+
+ $Id$
+ (Log is kept at end of this file)
+  -->
+
+  <TITLE>FlightGear Flight Simulator</TITLE>
+  <LINK REL="StyleSheet" TYPE="text/css" HREF="fgfs.css">
+ </HEAD>
+
+ <BODY STYLE="background-image: url(Backgrounds/cloud.gif);">
+
+  <DIV ALIGN="center">
+  <!-- <P CLASS="alert">
+    IMPORTANT: We have new mailing lists hosted through SourceForge.
+    You will need to resubscribe yourself to any of the new mailing
+    lists you wish to participate in.  Follow the "Mailing Lists" link
+    below for details.
+  </P> -->
+
+  <IMG SRC="images/fglogosm.jpg" WIDTH="644" HEIGHT="112" ALT="FlightGear Logo">
+  <BR>
+
+  <B>
+  Special thanks to all the sites providing web and ftp mirror
+  services: <A HREF="mirrors.html">full mirror list</A>. <BR>
+  Some sound effects provided (with permission) by
+  <A HREF="http://www.a1freesoundeffects.com/">A1 Free Sound Effects</A>.
+  </B>
+ </DIV>
+
+ <DIV ALIGN="center">
+  <H3>Table of Contents</H3>
+ </DIV>
+
+ <TABLE BORDER="0" ALIGN="center" SUMMARY="Table of Contents">
+ <TBODY>
+  <TR>
+   <TD VALIGN="top">
+    <UL>
+      <LI> <FONT SIZE="+1" ID="fgfs">
+           <B><A HREF="#news">Latest News</A></B>
+           </FONT> </LI>
+      <LI> <FONT SIZE="+1" ID="fgfs">
+           <B><A HREF="#overview">Project Summary</A></B>
+           </FONT> </LI>
+      <LI> <FONT SIZE="+1" ID="fgfs">
+           <B><A HREF="Overview/">Overview of FlightGear</A></B>
+           </FONT> </LI>
+      <LI> <FONT SIZE="+1" ID="fgfs">
+           <B><A HREF="news.html">Version Summary</A></B>
+           </FONT> </LI>
+      <LI> <FONT SIZE="+1" ID="fgfs">
+           <B><A HREF="Gallery/">Gallery of Images</A></B>
+           </FONT> </LI>
+      <LI> <FONT SIZE="+1" ID="fgfs">
+           <B><A HREF="Places/">Places to Fly</A></B>
+           </FONT> </LI>
+      <LI> <FONT SIZE="+1" ID="fgfs">
+           <B><A HREF="Hardware/">Hardware Requirements</A></B>
+           </FONT> </LI>
+      <LI> <FONT SIZE="+1" ID="fgfs">
+           <B><A HREF="Downloads/">Downloads</A></B>
+           </FONT> </LI>
+      <LI> <FONT SIZE="+1" ID="fgfs">
+           <B><A HREF="Docs/">Documentation</A></B>
+           </FONT> </LI>
+    </UL>
+  </TD>
+
+  <TD VALIGN="top">
+    <UL>
+      <LI> <FONT SIZE="+1" ID="fgfs">
+           <B><A HREF="mail.html">Mailing Lists</A></B>
+           </FONT> </LI>
+      <LI> <FONT SIZE="+1" ID="fgfs">
+           <B><A HREF="Links/">Related Websites</A></B>
+           </FONT> </LI>
+      <LI> <FONT SIZE="+1" ID="fgfs">
+           <B><A HREF="Projects/">Related Projects</A></B>
+           </FONT> </LI>
+      <LI> <FONT SIZE="+1" ID="fgfs">
+           <B><A HREF="http://sourceforge.net/projects/flightgear/">
+           SourceForge Project Page</A></B>
+           </FONT> </LI>
+      <LI> <FONT SIZE="+1" ID="fgfs">
+           <B><A HREF="cvsResources">CVS Resources</A></B>
+           </FONT> </LI>
+      <LI> <FONT SIZE="+1" ID="fgfs">
+           <B><A HREF="Thanks">
+           Contributors</A></B>
+           </FONT> </LI>
+      <LI> <FONT SIZE="+1" ID="fgfs">
+           <B><A HREF="design.html">Design Proposals and Documentation</A></B>
+           </FONT> </LI>
+      <LI> <FONT SIZE="+1" ID="fgfs">
+           <B><A HREF="Help/">Help Wanted (and Goals)</A></B>
+           </FONT> </LI>
+      <LI> <FONT SIZE="+1" ID="fgfs">
+           <B><A HREF="events.html">Events</A></B>
+           </FONT> </LI>
+    </UL>
+   </TD>
+  </TR>
+ </TBODY></TABLE>
+
+ <BR>
+ <DIV ALIGN="center">
+  <A HREF="images/j3cub-departing-KNOW.jpg"><IMG WIDTH="100" HEIGHT="75"
+      SRC="images/j3cub-departing-KNOW-thumb.jpg"
+      ALT="J3 Cub departing KNOW"></A> 
+  <A HREF="images/a4-cockpit.jpg"><IMG WIDTH="100" HEIGHT="75"
+       SRC="images/a4-cockpit-thumb.jpg"
+       ALT="A4 3D cockpit"></A>
+  <A HREF="images/747-seattle.jpg"><IMG WIDTH="100" HEIGHT="75"
+      SRC="images/747-seattle-thumb.jpg"
+      ALT="Boeing 747"></A>
+  <A HREF="images/cockpit.jpg"><IMG WIDTH="100" HEIGHT="75"
+      SRC="images/cockpit-thumb.jpg"
+      ALT="C-172 3D cockpit"></A>
+  <A HREF="images/dc3-sunrise.jpg"><IMG WIDTH="100" HEIGHT="75"
+     SRC="images/dc3-sunrise-thumb.jpg"
+     ALT="DC-3 at Sunrise"></A>
+  <A HREF="images/c172-night.jpg"><IMG WIDTH="100" HEIGHT="75"
+      SRC="images/c172-night-thumb.jpg"
+      ALT="C-172 at night"></A>
+ </DIV>
+
+ <BR>
+ <DIV ALIGN="center">
+  <H3><A NAME="news">Latest News</A></H3>
+ </DIV>
+
+ <P CLASS="indent">
+  <B>September 7, 2002:</B> Version 0.8.0 is available for download
+  (requires SimGear-0.2.0.)
+  <A HREF="Downloads/">Download here</A>.<BR>
+
+  <B>September 5, 2002:</B> A new tutorial, <A 
+  HREF="Docs/Tutorials/circuit/index.html"><CITE>A Circuit in
+  FlightGear</CITE></A>, is now available online.<BR>
+
+  <B>February 14, 2002:</B> The <A HREF="Docs">Installation and Getting
+  Started manual</A> has been updated for version 0.7.9.  In contains 
+  <EM>many</EM> improvements and additions and is definitely worth the
+  read.<BR>
+
+  <B>July 23, 2001:</B>  A rebuild of the world scenery in the newer
+  leaner meaner binary format (which also
+  includes the latest taxiway data) is now available.
+  You can download the new scenery via our
+  <A HREF="Downloads/world-scenery.html">graphical
+  interface</A>. (Once I can get my drives back online) <BR>
+
+ </P>
+
+ <BR>
+ <DIV ALIGN="center">
+  <H3><A NAME="overview">Project Summary</A></H3>
+ </DIV>
+
+ <P CLASS="indent">
+The <B>FlightGear</B> flight simulator project is an open-source,
+multi-platform, cooperative flight simulator development project.
+Source code for the entire project is available and licensed under the
+ <A HREF="http://www.gnu.org/copyleft/gpl.html">GNU General Public
+License</A>.
+ </P>
+
+ <P CLASS="indent">
+The goal of the <B>FlightGear</B> project is to create a sophisticated
+flight simulator framework for use in research or academic
+environments, for the development and pursuit of other interesting
+flight simulation ideas, and as an end-user application.  We are
+developing a sophisticated, open simulation framework that can be
+expanded and improved upon by anyone interested in contributing.
+ </P>
+
+ <P CLASS="indent">
+There are many exciting possibilities for an open, free flight sim.  We
+hope that this project will be interesting and useful to many people
+in many areas.
+ </P>
+
+ <HR>
+
+ <FORM METHOD="get" ACTION="http://search.umn.edu/query.html" NAME="seek">
+  <TABLE ALIGN="center" CELLSPACING="0" CELLPADDING="0" BORDER="0" SUMMARY="Search Form Table">
+    <TBODY><TR>
+      <TD ALIGN="center" VALIGN="middle">
+        <!-- <LABEL FOR="srchbox">Search:</LABEL> -->
+        <INPUT TYPE="text" NAME="qt" VALUE="" SIZE="25" MAXLENGTH="2047" ID="srchbox">
+        <INPUT TYPE="submit" NAME="submit" VALUE="Search Site">
+        <INPUT TYPE="hidden" NAME="rq" VALUE="0">
+        <INPUT TYPE="hidden" NAME="qp" VALUE="url:www.menet.umn.edu/~curt/fgfs">
+        <INPUT TYPE="hidden" NAME="qs" VALUE="">
+        <INPUT TYPE="hidden" NAME="qc" VALUE="">
+        <INPUT TYPE="hidden" NAME="pw" VALUE="100%">
+        <INPUT TYPE="hidden" NAME="ws" VALUE="0">
+        <INPUT TYPE="hidden" NAME="qm" VALUE="0">
+        <INPUT TYPE="hidden" NAME="st" VALUE="1">
+        <INPUT TYPE="hidden" NAME="nh" VALUE="10">
+        <INPUT TYPE="hidden" NAME="lk" VALUE="1">
+        <INPUT TYPE="hidden" NAME="rf" VALUE="0">
+        <INPUT TYPE="hidden" NAME="oq" VALUE="">
+        <INPUT TYPE="hidden" NAME="rq2" VALUE="0">
+        <INPUT TYPE="hidden" NAME="col" VALUE="uofm">
+      </TD>
+      <TD> 
+        <IMG SRC="http://seneca.flightgear.org/cgi-bin/wwwcount.cgi?df=curt_flightgear.dat&amp;dd=fatpt&amp;ft=3" ALIGN="MIDDLE" ALT="counter">
+      </TD>
+    </TR>
+  </TBODY></TABLE>
+ </FORM>
+
+ <DIV ALIGN="center">
+  <A HREF="http://www.opengl.org/"><IMG SRC="opengl.jpg" WIDTH="61" HEIGHT="31" BORDER="1" ALT="OpenGL"></A>
+  <A HREF="http://www.mesa3d.org/"><IMG SRC="powered_by_mesa.jpg" WIDTH="106" HEIGHT="31" BORDER="1" ALT="Mesa3D"></A>
+  <A HREF="http://plib.sourceforge.net/"><IMG SRC="plib_button.jpg" WIDTH="78" HEIGHT="31" BORDER="1" ALT="Plib"></A>
+  <A HREF="http://www.linux.org/"><IMG SRC="linux.gif" WIDTH="88" HEIGHT="31" BORDER="1" ALT="Linux"></A>
+  <A HREF="http://www.freebsd.org/"><IMG SRC="dae_up3.gif" WIDTH="28" HEIGHT="31" BORDER="1" ALT="FreeBSD"></A>
+  <A HREF="http://www.sgi.com/"><IMG SRC="mini_sgi.jpg" WIDTH="35" HEIGHT="31" BORDER="1" ALT="SGI"></A>
+  <!-- <A HREF="http://www.sun.com/"><IMG SRC="mini_sun.jpg" WIDTH="77" HEIGHT="31" BORDER="1" ALT="Sun"></A> -->
+  <A HREF="http://www.apple.com/"><IMG SRC="apple.gif" WIDTH="39" HEIGHT="31" BORDER="1" ALT="Apple"></A>
+  <A HREF="http://www.annoyances.org/"><IMG SRC="win2.gif" WIDTH="34" HEIGHT="31" BORDER="1" ALT="Windows"></A>
+ </DIV>
+
+<!-- Standard Footer Begin -->
+
+<HR>
+
+<ADDRESS>
+Last modified:  9/9/2002 <BR>
+<A HREF="http://www.menet.umn.edu/~curt/">Curtis L. Olson</A> <BR>
+<IMG SRC="http://www.flightgear.org/email-fg.png">
+</ADDRESS>
+
+<!-- Standard Footer End -->
+
+</BODY></HTML>

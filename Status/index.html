@@ -1,0 +1,361 @@
+<HTML>
+<HEAD>
+  <TITLE>FGFS Status Reports</TITLE>
+  <LINK REL="StyleSheet" TYPE="text/css" HREF="../fgfs.css">
+</HEAD>
+<BODY>
+
+<H1>FGFS Status Reports</H1>
+
+<STRONG>Updated February 11, 2000</STRONG>
+
+<HR>
+
+<H2>Current Development Summary</H2>
+
+Here are some notable landmark items in the development of the Flight
+Gear project.
+
+<UL>
+<LI> <STRONG>Flight Model:</STRONG>
+
+Jon Berndt and Tony Peden continue to work on a complete rewrite of
+the flight model code in C++.  Current efforts involve writing a full
+blown flight control system.  Tony is developing a C172 model for use
+within JSBsim and Jon continues to tweak his X15.  You can find out
+more information on this corner of the project here:
+<A HREF="http://jsbsim.sourceforge.net">
+http://www.hal-pc.org/~jsb/flightsim.html</A>
+<P>
+The LaRCsim flight model code continues to be the default while JSBsim
+is being developed.  Tony Peden has modified the navion flight model
+to pretty accurately represent a c172.  The c172 is now the default,
+but you can still select the venerable old Navion at compile time.
+<P>
+
+<LI> <STRONG>Terrain:</STRONG>
+
+Work is progressing well on an advanced DEM based terrain/scenery
+management system. Tiles are irregularly meshed to significantly
+reduce polygon count while maintaining the same detail level, and
+eliminating many artifacts of "regular" meshes. The current scenery
+includes detailed coastlines, urban areas, and land use data.
+Although these "advanced features are mainly found in areas covering
+the USA, we are looking into finding date for these features for the
+rest of the world too. In addition, a binary file format and database
+is being considered that will more effectively store the current
+terrain."
+<P>
+
+The terrain/scenery work is considered sufficiently important that we
+have begun to spin this off as it's own project.  We have named this
+spin off project "TerraGear".  You can find more information about the
+TerraGear project and read it's mission statement at
+<A HREF="http://www.terragear.org">http://www.terragear.org</A> or
+<A HREF="http://terragear.sourceforge.net">http://terragear.sourceforge.net</A>.
+
+<P>
+
+<LI> <STRONG>HUD:</STRONG>
+
+We have a fairly decent configurable HUD implimented with a sample
+configuration.
+<P>
+
+<LI> <STRONG>2D Instrument Panels:</STRONG>
+
+This is an area where we have not made a lot of progress.  We have a
+start of an implimentation, but it relies on OpenGL behavior that
+isn't gauranteed to be consistant between all cards.
+<P>
+
+Recently David Megginson has submitted a replacement for this first
+attempt that is "OpenGL complient."  The graphics are not as flashy,
+but it is more simply coded and more functional.  Look for this to
+show up soon.
+<P>
+
+<LI> <STRONG>Astronomical Objects:</STRONG>
+
+We have stars, planets, the Sun, and the Moon.  All of these are
+placed correctly in the sky for the current time and view
+position. The moon has the correct phase. The sun smoothly changes
+color and becomes much more orange/red as it aproaches the
+horizon. The stars and the planets have the correct magnitudes
+(brightness.) Find your favorite constellation in the right spot in
+the sky for your location, date, and time. Also, we have realistic day
+-> dusk -> night -> dawn -> day lighting transitions and stars are
+phased in and out in stages so you don't have the light switch effect
+where suddenly all the stars appear in the sky in their full glory.
+<P>
+
+<LI> <STRONG>Sky:</STRONG>
+
+The sky smoothly blends into haze at the horizon. We have implemented
+a smoothly blended redish/orange color When the sun is low in the
+horizon (sunset/sunrise.) The sky color and blending is tied to the
+sun position so the the transitions between full daylight through
+sunset to night is incredibly smooth and realistic.
+<P>
+Look for the sky and many of the astronomical objects to be
+reimplemented in ssg sometime in the future.
+<P>
+
+<LI> <STRONG>Sun and Lighting/Shading:</STRONG>
+
+Correct sun positioning. This is an important feature because we can
+tie lighting and shading effects to the current sun position. This
+means the correct side of the mountains and valleys will be lit. As
+the day progresses from sunrise to sunset (if you are patient) you can
+observe the shadows moving from one side to the other.  This also
+allows us to draw the moon with the correct phase by just illuminating
+the moon sphere from the correct sun direction.
+<P>
+
+<LI> <STRONG>Autopilot:</STRONG>
+
+The current autopilot has the following features: Heading hold,
+Altitude hold, height above terrain hold, and auto throttle.  In
+addition, a great-circle navigation utility is available that will
+allow the autopilot to fly and optimal great circle route to any
+airport in the database.
+<P>
+
+<LI> <STRONG>Weather: </STRONG>
+
+Christian Mayer is working on a system to maintain a live weather
+database in a form suitable for extracting local conditions and
+interpolating between nearest weather stations.  Also, code to read
+and parse METAR reports and store the herein contained weather
+information has recently been added to FlightGear. Currently no visual
+weather effects (other than static clouds) exist, however.  Work on
+weather visuals is in Progress.</LI>
+<P>
+
+<LI> <STRONG>Aircraft Visuals and External views:</STRONG>
+
+As of version 0.7.0, FlightGear uses plib, written by Steve Baker, for
+terrain rendering. A major advantage of this switch is that it will
+allow us cool things like external views, or 3D cockpits with relative
+ease. Although not much work has been done on 3D cockpits yet, some
+experimental code exists that gives us an external view.
+<P>
+Recent versions of plib include a 3ds format file loader so we should
+have a large library of objects at our disposal.
+</UL>
+<P>
+
+<HR>
+<H2>Supported Platforms</H2>
+
+One of the goals of FlightGear is to be portable and support as many
+platforms as possible. To achieve this goal, Flight Gear is written in
+ANSI C/C++, on top of OpenGL and GLUT.  In addition, we use plib to
+provide support for many other things that typically cause portability
+problems such as the joystick, the gui, and sound.  This provides a
+pretty good amount of portability.  The following platforms are
+fulling supported:
+<UL>
+
+<LI> <STRONG>Linux/FreeBSD:</STRONG>
+
+Free versions of Unix make great, powerful, flexible, inexpensive
+development platforms.  The promise of XFree86 4.0 and DRI means that
+these unix will soon have equal or better performance than windows on
+the same hardware.
+<P>
+
+<LI> <STRONG>Win32:</STRONG>
+
+Yeah, we know, but lots of otherwise nice people run it. :-) We have a
+working build based on the EGCS overlay to the Cygnus Win32 gcc
+compiler.  Accelerated OpenGL drivers are supported under Windows.
+<P>
+
+<LI> <STRONG>Irix:</STRONG>
+
+Of course. Flight Gear and it's terrain is pretty amazing on a high
+end graphics workstation.
+<P>
+
+<LI> <STRONG>Solaris:</STRONG>
+
+This is an example of how easy it is to port Flight Gear to just about
+any Unix that has OpenGL and GLUT support.
+<P>
+
+<LI> <STRONG>Macintosh:</STRONG>
+
+Darrell Walisser (and others before him) have made great progress with
+the mac port.  There are certain parts that haven't been ported yet,
+but minus these few things, running Mac versions have been rumored to exist.
+<P>
+
+<LI> <STRONG>BeOS???</STRONG>
+
+We've heard rumblings about people interested in this platform, but so
+far no one has come forward with a port.  We are hopeful though, and
+are eager to answer questions and help however we can.
+<P>
+</UL>
+
+As long as you have a C/C++ compiler, OpenGL, and GLUT you have a
+pretty good shot of porting Flight Gear to your platform. If you have
+a favorite platform not listed here, feel free to contact us. We would
+be more than happy to provide porting assistance and work in support
+for new platforms into the core source code tree.&nbsp;
+<HR>
+
+<H2>Summary by Project</H2>
+
+<HR>
+<H3>
+Audio</H3> As part of "plib" of TUX_AQFH fame, Steve Baker has been
+putting together a basic audio library that can play a sound sample,
+loop continuous sound samples, and mix any combination of these. You
+can set the volume and pitch of the sounds individually and on the
+fly.  "Plib" is available at: <A
+HREF="http://www.woodsoup.org/projs/plib">http://www.woodsoup.org/projs/plib</A>
+<HR>
+
+<H3>Autopilot</H3>
+
+Jeff Goeke-Smith wrote a basic "heading hold".  More recently, the
+functionality of the autopilot was extended by Curtis Olson to include
+a altitude hold, height above terrain hold, and an auto-throttle.
+Norman Vine has written an extension to the heading hold system that
+will allow great-circle navigation to a destination airport.  He is
+also working on a system that will enable/disable the autopilot in a
+way that is similar to real airplanes.
+<HR>
+
+<H3>Binary Datafiles</H3>
+
+Gary van Sickle is working on a binary datafile format for FlightGear
+that will allow us to store the scenery tiles more efficiently, and
+load them quicker.
+
+<HR WIDTH="100%">
+
+<H3>Cockpits</H3>
+
+<STRONG>2D Cockpits</STRONG> Friedemann Reinhard has begun work on a stand alone
+instrument panel library. An early version of this can be found in
+FlightGear.
+<P>
+
+<STRONG>3D Cockpits:</STRONG> It looks like Michael Smith can generate 3d
+cockpit models in a format that will be usable from within Flight
+Gear. It will take some effort to generate the models and incorporate
+these into the simulator, but the end results should be slick. You can
+check out some of Michael's modeling work at: 
+<A HREF="http://www.menet.umn.edu/~curt/fgfs/msmith/">
+http://www.menet.umn.edu/~curt/fgfs/msmith/</A> 
+<P>
+
+Note, there are pluses and minuses to both the 2D and 3D cockpit
+approach.  Ideally, Flight Gear will support both as best as possible
+on today's hardware so the user can toggle between one or the other
+and the HUD in whatever ways make sense.
+<HR>
+
+<H3>Engine/Thrust Modeling</H3>
+
+A person from Austrialia who I can't remember their name at the moment
+has begun work on an accurate model of the performance and behavior of
+a piston engine.  If you know who you are, please remind me so I can
+insert your name here and not sound like a total fool. :-)
+
+<HR>
+<H3>Flight Dynamics Modelling</H3> A replacement Flight Dynamics model
+is being written by John Berndt that will allow the modelling of a
+wide range of different aircraft types.  In addition we still have the
+Navion modelled in Larcsim, and a C172 replacement (written by Tony
+Peden).
+<BR>
+<HR WIDTH="100%">
+<H3>GUI</H3>
+<P>Durk Talsma is working on incorporating Steve Baker's PUI library into
+FG so that we can have a runtime point and click interface. Durk has sumitted
+the first version of this which basically sets up the menu structure. You
+can show/hide the menu by pressing the "F10" key. Functionality has been
+added to the menu by Norman Vine. Note that a lot of the proposed menu
+items are not yet implemented.
+
+<HR>
+
+<H3>HUD</H3> <P>Charlie Hotchkiss and Michelle America began work on
+the heads up display. Charlie has completely re-written the original
+hud code in C++. Charlie also has navaids and navigation instrument
+modeling in his sights.  Norman Vine has also contributed
+substantially to the appearance and performance of the HUD.
+<HR>
+
+<H3>Documentation and Publicity</H3> 
+
+Michael Basler has written an article on Flight Gear for a German
+flight sim magazine. This magazine has agreed to allow us to post the
+English translation of this article after July 1, 1998 (??-DT) when
+the magazine is mailed out to it's subscribers. Michael has also -in
+close cooperation with Bernhard Buckel- written the "Installation and
+getting started" document, which is an invaluable document for
+FlightGear "rookies" as well as "Veterans".
+<HR>
+
+<H3>Scenery</H3>
+
+Curt has been continuing to plow away at scenery and scenery rendering
+issues. Thanks to his efforts we currently have a large scenery
+database, consisting of large areas of the world. Currently the USA
+scenery contists of correct terrain elevations, coastlines, some land
+use data such as glaciers and marshes, urban areas, lakes and
+rivers. The rest of the world constists currently mainly of elevations
+and coastlines. Currently Curt is focusing on matching the various
+data sources that are used to generate the FG world even better and
+also resolve some nasty data errors. Curt has also indicated that the
+next major thing he plans to work on is adding airport runways,
+lighting, and other objects to FlightGear.
+<BR>
+<HR WIDTH="100%">
+
+<H3>Time managment / Timezones</H3>
+
+Durk Talsma has adapted code from glibc that allows FlightGear to
+approximate in which timezone it is currently flying. The current
+implementation allows the specification of a given start-up time. The
+current version is considered early beta and will require some
+cleaning. Durk has also indicated that he wants to attempt to refine
+the code for the sun/moon position that is currently still to be found
+in the Time subdir. Eventually this should be moved to Astro.
+<BR>
+
+<HR WIDTH="100%">
+
+<H3>Weather</H3>
+
+<P>Christian Mayer and Mark Vallevandt, with assistance from Durk
+Talsma, have written a weather database system that is capable of
+reading and storing, and interpreting METAR&nbsp;reports. Although
+currently not used, this database system will eventually pass
+atmospherical conditions to the Flight Model and the aircraft
+instruments on the one hand, and be used to generate visual weather
+effects on the other.&nbsp; Some experimental code exsists that models
+the visual effects of Rain, thunderstorms (lightning!!), 2 and 3D
+clouds. We also have a Rainbow! None of this code has been added to
+flightgear yet.  <P>
+
+(adaptations by Durk Talsma)
+
+<!-- Standard Footer Begin -->
+
+<HR>
+
+<ADDRESS>
+Last modified:  8/23/2002 <BR>
+<A HREF="http://www.menet.umn.edu/~curt/">Curtis L. Olson</A> <BR>
+<IMG SRC="http://www.flightgear.org/email-fg.png">
+</ADDRESS>
+
+<!-- Standard Footer End -->
+</BODY>
+</HTML>

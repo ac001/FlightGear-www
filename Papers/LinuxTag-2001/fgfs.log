@@ -1,0 +1,149 @@
+This is TeX, Version 3.14159 (Web2C 7.3.7) (format=latex 2001.12.19)  3 JAN 2002 09:50
+**fgfs.tex
+(./fgfs.tex
+LaTeX2e <2001/06/01>
+Babel <v3.7h> and hyphenation patterns for american, french, german, ngerman, n
+ohyphenation, loaded.
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2001/04/21 v1.4e Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size10.clo
+File: size10.clo 2001/04/21 v1.4e Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (./linuxtag.sty)
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2001/07/07 v1.0n Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2001/08/31 v1.1 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: dvips.def on input line 80.
+
+(/usr/share/texmf/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/share/texmf/tex/latex/psnfss/times.sty
+Package: times 2001/06/04 PSNFSS-v8.2 (SPQR) 
+)
+(/usr/share/texmf/tex/generic/babel/babel.sty
+Package: babel 2001/03/01 v3.7h The Babel package
+
+(/usr/share/texmf/tex/generic/babel/english.ldf
+Language: english 2001/04/15 v3.3l English support from the babel system
+
+(/usr/share/texmf/tex/generic/babel/babel.def
+File: babel.def 2001/03/01 v3.7h Babel common definitions
+\babel@savecnt=\count87
+\U@D=\dimen105
+)
+\l@canadian = a dialect from \language\l@english 
+))
+(/usr/share/texmf/tex/latex/misc/isolatin1.sty
+ISO-latin-1 input coding, version 0.9 of 1-Jun-1992.)
+(/usr/share/texmf/tex/latex/graphics/epsfig.sty
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+\epsfxsize=\dimen106
+\epsfysize=\dimen107
+) (./fgfs.aux)
+\openout1 = `fgfs.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 18.
+
+(/usr/share/texmf/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 44.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 44.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 44.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 44.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 44.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 44.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 44.
+
+Underfull \hbox (badness 10000) in paragraph at lines 58--65
+[]\OT1/ptm/m/n/10 Curt Ol-son made a mul-ti-plat-form re-lease of
+ []
+
+File: c172.eps Graphic file (type eps)
+<c172.eps>
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 89.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 103.
+
+ (/usr/share/texmf/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+) [1
+
+
+] [2]
+File: threevid.eps Graphic file (type eps)
+
+<threevid.eps>
+Overfull \hbox (1.87582pt too wide) in paragraph at lines 317--325
+\OT1/pcr/m/n/10 --native=socket,out,60,s1,5500,udp 
+ []
+
+
+Overfull \hbox (1.87582pt too wide) in paragraph at lines 317--325
+\OT1/pcr/m/n/10 --native=socket,out,60,s2,5500,udp
+ []
+
+[3]
+File: wh-tux.eps Graphic file (type eps)
+ <wh-tux.eps> [4]
+File: theworld.eps Graphic file (type eps)
+ <theworld.eps> [5]
+File: atlassan.eps Graphic file (type eps)
+ <atlassan.eps> [6] [7] [8] (./fgfs.aux) ) 
+Here is how much of TeX's memory you used:
+ 1040 strings out of 10847
+ 12364 string characters out of 70945
+ 65447 words of memory out of 263001
+ 3990 multiletter control sequences out of 10000+0
+ 12487 words of font info for 36 fonts, out of 400000 for 1000
+ 14 hyphenation exceptions out of 1000
+ 25i,8n,19p,228b,343s stack positions out of 300i,100n,500p,50000b,4000s
+
+Output written on fgfs.dvi (8 pages, 48840 bytes).

@@ -1,0 +1,127 @@
+From: "Maurizio M. Gavioli" <mmg@risc.iris.firenze.it>
+To: fl182@cleveland.freenet.edu
+Subject: Re: Technical problem
+Date: Tue, 16 Apr 1996 09:54:10 +0100
+
+Puff, puff...
+
+I came back this morning and I found 500+ e-mail messages waiting for me; I
+got rid of the trash and junk but I have not yet time to think about what
+happened in the meantime nor to look at Korpela driver example.
+
+After all the bad I have said about FS5, perhaps it would be interesting to
+know how FS5 solved the issue, because it seems to me an ingenious solution.
+
+First, FS5 has DLL (or something very near).
+
+FSO's (I'll call them FSO's because it is a convenient name, but .AIR, .GAU
+and other have the same structure) are a collection of (semi-)independent
+portion of machine code I'll call "modules". Each module is made of:
+
+* a header (cotaining, among other things, pointers to the beginning of the
+tables)
+* the machine code (including for the moment the data)
+* up to three tables.
+
+One module of each FSO is marked as "main" and is loaded at start up if the
+FSO is listed as DEVICE= in the FS5.INI; if it is listed as INCLUDE= only
+its DLL export table (see below) is loaded.
+
+The trick is in the tables:
+
+* DLL export table (lacking if the module does not export DLLs)
+* offset table (lacking only if the module does IMPORT DLL, but this rarely
+happens)
+* segment table (same as offset table)
+
+The DLL export table entries are made of:
+
+* a 16-bit number which is the DLL "name"
+* a 16-bit offset of the beginning of the DLL code in the module (DDL entry
+point)
+
+At module loading, the table is moved into a big cumulative table and to
+each entry is added the offset at which the module has been loaded (then the
+big table contains name, offset and segment of each exported DLL)
+
+This is enough for exporting. To import a DLL:
+
+where the DLL should be called:
+
+* an ASM instruction (remember that FS5 is almost entrirely written in
+Assembly):
+
+        call 0001:0000
+
+is placed instead (the "DLL stub");
+
+* an entry is placed in the offset table containing the offset in the module
+of the OFFSET of the stub (the offset of the 0000 field) and the "name" of
+the required DLL;
+
+* an entry is placed in the segment table containing the offset of the
+SEGMENT of the stub (the offset of the 0001 field).
+
+The offset table entries are then made of:
+
+* a 16-bit "name" of the DLL to be imported
+* a 16-bit offset in the module of the place where the actual DLL offset has
+to be written
+
+The segment table antries are made of:
+
+* a 16-offset of the place when the actual DLL segment has to be written.
+
+At module loading, the loader goes through the segment table and replaces
+the "0001" of each stub with the actual segment where the FS5 kernel code
+has been loaded. Now each DLL stub points to a kernel routine which acts as
+a function dispatcher and which, when execution arrives at it (i.e. when the
+DLL is "called"):
+
+* looks in the stack for the address which has called it (i.e. the "call
+xxxx:0000" stub)
+* looks in the offset table of the calling module for an entry which the
+same offset of the stub and retrieves the DLL "name"
+* looks in the "big DLL table" for an entry with the same DLL "name" and
+actually overwrites the stub with the real offset:segment pair of the DLL
+entry point (and then it calls it)
+
+The next time the same stub is met again it will directly call the necessary
+DLL.
+
+The process may seem unnecessarily complex and slow; and this was my
+impression when I discovered it; in practice, the overhead is minimal and
+occurs only once for each stub.
+
+In addition it actually alllows to dinamically discard a DLL, either to
+unload it from memory or to replace it with another version (this actually
+happens, for instance, when switching plane, because part of the machine
+code is implemented within the AIR and each AIR may refer a different SIM).
+
+In the latter case, the program goes through a list of all the loaded
+module, scans the offset table of each module for instances of the target
+DLL and overwrites the stubs with the new offset:segment pair.
+
+I'm not saying we should implement the same mechanism, but the idea seems
+bright to me and we can get some suggestions from it.
+
+About variables:
+
+The FS5 solution is perhaps less elegant, anyway:
+
+The bulk of the "common" variables (i.e. the variables which have to be
+shared among modules) is kept in a "common" segment (which also happens to
+contain the kernel, but this is not necessary), each variable at a
+well-known (to them!) address. When each module is entered, DS points to
+this segment.
+
+Some special-purpose variables (like the plane livery colours or some flags
+and temporary storage of the scenery rendering machinery) are kept in
+separate segments (usually allocated by the modules which primarily use
+them), whose addresses are however stored in known places of the "common"
+segment and then known to all the modules.
+
+So long...
+
+Maurizio M. Gavioli
+

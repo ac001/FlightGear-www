@@ -1,0 +1,117 @@
+<HTML>
+
+<HEAD>
+  <TITLE>FGFS Anonymous CVS instructions</TITLE>
+  <LINK REL="StyleSheet" TYPE="text/css" HREF="../fgfs.css">
+</HEAD>
+
+
+<BODY>
+
+<H1>FGFS Anonymous CVS instructions</H1>
+
+Here's how to access the Flight Gear anonymous (read only) cvs
+repository.  You will not be able to commit changes, but you will be
+able to keep your local source code tree absolutely up to date with
+the master repository.
+<P>
+
+<HR>
+
+<H3>Getting CVS</H3>
+
+You must have a recent version of cvs installed on your system in
+order for any of this to work.  <A HREF="http://www.cyclic.com/">Cyclic
+Software</A> supports and maintains CVS.  CVS continues to be a free,
+open-source product.  Cyclic makes a living by selling support.
+<P>
+
+<HR>
+
+<H3>Checking Out a Copy of the FGFS Source</H3>
+
+The Flight Gear source code comes in a large tree of subdirectories.
+However, you should now be able to check out the entire tree with one
+"co" command.
+<P>
+
+First, cd to where ever you want the top level source directory to
+live.  The top level "FlightGear" source directory will be created
+here.
+<P>
+
+<UL>
+<LI>
+For the development tree, run the following commands exactly as you see
+them here:
+<P>
+
+<PRE>
+    cvs -d :pserver:cvs@cvs.flightgear.org:/var/cvs/FlightGear-0.7 login
+    CVS passwd: guest
+
+    cvs -d :pserver:cvs@cvs.flightgear.org:/var/cvs/FlightGear-0.7 co FlightGear
+</PRE>
+</UL>
+
+<P>
+<HR>
+
+<H3>Now that you are a Developer ...</H3>
+
+Before you can build the executables, you need to do one thing (as 
+a developer) that isn't required if you are just building a regular source
+distribution.  From the top level FlightGear directory (the same one
+that has "configure.in", run:
+<P>
+
+<PRE>
+    ./autogen.sh
+</PRE>
+
+This runs several autoconf/automake programs to create the "configure"
+script and create all the "Makefile.in" files.
+<P>
+
+If you have problems running autogen.sh, make sure you have both
+automake and autoconf installed on your system and try again.
+
+Finally, after autogen.sh has successfully completed, 
+you can run ./configure; make; make install
+
+<HR>
+
+<H3>Keeping your local copy in sync</H3>
+
+Finally (and this is the good part) if you cd to the toplevel FlightGear
+source directory (the one that was created with the very first checkout
+command) and run "cvs update -d -P", your local source tree will be 
+automatically synced with the master repository.  The "-d" flag automatically
+adds any new directories that have been created in the repository, and the
+"-P" automatically removes any old directories that have been removed 
+from the repository.
+<P>
+
+CVS is pretty smart, so if you have made local changes that don't conflict
+with any changes to the master repository, cvs should be able to merge the 
+changes together, even when the changes have been made to the same file.
+
+If you have made changes that do conflict with new changes to the master 
+repository, cvs will let you know, and you can go edit the file with 
+conflicts and resolve them.
+
+
+<!-- Standard Footer Begin -->
+
+<HR>
+
+<ADDRESS>
+Last modified:  8/23/2002 <BR>
+<A HREF="http://www.menet.umn.edu/~curt/">Curtis L. Olson</A> <BR>
+<IMG SRC="http://www.flightgear.org/email-fg.png">
+</ADDRESS>
+
+<!-- Standard Footer End -->
+
+</BODY>
+</HTML>

@@ -1,0 +1,70 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>AERONAUTICAL DEVELOPMENT AGENCY, BANGALORE </TITLE>
+<META NAME="Template" CONTENT="C:\PROGRAM FILES\MICROSOFT OFFICE\OFFICE\html.dot">
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080">
+
+<B><U><FONT COLOR="#0000ff"><P ALIGN="CENTER">AERONAUTICAL DEVELOPMENT AGENCY, BANGALORE </P>
+</U><P ALIGN="CENTER">Home page : </B></FONT><A HREF="http://www.ada.gov.in/"><FONT SIZE=2>http://www.ada.gov.in/</FONT></A></P>
+<B><FONT COLOR="#0000ff"><P ALIGN="CENTER">Contact – Cdr. VS Renganathan : </B></FONT><A HREF="mailto:vsranga@ada.ernet.in"><FONT SIZE=2>mailto:vsranga@ada.ernet.in</FONT></A></P>
+<B><I><FONT COLOR="#0000ff"><P ALIGN="JUSTIFY">Overview</P></FONT>
+</B></I><P ALIGN="JUSTIFY">During mid 1999, it was necessary to setup
+a flight simulation facility for piloted evaluation of ski-jump launch
+and arrested recovery of a fighter aircraft from an aircraft
+carrier. The basic requirement of the simulation was to provide a
+realistic Image Generation System for ski-jump launch and recovery
+with 3 window Outside Window Imagery at minimum 1024x768 pixels
+resolution and 60 Hz refresh rate. It was decided to utilize this
+opportunity to investigate low cost hardware/software options to
+realize this objective.</P>
+
+<B><I><FONT COLOR="#0000ff"><P ALIGN="JUSTIFY">Simulation Setup</P></FONT>
+</B></I><P ALIGN="JUSTIFY">Three PCs (dual PII, NT) with high-end
+graphics accelerator cards drive three SVGA video projectors onto
+three screens each with 45</FONT><FONT FACE="Symbol">°</FONT>
+horizontal FOV. The three visual workstations are driven by a flight
+model PC (dual PII, 10 Mbps Ethernet) using three non-blocking UDP
+sockets. Basic eye-point data (lat/lon/alt/h/p/r) along with other
+data for the HUD overlay are transmitted by the FMPC to each of the
+visual PCs at 80 Hz. The visual PCs running at 30-60 Hz (depending on
+scenery complexity) receive and use only the last packet. Pilot input
+is received from the cockpit through a Data Acquisition PC, by the
+FMPC, using a separate socket. Latency, although not measured until
+now, is well within 100 mSec. Pilots have so far not noticed any
+artifacts of transportation delay or distraction caused by lack of
+synchronization of the three windows, during preliminary
+evaluation. Latency is to be quantified soon. </P>
+
+<B><I><FONT COLOR="#0000ff"><P ALIGN="JUSTIFY">Image Generator</P></FONT>
+</B></I><P ALIGN="JUSTIFY">FlightGear has been suitably adapted to meet the Image generation system requirements. Preliminary piloted evaluation was conducted recently with FlightGear version 0.6.1. The changes include:</P>
+<OL TYPE="a">
+
+<P ALIGN="JUSTIFY"><LI>Provision of three window display with each visual PC running the same executable and configured as left/center/right from the command line.</LI></P>
+<P ALIGN="JUSTIFY"><LI>Provision of a moving aircraft carrier. The ship can be placed anywhere, with initial lat/lon/alt read off a text file. Update of lat/lon/h/p/r of the ship are received from the flight model PC every frame. Pitch, roll and heave are also simulated.</LI></P>
+<P ALIGN="JUSTIFY"><LI>Provision of a fighter aircraft HUD overlay with 1:1 scale pitch ladder, velocity vector, energy marker and other reticles specifically for ski-jump launch and arrested recovery phases.</LI></P></OL>
+
+<B><I><FONT COLOR="#0000ff"><P ALIGN="JUSTIFY">Future work</P></FONT>
+</B></I><P ALIGN="JUSTIFY">Beginning with the implementation of all the above features in the latest release of FlightGear, work on the following features are planned:</P>
+<OL TYPE="a">
+
+<P ALIGN="JUSTIFY"><LI>Re-configurable HUD with configuration read off config text file, using xml parser (suggested by Curtis).</LI></P>
+<P ALIGN="JUSTIFY"><LI>Optical landing aid for carrier landing.</LI></P>
+<P ALIGN="JUSTIFY"><LI>Provision of runway lights for night launch and recovery.</LI></P>
+<P ALIGN="JUSTIFY"><LI>Ship wake, waves and sea state simulation.</LI></P></OL>
+
+<B><I><FONT COLOR="#0000ff"><P ALIGN="JUSTIFY">Snapshots</P></FONT></B></I>
+
+<P ALIGN="JUSTIFY">
+<A HREF="ahuja2.jpg">ahuja2.jpg</A>,
+<A HREF="ahuja6.jpg">ahuja6.jpg</A>,
+<A HREF="beachview.jpg">beachview.jpg</A>,
+<A HREF="landing1.jpg">landing1.jpg</A>,
+<A HREF="landing2.jpg">landing2.jpg</A>,
+<A HREF="landing5.jpg">landing5.jpg</A>,
+<A HREF="view1.jpg">view1.jpg</A>
+</P>
+</BODY>
+</HTML>

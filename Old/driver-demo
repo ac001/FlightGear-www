@@ -1,0 +1,131 @@
+From: "Eric J. Korpela" <korpela@ssl.Berkeley.EDU>
+To: fl182@cleveland.freenet.edu
+Subject: A little sample for drivers, etc....
+Date: Mon, 15 Apr 1996 16:55:41 -0700 (PDT)
+
+
+Just to convince myself it could be done, I've put together a little
+demo of how things would work in a demand loaded driver world.  I've
+even created a working driver on this model.  (OK, it's for the pause
+function.  It was really easy to implement :) )
+
+I'd like you all to take a look at what I've done and give me feedback
+about what elements need to be in the device call and initialization
+structures.  I'd also like to give you some idea of what I'm thinking here.
+I think better in source code.....  All I've implemented so far is a bit 
+of code for initializing static drivers.  In the next couple of days
+I'll put in a rudimentary main loop.
+
+I'm by no means saying that this code is part of the final product, only 
+a demo of what I'm thinking.
+
+If you're not compiling under gcc you'll need to add some things to
+fgtypes.h in order to get the types right.
+
+Here's a list of the files and what they contain.....
+
+fgdefdrv.h	prototypes and structures for statically linked drivers...
+fgdefs.h        global constants
+fgdriver.h      structures related to initializing and calling drivers.
+fgmain.c        the main() function.
+fgpause.c       the "Pause" driver.
+fgtypes.h       standard type definitions.
+fgvars.h        a list of the global public variables.  (empty now)
+makefile        guess. 
+
+----------------------------------------------------------------------------
+begin 644 fltgear.zip
+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
+M   !    "               I($["   9F=V87)S+FA02P$""@,*  0 !@"F
+M=8\@,V;EDOP"  #>!0  "               I(%B"   9F=M86EN+F-02P$"
+M"@,*  0 !@#];H\@4A&(9E<"   F!0  "0              I(&$"P  9F=P
+M875S92YC4$L! @H#"@    $ FVZ/(*R$W_PP    /0    @             
+E *2! @X  &UA:V5F:6QE4$L%!@     (  @ M@$  %@.        
+ 
+end

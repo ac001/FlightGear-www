@@ -1,0 +1,91 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>Genesis 3000 Overview</TITLE>
+</HEAD>
+<BODY LINK="#0000ff">
+
+<B><FONT FACE="Arial" SIZE=4><P ALIGN="CENTER">Genesis 3000 System Description</P>
+</B></FONT><FONT SIZE=2><P ALIGN="CENTER">Veridian Engineering Division</P>
+<P ALIGN="CENTER">Flight Research Group</P>
+<P ALIGN="CENTER">150 North Airport Drive</P>
+<P ALIGN="CENTER">Buffalo, NY  14225</P>
+<P ALIGN="CENTER">For information contact:  Paul Deppe (716) 631-6898 or Bill Otto (716) 631-6729</P>
+
+</FONT><FONT FACE="Arial Black"><P>Overview</P>
+</FONT><FONT FACE="Arial" SIZE=2><P ALIGN="JUSTIFY">Genesis 3000 is a fixed-base, programmable flight simulator.  The entire simulation model is implemented using Simulink&reg;, a popular graphical block diagram programming system, which is part of Matlab&reg;, by The Math Works, Inc.  Simulation engineers, aircraft designers, and students can implement changes to the simulation in block diagram form and generate an executable file using Matlab’s Real Time Workshop.  There is no &quot;hand coding&quot; required for the simulation model.</P>
+<P ALIGN="CENTER"><IMG SRC="Image1.jpg" WIDTH=498 HEIGHT=373></P>
+</FONT><FONT FACE="Arial Narrow" SIZE=1><P ALIGN="CENTER">Figure 1<BR>
+Genesis 3000 Programmable Flight Simulator</P>
+</FONT><FONT FACE="Arial" SIZE=2><P ALIGN="JUSTIFY">Genesis 3000 uses two Pentium III-based computers, which communicate using a MIL-STD-1553B data bus.  One computer runs the simulation model and user interface, and the other computer draws the head-up and head-down displays.  The keyboard, mouse, and monitor for the Model Computer are on a table next to the Genesis 3000 and are referred to as the Engineer’s Station.  The Display Computer operates as an embedded system and is controlled from the Model Computer through the 1553 bus.</P>
+</FONT><FONT FACE="Arial Black"><P>Controls</P>
+</FONT><FONT FACE="Arial Black" SIZE=2><P>General Layout</P>
+</FONT><FONT FACE="Arial" SIZE=2><P ALIGN="JUSTIFY">Genesis 3000 is configured as a generic aircraft cockpit as shown in Figure 2.</P>
+<P ALIGN="CENTER"><IMG SRC="Image2.jpg" WIDTH=498 HEIGHT=373></P>
+</FONT><FONT FACE="Arial Narrow" SIZE=1><P ALIGN="CENTER">Figure 2<BR>
+Genesis 3000 Cockpit</P>
+</FONT><FONT FACE="Arial" SIZE=2><P ALIGN="JUSTIFY">The Model and Display Computers are mounted in a standard 19&quot; rack on the left side of the main console body.  The Main Power Switch and all external connectors are mounted at the bottom of the same rack.</P>
+</FONT><FONT FACE="Arial Black" SIZE=2><P>Inceptors</P>
+</FONT><FONT FACE="Arial" SIZE=2><P ALIGN="JUSTIFY">Genesis 3000 is equipped with center and side sticks, rudder pedals, and toe brakes.  All primary inceptors use force sensors as inputs to the Model Computer.  The center and side sticks have rubber mounts to provide a limited amount of control motion.  Dual throttles are mounted on the left side console.</P>
+</FONT><FONT FACE="Arial Black" SIZE=2><P>Secondary Controls and Switches</P>
+</FONT><FONT FACE="Arial" SIZE=2><P ALIGN="JUSTIFY">The following secondary controls and switches are provided:</P>
+
+<UL>
+
+<UL>
+<P ALIGN="JUSTIFY"><LI>Left Side Console:</LI></P>
+
+<UL>
+<P ALIGN="JUSTIFY"><LI>Engine 1 and 2 Switches – Programmable function.  The default function is to turn the model engines on and off.</LI></P>
+<P ALIGN="JUSTIFY"><LI>Pitch, Roll, and Yaw SAS Switches – Programmable function.  The default function is to turn all feedbacks on or off in each axis.</LI></P>
+<P ALIGN="JUSTIFY"><LI>Rudder Trim Switch – Programmable function.  The default function is to trim the center position of the rudder.</LI></P>
+<P ALIGN="JUSTIFY"><LI>Speedbrake Switch (on throttle), double-throw, spring-loaded to center  – Programmable function.  The default function extends and retracts the speed brakes by momentarily depressing the switch aft or forward, respectively.</LI></P></UL>
+
+<P ALIGN="JUSTIFY"><LI>Front Console, Left Side:</LI></P>
+
+<UL>
+<P ALIGN="JUSTIFY"><LI>HUD Switch – Cycles through the various Head-Up Display (HUD) formats.</LI></P>
+<P ALIGN="JUSTIFY"><LI>FREEZE Switch – Freezes the simulation in the Model Computer.  All user interface functions still work.</LI></P>
+<P ALIGN="JUSTIFY"><LI>DATA ON/OFF Switch – Starts or stops data recording.</LI></P>
+<P ALIGN="JUSTIFY"><LI>FLAP Switch, three position – Programmable funtion.  The default function is as a flap preselect switch, that is, up = up, center = half flaps, and down = full flaps.</LI></P>
+<P ALIGN="JUSTIFY"><LI>GEAR Switch – Programmable function.  Default function, of course, is to raise and lower the gear.</LI></P></UL>
+
+<P ALIGN="JUSTIFY"><LI>Front Console, Right Side:</LI></P>
+
+<UL>
+<P ALIGN="JUSTIFY"><LI>USER 1 and 2 Switches – Programmable function.  They have no function in the default model.</LI></P></UL>
+
+<P ALIGN="JUSTIFY"><LI>Right Side Console:</LI></P>
+
+<UL>
+<P ALIGN="JUSTIFY"><LI>CENTER/SIDE SITCK SELECT, located on aft side of right console – Selects center or side stick as the input to the model computer.</LI></P></UL>
+</UL>
+</UL>
+
+</FONT><FONT FACE="Arial Black"><P>Displays</P>
+</FONT><FONT FACE="Arial Black" SIZE=2><P>Scenery</P>
+</FONT><FONT FACE="Arial" SIZE=2><P ALIGN="JUSTIFY">The scenery and out-the-window view for Genesis 3000 are generated using FlightGear, a popular public-domain flight simulation package released under the GNU General Public License (GPL).  The scenery is generated from public DOD digital elevation maps of the continental United States and from public FAA airport data.  Detailed information on FlightGear and the GPL may be found at </FONT><A HREF="http://www.flightgear.org/"><FONT FACE="Arial" SIZE=2>www.flightgear.org</FONT></A><FONT FACE="Arial" SIZE=2> and </FONT><A HREF="http://www.gnu.org/"><FONT FACE="Arial" SIZE=2>www.gnu.org</FONT></A><FONT FACE="Arial" SIZE=2>, respectively.</P>
+</FONT><FONT FACE="Arial Black" SIZE=2><P>Head-Up Display</P>
+</FONT><FONT FACE="Arial" SIZE=2><P ALIGN="JUSTIFY">The available HUD formats are:</P>
+
+<UL>
+
+<UL>
+<P ALIGN="JUSTIFY"><LI>HUD off.</LI></P>
+<P ALIGN="JUSTIFY"><LI>Cruise HUD.</LI></P>
+<P ALIGN="JUSTIFY"><LI>Tracking task HUD.  The cruise HUD is de-cluttered and optimized for synthetic tracking tasks.</LI></P>
+<P ALIGN="JUSTIFY"><LI>Approach HUD.  The altitude and airspeed readouts are moved down and in for better readability during approach and landing.</LI></P></UL>
+</UL>
+
+<P ALIGN="CENTER"><IMG SRC="Image3.jpg" WIDTH=572 HEIGHT=430></P>
+</FONT><FONT FACE="Arial Narrow" SIZE=1><P ALIGN="CENTER">Figure 3<BR>
+Genesis 3000 Outside View and Head-Up Display</P>
+</FONT><FONT FACE="Arial" SIZE=2><P ALIGN="JUSTIFY">The default cruise HUD format is shown in Figure 3.  The HUD symbology is based on MIL-STD-1787B, &quot;Aircraft Display Symbology&quot;.  The pitch ladder is conformal and the flight path marker is inertial, air mass, or caged, as desired.  The field of view is 55 x 41.25 degrees.  The entire outside view and HUD may be slewed in pitch to optimize the vertical field of view for different tasks.</P>
+</FONT><FONT FACE="Arial Black" SIZE=2><P>Head-Down Display</P>
+</FONT><FONT FACE="Arial" SIZE=2><P ALIGN="JUSTIFY">The Head-Down Display (HDD) consists of a B777-style Primary Flight Display (PFD) surrounded by generic engine, gear, flap, speedbrake, and trim indicators.  The Default Genesis 3000 HDD is shown in Figure 4.</P>
+<P ALIGN="CENTER"><IMG SRC="Image4.jpg" WIDTH=522 HEIGHT=392></P>
+</FONT><FONT FACE="Arial Narrow" SIZE=1><P ALIGN="CENTER">Figure 4<BR>
+Genesis 3000 Head-Down Display</P>
+</FONT><FONT SIZE=2></FONT></BODY>
+</HTML>

@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 96.1 (Feb 5, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<HTML>
+<HEAD>
+<TITLE> Flight Gear Sky Representation and Rendering. </TITLE>
+<META NAME="description" CONTENT=" Flight Gear Sky Representation and Rendering. ">
+<META NAME="keywords" CONTENT="Sky">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<LINK REL=STYLESHEET HREF="Sky.css">
+</HEAD>
+<BODY LANG="EN">
+<P>
+<H1 ALIGN=CENTER>
+  Flight Gear Sky Representation and Rendering.
+</H1>
+<P ALIGN=CENTER><STRONG>
+    Curtis L. Olson<BR> 
+    (<tt>curt@me.umn.edu</tt>)
+</STRONG></P><P>
+<P>
+<H1><A NAME="SECTION00010000000000000000">1 Introduction</A></H1>
+<P>
+No flight simulator should be without a nice sky that smoothly
+transitions into haze at the horizon.  Such a sky should also be able
+to render sunrise and sunset effects.  This document describes how we
+have implemented such a sky.
+<P>
+<H1><A NAME="SECTION00020000000000000000">2 Overview</A></H1>
+<P>
+The sky is represent as a 12 sided dome (or upside down bowl if you
+prefer.)  Figure <A HREF="Sky.html#figdome">1</A> shows how a 6 sided dome might be
+constructed.
+<P>
+<P><A NAME="21">&#160;</A><A NAME="figdome">&#160;</A> <IMG WIDTH=606 HEIGHT=433 ALIGN=BOTTOM ALT="figure19" SRC="img1.gif"  > <BR>
+<STRONG>Figure 1:</STRONG> Simplified (6 Sided) Sky Dome<BR>
+<P>
+<P>
+The center section can be constructed with a triangle fan.  The inner
+and outer ``skirts'' can be constructed with triangle strips.
+<P>
+The colors of each vertex can be independently controlled to achieve
+sky to haze transitions, sunrise/sunset effects with a pinkish/oranges
+glow, and one side of the sky can easily be made brighter than the
+other.  By enabling smooth shading in OpenGL, the colors will be
+blended together for a very nice effect.
+<P>
+<H1><A NAME="SECTION00030000000000000000">3 Implementation</A></H1>
+<P>
+This sections describes how the sky has been implemented in OpenGL.
+<P>
+<H2><A NAME="SECTION00031000000000000000">3.1 Vertex Generation</A></H2>
+<P>
+The sky dome structure is intended to be centered over the current
+view point at sea level.  This way we could paste cloud textures on
+the dome if we liked.  So, we simply have to generate vertices for a
+fixed dome, and then use OpenGL calls to transform and rotate it to
+the desired place.  Please refer to the actual code
+(.../Src/Scenery/sky.c) for specifics, but
+to generate the vertices we simply create a 12 element array for the
+inner set of vertices, another 12 element array for the middle set of
+vertices and a last 12 element array for the outer set of vertices.
+<P>
+<H2><A NAME="SECTION00032000000000000000">3.2 Vertex Coloring</A></H2>
+<P>
+For each vertex position array, there is a corresponding vertex color
+array.  This way we don't have to compute each vertex color every
+iteration.  Also, by being able to individually control the color at
+each vertex, we can do all sorts of nice sky to haze blending with
+dusk and dawn effects.  Again, please refer to the source
+(.../Src/Scenery/sky.c) for specific details on how the coloring is
+implemented.  However, here's the quick overview.
+<P>
+<H3><A NAME="SECTION00032100000000000000">3.2.1 Day and Night Coloring</A></H3>
+<P>
+For the general middle of the day, or middle of the night sky, we
+already know the desired sky color, and the haze color.  This is
+computed elsewhere based on the current sun position.  During the
+night these colors are both nearly black.  During the dawn they are
+smoothly transitioned to day time colors.  And, during the dusk they
+are smoothly transitioned back to night time colors.
+<P>
+The center of the dome is assigned the current sky color.  The color
+of the first inner ring of vertices is weighted 70% towards the sky
+color and 30% towards the fog color.
+<P>
+Then color of the middle ring of vertices is weighted 10% towards the
+sky color and 90% towards the fog color.
+<P>
+The the outer ring of vertices are assigned the current fog color.
+<P>
+<H3><A NAME="SECTION00032200000000000000">3.2.2 Dusk and Dawn Effects</A></H3>
+<P>
+Dusk and dawn effects can be accomplished by controlling the color of
+the vertices.  Rather than trying to figure out which vertices are
+near the current sun position, I just rotate the dome so the 0'th
+vertex of each ring (and the center fan) align with the sun.  This
+makes it easier to calculate vertex colors.  But, there is a fair
+amount of work involved in calculating the proper dome rotation.
+<P>
+<P><A NAME="31">&#160;</A><A NAME="figearth">&#160;</A> <IMG WIDTH=563 HEIGHT=463 ALIGN=BOTTOM ALT="figure29" SRC="img2.gif"  > <BR>
+<STRONG>Figure 2:</STRONG> Overview of Earth<BR>
+<P>
+<P>
+Figure <A HREF="Sky.html#figearth">2</A> shows an overview of the setup.  <I>P</I>, the
+current view position, and  <IMG WIDTH=11 HEIGHT=9 ALIGN=BOTTOM ALT="tex2html_wrap_inline186" SRC="img3.gif"  > , the local ``up'' vector,
+define the plane which is tangent to the Earth's surface at point <I>P</I>.
+Just for a quick review of your linear algebra, given  <IMG WIDTH=18 HEIGHT=18 ALIGN=MIDDLE ALT="tex2html_wrap_inline190" SRC="img4.gif"  > ,
+the position vector of <I>P</I> and  <IMG WIDTH=11 HEIGHT=9 ALIGN=BOTTOM ALT="tex2html_wrap_inline194" SRC="img5.gif"  > , the position vector of
+some other arbitrary point on the plane, and  <IMG WIDTH=11 HEIGHT=9 ALIGN=BOTTOM ALT="tex2html_wrap_inline186" SRC="img3.gif"  > , the normal
+to the plane, then the vector  <IMG WIDTH=11 HEIGHT=9 ALIGN=BOTTOM ALT="tex2html_wrap_inline186" SRC="img3.gif"  >  and the vector  <IMG WIDTH=65 HEIGHT=30 ALIGN=MIDDLE ALT="tex2html_wrap_inline200" SRC="img6.gif"  >  are orthogonal (perpendicular.)  If the two vectors
+are orthogonal then their dot product will be zero, so the following
+must be true:
+<P>
+<P> <IMG WIDTH=500 HEIGHT=20 ALIGN=BOTTOM ALT="equation42" SRC="img7.gif"  > <P>
+<P>
+This is the vector equation of the plane and can be rewritten as:
+<P>
+<P> <IMG WIDTH=521 HEIGHT=54 ALIGN=BOTTOM ALT="align47" SRC="img8.gif"  > <P>
+<P>
+We want to find a vector  <IMG WIDTH=11 HEIGHT=9 ALIGN=BOTTOM ALT="tex2html_wrap_inline194" SRC="img5.gif"  >  representing the
+direction along the current tangent plane towards the position on the
+Earth where the Sun is directly overhead.  The vector  <IMG WIDTH=11 HEIGHT=9 ALIGN=BOTTOM ALT="tex2html_wrap_inline204" SRC="img9.gif"  >  is
+defined as  <IMG WIDTH=26 HEIGHT=19 ALIGN=BOTTOM ALT="tex2html_wrap_inline206" SRC="img10.gif"  > .
+<P>
+<P><A NAME="56">&#160;</A><A NAME="figlocal">&#160;</A> <IMG WIDTH=749 HEIGHT=473 ALIGN=BOTTOM ALT="figure54" SRC="img11.gif"  > <BR>
+<STRONG>Figure 3:</STRONG> Vectors and Points in Local Coordinate System<BR>
+<P>
+<P>
+Figure <A HREF="Sky.html#figlocal">3</A> shows a more detailed ``local'' view of the
+points and vectors involved.  The point, <I>P</I>, is the current view
+point.  The vector,  <IMG WIDTH=11 HEIGHT=9 ALIGN=BOTTOM ALT="tex2html_wrap_inline186" SRC="img3.gif"  > , is the local up vector.  <I>S</I>
+represents the current position on the Earth's surface where the Sun
+is directly overhead.  We want to find the vector,  <IMG WIDTH=11 HEIGHT=9 ALIGN=BOTTOM ALT="tex2html_wrap_inline194" SRC="img5.gif"  >  which
+is a projection of  <IMG WIDTH=11 HEIGHT=9 ALIGN=BOTTOM ALT="tex2html_wrap_inline204" SRC="img9.gif"  >  onto the plane defined by <I>P</I> and
+ <IMG WIDTH=11 HEIGHT=9 ALIGN=BOTTOM ALT="tex2html_wrap_inline186" SRC="img3.gif"  > .
+<P>
+To do this we first calculate  <IMG WIDTH=18 HEIGHT=18 ALIGN=MIDDLE ALT="tex2html_wrap_inline222" SRC="img12.gif"  >  which is the shortest
+distance from point <I>S</I> to the tangent plane.
+<P>
+<P> <IMG WIDTH=500 HEIGHT=43 ALIGN=BOTTOM ALT="equation65" SRC="img13.gif"  > <P>
+<P>
+Armed with  <IMG WIDTH=18 HEIGHT=18 ALIGN=MIDDLE ALT="tex2html_wrap_inline222" SRC="img12.gif"  >  we can now calculate
+ <IMG WIDTH=11 HEIGHT=9 ALIGN=BOTTOM ALT="tex2html_wrap_inline194" SRC="img5.gif"  >  which is the local surface direction on the tangent
+plane towards the sun, <I>S</I>.
+<P>
+<P> <IMG WIDTH=500 HEIGHT=20 ALIGN=BOTTOM ALT="equation74" SRC="img14.gif"  > <P>
+<P>
+Ok, so now we have  <IMG WIDTH=11 HEIGHT=9 ALIGN=BOTTOM ALT="tex2html_wrap_inline194" SRC="img5.gif"  > , but the fun doesn't stop here.  Now
+we need to calculate a rotation angle  <IMG WIDTH=8 HEIGHT=14 ALIGN=BOTTOM ALT="tex2html_wrap_inline234" SRC="img15.gif"  >  about  <IMG WIDTH=11 HEIGHT=9 ALIGN=BOTTOM ALT="tex2html_wrap_inline186" SRC="img3.gif"  >  to
+align our dome with  <IMG WIDTH=11 HEIGHT=9 ALIGN=BOTTOM ALT="tex2html_wrap_inline194" SRC="img5.gif"  > .  The origin of the dome always
+aligns with a vector pointing directly South.  So, we need to repeat
+the above procedure to map a vector pointing straight down  <IMG WIDTH=70 HEIGHT=30 ALIGN=MIDDLE ALT="tex2html_wrap_inline240" SRC="img16.gif"  >  onto our tangent plane to produce the local, surface,
+south vector  <IMG WIDTH=15 HEIGHT=9 ALIGN=BOTTOM ALT="tex2html_wrap_inline242" SRC="img17.gif"  > .  We then take the  <IMG WIDTH=61 HEIGHT=30 ALIGN=MIDDLE ALT="tex2html_wrap_inline244" SRC="img18.gif"  >  of the dot product
+of  <IMG WIDTH=11 HEIGHT=9 ALIGN=BOTTOM ALT="tex2html_wrap_inline194" SRC="img5.gif"  >  with  <IMG WIDTH=15 HEIGHT=9 ALIGN=BOTTOM ALT="tex2html_wrap_inline242" SRC="img17.gif"  > .
+<P>
+<P> <IMG WIDTH=500 HEIGHT=20 ALIGN=BOTTOM ALT="equation87" SRC="img19.gif"  > <P>
+<P>
+Whew, that gives us the angle we want.  Well almost, not quite.  The
+problem is that the dot product returns a number in the range of
+ <IMG WIDTH=101 HEIGHT=30 ALIGN=MIDDLE ALT="tex2html_wrap_inline250" SRC="img20.gif"  > . Thus, the  <IMG WIDTH=61 HEIGHT=30 ALIGN=MIDDLE ALT="tex2html_wrap_inline244" SRC="img18.gif"  >  function returns a  <IMG WIDTH=8 HEIGHT=14 ALIGN=BOTTOM ALT="tex2html_wrap_inline234" SRC="img15.gif"  > 
+in the range of  <IMG WIDTH=105 HEIGHT=30 ALIGN=MIDDLE ALT="tex2html_wrap_inline256" SRC="img21.gif"  > .  But this is not enough
+information to determine if  <IMG WIDTH=11 HEIGHT=9 ALIGN=BOTTOM ALT="tex2html_wrap_inline194" SRC="img5.gif"  >  is in the east hemisphere or
+west hemisphere and if this angle should be positive or negative.
+<P>
+So, to get that last piece of information we need, we can rotate the
+vector  <IMG WIDTH=15 HEIGHT=9 ALIGN=BOTTOM ALT="tex2html_wrap_inline242" SRC="img17.gif"  >  by 90 degrees about  <IMG WIDTH=11 HEIGHT=9 ALIGN=BOTTOM ALT="tex2html_wrap_inline186" SRC="img3.gif"  > .  This gives us
+the local surface east vector on the tangent plane.  Taking the dot
+product of  <IMG WIDTH=11 HEIGHT=9 ALIGN=BOTTOM ALT="tex2html_wrap_inline194" SRC="img5.gif"  >  and the local east vector tells us which
+hemisphere  <IMG WIDTH=11 HEIGHT=9 ALIGN=BOTTOM ALT="tex2html_wrap_inline194" SRC="img5.gif"  >  is in.  And, from this, we can uniquely
+determine the proper angle for the sky dome rotation.
+<P>
+<H1><A NAME="SECTION00040000000000000000">  About this document ... </A></H1>
+<P>
+ <STRONG>
+  Flight Gear Sky Representation and Rendering.
+</STRONG><P>
+This document was generated using the <A HREF="http://www-dsed.llnl.gov/files/programs/unix/latex2html/manual/"><STRONG>LaTeX</STRONG>2<tt>HTML</tt></A> translator Version 96.1 (Feb 5, 1996) Copyright &#169; 1993, 1994, 1995, 1996,  <A HREF="http://cbl.leeds.ac.uk/nikos/personal.html">Nikos Drakos</A>, Computer Based Learning Unit, University of Leeds. <P> The command line arguments were: <BR>
+<STRONG>latex2html</STRONG> <tt>-split 0 -show_section_numbers Sky.tex</tt>. <P>The translation was initiated by Curtis L. Olson on Wed Feb 18 18:10:55 CST 1998<BR> <HR>
+<P><ADDRESS>
+<I>Curtis L. Olson <BR>
+Wed Feb 18 18:10:55 CST 1998</I>
+</ADDRESS>
+</BODY>
+</HTML>

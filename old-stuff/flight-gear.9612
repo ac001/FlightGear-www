@@ -1,0 +1,350 @@
+From owner-flight-gear  Sat Dec  7 09:44:00 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id JAA03431; Sat, 7 Dec 1996 09:40:42 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from MAINE.maine.edu (maine.maine.edu [130.111.39.100]) by calvin.infoplane.com (8.7.1/8.7.1) with SMTP id JAA03427 for <flight-gear@infoplane.com>; Sat, 7 Dec 1996 09:40:29 -0600
+Received: from sad28.k12.me.us by MAINE.maine.edu (IBM VM SMTP V2R3) with TCP;
+   Sat, 07 Dec 96 10:47:50 EST
+Date: Sat, 7 Dec 96 10:50:44 -0500
+From: Techie@sad28.k12.me.us (Ryan Connon)
+Organization: MSAD #28
+Subject: Mac Stuff
+To: flight-gear@infoplane.com
+Message-ID: <770292.ensmtp@sad28.k12.me.us>
+Priority: normal
+X-Mailer: ExpressNet/SMTP v1.1.5
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+>Hi.
+
+>Just read about this on the web site. Wanted to suggest you use
+>InputSprocket for your input method on the Macintosh. Our 1.1 release
+>(shipping Dec 16th) includes drivers for most current mac joysticks. If
+>you are interested I can make sure you are on our list to get regular
+>developer releases. 1.1b3 will probably go out before the end of the
+>week. 
+
+>-
+>Brent Schorsch
+>Software Engineer
+>Input Sprocket
+>Apple Computer, Inc.
+
+This sounds like a great idea for FG, it seems like the best since its created
+by Apple, so there's a good chance that there won't be any clashes with the
+Mac system software, just letting you know, I e-mailed the guy back to put me
+on the list
+
+Ryan Connon
+FGFS Head of Mac Support
+
+
+--
+
+Ryan Connon aka Techie  (Techie@sad28.k12.me.us) -or- (techie@nether.net)
+Web Address:  http://www.nether.net/~techie/
+CCT Lighting Designer  (www.coastalmaine.com.mainstreet/commu/cct/index.html)
+Camden Civic Theatre (CCT) WebMaster e-mail as at:  cct@nether.net
+AirwayXpress Boston Hub Captain (http://www.nether.net/~techie/airwayxpress.html)
+CRHS WebMaster  (http://www.midcoast.com/~sad28)  WebMaster@sad28.k12.me.us
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Sun Dec  8 17:35:14 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id RAA13156; Sun, 8 Dec 1996 17:33:38 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from cnve.rz.uni-jena.de (cnve.rz.uni-jena.de [141.35.1.32]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id RAA13152 for <flight-gear@infoplane.com>; Sun, 8 Dec 1996 17:33:11 -0600
+Received: from pmb.rz.uni-jena.de (wm10.rz.uni-jena.de [141.35.1.210]) by cnve.rz.uni-jena.de (8.8.3/8.6.10) with SMTP id AAA18740; Mon, 9 Dec 1996 00:40:47 +0100 (MEZ)
+Message-ID: <32AB51FD.59D6@rz.uni-jena.de>
+Date: Mon, 09 Dec 1996 00:40:45 +0100
+From: Michael Basler <pmb@rz.uni-jena.de>
+Organization: Uni Jena
+X-Mailer: Mozilla 3.0 (Win95; I)
+MIME-Version: 1.0
+To: flight-gear@infoplane.com
+Subject: code from dec 6
+References: <199611141709.JAA11043@albert.ssl.berkeley.edu>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Dear Eric, Dear Group,
+
+after testing your recently released version (Dec 6th).
+there are bad news again. It does not compile, neither
+with DJGPP under DOS nor with RSXWIN under win32.
+
+Diagnostics: 
+
+With DJGPP it only copies dll.oo to dll.o
+and exits. Obviously DJGPP is happy this way,
+no error message, no *.o files, nothing.
+Must be a trivial problem.
+
+With RSXNT the problem is with the damn grc again.
+I append the last few lines from the compilation:
+
+
+gcc -g -Wall -DRSX -Zwin32   -c fgclock.c -o fgclock.o
+gcc -g -Wall -DRSX -Zwin32   -c fgfont.c -o fgfont.o
+fgfont.c: In function `fg_scale_font':
+fgfont.c:975: warning: implicit declaration of function `strncpy'
+copy fgres.rc fgres_c.c
+        1 Datei(en) kopiert
+gcc -E -D__EMX__ -D__GNUC__ -DRSX -DRC_INVOKED fgres_c.c >fgres_c.rc
+*Initialization*:1: warning: `__GNUC__' redefined
+*Initialization*:1: warning: this is the location of the previous
+definition
+grc.exe -r fgres_c.rc
+D:/EMX/BIN/MAKE.EXE: *** [fgres.res] Error 18
+
+Seems to be a problem with the preprocessor.
+
+Greetings Michael
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Mon Dec  9 11:52:41 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id LAA07410; Mon, 9 Dec 1996 11:51:07 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from albert.ssl.berkeley.edu (albert.ssl.berkeley.edu [128.32.147.187]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id LAA07404 for <flight-gear@infoplane.com>; Mon, 9 Dec 1996 11:50:49 -0600
+Received: (korpela@localhost) by albert.ssl.berkeley.edu (8.7.5/CEA) id JAA03495; Mon, 9 Dec 1996 09:58:45 -0800 (PST)
+From: "Eric J. Korpela" <korpela@ssl.Berkeley.EDU>
+Message-Id: <199612091758.JAA03495@albert.ssl.berkeley.edu>
+Subject: Re: code from dec 6
+To: flight-gear@infoplane.com
+Date: Mon, 9 Dec 1996 09:58:45 -0800 (PST)
+In-Reply-To: <32AB51FD.59D6@rz.uni-jena.de> from "Michael Basler" at Dec 9, 96 00:40:45 am
+X-Geek-Code: GAT d-(?) H s+:-- g+ p? au--- a- w++ v++(--) C+++ US+++ P- L 3 
+X-Geek-Cont1: E--- N++ K? W M- V -po+(--) Y+ t+ 5++ j? R- G? tv+ b++ D+ B---
+X-Geek-Cont2: e+++>++++ u- h--- f+(?) r+++ n+(---) y@(?) 
+X-PGP-ID: FF0C92DD
+X-PGP-Fingerprint: 96 BD 9D 77 12 FE 04 9B  3E F5 5B 8D 2D D1 4C 6B
+X-Mailer: ELM [version 2.4 PL22]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Sorry I haven't done much lately.  Busy, busy, busy....
+
+> With DJGPP it only copies dll.oo to dll.o
+> and exits. Obviously DJGPP is happy this way,
+> no error message, no *.o files, nothing.
+> Must be a trivial problem.
+
+I'm not having this problem.  Are you typing just "make" or the full
+"make fgmain.exe"  (the .exe extension is necessary)  "make all" should
+also work.
+
+> With RSXNT the problem is with the damn grc again.
+> I append the last few lines from the compilation:
+
+> grc.exe -r fgres_c.rc
+> D:/EMX/BIN/MAKE.EXE: *** [fgres.res] Error 18
+
+Hmmmmmm, I may need to look at the grc source and find out what
+would cause it to return an 18.
+
+Eric
+
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Tue Dec 10 00:45:02 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id AAA11315; Tue, 10 Dec 1996 00:43:22 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from cnve.rz.uni-jena.de (cnve.rz.uni-jena.de [141.35.1.32]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id AAA11311 for <flight-gear@infoplane.com>; Tue, 10 Dec 1996 00:43:11 -0600
+Received: from pmb.rz.uni-jena.de (pc212.ifk.uni-jena.de [141.35.48.212]) by cnve.rz.uni-jena.de (8.8.3/8.6.10) with SMTP id HAA05800; Tue, 10 Dec 1996 07:51:18 +0100 (MEZ)
+Message-ID: <32AD0867.4D49@rz.uni-jena.de>
+Date: Tue, 10 Dec 1996 07:51:19 +0100
+From: Michael Basler <pmb@rz.uni-jena.de>
+Organization: Friedrich-Schiller-Universitaet Jena
+X-Mailer: Mozilla 3.0 (Win95; I)
+MIME-Version: 1.0
+To: flight-gear@infoplane.com
+Subject: Re: code from dec 6
+References: <199612091758.JAA03495@albert.ssl.berkeley.edu>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Dear Eric,
+
+on DJGPP: Neither did I type "make" only nor "make fgain.exe",
+but "make -f makefile.djg". This one worked before and has
+been working with the other OSs before. I'll try "make fgmain.exe",
+but would find it a good idea to have similar calls for
+all versions. Is "make fgmain" or "make all" standard now for
+all OSs?
+
+I just donwloaded your version dating 12/09 and will try it
+tonight.
+
+Greetings Michael
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Tue Dec 10 01:08:28 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id BAA11450; Tue, 10 Dec 1996 01:08:24 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from albert.ssl.berkeley.edu (albert.ssl.berkeley.edu [128.32.147.187]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id BAA11446 for <flight-gear@infoplane.com>; Tue, 10 Dec 1996 01:08:16 -0600
+Received: (korpela@localhost) by albert.ssl.berkeley.edu (8.7.5/CEA) id XAA13231; Mon, 9 Dec 1996 23:16:21 -0800 (PST)
+From: "Eric J. Korpela" <korpela@ssl.Berkeley.EDU>
+Message-Id: <199612100716.XAA13231@albert.ssl.berkeley.edu>
+Subject: Re: code from dec 6
+To: flight-gear@infoplane.com
+Date: Mon, 9 Dec 1996 23:16:21 -0800 (PST)
+In-Reply-To: <32AD0867.4D49@rz.uni-jena.de> from "Michael Basler" at Dec 10, 96 07:51:19 am
+X-Geek-Code: GAT d-(?) H s+:-- g+ p? au--- a- w++ v++(--) C+++ US+++ P- L 3 
+X-Geek-Cont1: E--- N++ K? W M- V -po+(--) Y+ t+ 5++ j? R- G? tv+ b++ D+ B---
+X-Geek-Cont2: e+++>++++ u- h--- f+(?) r+++ n+(---) y@(?) 
+X-PGP-ID: FF0C92DD
+X-PGP-Fingerprint: 96 BD 9D 77 12 FE 04 9B  3E F5 5B 8D 2D D1 4C 6B
+X-Mailer: ELM [version 2.4 PL22]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+
+> on DJGPP: Neither did I type "make" only nor "make fgain.exe",
+> but "make -f makefile.djg". This one worked before and has
+> been working with the other OSs before. I'll try "make fgmain.exe",
+> but would find it a good idea to have similar calls for
+> all versions. Is "make fgmain" or "make all" standard now for
+> all OSs?
+
+I've just been copying the file "makefile.djg" to "makefile" and then
+executing "make fgmain.exe".  Using your method (not copying makefiles
+around) you should type "make -f makefile.djg all".
+
+I think that "make -f <file> all" should be the standard invokation.  
+You've probably noticed that I've been trying to split the makefiles 
+to have a platform independant "makefile.inc" and platform dependant 
+macros in "makefile.???" I've been told this will help when we get around 
+to using autoconf or Configure.  (Or if worse comes to worse writing
+our own configuration utility :( )
+
+I got a bit of time today to straighten out some graphics problems.
+Hopefully I'm on the way to getting colors right in Win32.
+
+Eric
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Tue Dec 10 17:04:23 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id RAA16329; Tue, 10 Dec 1996 17:03:29 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from cnve.rz.uni-jena.de (cnve.rz.uni-jena.de [141.35.1.32]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id RAA16325 for <flight-gear@infoplane.com>; Tue, 10 Dec 1996 17:03:19 -0600
+Received: from pmb.rz.uni-jena.de (wm4.rz.uni-jena.de [141.35.1.204]) by cnve.rz.uni-jena.de (8.8.3/8.6.10) with SMTP id AAA12301; Wed, 11 Dec 1996 00:11:38 +0100 (MEZ)
+Message-ID: <32ADEE27.3FAC@rz.uni-jena.de>
+Date: Wed, 11 Dec 1996 00:11:35 +0100
+From: Michael Basler <pmb@rz.uni-jena.de>
+Organization: Uni Jena
+X-Mailer: Mozilla 3.0 (Win95; I)
+MIME-Version: 1.0
+To: flight-gear@infoplane.com
+Subject: Re: code from dec 6
+References: <199612100716.XAA13231@albert.ssl.berkeley.edu>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Dear Eric,
+
+just an update on compiling
+(version 12/09):
+
+DJGPP: Compiling goes o.k. now,
+no errors. But the executable
+does not run. Only short
+switch to black screen, than back.
+No error messages, no numbers,
+nothing.
+
+I found that keymap.ini is missing,
+is this o.k.? However, adding this
+one from earlies versions did not help.
+
+On RSXNT I checked error 18 is
+cross-device link, whatever this means.
+
+Result: No plane to fly today :-(
+
+Greetings Michael
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Mon Dec 16 14:31:48 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id OAA15417; Mon, 16 Dec 1996 14:28:18 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from meserv.me.umn.edu (meserv.me.umn.edu [134.84.196.1]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id OAA15412 for <flight-gear@infoplane.com>; Mon, 16 Dec 1996 14:28:08 -0600
+Received: from kenai.me.umn.edu (clolson@kenai.me.umn.edu [134.84.197.42]) by meserv.me.umn.edu (8.8.4/8.6.11) with ESMTP id OAA08947 for <flight-gear@infoplane.com>; Mon, 16 Dec 1996 14:36:39 -0600 (CST)
+Received: (from clolson@localhost) by kenai.me.umn.edu (8.8.4/8.7.3) id OAA16582; Mon, 16 Dec 1996 14:34:54 -0600
+Date: Mon, 16 Dec 1996 14:34:54 -0600
+Message-Id: <199612162034.OAA16582@kenai.me.umn.edu>
+From: "Curtis L. Olson" <clolson@me.umn.edu>
+To: flight-gear@infoplane.com
+Subject: Flight Gear mailing list archive.
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Greetings,
+
+I just installed some mailing list -> html archive software called
+"hypermail".  This creates a nice mailing list archive and should keep
+it very current.  You can view the flight gear mailing list archive
+at:
+
+    http://www.menet.umn.edu/~clolson/fgfs/mail.archive/
+
+This is an announcement of this feature, and also it's first test.  Of
+course it will work, but if not, you might see an "ignore me" message
+or two.
+
+Thanks,
+
+Curt.
+-- 
+Curtis Olson   E-mail: clolson@me.umn.edu
+Try Linux!     WWW:    http://www.menet.umn.edu/~clolson
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+

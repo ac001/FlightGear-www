@@ -1,0 +1,43 @@
+\batchmode
+
+
+\documentclass[12pt]{article}
+\makeatletter
+
+\usepackage{anysize}
+\papersize{11in}{8.5in}
+\marginsize{1in}{1in}{1in}{1in}
+
+\usepackage{amsmath}
+
+\usepackage{epsfig}
+
+\usepackage{setspace}
+\onehalfspacing
+
+\usepackage{url}
+
+
+
+\makeatother
+\newenvironment{tex2html_wrap}{}{}
+\newwrite\lthtmlwrite
+\def\lthtmltypeout#1{{\let\protect\string\immediate\write\lthtmlwrite{#1}}}%
+\newbox\sizebox
+\begin{document}
+\pagestyle{empty}
+\stepcounter{section}
+{\newpage
+\clearpage
+\samepage \begin{figure}[hbt]
+  \centerline{                   
+      \psfig{file=HeadingHold.eps}
+  }
+  
+  \label{fig:headinghold}
+\end{figure}
+}
+
+\stepcounter{section}
+
+\end{document}

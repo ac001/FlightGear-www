@@ -1,0 +1,3 @@
+HUD Example - Michele America and Charlie Hotchkiss have been putting a
+lot of work into creating a flexible, configurable HUD.  This image shows
+the current state of the HUD and was taken from KSAD (Safford, AZ.)

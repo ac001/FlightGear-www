@@ -1,0 +1,396 @@
+From: "Maurizio M. Gavioli" <mmg@risc.iris.firenze.it>
+Subject: Driver thoughts and sample (long message!)
+Date: Mon, 29 Apr 1996 13:32:28 +0100
+
+(This message has been sent to you directly because
+fl182@cleveland.freenet.edu does not seem to work anymore! Could someone
+repost the message to the list? In particular, to Eric Korpela: his address
+seems difficult to reach too! Global village - bah!)
+
+Hello,
+
+This is the constructive part, a more destructive part will follow in
+another message :-)
+
+You'll find below some ideas and some examples about FG modules. As I could
+not settle for any specific language yet, I used some fantasy pseudo-code,
+hoping the result is understandable!
+
+Of course, please let me know what you think of...
+
+Maurizio M. Gavioli
+
+-------------------------
+
+FLIGHT GEAR OBJECT MODULE (FGO) OVERALL STRUCTURE
+
+General note: it is not clear to me if FGO's will have the same structure
+across all platforms (for instance, same header fields and same width in
+bits of each field); in the following I assumed they will.
+
+A FGO will contain the following sections (not necessarily all always present):
+
+INFO AREA: a header with information about the FGO itself.
+
+STATIC DATA AREA: either public (flight models, aircraft visual, etc...,
+made available to other modules through pointers in the shared var area) or
+private (values to keep across module invocations) variables.
+
+CODE AREA: executable (for drivers, services, active elements (like A/C
+moving control surfaces), etc...)
+
+LOADING TABLES: tables to help loading process and inter-module
+communications. Export table, Import table.
+
+
+PROPOSED HEADER STRUCTURE (in ASM notation):
+
+ProdSign DB  "FLGR"  ; 4-char product signature
+ProdVers DW  0102h   ; this could be either the Flight Gear target
+                     ; version or the module structure version; in
+                     ; any case, "0102h" means version 1.2
+Platform DB  "DOS "  ; :-) ! 4-char target platform
+ModlType DB  "KEYB"  ; 4-char module type
+ModlVers DW  0100h   ; module release
+FileLeng DD  ....    ; total file length in bytes
+MemReq   DD  ....    ; memory required in bytes; to establish if it
+                     ; includes or excludes the header and/or the
+                     ; tables, according to the different possibi-
+                     ; lities in the loading procedure
+InitOffs DD  ....    ; offset of the initialization entry point
+ExitOffs DD  ....    ; offset of the de-initialization entry point
+ExptOffs DD  ....    ; offset of the export table
+ImptOffs DD  ....    ; offset of the import table (to discuss)
+
+Notes:
+
+ProdVers can be the FG target version (i.e. the latest FG Version at the
+moment of the FGO writing) and each FG version will know with which other
+versions it is compatible or it can be the FGO structure version.
+
+ModlType and ModlVers are primarily intended for version checking during
+development and I do not assume the program will do anything with them.
+Then, they are expected to be read primarily by humans and ModlVers could
+accordingly be in packed BCD (vers. 2.13 -> 0213h).
+
+MemReq: see below, loading process.
+
+32-bits offsets assume that modules can be longer than 64kB; while it is
+wise to "think big" since the beginning, modules longer than 64kB can be a
+problem to deal with under DOS and it would be safe to stipulate that FGO
+for FG Version 1 will not be longer than that. The only kind of data files
+which will for sure exceed this limit are scenery files which, however, will
+presumably have a different management. For 'normal' FGO's, in order to
+reduce the number of distribution files, several (presumably related)
+modules could be packed in a single file (with an appropriate global header
+listing the individual modules).
+
+ImptOffs: see below.
+
+
+IMPORT - EXPORT - INTER-MODULE SERVICES
+
+The basic assumption is that we have to design our own mechanism, because
+dinamic loading varies greatly from platform to platform and some, like DOS,
+have no built-in provision for it.
+
+A requirement I think important is that any program 'chunk' (including the
+kernel and the external modules) can call a driver/service/exported function
+without knowing where it resides (in the kernel or in an external module)
+and, should it reside in an external module, without knowing the module file
+name.
+
+The most 'natural' way to me is to use numbers (export by ordinals): each
+exported function will be identified by a number (unique 'FG-wide') and, to
+invoke a function, its number will be used.
+
+Option A - One possibility could be to have a function dispatcher in the
+kernel and, for instance, a dispatching table where ordinals and addresses
+of each exported function are collected as modules are loaded.
+
+A function call could be simply (in C):
+
+    dispatch(Ordinal, ...<function parameters>...);
+
+This raises some points, however.
+
+1) External modules cannot know the address of the dispatcher at compile
+time. Even assuming the module could be successfully compiled and linked,
+during the loading process each instance of this call should be relocated to
+point to the actual dispatcher address. The import table is in fact intended
+to contain relocation information. After the module has been phisically
+loaded in memory and before it is initialized, the loader will perform a
+loop like (in pseudo-code):
+
+    for(each-offset-listed-in-the-import-table)
+        *offset = dispatcher_address
+    endfor
+
+2) Parameters will vary from function to function; enforcing a standard
+parameter structure (like the infamous Windows parameters wparm and lparm)
+will force to wastefully pass empty parameters in some cases and to
+unnaturally codify or pack multiple parameters in other cases. Using a
+vararg would remove parameter checking altogether.
+
+3) The dispatcher will re-scan the dispatching table each time the same call
+is executed and this is not efficient.
+
+Option B - If the relocation is necessary, we could relocate each call
+directly to the address of the relevant function (the import table will
+contain also the ordinal of each call and the dispatching table scanning
+will occur only during the module loading). Each call would be a 'faked'
+call to the intended function:
+
+    func002A(airspeed, humidity, pilot_hair_color)
+
+with proper parameter checking, and the relocation loop at the module loading:
+
+    for(each-offset-ordinal-pair-listed-in-the-import-table)
+        *offset = dispatchlookup(ordinal)
+    endfor
+
+The main problem in this case would be that each module could invoke only
+functions in the kernel or in previously loaded modules (otherwise the
+dispatching table would not contain an address for that function yet).
+
+The module loading order is therefore important and a sort of deadlock could
+happen if two modules invoke each a function of the other.
+
+Option C - To avoid this problem, it would be possible to relocate again
+each call to a central dispatcher, but making it a little smarter; when
+invoked (then when the module is running, not when it is being loaded), it
+will perform the following steps:
+
+  look into the stack for the calling address
+  locate the calling module
+  scan the module import table for a matching address
+  get the ordinal of the intended call
+  lookup in the dispatching table for the actual function address
+  patch the calling address to point to the function address
+  for this time, jump to the function directly
+
+In this way, address resolution will be delayed until really necessary (at
+run time, the necessary functions should be present anyway) but will not be
+reapeated endlessly for each call.
+
+(This is exactly what FS5 does!)
+
+
+Another point: is it possible to convince a generic complier-linker tool
+suite to generate non-executable (modules are not directly executable)
+machine code binary images with non-resolved external calls? I think I know
+how to force my Borland C to do that (exploiting a special switch of TLink,
+however), but I never actually tried, because I found much easier to write
+modules for FS in assembler [ :-) ]
+
+
+DYNAMIC FUNCTION REPLACEMENT
+
+There are instances when the handler for a given exported function should
+dynamically change during FG execution; an example could be flight
+model-related functions (it seems to me umprobable that the same set of
+functions could work for an ultra-light, for a 747 and for a helicopter;
+then, changing A/C would involve replacing the flight model functions), but
+other examples will show up for sure.
+
+Under options B and C, this replacement would involve going through each
+module already loaded and re-patching each call to point to the new
+function; in addition to be a potentially lengthy process, this requires to
+keep all the relocation information (import tables) as well as a list of all
+loaded modules and their headers.
+
+Option D - as a possible workaround, the dispatching table could be used as
+an indirect call table. Calls to exported functions in a module would still
+be 'faked' calls as in option B/C above and, at module loading, would be
+patched to something like this (in ASM):
+
+    call far dispatcher
+    DW   002Ah            ; ordinal for func002A
+
+The first time this call is actually executed, the dispatcher would:
+
+  look into the stack for the calling address
+  locate the function ordinal following the call
+  lookup in the dispatching table for the entry for this ordinal (n-th entry)
+  patch the calling address to:
+      call far [dispatch_table + n * 4]
+  for this time, jump to the function directly
+
+When the function is replaced, only the table entry needs to be updated and
+all the calls already converted will still be correct, without any need to
+re-scan all the modules or to keep the module relocation tables (this is
+what Windows 3.1, and to some extend Windows 95, do for VxD loading and
+hooking).
+
+Admittedly, this trick is rather low-level, but I do not think it will be
+terribly unportable, because it ends up to one assembler macro (or one C
+macro expanding to inline assembly) and only one problematic routine (the
+dispatcher) to recode for each platform.
+
+
+LOADING PROCESS PSEUDO-CODE
+
+This is an example of what module loading could look like. I used the
+following conventions:
+
+local Variables:    upper case
+shared _Variables:  upper case, leading underscore
+local routines:     lower case
+exported _routines: lower case, leading underscore
+#defined VALUES:    all upper case
+
+
+Handle = _openfile(filename)
+read_header(Handle, &Header)
+if (!check_version(&Header)) then
+    maledict_FG_authors()
+endif
+
+ModuleOffset = _alloc_memory(&Header)
+if (ModuleOffset = NULL) then
+    curse_memory_vendors()
+endif
+
+read_module_body(Handle, ModuleOffset, &Header)
+
+# the module is here, merge export info into dispatch table
+
+for(ExportTable)
+    read_export_table_item()
+    insert_item_in_table()
+endfor
+
+# now relocate the module external calls, whatever option (A-D) is chosen
+
+for(ImportTable)
+    read_import_table_item()
+    relocate()
+endfor
+
+# ready to initialize the module
+
+if(Header->InitOffs != NULL) then
+    call(ModuleOffset + Header->InitOffs)
+endif
+
+
+SAMPLE MODULE PSEUDO-CODE
+
+This is a rather silly (pseudo-)example of an actual (pseudo-)module. The
+first example I could think of is a port (or, better, an 'unport') of an FSO
+I made for FS5, to experiment with auto-throttle. It is silly becasue, in a
+real sim, this functionallity would be enclosed in a comprehensive
+auto-pilot module and because it does not use instrument panel dials and
+switches but a stupid dialogue window. However it was originally a quick and
+dirty experiment with FS5 and it can exemplify (?) several points without
+entering in too many details yet to be decided.
+
+Just for the sake of exemplification, the main auto-throttle routine is both
+hooked into an event queue (to be executed before each frame) and made
+available as an exported function. In reality, only one of the two
+possibilities would be present.
+
+; ======================= MODULE BEGINNING ==================================
+
+; HEADER
+
+ProdSign DB  "FLGR"
+ProdVers DW  0100h
+Platform DB  "DOS "  ; again!
+ModlType DB  "ATHR"  ; 4-char module type
+ModlVers DW  0100h   ; module release
+FileLeng DD  ModEnd-ModStart
+MemReq   DD  ModEnd-ModStart
+InitOffs DD  init
+ExitOffs DD  exit
+ExptOffs DD  ExportTable
+ImptOffs DD  ?       ; depends upon option chosen for importing
+
+ModStart:
+
+; DATA
+
+Dialogue_data ........
+
+DlgHotKey[]    = {CTRL_T, 0}               ; null-terminated table
+StopAutoKeys[] = {INC_THROT, DEC_THROT, 0}
+MasterSwitch   = 0     ; OFF by default, to be turned on via the dialogue
+TargetSpeed    = 0     ; to be set via the dialogue
+
+; CODE
+
+; MODULE INITIALIZATION
+
+init(??)
+
+  ; register the functions which will handle dialogue window hot key
+  ; and automatic auto-throttle reset when the pilot touches at the throttle
+
+  _register(KEY_HOOK, dlg_handler, DlgHotKey)
+  _register(KEY_HOOK, stop_autothrottle, StopAutoKeys)
+
+  ; register the auto-throttle function to be executed before each frame
+
+  _register(BEFORE_FRAME_HOOK, auto_throttle, NULL)
+EndProc
+
+; MODULE DE_INITIALIZATION
+
+exit(??)
+
+  ; un-register the registered functions
+
+  _unregister(KEY_HOOK, dlg_handler, DlgHotKey)
+  _unregister(KEY_HOOK, stop_autothrottle, StopAutoKeys)
+  _unregister(BEFORE_FRAME_HOOK, auto_throttle, NULL)
+EndProc
+
+; DIALOGUE HANDLER, called by the kernel when the user presses CTRL-T
+
+dlg_handler()
+
+  ; simply call the relevant service
+
+  _display_dlg(Dialogue_data)
+EndProc
+
+; AUTO-RESET, called by the kernel when the throttle has been moved by the pilot
+
+stop_autothrottle()
+
+  ; reset auto-throttle local variable
+
+  MasterSwitch = 0
+EndProc
+
+; AUTO-THROTTLE, called before each frame.
+; The algorithm is rather rudimentary, but at least under FS5 it worked
+(almost) fine
+
+auto_throttle()
+
+  if(MasterSwitch) then                        ; active?
+    Variation = _Ktas - TargetSpeed            ; yes; how far from target speed?
+    if( abs(Variation) > TargetSpeed/16 ) then ; more than 1/16?
+      if(Variation > 0) then                   ; yes and above target speed
+        _decrease_throttle()                   ; ask kernel to decrease throt.
+      else                                     ; below target speed
+        _increase_throttle()                   ; ask kernel to increase throt.
+      endif
+    endif
+  endif
+
+EndProc
+
+ModuleEnd:     ; the resident portion of the module may end here
+
+; TABLES: Export table
+
+ExportTable[] = {AUTO_THROT, auto_throttle,    ; ordinal and address
+                 0                             ; end of table
+                }
+
+ImportTable[] = ?????
+; ===================== END OF MODULE ===============================
+
+

@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 96.1 (Feb 5, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<HTML>
+<HEAD>
+<TITLE>Controlling Altitude</TITLE>
+<META NAME="description" CONTENT="Controlling Altitude">
+<META NAME="keywords" CONTENT="AltitudeHold">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<LINK REL=STYLESHEET HREF="AltitudeHold.css">
+</HEAD>
+<BODY LANG="EN">
+ <A NAME="tex2html47" HREF="node5.html"><IMG WIDTH=37 HEIGHT=24 ALIGN=BOTTOM ALT="next" SRC="http://www.menet.umn.edu/icons/next_motif.gif"></A> <A NAME="tex2html45" HREF="AltitudeHold.html"><IMG WIDTH=26 HEIGHT=24 ALIGN=BOTTOM ALT="up" SRC="http://www.menet.umn.edu/icons/up_motif.gif"></A> <A NAME="tex2html39" HREF="node3.html"><IMG WIDTH=63 HEIGHT=24 ALIGN=BOTTOM ALT="previous" SRC="http://www.menet.umn.edu/icons/previous_motif.gif"></A>   <BR>
+<B> Next:</B> <A NAME="tex2html48" HREF="node5.html">Parameter Tuning</A>
+<B>Up:</B> <A NAME="tex2html46" HREF="AltitudeHold.html"> Flight Gear Autopilot:  </A>
+<B> Previous:</B> <A NAME="tex2html40" HREF="node3.html">Controlling Rate of Climb</A>
+<BR> <P>
+<H1><A NAME="SECTION00040000000000000000">Controlling Altitude</A></H1>
+<P>
+Now that we have our rate of climb under control, it is a simple
+matter to leverage this ability to control our absolute altitude.
+<P>
+The input to our altitude PID controller is the difference (error)
+between our current altitude and our goal altitude.  The output is the
+rate of climb needed to drive our altitude error to zero.
+<P>
+Clearly, our climb rate will be zero when we stabilize on the target
+altitude.  Because our output variable will be zero when our error is
+zero, we can get by with only a proportional control component.
+<P>
+All we need to do is calculate a desired rate of climb that is
+proportional to how far away we are from the target altitude.  This is
+a simple proportional altitude controller that sits on top of our
+slightly more complicated rate of climb controller.
+<P>
+<P> <IMG WIDTH=534 HEIGHT=20 ALIGN=BOTTOM ALT="displaymath67" SRC="img8.gif"  > <P>
+<P>
+Thus we use the difference in altitude to determine a climb rate and
+we use the desired climb rate to determine elevator position.
+<P>
+<BR> <HR>
+<P><ADDRESS>
+<I>Curtis L. Olson <BR>
+Thu Oct  1 21:32:14 CDT 1998</I>
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,327 @@
+This is TeX, Version 3.14159 (C version 6.1) (format=latex 97.3.12)  15 DEC 1997 13:19
+**images.tex
+(images.tex
+LaTeX2e <1996/12/01> patch level 1
+Babel <v3.6h> and hyphenation patterns for english, french, german, loaded.
+
+(/stage/share/teTeX/texmf/tex/latex/base/article.cls
+Document Class: article 1996/10/31 v1.3u Standard LaTeX document class
+(/stage/share/teTeX/texmf/tex/latex/base/size10.clo
+File: size10.clo 1996/10/31 v1.3u Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (/stage/share/teTeX/texmf/tex/latex/misc/anysize.sty
+Package: anysize 1994/08/13 1.0 Contributed LaTeX2e package
+Package: `anysize' 1.0 <1994/08/13>
+\@Leftmargin=\dimen103
+\@Rightmargin=\dimen104
+\@Topmargin=\dimen105
+\@Bottommargin=\dimen106
+)
+\lthtmlwrite=\write3
+\sizebox=\box26
+(images.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 21.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 21.
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+[]\OT1/cmr/bx/n/10 Sign con-ven-
+ []
+
+
+Overfull \hbox (20.37276pt too wide) in paragraph at lines 21--38
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--38
+
+ []
+
+[1
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 45--45
+[]\OT1/cmr/bx/n/10 Sign con-ven-
+ []
+
+[2
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 56--56
+[]\OT1/cmr/bx/n/10 Sign con-ven-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 61--61
+[]\OT1/cmr/m/n/10 +Integral(x z
+ []
+
+
+Overfull \hbox (0.64503pt too wide) in paragraph at lines 54--75
+[][]  
+ []
+
+[3
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 81--81
+[]\OT1/cmr/bx/n/10 Sign con-ven-
+ []
+
+[4
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 115--115
+[]\OT1/cmr/bx/n/10 Sign con-ven-
+ []
+
+[5
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 149--149
+[]\OT1/cmr/bx/n/10 Sign con-ven-
+ []
+
+[6
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 188--188
+[]\OT1/cmr/bx/n/10 Sign con-ven-
+ []
+
+
+Overfull \hbox (2.71173pt too wide) in paragraph at lines 186--196
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 186--196
+
+ []
+
+[7
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 202--202
+[]\OT1/cmr/bx/n/10 Sign con-ven-
+ []
+
+
+Overfull \hbox (11.20056pt too wide) in paragraph at lines 200--230
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 200--230
+
+ []
+
+[8
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 236--236
+[]\OT1/cmr/bx/n/10 Sign con-ven-
+ []
+
+
+Underfull \hbox (badness 1721) in paragraph at lines 252--252
+[]\OT1/cmr/m/n/10 Inertial ro-ta-tional rate of the
+ []
+
+
+Underfull \hbox (badness 1721) in paragraph at lines 253--253
+[]\OT1/cmr/m/n/10 Inertial ro-ta-tional rate of the
+ []
+
+
+Underfull \hbox (badness 1721) in paragraph at lines 254--254
+[]\OT1/cmr/m/n/10 Inertial ro-ta-tional rate of the
+ []
+
+
+Underfull \hbox (badness 1721) in paragraph at lines 255--255
+[]\OT1/cmr/m/n/10 Inertial ro-ta-tional rate of the
+ []
+
+[9
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 270--270
+[]\OT1/cmr/bx/n/10 Sign con-ven-
+ []
+
+
+Underfull \hbox (badness 2809) in paragraph at lines 281--281
+\OT1/cmr/m/n/10 frame rel-a-tive to the in-er-tial
+ []
+
+
+Overfull \hbox (0.12549pt too wide) in paragraph at lines 268--288
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 268--288
+
+ []
+
+[10
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 294--294
+[]\OT1/cmr/bx/n/10 Sign con-ven-
+ []
+
+
+Underfull \hbox (badness 1087) in paragraph at lines 302--302
+[]\OT1/cmr/m/n/10 Geodetic lon-gi-tude of ve-hi-cle's
+ []
+
+
+Overfull \hbox (13.7089pt too wide) in paragraph at lines 292--312
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 292--312
+
+ []
+
+[11
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 318--318
+[]\OT1/cmr/bx/n/10 Sign con-ven-
+ []
+
+
+Underfull \hbox (badness 2050) in paragraph at lines 335--335
+[]\OT1/cmr/m/n/10 Time rate of change of free-
+ []
+
+
+Underfull \hbox (badness 2050) in paragraph at lines 336--336
+[]\OT1/cmr/m/n/10 Time rate of change of free-
+ []
+
+
+Underfull \hbox (badness 1057) in paragraph at lines 339--339
+[]\OT1/cmr/m/n/10 Cosine of free-stream an-gle of
+ []
+
+
+Underfull \hbox (badness 5431) in paragraph at lines 340--340
+[]\OT1/cmr/m/n/10 Sine of free-stream an-gle of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 350--350
+[]\OT1/cmr/m/n/10 clockwise from
+ []
+
+
+Overfull \hbox (11.31174pt too wide) in paragraph at lines 316--369
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 316--369
+
+ []
+
+[12
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 375--375
+[]\OT1/cmr/bx/n/10 Sign con-ven-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 380--380
+[]\OT1/cmr/m/n/10 Geodetic lat-i-tude of run-way
+ []
+
+
+Underfull \hbox (badness 3000) in paragraph at lines 381--381
+[]\OT1/cmr/m/n/10 Geodetic lon-gi-tude of run-way
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 382--382
+[]\OT1/cmr/m/n/10 clockwise from
+ []
+
+
+Underfull \hbox (badness 2856) in paragraph at lines 386--386
+[]\OT1/cmr/m/n/10 Distance of cen-ter of grav-ity
+ []
+
+
+Underfull \hbox (badness 2856) in paragraph at lines 391--391
+[]\OT1/cmr/m/n/10 Distance of cen-ter of grav-ity
+ []
+
+
+Underfull \hbox (badness 7116) in paragraph at lines 391--391
+[]\OT1/cmr/m/n/10 beyond thresh-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 396--396
+[]\OT1/cmr/m/n/10 Distance of pi-lot's eye-point
+ []
+
+
+Underfull \hbox (badness 7116) in paragraph at lines 401--401
+[]\OT1/cmr/m/n/10 beyond thresh-
+ []
+
+
+Overfull \hbox (3.70058pt too wide) in paragraph at lines 373--407
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 373--407
+
+ []
+
+[13
+
+] (images.aux) ) 
+Here is how much of TeX's memory you used:
+ 236 strings out of 10890
+ 2312 string characters out of 71857
+ 60938 words of memory out of 262141
+ 3190 multiletter control sequences out of 9500
+ 3948 words of font info for 15 fonts, out of 150000 for 255
+ 15 hyphenation exceptions out of 607
+ 23i,8n,21p,197b,179s stack positions out of 300i,40n,60p,3000b,4000s
+
+Output written on images.dvi (13 pages, 70396 bytes).

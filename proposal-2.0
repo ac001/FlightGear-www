@@ -1,0 +1,220 @@
+                                FLIGHT GEAR
+                   "This truly is as real as it gets!"                 
+                - a proposal for a new flight simulator -
+
+                               REVISION 2.0
+                                  ----
+                    by David Murr (dmurr@pen.k12.va.us)
+
+    --------------------------------------------------------------------
+
+** Please note that this file is a revision from an earlier on that
+was sent out. It reflects some of the thoughts and observations made
+by members of the development team, and of the "public". **
+
+I. An introduction to the project
+
+	An idea entered my head on Monday, April 8, 1996. "'Why wait 
+around for some large company to make what WE want? Why not do it 
+ourselves'". Think about it -- there's certainly not a lack creativty,
+ingenuity, or desire among our tight-knit group of about 1 000. 
+	
+	What have we been posting to newsgroups for months, even
+years? Wish lists. We forward them to webmasters at Microsoft, Sierra,
+SubLogic, whomever, only to have the e-mails dumped in the "recycling
+bin". 
+
+	Let's examine what we have out there -- what has been
+done already with what huge corporations like Microsoft have given
+us.
+
+1) We have dissected the file structure of nearly EVERYTHING to some
+   extent with MS Flight Simulator 5.x.
+2) Maurizio Gavoli (please excuse my spelling) and someone else whose
+   name escapes me at the moment have created two excellent aircraft
+   for MSFS5 - without the need of any add-on programs!
+3) Chuck Dome, who "reverse-engineered" the .AIRcraft files and came
+   up with AIRMOD, an excellent utility used to modify flight and 
+   color characteristics of default (and the two Simula FlightWare planes)
+   aircraft for FS5. Thanks, Chuck for a utility that certainly tided
+   us over until the release of Flight Shop.
+4) Curt Olson's Real-Wx, which allows the user to download real, current
+   weather for a multitude of US and Canadian cities and automatically
+   import that data directly into FS5!
+5) The creators of FSASM, SCASM, BGLCOMP, BGLGEN, Airport, and countless
+   other scenery creation utilities that have undone the .bgl files 
+   and made the format publicly available, besides giving us excellent
+   tools to make our own, even photo-realitic, scenery!
+
+... and countless other, excellent contributions by generous simmers!
+(Sorry guys, I don't have the space or time to list you all, but you
+know who you are!)
+
+	What does this have to do with Flight Gear, you ask? Well, I'm
+sitting here, wondering, "With all this creativeness, WHY wouldn't be
+possible to make our own simulator?". It only makes sense - it's the
+next logical progression. Isn't it?
+
+	So, now that you know where I'm coming from, let's get to
+some of the specifics of the program.
+
+II. Overview of main features and specs
+
+Here is a "condensed" (though lengthy) list of things we DEFINATELY 
+need in this program:
+
+* Interactive, "smart" ATC that SPEAKS when there is a sound card present
+  Perhaps two-way, verbal communcation between ATC and pilot.
+  It would also know the topography of the scenery area so it doesn't
+  "lead you into a mountain"!
+* A "CUSeeMe" type communication
+  to other pilots has been proposed, however this would take a 
+  tremendous amount of bandwidth and is not feasible at THIS POINT. 
+  A more reasonable approach would be to perhaps devote a server 
+  (we don't want to overload Curt's wx server now do we? ;-)
+  to providing a few "radio frequencies" (not really radio, of course)
+  and using those, so you can talk to an automated "intelligent" ATC
+  and other pilots on that frequency! Sounds fun, huh? :)
+* ATP-level or better graphics (hopefully better than FS5, though)
+* IT MIGHT BE POSSIBLE TO RUN FG ON A 386! (Notice I said *POSSIBLE*, but
+  probably not FEASIBLE!)
+* Acceptable frame rate (~10fps) on a 486DX/50
+** On a future possible standard 80686/250MHz computer, let's aim for
+   no less than a cinematic frame rate, i.e., 25fps minimum.
+* Probable minimum setup: 486SX/25 with 8-12 megs of RAM, 1MB VRAM,
+  40MB of harddrive space plus 10 MB or more for aircraft, scenery, etc.
+* 32-bit under DOS with a DMPI extender
+* Written in C (GNU/DJGPP compilers), Ada, and assembly.
+* Different, portable (both meanings) modules for each sections 
+  (e.g.: scenery, wx, flight dyn, etc.)
+
+** Optimum system at current time: 
+	- 80586 (Pentium) DX/120MHz processor
+	- Math Coprocessor
+	- DOS 6.2 or later
+	- 12-16 megs of RAM
+	- 1-2 MB of VRAM (video card's memory)
+	- graphics accelarator board
+	- Full-time, 56.6Kbps ISDN Network Connection (Internet)
+	  However, a minimum dial-in 14.4Kbps account is acceptable.
+	  ** NOTE: this is only used for those wishing to get wx,
+	     scenery, and ATC updates on the fly from a centralized
+             Internet server. (Location to be determined)
+	- A DEDICATED FLIGHT PROCESSOR! (Though not at all neccesary, it
+          will make your flights a lot smoother if you have a dedicated
+          computer connected to the main one that handles the network
+          updates. (One of the main advantages hinges on connectivity,
+          though the user will be able to enjoy many enhancements over
+          current simulators with advanced polygon-rendering routines,
+          32-bit architecture, open documentation of the file structures
+          to encourage 3rd party FREEWARE addons... note: no shareware
+          will be allowed to be associated with this program!)
+	- A Sound Blaster compatible 16bit sound card (full duplex)
+          for voice communcation with other pilots/ATC.
+	- SVGA 800x600, 24bit color
+	- What else?
+
+* NO LONGER COMPATIBLE W/FS5 FILES! (??) Undecided at this point
+* Well documented proprietory format for a/c, scenery, and panels
+* Accurate, flyable flight models
+* Accurate, but non-processor intensive graphics (good frame rate)
+  No "bitmap textures". Remember the chunky textures in FS5 when you're
+  lower than ~4000ft? None of those, hopefully.
+* Accurate REAL WORLD representation of objects, especially major landmarks
+  and monuments.
+* Simple on-board radar system with GPS "moving map" display
+* Default planes include Cessna SkyLane RG, Beechcraft Bonanza, a 
+  hot air balloon, Boeing 777, maybe a float plane? What else??
+* Ability to construct abstract shapes easily for scenery, such as
+  the St. Louis arch, Mt. Rushmore, Leaning Tower of Pisa, etc.
+* Written in C(++), assembly, and Ada? for controlled, robust, fast 
+  code for optimum performance. 
+* BONUS: We'll probably port it to Unix, Mac, and OS/2! 
+* RUNS UNDER DOS 5.0 OR ABOVE! NO CD's AND **NO** WINDOWS 95! YAY!
+* FREE! Flight Gear MUST be FREEWARE and easily accessible via the
+  Internet, AOL, Prodigy, CompuServe, Wow!, etc.
+* The source code will be available for free, plus extensive docs
+  on how we constructed different modules, etc.
+* Some tech support by e-mail in spare time. No guarantees on this.
+
+** Since we're talking about a possibly 5-year project
+(though estimates have ranged from 2-10 years! :), our
+speculations on system requirements will most likely be WAY
+OFF, but since we don't know what's going to happen to computers
+and networking in the future, and thus can't plan that far ahead,
+we'll just have to adjust our code accordingly when it is deemed
+necessary. **
+
+**** GNU C/C++ standards will be used in C development.
+**** Curt Olson proposes we use a centralized server for
+wx, scenery, etc. that IS REAL TIME for those that are connected 
+to the Internet at the time of program initialization. This would work
+as such: when the user starts Flight Gear, it will test to see if a
+connection is available, and if so, it will contact the wx server
+and download current weather information and implement that in the sim,
+as well as polling the server at a specific interval, say, 10 minutes to
+download currently conditions...
+
+Perhaps we could also tie in with a real-life ATC and re-create REAL
+AIR TRAFFIC!! <g>
+
+Automatic scenery updates would be available via this server as well.
+
+For those who are not connected, we could implement a REALWX type
+of program or just use RANDWXGEN...? 
+
+Maurizio suggests we come up with a better mechanism for creating
+scenery than BAO's. He says that the way the .bgl files are put 
+together is very wasteful and slow. How can we render the buildings,
+scenery faster...?
+
+How do we get realistic-looking scenery without those framerate-killing,
+awful bitmaps? They're chunky below 4000ft, and they are too SLOW!
+
+I will continue to put more into here as warranted. Thanks. /dlm
+
+III. So, who's gonna put this thing together?
+
+Good question. Here is a list of people I *HOPE* to get on our team.
+Keep in mind that I haven't contacted some of them yet, so...
+
+* Maurizio Gavioli and Chuck Dome - implementation of aircraft
+* Curt Olson - STN and wx development, C aide
+* Enno Borgsteede and the SCASM/FSASM development teams - scenery
+* Mark Stotzer - project consultant/supervisor
+* Mike Vidal - flight modeling
+
+(MG has signed on, as well as Michal Rok and CO. We have others as well, but
+we're just getting ourselves together at this point. We hope to get
+some "outside" help from C/ASM experts.)
+
+... and others. These people seem to be experts in the particular field
+I have placed them in, so...
+
+IV. Got any kind of release date yet?
+
+Let's say "Years." As in five years. Who knows?
+
+V. Miscellaneous
+
+Got any input for this project? THEN PLEASE e-mail me at 
+dmurr@pen.k12.va.us! Same goes if you want to volunteer
+your time/resources.
+
+Anything you'd like to add? Please let me know -- my e-mail address is:
+dmurr@pen.k12.va.us. Oh, BTW, supplemental info will be available at:
+http://users.aol.com/fsnews/flightgear/.
+
+If you want to talk to all the developers at one time, send a message
+to: fl182@cleveland.freenet.edu -- that's our mailing list to discuss
+things openly. If you're not on the design team, please keep your
+messages short as we are constantly shipping lengthy msg's back and forth
+among the team.
+
+Regards,
+David Murr
+Editor - FSNews
+http://users.aol.com/fsnews/flightgear/ <--- Coming soon! Updates on Web!
+
+I WILL POST REVISIONS OF THIS DOCUMENT ON R.A.S. AND THE IUP MAILING LIST
+AS WARRANTED.

@@ -1,0 +1,468 @@
+<!-- ---------------------------------------------------------------------- -->
+<!-- index.html -- Flight Gear Home Page                                    -->
+<!--                                                                        -->
+<!-- $Id$           -->
+<!-- (Log is kept at end of this file)                                      -->
+<!-- ---------------------------------------------------------------------- -->
+
+
+<HTML>
+
+<HEAD>
+  <TITLE>Flight Gear Flight Simulator</TITLE>
+</HEAD>
+
+<BODY>
+
+<IMG SRC="/~curt/images/h-flight-gear.gif"><P>
+
+<HR>
+  <STRONG>NOTE:</STRONG>
+  It's construction day here at the Flight Gear web site.  Please excuse
+  the mess.  You can preview the <A HREF="new-index.html"> new
+  page</A> right now if you like.
+<HR>
+
+<TABLE>
+  <TD VALIGN=TOP> <STRONG>Flight Gear Flight Simulator</STRONG>: A
+       free, open architecture, multi-platform flight simulator
+       developed cooperatively over the internet.  <P>
+
+       <STRONG>Our primary goal</STRONG> is to become a serious
+       contender in the civilian flight simulator world by creating a
+       free, multi-platform, open, user supported, user extensible flight
+       simulation extravaganza. <P>
+
+  <TD> <IMG BORDER=1 SRC="185.gif">
+</TABLE>
+
+<TABLE>
+  <TD> <IMG BORDER=1 SRC="c177l.jpg">
+  <TD> <LI> We are building a ``developer friendly'' flight simulator and 
+       are making the source code freely available so that it is ``easy'' 
+       for others to extend, fix, change, improve, and experiment with. <P>
+
+       <LI> We have support for multiple platforms so as many people
+       as possible can share in the fun.
+
+</TABLE>
+
+<CENTER>
+  (To avoid confusion) These are scanned photos and not screenshots 
+  ... yet. :-)
+</CENTER>
+
+<HR>
+
+
+This page has been accessed
+<IMG SRC="http://www.menet.umn.edu/cgi-bin/Count.cgi?df=curt_flightgear.dat&dd=fatpt&ft=3" ALIGN=ABSMIDDLE>
+times.
+
+<HR>
+
+
+<H2><A HREF="proposal-3.0">Flight Gear Proposal</A> -- revision 3.0</H2>
+
+<UL>
+  by David L. Murr --
+       <A HREF="mailto:dmurr@pen.k12.va.us">dmurr@pen.k12.va.us</A> <BR>
+       (Updated 10/30/1996)
+</UL>
+
+<H2><A HREF="http://145.89.78.151/~pepijn/Files/Proposal.TXT">Flight Gear 
+    Networking Proposal</A> -- Initial Revision</H2>
+
+<UL>
+  by Pepijn Schmitz --
+       <A HREF="mailto:schmitzp@worldaccess.nl">schmitzp@worldaccess.nl</A> <BR>
+       (Updated 1/23/1997)
+</UL>
+
+<H2><A HREF="fgfs.gif">Flight Gear Logo Proposal</A></H2>
+
+<UL>
+  by Dean Catalano --
+        <A HREF="mailto:flight@intercons.com">
+	flight@intercons.com</A> <BR>
+	(Updated 10/30/1996)
+</UL>
+
+<H2><A HREF="fltgear/fltgear.html">Preliminary Flight Gear 
+    Documentation</A></H2>
+
+<UL>
+  by Michael Basler -- <A HREF="mailto:pmb@rz.uni-jena.de">
+       pmb@rz.uni-jena.de</A> <BR>
+       (Updated 11/04/1996)
+</UL>
+
+<HR>
+
+
+<CENTER>
+  <H1>Most recent news</H1>
+</CENTER>
+
+<UL>
+  <LI> <STRONG>Jan 24 97</STRONG>:  Check out the
+       <A HREF="http://www.midcoast.com/~techie/fgfs/fgfs.html">
+       Macintosh Division</A> of the Flight Gear Flight Simulator.
+  <LI> <STRONG>Jan 23 97</STRONG>:  Check out the 
+       <A HREF="http://145.89.78.151/~pepijn/Files/Proposal.TXT">
+       Flight Gear networking proposal</A> by Pepijn Schmitz.
+  <LI> <STRONG>Jan 23 97</STRONG>:  Ryan Connon has been talking to Apple 
+       Computer, and they are giving him all the input devices for joysticks, 
+       flight pedels, etc... in a program called Input Sprocket, which he has
+       tested and seems to be doing really well. 
+  <LI> <STRONG>Nov 5 96</STRONG>: Flight model code is now working.  Low 
+       level graphics and win32 support are progressing nicely.
+  <LI> <STRONG>Nov 4 96</STRONG>: I have added the preliminary 
+       <A HREF="fltgear/fltgear.html">Flight Gear Documentation</A> to
+       this web page.
+  <LI> <STRONG>Oct 30 96</STRONG>: Check out v3.0 of the Flight Gear
+       proposal.  While you are at it, have a look at a proposed
+       Flight Gear logo.
+  <LI> <STRONG>Oct 22 96</STRONG>: We now have some keyboard support.  We
+       also have some simple font drawing capabilities with a simple "clock" 
+       module to demo this feature.
+</UL>
+
+<HR>
+
+
+<CENTER>
+  <H1>Current Development Summary</H1>
+</CENTER>
+
+We are just beginning development of the Flight Gear Flight Simulator.
+The following items are working or in various stages of completion:
+
+<UL>
+    <LI> Dynamically loadable module architecture for multiple platforms.
+
+    <LI> 2-D graphics routines and "below" (everything needed to draw
+         lines, polygons, bitmaps, fonts, etc.) also for multiple
+         platforms.
+
+    <LI> Initial color palette support.  Starting to look at 24bit color
+         support
+
+    <LI> Keyboard handling routines.
+
+    <LI> Low level math routines for handling (lat, lon, elev) coordinate
+         systems and for handling various conversions, etc.
+
+    <LI> Support is in place for the following platforms:
+         DOS DJGPP/Allegro, OS/2 EMX/DIVE, and Unix gcc/X11.
+
+    <LI> Support is planned for Win.xx, Macintosh, and Linux/SVGA.
+
+</UL>
+
+<A HREF="projects/">
+  <LI> <H3>Detailed Project Status</H3>
+</A>
+
+<HR>
+
+
+<CENTER>
+  <H1>Immediate Help Needed</H1>
+</CENTER>
+
+If you'd like to get involved with the Flight Gear project, we could 
+use assistance in the following areas <EM>right now</EM>:
+
+<UL>
+  <LI> <STRONG>Bitmaps:</STRONG>  We could use some help in coding a few
+       routines to lay down 2D bitmaps.  Click 
+       <A HREF="projects/2d-graphics.html">here</A> for some more information. 
+       <BR>
+       <STRONG>Contact:</STRONG>  Eric J. Korpela 
+       <A HREF="mailto:korpela@ssl.Berkeley.EDU">(korpela@ssl.Berkeley.EDU)</A>
+       if you'd like to help.
+</UL>
+
+<HR>
+
+
+<CENTER>
+  <H1>Related Web Sites</H1>
+</CENTER>
+
+<UL>
+  <LI> <A HREF="/~curt/fgfs/">
+       http://www.menet.umn.edu/~curt/fgfs/</A> -- This
+       page.
+  <LI> <A HREF="http://www.cea.berkeley.edu/~korpela/fltgear/">
+       http://www.cea.berkeley.edu/~korpela/fltgear/</A> -- The ``core''
+       Flight Gear code.
+  <LI> <A HREF="http://www.midcoast.com/~techie/fgfs/fgfs.html">
+       http://www.midcoast.com/~techie/fgfs/fgfs.html</A> -- Flight Gear,
+       Macintosh Division.</A>
+  <LI> <A HREF="http://www.erols.com/fsnews/">FSNews</A>
+  <LI> <A HREF="http://intercons.com/exit98/index.html">
+       http://intercons.com/exit98/index.html</A> -- Falcon Field FBO</A>
+  <LI> <A HREF="http://www.vvm.com/~cmehle/pics/hobiefly.jpg"> Our 
+       mascott</A>???  Here's a picture of a dog, "Hobie", in "flight gear" :-)
+       (from <A HREF="http://www.vvm.com/~cmehle/">
+       http://www.vvm.com/~cmehle/</A>) 
+</UL>
+
+<HR>
+
+
+<CENTER>
+  <H1>Developer's Mailing List</H1>
+</CENTER>
+
+<UL>
+  This mailing list is used by the flight-gear developers. We don't
+  mind if other interested parties listen in, but be aware that this is
+  primarily a list for the developers.  You will most likely see
+  periodic bursts of highly technical material -- well at least it is highly
+  technical to us -- intermixed with other stuff.  Feel free to join in and 
+  contribute your thoughts and ideas, but realize that we are not yet quite 
+  ready to see reams of highly detailed wish lists. <P>
+
+  To subscribe to the developer's mailing list, send a message to 
+  <A HREF="mailto:flight-gear-request@infoplane.com">
+  flight-gear-request@infoplane.com</A>
+  with a message body of <CODE>subscribe</CODE> <P>
+
+  To unsubscribe, do the same thing, except send a message body of 
+  <CODE>unsubscribe</CODE> <P>
+
+  <LI> <A HREF="mailto:flight-gear@infoplane.com">
+       flight-gear@infoplane.com</A> -- [Mailing list address]
+  <LI> <A HREF="mail.archive">Mailing list archives</A>
+</UL>
+
+<HR>
+
+
+<CENTER>
+  <H1>Current Development Team</H1>
+</CENTER>
+
+<UL>
+  (Volunteers welcome)<P>
+  If you don't see your name here and you'd like to
+  be listed as part of the team, drop me a note and I'll add you to this list
+  Note:  see above for information on subscribing to the developer's mailing 
+  list. <P>
+
+  If you are a developer and would like a link to your home page here, let
+  me know and I can add it in. <P>
+
+  <LI> Michael Basler -- <A HREF="mailto:pmb@rz.uni-jena.de">
+       pmb@rz.uni-jena.de</A>
+  <LI> Alexander A. Belov --
+       <A HREF="mailto:belov@amos.postech.ac.kr">belov@amos.postech.ac.kr</A>
+  <LI> Gavin Bucknell --
+       <A HREF="mailto:runwell@comcen.com.au">runwell@comcen.com.au</A>
+  <LI> Dean Catalano --
+       <A HREF="mailto:flight@intercons.com">
+       flight@intercons.com</A> -- 
+       <A HREF="http://intercons.com/exit98/index.html">
+       http://intercons.com/exit98/index.html</A>
+  <LI> Bill Chivers --
+       <A HREF="mailto:Bill@chivcons.demon.co.uk">Bill@chivcons.demon.co.uk</A>
+  <LI> Ryan Connon --
+       <A HREF="mailto:techie@midcoast.com">techie@midcoast.com</A> --
+       <A HREF="http://www.midcoast.com/~techie/">
+       http://www.midcoast.com/~techie/</A>
+  <LI> Maurizio M. Gavioli --
+       <A HREF="mailto:mmg@risc.iris.firenze.it">mmg@risc.iris.firenze.it</A>
+  <LI> <A HREF="komack@impw.im.pw.edu.pl">komack@impw.im.pw.edu.pl</A>
+  <LI> Artur Kornacki --
+       <A HREF="mailto:kornacki@impw.im.pw.edu.pl">
+       kornacki@impw.im.pw.edu.pl</A>
+  <LI> Eric J. Korpela --
+       <A HREF="mailto:korpela@ssl.Berkeley.EDU">korpela@ssl.Berkeley.EDU</A>
+       -- <A HREF="http://www.cea.berkeley.edu/~korpela/fltgear/">
+       http://www.cea.berkeley.edu/~korpela/fltgear/</A>
+  <LI> Dr. Robert J. Meier -- <A HREF="mailto:worsel@tir.com">worsel@tir.com</A>
+  <LI> David L. Murr --
+       <A HREF="mailto:dmurr@pen.k12.va.us">dmurr@pen.k12.va.us</A>
+  <LI> <A HREF="mailto:jlmurrel@aol.com">jlmurrel@aol.com</A>
+  <LI> Curtis L. Olson --
+       <IMG ALIGN="CENTER" SRC="http://www.flightgear.org/email-fg.png"> -- 
+       <A HREF="/~curt/">
+       http://www.menet.umn.edu/~curt</A>
+  <LI> Matt Pickering -- <A HREF="mailto:mattp@worldchat.com">
+       mattp@worldchat.com</A>
+  <LI> Michal Rok -- <A HREF="mailto:mrok@waw.pdi.net">mrok@waw.pdi.net</A>
+  <LI> Pepijn Schmitz -- <A HREF="mailto:schmitzp@worldaccess.nl">
+       schmitzp@worldaccess.nl</A>
+  <LI> Eduardo Spremolla --
+       <A HREF="mailto:lalo@terminus.dtdantel.com.uy">
+       lalo@terminus.dtdantel.com.uy</A>
+
+</UL>
+
+<HR>
+
+
+<CENTER>
+  <H1>Supported Platforms</H1>
+</CENTER>
+
+One of the goals of FlightGear is to be portable and support as many
+platforms as possible.  For starters, we plan to support the following
+platforms.
+
+<UL>
+  <LI> <STRONG>DOS</STRONG> - with DJGPP as the compiler and Allegro
+       for the low level graphics routines.
+  <LI> <STRONG>OS/2</STRONG> - with EMX and DIVE.
+  <LI> <STRONG>X11</STRONG> (SunOS, Linux, etc.) - with gcc and X11.
+</UL>
+
+We also would like to support these platforms
+
+<UL>
+  <LI> <STRONG>Win95</STRONG> - Matt Pickering 
+       (<A HREF="mailto:mattp@worldchat.com">mattp@worldchat.com</A>) is 
+       looking into adding support for Win.xx.
+  <LI> <STRONG>Linux/SVGA</STRONG> - The SVGA graphics libs should allow
+       us to combine full screen graphics with the power and networking
+       of Unix.
+  <LI> <STRONG>Macintosh</STRONG> - Ryan Connon 
+       (<A HREF="mailto:techie@midcoast.com">techie@midcoast.com</A>)
+       will be heading up the team to build in Mac support.
+</UL>
+
+
+<HR>
+
+
+<CENTER>
+  <H1>Initial Design Material</H1>
+</CENTER>
+
+<UL>
+  <LI> <A HREF="subsystems.html"> Current Flight Gear Subsystem List</A>
+  <LI> <A HREF="driver-demo"> Demand loaded driver demo.</A>
+  <LI> <A HREF="module-prop"> Module structure proposal.</A>
+  <LI> <A HREF="types-2d-graphics"> Low level data types and 2D
+       graphics routine proposal</A> 
+  <LI> <A HREF="fs5-fso"> Description of FS5 FSO techniques.</A>
+  <LI> <A HREF="http://www.infoplane.com/~doug/Benchmark/">
+       Some compiler benchmarks (Borland/djgpp/DOS/Unix)</A>
+  <LI> <A HREF="coords">
+       A coordinate system proposal for Flight Gear.</A>
+</UL>
+
+<HR>
+
+
+<CENTER>
+  <H1>Design Issues</H1>
+</CENTER>
+
+Here I would like to keep a list of various design issues people run
+into and how we have solved or plan to solve them.  I will start by
+sketching in a few things.  I welcome your comments, changes, and
+additions.
+
+<UL>
+  <LI> <STRONG>Code organization</STRONG>.  We will need to come up
+       with a scheme to organize our source code into subdirectories.
+       This isn't a pressing issue yet, but something to keep in mind.
+  <LI> <STRONG>World Modeling</STRONG>.  I recommend that we start out with
+       Lat/Lon/Elev coordinates.  These should then be mapped to x,y,z
+       coordinates on a Unit sphere.  Once this conversion has been
+       done, it is easy to rotate, the x,y,z coordinates so that the
+       aircrafts current position is at (near) 0,0,elev.  At this
+       point we can simply draw out the surrounding area as if it is a
+       flat world.  This scheme will properly, and easily handle polar
+       scenery, as well as scenery for any other position on the globe.
+  <LI> <STRONG>Internal Scenery Layout/Structure.</STRONG>
+  <LI> <STRONG>Hidden Surface Removal</STRONG>.  I suppose we will do
+       some sort of incantation of the painter's algorithm.  Boy it
+       would be nice to have some 3-D graphics hardware support
+       generally available.
+  <LI> <STRONG>24bit Color Support</STRONG>.  Compile time option?  
+       Run time option?  Autodetect?
+</UL>
+
+<HR>
+
+
+<CENTER>
+  <H1>Work Needed</H1>
+</CENTER>
+
+Here is where I would like to keep a todo list of important things
+that need to be done.
+
+<UL>
+  <LI> It would be nice to come up with a nifty Flight Gear graphic or
+       series of graphics.  Something "full screen" would be nice as
+       well as a smaller graphic suitable for a web page, and finally
+       a small icon.  The stuff I have tried to come up with looks
+       pretty awful, so maybe someone out there could do a little better?
+</UL>
+
+<HR>
+
+
+<CENTER>
+  <H1>Initial Code</H1>
+</CENTER>
+
+<UL>
+  <LI> <A HREF="http://www.cea.berkeley.edu/~korpela/fltgear/">
+       Eric Korpela's Stuff</A> -- Dynamically loadable modules, low level
+       graphics and math routines.
+</UL>
+
+
+<!-- Standard Footer Begin -->
+
+<HR>
+
+<ADDRESS>
+Last modified:  8/23/2002 <BR>
+<A HREF="http://www.menet.umn.edu/~curt/">Curtis L. Olson</A> <BR>
+<IMG SRC="http://www.flightgear.org/email-fg.png">
+</ADDRESS>
+
+<!-- Standard Footer End -->
+
+
+</BODY>
+</HTML>
+
+
+<!-- ---------------------------------------------------------------------- -->
+<!-- $Log$
+<!-- Revision 1.1  2002/09/10 01:15:27  curt
+<!-- Initial revision
+<!--
+<!-- Revision 1.4  2002/08/23 21:07:41  curt
+<!-- Make a feeble first stab at hiding my email address from the spammers.
+<!--
+<!-- Revision 1.3  2002/07/20 18:11:28  curt
+<!-- Various tweaks.
+<!--
+<!-- Revision 1.2  2002/06/28 20:38:01  curt
+<!-- Various web site updates that have accumulated over time ...
+<!--
+<!-- Revision 1.1.1.1  2001/10/11 18:41:28  curt
+<!-- Initial revision
+<!--                                              -->
+<!-- Revision 1.4  1996/11/05 00:14:14  clolson                             -->
+<!-- Lots of changes                                                        -->
+<!--                                                                        -->
+<!-- Revision 1.3  1996/09/25 18:57:19  clolson                             -->
+<!-- Many, many updates.                                                    -->
+<!--                                                                        -->
+<!-- Revision 1.2  1996/09/05 18:58:25  clolson                             -->
+<!-- Lots of updates ...                                                    -->
+<!--                                                                        -->
+<!-- Revision 1.1  1996/07/30 18:46:36  clolson                             -->
+<!-- Initial revision.                                                      -->
+<!--                                                                        -->

@@ -1,0 +1,170 @@
+\batchmode
+
+
+\documentclass[12pt]{article}
+\makeatletter
+
+\usepackage{anysize}
+\papersize{11in}{8.5in}
+\marginsize{1in}{1in}{1in}{1in}
+
+\usepackage{amsmath}
+
+\usepackage{epsfig}
+
+\usepackage{setspace}
+\onehalfspacing
+
+\usepackage{url}
+
+
+
+\makeatother
+\newenvironment{tex2html_wrap}{}{}
+\newwrite\lthtmlwrite
+\def\lthtmltypeout#1{{\let\protect\string\immediate\write\lthtmlwrite{#1}}}%
+\newbox\sizebox
+\begin{document}
+\pagestyle{empty}
+\stepcounter{section}
+\stepcounter{section}
+{\newpage
+\clearpage
+\samepage \begin{figure}[hbt]
+  \centerline{                   
+      \psfig{file=dome.eps}
+  }
+  
+  \label{fig:dome}
+\end{figure}
+}
+
+\stepcounter{section}
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsubsection}
+\stepcounter{subsubsection}
+{\newpage
+\clearpage
+\samepage \begin{figure}[hbt]
+  \centerline{                   
+      \psfig{file=earth.eps}
+  }
+  
+  \label{fig:earth}
+\end{figure}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\mathbf{n}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline186: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\mathbf{v_0}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline190: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\mathbf{v}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline194: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(\mathbf{v}
+- \mathbf{v_0})$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline200: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{equation}\mathbf{n} \cdot ( \mathbf{v} - \mathbf{v_0} ) = 0
+\end{equation}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{align}a(x - x_0) + b(y - y_0) + c(z - z_0) &= 0 \\ 
+  ax + by + cz - (\mathbf{n} \cdot \mathbf{v_0}) &= 0
+\end{align}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\mathbf{u}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline204: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\vec{\mathbf{PS}}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline206: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{figure}[hbt]
+  \centerline{                   
+      \psfig{file=local.eps}
+  }
+  
+  \label{fig:local}
+\end{figure}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\mathbf{u_1}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline222: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{equation}\mathbf{u_1} = \frac { \mathbf{n} \cdot \mathbf{u} }
+             { {\| \mathbf{n} \|}^2 } \mathbf{n}
+\end{equation}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{equation}\mathbf{v} = \mathbf{v_0} + \mathbf{u} - \mathbf{u_1}
+\end{equation}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\theta$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline234: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$( 0, 0,
+-\mathbf{z} )$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline240: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\mathbf{w}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline242: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\arccos()$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline244: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{equation}\theta = \arccos( \mathbf{v} \cdot \mathbf{w} )
+\end{equation}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(-1.0 \ldots 1.0)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline250: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(0.0 \ldots 180.0)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline256: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+\stepcounter{section}
+
+\end{document}

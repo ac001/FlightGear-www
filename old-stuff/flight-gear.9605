@@ -1,0 +1,462 @@
+From owner-flight-gear  Thu May 23 13:07:26 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id NAA12265; Thu, 23 May 1996 13:06:40 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from meserv.me.umn.edu (meserv.me.umn.edu [134.84.196.1]) by calvin.infoplane.com (8.7.1/8.7.1) with SMTP id NAA12258 for <flight-gear@infoplane.com>; Thu, 23 May 1996 13:06:32 -0500
+Received: from kenai.me.umn.edu (kenai.me.umn.edu [134.84.197.42]) by meserv.me.umn.edu (8.6.11/8.6.11) with ESMTP id NAA04872 for <flight-gear@infoplane.com>; Thu, 23 May 1996 13:10:18 -0500
+Received: (clolson@localhost) by kenai.me.umn.edu (8.7.5/8.6.5) id NAA03837; Thu, 23 May 1996 13:09:19 -0500
+Date: Thu, 23 May 1996 13:09:19 -0500
+Message-Id: <199605231809.NAA03837@kenai.me.umn.edu>
+From: "Curtis L. Olson" <clolson@me.umn.edu>
+To: flight-gear@infoplane.com
+Subject: flight gear code
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+Status: RO
+Content-Length: 1539
+Lines: 45
+
+Eric,
+
+I grabbed your fltgear.zip and was trying to compile your code under
+Linux.  So far here are a couple things I have run into:
+
+In fgini.h I had to add two lines in order to pull in the definitions
+for the structures used in lines 48 & 49.
+
+    #include "fgevent.h"
+    #include "fgdriver.h"
+
+In fgmain.h the compile dies because it can't find FGDRIVER_CALL in
+line 88.  I grep'ed the source and couldn't find this defined any
+where.  I'm speculating that this might be a typo?  Just for fun I
+changed it to FGDRIVER_INIT_CALL.  Then I found "driver_bitmap"
+undefined in line 110.  Another typo?  Forging ahead, I changed this
+to "driver_bitmaps".
+
+Finally, I think I am giving up with an "incompatible types in
+assignment" error for line 113.
+
+    FG_DRIVER_FN static_drivers[] ...
+    FGDRIVER_INIT driver_data[MAXDRIVERS] ...
+
+    driver_data[next_driver++]=static_drivers[i](&callstruct);
+
+I tried fiddling a bit with these to see if I could get the compiler
+past this point, but didn't make too much progress.
+
+I also looked at your Linux specific defines and everything looks
+pretty much as it should.  
+
+Looks like you have been keeping yourself busy. :-)
+
+Thanks,
+
+Curt.
+-- 
+Curtis Olson   E-mail: clolson@me.umn.edu
+Try Linux!     WWW:    http://www.me.umn.edu/home/clolson/index.html
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Fri May 24 13:28:46 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id NAA20405; Fri, 24 May 1996 13:27:18 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from albert.ssl.berkeley.edu (albert.ssl.berkeley.edu [128.32.147.187]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id NAA20401 for <flight-gear@infoplane.com>; Fri, 24 May 1996 13:27:07 -0500
+Received: (korpela@localhost) by albert.ssl.berkeley.edu (8.7.5/CEA) id LAA27327; Fri, 24 May 1996 11:29:22 -0700 (PDT)
+From: "Eric J. Korpela" <korpela@ssl.Berkeley.EDU>
+Message-Id: <199605241829.LAA27327@albert.ssl.berkeley.edu>
+Subject: Re: flight gear code
+To: flight-gear@infoplane.com
+Date: Fri, 24 May 1996 11:29:22 -0700 (PDT)
+In-Reply-To: <199605231809.NAA03837@kenai.me.umn.edu> from "Curtis L. Olson" at May 23, 96 01:09:19 pm
+X-Geek-Code: GAT d-(?) H s+:-- g+ p? au--- a- w++ v++(--) C+++ US+++ P- L 3 
+X-Geek-Cont1: E--- N++ K? W M- V -po+(--) Y+ t+ 5++ j? R- G? tv+ b++ D+ B---
+X-Geek-Cont2: e+++>++++ u- h--- f+(?) r+++ n+(---) y@(?) 
+X-PGP-ID: FF0C92DD
+X-PGP-Fingerprint: 96 BD 9D 77 12 FE 04 9B  3E F5 5B 8D 2D D1 4C 6B
+X-Mailer: ELM [version 2.4 PL25]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+Status: O
+Content-Length: 558
+Lines: 19
+
+
+> Eric,
+
+> I grabbed your fltgear.zip and was trying to compile your code under
+> Linux.  So far here are a couple things I have run into:
+
+Thanks for the typo info... I've made some changes and updated the zip file.
+
+
+> Looks like you have been keeping yourself busy. :-)
+
+I could work on this or my thesis. :)
+
+Eric
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Fri May 24 16:43:34 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id QAA21465; Fri, 24 May 1996 16:43:17 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from meserv.me.umn.edu (meserv.me.umn.edu [134.84.196.1]) by calvin.infoplane.com (8.7.1/8.7.1) with SMTP id QAA21461 for <Flight-Gear@infoplane.com>; Fri, 24 May 1996 16:43:13 -0500
+Received: from kenai.me.umn.edu (kenai.me.umn.edu [134.84.197.42]) by meserv.me.umn.edu (8.6.11/8.6.11) with ESMTP id QAA22791 for <Flight-Gear@infoplane.com>; Fri, 24 May 1996 16:47:01 -0500
+Received: (clolson@localhost) by kenai.me.umn.edu (8.7.5/8.6.5) id QAA11583; Fri, 24 May 1996 16:45:53 -0500
+Date: Fri, 24 May 1996 16:45:53 -0500
+Message-Id: <199605242145.QAA11583@kenai.me.umn.edu>
+From: "Curtis L. Olson" <clolson@me.umn.edu>
+To: Flight-Gear@infoplane.com
+Subject: Status Report
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+Status: O
+Content-Length: 991
+Lines: 26
+
+Hello developers!
+
+I have been fiddling around a bit today with the FlightGear web page.
+Feel free to have a look at it and let me know what sorts of
+changes & suggestions you would like to see.
+
+I would like to add a section which lists who is working on what and
+how it is coming along.  I think this might be a good tool to help us
+keep track of what each of us is working on, and to help us see how we
+each fit into the master plan.  (If there is a master plan. :-)
+
+So, if you don't mind, I'd love to get a quick couple of sentence
+blurb on what you are doing and how it is going so I can put it up on
+the web page.
+
+Thanks!
+
+Curt.
+-- 
+Curtis Olson   E-mail: clolson@me.umn.edu
+Try Linux!     WWW:    http://www.me.umn.edu/home/clolson/index.html
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Fri May 24 20:20:55 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id UAA22622; Fri, 24 May 1996 20:20:46 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from albert.ssl.berkeley.edu (albert.ssl.berkeley.edu [128.32.147.187]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id UAA22618 for <flight-gear@infoplane.com>; Fri, 24 May 1996 20:20:40 -0500
+Received: (korpela@localhost) by albert.ssl.berkeley.edu (8.7.5/CEA) id SAA01830; Fri, 24 May 1996 18:22:56 -0700 (PDT)
+From: "Eric J. Korpela" <korpela@ssl.Berkeley.EDU>
+Message-Id: <199605250122.SAA01830@albert.ssl.berkeley.edu>
+Subject: Re: Status Report
+To: flight-gear@infoplane.com
+Date: Fri, 24 May 1996 18:22:56 -0700 (PDT)
+In-Reply-To: <199605242145.QAA11583@kenai.me.umn.edu> from "Curtis L. Olson" at May 24, 96 04:45:53 pm
+X-Geek-Code: GAT d-(?) H s+:-- g+ p? au--- a- w++ v++(--) C+++ US+++ P- L 3 
+X-Geek-Cont1: E--- N++ K? W M- V -po+(--) Y+ t+ 5++ j? R- G? tv+ b++ D+ B---
+X-Geek-Cont2: e+++>++++ u- h--- f+(?) r+++ n+(---) y@(?) 
+X-PGP-ID: FF0C92DD
+X-PGP-Fingerprint: 96 BD 9D 77 12 FE 04 9B  3E F5 5B 8D 2D D1 4C 6B
+X-Mailer: ELM [version 2.4 PL25]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+Status: O
+Content-Length: 2805
+Lines: 62
+
+
+> Hello developers!
+
+> So, if you don't mind, I'd love to get a quick couple of sentence
+> blurb on what you are doing and how it is going so I can put it up on
+> the web page.
+
+Right now, I'd call what I'm doing "Trying to get a self-consistant
+platform independant framework for graphics, driver loading, and
+initialization."  I'm not sure how else I could state it.
+
+A thing that I would like to see added to the "to do/call for volunteers"
+list is:
+
+We need to get FG_BITMAPS to the screen, under every architecture and
+display type.  Some are easy, some are hard.  I think the basic prototype
+for the function that returns a screen bitmap should be...
+
+void fg_open_display_bitmaps(FG_BITMAP *bitmaps[],int *num_windows);
+
+The function would set up an array of bitmaps for the display windows.
+The number of display windows would vary with display type, setup.  The
+minimum number of windows is, of course, one.  (To look a the definition
+of a bitmap, see fgtypes.h at my web site.)  The main idea is that anything
+written to one of these bitmaps would end up on the screen.  (P.S. the
+display windows also have to be opened by this call.)
+
+I'm planning on writing the above function for OS/2 using DIVE (direct
+interface to video extensions).  My plan is to set up a process in the
+background running at low priority to blit these bitmaps to the display,
+with an option of putting the bitmaps directly in video memory.
+
+I'll also do a sunos version that writes directly to the frame buffer 
+(/dev/fb) using the memmap() API.  (This may also work on linux?)
+
+I'd like someone to write an X11 version, using MIT shared memory is
+probably the way to go.  Any X11 gurus out there?
+
+DOS is going to be a tough one.  Because of the wacky way the video
+memory is set up in DOS there will probably be multiple drivers, one
+for bank switching, one for a VESA linear buffer.  My suggestion is
+to setup a function linked to the timer interrupt that updates the
+screen.  The tough part about this is locking the interrupt routines
+into physical memory.  Any suggestions Mauritzio?
+
+I've also noticed that we're missing two major platforms in our team
+so far, Macintosh and Windows.  I know nothing about Mac programming,
+so there's lots of work to be done there.  I'm also no Windows guru, but
+I'd guess that most of the OS/2 stuff I've done so far will work under
+Win 32 with little modification.  (Change DosLoadModule to LoadModule :))
+
+I may send a message to comp.os.ms-windows.programmer.graphics and
+comp.sys.mac.programmer.games about our little project.
+
+Eric
+
+
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Fri May 24 21:57:31 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id VAA23120; Fri, 24 May 1996 21:57:16 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from pen1.pen.k12.va.us (pen1.pen.k12.va.us [141.104.22.202]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id VAA23116 for <flight-gear@infoplane.com>; Fri, 24 May 1996 21:57:12 -0500
+Received: from Unknown by pen1.pen.k12.va.us (8.7.3/8.6.6)
+          id XAA68293; Fri, 24 May 1996 23:00:58 -0400
+Message-Id: <199605250300.XAA68293@pen1.pen.k12.va.us>
+Comments: Authenticated sender is <dmurr@pen.k12.va.us>
+From: "David Murr" <dmurr@pen.k12.va.us>
+Organization: Virginia's PEN
+To: flight-gear@infoplane.com
+Date: Fri, 24 May 1996 23:00:06 -400
+MIME-Version: 1.0
+Content-type: text/plain; charset=US-ASCII
+Content-transfer-encoding: 7BIT
+Subject: Re: Status Report
+Priority: normal
+X-mailer: Pegasus Mail for Windows (v2.33)
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+Status: RO
+Content-Length: 1178
+Lines: 37
+
+
+> Feel free to have a look at it and let me know what sorts of
+> changes & suggestions you would like to see.
+
+Me like! ;-)
+
+> I would like to add a section which lists who is working on what and
+> how it is coming along.  I think this might be a good tool to help us
+> keep track of what each of us is working on, and to help us see how we
+> each fit into the master plan.  (If there is a master plan. :-)
+
+Well, you have me down as working on the ATC module, and while that's 
+probably true -- I'm going to actually have to learn C before I write 
+something! <big wink> Right now, this is basically my most 
+complicated program:
+
+#include <stdio.h>
+#define endif
+main(int argc, char *argv)
+{
+    char program_usage[]=
+    "Hi, this program doesn't do anything!";
+
+    if (argc < 2 || argc > 4)
+      puts(program_usage);
+    else argc == 3;
+      printf("This program still doesn't do anything!");
+    endif;
+}
+
+Oooh, that's great! :)
+
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Sat May 25 06:56:19 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id GAA25928; Sat, 25 May 1996 06:56:01 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from MAINE.maine.edu (maine.maine.edu [130.111.39.100]) by calvin.infoplane.com (8.7.1/8.7.1) with SMTP id GAA25922 for <flight-gear@infoplane.com>; Sat, 25 May 1996 06:55:53 -0500
+Received: from mail.camden.sad28.k12.me.us by MAINE.maine.edu (IBM VM SMTP V2R3)
+   with TCP; Sat, 25 May 96 07:59:14 EDT
+Date: Sat, 25 May 96 08:00:07 -0500
+From: Techie@mail.camden.sad28.k12.me.us (Ryan Connon)
+Organization: MSAD #28
+Subject: Re(2): Status Report
+To: flight-gear@infoplane.com
+Message-ID: <436535.ensmtp@mail.camden.sad28.k12.me.us>
+Priority: normal
+X-Mailer: ExpressNet/SMTP v1.1.5
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+Status: O
+Content-Length: 1642
+Lines: 37
+
+
+Eric wrote:
+
+I've also noticed that we're missing two major platforms in our team
+so far, Macintosh and Windows.  I know nothing about Mac programming,
+so there's lots of work to be done there.  I'm also no Windows guru, but
+I'd guess that most of the OS/2 stuff I've done so far will work under
+Win 32 with little modification.  (Change DosLoadModule to LoadModule :))
+
+I have a Mac, and I'm just getting to learn C in my spare time, which I never
+have.  I know a little Mac programming at the time, but if you need a
+technical ?'s answered, I know the Mac OS in and out since I fix Macs
+everyday!
+
+-----------------------------------------------------------------------
+Ryan Connon
+Camden Rockport High School Technology Department Administrator / Technician
+CRHS Web Page http://www.midcoast.com/~sad28/CRHS/CRHS_Home_Page.html
+Programmed and maintained by Me, check it out!
+Flight Gear, check out our web page at:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+Western Connection Pilot / FS4 man
+web page at:http://members.tripod.com/~Velardo/virtual.html
+-----------------------------------------------------------------------
+
+
+--
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Sent via ExpressNet/SMTP Internet Gateway,1994-95 Delphic Software,Inc.
+C-Port Network, Camden-Rockport (Maine) Public Schools
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Thu May 30 15:16:42 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id PAA22179; Thu, 30 May 1996 15:13:39 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from MAINE.maine.edu (maine.maine.edu [130.111.39.100]) by calvin.infoplane.com (8.7.1/8.7.1) with SMTP id PAA22175 for <flight-gear@infoplane.com>; Thu, 30 May 1996 15:13:32 -0500
+Received: from mail.camden.sad28.k12.me.us by MAINE.maine.edu (IBM VM SMTP V2R3)
+   with TCP; Thu, 30 May 96 16:19:31 EDT
+Date: Thu, 30 May 96 16:20:16 -0500
+From: Techie@mail.camden.sad28.k12.me.us (Ryan Connon)
+Organization: MSAD #28
+Subject: address change
+To: flight-gear@infoplane.com
+Message-ID: <452977.ensmtp@mail.camden.sad28.k12.me.us>
+Priority: normal
+X-Mailer: ExpressNet/SMTP v1.1.5
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+Status: O
+Content-Length: 647
+Lines: 22
+
+please note: if you want to e-mail me, please use m new address, the old
+address will not work! new address is:
+
+     Techie@sad28.k12.me.us
+
+Thank You
+Ryan Connon
+
+
+--
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Notice:
+Our domain name has been shortened.
+Reach me ...... @sad28.K12.me.us
+Please update your address book.
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Thu May 30 21:18:33 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id VAA24069; Thu, 30 May 1996 21:18:10 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from pen1.pen.k12.va.us (pen1.pen.k12.va.us [141.104.22.202]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id VAA24065 for <flight-gear@infoplane.com>; Thu, 30 May 1996 21:18:05 -0500
+Received: by pen1.pen.k12.va.us (8.7.3/8.6.6)
+          id WAA79539; Thu, 30 May 1996 22:24:38 -0400
+From: "David L. Murr" <dmurr@pen.k12.va.us>
+Message-Id: <199605310224.WAA79539@pen1.pen.k12.va.us>
+Subject: Re: address change
+To: flight-gear@infoplane.com
+Date: Thu, 30 May 96 22:24:37 EDT
+In-Reply-To: <452977.ensmtp@mail.camden.sad28.k12.me.us>; from "Ryan Connon" at May 30, 96 4:20 pm
+X-Mailer: PENELM [version 2.3.1 PL11]
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+Status: O
+Content-Length: 795
+Lines: 23
+
+According to Ryan Connon:
+> 
+> please note: if you want to e-mail me, please use m new address, the old
+> address will not work! new address is:
+> 
+>      Techie@sad28.k12.me.us
+
+Make sure you change your subscription to the Flight Gear list
+(as well as the Flight-Sim Grove list)! :)
+
+Regards,
+David
+
+-- 
+   _________  __              | Editor - FSNews
+  / __/ __/ |/ /__ _    _____ | http://users.aol.com/fsnews/
+ / _/_\ \/    / -_) |/|/ (_-< | The #1 source for flight-sim news!
+/_/ /___/_/|_/\__/|__,__/___/ | "All the news- without the subscription!"
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+

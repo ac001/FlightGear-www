@@ -1,0 +1,343 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 96.1 (Feb 5, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<HTML>
+<HEAD>
+<TITLE> Flight Gear Scenery Generation Tools. </TITLE>
+<META NAME="description" CONTENT=" Flight Gear Scenery Generation Tools. ">
+<META NAME="keywords" CONTENT="SceneryGeneration">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<LINK REL=STYLESHEET HREF="SceneryGeneration.css">
+</HEAD>
+<BODY LANG="EN">
+<P>
+<H1 ALIGN=CENTER>
+  Flight Gear Scenery Generation Tools.
+</H1>
+<P ALIGN=CENTER><STRONG>
+    Curtis L. Olson<BR> 
+    (<tt>curt@flightgear.org</tt>)
+</STRONG></P><P>
+<P>
+<H1><A NAME="SECTION00010000000000000000">1 Introduction</A></H1>
+<P>
+This document gives a brief overview of the Flight Gear scenery
+generation tools and how they fit together in a pipeline to produce
+the runtime scenery from the raw data.
+<P>
+The first sections describe how the Flight Gear Earth is subdivided
+and the coordinate systems that Flight Gear uses internally.  The
+remaining sections describe the tools that take diverse data sources
+and produce the actual scenery.
+<P>
+<H1><A NAME="SECTION00020000000000000000">2 Internal Scenery Representation</A></H1>
+<P>
+This section describes how FG represents, manipulates, and
+transforms scenery internally.
+<P>
+Internal, all FG scenery is defined using a cartesian coordinate
+system centered at the center of the earth.  Please refer to the
+Flight Gear CoordinateSystem document for more information.  This
+means that one of the scenery tools processing steps will be to
+convert from the source data coordinate system to the internal Flight
+Gear coordinate system.
+<P>
+<H2><A NAME="SECTION00021000000000000000">2.1 Scenery Partitioning</A></H2>
+<P>
+Flight Gear splits the world up into tiles.  This splits up the
+immense scenery data base into chunks that are managable by the run
+time simulator.
+<P>
+Tile edges are parallel to longitude and latitude lines.  Tiles are
+gauranteed to be at least 8 miles long in both width and height.  As
+we move towards the poles, the tiles get narrower, so at certain
+predefined latitudes, the tile with is doubled.  Figure <A HREF="SceneryGeneration.html#figlats">1</A>
+shows latitudes vs.  tile widths.  The southern hemisphere is a mirror
+image of the northern hemisphere.
+<P>
+<P><A NAME="32">&#160;</A><A NAME="figlats">&#160;</A> <IMG WIDTH=264 HEIGHT=217 ALIGN=BOTTOM ALT="figure20" SRC="img1.gif"  > <BR>
+<STRONG>Figure 1:</STRONG> Latitude vs. Tile Widths.<BR>
+<P>
+<P>
+Since Flight Gear tiles are partitioned parallel to longitude and
+latitude lines, they have a trapezium shape.  Figure <A HREF="SceneryGeneration.html#figtrap">2</A>
+shows an exaggerated scenery area.
+<P>
+<P><A NAME="38">&#160;</A><A NAME="figtrap">&#160;</A> <IMG WIDTH=346 HEIGHT=346 ALIGN=BOTTOM ALT="figure36" SRC="img2.gif"  > <BR>
+<STRONG>Figure 2:</STRONG> Basic Tile Shape<BR>
+<P><H2><A NAME="SECTION00022000000000000000">2.2 Reference Points</A></H2>
+<P>
+Each scenery area will have a reference point at the center of its
+area.  This reference point (for purposes of avoiding floating point
+precision problems) defines the origin of a local coordinate system
+which.  The local coordinate system is simply translated from the
+global coordinate system by the distance of the tile's center
+reference point from the center of the earth.  Figure
+<A HREF="SceneryGeneration.html#figreference">3</A> demonstrates this better than I can explain it.
+<P>
+<P><A NAME="45">&#160;</A><A NAME="figreference">&#160;</A> <IMG WIDTH=431 HEIGHT=431 ALIGN=BOTTOM ALT="figure43" SRC="img3.gif"  > <BR>
+<STRONG>Figure 3:</STRONG> Reference Points and Translations<BR>
+<P>
+<P>
+All the objects for a specific scenery area will be defined based on
+this local coordinate system.  For each scenery area we define a
+vector  <IMG WIDTH=11 HEIGHT=14 ALIGN=BOTTOM ALT="tex2html_wrap_inline35" SRC="img4.gif"  >  which represents the distance from the
+center of the earth to the local coordinate system.
+<P>
+<H2><A NAME="SECTION00023000000000000000">2.3 Putting the pieces of scenery together</A></H2>
+<P>
+To render a scene, the scenery manager will need to load all the
+visible tiles.  Before rendering each tile we translate it by
+ <IMG WIDTH=99 HEIGHT=29 ALIGN=MIDDLE ALT="tex2html_wrap_inline39" SRC="img5.gif"  > .  This moves all
+the rendered tiles near to the origin, while maintaining the relative
+positions and orientations.  The of moving all the tiles near the
+origin before rendering them is to try to reduce floating point round
+off problems.
+<P>
+When rendering, it is straightforward to calculate the proper view
+point and up vector so that the scenery will appear right side up when
+it is rendered.
+<P>
+<H2><A NAME="SECTION00024000000000000000">2.4 Scenery file format</A></H2>
+<P>
+Here is a very brief overview of the flight gear scenery file format.
+Some of this format will have to change in the future, so I won't put
+a lot of effort here right now.  This description will be most
+understandable if you reference an actual scenery tile file.  If you
+have questions, please ask!
+<P>
+<UL><LI> Coordinates are in (X, Y, Z) with (0, 0, 0) being the center of
+  the earth.  Units are in meters.<LI> ``gbs'' is the ``global bounding sphere'' specified by the
+  center reference point and a radius.<LI> This is followed by a list of vertices prefaced by ``v''
+  specifying the offsets of the vertices from the gbs reference point.<LI> Then follows the list of vertex normals ``vn''.<LI> Then the sets of triangle strips are specifed:<LI> ``usemtl'' points to a material property record in the materials
+  file and specifies the texture/color/etc. for this triangle strip.<LI> ``bs'' specifies the bounding sphere for this particular tri
+  strip (for view frustum culling)<LI> ``t'' is the start of a tri strip and the integer numbers are
+  just indices back into the vertex and vertex normal lists.<LI> ``q'' is simply a continuation of the triangle strip.
+</UL>
+<P>
+I will eventually need to add texture coordinate support to this file
+format, as well as a way to reference and position objects from an
+external library.
+<P>
+<H1><A NAME="SECTION00030000000000000000">3 Scenery Generation</A></H1>
+<P>
+This section is very fluid right now.  I have implemented a first pass
+at generating scenery.  This was a good learning experience, but it
+exposed several flaws and limitations in my original approach.  I am
+in the midst of a complete overhaul of these tools which is intended
+to address all the short comings of my first attempt.  At this point I
+am simply outlining the plan.  Much of this could change as my plan
+continues to smack up against reality.
+<P>
+With that in mind, the scenery generation tools can be subdivided into
+four major categories.
+<P>
+<UL><LI> Libraries which provide basic functionality used by the terrain
+  tools.<LI> Preprocessing tools which convert data from it's original format
+  (as downloaded from the net) to something that is easier for the
+  scenery tools to process.<LI> Scenery generation tools which assemble and massage the
+  resulting input data into the Flight Gear scenery format.<LI> Miscellaneous utilities
+<P>
+</UL><H2><A NAME="SECTION00031000000000000000">3.1 Libraries</A></H2>
+<P>
+<H3><A NAME="SECTION00031100000000000000">3.1.1 GPC</A></H3>
+<P>
+GPC is the ``Generic Polygon Clipper'' library.  It is available from
+<P>
+http://www.cs.man.ac.uk/aig/staff/alan/software
+<P>
+Please be aware that the licensing terms for the gpc library clash
+with the GPL and prevent the source code from being redistributed with
+any GPL program.  Therefore any developers interested in building the
+scenery tools will have to fetch and install this library individually
+on their own systems.
+<P>
+<H3><A NAME="SECTION00031200000000000000">3.1.2 GFC</A></H3>
+<P>
+GFC is the ``Geographic Foundation Classes'' library.  It is available
+from:
+<P>
+http://www.geog.psu.edu/&nbsp;qian/gfc/index.html
+<P>
+This library allows programs to process GIS shapefiles and extract out
+the lon/lat coordinates of the GIS structures.
+<P>
+<H3><A NAME="SECTION00031300000000000000">3.1.3 DEM</A></H3>
+<P>
+This is a library of routines distributed as part of Flight Gear.
+This library has routines to parse the 3 arcsec DEM file format,
+approximate the regular grid of height data, with an irregular grid,
+and interpolate the elevation of any arbitrary point inside the grid.
+<P>
+An irregular grid can often represent the same level detail as a
+regular grid with 4-6x fewer polygons.  This is very desirable in a
+flight sim where both detail and rendering speed is very important.
+<P>
+Another feature of an irregular grid is that it carries fewer
+artifacts that could provide negative training value to pilots.  For
+instance a regular grid could give a pilot non-realistic cues for
+determining north/south/east/west.
+<P>
+<H3><A NAME="SECTION00031400000000000000">3.1.4 Triangle</A></H3>
+<P>
+Triangle can be built as a standalone binary, or as a library.  For
+our uses I am choosing to build it as a library.  This library
+impliments the delauney triangulation algorithm.  It takes a set of
+unorder points and finds the optimal triangulation of these points.
+<P>
+For our use we feed in a set of unordered height values and the
+triangle library will output a set of triangles that can be rendered
+as terrain.
+<P>
+The triangle library does a few more things that are useful.  It will
+subdivide triangles to ensure that they never get too long and
+skinny.  It will also let you set up boundaries and holes within the
+triangulation area.
+<P>
+<H2><A NAME="SECTION00032000000000000000">3.2 Preprocessing tools</A></H2>
+<P>
+<H3><A NAME="SECTION00032100000000000000">3.2.1 GenAirports</A></H3>
+<P>
+This tools inputs an ascii specification of the airports of the world
+that looks like the following:
+<P>
+<PRE>KORD Chicago O Hare International                       
+        -087.917774 41.976778 13000 200 140 155154 14 R 668
+        -087.902380 41.969040 10141 150 90 154154 09 R 668
+        -087.903546 41.991918 10003 150 140 155154 14 L 668
+        -087.889594 41.961618 8071 150 41 154154 04 R 668
+        -087.903705 41.983954 7967 150 90 154154 09 L 668 
+        -087.905138 41.989606 7500 150 39 142144 04 L 668
+        -087.900410 41.990086 5341 150 180 131131 18 x 668</PRE>
+<P>
+For each airport, a bounding polygon is generated, and written as a
+clipping record for each intersecting tile in the scenery construction
+area.  The actual airport will belong to the tile containing it's
+center point, but the airport will need to be clipped out of the base
+terrain from any tiles it might spill over into.
+<P>
+<H3><A NAME="SECTION00032200000000000000">3.2.2 ShapeFile</A></H3>
+<P>
+The ShapeFile tool will take the polygons from shapefiles (via GFC),
+clip them to the appropriate tile boundares (via GPC) and write the
+resulting polygons to the appropriate tile in the scenery work space.
+<P>
+<H3><A NAME="SECTION00032300000000000000">3.2.3 DemRaw2ascii</A></H3>
+<P>
+This tool will input the 30 arcsec raw DEM format, split it up into 1
+x 1 degree sections, and output the result into the 3 arcsec format so
+it can be fed through the scenery pipeline.
+<P>
+<H3><A NAME="SECTION00032400000000000000">3.2.4 Dem2node</A></H3>
+<P>
+This tool takes the raw DEM files and calls routines from libDEM.a to
+create the irregular grid approximation of the original data.  The
+elevation data is writen to the to the appropriate tile in the scenery
+work space.
+<P>
+<H2><A NAME="SECTION00033000000000000000">3.3 Scenery generation tools</A></H2>
+<P>
+Issues:
+<P>
+Combining height data, polygon data.
+<P>
+Triangulating / tri-stripping / tri-fanning.
+<P>
+Matching vertices and normals along edges and at corners.
+<P>
+Resolving conflicts in data:
+  overlapping polygon areas.
+  conflicting height data between airports and DEM data
+<P>
+Here's the basic process to create scenery:
+<P>
+Dump the raw data into the appropriate tile areas in the work space.
+This includes height data (DEM, airport) and polygon data (airport,
+hydro-data, land use data, etc.)
+<P>
+For each tile, run the generic clipper on each polygon in order from
+highest to lowest incrementally building an accumulation ``super''
+polygon that comprises a union of all polygons we've processed so far
+for this tile.  For each polygon first clip against this
+super-accumlation-polygon.  What's left after the clip is the new
+shape of the polygon.  This is the scheme for eliminating overlapping
+features on a priority basis.
+<P>
+For each polygon on a tile we must determine a point inside.  We need
+this for the triangulation step.
+<P>
+For each polygon, triangulate all the height fields in the tile.
+Using the triangle library we can feed in all the polygon outlines
+with the corresponding interior points.  We can tell the triangulator
+to start at every point except for the one we are working on and eat
+away all the triangles until a polygon border is encountered.  This
+leaves us with the triangulation of each polygon.
+<P>
+Now we have a pile of height data and the triangulation for each
+polygon.  However, some of these hieght fields must be enforced
+(airports) and some of this can be adjusted (base terrain).  We might
+also want to think about ensuring lakes are level, and rivers don't
+run up and down hills.  Anyways, with a flurry of handwaving, we have
+adjusted all the heights.
+<P>
+The next thing we have to worry about is making sure each tile meshes
+exactly with all it's neighbors.  We do this by spliting the tile up
+into it's 4 edges, 4 corners, and the remaining vertices.  We write
+these parts out as individual files if a neighboring tile hasn't been
+processed first.  In other words, the first tile to be process gets to
+define the shared edge or corner.  The neighbor must use this data if
+it exists.  Then we have to reassemble the tile using any pre-existing
+edges from a neighbor tiles that were processed before us and
+retriangulate since our node list has changed. &lt;whew&gt;
+<P>
+Unfortunately it's not quite this simple!
+<P>
+We need to be careful, because we have to make sure we also preserve
+the polygon connections since lakes, rivers, and even airports often
+span multiple tiles.
+<P>
+To do this I propose a scheme of assigning a unique integer id to each
+polygon.  When writing out the shared edge/corner pieces I also
+associate this idea.  So rather than disassembling, sharing, and
+reassembling whole tiles, we need to do this on a per-polygon basis.
+More handwaving and we are off to the next step.
+<P>
+Now, we need to take our 3d, triangulated polygons and tri-fan or
+tri-strip them for rendering efficiency.  We have been using a
+freeware tool called ``stripe'' but it's a typical CSci hack job where
+the author was more interested in demonstrating the theory, rather
+than demonstrating bug free, robust, well written code.  Oh well.  I
+think I will try to write a utility to combine triangles into fans.
+This will help culling (smaller, centralized objects == better
+culling) but will happen at the expense of more vertex
+transformations.  I'm hoping this will result in a net gain.  Finger
+crossed. :-)
+<P>
+Finally, we need to take our 3d, fan-ified polygons and convert them
+to the FGFS scenery format and copy them from the work space directory
+tree into the final scenery directory tree.
+<P>
+<H2><A NAME="SECTION00034000000000000000">3.4 Miscellaneous Utilities</A></H2>
+<P>
+<H3><A NAME="SECTION00034100000000000000">3.4.1 DemInfo</A></H3>
+<P>
+Reads the ``A'' record from a 3 arcsec DEM file and dumps some
+pertinent information.
+<P>
+<H3><A NAME="SECTION00034200000000000000">3.4.2 tile-sizes.pl</A></H3>
+<P>
+Generates the width of a 1/8 x 1/8 degree tile at various latitudes.
+<P>
+<H1><A NAME="SECTION00040000000000000000">  About this document ... </A></H1>
+<P>
+ <STRONG>
+  Flight Gear Scenery Generation Tools.
+</STRONG><P>
+This document was generated using the <A HREF="http://www-dsed.llnl.gov/files/programs/unix/latex2html/manual/"><STRONG>LaTeX</STRONG>2<tt>HTML</tt></A> translator Version 96.1 (Feb 5, 1996) Copyright &#169; 1993, 1994, 1995, 1996,  <A HREF="http://cbl.leeds.ac.uk/nikos/personal.html">Nikos Drakos</A>, Computer Based Learning Unit, University of Leeds. <P> The command line arguments were: <BR>
+<STRONG>latex2html</STRONG> <tt>-split 0 -show_section_numbers SceneryGeneration.tex</tt>. <P>The translation was initiated by Curtis L. Olson on Sun Feb 14 18:40:55 CST 1999<BR> <HR>
+<P><ADDRESS>
+<I>Curtis L. Olson <BR>
+Sun Feb 14 18:40:55 CST 1999</I>
+</ADDRESS>
+</BODY>
+</HTML>

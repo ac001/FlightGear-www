@@ -1,0 +1,120 @@
+\batchmode
+
+
+\documentclass[12pt]{article}
+\makeatletter
+
+\usepackage{anysize}
+\papersize{11in}{8.5in}
+\marginsize{1in}{1in}{1in}{1in}
+
+\usepackage{epsfig}
+
+\usepackage{setspace}
+\onehalfspacing
+
+\usepackage{url}
+
+
+
+\makeatother
+\newenvironment{tex2html_wrap}{}{}
+\newwrite\lthtmlwrite
+\def\lthtmltypeout#1{{\let\protect\string\immediate\write\lthtmlwrite{#1}}}%
+\newbox\sizebox
+\begin{document}
+\pagestyle{empty}
+\stepcounter{section}
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\mathbf{B}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline67: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\mathbf{ABC}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline69: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\mathbf{BF}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline73: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\angle \mathbf{DBF}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline75: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\mathbf{BE}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline79: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\angle \mathbf{DBE}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline81: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{figure}[hbt]
+  \centerline{                   
+      \psfig{file=geodesy.eps}
+  }
+  
+  \label{fig:geodesy}
+\end{figure}
+}
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+{\newpage
+\clearpage
+\samepage \begin{figure}[hbt]
+  \centerline{                   
+      \psfig{file=coord.eps}
+  }
+  
+  \label{fig:coords}
+\end{figure}
+}
+
+\stepcounter{subsection}
+{\newpage
+\clearpage
+\samepage \begin{displaymath}x = cos(lon_\mathit{geocentric}) * cos(lat_\mathit{geocentric}) *
+radius_\mathit{geocentric} \end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}y = sin(lon_\mathit{geocentric}) * cos(lat_\mathit{geocentric}) *
+radius_\mathit{geocentric} \end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}z = sin(lat_\mathit{geocentric}) * radius_\mathit{geocentric} \end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}lon = atan2( y, x ) \end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}lat = \frac{\pi}{2} - atan2( \sqrt{x*x + y*y}, z ) \end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}radius = \sqrt{x*x + y*y + z*z} \end{displaymath}
+}
+
+\stepcounter{section}
+
+\end{document}

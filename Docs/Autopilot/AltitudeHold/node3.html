@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 96.1 (Feb 5, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<HTML>
+<HEAD>
+<TITLE>Controlling Rate of Climb</TITLE>
+<META NAME="description" CONTENT="Controlling Rate of Climb">
+<META NAME="keywords" CONTENT="AltitudeHold">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<LINK REL=STYLESHEET HREF="AltitudeHold.css">
+</HEAD>
+<BODY LANG="EN">
+ <A NAME="tex2html37" HREF="node4.html"><IMG WIDTH=37 HEIGHT=24 ALIGN=BOTTOM ALT="next" SRC="http://www.menet.umn.edu/icons/next_motif.gif"></A> <A NAME="tex2html35" HREF="AltitudeHold.html"><IMG WIDTH=26 HEIGHT=24 ALIGN=BOTTOM ALT="up" SRC="http://www.menet.umn.edu/icons/up_motif.gif"></A> <A NAME="tex2html29" HREF="node2.html"><IMG WIDTH=63 HEIGHT=24 ALIGN=BOTTOM ALT="previous" SRC="http://www.menet.umn.edu/icons/previous_motif.gif"></A>   <BR>
+<B> Next:</B> <A NAME="tex2html38" HREF="node4.html">Controlling Altitude</A>
+<B>Up:</B> <A NAME="tex2html36" HREF="AltitudeHold.html"> Flight Gear Autopilot:  </A>
+<B> Previous:</B> <A NAME="tex2html30" HREF="node2.html">Control Theory 101</A>
+<BR> <P>
+<H1><A NAME="SECTION00030000000000000000">Controlling Rate of Climb</A></H1>
+<P>
+Before we try to maintain a specific altitude, we need to be able to
+control our rate of climb.  Our PID controller does this through the
+use of proportional and integral components.  We do not know in
+advance what elevator position will establish the desired rate of
+climb.  In fact the precise elevator position could vary as external
+forces in our system change such as atmospheric density, throttle
+settings, aircraft weight, etc.  Because an elevator position of zero
+will most likely not yield a zero rate of climb, we will need to add
+in a measure of integral control to offset the error introduced by the
+proportional control.
+<P>
+The input to our PID controller will be the difference (or error)
+between our current rate of climb and our target rate of climb.  The
+output will be the position of the elevator needed to drive us towards
+the target rate of climb.
+<P>
+The proportional component simply sets the elevator position in direct
+proportion to our error.
+<P> <IMG WIDTH=322 HEIGHT=17 ALIGN=BOTTOM ALT="displaymath51" SRC="img1.gif"  > <P>
+<P>
+The integral component sets the elevator position based on the sum of
+these errors over time.  For a time, <I>t</I>
+<P> <IMG WIDTH=365 HEIGHT=46 ALIGN=BOTTOM ALT="displaymath52" SRC="img2.gif"  > <P>
+<P>
+I do nothing with the derivative component so it is always zero and
+can be ignored.
+<P>
+The output variable is just a combination of the proportional and
+integral components.   <IMG WIDTH=39 HEIGHT=19 ALIGN=MIDDLE ALT="tex2html_wrap_inline59" SRC="img3.gif"  >  and  <IMG WIDTH=30 HEIGHT=18 ALIGN=MIDDLE ALT="tex2html_wrap_inline61" SRC="img4.gif"  >  are
+weighting values.  This allows you to control the contribution of each
+component to your final output variable.  In this case I found that
+ <IMG WIDTH=90 HEIGHT=27 ALIGN=MIDDLE ALT="tex2html_wrap_inline63" SRC="img5.gif"  >  and  <IMG WIDTH=79 HEIGHT=26 ALIGN=MIDDLE ALT="tex2html_wrap_inline65" SRC="img6.gif"  >  seemed to work
+quite well.  Too much integral control and your system won't
+stabilize.  Too little integral control and your system takes
+excessively long to stabilize.
+<P> <IMG WIDTH=390 HEIGHT=20 ALIGN=BOTTOM ALT="displaymath53" SRC="img7.gif"  > <P>
+<P>
+We are trying to control rate of climb with elevator position, so the
+output of the above formula is our elevator position.  Using this
+formula to set a new elevator position each iteration quickly drives
+our climb rate to the desired value.
+<P>
+<HR><A NAME="tex2html37" HREF="node4.html"><IMG WIDTH=37 HEIGHT=24 ALIGN=BOTTOM ALT="next" SRC="http://www.menet.umn.edu/icons/next_motif.gif"></A> <A NAME="tex2html35" HREF="AltitudeHold.html"><IMG WIDTH=26 HEIGHT=24 ALIGN=BOTTOM ALT="up" SRC="http://www.menet.umn.edu/icons/up_motif.gif"></A> <A NAME="tex2html29" HREF="node2.html"><IMG WIDTH=63 HEIGHT=24 ALIGN=BOTTOM ALT="previous" SRC="http://www.menet.umn.edu/icons/previous_motif.gif"></A>   <BR>
+<B> Next:</B> <A NAME="tex2html38" HREF="node4.html">Controlling Altitude</A>
+<B>Up:</B> <A NAME="tex2html36" HREF="AltitudeHold.html"> Flight Gear Autopilot:  </A>
+<B> Previous:</B> <A NAME="tex2html30" HREF="node2.html">Control Theory 101</A>
+<P><ADDRESS>
+<I>Curtis L. Olson <BR>
+Thu Oct  1 21:32:14 CDT 1998</I>
+</ADDRESS>
+</BODY>
+</HTML>

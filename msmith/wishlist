@@ -1,0 +1,562 @@
+From msmith99@flash.net  Thu Dec 18 23:58:00 1997
+X-VM-v5-Data: ([nil nil nil nil nil nil nil nil nil]
+	["20675" "Fri" "19" "December" "1997" "00:58:17" "-0500" "Michael Smith" "msmith99@flash.net" nil "539" "Wish List: the draft" "^From:" nil nil "12" nil nil nil nil nil]
+	nil)
+Received: from endeavor.flash.net (endeavor.flash.net [209.30.0.40])
+	by meserv.me.umn.edu (8.8.8/8.8.6) with ESMTP id XAA16470
+	for <curt@me.umn.edu>; Thu, 18 Dec 1997 23:57:59 -0600 (CST)
+Received: from smith (detshiva11-106.flash.net [208.194.218.106])
+	by endeavor.flash.net (8.8.7/8.8.5) with ESMTP id XAA20635
+	for <curt@me.umn.edu>; Thu, 18 Dec 1997 23:57:50 -0600 (CST)
+Message-Id: <199712190557.XAA20635@endeavor.flash.net>
+X-MSMail-Priority: Normal
+X-Priority: 3
+X-Mailer: Microsoft Internet Mail 4.70.1155
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="----=_NextPart_000_01BD0C19.31659AE0"
+Content-Transfer-Encoding: 7bit
+From: "Michael Smith" <msmith99@flash.net>
+To: "Curtis L. Olson" <curt@me.umn.edu>
+Subject: Wish List: the draft
+Date: Fri, 19 Dec 1997 00:58:17 -0500
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_01BD0C19.31659AE0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+
+Curt,
+
+I've decided to get you into the "group" so to speak, and included is the
+Wish List in draft form as it stands right now.  Keep in mind it is based
+on the Table of Contents from the Flight Assignment ATP handbook, with
+additions and sections added.  Please add, and comment wherever you feel it
+is necessary, just make sure you put in your initials and the date. I am
+also sending ATPCAT, a text document containing all the major categories
+that I could think of. 
+
+Updating of the categories and master wish list could be done one of two
+ways:
+
+1) If you want to add to the category list, do so...and add the numbered
+category name at the bottom of the list and send it to me :)  This list
+should make adding to the main wish list easier...here's how.  Instead of
+sending the whole list, you just email the bits that you want to add or
+change with the major category and number along with it. In this manner, I
+will be able to update the list and send everyone weekly editions (unless
+additions to the list are very good and need to be shared more quickly)  
+
+2) I could give everyone in the core team, everyone else's email addresses
+and then you can CC any changes to the group.  That way everyone will have
+a "master copy" to which they can cut-and-paste the additional material to.
+
+If anyone has a better idea, please let me know...I am all ears :) 
+
+I will be converting the current wish list to an easier-to-read arrangment
+as well.  This will be done to make it easier to add to the wish list.
+
+
+Does anyone have a preference for Word docs, or is a TXT file ok?  I
+suspect after awhile I will start a Forum-based wish list, and distribute
+that as well.
+
+Thanks for your time,
+
+Michael Smith
+
+
+
+------=_NextPart_000_01BD0C19.31659AE0
+Content-Type: application/octet-stream; name="ATPCAT.txt"
+Content-Transfer-Encoding: 7bit
+Content-Description: Atpcat (Text Document)
+Content-Disposition: attachment; filename="ATPCAT.txt"
+
+Major Categories:
+
+1)  System requirements
+
+2)  Gameplay
+
+3)  3-D view/Cockpit/Instrument Panels
+
+4)  Environment- The active world
+
+5)  Menu system
+
+6)  Environment- The airport
+
+7)  View Controls
+
+8)  Flight Physics and a/c Control
+
+9)  Environment- Mother Nature
+
+10) Graphics-frame rate/texture/scenery complexity issues
+
+11) Aircraft Hangar
+
+12) Flight Planning
+
+13) Status Report- Aircraft Systems
+
+14) Virtual Airlines- Charter/Career Flights
+
+
+------=_NextPart_000_01BD0C19.31659AE0
+Content-Type: application/octet-stream; name="ATP2.txt"
+Content-Transfer-Encoding: quoted-printable
+Content-Description: Atp2 (Text Document)
+Content-Disposition: attachment; filename="ATP2.txt"
+
+This outline/rough draft is based on the table of contents from the ATP =
+manual.
+If you add something..put your initials and the date in ()
+
+any questions/comments should be directed to Michael =
+Smith...msmith99@flash.net
+
+Make sure "Word Wrap" option is enabled to format this document =
+correctly.
+
+
+Here goes:
+
+1) Running ATP
+	System requirements
+	(MS 12/17)  A minimum and optimal system configuration is needed.  =
+Seems like everyone upgraded to P166 or higher for the most recent =
+flight sim releases, so maybe those system configurations could be used =
+as a baseline.
+
+X) Gameplay Aspects (added 12/18 MS)
+	1) provide realistic, immersive airline simulation
+		Detail =3D Immersion. (see comments further below)
+	2) simulate a "national" environment
+		maybe ATP2 should have a "campaign" engine, similiar to the WARGEN =
+system of EF2000 without the bombers :)
+		This "Campaign" would operate in the same manner as the national =
+flight watch system (or whatever it's =09
+		called) in Washington DC.  This way, when I go to fly, my departure =
+time slot is already determined, and it's
+		up to me (the PIC) to ensure a timely departure, safe flight, and =
+landing.  Also, by its very nature the
+		campaign "manages" all the other a/c in the skies.  The AI of each a/c =
+would be tied into this national
+		campaign, so any ripple effects would be realistic (ie.  Blizzard at =
+JFK, holds a/c up at CLE and ORD)
+		On a weather note, this FLIGHTGEN system would also manage weather =
+from coast to coast as it changes (like
+		in real life)  I think it would be prudent to include some way to link =
+with realtime WX from the Internet
+		as well.  Gone are the days of ATP, where you could fly over the =
+singular, ever-present polygon cloud :)
+	3) realistic ATC
+	4) realistic AI for everything from baggage carts to B747's
+
+
+2) The 3D Window and Instrument Panels
+	Two words:  Photorealistic Panels....nuf said.
+	(MS 12/16) Two more words: Fully Functioning  (ie no dead buttons)
+	With a good 3D virtual cockpit ATP2 could have a unique traffic scan =
+key, where the view switches to VC, and scans from left to right, then =
+returns to center.
+	(MS 12/16) Why not have a view dedicated to the task of taxiing?  One =
+big problem with FS and heavies are the BIG panels...ATP2 should have a =
+way to toggle a "taxi-cam" view over the IP.
+	(MS 12/18) ATP2 could have a virtual cockpit along the same lines as =
+EF2000...where hotkeys "zoom" in an certain areas of the IP.  This might =
+be a better solution (?) than the ubiquitous <TAB> key.  I think it =
+would be cool to see a nice 3-D modelled cockpit instead of the same old =
+flat panel display.  Maybe the cockpit could have hotkey selectable =
+modes like... Preflight (almost all panel, little outside display gives =
+better access to switches and gauges, Taxi (smaller panel, higher =
+viewpoint for better viewing of taxiway signs), takeoff (3-D cockpit =
+with important gauges functioning (or displayed larger) and better =
+peripheral vision than standard 2-D viewpoint) and cruise (3-D cockpit, =
+and give the pilot the ability to "pull" gauges and readouts off and =
+make them larger)
+
+X) The Outside View (added)
+	I think it goes without saying that ATP2 should have butt-loads of =
+other a/c around...all communicating with ATC and following =
+instructions.  Having said that, I think a/c not immediately in visual =
+range could be rendered (indicated) as navigation and anti-collision =
+lights.  Then when the a/c is close enought to be in visual range, a =
+visual model would be displayed.  This is like, but better than the =
+effect in X-plane...and more like the effect used in Tower.
+	I think the illusion of a busy "world" is necessary in the terminal and =
+approach phase of flight.  This is not only with a/c but with scenery =
+around the airport.  As an a/c descends through a certain altitude, =
+roads should be rendered in scale widths, with appropriate lighting =
+(depending on TOD)  I think indication of road traffic could be easy, =
+and would totally immerse the pilot.  Car traffic could be indicated =
+easily with red and white lights.  Imagine flying the app to 27L at ORD, =
+following the road into O'Hare and seeing red taillights on the right =
+side of the highway and white headlights on the left.  The illusion =
+would be further helped by dimming the lights for distance effects, and =
+possibly "clumping" groups of traffic together/ or making it look =
+random.  The other situation where I could see the value of this =
+immersion technique would be on the approach to 23 at ERI, where as you =
+cross the approach lighting on final, you pass directly over a =
+road...here you could have traffic passing underneath your flight path, =
+with two "cones" of light (representing the headlight beams) displayed =
+on the road in front of the car.
+	(MS 12/16)  Landing lights should work everywhere...clouds, taxiways, =
+runways, fields, streams..you name it.  In FS, the effect is more =
+surprising than usefull when your landing lights suddenly illuminate the =
+runway on final app.
+
+3) Menu Descriptions
+
+4) Aircraft Controls and Systems
+
+X) At The Airport (added)
+	(MS 12/18) Two words...Yugoslavia Scenery  (credit to Bob, I downloaded =
+this freeware scenery and fell right out of my chair...it's that good, =
+and rightfully represents the MINIMUM level of realism for a proper =
+airline sim.
+	Airports should have lots of static a/c and moving ground traffic...at =
+levels appropriate to the size and congestion level of the airport.  =
+O'Hare should look busy like ORD, and SAN should feel like San Diego.  =
+The illusion of a "busy" airport should be complete...I want to see =
+catering vehicles, fueling traffic, baggage trains, etc.  Distant ground =
+traffic could be simply rendered with moving flashing yellow lights, to =
+simulate vehicles moving about the tarmac.  In this case indication =
+would suffice.
+	Airports should have gates modelled extremely accurately.  I want to =
+see the gate swing away before pushback... and wing walkers out the =
+windows.
+	Airports should have de-icing facilities... with 3D effects ATP2 could =
+simulate the process of de-icing by having trucks pull up beside, and =
+"wash/de-ice" the a/c with a nice fog/mist effect.
+	ATP2 should be very detailed in the area of pre-flight.
+		Walk-arounds
+		Checklists
+		Maintenance issues
+			(why not have a "briefing" from the Flight Line mechanic discussing =
+any maintenance issues...giving the pilot the responsibility to "make =
+the call" to delay for maint. or go w/o it.)
+		Weights and balance
+		Fuel load
+			(make it so you have to request the fuel load, and then you receive a =
+fueling card from the line personal...like in real life)
+		Late passengers
+			(affects your departure time, loose your slot in the departure =
+window)
+
+5) View Controls
+	People will always want to see their a/c from the outside...so a =
+rotating, pan and zoom camera must be included...with the ability to =
+take screen snapshots. (MS 12/16) have a more unique name for it than =
+"external cam"...maybe something like "Glory Shot" or "Promo Cam" or =
+"Advertisement Cam"  :)
+	Views from the pilot's seat should be done in the same manner as PP, =
+the only enhancement desired being the ability to see passengers in the =
+passenger cabin (full flight, full cabin...empty flight, empty cabin) =20
+	Maybe a special view would be needed (and another switch on the IP) to =
+check for icing on the leading edges of the wings.
+
+6) Flight Physics and Aircraft Control
+=09
+7) a Flight Lesson
+
+	Lessons could be performed as "charter flights", where the pilot can =
+choose a departure and destination, and type of a/c suited to the lesson =
+plan.
+
+8) Simulation Controls
+	(MS 12/16) Yokes, and force feedback must be supported.
+
+
+9) Flight Modes Menu
+
+10) Mode Library Menu
+
+11) Environment Menu
+      Weather Effects Desired:
+	1) Adjustable visibility
+		(MS 12/18) maybe quick keys for CAT I, II, and III, and IFR minimum =
+conditions
+	2) Fog
+		(MS 12/18) a distinction needs to be made between FOG and HAZE...I =
+think a sim should be able to model both conditions.  There is a =
+difference in color (and other aspects) between haze on a hot summer =
+day, and fog on a cold winter morning.  Since the ideal sim should be =
+able to track WX changes, it should be able to "burn off" a morning fog, =
+for example, as the temperatures increase.
+
+	3) Fractal visibilty (not diameter based visibility)
+	4) Frontal weather systems
+	5) National weather
+	6) Rain
+	7) Snow
+	8) Icing
+	9) Clouds (BIG, BEAUTIFUL 3-D CLOUDS)
+	10) Turbulence
+	11) Storms and Squalls, Lightning and Thunder
+
+      The WX should be appropriate for the:
+	1) Season
+	2) Time of day
+	3) Area of the country
+
+	The sky should change color as you climb higher...no more same pale =
+blue color at 4k and 40k.
+
+	(MS 12/16) to remain competitive..ATP2 should have gradient ground =
+palletes that "Grey" out as you go higher.
+
+12) Graphics Menu
+	The baseline auto-complexity idea of ATP should be taken to the extreme =
+in ATP2.  The gate and airport should be the most graphically rich =
+environment...decreasing slightly in the surrounding area, decreasing =
+still in the terminal area, decreasing still in the APP/DEP segment, and =
+ending in the least graphically intensive cruise segment.
+
+13) Aircraft Menu
+
+If we limit the number of a/c to five, ATP2 would fall very short of its =
+potential...
+
+(MS 12/16)  HERE is a counterpoint to that:  If ATP2 had fewer a/c that =
+it simulated to a higher degree of realism that would be acceptable... =
+maybe one commuter and two heavier a/c...say Do-328, B737, and B767?  =
+Dunno.
+
+Here are two preliminary lists of a/c near and dear to my heart that I =
+think represent a good cross section for their respective a/c type:
+
+The Commuter class a/c:
+	1) Fairchild Metro
+	2) Saab340
+	3) ATR42  (maybe Jetstream41?)
+	4) Dornier 328
+	5) BAE 146
+The Heavies:
+	1) MD-80
+	2) B737-400
+	3) A320
+	4) B757 (A330, or B767)
+	5) A340 (B747-400)
+
+The choice of a/c should be logical according to airport, range, # of =
+pax.
+
+"THE HANGAR OF YOUR DREAMS"   <of course these should be appropriate to =
+an airline sim..no Piper Cubs now :) >
+
+Bob Smith's Top Five=20
+
+	1)
+	2)=09
+	3)
+	4)
+	5)=09
+
+Mark Stewart's Top Five
+
+	1)
+	2)
+	3)
+	4)
+	5)
+
+Jim Kohan's Top Five
+
+	1)
+	2)
+	3)
+	4)
+	5)
+
+Tom Allensworth's Top Five
+
+	1)
+	2)
+	3)
+	4)
+	5)
+
+14) Flight Planning Menu
+	(MS 12/16)  Support for RNAV, GPS, FMS must be fully functional. Did I =
+miss any?
+
+15) Status Report and Help Menus
+	(MS 12/16)  ATP2 should simulate (and allow the pilot to use) more =
+systems of the a/c... de-ice, anti-fire systems, APU, etc.  ATP was =
+great to the extent it went with being able to adjust MAX Gross weight =
+and fuel and passenger loading..but it needs to go further.
+
+16) Virtual Airlines
+	Online Virtual Airlines (added)
+		I think ATP2 should cater to the specific needs of VA's. To that =
+end...was thinking about allowing the user to insert custom tailart =
+(from their VA) and give them the ability to set the color (and maybe =
+general graphic break up) of the fuselage.  Also they should be able to =
+add the text name of their VA onto the a/c.
+
+	Career Flight Assignment=20
+
+	(MS 12/16)  ATP2 could have a fundamentally altered gameplay aspect... =
+It would reflect more accurately the job of an ATP.  Here is a sketchy =
+description of how I see the sim unfolding in career mode:
+	Pilot Mike is still flying the commuters, but at the end of his next =
+flight he'll have enough hours to take a check ride to move up to the =
+"heavies".  Pilot Mike accepts his next Flight Assignment and screen =
+fades to... the interior of a nicely 3-d modelled concourse...the =
+airport name and location conveniently displayed on a "welcome to blah =
+blah airport"  background noise consists of people talking, a/c =
+operating outside...and also flight blah blah to blah blah now boarding =
+<strange..that is pilot mike's flight :) > ...screen fades to exterior =
+shot of Pilot Mike's Do-328, and an animated Pilot Mike does his =
+pre-flight walkaround as a checklist appears on the screen and check's =
+each item off the list as Pilot Mike makes his circuit around the a/c.  =
+...fade to a dark (no power on) cockpit where Pilot Mike is briefed by =
+the line mechanic, and given a fuel card (which he must verify as having =
+the correct amount of fuel requested). In the background, a flight =
+attendant announces passenger boarding, while Pilot Mike starts going =
+through checklists and powers up the a/c  <the sim must have noises for =
+many things at this point, an APU startup...switches being =
+toggled...challenges and responses from the right seat =
+pilot...passengers boarding.  Engine startup sequence noises, and door =
+shutting and being locked... the cabin briefing and some nonsense about =
+"prepare for cross-check"...if pilot Mike wasn't so busy getting the =
+number two engine to start, he might see that this flight is not =
+overbooked as not all the seats are filled.  By this time, communication =
+has started with C/D and ground in preparation for taxi... <forgive me, =
+I get really excited thinking about this kind of stuff>
+
+The main point being that gameplay is all about immersion, give me =
+noises and indications that what I am doing is important, being able to =
+see and hear passengers/co-pilot/flight attendants is a key =
+point...otherwise it's just a flight sim.  That soft "bong" noise when =
+the seatbelt light is on..I WANT TO HEAR THAT...heck, I want the switch =
+that turns em on :)  When ATC has to divert me out, or has me hold =
+somewhere...I want to hear passengers grumbling behind me when I =
+announce "we will be a little late getting in to Cleveland"  better yet, =
+I want to have the grumbling drowned out by thunder from the level 5 =
+storm cell ATC just vectored us around  :)
+
+17) Aircraft Specifications
+
+18) Scenery Disks and Files
+
+Appendix I:  Keyboard Summary
+Appendix II: Using a mouse, joystick, etc
+Appendix III: Airport Listings
+Appendix IV: Aiport Diagrams and Charts
+
+Also from ATP handbook:
+
+Simulation goals:
+	1) Commercial jet airliner simulation
+	2) Structured flight assignments
+	3) Challenging to experienced pilots, not overwhelming to novice
+Simulation improvements:
+	1) Beg to Expert flight modes
+	2) Improved keyboard control layouts
+	3) Fast-access, intuitive menu structures
+	4) Improved joystick/yoke flight control interface
+Scenery Improvements:
+	1) Regional ground texturing
+	2) User-selectable scenery complexity levels
+	3) Automatic scenery complexity selection based on machine speed
+	4) User-selectable cross-section of scenery details
+	5) Three scenery masks (user adjustable) for:
+		cruise- all scenery enabled
+		maneuver- less scenery, faster frame rate
+		final approach- complex runway scenery only, fastest frame rate
+	6) 40 tallest buildings and 20 tallest transmitter towers in 26 major =
+cities
+	7) 26 major airports with taxiways, terminal buildings and instrument =
+app's
+	8) Over 330 other airports with correct apporach lights, VASI's, aux =
+lighting, runway markings to FAA specs.
+	9) Extensive rivers, lakes, coastlines, interstates, four mountain =
+ranges
+	10) High altitude scenery above 10,000 feet
+	11) Enhanced Scenery disk displays
+
+Nav radios and Nav-aids:
+	1) Aircraft avionics include NAV, ILS, DME, ADF, RMI, IRS, radio =
+altimeter, autopilot and color weather radar
+	2) Over 400 precisely-placed VOR and NDB nav-aids
+	3) Multiple ILS's with DME to DME transmitters
+	4) Accurate DME slant range readings
+
+Other features:
+	1) Large aircraft flight controls, including spoilers and thrust =
+reversers
+	2) Automatic routing via radar vectors
+	3) Intelligent ATC
+	4) Multi-function Autopilot flight controls
+	5) User-specifiable waypoints and IRS tracking
+	6) Aircraft positioning using true LAT/LON coordinates
+	7) Automatic weather system generation=20
+	8) Accurate sunrise/sunset times based on date
+	9) Permanent day,dusk, and night flight modes
+	10) 16X time acceleration for long duration flights
+	11) New, more accurate flight equations for five different a/c
+	12) Multiple accurate instrument panels for each jet transport a/c
+	13) Dedicated basic pitch attitude flight lessons
+	14) User-specifiable scenery file paths
+
+Ideas from Bob Smith 12/16/97:
+
+The concept of the sim as a product.
+
+What makes it different/better than other sims?
+
+Has to interface with SB/PC.
+	have the ability to "switch" internal ATC off for "online" flying.
+
+Coding up AI rules for where:
+Fuel trucks, baggage carts go...
+ORD has parameters (#flights, #passengers, number of baggage carts, =
+#cars in parking lot)
+AI responds to the parameters of each airport
+Here is the movement area, here's where the taxiways are.
+Trucks drive and react to a/c in the movement area, and other vehicles.
+
+Yugoslavia scenery   <must see>
+as baseline
+
+Charter Flight (instead of "Single Flight Assignment"
+	no rating necessary
+	still must adhere to ATC instructions
+	can be used as lessons
+Career Flight
+
+Contact Jim Kohan (about ideas concerning VA's)
+
+config file for Va's
+route table listed in that .CFG file
+with turnaround times
+and timetables
+
+fly GLE
+give pilot #
+give DEP city
+looks up hubs and dep cities
+looks up flights
+shows route and time tables
+have to meet specific times for the "legs"
+if 15min late...maybe turnaround is shorter time.
+
+Should ATP2 be more commuter oriented?
+	from concerns about #of airports needed depending on type of a/c in the =
+sim. ie Commuter type a/c would yield more airports, whereas heavier =
+jets need the BIG fields exclusively.
+Lotsa airports compared to number of airports required for "Heavies"
+maybe East/West scenery blocks?
+
+What about open architecture?
+
+Comment from Mark Stewart about "photorealistic panels" referred to a =
+review of Elite panels at FlightSim.com, panels were stunning to say the =
+least.
+
+------=_NextPart_000_01BD0C19.31659AE0--
+

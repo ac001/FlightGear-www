@@ -1,0 +1,3 @@
+Cessna 172 on short final to KSFO 28R.  Note instrument panel details and
+sample runway lights (not yet correctly placed ... runway lights are a work
+in progress.)

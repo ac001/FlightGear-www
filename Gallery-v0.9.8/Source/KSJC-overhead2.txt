@@ -1,0 +1,2 @@
+Another overhead shot with a Tucano in the foreground.  Mipmapping is turned
+on which is causing the bluriness in the distance.

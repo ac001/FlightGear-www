@@ -1,0 +1,5 @@
+This is kind of neat.  Zoom in on the cockpit from an external view and
+you can see a fully working, live instrument panel through the canopy.
+This is the same exact instrument panel you see when you are inside the
+cockpit.  No illusions or tricks here, just a fully working 3d animated
+cockpit visible from inside or out.

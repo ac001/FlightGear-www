@@ -1,0 +1,80 @@
+Hi guys,
+
+Lately I've been playing around with ACM on my Linux box.  ACM stands
+for Air Combat Maneuvers.  It is a free (src included) flight sim for
+Unix/X.  If any of you are interested in looking at this, check out:
+
+    ftp://ftp.netcom.com/pub/ra/rainey/acm/index.html
+
+After playing around with this sim for a while, I have concluded that
+it represents a significant amount of work, and is a very worth-while
+program.
+
+A while back I proposed that we base our Flight Gear project off of
+ACM.  I even put some ACM screen shots up on the flight gear web
+page at http://www2.me.umn.edu/~clolson/fgfs
+
+However, eventhough ACM has a lot of interesting things to offer, for
+a number of reasons, I am retracting my previous suggestion that we
+base our work off of it's source code.
+
+Eric has done some wonderful initial work on many of the basic
+building blocks. I think we should forge ahead on our own. I also
+think it will be to our advantage (at least initially) to incorperate
+strategic pieces of code from ACM and other sources to give ourselves
+a jump start. For instance ACM has a pretty decent flight model we
+could just slap in with minimal effort. At a later date, as the work
+progresses, these pieces could be replaced with new and improved
+modules.
+
+Some of the current features of ACM are these are things we could
+borrow, or at least look at for a starting point:
+
+  - Freeware -- all source code included.
+  - Pretty good flight model that can be tailored to different kinds
+    of aircraft / missles / flying things.
+  - Sound support (with some pretty descent sound effects).
+  - Allows definition of new planes.
+  - U.S. Navy Postgraduate School's Distributed Interactive
+    Simulation (IEEE DIS, RFC 1278) code integrated
+    into it.  This allows multiple ACM servers to talk to each other
+    over local subnets.  You can go 2 vs. 2 over a network.
+    This also allows you to integrate with other simulation packages that
+    use this same standard.  (i.e. a tank simulation, or ATC simulation or
+    whatever.)
+  - Some serial-port joystick support
+  - Currently has a nice rendition of the Hawaiian Islands based on DEM data.
+  - Has distance visibility effects (haze).
+  - Models springiness of landing gear.
+  - Has a very nice HUD display.
+  - Has an HSI on the instrument panel.
+
+
+Features in the upcoming version (due out real soon now):
+
+  - True spheroidal world.
+  - Scene descriptions in latitude/longitude/MSL-height coordinates.
+  - Automated extracts of scene descriptions from the FAA databases.
+  - Support for a non-zero feet MSL surface height.
+  - NAVAID support for the features listed above.
+
+
+ACM has a number of weaknesses:
+
+  - Terrain modeling has room for improvement in the area of hidden surface
+    removal and shading.
+  - Usability -- no menus and such.
+  - Scenery object descriptors are pretty primitive.
+  - Code is not structured well for modularity.
+  - Currently only supports Unix/X11
+  - Saying the representation of the instrument panel is crude would
+    be heaping undeserved praise upon said instrument panel.  Although it
+    does have an HSI which FS5/6/7/... still lacks.
+  - Scenery is pretty scarce.
+  - Although it does have a single overcast cloud layer, this is the
+    totallity of it's weather modeling.
+  - Currently only support X11 for graphics.
+
+
+Because of these weaknesses, I think we should come up with our own
+design, but borrow pieces where it makes sense to do so.

@@ -1,0 +1,592 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Mini-HOWTO: 3D Aircraft Models in FlightGear</title>
+</head>
+
+<body>
+<h1>Mini-HOWTO: 3D Aircraft Models in FlightGear</h1>
+
+<table>
+
+<tr>
+<th>Date:</th>
+<td>11 March 2002</td>
+</tr>
+
+<tr>
+<th>Author:</th>
+<td>David Megginson</td>
+</tr>
+
+</table>
+
+<div>
+<h2>Introduction</h2>
+
+<p>This mini-HOWTO explains how to add 3D aircraft models to
+FlightGear, and how to animate and position those models.  No C++
+programming is required, but the user will need some knowledge of
+FlightGear's property system and XML markup, and will need to
+understand the coordinate system FlightGear uses for its models:</p>
+
+<ul>
+<li>distances are in meters</li>
+<li>angles are in degrees</li>
+<li>the x-axis runs lengthwise, towards the back</li>
+<li>the y-axis runs sideways, towards the right</li>
+<li>the z-axis runs upwards</li>
+<li>heading is a rotation around the z-axis, where positive is
+clockwise viewed from above</li>
+<li>pitch is a rotation around the y-axis, where positive is clockwise
+viewed from the left</li>
+<li>roll is a rotation around the x-axis, where positive is clockwise
+viewed from behind</li>
+</ul>
+
+<p>[[TODO: will someone volunteer to draw diagrams?]]</p>
+
+<p>This mini-HOWTO contains three parts:</p>
+
+<ol>
+<li><a href="#loading">Loading the model</a></li>
+<li><a href="#repositioning">Repositioning the model</a></li>
+<li><a href="#animating">Animating the model</a></li>
+</ol>
+
+<!-- end of "Summary" -->
+</div>
+
+
+<div><a name="loading"></a>
+<h2>1. Loading the model</h2>
+
+<p>Through <a href="http://plib.sourceforge.net/">plib</a>, FlightGear
+supports many different 3D file formats, including VRML1, AC3D, DXF,
+MDL (from <cite>Microsoft Flight Simulator</cite>), and many others.
+The property <var>/sim/model/path</var> in the main FlightGear
+property tree controls what model will be loaded; it takes
+a string value giving the relative path of the model from
+<var>FG_ROOT</var> (the root of the base package, such as
+<code>/usr/local/lib/FlightGear</code> or
+<code>C:\FLIGHTGEAR\</code>).</p>
+
+<p>The easiest way to load a new model is to set the property at
+startup with the <var>--prop:</var> command-line option; for example,
+to use a 3D aircraft model that you have installed in
+<code>$FG_ROOT/Models/my-cessna.wrl</code>, you could invoke
+FlightGear like this (under Unix-like systems):</p>
+
+<blockquote><pre>
+fgfs --prop:/sim/model/path=Models/my-cessna.wrl
+</pre></blockquote>
+
+<p>(<strong>Note:</strong> any textures used by the model must appear
+in the same directory.  If <code>my-cessna.wrl</code> uses the
+textures <code>cessna01.rgb</code> and <code>cessna02.rgb</code>, you
+must also install those textures in
+<code>$FG_ROOT/Models/</code>.)</p>
+
+<p>When you want to set a 3D model permanently as the default for an
+aircraft rather than specifying it on the command line, you need to
+edit an aircraft settings file.  In the
+<code>$FG_ROOT/Aircraft/</code> directory there is a series of files
+ending in <code>-set.xml</code>, such as <code>c172-set.xml</code>,
+<code>dc3-yasim-set.xml</code>, and <code>beech99-uiuc-set.xml</code>.
+When you start FlightGear with the <var>--aircraft</var> option, it
+reads the properties from one of these files; for example</p>
+
+<blockquote><pre>
+fgfs --aircraft=dc3-yasim
+</pre></blockquote>
+
+<p>Loads the properties from
+<code>$FG_ROOT/Aircraft/dc3-yasim-set.xml</code> into the main
+FlightGear property tree.  These files are in the same XML
+property-list format as <code>$FG_ROOT/preferences.xml</code> and the
+FlightGear save files.  There may be many XML files with different
+startup conditions, sounds, panels, 3D models, etc. for any single
+aircraft type, so you are best off copying an existing one, renaming
+it, then changing the value inside the <var>path</var> element inside
+<var>model</var> inside <var>sim</var>:</p>
+
+<blockquote><pre>
+&lt;PropertyList>
+ &lt;sim>
+  &lt;model>
+   &lt;path>Models/my-cessna.wrl&lt;/path>
+  &lt;/model>
+ &lt;/sim>
+&lt;/PropertyList>
+</pre></blockquote>
+
+<p>So far, all of the examples have had the <var>/sim/model/path</var>
+property point directly at the 3D model file
+(<code>Models/my-cessna.wrl</code>); however, if you want to be able
+to reposition or animate the model, you need to point to an
+intermediate XML file instead, and then put the repositioning and
+animation information into the XML file.  Here's a simple example of a
+3D-model wrapper file, with no repositioning or animation
+information:</p>
+
+<blockquote><pre>
+&lt;PropertyList>
+ &lt;path>my-cessna.wrl&lt;/path>
+&lt;/PropertyList>
+</pre></blockquote>
+
+<p>Like the <var>-set.xml</var> files, this file is in XML property
+list format, but the properties in it are not added to the main
+FlightGear property tree; they're used only while loading the
+model.  The following sections will explain how to add repositioning
+and animation information to the file; for now, the only property to
+worry about is <var>path</var>: it provides the relative path to the
+actual 3D file from the XML wrapper file (<strong>not</strong> from
+<var>FG_ROOT</var>!).  Usually, you should put the wrapper file in the
+same directory as the 3D file, and then have
+<var>/sim/model/path</var> point to the wrapper file, either on the
+command line</p>
+
+<blockquote><pre>
+fgfs --prop:/sim/model/path=Models/my-cessna.xml
+</pre></blockquote>
+
+<p>or in the <code>-set.xml</code> file:</p>
+
+<blockquote><pre>
+&lt;PropertyList>
+ &lt;sim>
+  &lt;model>
+   &lt;path>Models/my-cessna.xml&lt;/path>
+  &lt;/model>
+ &lt;/sim>
+&lt;/PropertyList>
+</pre></blockquote>
+
+<!-- end of "Loading the model" -->
+</div>
+
+
+<div><a name="repositioning"></a>
+<h2>2. Repositioning the Model</h2>
+
+<p>Often, an aircraft model not designed specifically for FlightGear
+will not be positioned or oriented correctly; for example, it might be
+too far off the ground, and the nose might point to the side or even
+straight up.</p>
+
+<p>Inside the XML wrapper file (<em>not</em> the main FlightGear
+property tree), there are six properties that allow you to tweak the
+default position and orientation of the model:</p>
+
+<dl compact="compact">
+
+<dt><strong>/offsets/x-m</strong></dt>
+<dd>The distance to reposition the model along the x-axis.</dd>
+
+<dt><strong>/offsets/y-m</strong></dt>
+<dd>The distance to reposition the model along the y-axis.</dd>
+
+<dt><strong>/offsets/z-m</strong></dt>
+<dd>The distance to reposition the model along the z-axis.</dd>
+
+<dt><strong>/offsets/heading-deg</strong></dt>
+<dd>The angle by which to rotate the model around the z-axis.</dd>
+
+<dt><strong>/offsets/roll-deg</strong></dt>
+<dd>The angle by which to rotate the model around the x-axis.</dd>
+
+<dt><strong>/offsets/pitch-deg</strong></dt>
+<dd>The angle by which to rotate the model around the y-axis.</dd>
+
+</dl>
+
+<p>For example, if you wanted to use the 3D model
+<code>my-cessna.wrl</code> but found that the nose was pointing to the
+right instead of straight-ahead and the wheels were 1.5 meters off the
+ground, you could reorient it in the XML wrapper file like this:</p>
+
+<blockquote><pre>
+&lt;PropertyList>
+ &lt;sim>
+  &lt;model>
+   &lt;path>Models/my-cessna.xml&lt;/path>
+  &lt;/model>
+ &lt;/sim>
+ &lt;offsets>
+  &lt;heading-offset-deg>270&lt;/heading-offset-deg>
+  &lt;z-offset-m>-1.5&lt;/z-offset-m>
+ &lt;/offsets>
+&lt;/PropertyList>
+</pre></blockquote>
+
+<p>It usually takes a bit of experimentation to get the model
+positioned correctly.</p>
+
+<!-- end of "Repositioning the Model" -->
+</div>
+
+
+<div><a name="animating"></a>
+<h2>3. Animating the Model</h2>
+
+<p>Now for the interesting part.  FlightGear allows you to animate
+models by having parts rotate or spin in response to property changes:
+for example, the propellers can spin when the engine is on and the
+elevators can move up and down with your controller.  There is no
+fixed limit on what parts can be animated: the only requirements are
+that the part is named in the 3D model file, and that there is a
+property in the main tree that you can use to get the positioning
+information.</p>
+
+<p>Currently, there are three types of animation recognized:</p>
+
+<ol>
+<li>none</li>
+<li>spin</li>
+<li>rotate</li>
+</ol>
+
+<p>In the future, many more will be added, but the last two are
+sufficient for animating the main control surfaces of many
+standard-configuration aircraft.  <var>none</var> is a no-op;
+<var>spin</var> rotates the object around an axis with a known
+rotational velocity (not worrying about the exact position), and
+<var>rotate</var> rotates the object around an axis to an exact
+position.</p>
+
+<p>Every animation appears inside an <var>animation</var> element, and
+contains a <var>type</var> property and at least one
+<var>object-name</var> property:</p>
+
+<blockquote><pre>
+&lt;animation>
+ &lt;type>rotation&lt;/type>
+ &lt;object-name>Rudder&lt;/object-name>
+&lt;/animation>
+</pre></blockquote>
+
+<p>The object name must match exactly the object name used in the 3D
+file (including case).  You may include more than one object name to
+apply the same transformation to more than one object, assuming that
+they rotate around exactly the same line:</p>
+
+<blockquote><pre>
+&lt;animation>
+ &lt;type>rotation&lt;/type>
+ &lt;object-name>LeftElevator&lt;/object-name>
+ &lt;object-name>RightElevator&lt;/object-name>
+&lt;/animation>
+</pre></blockquote>
+
+<p>Each animation must be associated with exactly one property from
+the main FlightGear property tree (remember that the properties in the
+wrapper file are not part of the main tree), using <var>property</var>
+to provide the property name:</p>
+
+<blockquote><pre>
+&lt;animation>
+ &lt;type>rotation&lt;/type>
+ &lt;object-name>Rudder&lt;/object-name>
+ &lt;property>/controls/rudder&lt;/property>
+&lt;/animation>
+</pre></blockquote>
+
+<p>This example rotates the rudder according to the value of the
+<var>/controls/rudder</var> property (or at least, it will when we
+specify the center and axis of rotation below); however,
+<var>/controls/rudder</var> is normalized from -1.0 to 1.0, and we
+probably want to rotate the rudder more than that; as a result, we
+need to use the <var>factor</var> property to do scaling.  For
+example, if the rudder on the actual aircraft rotates 18 degrees in
+each direction, we would use a factor of 18 to scale the rudder
+position from -18 degrees to 18 degrees:</p>
+
+<blockquote><pre>
+&lt;animation>
+ &lt;type>rotation&lt;/type>
+ &lt;object-name>Rudder&lt;/object-name>
+ &lt;property>/controls/rudder&lt;/property>
+ &lt;factor>18&lt;/factor>
+&lt;/animation>
+</pre></blockquote>
+
+<p>If you wanted to reverse the direction of rudder movement, you
+would use a factor of -18.</p>
+
+<p>There is also an <var>offset</var> property that can be useful for
+starting the rotation from a point other than center.  For example,
+let's say that you want the rudder to start 1% to the left rather than
+dead center; you could specify that like this:</p>
+
+<blockquote><pre>
+&lt;animation>
+ &lt;type>rotation&lt;/type>
+ &lt;object-name>Rudder&lt;/object-name>
+ &lt;property>/controls/rudder&lt;/property>
+ &lt;offset>-0.01&lt;/offset>
+ &lt;factor>18&lt;/factor>
+&lt;/animation>
+</pre></blockquote>
+
+<p>The offset is applied <em>before</em> the factor.</p>
+
+<p>Finally, there are <var>min</var> and <var>max</var> properties
+that can constrain the amount of rotation in degrees, as in this (very
+complicated) example for the Cessna 310 landing gear:</p>
+
+<blockquote><pre>
+&lt;animation>
+ &lt;type>rotate&lt;/type>
+ &lt;object-name>NoseWheel&lt;/object-name>
+ &lt;property>/gear/gear[0]/position-norm&lt;/property>
+ &lt;factor>120&lt;/factor>
+ &lt;offset>-1&lt;/offset>
+ &lt;min>-90&lt;/min>
+ &lt;max>0&lt;/max>
+ &lt;center>
+  &lt;x-m>-2.28&lt;/x-m>
+  &lt;y-m>0.0&lt;/y-m>
+  &lt;z-m>-0.65&lt;/z-m>
+ &lt;/center>
+ &lt;axis>
+  &lt;x>0&lt;/x>
+  &lt;y>1&lt;/y>
+  &lt;z>0&lt;/z>
+ &lt;/axis>
+&lt;/animation>
+</pre></blockquote>
+
+<p>In this example, the gear position (from 0.0 for fully retracted to
+1.0 for fully extended) is multiplied by a factor of 120 and an offset
+of -1, then clamped to between -90 and 0.  In the 3D model, the gear
+is extended by default, so we end up with the following rotations
+through the gear's range of movement:</p>
+
+<table border="border">
+
+<tr>
+<th>position-norm</th>
+<th>+ offset -1</th>
+<th>* factor 120</th>
+<th>clamped to min/max -90:0</th>
+<th>comments</th>
+</tr>
+
+<tr>
+<td>0.0</td>
+<td>-1.0</td>
+<td>-120.0</td>
+<td>-90.0</td>
+<td>fully retracted</td>
+</tr>
+
+<tr>
+<td>0.25</td>
+<td>-0.75</td>
+<td>-90.0</td>
+<td>-90.0</td>
+<td>still retracted</td>
+</tr>
+
+<tr>
+<td>0.5</td>
+<td>-0.5</td>
+<td>-60.0</td>
+<td>-50.0</td>
+<td>1/3 extended</td>
+</tr>
+
+<tr>
+<td>0.75</td>
+<td>-0.25</td>
+<td>-30.0</td>
+<td>-30.0</td>
+<td>2/3 extended</td>
+</tr>
+
+<tr>
+<td>1.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>fully extended (default position)</td>
+</tr>
+
+</table>
+
+<p>The gear does not move at all during the first 1/4 of the
+position-norm value, giving the doors a chance to open and close in a
+separate animation.  Obviously, this would be easier to manage with an
+interpolation table, and future versions of the model animation will
+likely support interpolation.</p>
+
+<p>For a <var>spin</var> animation, the property provides a value in
+revolutions per minute (RPM) rather than an absolute position in
+degrees, and offset is not used.  You can still use <var>factor</var>
+to scale the property value if it is not in RPM.</p>
+
+<p>Now, it is necessary to specify the axis of rotation for the
+object, its virtual hinge.  This is often the hardest part, requiring
+a lot of trial-and-error when the axis of rotation is not lined up
+with the x-, y-, or z- axis (think of ailerons on a swept wing with a
+non-zero dihedral angle).  You need to provide two groups of
+information: a point through which the axis of rotation passes, and
+the direction in which the axis is moving.</p>
+
+<p>For the point through which the axis passes, you use the
+<var>/center/x-m</var>, <var>/center/y-m</var>, and
+<var>/center/z-m</var> properties to specify a position in meters,
+using the aircraft's coordinate system.  Note that this is the system
+before repositioning: if the original model was pointing sideways,
+then your fuselage will run along the y-axis rather than the
+x-axis.  Here is an example for a rudder:</p>
+
+<blockquote><pre>
+&lt;animation>
+ &lt;type>rotate&lt;/type>
+ &lt;object-name>Rudder&lt;/object-name>
+ &lt;property>/controls/rudder&lt;/property>
+ &lt;factor>18&lt;/factor>
+ &lt;center>
+  &lt;x-m>5.45&lt;/x-m>
+  &lt;y-m>0.0&lt;/y-m>
+  &lt;z-m>0.0&lt;/z-m>
+ &lt;/center>
+&lt;/animation>
+</pre></blockquote>
+
+<p>In this example, the point is right on the y and z axes, but 5.45
+meters along the x axis (i.e. towards the back of the plane).</p>
+
+<p>Finally, in addition to the center point, it's necessary to specify
+the direction of the axis that passes through it, using the properties
+<var>/axis/x</var>, <var>/axis/y</var>, and <var>axis/z</var>.  These
+are unitless values showing the rate of change in each direction; for
+example, a straight up-and-down rotational axis could be specified
+like this:</p>
+
+<blockquote><pre>
+&lt;axis>
+ &lt;x>0&lt;/x>
+ &lt;y>0&lt;/y>
+ &lt;z>1&lt;/z>
+&lt;/axis>
+</pre></blockquote>
+
+<p>or like this:</p>
+
+<blockquote><pre>
+&lt;axis>
+ &lt;x>0&lt;/x>
+ &lt;y>0&lt;/y>
+ &lt;z>1000000&lt;/z>
+&lt;/axis>
+</pre></blockquote>
+
+<p>Since there's 0 movement along the other two axes, it doesn't
+matter.  On the other hand, let's say that the rudder hinge sloped
+back 5% because of a swept tail.  In that case, the x-axis would have
+to show some movement as well:</p>
+
+<blockquote><pre>
+&lt;axis>
+ &lt;x>0.05&lt;/x>
+ &lt;y>0&lt;/y>
+ &lt;z>1&lt;/z>
+&lt;/axis>
+</pre></blockquote>
+
+<p>That could just as easily be written as</p>
+
+<blockquote><pre>
+&lt;axis>
+ &lt;x>1&lt;/x>
+ &lt;y>0&lt;/y>
+ &lt;z>20&lt;/z>
+&lt;/axis>
+</pre></blockquote>
+
+<p>as long as the ratios are the same.  For a complicated rotation
+axis, like that for an aileron on a swept-back wing with a significant
+dihedral angle, you'll have to specify movement along all three
+axes:</p>
+
+<blockquote><pre>
+&lt;axis>
+ &lt;x>0.15&lt;/x>
+ &lt;y>1.00&lt;/y>
+ &lt;z>0.01&lt;/z>
+&lt;/axis>
+</pre></blockquote>
+
+<p>Here's a complete example, showing the animation for the rudder on
+the Cessna 172:</p>
+
+<blockquote><pre>
+&lt;animation>
+ &lt;type>rotate&lt;/type>
+ &lt;object-name>Rudder&lt;/object-name>
+ &lt;property>/controls/rudder&lt;/property>
+ &lt;factor>18&lt;/factor>
+ &lt;center>
+  &lt;x-m>5.45&lt;/x-m>
+  &lt;y-m>0.0&lt;/y-m>
+  &lt;z-m>0.0&lt;/z-m>
+ &lt;/center>
+ &lt;axis>
+  &lt;x>0.72&lt;/x>
+  &lt;y>0.0&lt;/y>
+  &lt;z>1.0&lt;/z>
+ &lt;/axis>
+&lt;/animation>
+</pre></blockquote>
+
+<p>And here's an example of a spin, using the Cessna 172
+propeller:</p>
+
+<blockquote><pre>
+&lt;animation>
+ &lt;type>spin&lt;/type>
+ &lt;object-name>Propeller&lt;/object-name>
+ &lt;property>/engines/engine[0]/rpm&lt;/property>
+ &lt;center>
+  &lt;x-m>0&lt;/x-m>
+  &lt;y-m>0&lt;/y-m>
+  &lt;z-m>-.25&lt;/z-m>
+ &lt;/center>
+ &lt;axis>
+  &lt;x>1.0&lt;/x>
+  &lt;y>0.0&lt;/y>
+  &lt;z>0.0&lt;/z>
+ &lt;/axis>
+&lt;/animation>
+</pre></blockquote>
+
+<p>You can get a lot of your initial measurements by viewing the model
+in a 3D editor like <a
+href="http://prettypoly.sourceforge.net/">PPE</a>, and you can also
+use PPE to name or rename objects so that you can animate them in
+FlightGear.  In the end, though, you'll almost have to do a little
+tweaking by trial and error until everything looks right.</p>
+
+<p>This document will likely be out of date by the time you read it.
+Look at the actual XML wrapper files (currently in
+<code>$FG_ROOT/Aircraft/<em>aircraft-type</em>/Models/</code>) to look
+at how FlightGear is doing things now.  In the future, we'll be adding
+other animation types, including selecting among different versions of
+the same object (such as a translucent propeller disk for high RPM),
+non-rotational transformations, scaling, and conditionals (i.e. draw
+engine exhaust only above a certain velocity).</p>
+
+<!-- end of "Animating the Model" -->
+</div>
+
+<hr />
+
+<address>David Megginson, 11 March 2002</address>
+
+</body>
+</html>

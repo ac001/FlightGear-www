@@ -1,0 +1,68 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>Flight Gear - noch (k)ein neuer Flugsimulator</TITLE>
+</HEAD>
+<BODY>
+
+<B><FONT SIZE=5><P>Flight Gear - noch (k)ein neuer Flugsimulator</P>
+
+</B></FONT><I><P>Dr. Michael Basler, Jena</P>
+</I><B><FONT SIZE=5>
+</B></FONT><P>PC-Flugsimulationen, jedenfalls solche wie Microsoft Flugsimulator, ATP oder Flight Unlimited, sind eigentlich billig. Vergleicht man den Preis mit dem der ben&ouml;tigten Hardware, die eher High-End sein sollte, ist der f&uuml;r das Programm fast schon eine Verschwindungsgr&ouml;&szlig;e. </P>
+
+<P>Trotzdem haben sich eine Reihe von Flugsimulator-Fans im Internet zusammengefunden, um mit „Flight Gear&quot; eine eigene Alternative zu den etablierten Programmen zu entwickeln. Dieser Simulator soll kostenlos f&uuml;r jedermann frei verf&uuml;gbar und mit dem mitgelieferten Quellcode sogar modifizierbar sein. So etwas kann durchaus funktionieren: Die Entwicklung von Linux, dem GNU C-Compiler oder der TeX/LaTeX-Pakete hat das sehr eindrucksvoll demonstriert.</P>
+
+<P>Nat&uuml;rlich ist die Frage berechtigt, ob sich der Aufwand angesichts von Preisen, die etwa beim FSFW95 deutlich unter 100.- DM liegen, &uuml;berhaupt lohnt. Die Herausforderung kam denn auch aus einer anderen Richtung: Die Popularit&auml;t, die etwa der FS5 erlangt hat, ist zweifellos zu einem gro&szlig;en Teil den vielen hundert Szenerien, Flugzeugen und Panels, die als Free- oder Shareware entwickelt wurden, zu verdanken. All dies ist aber der akribischen Entschl&uuml;sselungsarbeit einiger weniger versierter Programmierer zu verdanken, die oftmals einem Ratespiel gleicht. Von den Firmen selbst werden die Programmierschnittstellen, die APIs, in den seltensten F&auml;llen dokumentiert. Das Flight Gear Projekt hat sich dagegen zum Ziel gesetzt, einen Simulator zu entwickeln, der von Beginn an offen angelegt ist: S&auml;mtliche APIs sollen dokumentiert werden, und wo das nicht der Fall ist, kann man diese dem mitgelieferten Quellcode leicht entnehmen. </P>
+
+<P>Ein zweites Problem: „Billige&quot; Simulatoren m&uuml;ssen den Massenmarkt ansprechen, damit sich die Entwicklungskosten rentieren. Das f&uuml;hrt dazu, da&szlig; auf leichte Bedienbarkeit, Multimediaeffekte etc. oft mehr Wert gelegt wird als auf die korrekte Plazierung und aktuelle Frequenzzuteilung aller VOR und ILS, realistischen Funkverkehr und manches andere. Hinzu kommt, da&szlig; es bei einem Produktentwicklungszyklus von etwa zwei Jahren sehr lange dauert, bis selbst anerkannte Ab&auml;nderungsw&uuml;nsche ber&uuml;cksichtigt und korrigiert werden k&ouml;nnen. Manches, was sich ernsthafte Simulator-Piloten w&uuml;nschen, ist in diesem Konzept unter &ouml;konomischem Gesichtspunkt wohl auch &uuml;berhaupt nicht zu realisieren.</P>
+
+<P>Daneben gibt es einen weiteren Grund, warum sich die Flugsimulator-Fans einen „eigenen" Simulator w&uuml;nschen. Fast die gesamte Flugsimulations-Software ist mit ganz wenigen Ausnahmen nur auf eine Plattform zugeschnitten: den „Wintel-PC". Der MacIntosh wird von Microsoft nicht mehr unterst&uuml;tzt und auch f&uuml;r die verschiedenen Unix-Derivate (vor allem Linux als ideale Plattform f&uuml;r Privatanwender) gibt es nichts Vergleichbares zum FS5/FSFW95. Der Grund ist der gleiche wie oben: Unter kommerziellem Gesichtspunkt lohnt sich das nicht.</P>
+<FONT SIZE=2>
+<P><IMG SRC="Image103.gif" WIDTH=186 HEIGHT=181>Abb. 1: Das Flight Gear Windows 95-Icon.</P>
+</FONT>
+<P>Die unmittelbare Anregung zum „Flight Gear-Projekt&quot; geht auf Dave Murr, einen 16-j&auml;hrigen US-amerikanischen Sch&uuml;ler zur&uuml;ck. Um Hirngespinste eines &uuml;bereifrigen Penn&auml;lers handelt es sich allerdings nicht: Dave Murr ist seit nunmehr etwa 2 Jahren Mitherausgeber des sehr erfolgreichen Internet-Zines „FS-News&quot;. Der Vorschlag wurde sowohl in der Newsgruppe rec.aviation.simulators als auch in der Mailingliste fltsim@grove.iup.edu ausgiebig - auch  kontrovers - diskutiert und schlie&szlig;lich in einem ersten Proposal, einer Art „Pflichtenheft", festgehalten, das inzwischen in der dritten Version vorliegt.</P>
+
+<P>&Uuml;ber folgende Punkte sind sich die Entwickler inzwischen weitgehend einig geworden: </P>
+
+
+<UL>
+<LI>Das zuk&uuml;nftige Programm soll im Rahmen der „GNU Public License&quot; frei verf&uuml;gbar sein, was eine kommerzielle Verbreitung, etwa &uuml;ber CD, nicht ausschlie&szlig;t. Eine solche CD, falls es sie einmal geben sollte, k&ouml;nnte jeder ohne rechtliche Bedenken seinen Freunden zur Installation &uuml;berlassen. </LI></UL>
+
+
+
+<UL>
+<LI>Das Gesamtprojekt zerf&auml;llt in verschiedene Module, die kooperativ, d.h. von verschiedenen Entwicklern, &uuml;ber das Internet entwickelt, getestet und schlie&szlig;lich verkn&uuml;pft werden sollen. Zur Zeit sind etwa vier solcher Module geplant: a) Die generelle Task-Steuerung einschlie&szlig;lich Men&uuml;system, b) die Flugzeugmodule einschlie&szlig;lich Flugmodell, Panels etc., c)  die „Au&szlig;enwelt" mit statischer/dynamischer Szenerie, Wetter, ATC, d) die systemabh&auml;ngigen Module wie Grafikdisplay, Soundsteuerung, Multiplayer-Steuerung &uuml;ber Netzwerk etc.</LI></UL>
+
+
+
+<UL>
+<LI>Die Szeneriedarstellung sollte mindestens die Qualit&auml;t des FS5 haben. Andererseits soll das   Programm auch noch auf einem 486-66 einigerma&szlig;en vern&uuml;nftig laufen. Als optimale Konfiguration ist (derzeit) z.B. ein Pentium 133 mit 1-2MB VRAM, Soundkarte und CD-ROM vorgesehen. Ob dies bei gleichzeitiger Portabilit&auml;t des Codes zu machen sein wird, mu&szlig; sich erst noch zeigen. Aber man mu&szlig; ja auch Visionen haben.</LI></UL>
+
+
+
+<UL>
+<LI>Der Schwerpunkt soll auf der allgemeinen und zivilen Luftfahrt liegen. Ein „Ballerspiel" haben die Entwickler nicht im Auge. Aber da der Code frei verf&uuml;gbar sein wird, ist nat&uuml;rlich nicht ausgeschlossen, da&szlig; sich Leute finden, die auch einen milit&auml;rischen Simulator daraus machen.</LI></UL>
+
+
+<P>Derzeit arbeiten etwa 6-8 Leute aktiv an „Flight Gear&quot;; in die (allen offenstehende) Entwicklerliste haben sich allerdings weit mehr eingetragen. Nat&uuml;rlich ist klar, da&szlig; z.B. die Szeneriedesigner erst richtig beginnen k&ouml;nnen, wenn die Grafikausgabe und der Kernel in den Grundz&uuml;gen „stehen". </P>
+<P>(Ob dabei auf die vom FS5/FSFW95 bekannte *.bgl-Struktur zur&uuml;ckgegriffen oder ein neues Format definiert werden soll, ist noch offen. Ersteres h&auml;tte nat&uuml;rlich den Vorteil, da&szlig; mit einem Schlag ein riesiges Angebot von Szenerien sofort zur Verf&uuml;gung st&auml;nde. Gleichzeitig besteht aber die Gefahr, da&szlig; man damit auch eine Reihe grunds&auml;tzlicher Beschr&auml;nkungen des *.bgl-Formats  mit „hin&uuml;berschleppt&quot;.)</P>
+
+<P>Bis zum Szeneriedesign ist allerdings auch noch etwas Zeit. Nachdem in den ersten Wochen und Monaten zun&auml;chst konzeptionelle Fragen diskutiert wurden, haben sich inzwischen einige beherzte Programmierer hingesetzt und begonnen, die ersten Module zu schreiben.</P>
+<P>Naturgem&auml;&szlig; sind dies die elementaren Grafikroutinen, die Tastatureingabe etc. Es ist vor allem Eric Korpela (University of California, Berkeley) zu verdanken, da&szlig; die wesentlichen einen inzwischen auf (fast) allen anvisierten Plattformen compiliert werden k&ouml;nnen und laufen. Inzwischen haben wir nicht mehr nur Bruckst&uuml;cke von Programmcode, die per eMail hin- und hergereicht werden, sondern ein richtiges lauff&auml;higes Programm. Einen Screenshot zeigt Abbildung 2.</P>
+
+<P><IMG SRC="Image104.gif" WIDTH=620 HEIGHT=465></P>
+<FONT SIZE=2>
+<P>Abb. 2: Ein Screenshot von „Flight Gear&quot; unter Linux – zwar noch kein Flugsimulator, aber wichtige Grafikroutinen. </P>
+</FONT>
+<P>Die Strahlen in der oberen Bildh&auml;lfte sind nicht statisch, sondern huschen rasch &uuml;ber den Bildschirm. Wie schnell das auf den unterschiedlichen Maschinen geht, vermittelt bereits einen Eindruck von der zuk&uuml;nftigen Bildwiederholrate. Die Streifen in der unteren H&auml;lfte sind der Anfang eines zuk&uuml;nftigen Panels. Unsere neueste Errungenschaft ist die „Uhr", die die Systemzeit anzeigt. Wer etwas ge&uuml;bt ist, kann damit durchaus schon eine 2-Minuten-Standardkurve fliegen...</P>
+
+<P>Parallel dazu wird an weiteren Modulen gearbeitet. Curtis Olson (University of Minnesota, Minneapolis) hat ACM, einen ebenfalls frei verf&uuml;gbaren, aber nur unter UNIX lauff&auml;higen milit&auml;rischen Simulator, „zerlegt&quot; und bestimmte Kernel-Module f&uuml;r unsere Zwecke angepa&szlig;t. Eine (von mir verfa&szlig;te) Installationsanleitung liegt inzwischen ebenfalls vor. Weitere Informationen &uuml;ber das Konzept, den aktuellen Stand, die Entwickler, die Module und vieles andere vermittelt die Flight Gear Homepage</P>
+
+<P>http://www.menet.umn.edu/~clolson/fgfs/</P>
+
+<P>Mit Sicherheit wird dann, wenn dieser Artikel erscheint, manches schon wieder &uuml;berholt sein. Wer sich nicht scheut, mit noch unfertigen Programmen zu experimentieren, kann sich auch den aktuellen Code von dort herunterladen. Fertig compilierte und lauff&auml;hige Versionen f&uuml;r DOS und Linux (ELF) liegen ebenso auf dem Server wie der komplette Quellcode. Wer den GNU C-Compiler installiert hat, kann versuchen, Flight Gear anhand der Installationsanleitung selbst zu compilieren. Vielleicht findet der eine oder andere sogar Spa&szlig; daran, bei der Entwicklung mitzuhelfen.</P>
+
+<P>Allerdings ist experimentieren nicht jedermanns Sache. Den meisten Leser des FSFD wird es wohl doch eher darum gehen, zu fliegen. Ich mu&szlig; deshalb deutlich sagen: Einen fertigen „Flight Gear Flugsimulator&quot;, vergleichbar mit dem FSFW95, wird es bis zum Erscheinen dieses Artikel nicht geben. Deswegen die abschlie&szlig;ende Frage: Wann wird Flight Gear so weit sein, da&szlig; man damit fliegen kann? Die Sch&auml;tzungen gehen hier recht weit auseinander. Pessimisten haben die Mannjahre abgesch&auml;tzt, die im FS5 stecken, und daraus eine Entwicklungsdauer von 10 Jahren abgeleitet. Optimisten sind der Meinung, da&szlig; man in einem halben Jahr bei sicher noch bescheidener Szenierie mit Flight Gear zumindest fliegen kann. Ich w&uuml;rde sagen: Schauen Sie doch in einem halben Jahr wieder mal bei uns vorbei. Wenn die Dinge weiter so gut laufen wie bisher, k&ouml;nnen Sie dann vielleicht tats&auml;chlich schon starten.</P></BODY>
+</HTML>

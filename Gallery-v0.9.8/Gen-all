@@ -1,0 +1,232 @@
+#!/bin/sh
+
+#
+# Generate all images
+#
+
+SRC=src
+LDIR=large
+SDIR=small
+
+#
+# Make sure directories exist
+#
+
+if [ ! -e $LDIR ]
+then
+        mkdir $LDIR
+fi
+
+if [ ! -e $SDIR ]
+then
+        mkdir $SDIR
+fi
+
+#
+# Make images large and small
+#
+
+for i in `ls $SRC`
+do
+
+if [ ${SRC}/$i -nt ${LDIR}/$i -o ! -e ${LDIR}/$i ]
+then
+   echo Updating ${LDIR}/$i
+   cp -f ${SRC}/$i $LDIR
+   mogrify -geometry 800X600 -interlace LINE -quality 80 ${LDIR}/$i
+fi
+
+if [ ${SRC}/$i -nt ${SDIR}/$i -o ! -e ${SDIR}/$i ]
+then
+   echo Updating ${SDIR}/$i
+   cp -f ${SRC}/$i $SDIR
+   mogrify -geometry 200X150 -interlace LINE -quality 50 ${SDIR}/$i
+fi
+
+done
+
+#
+# Check for images to remove
+#
+
+for i in `ls ${LDIR}`
+do
+if [ ! -f ${SRC}/$i ]
+then
+echo -n "No matching src file - delete image ${i}? (y/n) "
+read x
+	if [ $x = "y" ]
+	then
+		rm ${LDIR}/$i
+		if [ -f ${SDIR}/${i} ]
+		then
+			rm ${SDIR}/${i}
+		fi
+	fi
+fi
+done
+
+for i in `ls ${SDIR}`
+do
+if [ ! -f ${SRC}/$i ]
+then
+echo -n "No matching src file - delete image ${i}? (y/n) "
+read x
+	if [ $x = "y" ]
+	then
+		rm ${SDIR}/$i
+	fi
+fi
+done
+
+#
+# Generate Links
+#
+
+LINK=link
+
+if [ -e $LINK ]
+then
+	rm -r $LINK
+fi
+
+mkdir $LINK
+
+for i in `ls ${SRC}`
+do
+
+i=`basename $i .jpg`
+j=`echo $i |sed -e 's/_/ /g'`
+OUT=${LINK}/$i.html
+
+cat <<BREAK > $OUT
+<HTML>
+<HEAD>
+<TITLE>$i.jpg</TITLE>
+</HEAD>
+<BODY BGCOLOR="#000000" ALINK="#000000" VLINK="#000000" LINK="#000000" TEXT="#FFFFFF">
+
+<TABLE ALIGN=CENTER>
+<TR>
+<TD ALIGN=CENTER>
+<A HREF="../${SRC}/$i.jpg">
+<IMG SRC="../large/$i.jpg">
+</TD>
+</A>
+</TR>
+</TABLE>
+
+<TABLE ALIGN=CENTER>
+<TR>
+<TD ALIGN=CENTER>
+<FONT SIZE=+1>
+$j
+</FONT>
+</TD>
+</TR>
+
+<TR>
+<TD ALIGN=CENTER>
+<FONT SIZE=-1>
+Click on image for source. <BR>
+Caution source image may be large.
+</FONT>
+</TD>
+</TR>
+
+</TABLE>
+
+</BODY>
+</HTML>
+BREAK
+
+done
+
+#
+# Generate index.html
+#
+
+FILE=index.html
+
+if [ -e $FILE ]
+then
+	rm $FILE
+fi
+
+D=`pwd`
+D=`basename $D`
+
+#
+# Set up the page
+#
+cat <<BREAK > $FILE
+<HTML>
+<HEAD>
+<TITLE>${D}</TITLE>
+</HEAD>
+<BODY BGCOLOR="#000000" ALINK="#000000" VLINK="#000000" LINK="#000000" TEXT="#FFFFFF">
+BREAK
+
+
+j=1
+for i in `ls ${SRC}/*.jpg`
+do
+
+i=`basename $i`
+
+if [ $j = 1 ]
+then
+cat <<BREAK >> $FILE
+
+
+<!-- Begin Row -->
+<TABLE ALIGN=CENTER>
+<TR>
+BREAK
+fi
+
+cat <<BREAK >> $FILE
+
+<TD ALIGN=CENTER WIDTH=210 HEIGHT=160>
+<A HREF="link/`basename $i .jpg`.html">
+<IMG SRC="small/$i">
+</A>
+</TD>
+BREAK
+
+if [ $j = 3 ]
+then
+cat <<BREAK >> $FILE
+
+</TR>
+</TABLE>
+BREAK
+fi
+
+if [ $j = 1 ]
+then
+j=2
+elif [ $j = 2 ]
+then
+j=3
+elif [ $j = 3 ]
+then
+j=1
+fi
+
+done
+
+if [ $j != 1 ]
+then
+cat <<BREAK >> $FILE
+
+</TR>
+</TABLE>
+BREAK
+fi
+
+cat <<BREAK >> $FILE
+
+</BODY>
+</HTML>
+BREAK

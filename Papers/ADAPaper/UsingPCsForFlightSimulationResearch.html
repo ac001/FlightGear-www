@@ -1,0 +1,165 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>USING PCs FOR FLIGHT SIMULATION RESEARCH – THE LCA EXPERIENCE</TITLE>
+<META NAME="Template" CONTENT="C:\Program Files\Microsoft Office\Office\html.dot">
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080">
+
+<B><U><P ALIGN="CENTER">PCs IN FLIGHT SIMULATION RESEARCH – THE LCA (NAVY) EXPERIENCE</P>
+</U><P ALIGN="CENTER">Commander VS Renganathan</P>
+<P ALIGN="CENTER">Aeronautical Development Agency</P>
+<P ALIGN="CENTER">Vimanapura, Bangalore – 560 017</P>
+<P ALIGN="JUSTIFY">Abstract</P>
+</B><P ALIGN="JUSTIFY">Light Combat Aircraft (LCA) programme has so far effectively used<I> </I>high-end image generators for research, development and qualification work on handling qualities. The flight simulation requirement for naval variant of LCA presented an opportunity to reassess the fidelity requirement of each and every component of the simulator considering technological advancements in PC hardware and graphics accelerators. The pressing need to innovate solutions which remain unaffected by import barriers whilst offering unlimited scope for upgradation led to configuring LCA(Navy) simulator around PCs with graphics accelerator cards and an OpenSource image generator software FlightGear &lt;<A HREF="http://www.flightgear.org/"><I>www.flightgear.org</I></A>&gt; suitably modified to suit our requirements. This paper discusses the price/performance advantage of PC based part-task simulator based on our experience on ski-jump launch and recovery simulation of LCA (Navy<I>)</I>. This simulator has been successful in providing realistic simulation of carrier-based launch and recovery for the evaluation and refinement of flight control law. Essential visual simulation features are identified and their importance towards achieving<I> </I>visual fidelity are discussed</P>
+<B><P ALIGN="JUSTIFY">Introduction</P>
+</B><P ALIGN="JUSTIFY">Light Combat Aircraft (LCA) programme has relied so far, on high-end image generators for pilot-in-loop real-time simulation for handling qualities research, development and qualification of the control law besides providing a realistic cockpit environment for pilot-vehicle interface (PVI) development. These machines continue to provide the performance that matches their cost and are being utilized continuously and effectively. </P>
+<P ALIGN="JUSTIFY">Studies on Naval variant of LCA brought in the need for a simulation platform to evaluate the ski-jump launch and arrested recovery phases on an aircraft carrier. The objectives of the simulation were to evolve the launch mode and associated HUD symbology and to thoroughly evaluate the safety and performance of the aircraft in the ski-jump launch and recovery phases. The high-end machines could not be deployed for this purpose because of pressing requirements of ongoing LCA simulation studies. A need therefore arose to configure afresh a suitable platform for LCA (Navy) flight simulation and this provided an opportunity to address the flight simulation requirements abinitio, right from scratch, taking all factors into account. Needless to say that the solutions that unfolded were a result of astounding advances made in the field of 3D graphics accelerator technology coupled with the need to find solutions that are low-cost and immune to import barriers.</P>
+<P ALIGN="JUSTIFY">PC based solutions are attractive in terms of price/performance and non-susceptibility to import barriers, besides offering unlimited scope for upgradation. The first obstacle was to move from the mindset sceptical of low-cost solutions and to accept that high-cost technology is not a pre-requisite to meet the requirements. It was decided to concentrate on performance and realization of objective, which was, to make a flight simulator for naval version of LCA that can take-off, land and fly from an aircraft carrier. Our approach was to explore the use of commercial off-the-shelf products.</P>
+<B><P ALIGN="JUSTIFY">The components</P>
+</B><P ALIGN="JUSTIFY">The efficiency and compatibility requirements of two major components of software influenced the choice of hardware in no small measure as is explained later.</P>
+<P ALIGN="JUSTIFY">The major software components of LCA (Navy) simulator are:</P>
+
+<UL>
+
+<UL>
+<P ALIGN="JUSTIFY"><LI>Flight Dynamics model (FDM)</LI></P>
+<P ALIGN="JUSTIFY"><LI>Image generator software (IG)</LI></P></UL>
+</UL>
+
+<P ALIGN="JUSTIFY">The major hardware components of LCA (Navy) simulator are, as shown in Fig. 1:</P>
+
+<UL>
+
+<UL>
+<P ALIGN="JUSTIFY"><LI>Cockpit with actual controls and data acquisition PC (DAPC)</LI></P>
+<P ALIGN="JUSTIFY"><LI>Flight Dynamic model PC (FDMPC)</LI></P>
+<P ALIGN="JUSTIFY"><LI>Image Generator PC (IGPC)</LI></P></UL>
+</UL>
+
+<I><P ALIGN="JUSTIFY">Software</P>
+</I><U><P ALIGN="JUSTIFY">Flight Dynamics model :</U> The FDM is an in-house software developed as part of the main aircraft program and suitably modified with additional mathematical models of 6-DOF aircraft carrier dynamics, wind-over-deck (WOD), arrester gear, ski-jump geometry and additional aerodynamic surfaces of the Naval variant. Considering the requirement and the realism sought, each and every component of the FDM was chosen with adequate details, commensurate with the simulation tasks. The following components are used for the simulation:</P>
+<TABLE BORDER CELLSPACING=1 CELLPADDING=7 WIDTH=595>
+<TR><TD WIDTH="10%" VALIGN="TOP">
+<P ALIGN="JUSTIFY"><B>Sl. No</B></TD>
+<TD WIDTH="22%" VALIGN="TOP">
+<B><P ALIGN="JUSTIFY">Subsystem</B></TD>
+<TD WIDTH="68%" VALIGN="TOP">
+<B><P ALIGN="JUSTIFY">Fidelity</B></TD>
+</TR>
+<TR><TD WIDTH="10%" VALIGN="TOP">
+<P ALIGN="JUSTIFY">1.</TD>
+<TD WIDTH="22%" VALIGN="TOP">
+<P ALIGN="JUSTIFY">Math Model</TD>
+<TD WIDTH="68%" VALIGN="TOP">
+<P ALIGN="JUSTIFY">6-DOF, Gust, Turbulence, Wind over Deck, Ship Motion</TD>
+</TR>
+<TR><TD WIDTH="10%" VALIGN="TOP">
+<P ALIGN="JUSTIFY">2.</TD>
+<TD WIDTH="22%" VALIGN="TOP">
+<P ALIGN="JUSTIFY">Controls</TD>
+<TD WIDTH="68%" VALIGN="TOP">
+<P ALIGN="JUSTIFY">Complete Duplicate of Aircraft Controls and Switches</TD>
+</TR>
+<TR><TD WIDTH="10%" VALIGN="TOP">
+<P ALIGN="JUSTIFY">3.</TD>
+<TD WIDTH="22%" VALIGN="TOP">
+<P ALIGN="JUSTIFY">Cockpit</TD>
+<TD WIDTH="68%" VALIGN="TOP">
+<P ALIGN="JUSTIFY">Actual Cockpit, HUD primary display (Overlaid on OWI)</TD>
+</TR>
+<TR><TD WIDTH="10%" VALIGN="TOP">
+<P ALIGN="JUSTIFY">4.</TD>
+<TD WIDTH="22%" VALIGN="TOP">
+<P ALIGN="JUSTIFY">Ground Handling</TD>
+<TD WIDTH="68%" VALIGN="TOP">
+<P ALIGN="JUSTIFY">Comprehensive including Arrester Gear Forces</TD>
+</TR>
+<TR><TD WIDTH="10%" VALIGN="TOP">
+<P ALIGN="JUSTIFY">5.</TD>
+<TD WIDTH="22%" VALIGN="TOP">
+<P ALIGN="JUSTIFY">Visual</TD>
+<TD WIDTH="68%" VALIGN="TOP">
+<P ALIGN="JUSTIFY">3 Window,135<FONT FACE="Symbol">°</FONT> Horizontal, 4:3 aspect, 1024x768, day/night</TD>
+</TR>
+<TR><TD WIDTH="10%" VALIGN="TOP">
+<P ALIGN="JUSTIFY">6.</TD>
+<TD WIDTH="22%" VALIGN="TOP">
+<P ALIGN="JUSTIFY">Latency</TD>
+<TD WIDTH="68%" VALIGN="TOP">
+<P ALIGN="JUSTIFY">Real-Time</TD>
+</TR>
+<TR><TD WIDTH="10%" VALIGN="TOP">
+<P ALIGN="JUSTIFY">7.</TD>
+<TD WIDTH="22%" VALIGN="TOP">
+<P ALIGN="JUSTIFY">Motion</TD>
+<TD WIDTH="68%" VALIGN="TOP">
+<P ALIGN="JUSTIFY">None</TD>
+</TR>
+<TR><TD WIDTH="10%" VALIGN="TOP">
+<P ALIGN="JUSTIFY">8.</TD>
+<TD WIDTH="22%" VALIGN="TOP">
+<P ALIGN="JUSTIFY">Audio</TD>
+<TD WIDTH="68%" VALIGN="TOP">
+<P ALIGN="JUSTIFY">None</TD>
+</TR>
+<TR><TD WIDTH="10%" VALIGN="TOP" HEIGHT=20>
+<P ALIGN="JUSTIFY">9.</TD>
+<TD WIDTH="22%" VALIGN="TOP" HEIGHT=20>
+<P ALIGN="JUSTIFY">Mission Eqpt.</TD>
+<TD WIDTH="68%" VALIGN="TOP" HEIGHT=20>
+<P ALIGN="JUSTIFY">None</TD>
+</TR>
+</TABLE>
+
+<U><P ALIGN="JUSTIFY">Image Generator software:</U> The choice of PCs for Image Generation was compounded by the requirement to find suitable rendering and scenery creation software. In today’s market scenario software is much higher priced than the cost of matching PC hardware. Accepting the challenge of keeping the simulation cost low whilst meeting all the requirements, a search for an affordable software solution led us to an exciting project ‘FlightGear’ at <A HREF="http://www.flightgear.org/"><I>www.flightgear.org</I></A>. This open source project helped us decisively steer towards using PCs for flight simulation. </P>
+<P ALIGN="JUSTIFY">FlightGear code is built around PLib another open source project, which provides scenegraph library functions. Together, they provide features that are essential for flight simulation. FlightGear software, as of early 2001, has the following features desirable for this part task simulator:</P>
+<OL TYPE="a">
+
+<P ALIGN="JUSTIFY"><LI>Accurate runway/deck markings to successfully accomplish visual landings. (Approach lighting /VASI/FLOLS/Runway lighting are under development).</LI></P>
+<P ALIGN="JUSTIFY"><LI>Configurable HUD overlay plane for the launch and recovery phases</LI></P>
+<P ALIGN="JUSTIFY"><LI>Variable cloud base / density and visibility.</LI></P>
+<P ALIGN="JUSTIFY"><LI>Multiple window display.</LI></P>
+<P ALIGN="JUSTIFY"><LI>Ship motion simulation with Ship position and attitude received through the Ethernet. (Ship wake and wave simulation expected to be available in future).</LI></P>
+<P ALIGN="JUSTIFY"><LI>Accurate terrain data. Tools available for scenery creation.</LI></P>
+<P ALIGN="JUSTIFY"><LI>Open source under GPL, offers unlimited scope for feature enhancement specific to a task.</LI></P></OL>
+
+<B><I><P ALIGN="JUSTIFY">Hardware</P>
+</B></I><P ALIGN="JUSTIFY">For the ski-jump launch, flying and landing tasks, environmental cue fidelity is most important to elicit realistic pilot behavior. It is also known that no simulator evaluation can completely duplicate the experience in the real world. With these lower and upper bounds of the flight simulation task and also given that highest possible fidelity was available as far the flight model, cockpit and controls are concerned, we carried out a feature-wise comparison of PC based and high-end simulators (Ref. 1) in order to identify those features that could affect pilot behavior in the simulator. The most relevant features to this part task simulator are:</P>
+<P ALIGN="JUSTIFY">a)<B> Anti-aliasing : </B>Aliasing artefacts are known to affect perception of depth in the scene. Pilot opinion on whether they present any negative cues was found to be subjective. While high-end machines provide upto 64 subpixel anti-aliasing, their gain over the 4 subpixel full-screen anti-aliasing (FSAA) provided by recent cards is not of proportianate order. FSAA alongwith careful design and use of textures and polygons in the scene could rule in favour of PCs for part task simulators.</P>
+<P ALIGN="JUSTIFY">b) <B>Edge blending : </B>Until this feature is available in graphics accelerator cards, this function could be carried out by projectors.</P>
+<P ALIGN="JUSTIFY">c) <B>Genlock :</B> Trials with 3 PCs one driving each window while receiving eye-point information through the Ethernet using non-blocking UDP sockets does not cause any distracting visual anomalies, atleast at the 45-60 Hz update rates tested so far. It is necessary to carefully design the visual database such that the processor or graphics pipeline does not choke on polygon rate or pixel fillrate in any view/position.</P>
+<P ALIGN="JUSTIFY">d) <B>Constant frame rate and load metric feedback : </B>Careful design of the visual database such that scene load on any window does not get overloaded due to processor limitation or fill-rate limitation, helps alleviate this problem. This does not translate to sacrificing realism.</P>
+<P ALIGN="JUSTIFY">It was found that the above compromise/work around would not affect realism to the extent of modifying pilot behavior and suggests that we may not need great sophistication for specific tasks.</P>
+<P ALIGN="JUSTIFY">Having accepted the suitability of PCs for use in image generation, the choice of their configuration and graphics cards were based on the software. Although FlightGear is presently single-thread code, it is planned to convert it into multiple threads in order to separate the scenery paging and rendering functions. Dual processor machines under Windows NT/2000 were chosen with this in mind. Similarly the requirement to run the FDM real-time also led to the use of dual processor machines, so that the FDM runs unhindered on the second processor with the first taking care of routine kernel operations. Experience has shown that steady 12.5 msec loops are possible on these machines without Real-Time Operating System (RTOS).</P>
+<P ALIGN="JUSTIFY">Different graphics hardware have been tested in the past two years based on various chipsets. Realistic rendering of visuals at around 4000 polygons per frame at 1024x768 pixel resolution and 32 bit colour depth at 60 Hz requires high pixel fill-rates. The choice, therefore, has been in favor of cards with high pixel fill rates. High-end cards with more OpenGL functions implemented in hardware and designed specifically for visual content creation were found to perform quite similar to high pixel-fillrate gaming cards, on this application.</P>
+<B><P ALIGN="JUSTIFY">Results</P>
+</B><P ALIGN="JUSTIFY">The fully operational FlightGear-PC combination has been put to test at the Aeronautical Development Agency with Naval pilots while evaluating the ski-jump launch, approach and recovery on an aircraft carrier. The evaluation has proved beyond doubt that PC based simulation is here to stay. The platform was also used extensively by in-house pilots to evolve HUD symbology specific for the ski-jump launch mode leading to the final clearance of concept by the Naval pilots. The non-availability of night launch and recovery capability was the only drawback of the PC based simulator, which is expected to be overcome shortly. Snapshots of a few frames during launch/approach on land and sea are shown in Figs. 2 to 5. The following configuration has been tested and is being used effectively :</P>
+
+<UL>
+
+<UL>
+<P ALIGN="JUSTIFY"><LI>Dual PIII 800 Mhz in SMP with Win NT/2000</LI></P>
+<P ALIGN="JUSTIFY"><LI>512 Mb RAM</LI></P>
+<P ALIGN="JUSTIFY"><LI>ATA 100 IDE Hard disk</LI></P>
+<P ALIGN="JUSTIFY"><LI>Graphics cards tested so far – GeForce Ultra-64 Mb, Elsa Gloria II-64 Mb</LI></P>
+<P ALIGN="JUSTIFY"><LI>10/100 Mbps Ethernet card</LI></P></UL>
+</UL>
+
+<B><P ALIGN="JUSTIFY">Conclusion</P>
+</B><P ALIGN="JUSTIFY">Configuring a part-task research flight simulator around commercial off-the-shelf PCs is now possible due to the rapid advancements in PC and graphics accelerator technology. These configurations could be further simplified to provide low-cost classroom aids/tools for universities engaged in flight simulation research. Although these low-cost systems are not expected to replace high-end systems in all spheres of application, they could certainly replace them in specific applications, especially in research areas, with a scope for limitless upgrade based on the growth potential of 3D graphics accelerator cards. PC based systems provide the best price/performance along with image quality and frame rates that were once exclusive to high-end machines. Our experience shows that three PCs alongwith the FlightGear code could give us around 70 percent of the high-end, million dollar machines’ capabilities at almost 1/70<SUP>th</SUP> the cost.</P>
+<B><P ALIGN="JUSTIFY">References</P>
+<OL>
+
+<P ALIGN="JUSTIFY"><LI>Achieving Real-Time Visual simulation using PC Graphics Technology – Steven O Hadfield and Kevin C Colin, I/ITSEC 1999. Evans &amp; Sutherland.</LI></P></OL>
+<DIR>
+
+<U><FONT SIZE=2><P ALIGN="JUSTIFY">Figure 1.</B></U>                                                 To projectors</P></DIR>
+
+</FONT><P><IMG SRC="image5.jpg" WIDTH=533 HEIGHT=408></P>
+<P ALIGN="JUSTIFY"><IMG SRC="Image1.jpg" WIDTH=573 HEIGHT=430></P>
+<P ALIGN="JUSTIFY"><IMG SRC="Image2.jpg" WIDTH=573 HEIGHT=430></P>
+<P ALIGN="JUSTIFY"><IMG SRC="Image3.gif" WIDTH=575 HEIGHT=431></P>
+<P ALIGN="JUSTIFY"><IMG SRC="Image4.gif" WIDTH=575 HEIGHT=431></P></BODY>
+</HTML>

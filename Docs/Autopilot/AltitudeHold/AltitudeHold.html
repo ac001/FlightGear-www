@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 96.1 (Feb 5, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<HTML>
+<HEAD>
+<TITLE> Flight Gear Autopilot:  Altitude Hold Module </TITLE>
+<META NAME="description" CONTENT=" Flight Gear Autopilot:  Altitude Hold Module ">
+<META NAME="keywords" CONTENT="AltitudeHold">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<LINK REL=STYLESHEET HREF="AltitudeHold.css">
+</HEAD>
+<BODY LANG="EN">
+<P>
+<H1 ALIGN=CENTER>
+  Flight Gear Autopilot: <BR> 
+  Altitude Hold Module
+</H1>
+<P ALIGN=CENTER><STRONG>
+  Curtis Olson <BR> 
+  (<tt>curt@me.umn.edu</tt>)
+</STRONG></P><P>
+<P>
+<H1><A NAME="SECTION00010000000000000000">1 Introduction</A></H1>
+<P>
+Working on scenery creation was becoming stressful and overwhelming.
+I needed to set it aside for a few days to let my mind regroup so I
+could mount a fresh attack.
+<P>
+As a side diversion I decided to take a stab at writing an altitude
+hold module for the autopilot system and in the process hopefully
+learn a bit about control theory.
+<P>
+<H1><A NAME="SECTION00020000000000000000">2 Control Theory 101</A></H1>
+<P>
+Before I get too far into this section I should state clearly and up
+front that I am not a ``controls'' expert and have no formal training
+in this field.  What I say here is said <i>to the best of my
+knowledge.</i>  If anything here is mistaken or misleading, I'd
+appreciate being corrected.  I'd like to credit my boss, Bob Hain, and
+my coworker, Rich Kaszeta, for explaining this basic theory to me, and
+answering my many questions.
+<P>
+The altitude hold module I developed is an example of a PID
+controller.  PID stands for proportional, integral, and derivative.
+These are three components to the control module that will take our
+input variable (error), and calculate the value of the output variable
+required to drive our error to zero.
+<P>
+A PID needs an input variable, and an output variable.  The input
+variable will be the error, or the difference between where we are,
+and where we want to be.  The output variable is the position of our
+control surface.
+<P>
+The proportional component of the PID drives the output variable in
+direct proportion to the input variable.  If your system is such that
+the output variable is zero when the error is zero and things are
+mostly linear, you usually can get by with proportional control only.
+However, if you do not know in advance what the output variable will
+be when error is zero, you will need to add in a measure of integral
+control.
+<P>
+The integral component drives the output based on the area under the
+curve if we graph our actual position vs. target position over time.
+<P>
+The derivative component is something I haven't dealt with, but is
+used to drive you towards your target value more quickly.  I'm told
+this must be used with caution since it can easily yield an unstable
+system if not tuned correctly.
+<P>
+Typically you will take the output of each component of your PID and
+combine them in some proportion to produce your final output.
+<P>
+The proportional component quickly stabilizes the system when used by
+itself, but the system will typically stabilize to an incorrect value.
+The integral component drives you towards the correct value over time,
+but you typically oscillate over and under your target and does not
+stabilize quickly.  However, each of these provides something we want.
+When we combine them, they offset each others negatives while
+maintaining their desirable qualities yielding a system that does
+exactly what we want.
+<P>
+It's actually pretty interesting and amazing when you think about it.
+the proportional control gives us stability, but it introduces an
+error into the system so we stabilize to the wrong value.  The
+integral components will continue to increase as the sum of the errors
+over time increases.  This pushes us back the direction we want to
+go.  When the system stabilizes out, we find that the integral
+component precisely offsets the error introduced by the proportional
+control.
+<P>
+The concepts are simple and the code to implement this is simple.  I
+am still amazed at how such a simple arrangement can so effectively
+control a system.
+<P>
+<H1><A NAME="SECTION00030000000000000000">3 Controlling Rate of Climb</A></H1>
+<P>
+Before we try to maintain a specific altitude, we need to be able to
+control our rate of climb.  Our PID controller does this through the
+use of proportional and integral components.  We do not know in
+advance what elevator position will establish the desired rate of
+climb.  In fact the precise elevator position could vary as external
+forces in our system change such as atmospheric density, throttle
+settings, aircraft weight, etc.  Because an elevator position of zero
+will most likely not yield a zero rate of climb, we will need to add
+in a measure of integral control to offset the error introduced by the
+proportional control.
+<P>
+The input to our PID controller will be the difference (or error)
+between our current rate of climb and our target rate of climb.  The
+output will be the position of the elevator needed to drive us towards
+the target rate of climb.
+<P>
+The proportional component simply sets the elevator position in direct
+proportion to our error.
+<P> <IMG WIDTH=322 HEIGHT=17 ALIGN=BOTTOM ALT="displaymath51" SRC="img1.gif"  > <P>
+<P>
+The integral component sets the elevator position based on the sum of
+these errors over time.  For a time, <I>t</I>
+<P> <IMG WIDTH=365 HEIGHT=46 ALIGN=BOTTOM ALT="displaymath52" SRC="img2.gif"  > <P>
+<P>
+I do nothing with the derivative component so it is always zero and
+can be ignored.
+<P>
+The output variable is just a combination of the proportional and
+integral components.   <IMG WIDTH=39 HEIGHT=19 ALIGN=MIDDLE ALT="tex2html_wrap_inline59" SRC="img3.gif"  >  and  <IMG WIDTH=30 HEIGHT=18 ALIGN=MIDDLE ALT="tex2html_wrap_inline61" SRC="img4.gif"  >  are
+weighting values.  This allows you to control the contribution of each
+component to your final output variable.  In this case I found that
+ <IMG WIDTH=90 HEIGHT=27 ALIGN=MIDDLE ALT="tex2html_wrap_inline63" SRC="img5.gif"  >  and  <IMG WIDTH=79 HEIGHT=26 ALIGN=MIDDLE ALT="tex2html_wrap_inline65" SRC="img6.gif"  >  seemed to work
+quite well.  Too much integral control and your system won't
+stabilize.  Too little integral control and your system takes
+excessively long to stabilize.
+<P> <IMG WIDTH=390 HEIGHT=20 ALIGN=BOTTOM ALT="displaymath53" SRC="img7.gif"  > <P>
+<P>
+We are trying to control rate of climb with elevator position, so the
+output of the above formula is our elevator position.  Using this
+formula to set a new elevator position each iteration quickly drives
+our climb rate to the desired value.
+<P>
+<H1><A NAME="SECTION00040000000000000000">4 Controlling Altitude</A></H1>
+<P>
+Now that we have our rate of climb under control, it is a simple
+matter to leverage this ability to control our absolute altitude.
+<P>
+The input to our altitude PID controller is the difference (error)
+between our current altitude and our goal altitude.  The output is the
+rate of climb needed to drive our altitude error to zero.
+<P>
+Clearly, our climb rate will be zero when we stabilize on the target
+altitude.  Because our output variable will be zero when our error is
+zero, we can get by with only a proportional control component.
+<P>
+All we need to do is calculate a desired rate of climb that is
+proportional to how far away we are from the target altitude.  This is
+a simple proportional altitude controller that sits on top of our
+slightly more complicated rate of climb controller.
+<P>
+<P> <IMG WIDTH=534 HEIGHT=20 ALIGN=BOTTOM ALT="displaymath67" SRC="img8.gif"  > <P>
+<P>
+Thus we use the difference in altitude to determine a climb rate and
+we use the desired climb rate to determine elevator position.
+<P>
+<H1><A NAME="SECTION00050000000000000000">5 Parameter Tuning</A></H1>
+<P>
+I've explained the basics, but there is one more thing that is
+important to mention.  None of the above theory and math is going to
+do you a bit of good for controlling your system if all your
+parameters are out of whack.  In fact, parameter tuning is often the
+trickiest part of the whole process.  Expect to spend a good chunk of
+your time tweaking function parameters to fine tune the behavior and
+effectiveness of your controller.
+<P>
+<H1><A NAME="SECTION00060000000000000000">  About this document ... </A></H1>
+<P>
+ <STRONG>
+  Flight Gear Autopilot: <BR> 
+  Altitude Hold Module
+</STRONG><P>
+This document was generated using the <A HREF="http://www-dsed.llnl.gov/files/programs/unix/latex2html/manual/"><STRONG>LaTeX</STRONG>2<tt>HTML</tt></A> translator Version 96.1 (Feb 5, 1996) Copyright &#169; 1993, 1994, 1995, 1996,  <A HREF="http://cbl.leeds.ac.uk/nikos/personal.html">Nikos Drakos</A>, Computer Based Learning Unit, University of Leeds. <P> The command line arguments were: <BR>
+<STRONG>latex2html</STRONG> <tt>-split 0 -show_section_numbers AltitudeHold.tex</tt>. <P>The translation was initiated by Curtis L. Olson on Thu Oct  1 21:40:01 CDT 1998<BR> <HR>
+<P><ADDRESS>
+<I>Curtis L. Olson <BR>
+Thu Oct  1 21:40:01 CDT 1998</I>
+</ADDRESS>
+</BODY>
+</HTML>

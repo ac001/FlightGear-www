@@ -1,0 +1,66 @@
+This is TeX, Version 3.14159 (C version 6.1) (format=latex 97.3.12)  15 DEC 1997 13:14
+**images.tex
+(images.tex
+LaTeX2e <1996/12/01> patch level 1
+Babel <v3.6h> and hyphenation patterns for english, french, german, loaded.
+
+(/stage/share/teTeX/texmf/tex/latex/base/article.cls
+Document Class: article 1996/10/31 v1.3u Standard LaTeX document class
+(/stage/share/teTeX/texmf/tex/latex/base/size12.clo
+File: size12.clo 1996/10/31 v1.3u Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (/stage/share/teTeX/texmf/tex/latex/misc/anysize.sty
+Package: anysize 1994/08/13 1.0 Contributed LaTeX2e package
+Package: `anysize' 1.0 <1994/08/13>
+\@Leftmargin=\dimen103
+\@Rightmargin=\dimen104
+\@Topmargin=\dimen105
+\@Bottommargin=\dimen106
+)
+\lthtmlwrite=\write3
+\sizebox=\box26
+No file images.aux.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 22.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 22.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 22.
+latex2htmlSize :tex2html_wrap_inline25: 4.4025pt::0.0pt.
+[1
+
+
+] (images.aux) ) 
+Here is how much of TeX's memory you used:
+ 247 strings out of 10890
+ 2423 string characters out of 71857
+ 44922 words of memory out of 262141
+ 3197 multiletter control sequences out of 9500
+ 6376 words of font info for 23 fonts, out of 150000 for 255
+ 15 hyphenation exceptions out of 607
+ 22i,4n,21p,176b,149s stack positions out of 300i,40n,60p,3000b,4000s
+
+Output written on images.dvi (1 page, 200 bytes).

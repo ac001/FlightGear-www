@@ -1,0 +1,2870 @@
+From owner-flight-gear  Fri Nov  1 17:44:50 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id RAA26138; Fri, 1 Nov 1996 17:42:46 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from meserv.me.umn.edu (meserv.me.umn.edu [134.84.196.1]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id RAA26134 for <flight-gear@infoplane.com>; Fri, 1 Nov 1996 17:42:37 -0600
+Received: from kenai.me.umn.edu (clolson@kenai.me.umn.edu [134.84.197.42]) by meserv.me.umn.edu (8.8.2/8.6.11) with ESMTP id RAA18632 for <flight-gear@infoplane.com>; Fri, 1 Nov 1996 17:49:50 -0600 (CST)
+Received: (from clolson@localhost) by kenai.me.umn.edu (8.8.2/8.7.3) id RAA25796; Fri, 1 Nov 1996 17:48:48 -0600
+Date: Fri, 1 Nov 1996 17:48:48 -0600
+Message-Id: <199611012348.RAA25796@kenai.me.umn.edu>
+From: "Curtis L. Olson" <clolson@me.umn.edu>
+To: flight-gear@infoplane.com
+Subject: I'm Flying!!! (Sort of)
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Here's a little update on my flight model progress.  There are
+absolutely no visuals except for numbers being spewed across the
+screen.
+
+However, I positioned myself at 10,000 feet, 0 velocity, and almost
+full throttle.  I accelerated to 559.643 kts (Mach 0.846) before I
+made contact with the ground (at a very steep angle.)  So, the thing
+dives real well.
+
+My next step is to see if I can get it to take off ...
+
+Later,
+
+Curt.
+-- 
+Curtis Olson   E-mail: clolson@me.umn.edu
+Try Linux!     WWW:    http://www.menet.umn.edu/~clolson
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Mon Nov  4 17:15:23 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id RAA03902; Mon, 4 Nov 1996 17:12:52 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from meserv.me.umn.edu (meserv.me.umn.edu [134.84.196.1]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id RAA03898 for <flight-gear@infoplane.com>; Mon, 4 Nov 1996 17:12:45 -0600
+Received: from kenai.me.umn.edu (clolson@kenai.me.umn.edu [134.84.197.42]) by meserv.me.umn.edu (8.8.2/8.6.11) with ESMTP id RAA10748 for <flight-gear@infoplane.com>; Mon, 4 Nov 1996 17:20:04 -0600 (CST)
+Received: (from clolson@localhost) by kenai.me.umn.edu (8.8.2/8.7.3) id RAA05942; Mon, 4 Nov 1996 17:18:41 -0600
+Date: Mon, 4 Nov 1996 17:18:41 -0600
+Message-Id: <199611042318.RAA05942@kenai.me.umn.edu>
+From: "Curtis L. Olson" <clolson@me.umn.edu>
+To: flight-gear@infoplane.com
+Subject: Preliminary Flight Gear Documentation
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+
+Michael Basler (pmb@rz.uni-jena.de) has been kind enough to begin
+writing some Preliminary Flight Gear user documentation.  I have
+placed an html version on the Flight Gear web page at:
+
+    http://www.menet.umn.edu/~clolson/fgfs/fltgear/fltgear.html
+
+A postscript version of this same document is available at:
+
+    http://www.menet.umn.edu/~clolson/fgfs/code/fltgear.ps
+
+Thanks,
+
+Curt.
+-- 
+Curtis Olson   E-mail: clolson@me.umn.edu
+Try Linux!     WWW:    http://www.menet.umn.edu/~clolson
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Mon Nov  4 20:33:59 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id UAA04928; Mon, 4 Nov 1996 20:33:17 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from sledge.mn.org (sledge.infoplane.com [204.120.151.21]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id UAA04924 for <flight-gear@infoplane.com>; Mon, 4 Nov 1996 20:33:11 -0600
+Received: (from curt@localhost) by sledge.mn.org (8.7.6/8.7.3) id UAA01295; Mon, 4 Nov 1996 20:39:52 -0600
+Date: Mon, 4 Nov 1996 20:39:52 -0600
+Message-Id: <199611050239.UAA01295@sledge.mn.org>
+From: "Curtis L. Olson" <curt@sledge.mn.org>
+To: flight-gear@infoplane.com
+Subject: Re: Flight Gear Modules
+In-Reply-To: <199611032258.OAA01409@albert.ssl.berkeley.edu>
+References: <199611030632.AAA01800@sledge.mn.org>
+	<199611032258.OAA01409@albert.ssl.berkeley.edu>
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+
+Hackity hack ...
+
+Well, I think I got something working on the flight model front.  I
+created a flight.so module copying parts out of the other modules to
+wrap around the ACM flight model code.  I added the module init
+function name to static_modules in fgstatdv.h and probably another
+place or two in fgmain.c.  I linked it all together, and everything
+seemed to work ... !!!
+
+All the control surface values are hardwired in right now, so there's
+not much you can do with it other than watch the numbers scroll across
+the screen.  I was dabbling with a little autopilot functionality, but
+that's a long way from being useful.  I was just kind of playing
+around seeing if I could get any sort of stabalized, controlled
+flight.  (It's not immediately obvious how to do this, and my first
+several attempts met with a fair amount of frustration.)  However,
+after a little tutorial from one of my coworkers on simple control
+theory, I think I'm now on the right track.  I at least achieved
+very stable flight (although not stabalized on the correct value.)
+
+I created a "modules" directory, and put my stuff under there for now,
+but I suppose we should talk about how things should be organized.  My
+next step is to see if I can get the ACM hud code going.  I realize
+most civilian planes are lacking a hud, but for now it will be useful
+for seeing what's going on until we can get panels and scenery going.
+
+Talk to y'all later.
+
+Curt.
+-- 
+Curtis Olson   E-mail: curt@sledge.mn.org
+Try Linux!     WWW:    http://www.menet.umn.edu/~clolson
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Tue Nov  5 01:25:35 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id BAA06395; Tue, 5 Nov 1996 01:24:35 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from cnve.rz.uni-jena.de (cnve.rz.uni-jena.de [141.35.1.32]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id BAA06391 for <flight-gear@infoplane.com>; Tue, 5 Nov 1996 01:24:26 -0600
+Received: from pmb.rz.uni-jena.de (pc212.ifk.uni-jena.de [141.35.48.212]) by cnve.rz.uni-jena.de (8.7.5/8.6.10) with SMTP id IAA02094; Tue, 5 Nov 1996 08:31:37 +0100 (MEZ)
+Message-ID: <327EED59.1DC0@rz.uni-jena.de>
+Date: Tue, 05 Nov 1996 08:31:37 +0100
+From: Michael Basler <pmb@rz.uni-jena.de>
+Organization: Friedrich-Schiller-Universitaet Jena
+X-Mailer: Mozilla 3.0 (Win95; I)
+MIME-Version: 1.0
+To: flight-gear@infoplane.com
+Subject: Thanks and Status report
+References: <199610282155.QAA124407@pen1.pen.k12.va.us>
+		<199610282215.OAA00891@albert.ssl.berkeley.edu>
+		<199610292209.QAA14932@kenai.me.umn.edu>
+		<327706DC.3161@rz.uni-jena.de> <199610311552.JAA20300@kenai.me.umn.edu>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Dear Curt,
+
+thanks for making my documentation available on the web and
+announcing it on list. Maybe, I will get more input this way.
+
+Congratulations to "flying". I have the feeling things are going rather
+quick for the developers. Unfortunately those poor people 
+as me (and not only me) have still some very basic problems.
+
+- Positive result: After installing the brand new Slackware96 
+(2 more hours, they changed the X installation routine once more) 
+I got your Linux binary running without installing the additional 
+library. Runs just "out of the box". Very nice.
+I would suggest placing it on your code WWW page along 
+with fgdjg.zip to allow others to try it.
+
+-Problem: I want to 'make' it myself under Linux. Compiling works well.
+However, first the two X libraries (libX11 and linXext) were not found.
+Is it necessary to add the directory manyally to some path or 
+environment variable? I checked and found that the liX11 is a link to
+something like libX11.so.6 (or similar) and similar for libXext.
+Copying the two libs to the source directory and renaming them as libX11
+and libXext resolved the problem. I guess this is a simple problem 
+and I only need a small hint.
+
+-More serious: Now it find the libs and goes on linking. 
+There remain a few references the linker is unable to resolve: In 
+fgloadc at line 119 to 'dlopen', in fgload.c line 132 to 'dlsym' and 
+again in fgload.c line 312 to 'dlclose'. Then the linker stops.
+Any hint? Did you change the code in any way? Do you have an idea?
+
+-When I try to make the DOS executable myself, compiling and linking 
+works (including some warnings) and I really get an executable. 
+However this one crashed wehen running. I only get a black scree and
+Symify gives the following log:
+
+Shutting down Allegro
+Exiting due to signal SIGSEGV
+General Protection Fault at eip=00012cf8
+eax=85f08b04 ebx=00000280 ecx=00135000 edx=00000000 esi=000b3800
+edi=000001e0
+ebp=0007d7dc esp=0007d794 cs=00a7 ds=00af es=00af fs=00bf gs=00bf
+ss=00af
+Call frame traceback EIPs:
+  0x00012cf8   _blit+1184
+  0x0000228e   _copy_display_bitmap_to_screen+38, line 244 of fgscreen.c
+  0x000022d2   _fgscreen_event+10, line 398 of fgscreen.c
+  0x00006928   _send_fgevent+72, line 111 of fgevent.c
+  0x00003ed7   _fgtimer_master+263, line 112 of fgtimer.c
+  0x00006928   _send_fgevent+72, line 111 of fgevent.c
+  0x000019f0   _main_loop+72, line 178 of fgmain.c
+  0x000015f5   _main+101, line 66 of fgmain.c
+  0x00008a77   ___crt1_startup+115
+
+
+Do you have any hint or idea? 
+
+Greetings Michael
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Tue Nov  5 06:47:56 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id GAA08087; Tue, 5 Nov 1996 06:47:22 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from sledge.mn.org (sledge.infoplane.com [204.120.151.21]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id GAA08083 for <flight-gear@infoplane.com>; Tue, 5 Nov 1996 06:47:16 -0600
+Received: (from curt@localhost) by sledge.mn.org (8.7.6/8.7.3) id GAA03533; Tue, 5 Nov 1996 06:54:09 -0600
+Date: Tue, 5 Nov 1996 06:54:09 -0600
+Message-Id: <199611051254.GAA03533@sledge.mn.org>
+From: "Curtis L. Olson" <curt@sledge.mn.org>
+To: flight-gear@infoplane.com
+Subject: Thanks and Status report
+In-Reply-To: <327EED59.1DC0@rz.uni-jena.de>
+References: <199610282155.QAA124407@pen1.pen.k12.va.us>
+	<199610282215.OAA00891@albert.ssl.berkeley.edu>
+	<199610292209.QAA14932@kenai.me.umn.edu>
+	<327706DC.3161@rz.uni-jena.de>
+	<199610311552.JAA20300@kenai.me.umn.edu>
+	<327EED59.1DC0@rz.uni-jena.de>
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Michael Basler writes:
+> Congratulations to "flying". I have the feeling things are going rather
+> quick for the developers. Unfortunately those poor people 
+> as me (and not only me) have still some very basic problems.
+> 
+> - Positive result: After installing the brand new Slackware96 
+> (2 more hours, they changed the X installation routine once more) 
+> I got your Linux binary running without installing the additional 
+> library. Runs just "out of the box". Very nice.
+> I would suggest placing it on your code WWW page along 
+> with fgdjg.zip to allow others to try it.
+
+You should have installed the Debian distribution ... :-) :-) :-)
+
+> -Problem: I want to 'make' it myself under Linux. Compiling works well.
+> However, first the two X libraries (libX11 and linXext) were not found.
+> Is it necessary to add the directory manyally to some path or 
+> environment variable? I checked and found that the liX11 is a link to
+> something like libX11.so.6 (or similar) and similar for libXext.
+> Copying the two libs to the source directory and renaming them as libX11
+> and libXext resolved the problem. I guess this is a simple problem 
+> and I only need a small hint.
+>
+> -More serious: Now it find the libs and goes on linking. 
+> There remain a few references the linker is unable to resolve: In 
+> fgloadc at line 119 to 'dlopen', in fgload.c line 132 to 'dlsym' and 
+> again in fgload.c line 312 to 'dlclose'. Then the linker stops.
+> Any hint? Did you change the code in any way? Do you have an idea?
+
+Both of these problems should be easy to fix.  Rather than copying
+libraries around your system, just add in a "-L/usr/X11R6/lib" before
+the "-lX11 -lXext".  The -L directive tells the compiler where it can
+go searching for libraries.  Finally add a "-ldl" to the end.  This
+will resolve the dlopen dlsym problems.  I've been meaning to send
+these changes to Eric ... maybe he can read this and update
+makefile.linux. ;-) Here is what that section of the makefile should
+look like.
+
+fgmain: $(MAINOBJS)
+	gcc $(CFLAGS) -o fgmain $(MAINOBJS) -lm -L/usr/X11R6/lib -lX11 -lXext -ldl
+
+Hopefully this will help you on the Linux front.
+
+Curt.
+-- 
+Curtis Olson   E-mail: curt@sledge.mn.org
+Try Linux!     WWW:    http://www.menet.umn.edu/~clolson
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Tue Nov  5 10:33:55 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id KAA09235; Tue, 5 Nov 1996 10:33:24 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from albert.ssl.berkeley.edu (albert.ssl.berkeley.edu [128.32.147.187]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id KAA09231 for <flight-gear@infoplane.com>; Tue, 5 Nov 1996 10:33:16 -0600
+Received: (korpela@localhost) by albert.ssl.berkeley.edu (8.7.5/CEA) id IAA25004; Tue, 5 Nov 1996 08:40:29 -0800 (PST)
+From: "Eric J. Korpela" <korpela@ssl.Berkeley.EDU>
+Message-Id: <199611051640.IAA25004@albert.ssl.berkeley.edu>
+Subject: Re: Thanks and Status report
+To: flight-gear@infoplane.com
+Date: Tue, 5 Nov 1996 08:40:29 -0800 (PST)
+In-Reply-To: <327EED59.1DC0@rz.uni-jena.de> from "Michael Basler" at Nov 5, 96 08:31:37 am
+X-Geek-Code: GAT d-(?) H s+:-- g+ p? au--- a- w++ v++(--) C+++ US+++ P- L 3 
+X-Geek-Cont1: E--- N++ K? W M- V -po+(--) Y+ t+ 5++ j? R- G? tv+ b++ D+ B---
+X-Geek-Cont2: e+++>++++ u- h--- f+(?) r+++ n+(---) y@(?) 
+X-PGP-ID: FF0C92DD
+X-PGP-Fingerprint: 96 BD 9D 77 12 FE 04 9B  3E F5 5B 8D 2D D1 4C 6B
+X-Mailer: ELM [version 2.4 PL22]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+
+> Dear Curt,
+
+> thanks for making my documentation available on the web and
+> announcing it on list. Maybe, I will get more input this way.
+
+> -More serious: Now it find the libs and goes on linking. 
+> There remain a few references the linker is unable to resolve: In 
+> fgloadc at line 119 to 'dlopen', in fgload.c line 132 to 'dlsym' and 
+> again in fgload.c line 312 to 'dlclose'. Then the linker stops.
+> Any hint? Did you change the code in any way? Do you have an idea?
+
+The Linux makefile should have a "-ldl" at the end of the gcc line.
+It's optional on sunos, so I keep forgetting to add it.
+
+> -When I try to make the DOS executable myself, compiling and linking 
+> works (including some warnings) and I really get an executable. 
+> However this one crashed wehen running. I only get a black scree and
+> Symify gives the following log:
+> Shutting down Allegro
+> Exiting due to signal SIGSEGV
+
+I'm still trying to figure this one out.  Could you give me the
+chipset name and version of your SVGA card?  Which version of allegro
+do you have?  
+
+> Do you have any hint or idea? 
+
+What would be really great is if you could zip up your version of
+the sources and your DOS executable, then either uuencode and mail
+it to me or put it on an FTP server somewhere.  Hopefully I could step
+through it and see where things go wrong.
+
+--------------------------------------------------------------------------
+
+On the Kernel front:
+
+  fgscreen, fgpalet and fgkbd now include some support for direct
+  frame buffer access under sunos.  I can now run full screen under
+  sunos on a sparcstation with a cg3 frame buffer.  (The palette is
+  a bit screwed up, though.  I think it has something to do with
+  text output to /dev/console resetting the palette.)
+
+  I've got something that compiles under WIN32 (I think) but doesn't
+  function properly.  The problem is I don't have a WIN32 machine to 
+  compile under, nor do I have a WIN32 cross compiler.  I've been
+  compiling using the OPEN32 libraries under OS/2.  Some of the problems
+  I have could be related to incompatibilities between OPEN32 and
+  WIN32.  The problems I'm having are....
+
+    -  The message queue seems to only be accessible from the main
+       thread of the program, not from other threads.  To solve this
+       I've removed multithreading for now.
+
+    -  My palette routine is screwed up.  CreatePalette() always
+       seems to return a null handle.  The problem could be that
+       I don't know what to put into the palVersion field of the
+       logical palette.
+
+    -  Something is probably wrong with my blitting code in fgscreen.c
+       but it could just be that I don't have a palette.
+
+    -  I don't know if my keyboard handling code is working.
+
+  What does work is:
+
+    -  A window of the correct size opens.
+
+    -  The menu is loaded properly.
+
+    -  The exit function in the menu works.
+
+If there are any WIN32 gurus out there, please take a look at the code
+in fgnew.zip
+
+Eric
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Wed Nov  6 01:49:42 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id BAA13894; Wed, 6 Nov 1996 01:46:13 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from cnve.rz.uni-jena.de (cnve.rz.uni-jena.de [141.35.1.32]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id BAA13890 for <flight-gear@infoplane.com>; Wed, 6 Nov 1996 01:46:02 -0600
+Received: from pmb.rz.uni-jena.de (pc212.ifk.uni-jena.de [141.35.48.212]) by cnve.rz.uni-jena.de (8.7.5/8.6.10) with SMTP id IAA05480; Wed, 6 Nov 1996 08:53:21 +0100 (MEZ)
+Message-ID: <328043F1.1FD1@rz.uni-jena.de>
+Date: Wed, 06 Nov 1996 08:53:21 +0100
+From: Michael Basler <pmb@rz.uni-jena.de>
+Organization: Friedrich-Schiller-Universitaet Jena
+X-Mailer: Mozilla 3.0 (Win95; I)
+MIME-Version: 1.0
+To: flight-gear@infoplane.com
+Subject: Re: Thanks and Status report
+References: <199611051640.IAA25004@albert.ssl.berkeley.edu>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Dear Curt, dear Eric,
+
+I think we should go on communicating over the list giving
+other the chance to follow the arguments.
+
+1) Great success: Following the hints I got from Curt yesterday
+I was able to compile successfully under Linux and run the 
+compiled binary. I'm really happy about this. Can (re)-write 
+now the Linux section of my install guide.
+
+2) Concerning DOS: Yes, Eric, I'll send you my compiled binaries
+this evening (have this stuff at home). My Card is an ELSA Winner
+PCI with S3 chip. The allegro is the most recent version I got
+from the allegro home page (will check this in more detail 
+in the evening) and my Compiler is DJGPP 2.0 Following the error 
+messages I have the feeling the crash is just on the point where
+the program switches the video mode. Which version of DJGPP
+do you have, Eric? I have the feeling that D.J. Delorie changed
+something in the video setup; I remember that in the 1.x versions
+there were some explicit video drivers *.gid (or similar) which are 
+missing now. BTW: The precompiled fgdjg.zip runs perfectly on the
+same machine. Further, this is actually the DOS 7.0 of Win95,
+however I can hardly imagine thet this is the reason.
+
+3) Concerning win32 support: I have a Win95 machine with the
+Cygnus version of GCC installed. (Perhaps I should look for
+alterbative options.) Could do some testing if this
+is necessary. The makefile provided for win32 support in the
+latest version of fgnew.zip does not run with the cygnus compiler 
+(was to be expected from having a glance on it).
+One warning: I can do some testing and would really like to
+help with this, but I'm not familiar enough with C to rewrite code
+myself.
+
+4) Matt Pickering is already doing ''something'' on win32 support,
+perhaps you can coordinate with him, especially ask him about
+the compiler he uses.
+
+Greetings Michael
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Thu Nov  7 01:16:58 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id BAA21060; Thu, 7 Nov 1996 01:14:58 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from cnve.rz.uni-jena.de (cnve.rz.uni-jena.de [141.35.1.32]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id BAA21056 for <flight-gear@infoplane.com>; Thu, 7 Nov 1996 01:14:41 -0600
+Received: from pmb.rz.uni-jena.de (pc212.ifk.uni-jena.de [141.35.48.212]) by cnve.rz.uni-jena.de (8.7.5/8.6.10) with SMTP id IAA05629; Thu, 7 Nov 1996 08:22:01 +0100 (MEZ)
+Message-ID: <32818E00.6FBF@rz.uni-jena.de>
+Date: Thu, 07 Nov 1996 08:21:36 +0100
+From: Michael Basler <pmb@rz.uni-jena.de>
+Organization: Friedrich-Schiller-Universitaet Jena
+X-Mailer: Mozilla 3.0 (Win95; I)
+MIME-Version: 1.0
+To: flight-gear@infoplane.com
+Subject: Re: Thanks and Status report
+References: <199611051640.IAA25004@albert.ssl.berkeley.edu>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Dear Eric,
+
+I zipped/uuencoded my whole flightgear compilation
+directory and will send it to you by
+separate mail not to bother the list too much.
+
+However, I made a crusial observation: According to
+the header file allegro.h I'm working with allegro 2.1
+while you are working with allegro2.0 beta. There were
+several more or less substantial changes in between
+from 2.0beta to 2.0 release and again from 2.0 release
+to 2.1, according to the history file. I tried
+"downgrading" to 2.0 but was uanable to find it anywhere on the
+net.
+
+One more sign is the fact that compiling with the allegro.h
+you provide I always get an 'unterminated if' statement.
+I guess, there is no unterminated if, however. In addition, I observed
+that my allegro.h is 24 kByte while yours is considerably
+smaller (9k or 2k, don't remember exctly). For compiling,
+I took my own allegro.h from allegro2.1
+
+I provide two log files for debugging. fltgear.log is the
+log from compilind while fltgear2.log is the symified log from
+running the exe.
+
+Hope this helps.
+
+Greetings Michael
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Fri Nov  8 16:59:13 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id QAA00677; Fri, 8 Nov 1996 16:57:07 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from islay.ssl.berkeley.edu (islay.ssl.berkeley.edu [128.32.147.192]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id QAA00671 for <flight-gear@infoplane.com>; Fri, 8 Nov 1996 16:56:57 -0600
+Received: (korpela@localhost) by islay.ssl.berkeley.edu (8.7.5/CEA) id PAA17784; Fri, 8 Nov 1996 15:04:18 -0800 (PST)
+From: "Eric J. Korpela" <korpela@ssl.Berkeley.EDU>
+Message-Id: <199611082304.PAA17784@islay.ssl.berkeley.edu>
+Subject: Re: Status Report
+To: flight-gear@infoplane.com
+Date: Fri, 8 Nov 1996 15:04:18 -0800 (PST)
+In-Reply-To: <32818E00.6FBF@rz.uni-jena.de> from "Michael Basler" at Nov 7, 96 08:21:36 am
+X-Geek-Code: GAT d-(?) H s+:-- g+ p? au--- a- w++ v++(--) C+++ US+++ P- L 3 
+X-Geek-Cont1: E--- N++ K? W M- V -po+(--) Y+ t+ 5++ j? R- G? tv+ b++ D+ B---
+X-Geek-Cont2: e+++>++++ u- h--- f+(?) r+++ n+(---) y@(?) 
+X-PGP-ID: FF0C92DD
+X-PGP-Fingerprint: 96 BD 9D 77 12 FE 04 9B  3E F5 5B 8D 2D D1 4C 6B
+X-Mailer: ELM [version 2.4 PL22]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+
+The WIN32 version finally displays stuff to the screen.  To
+only problem seems to be how slow BitBlt() is.  (I get less than
+half the frame rate I do under OS/2 DIVE).   There still seems to
+be a Palette problem, though.
+
+I'm on my way to San Diego, so I don't even have time to upload
+the new code, or play with Michael's DJGPP problem.  I'll be
+back Wednesday.
+
+Next the WIN32 keyboard support. 
+
+Eric
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Sat Nov  9 22:38:45 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id WAA09663; Sat, 9 Nov 1996 22:35:39 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from sledge.mn.org (sledge.infoplane.com [204.120.151.21]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id WAA09659 for <flight-gear@infoplane.com>; Sat, 9 Nov 1996 22:35:33 -0600
+Received: (from curt@localhost) by sledge.mn.org (8.7.6/8.7.3) id WAA03259; Sat, 9 Nov 1996 22:42:06 -0600
+Date: Sat, 9 Nov 1996 22:42:06 -0600
+Message-Id: <199611100442.WAA03259@sledge.mn.org>
+From: "Curtis L. Olson" <curt@sledge.mn.org>
+To: flight-gear@infoplane.com
+Subject: Arc drawing subroutine.
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Eric,
+
+I am writing to ask you if you would be willing to add an arc
+drawing routine to fggrx.[hc]  I need this for the HUD code I'm
+working on.
+
+I have some sample code to do this (borrowed again from acm.)  It
+looks like in this code, angles are in the range of (0*64 - 359*64).
+I think (x,y) is the center of the ellipse.  width and height define
+the bounding box of the ellipse.  angle1 and angle2 are the starting
+and ending angles for which to draw the arc (or portion of the
+ellipse.)  Feel free to munge it up however you like and
+flight-gear-ize it.
+
+
+#define TICKtoRAD(a)    (a * M_PI / (180.0 * 64.0))
+#define INCR            (30 * 64)
+
+void VDrawArc (int x, int y, int width, int height, int angle1, 
+	       int angle2, int color)
+{
+        register double w, h, xc, yc;
+        register int    incr, x1, x2, y1, y2;
+
+        w = width / 2.0;
+        h = height / 2.0;
+        xc = x + w;
+        yc = y + h;
+
+        if (angle2 < 0) {
+                incr = - INCR;
+                angle2 = - angle2;
+        } else {
+                incr = INCR;
+	}
+
+        if (angle2 > 360*64) {
+                angle2 = 360*64;
+	}
+
+        x1 = xc + (w * cos(TICKtoRAD(angle1)));
+        y1 = yc - (h * sin(TICKtoRAD(angle1)));
+
+        while (angle2 != 0) {
+                angle1 += incr;
+                angle2 -= INCR;
+                if (angle2 < 0) {
+                        angle1 -= angle2;
+                        angle2 = 0;
+                }
+                x2 = xc + (w * cos(TICKtoRAD(angle1)));
+                y2 = yc - (h * sin(TICKtoRAD(angle1)));
+                DrawLine (x1, y1, x2, y2);
+                x1 = x2;
+                y1 = y2;
+        }
+}
+
+
+Thanks!
+
+Curt.
+-- 
+Curtis Olson   E-mail: curt@sledge.mn.org
+Try Linux!     WWW:    http://www.menet.umn.edu/~clolson
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Tue Nov 12 00:28:20 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id AAA13495; Tue, 12 Nov 1996 00:26:15 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from cnve.rz.uni-jena.de (cnve.rz.uni-jena.de [141.35.1.32]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id AAA13491 for <flight-gear@infoplane.com>; Tue, 12 Nov 1996 00:26:06 -0600
+Received: from pmb.rz.uni-jena.de (pc212.ifk.uni-jena.de [141.35.48.212]) by cnve.rz.uni-jena.de (8.7.5/8.6.10) with SMTP id HAA22467; Tue, 12 Nov 1996 07:33:36 +0100 (MEZ)
+Message-ID: <32881A41.2A3@rz.uni-jena.de>
+Date: Tue, 12 Nov 1996 07:33:37 +0100
+From: Michael Basler <pmb@rz.uni-jena.de>
+Organization: Friedrich-Schiller-Universitaet Jena
+X-Mailer: Mozilla 3.0 (Win95; I)
+MIME-Version: 1.0
+To: flight-gear@infoplane.com
+Subject: DirectX etc.
+References: <199611100442.WAA03259@sledge.mn.org>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Dear Eric, dear Curt, dear..
+
+first one remark on the makefiles.
+In a private mail, Curt made the 
+suggestion of perhaps trying to look for 
+a better solution substiting the
+different makefiles. I would 
+support this idea prefering some sort
+of Gnu autoconf or a similar tool.
+Several years ago I remember my struggle 
+with compiling SLIRP 
+(full internet via ASCII terminal 
+console, huh...). I had a lot of problems 
+adapting the code to my HPUX or AIX at 
+that time. After they changed to autoconf 
+all went very smoothly. I remember it 
+checked automatically the libraries installed, 
+the Unix version etc.
+If I recall right ACM has a similar
+routine. Don't know if it's general enough
+to cover all the systems we want to include,
+though.
+
+Of course there's nothing for free:
+I think, however, it's simpler
+to switch to this procedure at the very 
+beginning and debugging this one with 
+only few code than doing it later.
+
+On another point:
+Eric pointed out that his win32
+version (For me still unclear
+how to build natively under win95) 
+is substantially slower than, for instance, 
+the OS/2 version. I can well imagine this.
+Pure windows (incl.95) is always slow.
+Wouldn't it be appropriate for a graphics intense
+project as this to make use of the DirectX API?
+(Nearly) all commercial win95 game developers
+make use of this. The corresponding SDK is freely 
+available from MS, although I don't know how 
+difficult it's to use.
+
+The runtime libraries of the most recent version
+directX3 available from
+
+http://www.microsoft.com/gamesdev/gsdk/directx.zip
+
+are "only" 6MB (freely available from MS
+as well). The development kit at
+
+http://www.microsoft.com/msdownload/directx3.htm
+
+is araund 80MB(!), if I recall right.
+Includes 'some' documentation.
+To my best knowedge (as a non-developer) this is
+the de-facto standard in win95 games programming
+(including Fs95). The point is, that it leaves only
+a very thin layer between your code and the hardware.
+If I recall right, it even works on NT4.0.
+
+Greetings Michael Basler (pmb@rz.uni-jena.de)
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Wed Nov 13 07:56:53 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id HAA23054; Wed, 13 Nov 1996 07:53:57 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from cnve.rz.uni-jena.de (cnve.rz.uni-jena.de [141.35.1.32]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id HAA23050 for <flight-gear@infoplane.com>; Wed, 13 Nov 1996 07:53:43 -0600
+Received: from pmb.rz.uni-jena.de (pc212.ifk.uni-jena.de [141.35.48.212]) by cnve.rz.uni-jena.de (8.7.5/8.6.10) with SMTP id PAA10831; Wed, 13 Nov 1996 15:00:40 +0100 (MEZ)
+Message-ID: <3289D492.78BB@rz.uni-jena.de>
+Date: Wed, 13 Nov 1996 15:00:50 +0100
+From: Michael Basler <pmb@rz.uni-jena.de>
+Organization: Friedrich-Schiller-Universitaet Jena
+X-Mailer: Mozilla 3.0 (Win95; I)
+MIME-Version: 1.0
+To: flight-gear@infoplane.com
+Subject: Fly 8
+References: <199611100442.WAA03259@sledge.mn.org>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Dear Group,
+
+just by chance I detected another Flight Simulator 
+on the net which is freely distributed under the
+terms of the GPL. Sources are included. It's
+supposed to support DOS/WIN(G) as well as Linux and
+some others systems. Name is Fly-8, author is
+Eyal Lebedinsky.
+
+Should be interesting for our project.
+
+I remember I tested it some time
+(years?) ago, was not overwhelming at that time,
+but might me better now (recent version is more than a year 
+old, though). In any case, the sources might
+be interesting for you developers (do you hear, Curt...?)
+
+Address is:
+
+ftp://ftp.canberra.edu.au/pub/ise/eyal/fly8/released/
+
+Please, excuse me, if this was detected before
+and I've missed this.
+
+Greetings Michael Basler (pmb@rz.uni-jena.de)
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Wed Nov 13 13:47:42 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id NAA24887; Wed, 13 Nov 1996 13:47:16 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from albert.ssl.berkeley.edu (albert.ssl.berkeley.edu [128.32.147.187]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id NAA24880 for <flight-gear@infoplane.com>; Wed, 13 Nov 1996 13:47:05 -0600
+Received: (korpela@localhost) by albert.ssl.berkeley.edu (8.7.5/CEA) id LAA01185; Wed, 13 Nov 1996 11:54:22 -0800 (PST)
+From: "Eric J. Korpela" <korpela@ssl.Berkeley.EDU>
+Message-Id: <199611131954.LAA01185@albert.ssl.berkeley.edu>
+Subject: Reply to lots of stuff.
+To: flight-gear@infoplane.com
+Date: Wed, 13 Nov 1996 11:54:22 -0800 (PST)
+In-Reply-To: <3289D492.78BB@rz.uni-jena.de> from "Michael Basler" at Nov 13, 96 03:00:50 pm
+X-Geek-Code: GAT d-(?) H s+:-- g+ p? au--- a- w++ v++(--) C+++ US+++ P- L 3 
+X-Geek-Cont1: E--- N++ K? W M- V -po+(--) Y+ t+ 5++ j? R- G? tv+ b++ D+ B---
+X-Geek-Cont2: e+++>++++ u- h--- f+(?) r+++ n+(---) y@(?) 
+X-PGP-ID: FF0C92DD
+X-PGP-Fingerprint: 96 BD 9D 77 12 FE 04 9B  3E F5 5B 8D 2D D1 4C 6B
+X-Mailer: ELM [version 2.4 PL22]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+
+Hi Guys,
+
+I'm back from San Diego and hoping to get back to work on the code soon.  
+Here are some responses to the messages that arrived in my absence.
+
+Michael wrote:
+> In a private mail, Curt made the suggestion of perhaps trying to look for 
+> a better solution substiting the different makefiles. I would 
+> support this idea prefering some sort of Gnu autoconf or a similar tool.
+
+I agree, but know little of the use of autoconf.  The multiple makefiles
+option is less than optimal.  Is someone out there willing to check out
+autoconf and send back a report of what needs to be done to support it?
+I've noticed that most configuration programs are scripts which is problematic
+for systems without /bin/sh,/bin/csh and no job control.
+
+Michael wrote:
+>  Wouldn't it be appropriate for a graphics intense project as this to 
+>  make use of the DirectX API?  (Nearly) all commercial win95 game developers
+>  make use of this. The corresponding SDK is freely available from MS, 
+>  although I don't know how difficult it's to use.
+
+I think we should support portions of DirectX, but that the base WIN32
+routines also be available.  As far as I know DirectX is not supported
+on NT.  (My past experiences with NT give me the feeling that direct
+access to the video subsystem will not be supported.) I'll attempt to 
+add code that determines whether the WIN-G API is available at run time.
+
+Michael wrote:
+>  just by chance I detected another Flight Simulator on the net which 
+>  is freely distributed under the terms of the GPL. Sources are included. 
+>  It's supposed to support DOS/WIN(G) as well as Linux and some others 
+>  systems. Name is Fly-8, author is Eyal Lebedinsky.
+
+I've looked at it before, but was unimpressed.  I'll take a look at the
+source, though.  Just to see how the WIN-G API is used in it.
+
+
+Curt wrote:
+>  I am writing to ask you if you would be willing to add an arc
+>  drawing routine to fggrx.[hc]  I need this for the HUD code I'm
+>  working on.
+
+It's on my to-do list...  :)
+
+Eric
+
+
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Wed Nov 13 14:55:12 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id OAA25247; Wed, 13 Nov 1996 14:55:10 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from islay.ssl.berkeley.edu (islay.ssl.berkeley.edu [128.32.147.192]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id OAA25243 for <flight-gear@infoplane.com>; Wed, 13 Nov 1996 14:55:02 -0600
+Received: (korpela@localhost) by islay.ssl.berkeley.edu (8.7.5/CEA) id NAA03296; Wed, 13 Nov 1996 13:02:32 -0800 (PST)
+From: "Eric J. Korpela" <korpela@ssl.Berkeley.EDU>
+Message-Id: <199611132102.NAA03296@islay.ssl.berkeley.edu>
+Subject: Re: Reply to lots of stuff.f
+To: flight-gear@infoplane.com
+Date: Wed, 13 Nov 1996 13:02:31 -0800 (PST)
+In-Reply-To: <328A362F.339F@rz.uni-jena.de> from "Michael Basler" at Nov 13, 96 09:57:19 pm
+X-Geek-Code: GAT d-(?) H s+:-- g+ p? au--- a- w++ v++(--) C+++ US+++ P- L 3 
+X-Geek-Cont1: E--- N++ K? W M- V -po+(--) Y+ t+ 5++ j? R- G? tv+ b++ D+ B---
+X-Geek-Cont2: e+++>++++ u- h--- f+(?) r+++ n+(---) y@(?) 
+X-PGP-ID: FF0C92DD
+X-PGP-Fingerprint: 96 BD 9D 77 12 FE 04 9B  3E F5 5B 8D 2D D1 4C 6B
+X-Mailer: ELM [version 2.4 PL22]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+
+> only a short remark: If I'm not completely wrong
+> DirectX IS supported by the release version of NT4.0
+
+I stand corrected.  Does anyone here know what the relationship
+between DirectDraw and WinG is?  Is DirectDraw an object oriented
+interface to WinG, or has WinG been abandoned in favor of DirectDraw?
+
+Eric
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Wed Nov 13 14:50:16 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id OAA25213; Wed, 13 Nov 1996 14:50:03 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from cnve.rz.uni-jena.de (cnve.rz.uni-jena.de [141.35.1.32]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id OAA25207 for <flight-gear@infoplane.com>; Wed, 13 Nov 1996 14:49:49 -0600
+Received: from pmb.rz.uni-jena.de (wm2.rz.uni-jena.de [141.35.1.202]) by cnve.rz.uni-jena.de (8.7.5/8.6.10) with SMTP id VAA24633; Wed, 13 Nov 1996 21:57:22 +0100 (MEZ)
+Message-ID: <328A362F.339F@rz.uni-jena.de>
+Date: Wed, 13 Nov 1996 21:57:19 +0100
+From: Michael Basler <pmb@rz.uni-jena.de>
+Organization: Uni Jena
+X-Mailer: Mozilla 3.0 (Win95; I)
+MIME-Version: 1.0
+To: flight-gear@infoplane.com
+Subject: Re: Reply to lots of stuff.
+References: <199611131954.LAA01185@albert.ssl.berkeley.edu>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Dear Eric,
+
+only a short remark: If I'm not completely wrong
+DirectX IS supported by the release version of NT4.0
+I've heared that FSFW95 running on NT4.0 can be configured
+to make use of it.
+
+Greetings Michael (pmb@rz.uni-jena.de)
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Wed Nov 13 19:00:37 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id TAA26485; Wed, 13 Nov 1996 19:00:00 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from arl-img-3.compuserve.com (arl-img-3.compuserve.com [149.174.217.133]) by calvin.infoplane.com (8.7.1/8.7.1) with SMTP id SAA26481 for <flight-gear@infoplane.com>; Wed, 13 Nov 1996 18:59:52 -0600
+Received: by arl-img-3.compuserve.com (8.6.10/5.950515)
+	id UAA03186; Wed, 13 Nov 1996 20:07:27 -0500
+Date: 13 Nov 96 20:06:46 EST
+From: GEORGE F WATSON <71360.2455@compuserve.com>
+To: <flight-gear@infoplane.com>
+Subject: Reply to: Re: Reply to lots of stuff.f
+Message-ID: <961114010645_71360.2455_EHB91-3@CompuServe.COM>
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+ >> Reply-To: flight-gear@infoplane.com
+
+
+ > only a short remark: If I'm not completely wrong
+ > DirectX IS supported by the release version of NT4.0
+
+ I stand corrected.  Does anyone here know what the relationship
+ between DirectDraw and WinG is?  Is DirectDraw an object oriented
+ interface to WinG, or has WinG been abandoned in favor of DirectDraw?<<
+
+
+ Yes WIN G was the earlier technology. Direct Draw has replaced it. WING used
+to run on win 3.1 with the wins extensions. Direct Draw is WIN95 only.
+
+
+Regards,
+
+George Watson  Warbirds "HOLO"
+
+Subscribe to Computer Pilot Magazine! 1-800-336-0068
+52 full color pages of detailed content and graphics with an Australian flavor.
+
+
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Wed Nov 13 21:10:42 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id VAA27153; Wed, 13 Nov 1996 21:10:24 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from mtigwc01.worldnet.att.net (ns.worldnet.att.net [204.127.129.1]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id VAA27149 for <flight-gear@infoplane.com>; Wed, 13 Nov 1996 21:10:16 -0600
+Message-Id: <199611140310.VAA27149@calvin.infoplane.com>
+Received: from Pdeanc ([207.147.140.204]) by mtigwc01.worldnet.att.net
+          (post.office MTA v2.0 0613 ) with ESMTP id AAA12542
+          for <flight-gear@infoplane.com>; Thu, 14 Nov 1996 03:17:29 +0000
+From: "Dean" <dean@intercons.com>
+To: <flight-gear@infoplane.com>
+Subject: Re: Reply to lots of stuff.f
+Date: Wed, 13 Nov 1996 19:11:25 -0800
+X-MSMail-Priority: Normal
+X-Priority: 3
+X-Mailer: Microsoft Internet Mail 4.70.1155
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+AFAIK, WING has been abandoned in favor of DirectDraw and the DirectX
+family. If I recall correctly WING still used the GDI and would not be
+effective for what we are trying to accomplish. DirectX is targeted towards
+Win32 and will eventually support NT, I believe NT4.0 has DirectDraw
+support for most video cards, but not Direct3D yet.
+
+I also sent out a message a week or 2 ago concerning a 32-bit graphics lib
+developed by Scitech Software (developers of UNIVBE). It is free for
+non-commercial use and supports all SVGA modes in a dos extender or Win32
+environment. Available for download from www.scitechsoft.com. Look for the
+SVGA Kit v6.0.
+
+I have it on my PC, but haven't had the time recently to play with it. It
+has libs for Borland and Watcom in addition to MS Visual C++, so there is a
+remote possibility it could be ported to other compilers as well.
+
+Dean
+----------
+> From: Eric J. Korpela <korpela@ssl.Berkeley.EDU>
+> To: flight-gear@infoplane.com
+> Subject: Re: Reply to lots of stuff.f
+> Date: Wednesday, November 13, 1996 1:02 PM
+> 
+> 
+> > only a short remark: If I'm not completely wrong
+> > DirectX IS supported by the release version of NT4.0
+> 
+> I stand corrected.  Does anyone here know what the relationship
+> between DirectDraw and WinG is?  Is DirectDraw an object oriented
+> interface to WinG, or has WinG been abandoned in favor of DirectDraw?
+> 
+> Eric
+> -------------------------------------
+> Please visit the Flight Gear web page:
+> http://www.menet.umn.edu/~clolson/fgfs/
+> To unsubscribe:  send email to "majordomo@infoplane.com"
+> with a message body of "unsubscribe flight-gear"
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Thu Nov 14 11:07:05 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id LAA31389; Thu, 14 Nov 1996 11:02:33 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from albert.ssl.berkeley.edu (albert.ssl.berkeley.edu [128.32.147.187]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id LAA31385 for <flight-gear@infoplane.com>; Thu, 14 Nov 1996 11:02:23 -0600
+Received: (korpela@localhost) by albert.ssl.berkeley.edu (8.7.5/CEA) id JAA11043; Thu, 14 Nov 1996 09:09:55 -0800 (PST)
+From: "Eric J. Korpela" <korpela@ssl.Berkeley.EDU>
+Message-Id: <199611141709.JAA11043@albert.ssl.berkeley.edu>
+Subject: Re: Reply to: Re: Reply to lots of stuff.f
+To: flight-gear@infoplane.com
+Date: Thu, 14 Nov 1996 09:09:55 -0800 (PST)
+In-Reply-To: <961114010645_71360.2455_EHB91-3@CompuServe.COM> from "GEORGE F WATSON" at Nov 13, 96 08:06:46 pm
+X-Geek-Code: GAT d-(?) H s+:-- g+ p? au--- a- w++ v++(--) C+++ US+++ P- L 3 
+X-Geek-Cont1: E--- N++ K? W M- V -po+(--) Y+ t+ 5++ j? R- G? tv+ b++ D+ B---
+X-Geek-Cont2: e+++>++++ u- h--- f+(?) r+++ n+(---) y@(?) 
+X-PGP-ID: FF0C92DD
+X-PGP-Fingerprint: 96 BD 9D 77 12 FE 04 9B  3E F5 5B 8D 2D D1 4C 6B
+X-Mailer: ELM [version 2.4 PL22]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+
+>  Yes WIN G was the earlier technology. Direct Draw has replaced it. WING used
+> to run on win 3.1 with the wins extensions. Direct Draw is WIN95 only.
+
+How unfortunate.  DirectDraw has such a horrible MFCified interface.
+
+Eric
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Thu Nov 14 16:43:25 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id QAA00370; Thu, 14 Nov 1996 16:43:01 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from cnve.rz.uni-jena.de (cnve.rz.uni-jena.de [141.35.1.32]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id QAA00364 for <flight-gear@infoplane.com>; Thu, 14 Nov 1996 16:42:53 -0600
+Received: from pmb.rz.uni-jena.de (wm4.rz.uni-jena.de [141.35.1.204]) by cnve.rz.uni-jena.de (8.7.5/8.6.10) with SMTP id XAA00875; Thu, 14 Nov 1996 23:50:28 +0100 (MEZ)
+Message-ID: <328BA232.13A@rz.uni-jena.de>
+Date: Thu, 14 Nov 1996 23:50:26 +0100
+From: Michael Basler <pmb@rz.uni-jena.de>
+Organization: Uni Jena
+X-Mailer: Mozilla 3.0 (Win95; I)
+MIME-Version: 1.0
+To: flight-gear@infoplane.com
+Subject: Computer Pilot Magazine
+References: <199611141709.JAA11043@albert.ssl.berkeley.edu>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Dear group,
+
+just got my latest issue (6/96) of the Computer Pilot
+Magazine today. There is a regular column on net
+ressources.
+
+Only to mention, this time there is a figure
+showing the Flight Gear home page set up by Curt
+and a short (correct) description of the project.
+
+Congratulations!
+
+Greetings Michael Basler (pmb@rz.uni-jena.de)
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Fri Nov 15 00:16:48 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id AAA02746; Fri, 15 Nov 1996 00:16:37 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from cnve.rz.uni-jena.de (cnve.rz.uni-jena.de [141.35.1.32]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id AAA02742 for <flight-gear@infoplane.com>; Fri, 15 Nov 1996 00:16:29 -0600
+Received: from pmb.rz.uni-jena.de (pc212.ifk.uni-jena.de [141.35.48.212]) by cnve.rz.uni-jena.de (8.7.5/8.6.10) with SMTP id HAA04707; Fri, 15 Nov 1996 07:24:06 +0100 (MEZ)
+Message-ID: <328C0C84.3C95@rz.uni-jena.de>
+Date: Thu, 14 Nov 1996 23:24:04 -0700
+From: Michael Basler <pmb@rz.uni-jena.de>
+Organization: Friedrich-Schiller-Universitaet Jena
+X-Mailer: Mozilla 3.0 (Win95; I)
+MIME-Version: 1.0
+To: flight-gear@infoplane.com
+Subject: DOS compiling problems
+References: <199611141709.JAA11043@albert.ssl.berkeley.edu>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Dear Eric,
+
+to push tings a little further, can you send me
+the liballegro you use (I guess 2.0 beta), best
+would be the whole packe allowing me to build
+it this way myself. I could check then if
+my DJGPP compiling problems are really caused
+by liballegro, as I guess.
+
+Thanks Michael Basler (pmb@rz.uni-jena.de)
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Fri Nov 15 16:16:28 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id QAA07618; Fri, 15 Nov 1996 16:14:39 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from smtp2.erols.com (smtp2.erols.com [205.252.116.102]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id QAA07611 for <flight-gear@infoplane.com>; Fri, 15 Nov 1996 16:14:21 -0600
+Received: from DMURR (rcm-as2s01.erols.com [205.177.146.65]) by smtp2.erols.com (8.7.5/8.7.3) with SMTP id RAA18023; Fri, 15 Nov 1996 17:21:57 -0500 (EST)
+Date: Fri, 15 Nov 1996 17:21:57 -0500 (EST)
+Message-Id: <1.5.4.16.19961115172333.499fca60@pop.erols.com>
+X-Sender: fsnews@pop.erols.com
+X-Mailer: Windows Eudora Light Version 1.5.4 (16)
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+To: flight-gear@infoplane.com
+From: David Murr <fsnews@erols.com>
+Subject: Flight Gear IRC Channel
+Cc: flight-sim@grove.iup.edu, dmurr@pen.k12.va.us, stotzerm@ix.netcom.com
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Hi guys...
+
+Just wanted you to know that I've registered the following channels with DALnet:
+
+#fsnews (FSNews, stop in on Saturday nights @ 10pm EST... flight sim news)
+#flight-gear (Flight Gear Flight Simulator, developers chat, etc.)
+
+I am currently the only op in these channels, however, if anyone is
+interested in being an op, especially for #flight-gear, please let me know
+(reply to: dmurr@pen.k12.va.us).
+
+Thanks and regards,
+Dave Murr
+FGFS & FSNews
+--
+    _________  __              |David Murr - Senior Editor, FSNews  
+   / __/ __/ |/ /__ _    _____ |http://www.erols.com/fsnews/
+  / _/_\ \/    / -_) |/|/ (_-< |^^^ Please note our new URL! ^^^
+ /_/ /___/_/|_/\__/|__,__/___/ |"Taking Virtual Aviation to New Heights!"
+
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Sat Nov 16 16:00:54 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id PAA14826; Sat, 16 Nov 1996 15:59:02 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from albert.ssl.berkeley.edu (albert.ssl.berkeley.edu [128.32.147.187]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id PAA14820 for <flight-gear@infoplane.com>; Sat, 16 Nov 1996 15:58:48 -0600
+Received: (korpela@localhost) by albert.ssl.berkeley.edu (8.7.5/CEA) id OAA09534; Sat, 16 Nov 1996 14:06:21 -0800 (PST)
+From: "Eric J. Korpela" <korpela@ssl.Berkeley.EDU>
+Message-Id: <199611162206.OAA09534@albert.ssl.berkeley.edu>
+Subject: Updated fgnew.zip 11/16
+To: flight-gear@infoplane.com
+Date: Sat, 16 Nov 1996 14:06:21 -0800 (PST)
+In-Reply-To: <1.5.4.16.19961115172333.499fca60@pop.erols.com> from "David Murr" at Nov 15, 96 05:21:57 pm
+X-Geek-Code: GAT d-(?) H s+:-- g+ p? au--- a- w++ v++(--) C+++ US+++ P- L 3 
+X-Geek-Cont1: E--- N++ K? W M- V -po+(--) Y+ t+ 5++ j? R- G? tv+ b++ D+ B---
+X-Geek-Cont2: e+++>++++ u- h--- f+(?) r+++ n+(---) y@(?) 
+X-PGP-ID: FF0C92DD
+X-PGP-Fingerprint: 96 BD 9D 77 12 FE 04 9B  3E F5 5B 8D 2D D1 4C 6B
+X-Mailer: ELM [version 2.4 PL22]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+I've put an updated fgnew.zip on my web site.  This new version now
+should support Allegro 2.1.  I think I was able to make it much less
+allegro version dependant.
+
+Someone with GCC for Win32 may want to compile it with WIN32 defined.  
+(I took a guess at a win32 makefile, but since I don't have a compiler, 
+it's just a guess.)  If you do compile it and the compile bombs, please 
+send me the compiler error messages.  If it doesn't bomb during compile, 
+but does during the run, please debug it if possible.
+
+It's also able to compile under RSXWDK (16 bit version, not RSXNT)
+but it doesn't run.  Given RSX's lack of debugging support, there's
+not much I can do to find out what's wrong.  It may be gagging on
+the remaining printf and fprintf statements.  (I also get a lot of
+warnings for RC.EXE that could have something to do with it.)
+
+Support for the ALT keys is missing from both the allegro and Win32
+versions.  It's not very high on my priority list right now.
+
+The next things on my list:
+  Circles, Arcs and elipses for Curt.
+  Dialog Boxes.
+  Testing the palette code.
+  Exporting static symbols.
+  Documenting the API
+  WIN32 DirectDraw.
+  WIN32 threading.
+  Macintosh port?
+  Sound?
+  24 bit color?
+
+If anyone wants to donate a copy of Windows 95 or NT to the effort,
+it would greatly help.  (Or if anyone wants to take over the WIN32
+effort.)
+
+Volunteers for any of the above would be graciously accepted.
+
+Eric
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Sun Nov 17 02:25:44 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id CAA17965; Sun, 17 Nov 1996 02:24:28 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from cnve.rz.uni-jena.de (cnve.rz.uni-jena.de [141.35.1.32]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id CAA17961 for <flight-gear@infoplane.com>; Sun, 17 Nov 1996 02:24:18 -0600
+Received: from pmb.rz.uni-jena.de (wm7.rz.uni-jena.de [141.35.1.207]) by cnve.rz.uni-jena.de (8.7.5/8.6.10) with SMTP id JAA14121; Sun, 17 Nov 1996 09:31:37 +0100 (MEZ)
+Message-ID: <328ECD67.2D55@rz.uni-jena.de>
+Date: Sun, 17 Nov 1996 09:31:35 +0100
+From: Michael Basler <pmb@rz.uni-jena.de>
+Organization: Uni Jena
+X-Mailer: Mozilla 3.0 (Win95; I)
+MIME-Version: 1.0
+To: flight-gear@infoplane.com
+Subject: Re: Updated fgnew.zip 11/16
+References: <199611162206.OAA09534@albert.ssl.berkeley.edu>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Dear Eric, Dear Group,
+
+glad to hear that you're busy again with the code.
+I will test it, of course, with allegro 2.1
+and send a report.
+
+Concerning win32: My true question to anyone on this
+list is: Which one is the "standard" GCC for win32?
+A search gave me only the cygnus compiler. This one is
+GCC and it is win32, however it is a little bit tricky 
+because it relies on a the whole bundle of tools from
+the cygnus project doing "some kind of UNIX-emulation"
+under win95/winnt. For instance: you have to install
+a sh or a bash for making it work etc. But, if there
+is nothing else out I will try to get the beast working;
+initially after some final trouble (not code but compiler 
+specific) I gave up.
+
+Concerning windows95. I would say: I'm not a friend of 
+large funds with a huge amount of management. But if 
+Eric will go on working on the project I would be willing 
+to spend some money on a win95 for him. At the moment, 
+the price for an update (he should find an old win3.1 
+somewhere) in Germany is (transferred to $) around 
+120$. From my experience, I guess, it's cheaper in 
+the states. I would be willing to contribute 30-40$.
+Anyone out there wanting to share the rest?  In case
+of positive answer I would simply take the money
+in cash, put it in an envelope and snail mail it
+to Eric. Did this several times to the states
+without any trouble.
+
+Greetings Michael (pmb@rz.uni-jena.de)
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Sun Nov 17 02:35:24 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id CAA18059; Sun, 17 Nov 1996 02:35:21 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from cnve.rz.uni-jena.de (cnve.rz.uni-jena.de [141.35.1.32]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id CAA18052 for <flight-gear@infoplane.com>; Sun, 17 Nov 1996 02:35:12 -0600
+Received: from pmb.rz.uni-jena.de (wm6.rz.uni-jena.de [141.35.1.206]) by cnve.rz.uni-jena.de (8.7.5/8.6.10) with SMTP id JAA14188; Sun, 17 Nov 1996 09:42:51 +0100 (MEZ)
+Message-ID: <328ED00A.43FA@rz.uni-jena.de>
+Date: Sun, 17 Nov 1996 09:42:50 +0100
+From: Michael Basler <pmb@rz.uni-jena.de>
+Organization: Uni Jena
+X-Mailer: Mozilla 3.0 (Win95; I)
+MIME-Version: 1.0
+To: flight-gear@infoplane.com
+Subject: Re: Updated fgnew.zip 11/16
+References: <199611162206.OAA09534@albert.ssl.berkeley.edu>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Dear Eric,
+
+my CONGRATULATIONS. Flight gear compiles
+and runs with allegro 2.1 now. 
+Still some error messages during
+compiling, but it runs. Good work.
+
+One comment: Most time I compile and run
+under win95 dos7.
+
+Greetings Michael Basler (pmb@rz.uni-jena.de)
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Mon Nov 18 11:15:51 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id LAA16643; Mon, 18 Nov 1996 11:13:24 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from islay.ssl.berkeley.edu (islay.ssl.berkeley.edu [128.32.147.192]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id LAA16639 for <flight-gear@infoplane.com>; Mon, 18 Nov 1996 11:13:13 -0600
+Received: (korpela@localhost) by islay.ssl.berkeley.edu (8.7.5/CEA) id JAA15331; Mon, 18 Nov 1996 09:20:41 -0800 (PST)
+From: "Eric J. Korpela" <korpela@ssl.Berkeley.EDU>
+Message-Id: <199611181720.JAA15331@islay.ssl.berkeley.edu>
+Subject: Re: Updated fgnew.zip 11/16
+To: flight-gear@infoplane.com
+Date: Mon, 18 Nov 1996 09:20:40 -0800 (PST)
+In-Reply-To: <328ECD67.2D55@rz.uni-jena.de> from "Michael Basler" at Nov 17, 96 09:31:35 am
+X-Geek-Code: GAT d-(?) H s+:-- g+ p? au--- a- w++ v++(--) C+++ US+++ P- L 3 
+X-Geek-Cont1: E--- N++ K? W M- V -po+(--) Y+ t+ 5++ j? R- G? tv+ b++ D+ B---
+X-Geek-Cont2: e+++>++++ u- h--- f+(?) r+++ n+(---) y@(?) 
+X-PGP-ID: FF0C92DD
+X-PGP-Fingerprint: 96 BD 9D 77 12 FE 04 9B  3E F5 5B 8D 2D D1 4C 6B
+X-Mailer: ELM [version 2.4 PL22]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+
+> Dear Eric, Dear Group,
+
+> glad to hear that you're busy again with the code.
+> I will test it, of course, with allegro 2.1
+> and send a report.
+
+> Concerning win32: My true question to anyone on this
+> list is: Which one is the "standard" GCC for win32?
+
+I've had this same question.  I've downloaded RSXNT, but
+I can't view the help file.  (It requires the Win 95 or NT
+version of winhlp32,  my win32s (3.0) version doesn't work.)
+It appears that it would work in compiling the source, but 
+I can't test it.
+
+> A search gave me only the cygnus compiler. This one is
+> GCC and it is win32, however it is a little bit tricky 
+> because it relies on a the whole bundle of tools from
+> the cygnus project doing "some kind of UNIX-emulation"
+> under win95/winnt. 
+
+I think there is (or eventually will be) a way to use the cygnus
+compiler without having to use the cygwin32 UNIX emulation.
+I'll have to look into it further.  
+
+I've managed to get my hands on a used copy of Borland C++ 4.0
+and I'll try in the next couple of days to build a Win32s version
+under it.  It's already pointed out some fallacies in my programming.
+(I was doing pointer addition with void pointers, which works under
+GCC but is not ANSI)
+
+>                         (he should find an old win3.1 
+> somewhere) 
+>                        I would be willing to contribute 30-40$.
+
+I have win3.1, so that's not a problem.  Now that I have the Borland
+compiler I may not need Win95 (until I dig into the DirectX stuff).  
+I'll let you know in the next week or so.
+
+Eric
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Tue Nov 19 00:57:59 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id AAA21218; Tue, 19 Nov 1996 00:57:15 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from cnve.rz.uni-jena.de (cnve.rz.uni-jena.de [141.35.1.32]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id AAA21214 for <flight-gear@infoplane.com>; Tue, 19 Nov 1996 00:57:07 -0600
+Received: from pmb.rz.uni-jena.de (pc212.ifk.uni-jena.de [141.35.48.212]) by cnve.rz.uni-jena.de (8.7.5/8.6.10) with SMTP id IAA25645; Tue, 19 Nov 1996 08:04:29 +0100 (MEZ)
+Message-ID: <32915BFB.1AF9@rz.uni-jena.de>
+Date: Tue, 19 Nov 1996 08:04:28 +0100
+From: Michael Basler <pmb@rz.uni-jena.de>
+Organization: Friedrich-Schiller-Universitaet Jena
+X-Mailer: Mozilla 3.0 (Win95; I)
+MIME-Version: 1.0
+To: flight-gear@infoplane.com
+Subject: Re: Updated fgnew.zip 11/16
+References: <199611181720.JAA15331@islay.ssl.berkeley.edu>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Dear Eric, Dear Group,
+
+it should indeed be possible to work with
+the cygnus compiler without all that UNIX
+stuff. I really like UNIX, but a mixture between
+DOS, Windows and UNIX where you never now where
+to write / or \ is horrible.
+
+In the meantime I found a site describing
+a simpler installation based on the cygnus compiler,
+
+http://www.fu.is.saga-u.ac.jp/~colin/mingw32.html
+
+Seems promising. I'll play with it during next days.
+
+To quote from this site:
+"Setting up the GNU [win] compiler so that
+it works is problematic for most experienced 
+programmers. For newbies it's a nightmare."
+
+I know a bit on RSXWIN/RSXNT from the TeX/LaTeX
+world. Eberhard Mattes makes use of it for
+adapting his emTeX package to windows.
+Essentially, it turns a DOS program into a true
+GUI program. If I recall right, it's limited
+to a command-line interface (which is not a problem 
+for TeX being command-line oriented) and unable to
+run any graphics. Perhaps not a good starting point
+for a flight simulator...
+
+Next: I think you can do win32 programming under
+win3.1/win32s. However, there are some essential
+differences and you will miss several points,
+one of the most important one being the use of the
+registry database and, as you mentioned, directX
+support. You can of course do some stuff this way,
+but for a professional program (flight gear
+should be one, shouldn't it) I would prefer a 
+native win95/winnt4.0 program using the registry,
+the win95 installation procedure etc. If you 
+find a machine to have a look on  Pascal 
+Meziats recently released Airport 2.0
+which is win95/nt4.0 and which is free,
+you will see what I mean.
+
+I heared that Matt Pickering (address on the
+Flight gear home page, perhaps you can find a 
+way to co-ordiante your work) is already working on
+the win 95 stuff using the Borland compiler, too.
+(If I recall right.) From my point of view (as
+a non-developer) this idea might not be too
+good as a long-term solution for a (free) GNU
+project. I would really prefer working with 
+free stuff only (maybe up to the OS, 
+but we have Linux...)
+
+Greetings Michael (pmb@rz.uni-jena.de)
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Tue Nov 19 04:11:03 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id EAA22256; Tue, 19 Nov 1996 04:10:55 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from cnve.rz.uni-jena.de (cnve.rz.uni-jena.de [141.35.1.32]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id EAA22249 for <flight-gear@infoplane.com>; Tue, 19 Nov 1996 04:10:47 -0600
+Received: from pmb.rz.uni-jena.de (pc212.ifk.uni-jena.de [141.35.48.212]) by cnve.rz.uni-jena.de (8.7.5/8.6.10) with SMTP id LAA01482; Tue, 19 Nov 1996 11:18:21 +0100 (MEZ)
+Message-ID: <32918970.2901@rz.uni-jena.de>
+Date: Tue, 19 Nov 1996 11:18:24 +0100
+From: Michael Basler <pmb@rz.uni-jena.de>
+Organization: Friedrich-Schiller-Universitaet Jena
+X-Mailer: Mozilla 3.0 (Win95; I)
+MIME-Version: 1.0
+To: flight-gear@infoplane.com
+Subject: Re: Updated fgnew.zip 11/16
+References: <199611181720.JAA15331@islay.ssl.berkeley.edu>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Sorry, I just discovered that I may be
+wrong with my statement of rsxnt not
+supporting GUI applications. This
+was obviously based on an older version.
+
+Greetings Michael (pmb@rz.uni-jena.de)
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Fri Nov 22 17:46:17 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id RAA17062; Fri, 22 Nov 1996 17:43:47 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from cnve.rz.uni-jena.de (cnve.rz.uni-jena.de [141.35.1.32]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id RAA17058 for <flight-gear@infoplane.com>; Fri, 22 Nov 1996 17:43:34 -0600
+Received: from pmb.rz.uni-jena.de (wm5.rz.uni-jena.de [141.35.1.205]) by cnve.rz.uni-jena.de (8.7.5/8.6.10) with SMTP id AAA27213; Sat, 23 Nov 1996 00:51:21 +0100 (MEZ)
+Message-ID: <32963C77.7C78@rz.uni-jena.de>
+Date: Sat, 23 Nov 1996 00:51:19 +0100
+From: Michael Basler <pmb@rz.uni-jena.de>
+Organization: Uni Jena
+X-Mailer: Mozilla 3.0 (Win95; I)
+MIME-Version: 1.0
+To: flight-gear@infoplane.com
+Subject: Flight Gear 95
+References: <199611162206.OAA09534@albert.ssl.berkeley.edu>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Dear developers,
+
+I would like to announce that I was able to
+make the first running windows95 port of
+flight gear, "Flight Gear 95".
+For this pupose, I exploited
+the rsxnt port of gcc made by Rainer Schnitker.
+In view of the struggle I had with several
+versions of win95/nt gcc I found it a nice
+success to see flight gear running in a true 
+win 95 gui window.
+
+Basically, I adapted the makefile.rsx provided
+by Eric Korpela, but had to make some changes.
+
+I will send the makefile to Eric for
+including it into the next "release".
+
+In addition, I will send the working win95 binary
+to Curt Olson asking him to make it available on the
+server.
+
+A more detailed description on how to setup the
+compiler and how to compile will be included
+in the next version of my installation manual.
+
+Greetings Michael Basler (pmb@rz.uni-jena.de)
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Fri Nov 22 20:03:29 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id UAA17774; Fri, 22 Nov 1996 20:03:02 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from sledge.mn.org (sledge.infoplane.com [204.120.151.21]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id UAA17768 for <flight-gear@infoplane.com>; Fri, 22 Nov 1996 20:02:54 -0600
+Received: (from curt@localhost) by sledge.mn.org (8.7.6/8.7.3) id UAA04222; Fri, 22 Nov 1996 20:08:39 -0600
+Date: Fri, 22 Nov 1996 20:08:39 -0600
+Message-Id: <199611230208.UAA04222@sledge.mn.org>
+From: "Curtis L. Olson" <curt@sledge.mn.org>
+To: flight-gear@infoplane.com
+Subject: Flight Gear 95
+In-Reply-To: <32963C77.7C78@rz.uni-jena.de>
+References: <199611162206.OAA09534@albert.ssl.berkeley.edu>
+	<32963C77.7C78@rz.uni-jena.de>
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Michael Basler writes:
+> Dear developers,
+> 
+> I would like to announce that I was able to make the first running
+> windows95 port of flight gear, "Flight Gear 95".  For this pupose, I
+> exploited the rsxnt port of gcc made by Rainer Schnitker.  In view
+> of the struggle I had with several versions of win95/nt gcc I found
+> it a nice success to see flight gear running in a true win 95 gui
+> window.
+
+Good work Michael!
+
+I have placed the zip file you sent me at:
+
+    http://www.menet.umn.edu/~clolson/fgfs/code/Fgwin32.zip
+
+This is the Windows 95 version of Flight Gear.  Again, this is not a
+flight simulator, just the initial structure and low level libraries
+around which Flight Gear is being built.
+
+Curt.
+-- 
+Curtis Olson   E-mail: curt@sledge.mn.org
+Try Linux!     WWW:    http://www.menet.umn.edu/~clolson
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Sun Nov 24 15:41:33 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id PAA30986; Sun, 24 Nov 1996 15:38:56 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from pen1.pen.k12.va.us (pen1.pen.k12.va.us [141.104.22.202]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id PAA30982 for <flight-gear@infoplane.com>; Sun, 24 Nov 1996 15:38:47 -0600
+Received: from pen2.pen.k12.va.us by pen1.pen.k12.va.us (8.7.3/8.6.6)
+          id QAA13333; Sun, 24 Nov 1996 16:46:37 -0500
+From: "David L. Murr" <dmurr@pen.k12.va.us>
+Received: by pen2.pen.k12.va.us (8.7.3/8.6.6)
+          id QAA103158; Sun, 24 Nov 1996 16:46:37 -0500
+Message-Id: <199611242146.QAA103158@pen2.pen.k12.va.us>
+Subject: FGFS proposal (fwd)
+To: flight-gear@infoplane.com
+Date: Sun, 24 Nov 96 16:46:36 EST
+X-Mailer: PENELM [version 2.3.1 PL11]
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Hi guys...
+
+Got this today. I didn't know people used Amigas anymore,
+except for video and computer graphics... might be something to
+look into, though...
+
+According to Larry Nussbaumer:
+> From lfn@ix.netcom.com Sun Nov 24 11:38:28 1996
+> Message-ID: <329879DB.33F@ix.netcom.com>
+> Date: Sun, 24 Nov 1996 09:37:47 -0700
+> From: Larry Nussbaumer <lfn@ix.netcom.com>
+> X-Mailer: Mozilla 3.0Gold (Win95; I)
+> MIME-Version: 1.0
+> To: dmurr@pen.k12.va.us
+> Subject: FGFS proposal
+> Content-Type: text/plain; charset=us-ascii
+> Content-Transfer-Encoding: 7bit
+> 
+> Looks interesting.  Perhaps you could add to eventual goals to have it
+> run on the Amiga computers (there is already a lot of GNU stuff ported,
+> including compilers) -- I don't expect this would be soon.  I'd be
+> willing to consider porting documentation to troff format if that were
+> desired.
+> 
+> Larry Nussbaumer
+> Broomfield, CO
+> 
+
+
+-- 
+   _________  __              | Senior Editor - FSNews
+  / __/ __/ |/ /__ _    _____ | http://www.erols.com/fsnews/
+ / _/_\ \/    / -_) |/|/ (_-< | ^^^ Please note our new URL! ^^^
+/_/ /___/_/|_/\__/|__,__/___/ | "Taking virtual aviation to new heights!"
+Flight Gear Flight Simulator Development Committee - Administration
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Sun Nov 24 23:11:42 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id XAA00651; Sun, 24 Nov 1996 23:10:47 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from albert.ssl.berkeley.edu (albert.ssl.berkeley.edu [128.32.147.187]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id XAA00644 for <flight-gear@infoplane.com>; Sun, 24 Nov 1996 23:10:32 -0600
+Received: (korpela@localhost) by albert.ssl.berkeley.edu (8.7.5/CEA) id VAA04909; Sun, 24 Nov 1996 21:18:18 -0800 (PST)
+From: "Eric J. Korpela" <korpela@ssl.Berkeley.EDU>
+Message-Id: <199611250518.VAA04909@albert.ssl.berkeley.edu>
+Subject: Updated fgnew.zip 11/24
+To: flight-gear@infoplane.com
+Date: Sun, 24 Nov 1996 21:18:18 -0800 (PST)
+In-Reply-To: <199611242146.QAA103158@pen2.pen.k12.va.us> from "David L. Murr" at Nov 24, 96 04:46:36 pm
+X-Geek-Code: GAT d-(?) H s+:-- g+ p? au--- a- w++ v++(--) C+++ US+++ P- L 3 
+X-Geek-Cont1: E--- N++ K? W M- V -po+(--) Y+ t+ 5++ j? R- G? tv+ b++ D+ B---
+X-Geek-Cont2: e+++>++++ u- h--- f+(?) r+++ n+(---) y@(?) 
+X-PGP-ID: FF0C92DD
+X-PGP-Fingerprint: 96 BD 9D 77 12 FE 04 9B  3E F5 5B 8D 2D D1 4C 6B
+X-Mailer: ELM [version 2.4 PL22]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+
+I've updated fgnew.zip once again.  The big changes this time:
+
+- I've changed the form of public variables to something a bit more
+  logical.  All public variables are in one structure.  The macros
+  previously defined for public variables (i.e. AC_TIME_MS, ACATT_PITCH, etc)
+  will still work, they just won't contain explicit pointer aritmetic.
+  This was necessary for portability reasons.
+
+- I still wasn't able to get the Win32 version to compile on my machine.
+  Instead I was able to build a Win16 version which works except for the
+  palette stuff.  The executable is in fgwin16.zip.  None of the changes
+  should break the Win32 version. (Michael, let me know!)  Unfortunately I
+  had to write my own memory management routines.  They are in fgwin16.zip
+
+- I changed a lot of thing that had the type "int" or "FG_INT" to "FG_INT32"
+  Some things weren't working well with 16 bit ints.  This will help
+  the Macintosh port once I get around to it.
+
+- Michaels makefile for RSXNT is named "makefile.rnt"  I'm still hoping
+  to have a working RSXWDK (works with 3.1) version.  (Hasn't happened
+  yet.)
+
+- I got some suggestions by mail that haven't gotten put in yet, maybe
+  on Thanksgiving :)
+
+Eric
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Sun Nov 24 23:13:25 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id XAA00672; Sun, 24 Nov 1996 23:13:21 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from albert.ssl.berkeley.edu (albert.ssl.berkeley.edu [128.32.147.187]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id XAA00668 for <flight-gear@infoplane.com>; Sun, 24 Nov 1996 23:13:08 -0600
+Received: (korpela@localhost) by albert.ssl.berkeley.edu (8.7.5/CEA) id VAA04948; Sun, 24 Nov 1996 21:20:54 -0800 (PST)
+From: "Eric J. Korpela" <korpela@ssl.Berkeley.EDU>
+Message-Id: <199611250520.VAA04948@albert.ssl.berkeley.edu>
+Subject: Re: FGFS proposal (fwd)
+To: flight-gear@infoplane.com
+Date: Sun, 24 Nov 1996 21:20:54 -0800 (PST)
+In-Reply-To: <199611242146.QAA103158@pen2.pen.k12.va.us> from "David L. Murr" at Nov 24, 96 04:46:36 pm
+X-Geek-Code: GAT d-(?) H s+:-- g+ p? au--- a- w++ v++(--) C+++ US+++ P- L 3 
+X-Geek-Cont1: E--- N++ K? W M- V -po+(--) Y+ t+ 5++ j? R- G? tv+ b++ D+ B---
+X-Geek-Cont2: e+++>++++ u- h--- f+(?) r+++ n+(---) y@(?) 
+X-PGP-ID: FF0C92DD
+X-PGP-Fingerprint: 96 BD 9D 77 12 FE 04 9B  3E F5 5B 8D 2D D1 4C 6B
+X-Mailer: ELM [version 2.4 PL22]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+>> 
+>> Looks interesting.  Perhaps you could add to eventual goals to have it
+>> run on the Amiga computers (there is already a lot of GNU stuff ported,
+>> including compilers) -- I don't expect this would be soon.  I'd be
+>> willing to consider porting documentation to troff format if that were
+>> desired.
+>> 
+>> Larry Nussbaumer
+
+There's no reason it couldn't be done.  I know nothing about the Amiga,
+however.  (Then again I didn't know anything about Sun frame buffers
+either.)
+
+Eric
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Mon Nov 25 01:11:08 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id BAA01277; Mon, 25 Nov 1996 01:10:57 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from cnve.rz.uni-jena.de (cnve.rz.uni-jena.de [141.35.1.32]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id BAA01273 for <flight-gear@infoplane.com>; Mon, 25 Nov 1996 01:10:48 -0600
+Received: from pmb.rz.uni-jena.de (pc212.ifk.uni-jena.de [141.35.48.212]) by cnve.rz.uni-jena.de (8.7.5/8.6.10) with SMTP id IAA18963; Mon, 25 Nov 1996 08:18:36 +0100 (MEZ)
+Message-ID: <32994849.6230@rz.uni-jena.de>
+Date: Mon, 25 Nov 1996 08:18:33 +0100
+From: Michael Basler <pmb@rz.uni-jena.de>
+Organization: Friedrich-Schiller-Universitaet Jena
+X-Mailer: Mozilla 3.0 (Win95; I)
+MIME-Version: 1.0
+To: flight-gear@infoplane.com
+Subject: Re: Updated fgnew.zip 11/24
+References: <199611250518.VAA04909@albert.ssl.berkeley.edu>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+I'll try the new stuff tonight.
+
+There are a few things left over to consider
+for the win32 port.
+
+1) When running the makefile make looks
+always for a compiler called "cc". I had to
+manually copy gcc to cc, then it works.
+I don't understand this, because in the makefile
+the compiler is defined as "gcc". Eric, do you
+have an idea?
+
+2) I still have some trouble with adding the resources.
+The binary I sent to Curt does not have them linked
+in (although it's a true win32 bit version running 
+in a windows).
+In the mean time I was able to link them in thus
+connecting the .exe with the icon and have the small
+"menu" of the window working. The problem is with the
+OS/2 stuff in the .res file rsx doesn't like. If I
+remove this it works. I will deal with this during
+next days myself.
+
+3) I'm just about to update the "Getting Started" including 
+installation and running of the rsx compiler.
+
+Greetings Michael Basler
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Mon Nov 25 10:55:53 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id KAA25696; Mon, 25 Nov 1996 10:54:56 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from albert.ssl.berkeley.edu (albert.ssl.berkeley.edu [128.32.147.187]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id KAA25692 for <flight-gear@infoplane.com>; Mon, 25 Nov 1996 10:54:43 -0600
+Received: (korpela@localhost) by albert.ssl.berkeley.edu (8.7.5/CEA) id JAA09147; Mon, 25 Nov 1996 09:02:27 -0800 (PST)
+From: "Eric J. Korpela" <korpela@ssl.Berkeley.EDU>
+Message-Id: <199611251702.JAA09147@albert.ssl.berkeley.edu>
+Subject: Re: Updated fgnew.zip 11/24
+To: flight-gear@infoplane.com
+Date: Mon, 25 Nov 1996 09:02:26 -0800 (PST)
+In-Reply-To: <32994849.6230@rz.uni-jena.de> from "Michael Basler" at Nov 25, 96 08:18:33 am
+X-Geek-Code: GAT d-(?) H s+:-- g+ p? au--- a- w++ v++(--) C+++ US+++ P- L 3 
+X-Geek-Cont1: E--- N++ K? W M- V -po+(--) Y+ t+ 5++ j? R- G? tv+ b++ D+ B---
+X-Geek-Cont2: e+++>++++ u- h--- f+(?) r+++ n+(---) y@(?) 
+X-PGP-ID: FF0C92DD
+X-PGP-Fingerprint: 96 BD 9D 77 12 FE 04 9B  3E F5 5B 8D 2D D1 4C 6B
+X-Mailer: ELM [version 2.4 PL22]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+> 1) When running the makefile make looks
+> always for a compiler called "cc". I had to
+> manually copy gcc to cc, then it works.
+> I don't understand this, because in the makefile
+> the compiler is defined as "gcc". Eric, do you
+> have an idea?
+
+Actually, what I should do is use the macro $(CC) in the makefiles.
+I think this will be properly set up on most machines.  
+
+> 2) I still have some trouble with adding the resources.
+> The binary I sent to Curt does not have them linked
+> in (although it's a true win32 bit version running 
+> in a windows).
+> In the mean time I was able to link them in thus
+> connecting the .exe with the icon and have the small
+> "menu" of the window working. The problem is with the
+> OS/2 stuff in the .res file rsx doesn't like. If I
+> remove this it works. I will deal with this during
+> next days myself.
+
+The .res file needs to be recompiled using a Win32 RC.  The
+RC file should compile fine under a win32 version of RC as long
+WIN32 (or RSX) is defined and USE_OS2_RC is not defined.
+
+Thanks for the info...
+
+Eric
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Mon Nov 25 16:19:23 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id QAA27322; Mon, 25 Nov 1996 16:17:18 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from cnve.rz.uni-jena.de (cnve.rz.uni-jena.de [141.35.1.32]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id QAA27318 for <flight-gear@infoplane.com>; Mon, 25 Nov 1996 16:17:06 -0600
+Received: from pmb.rz.uni-jena.de (wm7.rz.uni-jena.de [141.35.1.207]) by cnve.rz.uni-jena.de (8.7.5/8.6.10) with SMTP id XAA19278; Mon, 25 Nov 1996 23:24:58 +0100 (MEZ)
+Message-ID: <329A1CB8.2B14@rz.uni-jena.de>
+Date: Mon, 25 Nov 1996 23:24:56 +0100
+From: Michael Basler <pmb@rz.uni-jena.de>
+Organization: Uni Jena
+X-Mailer: Mozilla 3.0 (Win95; I)
+MIME-Version: 1.0
+To: flight-gear@infoplane.com
+Subject: Re: Updated fgnew.zip 11/24
+References: <199611251702.JAA09147@albert.ssl.berkeley.edu>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Dear Eric.
+
+That's a report on your recent fgnew.zip.
+
+1) The win16 verison, fgwin16.zip, does not 
+run on my system, at least not under win95. 
+I installed the Borland .dll as required. 
+The only result is a file Debug.out which 
+is exactly 0 Byte long. Sorry. 
+Perhaps a missing .dll?
+
+2) The DJGPP verison compiles out of the box. Fine.
+It even runs in a true windows 95 window, 
+not only full screen. Actually there are 
+very few DOS graphics applications which are
+able to run this way. Must be clean programming, 
+I guess.
+
+Could you add the dll.o to the package thus making
+it unnecessary to load the whole dll101.zip package?
+
+3) No problems with compiling and running 
+under win95 with rsxnt. I still need to find 
+the right way to link to the resources via the 
+makefile.
+
+Two minor topics:
+4) There are two .ico files (one OS/2, one win?).
+One is called FGWIN.ICO, the other one fgwin.ico.
+On systems which don't see the difference this is perhaps 
+not a good idea. While unzipping I'm asked to override the 
+first one.
+
+5) The default fltgear.ini settings were better before. 
+Resolution is rather low for the DOS version while the win32 
+version is running in a very small window. No way to change 
+it's size (besides changing the .ini, of course). Finally, 
+it should be possible to rescale the window, shouldn't it?
+
+Greetings Michael (pmb@rz.uni-jena.de)
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Mon Nov 25 17:46:29 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id RAA27786; Mon, 25 Nov 1996 17:46:26 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from cnve.rz.uni-jena.de (cnve.rz.uni-jena.de [141.35.1.32]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id RAA27782 for <flight-gear@infoplane.com>; Mon, 25 Nov 1996 17:46:11 -0600
+Received: from pmb.rz.uni-jena.de (wm9.rz.uni-jena.de [141.35.1.209]) by cnve.rz.uni-jena.de (8.7.5/8.6.10) with SMTP id AAA20234; Tue, 26 Nov 1996 00:54:00 +0100 (MEZ)
+Message-ID: <329A3195.6A2C@rz.uni-jena.de>
+Date: Tue, 26 Nov 1996 00:53:57 +0100
+From: Michael Basler <pmb@rz.uni-jena.de>
+Organization: Uni Jena
+X-Mailer: Mozilla 3.0 (Win95; I)
+MIME-Version: 1.0
+To: flight-gear@infoplane.com
+Subject: win32 resources
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+I think, I was able to isolate the problem with the
+resources in the rsxnt (win32) version.
+
+With a simple fgres.rc as
+--------------------------------
+#include "fgdefs.h"
+#include "fgres.h"
+
+FG_PROGRAM_ID ICON "fgwin.ico"
+--------------------------------
+compilation is o.k. and the icon is linked
+to the .exe.
+
+However with
+--------------------------------
+#include "fgdefs.h"
+#include "fgres.h"
+
+#ifdef RSX
+FG_PROGRAM_ID ICON "fgwin.ico"
+#endif
+---------------------------------
+
+this does not work. Thus, I guess 
+there's no problem with the OS2
+stuff but with grc not understanding
+the if/endif syntax (might this really
+be?)
+
+If I remove all "if.." statements
+and leave only the RSX stuff all compiling/linking
+goes o.k.
+
+Very strange. At this point I don't know
+how to proceed. A temporary solution I suggest
+might be a separate fgresnt.rc for only rsxnt.
+
+Greetings Michael (pmb@rz.uni-jena.de)
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Mon Nov 25 17:46:00 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id RAA27767; Mon, 25 Nov 1996 17:44:38 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from albert.ssl.berkeley.edu (albert.ssl.berkeley.edu [128.32.147.187]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id RAA27763 for <flight-gear@infoplane.com>; Mon, 25 Nov 1996 17:44:25 -0600
+Received: (korpela@localhost) by albert.ssl.berkeley.edu (8.7.5/CEA) id PAA15721; Mon, 25 Nov 1996 15:52:12 -0800 (PST)
+From: "Eric J. Korpela" <korpela@ssl.Berkeley.EDU>
+Message-Id: <199611252352.PAA15721@albert.ssl.berkeley.edu>
+Subject: Re: Updated fgnew.zip 11/24
+To: flight-gear@infoplane.com
+Date: Mon, 25 Nov 1996 15:52:12 -0800 (PST)
+In-Reply-To: <329A1CB8.2B14@rz.uni-jena.de> from "Michael Basler" at Nov 25, 96 11:24:56 pm
+X-Geek-Code: GAT d-(?) H s+:-- g+ p? au--- a- w++ v++(--) C+++ US+++ P- L 3 
+X-Geek-Cont1: E--- N++ K? W M- V -po+(--) Y+ t+ 5++ j? R- G? tv+ b++ D+ B---
+X-Geek-Cont2: e+++>++++ u- h--- f+(?) r+++ n+(---) y@(?) 
+X-PGP-ID: FF0C92DD
+X-PGP-Fingerprint: 96 BD 9D 77 12 FE 04 9B  3E F5 5B 8D 2D D1 4C 6B
+X-Mailer: ELM [version 2.4 PL22]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+> 1) The win16 verison, fgwin16.zip, does not 
+> run on my system, at least not under win95. 
+
+I'll try to figure out what DLL's it needs and add them to the
+distribution.
+
+> 2) The DJGPP verison compiles out of the box. Fine.
+> It even runs in a true windows 95 window, 
+> not only full screen. Actually there are 
+> very few DOS graphics applications which are
+> able to run this way. Must be clean programming, 
+> I guess.
+
+That's good news!
+
+> Could you add the dll.o to the package thus making
+> it unnecessary to load the whole dll101.zip package?
+
+Can do. I'll probably give it a slightly different extension
+and have the makefile copy it to dll.o  (I often find myself
+doing an "erase *.o")
+
+> 3) No problems with compiling and running 
+> under win95 with rsxnt. I still need to find 
+> the right way to link to the resources via the 
+> makefile.
+
+Let me know when you find out.
+
+> Two minor topics:
+> 4) There are two .ico files (one OS/2, one win?).
+> One is called FGWIN.ICO, the other one fgwin.ico.
+> On systems which don't see the difference this is perhaps 
+> not a good idea. While unzipping I'm asked to override the 
+> first one.
+
+I hadn't noticed that.  I will correct the zip file by getting
+rid of the upper case version.
+
+> 5) The default fltgear.ini settings were better before. 
+> Resolution is rather low for the DOS version while the win32 
+> version is running in a very small window. No way to change 
+> it's size (besides changing the .ini, of course). Finally, 
+> it should be possible to rescale the window, shouldn't it?
+
+I've changed it back to 640x480.  (I was running 200x200 on X over 
+a 14.4kbps connection.  Even that was really slow, but I could tell
+it worked.)  Eventually I'd like to get rescaling into the X, Win32
+and OS/2 versions.  All of the drivers that use bitmaps will need
+to hook the FG_BITMAP_CHANGE message in their init functions.  Don't
+know when I'll get to it.  Just letting you know that it has been thought
+of.  Dynamic resolution changes for other systems will have to be
+keyboard or mouse event driven (CTRL-SHIFT-'+' and CTRL-SHIFT-'-'?).
+Which reminds me that mouse support is lacking.
+
+Eric
+
+
+
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Mon Nov 25 18:15:20 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id SAA27944; Mon, 25 Nov 1996 18:15:17 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from albert.ssl.berkeley.edu (albert.ssl.berkeley.edu [128.32.147.187]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id SAA27937 for <flight-gear@infoplane.com>; Mon, 25 Nov 1996 18:15:05 -0600
+Received: (korpela@localhost) by albert.ssl.berkeley.edu (8.7.5/CEA) id QAA16345; Mon, 25 Nov 1996 16:22:49 -0800 (PST)
+From: "Eric J. Korpela" <korpela@ssl.Berkeley.EDU>
+Message-Id: <199611260022.QAA16345@albert.ssl.berkeley.edu>
+Subject: Re: win32 resources
+To: flight-gear@infoplane.com
+Date: Mon, 25 Nov 1996 16:22:48 -0800 (PST)
+In-Reply-To: <329A3195.6A2C@rz.uni-jena.de> from "Michael Basler" at Nov 26, 96 00:53:57 am
+X-Geek-Code: GAT d-(?) H s+:-- g+ p? au--- a- w++ v++(--) C+++ US+++ P- L 3 
+X-Geek-Cont1: E--- N++ K? W M- V -po+(--) Y+ t+ 5++ j? R- G? tv+ b++ D+ B---
+X-Geek-Cont2: e+++>++++ u- h--- f+(?) r+++ n+(---) y@(?) 
+X-PGP-ID: FF0C92DD
+X-PGP-Fingerprint: 96 BD 9D 77 12 FE 04 9B  3E F5 5B 8D 2D D1 4C 6B
+X-Mailer: ELM [version 2.4 PL22]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+> this does not work. Thus, I guess 
+> there's no problem with the OS2
+> stuff but with grc not understanding
+> the if/endif syntax (might this really
+> be?)
+
+It's possible that grc.exe isn't finding the C preprocessor.
+It's also odd that I don't see -D listed among the options.
+Could you try the following with the archive version of fgres.rc?
+
+grc -DRSX -cpp cpp.exe -v -r fgres.rc
+
+grc -DRSX -DRC_INVOKED -cpp cpp.exe -v -r fgres.rc
+
+Please send the output to me.  And, of course, if either works, let me know :)
+
+> Very strange. At this point I don't know
+> how to proceed. A temporary solution I suggest
+> might be a separate fgresnt.rc for only rsxnt.
+
+Actually, I'd rather keep the changes in the makefile.  We should be
+able to run the c preprocessor manually and then run grc on its output.
+The biggest problem is getting the includes and the predefined symbols
+right.
+
+Eric
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Tue Nov 26 13:53:55 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id NAA01169; Tue, 26 Nov 1996 13:52:56 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from albert.ssl.berkeley.edu (albert.ssl.berkeley.edu [128.32.147.187]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id NAA01165 for <flight-gear@infoplane.com>; Tue, 26 Nov 1996 13:52:44 -0600
+Received: (korpela@localhost) by albert.ssl.berkeley.edu (8.7.5/CEA) id LAA26119
+From: "Eric J. Korpela" <korpela@ssl.Berkeley.EDU>
+Message-Id: <199611261959.LAA26119@albert.ssl.berkeley.edu>
+Subject: Re: ATC Program
+To: mento@ix.netcom.com (Jason Grooms)
+Date: Tue, 26 Nov 1996 11:59:55 -0800 (PST)
+Cc: flight-gear@infoplane.com
+In-Reply-To: <199611261825.KAA18097@dfw-ix10.ix.netcom.com> from "Jason Grooms" at Nov 26, 96 10:24:32 am
+X-Geek-Code: GAT d-(?) H s+:-- g+ p? au--- a- w++ v++(--) C+++ US+++ P- L 3 
+X-Geek-Cont1: E--- N++ K? W M- V -po+(--) Y+ t+ 5++ j? R- G? tv+ b++ D+ B---
+X-Geek-Cont2: e+++>++++ u- h--- f+(?) r+++ n+(---) y@(?) 
+X-PGP-ID: FF0C92DD
+X-PGP-Fingerprint: 96 BD 9D 77 12 FE 04 9B  3E F5 5B 8D 2D D1 4C 6B
+X-Mailer: ELM [version 2.4 PL22]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+
+> Since you will be developing Multiplayer Internet support an ATC client
+> should be on your list of to do's.  I would certainly volunteer for such a
+> project and would only need the specs for the server.
+
+We can certainly use all the help I can get.  If you haven't joined
+the mailing list yet, please do so by sending mail to majordomo@infoplane.com
+with a message body of "subscribe flight-gear"
+
+ATC hasn't been discussed in a while, so I'm unsure if anyone has made up
+any specs for this.  I'm not really sure if the ATC support should be
+considered a client or a server. :)  It would be great to have designated
+ATC servers providing positive control (where required) either automatically
+from the server, or manually by someone connected to the ATC server via
+a client.  The ATC server could also provide dynamic scenery (regularly 
+scheduled flights).  I sort of envision connetions and messages like....
+
+** server = ATC/dynamic scenery server
+** Flight Gear client = flight gear program
+** ATC client = ATC client
+** client = either flight gear or ATC client
+
+server->Flight Gear client: Interrogate Transponder
+Flight Gear client->server: (if transponder on and in range return 
+		                  pos,vel,transponder code)
+
+client->server: Request nearby traffic (pos,radius)
+ATC Server->Flight Gear client: (list of nearby traffic pos,vel,code)
+
+client->server: register com frequency (flags VOICE,TEXT,BOTH)
+server->client: (acknowledge) add to list of clients on frequency
+
+client->server: unregister com frequency
+server->client: (acknowledge) remove from list of clients on frequency
+
+client->server: text message on frequency
+server->client: (acknowledge) send message to all in range on frequency
+
+client->server: voice message on frequency
+server->client: (acknowledge) send message to all in range on frequency
+
+ATC client->server: Become controller for sector
+server->ATC client: (Acknowledge yes or no.)
+
+server->servers for ajacent sectors: handoffs, etc.
+
+This is a beginning, so it is undoubtably incomplete.  The exact format of the
+message and which TCP ports are to be used is up to the developers.  I'd
+hope to keep the message sizes to a minimum (which is hard to do on voice).
+For now ATC commands would have to be text.  (It would be hard for the
+server to change voice into a command for dynamic scenery.)  I'm sending
+this to the mailing list so others that are interested can help you
+develop a spec and protocols. 
+
+> I have a prototype already complete that I am trying to get working with
+> Fly by Wire.  I have been utilizing an 18 year Navy controller for the
+> details of the display and by no means is this project complete.  FBW
+> doesn't seem to be responding to e-mail at the moment so it seems that idea
+> is on hold.
+
+It looks great.  Send a copy to Curt Olson to put on the web page!
+BTW, what is Fly by Wire?
+
+> I would certainly like to help your project though.
+
+> I can code in 8x86 assembly, C/C++ (not a master of it), TP/Delphi (my
+> forte), Visual Basic (who cant?) and various other languages.  Haven't done
+> much graphics programming (which is why I would like to do the ATC client)
+> so I don't know if I can help with the Kernal and such.
+
+So far most of the programming is done in C for portability.  I don't know
+if Delphi can be made portable (through Gnu Pascal??) or not.
+
+Eric
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Tue Nov 26 15:01:16 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id PAA01521; Tue, 26 Nov 1996 15:00:09 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from albert.ssl.berkeley.edu (albert.ssl.berkeley.edu [128.32.147.187]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id OAA01515 for <flight-gear@infoplane.com>; Tue, 26 Nov 1996 14:59:59 -0600
+Received: (korpela@localhost) by albert.ssl.berkeley.edu (8.7.5/CEA) id NAA27212
+From: "Eric J. Korpela" <korpela@ssl.Berkeley.EDU>
+Message-Id: <199611262107.NAA27212@albert.ssl.berkeley.edu>
+Subject: Re: ATC Program
+To: mento@ix.netcom.com (Jason Grooms)
+Date: Tue, 26 Nov 1996 13:07:22 -0800 (PST)
+Cc: flight-gear@infoplane.com
+In-Reply-To: <199611262039.MAA17069@dfw-ix7.ix.netcom.com> from "Jason Grooms" at Nov 26, 96 12:39:18 pm
+X-Geek-Code: GAT d-(?) H s+:-- g+ p? au--- a- w++ v++(--) C+++ US+++ P- L 3 
+X-Geek-Cont1: E--- N++ K? W M- V -po+(--) Y+ t+ 5++ j? R- G? tv+ b++ D+ B---
+X-Geek-Cont2: e+++>++++ u- h--- f+(?) r+++ n+(---) y@(?) 
+X-PGP-ID: FF0C92DD
+X-PGP-Fingerprint: 96 BD 9D 77 12 FE 04 9B  3E F5 5B 8D 2D D1 4C 6B
+X-Mailer: ELM [version 2.4 PL22]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+
+> My thought is to make the clients fairly dumb.  Just emitting a transponder
+> code (packet) with other aircraft information (aircraft type, ID, etc...)
+
+To make the packets as small as possible, as much of the info as possible
+should be registered at primary connect and the transponder packets should
+be as small as possible.  The4 net is so overloaded as it is, I don't want 
+to be sending 1k when 32 bytes would suffice.
+
+> The server would then pick this up and distribute it to other aircraft "in
+> the area" and to the Controllers.  I don't invision non-human controllers. 
+> This would be to unrealistic I think.
+
+I was thinking that non-human controllers would just be mechanically
+assigning SIDS and STARS and spacing by time/altitude enroute.  The hard part
+would be getting a clearance across sectors.  Flight plans would have to
+be available network wide.  VFR traffic would be ignored.  I don't think
+it's that unrealistic.
+
+> You had some good ideas (the dynamic traffic) though "dumb" dynamic traffic
+> could get in the way of real traffic.  This would have to be worked out.  
+> I'm sure others have ideas that might solve this problem.
+
+I don't see why dynamic traffic has to be dumb.  The basic instructions
+aren't that difficult to follow.  (ATC is able to hook up to FS4 and control
+dynamic scenery.)
+
+> Just a question (I am sure you have your reasons).  Why are you using odd
+> (to me anyway) compilers? I've never heard of GNU C or Pascal compilers. 
+> Though I admit I am a PC DOS/Windows programmer.  Are they free or
+> something?
+
+They are free, in fact.  They produce 32 bit code and in general are very
+portable between platforms.
+
+> I'm sure Delphi won't port well--if at all.
+
+It probably depends upon how opject oriented you get.  I don't think GPC
+supports borland's object extensions as yet.  The GUI stuff very non-portable.
+
+> The ATC client is not a "main" module of the flight sim so writing it in
+> another language shouldn't burden other platforms too much.  
+
+> As long as we agree on a standard that the client and servers will be
+> communicating I'm sure ATC Clients can be developed rapidly on each
+> platform.  (there is not much to displaying a "blip" hehe)
+
+Agreed.  It's mainly that a communication standard has to be developed.
+
+> Has anyone hit the FAA up about obtaining their database of airports,
+> VOR's, Fixes, frequencies, etc.  It contains all the "real world" lat longs
+> and could be used to populate the scenery database rapidly with good data.
+
+Not as yet.  If you know where/how to get it, I'm listening :)
+
+Eric
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Tue Nov 26 16:29:27 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id QAA01990; Tue, 26 Nov 1996 16:27:08 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from cnve.rz.uni-jena.de (cnve.rz.uni-jena.de [141.35.1.32]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id QAA01981 for <flight-gear@infoplane.com>; Tue, 26 Nov 1996 16:26:52 -0600
+Received: from pmb.rz.uni-jena.de (wm5.rz.uni-jena.de [141.35.1.205]) by cnve.rz.uni-jena.de (8.7.5/8.6.10) with SMTP id XAA24971; Tue, 26 Nov 1996 23:34:43 +0100 (MEZ)
+Message-ID: <329B707E.7651@rz.uni-jena.de>
+Date: Tue, 26 Nov 1996 23:34:38 +0100
+From: Michael Basler <pmb@rz.uni-jena.de>
+Organization: Uni Jena
+X-Mailer: Mozilla 3.0 (Win95; I)
+MIME-Version: 1.0
+To: flight-gear@infoplane.com
+Subject: resource compiler
+References: <199611262107.NAA27212@albert.ssl.berkeley.edu>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Dear Eric et al.
+
+sorry, bad news. I'm still trying to compile the resource file
+fgres.rc to fgres.res with rsxnt.
+
+I start with a clean package and only type in (without any 
+makefile)
+
+grc -DRSX -cpp cpp.exe -v -r fgres.rc
+
+The result is as follows:
+--------------------------------------------------------------
+F:\Fltgear\Compile.rnt>grc -DRSX -cpp cpp.exe -v -r fgres.rc
+compiling file: fgres.rc, start at line: 1
+
+compiling file: fgdefs.h, start at line: 1
+
+compiling file: fgdefs.h, start at line: 40
+
+compiling file: D:/EMX/INCLUDE/os2.h, start at line: 1
+
+compiling file: D:/EMX/INCLUDE/os2emx.h, start at line: 1
+
+compiling userres
+
+compiling userres 
+
+................and so on
+----------------------------------------------------------
+
+Either there is something wired in fgdefs.h directing 
+the compiler to the OS/2 stuff or the grc itself is wired.
+
+There is a remark in the docs stating 
+"There are some bugs in this tool."
+The first one can be detected immediately by asking grc -?
+
+F:\Fltgear\Compile.rnt>grc -?
+usage: rcl <options> rcfile
+
+        options:
+        -fo res_file    .res output file
+        -l id           language id
+        -v              verbose mode
+        -r              (optional) build only .res
+        -G              (extention) debug mode
+        -cpp cpp_file   (extention) name of preprocessor
+
+Nice, isnt't it? The tool forgot it's own name.
+BTW, there is no -D option mentioned. Either
+it's only not listed with grc -? (unprobable) or it's really
+missing.
+
+The grc is not part of the recompiled emx package but done by
+Rainer Schnitker. If we continue having trouble I should
+perhaps mail him.
+
+Sorry, but I think we should really find a way to solve this one.
+I will help what I can do.
+
+Greetings Michael
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Tue Nov 26 16:43:52 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id QAA02079; Tue, 26 Nov 1996 16:43:48 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from albert.ssl.berkeley.edu (albert.ssl.berkeley.edu [128.32.147.187]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id QAA02075 for <flight-gear@infoplane.com>; Tue, 26 Nov 1996 16:43:40 -0600
+Received: (korpela@localhost) by albert.ssl.berkeley.edu (8.7.5/CEA) id OAA28343; Tue, 26 Nov 1996 14:51:30 -0800 (PST)
+From: "Eric J. Korpela" <korpela@ssl.Berkeley.EDU>
+Message-Id: <199611262251.OAA28343@albert.ssl.berkeley.edu>
+Subject: Re: resource compiler
+To: flight-gear@infoplane.com
+Date: Tue, 26 Nov 1996 14:51:30 -0800 (PST)
+In-Reply-To: <329B707E.7651@rz.uni-jena.de> from "Michael Basler" at Nov 26, 96 11:34:38 pm
+X-Geek-Code: GAT d-(?) H s+:-- g+ p? au--- a- w++ v++(--) C+++ US+++ P- L 3 
+X-Geek-Cont1: E--- N++ K? W M- V -po+(--) Y+ t+ 5++ j? R- G? tv+ b++ D+ B---
+X-Geek-Cont2: e+++>++++ u- h--- f+(?) r+++ n+(---) y@(?) 
+X-PGP-ID: FF0C92DD
+X-PGP-Fingerprint: 96 BD 9D 77 12 FE 04 9B  3E F5 5B 8D 2D D1 4C 6B
+X-Mailer: ELM [version 2.4 PL22]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+
+> Sorry, but I think we should really find a way to solve this one.
+> I will help what I can do.
+
+Try this makefile for your compile....
+
+----------------------------------------------------------------------------
+CFLAGS= -g -Wall -DRSX -Zwin32
+MAINOBJS=fgmain.o fgload.o fgkbd.o fgscreen.o fggrx.o fgslew.o \
+	fgtimer.o fgini.o fggeom.o fgevent.o fgpause.o \
+	fgres.res fgrand.o fgpalet.o fgbars.o fgclock.o fgfont.o
+RSXLIBDIR=-Ld:/rsxnt/lib
+RSXEXE=d:\rsxnt\bin\rsx.exe
+WIN32GRC=d:\rsxnt\bin\grc.exe
+WIN32RSRC=d:\rsxnt\bin\rsrc.exe
+CPP=gcc -E
+
+fgmain.exe: $(MAINOBJS)
+	gcc $(CFLAGS) -o fgmain.exe $(MAINOBJS) $(RSXLIBDIR)  -lemx -lbsd 
+	$(WIN32RSRC) -DRSX -x -Id:\fltgear\compile.rsx -t fgres.res fgmain.exe
+
+fgres.res:  fgres.rc fgres.h
+	$(CPP) -Id:\fltgear\compile.rsx -DRSX -DRC_INVOKED fgres.rc >fgtmp.rc
+	$(WIN32GRC) -r fgtmp.rc
+	rm fgtmp.rc
+
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Tue Nov 26 16:58:07 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id QAA02164; Tue, 26 Nov 1996 16:58:03 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from albert.ssl.berkeley.edu (albert.ssl.berkeley.edu [128.32.147.187]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id QAA02158 for <flight-gear@infoplane.com>; Tue, 26 Nov 1996 16:57:54 -0600
+Received: (korpela@localhost) by albert.ssl.berkeley.edu (8.7.5/CEA) id PAA28576
+From: "Eric J. Korpela" <korpela@ssl.Berkeley.EDU>
+Message-Id: <199611262305.PAA28576@albert.ssl.berkeley.edu>
+Subject: Re: resource compiler
+To: korpela@sdaf1.cea.berkeley.edu (korpela)
+Date: Tue, 26 Nov 1996 15:05:38 -0800 (PST)
+Cc: flight-gear@infoplane.com
+In-Reply-To: <no.id> from "korpela" at Nov 26, 96 02:51:30 pm
+X-Geek-Code: GAT d-(?) H s+:-- g+ p? au--- a- w++ v++(--) C+++ US+++ P- L 3 
+X-Geek-Cont1: E--- N++ K? W M- V -po+(--) Y+ t+ 5++ j? R- G? tv+ b++ D+ B---
+X-Geek-Cont2: e+++>++++ u- h--- f+(?) r+++ n+(---) y@(?) 
+X-PGP-ID: FF0C92DD
+X-PGP-Fingerprint: 96 BD 9D 77 12 FE 04 9B  3E F5 5B 8D 2D D1 4C 6B
+X-Mailer: ELM [version 2.4 PL22]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+
+> Try this makefile for your compile....
+
+Oops, a couple obvious mistakes in that one.  
+Try this one...
+
+
+CFLAGS= -g -Wall -DRSX -Zwin32
+MAINOBJS=fgmain.o fgload.o fgkbd.o fgscreen.o fggrx.o fgslew.o \
+	fgtimer.o fgini.o fggeom.o fgevent.o fgpause.o \
+	fgres.res fgrand.o fgpalet.o fgbars.o fgclock.o fgfont.o
+RSXLIBDIR=-Ld:/rsxnt/lib
+RSXEXE=d:\rsxnt\bin\rsx.exe
+WIN32GRC=d:\rsxnt\bin\grc.exe
+WIN32RSRC=d:\rsxnt\bin\rsrc.exe
+CPP=gcc -E
+
+fgmain.exe: $(MAINOBJS)
+	gcc $(CFLAGS) -o fgmain.exe $(MAINOBJS) $(RSXLIBDIR)  -lemx -lbsd 
+	$(WIN32RSRC) -DRSX -x -Id:\fltgear\compile.rsx -t fgres.res fgmain.exe
+
+fgres.res:  fgres.rc fgres.h
+        cp fgres.rc fgtmp.c 
+	$(CPP) -Id:\fltgear\compile.rsx -DRSX -DRC_INVOKED fgtmp.c >fgtmp.rc
+	$(WIN32GRC) -r fgtmp.rc
+	cp fgtmp.res fgres.res
+	rm fgtmp.rc fgtmp.c fgtmp.res
+
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Wed Nov 27 15:05:09 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id PAA08857; Wed, 27 Nov 1996 15:01:30 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from cnve.rz.uni-jena.de (cnve.rz.uni-jena.de [141.35.1.32]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id PAA08853 for <flight-gear@infoplane.com>; Wed, 27 Nov 1996 15:01:16 -0600
+Received: from pmb.rz.uni-jena.de (wm9.rz.uni-jena.de [141.35.1.209]) by cnve.rz.uni-jena.de (8.7.5/8.6.10) with SMTP id WAA29701; Wed, 27 Nov 1996 22:09:09 +0100 (MEZ)
+Message-ID: <329CADF0.A18@rz.uni-jena.de>
+Date: Wed, 27 Nov 1996 22:09:04 +0100
+From: Michael Basler <pmb@rz.uni-jena.de>
+Organization: Uni Jena
+X-Mailer: Mozilla 3.0 (Win95; I)
+MIME-Version: 1.0
+To: flight-gear@infoplane.com
+Subject: rnt makefile
+References: <199611262107.NAA27212@albert.ssl.berkeley.edu>
+Content-Type: multipart/mixed; boundary="------------52346E626E4D"
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+This is a multi-part message in MIME format.
+
+--------------52346E626E4D
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Dear Eric et al.
+
+good news. The makefile you sent me a few hours ago
+does it's job pretty well. The resources are compiled
+in and all is o.k. now. 
+
+I only had to tweak the syntax slightly, I guess you
+wanted win95 to have a few lessons on UNIX (-;
+I append the final version of makefile.rnt.
+
+On this occasion I removed the absolute paths of the
+tools for relative ones. For other people they are
+useless anyway. I found that compiling/linking
+works pretty well without them
+provided the RSX environment is properly set which
+is necessary anyways.
+
+BTW, when speaking about resources, a win helpfile
+would be nice (perhaps not now, but later).
+Even better would be a pro-help
+from which a win help as well as a man page and...
+can be generated. The GnuPlot (good free multi-platform
+plotting program) people do it this way.
+While I like the general idea their .doc format is perhaps
+not the best. Sometime I will have a closer look
+at this.
+
+Greetings Michael (pmb@rz.uni-jena.de)
+
+--------------52346E626E4D
+Content-Type: text/plain; charset=us-ascii; name="makefile.rnt"
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline; filename="makefile.rnt"
+
+CFLAGS= -g -Wall -DRSX -Zwin32
+MAINOBJS=fgmain.o fgload.o fgkbd.o fgscreen.o fggrx.o fgslew.o \
+	fgtimer.o fgini.o fggeom.o fgevent.o fgpause.o \
+	fgres.res fgrand.o fgpalet.o fgbars.o fgclock.o fgfont.o
+RSXLIBDIR=-Ld:/rsxnt/lib
+RSXEXE=rsx.exe
+WIN32GRC=grc.exe
+WIN32RSRC=rsrc.exe
+CPP=gcc -E
+
+fgmain.exe: $(MAINOBJS)
+	gcc $(CFLAGS) -o fgmain.exe $(MAINOBJS) $(RSXLIBDIR)  -lemx -lbsd 
+	$(WIN32RSRC) -DRSX -x -t fgres.res fgmain.exe
+
+fgres.res:  fgres.rc fgres.h
+        copy fgres.rc fgtmp.c
+        $(CPP) -DRSX -DRC_INVOKED fgtmp.c >fgtmp.rc
+	$(WIN32GRC)  -r fgtmp.rc
+        copy fgtmp.res fgres.res
+        del fgtmp.rc 
+        del fgtmp.c
+        del fgtmp.res
+
+
+--------------52346E626E4D--
+
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Wed Nov 27 15:22:19 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id PAA08966; Wed, 27 Nov 1996 15:21:11 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from albert.ssl.berkeley.edu (albert.ssl.berkeley.edu [128.32.147.187]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id PAA08957 for <flight-gear@infoplane.com>; Wed, 27 Nov 1996 15:21:00 -0600
+Received: (korpela@localhost) by albert.ssl.berkeley.edu (8.7.5/CEA) id NAA08946; Wed, 27 Nov 1996 13:28:51 -0800 (PST)
+From: "Eric J. Korpela" <korpela@ssl.Berkeley.EDU>
+Message-Id: <199611272128.NAA08946@albert.ssl.berkeley.edu>
+Subject: Re: rnt makefile
+To: flight-gear@infoplane.com
+Date: Wed, 27 Nov 1996 13:28:51 -0800 (PST)
+In-Reply-To: <329CADF0.A18@rz.uni-jena.de> from "Michael Basler" at Nov 27, 96 10:09:04 pm
+X-Geek-Code: GAT d-(?) H s+:-- g+ p? au--- a- w++ v++(--) C+++ US+++ P- L 3 
+X-Geek-Cont1: E--- N++ K? W M- V -po+(--) Y+ t+ 5++ j? R- G? tv+ b++ D+ B---
+X-Geek-Cont2: e+++>++++ u- h--- f+(?) r+++ n+(---) y@(?) 
+X-PGP-ID: FF0C92DD
+X-PGP-Fingerprint: 96 BD 9D 77 12 FE 04 9B  3E F5 5B 8D 2D D1 4C 6B
+X-Mailer: ELM [version 2.4 PL22]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+> good news. The makefile you sent me a few hours ago
+> does it's job pretty well. The resources are compiled
+> in and all is o.k. now. 
+
+Good to hear, I'll put the modified version in the next
+release.
+
+> I only had to tweak the syntax slightly, I guess you
+> wanted win95 to have a few lessons on UNIX (-;
+
+Yep, I often forget that rm, cp, mv and the like aren't
+universal. :)  
+
+> BTW, when speaking about resources, a win helpfile
+> would be nice (perhaps not now, but later).
+> Even better would be a pro-help
+> from which a win help as well as a man page and...
+> can be generated. The GnuPlot (good free multi-platform
+> plotting program) people do it this way.
+> While I like the general idea their .doc format is perhaps
+> not the best. Sometime I will have a closer look
+> at this.
+
+Great idea, let me know what you find out.  There may be something
+somewhere that converts texinfo files into hlp, but I'm not to fond
+on the texi format either.
+
+Eric
+
+P.S.  How do the colors look under Win95?  Do they match the DJGPP
+      colors, or are we still having palette problems?
+
+
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Wed Nov 27 17:07:23 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id RAA09512; Wed, 27 Nov 1996 17:06:24 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from cnve.rz.uni-jena.de (cnve.rz.uni-jena.de [141.35.1.32]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id RAA09508 for <flight-gear@infoplane.com>; Wed, 27 Nov 1996 17:06:14 -0600
+Received: from pmb.rz.uni-jena.de (wm6.rz.uni-jena.de [141.35.1.206]) by cnve.rz.uni-jena.de (8.7.5/8.6.10) with SMTP id AAA01623; Thu, 28 Nov 1996 00:13:51 +0100 (MEZ)
+Message-ID: <329CCB2D.6B68@rz.uni-jena.de>
+Date: Thu, 28 Nov 1996 00:13:49 +0100
+From: Michael Basler <pmb@rz.uni-jena.de>
+Organization: Uni Jena
+X-Mailer: Mozilla 3.0 (Win95; I)
+MIME-Version: 1.0
+To: flight-gear@infoplane.com
+Subject: Re: rnt makefile
+References: <199611272128.NAA08946@albert.ssl.berkeley.edu>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+>From my memory the colors are at least not the same
+as under DJGPP (more blue?), but I may be incorrect.
+Will check this later.
+
+I found that you can simplify the makefile further
+by removing the $libdir definition and the
+reference to it in the compiler call. If properly installed,
+this one is set in the environemt for rsxnt.
+
+----------------------------------------
+I just finished a new version of the installation guide including
+the win32 stuff and will send it to Curt tonight.
+
+Greetings Michael (pmb@rz.uni-jena.de)
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Thu Nov 28 15:37:37 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id PAA16314; Thu, 28 Nov 1996 15:35:15 -0600
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from cnve.rz.uni-jena.de (cnve.rz.uni-jena.de [141.35.1.32]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id PAA16305 for <flight-gear@infoplane.com>; Thu, 28 Nov 1996 15:34:59 -0600
+Received: from pmb.rz.uni-jena.de (wm5.rz.uni-jena.de [141.35.1.205]) by cnve.rz.uni-jena.de (8.8.3/8.6.10) with SMTP id WAA06005; Thu, 28 Nov 1996 22:42:53 +0100 (MEZ)
+Message-ID: <329E075B.59B9@rz.uni-jena.de>
+Date: Thu, 28 Nov 1996 22:42:51 +0100
+From: Michael Basler <pmb@rz.uni-jena.de>
+Organization: Uni Jena
+X-Mailer: Mozilla 3.0 (Win95; I)
+MIME-Version: 1.0
+To: flight-gear@infoplane.com
+Subject: again: rnt makefile
+References: <199611272128.NAA08946@albert.ssl.berkeley.edu>
+Content-Type: multipart/mixed; boundary="------------77251248644C"
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+This is a multi-part message in MIME format.
+
+--------------77251248644C
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Eric, after downloading the most
+recent fgnew.zip with the new
+makefile structure I detected that
+the makefile.rnt again does not work.
+
+"No rule to make target fgres.res.."
+
+Obviously, grc is again too stupid to
+understand your highly developed syntax.
+However, a slight correction does the job.
+
+The working makefile.rnt is again appended.
+
+Compiling with DJGPP works well. No need any more
+to copy the dll.o manually. Fine.
+
+The palette is definitely different under DOS
+and win32, sorry.
+
+Greetings Michael
+
+--------------77251248644C
+Content-Type: text/plain; charset=us-ascii; name="makefile.rnt"
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline; filename="makefile.rnt"
+
+
+CC=gcc
+FGDEFS=-DRSX
+FGLIBS=-lm -lemx -lbsd 
+LIBDIRS=-L/rsxnt/lib
+SYS_DEFINES=-D__EMX__ -D__GNUC__
+CFLAGS= -g -Wall $(FGDEFS) -Zwin32
+OBJ_SUFFIX=o
+EXECUTABLE=fgmain.exe
+EXTRA_OBJS=
+RESOURCE=fgres.res
+LINK.RESOURCE=rsrc.exe -x -t fgres.res fgmain.exe
+
+.rc.res:
+	copy $*.rc $*_c.c
+	$(CC) -E $(SYS_DEFINES) $(FGDEFS) -DRC_INVOKED $*_c.c >$*_c.rc
+	grc.exe -r fgres_c.rc
+	copy fgres_c.res fgres.res
+	del $*_c.*
+
+
+include makefile.inc
+
+
+--------------77251248644C--
+
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+

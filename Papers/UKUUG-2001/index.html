@@ -1,0 +1,899 @@
+<HTML>
+<BODY>
+<HR>
+<BR>
+<img src="sunset.jpg" alt="sunset.jpg" width="80%" ><BR>
+<BR>
+FlightGear Flight Simulator<BR>
+<BR>
+	<UL>
+	<LI>A.R. Perry
+		<UL>
+		<LI>alex.perry@ieee.org
+		<LI>Presenter and Developer<DIV ALIGN=CENTER>
+
+		</UL>
+	</UL>
+Presented at</DIV>
+<DIV ALIGN=RIGHT>
+<BR>
+UKUUG's Linux2001     </DIV>
+<DIV ALIGN=LEFT>
+<BR>
+<BR>
+<BR>
+	<UL>
+	<LI>C. Olson
+		<UL>
+		<LI><IMG ALIGN="CENTER" SRC="http://www.flightgear.org/email-fg.png">
+		<LI>Project Leader
+		</UL>
+	</UL>
+</DIV>
+<DIV ALIGN=CENTER>
+<BR>
+GPL Open Source licensed</DIV>
+<DIV ALIGN=CENTER>
+<BR>
+Linux, Win32, Mac, Irix platforms<BR>
+</DIV>
+<DIV ALIGN=CENTER>
+<BR>
+<A HREF=http://www.flightgear.org/>http://www.flightgear.org/</A><BR>
+</DIV>
+<BR>
+(page 1)<BR>
+<HR>
+<BR>
+About the presenter<BR>
+<BR>
+	<UL>
+	<LI>Alexander Perry, a FlightGear developer:
+		<UL>
+		<LI>Single engine pilot (commercial and instrument rated)
+		<LI>Advanced and instrument ground instructor
+		<LI>Aviation safety counselor (San Diego/Imperial counties, California)
+		</UL>
+	</UL>
+<BR>
+(page 2)<BR>
+<HR>
+<BR>
+The FlightGear project<BR>
+<BR>
+	<UL>
+	<LI>Project goals:
+		<UL>
+		<LI>Do things `right'
+		<LI>Minimize short cuts
+		<LI>Learn and advance knowledge
+		<LI>Build better toys to play with on ordinary computers
+		</UL>
+	<LI>Inspired by David Murr, April 1996
+		<UL>
+		<LI>Open source GPL - Free as in speech and as in beer
+		<LI>Curt Olson made a multiplatform, OpenGL based release in July 1997
+		</UL>
+	<LI>Now more than just flight aerodynamics 
+		<UL>
+		<LI>Improving graphics, clouds, and fog, time of day
+		<LI>Shaded sky with sun, moon, stars, and planets correctly drawn
+		<LI>Automated world scenery generation tools based on real world data
+		<LI>Electronic navigation systems
+		<LI>Airports and runways
+		<LI>Head up display and instrument panel
+		<LI>Photo-realistic scenery
+		<LI>Open, flexible, extensible architecture
+		</UL>
+	</UL>
+<BR>
+(page 3)<BR>
+<HR>
+<BR>
+Many simulation applications<BR>
+<BR>
+	<UL>
+	<LI>FlightGear is used in many different ways
+	</UL>
+<BR>
+	<UL>
+		<UL>
+		<LI>Building a realistic home simulator from old airplane parts
+		<LI>Replacing the PC of an agricultural single engine simulator
+		<LI>Retrofitting older sim hardware with FGFS based software
+		</UL>
+	</UL>
+<BR>
+	<UL>
+		<UL>
+		<LI>A viable, modifiable alternative to commercial sims
+		<LI>A basis for icing research at the Smart Icing Systems Project
+		<LI>Training pilots to taxi safely at large airports
+		<LI>Demonstrating the dangers of mountain wave and turbulence
+		</UL>
+	</UL>
+<BR>
+	<UL>
+		<UL>
+		<LI>Remote user interface for an unmanned aerial vehicle
+		</UL>
+	</UL>
+<BR>
+	<UL>
+		<UL>
+		<LI>Generating visuals for aircraft carrier launch/recovery
+		<LI>Scenery and head up display for a Matlab-based flight model
+		</UL>
+	</UL>
+<BR>
+(page 4)<BR>
+<HR>
+<BR>
+This talk is only about visual scenery<BR>
+<BR>
+	<UL>
+	<LI>Among the dozens of simulator uses
+		<UL>
+		<LI>Each has a different emphasis and technical needs
+		<LI>Unneeded features may be omitted to save resources
+		<LI>Compromises are usually made in the implementation
+		<LI>We prefer to offer run- and compile-time choices
+		<LI>One of the benefits of being an open source project
+		</UL>
+	</UL>
+<BR>
+	<UL>
+	<LI>Visual scenery is a huge resource hog
+		<UL>
+		<LI>Application-specific optimization is critical
+		<LI>This talk reviews why scenery is necessary
+		<LI>Summarizes the standard FlightGear scenery
+		<LI>Discusses some of the easy customizations
+		</UL>
+	</UL>
+<BR>
+	<UL>
+	<LI>What is the simplest visual display we need ?
+	</UL>
+<BR>
+(page 5)<BR>
+<HR>
+<BR>
+Cessna 172 in the clouds<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<DIV ALIGN=CENTER>
+<BR>
+(no visuals!)<BR>
+</DIV>
+<BR>
+(page 6)<BR>
+<HR>
+<BR>
+Scenery is often unnecessary<BR>
+<BR>
+	<UL>
+	<LI>For instrument flight rules (IFR)
+		<UL>
+		<LI>The pilots act the same inside as outside the clouds
+		<LI>They operate the aircraft by reference to the instruments
+		<LI>They navigate using electronic aids and radio instructions
+		</UL>
+	<LI>For dead reckoning trips
+		<UL>
+		<LI>The pilots use time/heading/distance to navigate
+		<LI>The view outside is mostly optional during cruise
+		<LI>Only a few specific landmarks are needed to check progress
+		</UL>
+	<LI>For night flight
+		<UL>
+		<LI>The world is black (except for towns and airports)
+		<LI>Need to only show a blob of light for each town
+		</UL>
+	</UL>
+<BR>
+	<UL>
+	<LI>For these cases, should we bother ?
+		<UL>
+		<LI>Would it really just be eye candy ?
+		</UL>
+	</UL>
+<BR>
+(page 7)<BR>
+<HR>
+<BR>
+Visuals can be a distraction<BR>
+<BR>
+	<UL>
+	<LI>Popping in and out of sunny clouds
+		<UL>
+		<LI>Dim grey featureless background when inside a cloud
+		<LI>Blinding white glare when emerging into sunlight
+		<LI>Makes the instruments very hard to read
+		</UL>
+	<LI>Occasional small patches of ground
+		<UL>
+		<LI>Not big enough to identify any specific landmarks
+		<LI>Not long enough to match patterns to the charts
+		<LI>Distracts pilot from flying the plane
+		<LI>Encourages erroneous changes in route
+		</UL>
+	<LI>Mountains in the distance
+		<UL>
+		<LI>A pretty background, static and easy to draw
+		<LI>Too far away to estimate the aircraft's position
+		<LI>Appears to confirm the pilot's opinions
+		</UL>
+	</UL>
+<BR>
+	<UL>
+	<LI>So, yes, even IFR benefits from scenery
+		<UL>
+		<LI>It all makes flying harder and more realistic
+		</UL>
+	</UL>
+<BR>
+(page 8)<BR>
+<HR>
+<BR>
+On short final to land<BR>
+<BR>
+<img src="carrier.jpg" alt="carrier.jpg" width="80%" ><BR>
+<BR>
+(page 9)<BR>
+<HR>
+<BR>
+Basic scenery is also necessary<BR>
+<BR>
+	<UL>
+	<LI>To provide an airport area for takeoff and landing
+		<UL>
+		<LI>For IFR flights that disappear into a cloud
+		<LI>When it isn't a conventional runway
+		</UL>
+	</UL>
+<BR>
+	<UL>
+	<LI>To show the specific landmarks and town outlines
+		<UL>
+		<LI>For dead reckoning, pilotage, and similar
+		<LI>Doesn't take much; the occasional tower, lake, etc.
+		</UL>
+	</UL>
+<BR>
+	<UL>
+	<LI>To decide what should be seen between the clouds
+		<UL>
+		<LI>Where the mountains are in the distance
+		<LI>And whether the plane will shortly hit one
+		</UL>
+	</UL>
+<BR>
+	<UL>
+	<LI>FlightGear has supported all that for years ...
+	</UL>
+<BR>
+(page 10)<BR>
+<HR>
+<BR>
+Cessna 172 on landing approach<BR>
+<BR>
+<img src="c172.jpg" alt="c172.jpg" width="80%" ><BR>
+<BR>
+(page 11)<BR>
+<HR>
+<BR>
+Software implementation<BR>
+<BR>
+	<UL>
+	<LI>Graphics are drawn using the OpenGL API
+		<UL>
+		<LI>Using accelerated renderer such as Utah or XF4
+		<LI>Through GLX calls on Linux; Mesa/X11 is too slow
+		</UL>
+	</UL>
+<BR>
+	<UL>
+	<LI>The scene graph is managed by the PLIB library
+		<UL>
+		<LI>FlightGear's loader passes file names to SimGear
+		<LI>Visibility and clouds are specified by weather model
+		</UL>
+	</UL>
+<BR>
+	<UL>
+	<LI>Separate XML-derived objects are also used
+		<UL>
+		<LI>The Head Up Display is drawn in front of scenery
+		<LI>The Instrument Panel is drawn beneath the scenery
+		<LI>A big improvement over the C++ method a year ago
+		</UL>
+	</UL>
+<BR>
+	<UL>
+	<LI>What creates the many files that SimGear can load ?
+		<UL>
+		<LI>All those gigabytes of synthetic scenery ...
+		</UL>
+	</UL>
+<BR>
+(page 12)<BR>
+<HR>
+<BR>
+Montgomery field, San Diego California<BR>
+<BR>
+<img src="myf-runways.jpg" alt="myf-runways.jpg" width="80%" ><BR>
+<BR>
+(page 13)<BR>
+<HR>
+<BR>
+Simulating the World - TerraGear<BR>
+<BR>
+	<UL>
+	<LI>Open-source tools and rendering libraries
+		<UL>
+		<LI>We collect free data for building 3D representations
+		<LI>The whole earth is usable in real time rendering
+		</UL>
+	<LI>Much freely available GIS data on the internet
+		<UL>
+		<LI>Core data for FlightGear has to be unrestricted
+		<LI>Many sources of raw data cannot be incorporated
+		</UL>
+	<LI>Four categories of data are in use
+		<UL>
+		<LI>Digital Elevation Model (DEM), 1 km grid worldwide
+		<LI>Polygon outlines for coasts, lakes, islands, and towns
+		<LI>Land use / land cover `raster' data
+		<LI>Landmarks such as lighthouses, radio and water towers
+		</UL>
+	</UL>
+<BR>
+	<UL>
+	<LI>Individual users and groups can rebuild it
+		<UL>
+		<LI>Generate larger, slower files for faster computers
+		<LI>Use locally available, restricted, data sources
+		<LI>Optimize scenery quality for a specific application
+		</UL>
+	</UL>
+<BR>
+(page 14)<BR>
+<HR>
+<BR>
+TerraGear - Screen dump<BR>
+<BR>
+<img src="wh-tux.jpg" alt="wh-tux.jpg" width="80%" ><BR>
+<BR>
+<BR>
+(page 15)<BR>
+<HR>
+<BR>
+TerraGear - Storage size<BR>
+<BR>
+	<UL>
+	<LI>It's clearly a synthetic image
+		<UL>
+		<LI>But sufficient to understand and interpret
+		<LI>Allows cross-country navigation by pilotage
+		<LI>Where the pilot is comparing the view to a chart
+		</UL>
+	<LI>It's compact, about one kilobyte per square kilometer
+		<UL>
+		<LI>Necessary, since about 10000 sq km may be in view
+		</UL>
+	</UL>
+<BR>
+	<UL>
+	<LI>A four level hierarchy with 10-100 ratios ...
+	</UL>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+	<UL>
+		<UL>
+		<LI>One planet, currently only the Earth, then
+		<LI>10 deg x 10 deg rectangle, then
+		<LI>1 deg x 1 deg, approx 100 km x 60 km, then
+		<LI>A rectangular tile of 100 sq km approximately
+		</UL>
+	</UL>
+<BR>
+	<UL>
+	<LI>These tiles are demand loaded and unloaded
+		<UL>
+		<LI>So it runs slower when the visibility is higher
+		<LI>Needs more memory to store the additional tiles too
+		</UL>
+	</UL>
+<BR>
+(page 16)<BR>
+<HR>
+<BR>
+National data limitations<BR>
+<BR>
+	<UL>
+	<LI>Poor worldwide elevation data is already being used
+	<LI>Good data is often country specific
+		<UL>
+		<LI>Need special code to read and process file format
+		<LI>A lot of effort to do this for every country
+		<LI>Rapidly reaches the point of diminishing returns
+		</UL>
+	<LI>Many organizations collect and transform the data
+		<UL>
+		<LI>Creating a standardized format, for their customers
+		<LI>There is a huge amount of effort involved
+		<LI>So their prices are extremely high to fund it
+		<LI>They cannot give the data away for us to use
+		</UL>
+	<LI>Maybe those organization will sell scenery
+		<UL>
+		<LI>Run their data through TerraGear and burn some CDs
+		<LI>You can expect a high price tag for such reliable data
+		</UL>
+	</UL>
+<BR>
+(page 17)<BR>
+<HR>
+<BR>
+Mismatch of scenery and charts<BR>
+<BR>
+	<UL>
+	<LI>Public domain data is generally of reduced quality
+		<UL>
+		<LI>Or out of date, or selective, or local coverage, etc.
+		</UL>
+	<LI>The scenery generated from that data may be incorrect
+		<UL>
+		<LI>Compared to the real world out there
+		<LI>But generally only in visually unobtrusive ways
+		</UL>
+	</UL>
+<BR>
+	<UL>
+	<LI>These errors are more visible in electronic navigation
+		<UL>
+		<LI>Such as needed for instrument flight (IFR)
+		<LI>Since the route tolerances are extremely tight
+		</UL>
+	<LI>Navigating the simulated aircraft around
+		<UL>
+		<LI>With current Jeppesen (or NOS, etc) charts
+		<LI>Can be extremely frustrating, or impossible
+		<LI>When a piece of scenery is incorrectly in the way
+		</UL>
+	</UL>
+<BR>
+(page 18)<BR>
+<HR>
+<BR>
+Synthetic chart - example<BR>
+<BR>
+<img src="atlassan.jpg" alt="atlassan.jpg" width="80%" ><BR>
+<BR>
+(page 19)<BR>
+<HR>
+<BR>
+Synthetic charts - Atlas project<BR>
+<BR>
+	<UL>
+	<LI>Automatic translation of TerraGear files
+		<UL>
+		<LI>Generates usable aviation style charts
+		</UL>
+	<LI>These charts are inaccurate to the real world
+		<UL>
+		<LI>Therefore useless for flight in an aircraft
+		</UL>
+	<LI>Extremely accurate for the simulated world
+		<UL>
+		<LI>When operating the FlightGear aircraft
+		<LI>Often easier to make and use printouts
+		</UL>
+	</UL>
+<BR>
+	<UL>
+	<LI>The Atlas application is for browsing
+		<UL>
+		<LI>Can connect directly to FlightGear
+		<LI>Displays aircraft current location on moving map
+		<LI>Best used selectively by the simulator pilot
+		<LI>Most small aircraft do not contain such GPS units
+		<LI>...  with integrated moving map displays ... yet
+		</UL>
+	</UL>
+<BR>
+	<UL>
+	<LI>Invaluable to the flight instructor
+	</UL>
+<BR>
+(page 20)<BR>
+<HR>
+<BR>
+Colorized satellite overlay for Ramona<BR>
+<BR>
+<img src="shrt-fin.jpg" alt="shrt-fin.jpg" width="80%" ><BR>
+<BR>
+(page 21)<BR>
+<HR>
+<BR>
+Context cues around airport<BR>
+<BR>
+	<UL>
+	<LI>That insert was a quick few hours work
+		<UL>
+		<LI>It shows the taxiway and buildings around the runway
+		<LI>The runway is no different, does it really help ?
+		</UL>
+	</UL>
+<BR>
+	<UL>
+	<LI>The default textures are intentionally fairly featureless
+		<UL>
+		<LI>Pilots tend to fly low, similar to black hole effect
+		<LI>The other stuff helps to provide a sense of scale
+		<LI>The simulator was located at the red blob
+		<LI>This helps users to interpret the landscape
+		</UL>
+	</UL>
+<BR>
+	<UL>
+	<LI>Are these additional cues sufficient ?
+	</UL>
+<BR>
+(page 22)<BR>
+<HR>
+<BR>
+Short final at San Jose<BR>
+<BR>
+<img src="onfinal.jpg" alt="onfinal.jpg" width="80%" ><BR>
+<BR>
+(page 23)<BR>
+<HR>
+<BR>
+Do we want photorealism ?<BR>
+<BR>
+	<UL>
+	<LI>Is the TerraGear scenery sufficient ?
+	</UL>
+<BR>
+	<UL>
+	<LI>Eye candy has no functional benefit
+		<UL>
+		<LI>Looks nice, for spectacular screen dumps and demos
+		<LI>Helps sell the package to potential users
+		<LI>Doesn't help with usual usage of the simulator
+		</UL>
+	</UL>
+<BR>
+	<UL>
+	<LI>Can only be done for specific small areas
+		<UL>
+		<LI>Storage need is many thousands of times larger
+		<LI>Unrealistically distinctive from a distance
+		</UL>
+	<LI>Sometimes, the aircraft stays in a small area
+		<UL>
+		<LI>Balloons, acrobatics, model aircraft, hang gliders, etc
+		<LI>Landing practice, traversing mountain canyons, etc
+		</UL>
+	</UL>
+<BR>
+	<UL>
+	<LI>So, is photorealism just eye candy ?
+		<UL>
+		<LI>Well, some applications rely on it ...
+		</UL>
+	</UL>
+<BR>
+(page 24)<BR>
+<HR>
+<BR>
+Joining downwind at San Jose<BR>
+<BR>
+<img src="downwind.jpg" alt="downwind.jpg" width="80%" ><BR>
+<BR>
+(page 25)<BR>
+<HR>
+<BR>
+Practicing visual decisions<BR>
+<BR>
+	<UL>
+	<LI>Making an incorrect choice of a runway
+		<UL>
+		<LI>Dragstrips can look like runways
+		<LI>Airports can appear to be another parking lot
+		<LI>Parking lot lights look like an approach
+		<LI>A large airport can hide a smaller one
+		<LI>A large taxiway might look like a small runway
+		</UL>
+	</UL>
+<BR>
+	<UL>
+	<LI>Operating in poor visual conditions
+		<UL>
+		<LI>Trying to distinguish things in fog
+		<LI>Lightning flashes, heavy rain showers
+		<LI>Navigating below a low cloud layer
+		</UL>
+	</UL>
+<BR>
+	<UL>
+	<LI>It's easy to make a wrong decision at 150 mph
+		<UL>
+		<LI>And worth practicing to avoid it
+		</UL>
+	</UL>
+<BR>
+(page 26)<BR>
+<HR>
+<BR>
+How many runways at San Jose ?<BR>
+<BR>
+<img src="countrwy.jpg" alt="countrwy.jpg" width="80%" ><BR>
+<BR>
+(page 27)<BR>
+<HR>
+<BR>
+Design of airports<BR>
+<BR>
+	<UL>
+	<LI>Can airport design influence the amount of pilot mistakes?
+	</UL>
+<BR>
+	<UL>
+	<LI>Arrangment and size of parallel runways
+		<UL>
+		<LI>Runway 29 to the far left can easily be overlooked
+			<UL>
+			<LI>Starts later
+			<LI>Lighter coloured surface
+			</UL>
+		</UL>
+	<LI>Color and contrast of runways/taxiways
+		<UL>
+		<LI>Taxiway `Y' has same color as runway 30L
+			<UL>
+			<LI>Pilot knows there are two active runways
+			<LI>30L is clearly a runway
+			<LI>At a glance, taxiway `Y' looks like the other runway
+			</UL>
+		</UL>
+	</UL>
+<BR>
+	<UL>
+	<LI>Can simulators be used to study and evaluate airport design problems?
+	<LI>What can be done if a problem is discovered?
+	<LI>Simulator training a prerequisite for airport use?
+	</UL>
+<BR>
+<BR>
+(page 28)<BR>
+<HR>
+<BR>
+Airport navigation training<BR>
+<BR>
+	<UL>
+	<LI>Steering a taxiing aircraft is easy, but
+		<UL>
+		<LI>The vehicle is ungainly, 40 ft wide
+		<LI>You cannot back up, or usually turn around
+		<LI>Small signs are mounted low to the ground
+		<LI>One junction may have six exits to choose
+		<LI>The paved surface may be 100 ft wide
+		<LI>Nothing indicates corners in the distance
+		<LI>A Cessna 172 has a much lower vantage point that a 747
+		</UL>
+	</UL>
+<BR>
+	<UL>
+	<LI>A lot of practice is needed to deal with this
+		<UL>
+		<LI>A map doesn't always help enough
+		</UL>
+	</UL>
+<BR>
+	<UL>
+	<LI>Turn a wrong corner, you might end up on a runway
+		<UL>
+		<LI>Can be bad if someone is trying to use it ...
+		</UL>
+	</UL>
+<BR>
+	<UL>
+	<LI>Airport service vehicles could also benefit
+	</UL>
+<BR>
+(page 29)<BR>
+<HR>
+<BR>
+The runway incursion problem<BR>
+<BR>
+	<UL>
+	<LI>Any occurrence at an airport that
+		<UL>
+		<LI>Results in loss of separation with an aircraft
+		<LI>Taking off, landing, or intending to do so
+		</UL>
+	<LI>Runway incursions are made up of
+		<UL>
+		<LI>Pilot deviations (eg pilot took a wrong turn),
+		<LI>Operational errors (eg controller made a mistake),
+		<LI>Vehicle or pedestrian deviations (went the wrong way), and
+		<LI>Operational deviations (facility coordination error).
+		</UL>
+	<LI>Average rate is 230 per year in the 1990's
+		<UL>
+		<LI>Rising 72% from 1993 to 1997, and to 547 in 1999
+		<LI>Accidents in Atlanta, Detroit, Los Angeles, St. Louis, etc
+		</UL>
+	</UL>
+<BR>
+	<UL>
+	<LI>The FAA strategic goal: reduce accidents
+		<UL>
+		<LI>Eliminate 80% of the 1996 fatal rate by 2007
+		<LI>Curt is extending FlightGear to support them
+		</UL>
+	</UL>
+<BR>
+(page 30)<BR>
+<HR>
+<BR>
+Photo scenery, buildings, signage<BR>
+<BR>
+	<UL>
+	<LI>Replace the airport surroundings with photos
+		<UL>
+		<LI>A directory with megabytes of photo texture data
+		<LI>Renders to be a bit fuzzy, but usable for taxiing
+		<LI>But rapidly overloads video capability in flight
+		</UL>
+	</UL>
+<BR>
+	<UL>
+	<LI>Add buildings and obstructions to vision
+		<UL>
+		<LI>Drawn manually using the open source Pretty Poly Editor
+		<LI>Created by proprietary 3d image processing techniques and imported
+		<LI>Dropped into place using a file of airport objects
+		<LI>These mostly serve as navigation landmarks and distractions
+		<LI>The pilot can misidentify them from controller clearance
+		</UL>
+	</UL>
+<BR>
+	<UL>
+	<LI>Place the little signs in appropriate places
+		<UL>
+		<LI>Their textures are computer generated on the fly
+		<LI>Locations are measured from airport engineering maps
+		</UL>
+	</UL>
+<BR>
+(page 31)<BR>
+<HR>
+<BR>
+San Jose California<BR>
+<BR>
+<img src="yatc.jpg" alt="yatc.jpg" width="80%" ><BR>
+<BR>
+(page 32)<BR>
+<HR>
+<BR>
+Immersion and field of view<BR>
+<BR>
+	<UL>
+	<LI>Humans can see 90 degrees on each side
+		<UL>
+		<LI>And a large angle of up and down too
+		<LI>Without moving your head, even
+		</UL>
+	</UL>
+<BR>
+	<UL>
+	<LI>Light aircraft have wrap-around windows
+		<UL>
+		<LI>The brain processes that whole field of view
+		<LI>If view is partly missing, system is not immersive
+		<LI>Unrealistic, especially for visual navigation tasks
+		</UL>
+	</UL>
+<BR>
+	<UL>
+	<LI>A single monitor display is a poor substitute
+		<UL>
+		<LI>FlightGear permits unlimited number of display channels
+		<LI>Each channel is a separate process on a network socket
+		<LI>Permits efficient SMP and clustering implementations
+		<LI>Limited by your number of video cards, monitors, etc
+		</UL>
+	</UL>
+<BR>
+(page 33)<BR>
+<HR>
+<BR>
+Testing triple display hardware<BR>
+<BR>
+<img src="threevid.jpg" alt="threevid.jpg" width="80%" ><BR>
+<BR>
+(page 34)<BR>
+<HR>
+<BR>
+What's in the future?<BR>
+<BR>
+	<UL>
+	<LI>There's a lot out there ... some examples:
+	</UL>
+<BR>
+	<UL>
+	<LI>FDMs are not (yet) accurate enough
+		<UL>
+		<LI>Only suitable for conservative flights
+		<LI>Don't reflect the challenges of acrobatic maneuvering
+		</UL>
+	</UL>
+<BR>
+	<UL>
+	<LI>New consumer technologies for immersion
+		<UL>
+		<LI>Surround projectors, head mounted displays
+		<LI>Directional sound and cockpit motion effects
+		<LI>Users will fly safe, forgetting they're not in danger
+		</UL>
+	</UL>
+<BR>
+	<UL>
+	<LI>Recent radar and visual satellite surveys
+		<UL>
+		<LI>Enough detail to be used as photorealistic scenery
+		<LI>First, we must manipulate terabytes in real time
+		<LI>Data volume is about a million times larger than now
+		</UL>
+	</UL>
+<BR>
+(page 35)<BR>
+<HR>
+<BR>
+Conclusions<BR>
+<BR>
+	<UL>
+	<LI>FlightGear is a simple Open Source project
+		<UL>
+		<LI>Builds on many other projects
+		</UL>
+	</UL>
+<BR>
+	<UL>
+	<LI>Due to the subject it addresses
+		<UL>
+		<LI>It has many issues and unusual concerns
+		<LI>Most rarely inconvenience other projects
+		</UL>
+	</UL>
+<BR>
+	<UL>
+	<LI>These elements are providing the exciting challenges
+		<UL>
+		<LI>And variety of associated activities enjoyed by the developers
+		</UL>
+	</UL>
+<BR>
+	<UL>
+	<LI>Thank you for your interest
+	</UL>
+<DIV ALIGN=CENTER>
+<BR>
+www.flightgear.org<BR>
+<BR>
+<BR>
+<BR>
+(page 36)<BR>
+</BODY>
+</HTML>

@@ -1,0 +1,324 @@
+<HTML>
+
+<HEAD>
+  <TITLE>FGFS Photo Gallery</TITLE>
+  <LINK REL="StyleSheet" TYPE="text/css" HREF="../fgfs.css">
+</HEAD>
+
+<BODY>
+
+<H2>FGFS Photo Gallery</H2>
+
+I will try to put the most recent images first.  In general, the
+closer you get to the bottom, the older the code was when the image
+was captured.
+
+<HR>
+
+<H3>June 2002 Vintage Images</H3>
+
+Quite a bit of work has been done in support of 3d aircraft models and
+animation which can be viewed from tower or chase plane views.  Also a
+few of our ground cover textures have been recently reworked.  Here
+are a few images:
+
+a4-01.jpg
+a4-02.jpg
+a4-03.jpg
+
+
+<HR>
+
+<H3>April 2002 Vintage Images</H3>
+
+Here are a few new screen shots taken in the March/April 2002 time frame.
+
+c172KSFO.jpg
+c172shortfinal.jpg
+c310u3a-panel.jpg
+
+
+<HR>
+
+<H3>Open Glass Cockpit Project</H3>
+
+FlightGear now has an interface to the <A
+HREF="http://www.opengc.org">OpenGC</A> glass cockpit displays.
+
+opengc-turning.jpg
+opengc-tower.jpg
+
+<HR>
+
+<H3>Taxiways</H3>
+
+We have added taxiways to the major world airports.  These are part of the airport and navaid database maintained by Robin Peel.
+
+KSFO-Approach1.jpg
+KSFO-Approach2.jpg
+KSFO-Approach3.jpg
+KSFO-Approach4.jpg
+
+
+<HR>
+
+<H3>Photo-real airport environements</H3>
+
+FlightGear has some initial support for chopping up aerial/satellite
+photos and using them for scenery.  Here is an example from KSJC (San
+Jose, CA) showing what can be done with a 64Mb video card.
+
+KSJC-overhead1.jpg
+KSJC-overhead2.jpg
+KSJC-DC-3-departing.jpg
+KSJC-DC-3-final.jpg
+
+Here are a few screen shots from around the pattern.  Note, these were
+used for a presentation on runway incursion issues.  The final
+approach to Taxiway 'Y' is bad, bad, bad and will probably result in
+the loss of your ticket unless you have a really good excuse.  Still,
+take offs and landings do mistakenly happen on this taxiway from time
+to time.
+
+KSJC-pattern1.jpg
+KSJC-pattern2.jpg
+KSJC-pattern3.jpg
+KSJC-pattern4.jpg
+KSJC-pattern5.jpg
+KSJC-pattern6.jpg
+KSJC-pattern7.jpg
+KSJC-pattern8.jpg
+KSJC-pattern9.jpg
+
+We have also created a method to easily place runway signs using an
+ascii text file, rather than having to do any 3d modeling.  Here are
+some (sparse) examples.
+
+KSJC-signex1.jpg
+KSJC-signex2.jpg
+KSJC-signex3.jpg
+KSJC-signex4.jpg
+
+<HR>
+
+<H3>Multiple Display Synchronization</H3>
+
+FlightGear has native support for synchronizing multiple displays via
+a network.
+
+3panelFlightgear.jpg
+trucksim-comp-setup.jpg
+display-syncing.jpg
+
+<HR>
+
+<H3>Land Use / Land Cover</H3>
+
+David Megginson, recently added support for a global land cover/land use
+database.  Here are some of the early results showing a variety of scenery
+types.
+
+boston-night.jpg
+florida.jpg
+lc1.jpg
+lc2.jpg
+lc3.jpg
+wh-tux.jpg
+
+<HR>
+
+<H3>Runways</H3>
+
+Work has begun on adding runway markings.  Precision, non-precision, and
+visual marking schemes will be supported as well as concrete, asphalt, dirt,
+and turf surface types.
+<P>
+Our initial approach to drawing runway lines is to split the runway up into
+sections and apply the proper texture to that section.  This way a huge variety
+of runways can be constructed with a relatively "few" number of textures.
+
+klax-runway.jpg
+kmsp-runway.jpg
+
+<HR>
+
+<H3>Clouds</H3>
+
+Sure, these aren't quite the 3D clouds of "Fly!", but they still look very
+nice and have a minimal impact on frame rates.
+<P>
+
+cloud2.jpg
+puget-sound.jpg
+crater-lk-island.jpg
+clouds1.jpg
+
+<HR>
+
+<H3>Scenery Work</H3>
+
+I have begun an overhaul of the current scenery system to facilitate
+adding things like lakes, rivers, urban areas, other land use areas,
+and eventually streams and roads.  I finally got tile edge matching to 
+work so I have added some new images.  Please note that the frame rate shown
+in these images is misleading.  I have a 3dfx voodoo-2 and to take a screen
+shot I have to flip the card into "in-a-window-hack" mode which kills 
+frame rates.
+<P>
+
+Most recently, I have added "urban" areas.
+<P>
+
+mt-rainier.jpg
+crater-lake.jpg
+KTVL.jpg
+KPVU.jpg
+KLAX1.jpg
+juneau.jpg
+PAJN.jpg
+E81.jpg
+ranger-creek.jpg
+lopez-island.jpg
+lopez-island-n.jpg
+san-juan.jpg
+new-scene-03.jpg
+new-scene-04.jpg
+hydro.gif
+
+<HR>
+
+Here are some screen shots from the old scenery system (without lakes
+and rivers.)
+<P>
+
+grand-canyon2.jpg
+grand-canyon3.jpg
+grand-canyon1.jpg
+wireframe.jpg
+
+<HR>
+
+Here are some additional interesting snap shots hilighting various
+aspects of the Flight Gear scenery.
+<P>
+
+AZ38.jpg
+terrain1.jpg
+tucson.jpg
+texture1.jpg
+texture2.jpg
+texture3.jpg
+texture4.jpg
+
+<HR>
+
+<H3>Night shots</H3>
+
+Here are some snap shots which show the night sky.  The Sun, Moon,
+stars, and planets are all rendered in their correct position in the
+sky.  Flight Gear has a large star data base so the stars (and
+planets) are rendered with correct magnitude (brightness.)  Also, the
+moon is rendered in the correct phase.
+<P>
+
+moon-full.jpg
+moon-halo.jpg
+moon-tex.jpg
+night1.jpg
+night2.jpg
+
+<HR>
+
+<H3>HUD and Instrument Panel Work</H3>
+<P>
+
+panel2.jpg
+panel1.gif
+hori.gif
+ksad1.jpg
+ksad2.jpg
+hud1.jpg
+hud2.jpg
+hud3.jpg
+hud4.jpg
+
+<HR>
+
+<H3>The Sky</H3>
+<P>
+
+astro1.jpg
+early-dusk.jpg
+late-dusk.jpg
+moon-night.jpg
+sky.jpg
+
+<HR>
+
+<H3>Sunsets</H3>
+<P>
+
+sunset1.jpg
+sunset2.jpg
+
+<HR>
+
+<H3>Smooth Terrain</H3>
+
+The following images shows how the terrain is smoothly lit underneath
+the texture maps.
+<P>
+
+smooth1.jpg
+smooth2.jpg
+
+<HR>
+
+<H3>Irregular Terrain Gridding</H3>
+
+Flight Gear uses sophisticated <EM>irregularly gridded</EM> terrain.
+Irregular grids are able to achieve the same detail level as a regular
+grid, but with 4-6x fewer polygons.  We use a tool called Triangle
+written by Jonathan R Shewchuk (Jonathan_R_Shewchuk@ux4.sp.cs.cmu.edu)
+to connect the dots into a Delauney triangulation.
+<P>
+
+irregular1.gif
+irregular2.gif
+
+<HR>
+
+<H3>Miscellaneous Images</H3>
+
+mesa-e-1.jpg
+mesa-e-4.jpg
+navion.jpg
+
+<HR>
+
+<H3>Real versus Virtually Real</H3>
+
+These images compare a real photo with an image generated
+by flight gear.
+
+<UL>
+  <LI><A HREF="Compare/pinals.html">The Pinals, AZ</A>
+  <LI><A HREF="Compare/khsp.html">Hot Springs, VA</A>
+  <LI><A HREF="Compare/ksez.html">Sedona, AZ</A>
+</UL>
+
+<!-- Standard Footer Begin -->
+
+<HR>
+
+<ADDRESS>
+Last modified:  6/28/2002 <BR>
+<A HREF="http://www.menet.umn.edu/~curt/">Curtis L. Olson</A> <BR>
+<IMG SRC="http://www.flightgear.org/email-fg.png">
+</ADDRESS>
+
+<!-- Standard Footer End -->
+
+</BODY>
+
+</HTML>

@@ -1,0 +1,1854 @@
+From owner-flight-gear  Wed Jul  3 15:22:54 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id PAA02829; Wed, 3 Jul 1996 15:20:47 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from pen1.pen.k12.va.us (pen1.pen.k12.va.us [141.104.22.202]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id PAA02825 for <flight-gear@infoplane.com>; Wed, 3 Jul 1996 15:20:30 -0500
+Received: by pen1.pen.k12.va.us (8.7.3/8.6.6)
+          id QAA44639; Wed, 3 Jul 1996 16:31:30 -0400
+From: "David L. Murr" <dmurr@pen.k12.va.us>
+Message-Id: <199607032031.QAA44639@pen1.pen.k12.va.us>
+Subject: ANNOUNCEMENT
+To: flight-gear@infoplane.com
+Date: Wed, 3 Jul 96 16:31:29 EDT
+X-Mailer: PENELM [version 2.3.1 PL11]
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+----------------------------------------------------------------------------
+ _____ _ _       _     _      ____
+|  ___| (_) __ _| |__ | |_   / ___| ___  __ _ _ __
+| |_  | | |/ _` | '_ \| __| | |  _ / _ \/ _` | '__| 
+|  _| | | | (_| | | | | |_  | |_| |  __/ (_| | |    DEVELOPMENT COMMITTEE
+|_|   |_|_|\__, |_| |_|\__|  \____|\___|\__,_|_|          1 9 9 6
+           |___/                                    
+                     FOR OFFICIAL INTERNAL USE ONLY
+----------------------------------------------------------------------------
+
+ARCHIVE SERIAL: #001-020796
+ANNOUNCEMENT DATED: 02.July 1996 19:24EDT [FGADM.01-DM]
+
+ATTN all Flight Gear FS developers and list participants
+
+This is to officially welcome you to the Flight Gear Development family.
+Anytime you see this letterhead, you will know that official business
+is being announced. In any case, I would like to take this time to ask
+your cooperation in our first big steps into getting this simulator
+off the ground. (Pardon the pun) :)
+
+I've noticed that list activity has slowed to almost nothing in the
+past month or so, so I thought I'd send this out to try to get us
+back on track. Up until now, we've mostly just been unorganized,
+sending in code and miscellaneous announcements and examples. This
+approach is fine initially, but I feel we're in need of more organization
+to manage time, coordinate group communication, and the writing of
+actual code. 
+
+Below, I've appended a "skeleton" list of groups that need to be created:
+
+* Administration
+	Keeps everyone on task and is the "central power" that
+	all groups report to.
+* Archives Department
+	Stores all announcements and code (basically everything)
+	that is related to the FGFS project.
+* Programming (specific subdivisions included)
+	- Kernel module: writes and hashes out issues concerning the
+	  core of the simulator and maintains updates of the kernel
+	  (similar to the Linux project) once the simulator is publicly
+	  released.
+		SUGGESTED GROUP PARTICIPANTS:
+			* Curt Olson
+			* Maurizio Gavioli
+			* Eric Korpela
+	- Visuals/graphics: writes routines that relate to the visual
+	  display of objects in the simulator.
+		SUGGESTED GROUP PARTICIPANTS:
+			* ???
+	- User interface: handles issues concerning the graphical
+	  user interface of the simulator.
+	- Wx generation: writes code and resolves issues concerning the
+	  retrieval of real-time weather and the display of the wx.
+	  Will coordinate heavily with the visuals team.
+		SUGGESTED GROUPS PARTICIPANTS:
+			* Curt Olson
+			* ?
+	- ATC development: talking, interactive, SMART air traffic control.
+
+	- Scenery: hashes out issues dealing with the display of scenery,
+	  in the respect of file structure and level of detail, etc.
+		SUGGESTED GROUP PARTICIPANTS:
+			* Maurizio Gavioli
+			* ?
+	
+	- Aircraft Visual Modeling: Will basically be a subdivision of
+	  the scenery and visuals team. Determines how an aircraft will
+	  be represented (in terms of file structure, texture display,
+	  etc.)
+	- Motion/flight modeling: Will create and or implement equations
+	  /code to accurately model flight on the computer.
+		** This team must keep in mind that 100% realism is NOT
+		   THE most important factor. We must also consider frame
+		   rate, and find a happy medium between calculation and
+		   graphic display/refresh rates.
+
+These are all of the groups that I can think of at the moment, but
+you are certainly free to add to these in any way you see fit.
+Now that we know WHAT we need to do, we now need to decide WHO is
+going to be in these groups. As you can see, I have listed certain
+people as "suggested" on the basis of what they have done for
+Microsoft Flight Simulator. They and anyone else is/are certainly welcome
+to be on any team they wish. I have "appointed" myself to be a part
+of the administration team, since my programming ability (especially in
+C) is not advanced enough to be of any help in this project. 
+
+Shmuel Ben-Artiz (I apologize for spelling errors that I may have made
+in any of y'alls names :) has suggested that we have a liason in 
+every team that will communicate with other teams that the administration.
+The admins will periodically post an annoucement to this list stating
+what each team is working on and where to download their work to take
+a look at it. 
+
+I think that, when we are finally ready for our first public release,
+we should have a pre-compiled version of everything for those that
+have no interest in tinkering with the code. Or, if the person
+is in an adventurous state of mind :) they can download all the code.
+
+Another point is, are we going to have different distributions of this
+simulator? (Again, like the Linux project) Obviously, people are going
+to be publishing custom modules, and perhaps a radically different 
+simulator in the end. Will we official update a standard kernel every
+so often, or will this be up to each distribution's management? 
+
+In any case, this simulator MUST REMAIN FREE OF CHARGE forever! That
+is the original goal of this program in the first place. I believe we
+are going by the GNU license? 
+
+Our next problem is: in what language do we write this? I strongly 
+suggest C, as this is the native language of the bulk of our programmers.
+I think we have decided on DJGPP for the DOS and Linux versions?
+What compiler will we use for Windows95? Let's say right off, that we're
+going to avoid Visual Basic completely. VB is simply too slow for the 
+kind of work that this simulator is going to require. 
+Microsoft Visual C++ perhaps?
+
+My opinion is: we should work on the DOS version first, then on to
+Windows95, and then port it to Linux and whatever other operating
+systems we see fit. DOS is what MOST people in "our target market"
+ are using right now, even though the architecture is a little old. 
+Win95 seems to be the "wave of the future" <groan>, so I suppose that 
+will be next.
+
+In addition to all this, I'd like to bring up another issue...
+where do we get the data for realistic terrain/geography plotting?
+
+Let me know, and let's come up with the other issues that need to
+be confronted! I'm looking forward to responses... let's go ahead
+and decide what groups we're going to be in! :)
+
+Regards,
+David Murr
+
+PS: I'll explain the archives codes and all that in a little bit... :)
+----------------------------------------------------------------------------
+This document is copyright (c)1996 FGFS-DCARC. All rights reserved.
+This document may be redistributed or reproduced freely on the 
+Internet. Other methods of distribution are NOT allowed
+without the prior, express written permission of the FGFS-DCARC. 
+----------------------------------------------------------------------------
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Wed Jul  3 16:24:29 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id QAA03170; Wed, 3 Jul 1996 16:24:20 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from on-ramp.ior.com (on-ramp.ior.com [199.79.239.11]) by calvin.infoplane.com (8.7.1/8.7.1) with SMTP id QAA03166 for <flight-gear@infoplane.com>; Wed, 3 Jul 1996 16:24:15 -0500
+Received: from hyflyr.ior.com(really [204.212.119.30]) by on-ramp.ior.com
+	via sendmail with smtp
+	id <m0ubZZz-000XFXC@on-ramp.ior.com>
+	for <flight-gear@infoplane.com>; Wed, 3 Jul 96 14:35:23 -0700 (PDT)
+	(/\##/\ Smail3.1.30.16 #30.4 built 17-mar-96)
+Message-Id: <1.5.4.32.19960703213442.006957d8@on-ramp.ior.com>
+X-Sender: deanc@on-ramp.ior.com
+X-Mailer: Windows Eudora Light Version 1.5.4 (32)
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Date: Wed, 03 Jul 1996 14:34:42 -0700
+To: flight-gear@infoplane.com
+From: Dean <deanc@on-ramp.ior.com>
+Subject: Re: ANNOUNCEMENT
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+At 16:31 03-07-96 EDT, you wrote:
+>----------------------------------------------------------------------------
+> _____ _ _       _     _      ____
+>|  ___| (_) __ _| |__ | |_   / ___| ___  __ _ _ __
+>| |_  | | |/ _` | '_ \| __| | |  _ / _ \/ _` | '__| 
+>|  _| | | | (_| | | | | |_  | |_| |  __/ (_| | |    DEVELOPMENT COMMITTEE
+>|_|   |_|_|\__, |_| |_|\__|  \____|\___|\__,_|_|          1 9 9 6
+>           |___/                                    
+>                     FOR OFFICIAL INTERNAL USE ONLY
+>----------------------------------------------------------------------------
+>
+>ARCHIVE SERIAL: #001-020796
+>ANNOUNCEMENT DATED: 02.July 1996 19:24EDT [FGADM.01-DM]
+>
+>ATTN all Flight Gear FS developers and list participants
+>
+>	- Aircraft Visual Modeling: Will basically be a subdivision of
+>	  the scenery and visuals team. Determines how an aircraft will
+>	  be represented (in terms of file structure, texture display,
+>	  etc.)
+>	- Motion/flight modeling: Will create and or implement equations
+>	  /code to accurately model flight on the computer.
+>		** This team must keep in mind that 100% realism is NOT
+>		   THE most important factor. We must also consider frame
+>		   rate, and find a happy medium between calculation and
+>		   graphic display/refresh rates.
+>
+
+This is probably where I would fit in best. I am a real world pilot,
+currently flying KC-135R's in the USAF. I also have experience flying
+smaller jets, twin-turboprops, and c-172/152. Although I have an Elec
+Engineering degree, my C is a little rusty, so I probably could only write
+pseudocode and leave the hard programming to others.  Let me know. 
+
+Yes, frame rate is a very important part of the flight model since visual
+cues will be the only "feel" our sim will have, unless we can incorporate
+force-feedback at a later time.
+
+>
+>I think that, when we are finally ready for our first public release,
+>we should have a pre-compiled version of everything for those that
+>have no interest in tinkering with the code.
+>
+
+Yes, good idea.
+
+>In addition to all this, I'd like to bring up another issue...
+>where do we get the data for realistic terrain/geography plotting?
+
+Maybe USGS data?
+Dean Catalano, Capt, CFSI
+Aero Air - SEA Hub Commander
+Aero Test Pilot
+http://www.ior.com/~deanc/seahub/seahub.html
+
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Wed Jul  3 19:13:08 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id TAA04033; Wed, 3 Jul 1996 19:12:38 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from MAINE.maine.edu (maine.maine.edu [130.111.39.100]) by calvin.infoplane.com (8.7.1/8.7.1) with SMTP id TAA04028 for <flight-gear@infoplane.com>; Wed, 3 Jul 1996 19:12:29 -0500
+Received: from mail.camden.sad28.k12.me.us by MAINE.maine.edu (IBM VM SMTP V2R3)
+   with TCP; Wed, 03 Jul 96 20:17:56 EDT
+Date: Wed, 3 Jul 96 20:20:05 -0500
+From: Techie@mail.camden.sad28.k12.me.us (Ryan Connon)
+Organization: MSAD #28
+Subject: Re: ANNOUNCEMENT
+To: dmurr@pen.k12.va.us, flight-gear@infoplane.com
+Message-ID: <531882.ensmtp@mail.camden.sad28.k12.me.us>
+Priority: normal
+X-Mailer: ExpressNet/SMTP v1.1.5
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+
+----------------------------------------------------------------------------
+ _____ _ _       _     _      ____
+|  ___| (_) __ _| |__ | |_   / ___| ___  __ _ _ __
+| |_  | | |/ _` | '_ \| __| | |  _ / _ \/ _` | '__| 
+|  _| | | | (_| | | | | |_  | |_| |  __/ (_| | |    DEVELOPMENT COMMITTEE
+|_|   |_|_|\__, |_| |_|\__|  \____|\___|\__,_|_|          1 9 9 6
+           |___/                                    
+                     FOR OFFICIAL INTERNAL USE ONLY
+----------------------------------------------------------------------------
+This is to officially welcome you to the Flight Gear Development family.
+Anytime you see this letterhead, you will know that official business
+is being announced. In any case, I would like to take this time to ask
+your cooperation in our first big steps into getting this simulator
+off the ground. (Pardon the pun) :)
+
+I've noticed that list activity has slowed to almost nothing in the
+past month or so, so I thought I'd send this out to try to get us
+back on track. Up until now, we've mostly just been unorganized,
+sending in code and miscellaneous announcements and examples. This
+approach is fine initially, but I feel we're in need of more organization
+to manage time, coordinate group communication, and the writing of
+actual code. 
+
+Below, I've appended a "skeleton" list of groups that need to be created:
+
+* Administration
+	Keeps everyone on task and is the "central power" that
+	all groups report to.
+-cut here-
+
+Well, Curt, since I am just starting to learn C, I don't think that
+programming is for me.  I do do a lot of administrative work at my school for
+our technology office, and on the e-mail system,  so if you need any more
+people for that, that is one of my strong suits,  I like to be very organized!
+ I also work on Macs, so when (if we ever) work on a version for Mac I can do
+that,  please mail me back with what you had in mind 
+
+Thanx
+Ryan Connon
+
+
+--
+
+ Ryan Connon (aka  Techie) e-mail:  Techie@sad28.k12.me.us
+  CHECK out my web page at http://www.webville.com/oak/Techie
+ CRHS Tech Dept.Student Admin/Technician  CRHS Web Page 
+  visit us at: http://www.midcoast.com/~sad28/CRHS/ 
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Wed Jul  3 19:22:41 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id TAA04096; Wed, 3 Jul 1996 19:22:34 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from pen1.pen.k12.va.us (pen1.pen.k12.va.us [141.104.22.202]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id TAA04092 for <flight-gear@infoplane.com>; Wed, 3 Jul 1996 19:22:30 -0500
+Received: by pen1.pen.k12.va.us (8.7.3/8.6.6)
+          id UAA83571; Wed, 3 Jul 1996 20:33:27 -0400
+From: "David L. Murr" <dmurr@pen.k12.va.us>
+Message-Id: <199607040033.UAA83571@pen1.pen.k12.va.us>
+Subject: Re: ANNOUNCEMENT
+To: flight-gear@infoplane.com
+Date: Wed, 3 Jul 96 20:33:27 EDT
+In-Reply-To: <531882.ensmtp@mail.camden.sad28.k12.me.us>; from "Ryan Connon" at Jul 3, 96 8:20 pm
+X-Mailer: PENELM [version 2.3.1 PL11]
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+This is the thrid copy of the same message... :) the last two
+came through correctly, as far as file size, but... :)
+
+/dlm
+
+According to Ryan Connon:
+> 
+> Well, Curt, since I am just starting to learn C, I don't think that
+> programming is for me.  I do do a lot of administrative work at my school for
+> our technology office, and on the e-mail system,  so if you need any more
+> people for that, that is one of my strong suits,  I like to be very organized!
+>  I also work on Macs, so when (if we ever) work on a version for Mac I can do
+> that,  please mail me back with what you had in mind 
+
+
+-- 
+   _________  __              | Editor - FSNews
+  / __/ __/ |/ /__ _    _____ | http://users.aol.com/fsnews/
+ / _/_\ \/    / -_) |/|/ (_-< | The #1 source for flight-sim news!
+/_/ /___/_/|_/\__/|__,__/___/ | "Taking virtual aviation to new heights!"
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Thu Jul  4 22:41:25 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id WAA12414; Thu, 4 Jul 1996 22:39:56 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from inetminas.estaminas.com.br (inetminas.estaminas.com.br [200.251.191.10]) by calvin.infoplane.com (8.7.1/8.7.1) with SMTP id WAA12407 for <flight-gear@infoplane.com>; Thu, 4 Jul 1996 22:39:30 -0500
+Received: from modem60.estaminas.com.br by inetminas.estaminas.com.br (AIX 4.1/UCB 5.64/4.03)
+          id AA12628; Fri, 5 Jul 1996 00:52:46 -0300
+Date: Fri, 5 Jul 1996 00:52:46 -0300
+Message-Id: <9607050352.AA12628@inetminas.estaminas.com.br>
+X-Sender: p.soares@inetminas.estaminas.com.br
+X-Mailer: Windows Eudora Light Version 1.5.2
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+To: flight-gear@infoplane.com
+From: Paulo Marcelo Soares <p.soares@inetminas.estaminas.com.br>
+Subject: Re: ANNOUNCEMENT
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+>>ATTN all Flight Gear FS developers and list participants
+>>
+>>	- Aircraft Visual Modeling: Will basically be a subdivision of
+>>	- Motion/flight modeling: Will create and or implement equations
+>>	  /code to accurately model flight on the computer.
+
+>This is probably where I would fit in best. I am a real world pilot,
+>currently flying KC-135R's in the USAF. I also have experience flying
+>smaller jets, twin-turboprops, and c-172/152. Although I have an Elec
+
+        Well folks...I don't have ANY knowledge of programming,but I'm aldo
+a real world pilot,currently flying a Piper Seneca II Twin here in Brazil. I
+would like a lot to help to develop a flight model as realistic as possible!
+
+[]S Paulo Marcelo Soares
+p.soares@inetminas.estaminas.com.br
+Belo Horizonte BRAZIL
+EMB 810/PA-34 200 T  Pilot   PT-EMT
+FSA Member MG-PMS
+
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Thu Jul  4 22:49:15 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id WAA12470; Thu, 4 Jul 1996 22:49:12 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from pen1.pen.k12.va.us (pen1.pen.k12.va.us [141.104.22.202]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id WAA12466 for <flight-gear@infoplane.com>; Thu, 4 Jul 1996 22:49:07 -0500
+Received: by pen1.pen.k12.va.us (8.7.3/8.6.6)
+          id AAA87203; Fri, 5 Jul 1996 00:00:05 -0400
+From: "David L. Murr" <dmurr@pen.k12.va.us>
+Message-Id: <199607050400.AAA87203@pen1.pen.k12.va.us>
+Subject: Signing up for teams...
+To: flight-gear@infoplane.com
+Date: Fri, 5 Jul 96 0:00:05 EDT
+X-Mailer: PENELM [version 2.3.1 PL11]
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Since this is a holiday weekend for those of us in the States,
+I'm in not big rush, but if you'd like to sign up for a
+particular team, please send me (dmurr@pen.k12.va.us) your
+name, e-mail address, and what group you'd like to participate
+in. We'll sort it all out, and announce who's in what later.
+
+We already have 2 ppl. that have expressed interest in the
+flight modeling aspect... I'm in admin. Anyone??
+
+If you don't sign up for a slot, you may not get what you
+wanted to do initially! :)
+
+Thanks, /dlm
+-- 
+   _________  __              | Editor - FSNews
+  / __/ __/ |/ /__ _    _____ | http://users.aol.com/fsnews/
+ / _/_\ \/    / -_) |/|/ (_-< | The #1 source for flight-sim news!
+/_/ /___/_/|_/\__/|__,__/___/ | "Taking virtual aviation to new heights!"
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Fri Jul  5 01:30:17 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id BAA13290; Fri, 5 Jul 1996 01:30:02 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from chava.netmedia.net.il (chava.netmedia.net.il [192.115.153.20]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id BAA13284 for <flight-gear@infoplane.com>; Fri, 5 Jul 1996 01:29:41 -0500
+Received: from LOCALNAME (cs31a12.netmedia.net.il [192.115.152.76]) by chava.netmedia.net.il (8.7.5/8.7.3) with SMTP id JAA21709 for <flight-gear@infoplane.com>; Fri, 5 Jul 1996 09:41:45 +0200 (IST)
+Date: Fri, 5 Jul 1996 09:41:45 +0200 (IST)
+Message-Id: <199607050741.JAA21709@chava.netmedia.net.il>
+X-Sender: sba@mail.netmedia.net.il
+X-Mailer: Windows Eudora Light Version 1.5.2
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+To: flight-gear@infoplane.com
+From: Shmuel Ben-Artzi <sba@netmedia.net.il>
+Subject: Re: Signing up for teams...
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Dave,
+
+Please sign me up for the admin group. 
+
+My experience in this field basically consists of breaking projects down
+into their component parts and tracking them, coordinating the activities of
+various groups working on a single project (small to medium sized), and
+leading small groups. I also have one additional quality which you may use
+or not as you see fit: I play a superb devil's advocate (perhaps you've
+already noticed that). 
+
+I am not a programmer, though I do understand the principles of hierarchical
+and object-oriented programming, including the basics of C and C++. I have
+used internal programming systems (e.g. dBASE IV) to create database and
+other systems, and have had considerable experience designing and using
+spreadsheets. I work extensively with word processors and *simple* DTP
+(Mircosoft Publisher). 
+
+I have studied HTML and web site development and have prepared a small web
+site for the school that I work for: a Hebrew language academy called Ulpan
+Akiva. This will eventually grow to about 60-80 pages. If you'd like to take
+a look at it, its hosted at WorldWide Classroom. The URL is
+www.worldwide.edu and then follow the links to Countries:Israel. I intend to
+build up a freelance business relating to the Internet.
+
+I am the Data Services Manager for Ulpan Akiva, and am the Administrator of
+our Novell 3.12 LAN. I am presently studying those aspects of the Internet
+related to Educational Technology and the development of online teaching
+programs. I am also the co-director of the Netanya, Israel PC Users Group.
+
+I have had experience in technical writing (and several other forms of
+written and verbal communications), including one job as an engineering tech
+writer. I have participated in a few beta test projects, and usually
+concentrate on the quality and readability of the printed docs, tutorials, etc.
+
+Belated wishes for the 4th and Shalom,
+
+Shmuel
+
+
+At 00:00 5/7/96 EDT, you wrote:
+>Since this is a holiday weekend for those of us in the States,
+>I'm in not big rush, but if you'd like to sign up for a
+>particular team, please send me (dmurr@pen.k12.va.us) your
+>name, e-mail address, and what group you'd like to participate
+>in. We'll sort it all out, and announce who's in what later.
+>
+>We already have 2 ppl. that have expressed interest in the
+>flight modeling aspect... I'm in admin. Anyone??
+>
+>
+
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Fri Jul  5 14:02:01 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id OAA17162; Fri, 5 Jul 1996 14:01:29 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from pen1.pen.k12.va.us (pen1.pen.k12.va.us [141.104.22.202]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id OAA17158 for <flight-gear@infoplane.com>; Fri, 5 Jul 1996 14:01:23 -0500
+Received: by pen1.pen.k12.va.us (8.7.3/8.6.6)
+          id OAA102506; Fri, 5 Jul 1996 14:28:39 -0400
+From: "David L. Murr" <dmurr@pen.k12.va.us>
+Message-Id: <199607051828.OAA102506@pen1.pen.k12.va.us>
+Subject: Group selection update...
+To: flight-gear@infoplane.com
+Date: Fri, 5 Jul 96 14:28:38 EDT
+X-Mailer: PENELM [version 2.3.1 PL11]
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+OK, so far...
+
+We have 2 for flight modeling and testing
+... and 4 (including me) for administration. I don't think
+there should be more than 10 ppl. in admin. -- it would just
+get too hectic.
+
+All of our programmers are busy writing code, I guess... ;^)
+<bg>
+
+/dlm
+-- 
+   _________  __              | Editor - FSNews
+  / __/ __/ |/ /__ _    _____ | http://users.aol.com/fsnews/
+ / _/_\ \/    / -_) |/|/ (_-< | The #1 source for flight-sim news!
+/_/ /___/_/|_/\__/|__,__/___/ | "Taking virtual aviation to new heights!"
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Fri Jul  5 16:34:55 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id QAA17938; Fri, 5 Jul 1996 16:34:29 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from mailer.together.net (mailer.together.net [204.97.120.27]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id QAA17934 for <flight-gear@infoplane.com>; Fri, 5 Jul 1996 16:34:23 -0500
+Received: from sequoia.together.net (sequoia.together.net [204.97.120.25]) by mailer.together.net (8.7.5/8.6.12) with ESMTP id RAA31293 for <flight-gear@infoplane.com>; Fri, 5 Jul 1996 17:45:00 -0400
+Received: from ksplant (PORT-58-MAX-BTV-02.ramp.together.net [207.41.54.186]) by sequoia.together.net (8.7.5/8.6.12) with SMTP id RAA21859 for <flight-gear@infoplane.com>; Fri, 5 Jul 1996 17:44:56 -0400 (EDT)
+Message-Id: <199607052144.RAA21859@sequoia.together.net>
+Comments: Authenticated sender is <ksplant@together.net>
+From: "Kevin Plant" <ksplant@together.net>
+To: flight-gear@infoplane.com
+Date: Fri, 5 Jul 1996 17:38:44 +0000
+Subject: Re: Group selection update...
+Priority: normal
+X-mailer: Pegasus Mail for Win32 (v2.31)
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+On  5 Jul 96 at 14:28, David L. Murr wrote:
+
+> OK, so far...
+> 
+> We have 2 for flight modeling and testing
+> ... and 4 (including me) for administration. I don't think
+> there should be more than 10 ppl. in admin. -- it would just
+> get too hectic.
+> 
+> All of our programmers are busy writing code, I guess... ;^)
+> <bg>
+> 
+> /dlm
+
+Hi Team,
+
+After giving myself some time to think about it, I've decided to 
+unsub.  Been thinking about my last (2nd) post, which was actually my 
+1st bit of input.  There was a reply to the list immediately 
+following mine, however the tone seemed to be saying, we already know 
+that technology and to prove it I'm going to blub out stuff you'll 
+never understand (and right he was <s>.)  This not only pointed out 
+to me that there's really nothing I can do here, but that I wouldn't 
+care to anyway, with within such closed off and isolated 
+conversations between yourselves <s>.
+
+For the good of the project, I hope that 'programmer elite" attitude 
+will disappear.  I now question your motives for doing this project.  
+Perhaps it would be wise to ask yourselves, "am I doing this out of 
+pride and recognition, or is it really for the good of many?"  With 
+no hard fellings (maybe a little miffed <g>.), I wish you all well.
+________
+Kevin
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Fri Jul  5 18:51:51 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id SAA18630; Fri, 5 Jul 1996 18:49:16 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from psnw.com (sierra.valleynet.com [205.199.144.107]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id SAA18626 for <flight-gear@infoplane.com>; Fri, 5 Jul 1996 18:49:11 -0500
+Received: from cheetah.psnw.com (cheetah.psnw.com [206.43.252.100]) by psnw.com (8.7.4/8.6.9) with SMTP id RAA12867 for <flight-gear@infoplane.com>; Fri, 5 Jul 1996 17:00:03 -0700 (PDT)
+From: robepps@valleynet.com (Robert Epps)
+To: flight-gear@infoplane.com
+Subject: Is this ship on the right course?
+Date: Fri, 05 Jul 1996 23:59:18 GMT
+Message-ID: <31dda8af.188579372@mail.psnw.com>
+X-Mailer: Forte Agent .99e/32.227
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+I think I will unsub too, but for a different reason:  I think this
+project is drifting way off course.
+
+I presume the whole reason for getting FS enthusiasts together to
+write a freeware flight simulator is to make the BEST simulator money
+can't buy, not just a MFS clone.  But the MFS clone is where this
+project seems to be headed; you all are aiming way too low!
+
+In the area of scenery, for example, I keep seeing messages saying
+things like "it would be nice to do realistic full-polygon-shaded
+super 3D texturing bla-de-bla, but we can't because it won't run with
+acceptable frame rates on a 486."  Well then, BLOW OFF the 486!!!  Why
+does Flight Gear have to run on your grandmother's four-year-old
+machine?  I want to see a flight simulator with a realistic flight
+model and realistic scenery, with lots of buildings, telephone poles,
+bridges, trees, moving cars on the streets, etc. -- not just a few
+textured cubes and triangles plunked down on a flat painted landscape.
+I think many others want that too.
+
+This project probably has a year at least before it produces even the
+beginnings of an actual running simulator.  By then, $1500 computers
+at K-Mart will be 200 MHz Pentiums with MMX extensions (or Macs with
+150 MHz PowerPC 604 chips).  I think that nothing less than a 90 MHz
+Pentium, running a real multithreaded OS like Windows 95 or NT or OS/2
+or Linux, should be the target for Flight Gear -- it's not supposed to
+be an FS clone, but the best flight simulator for serious enthusiasts!
+Don't let ridiculously low platform requirements cripple it.
+
+       --- Rob
+
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Fri Jul  5 20:07:56 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id UAA19043; Fri, 5 Jul 1996 20:07:44 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from pen1.pen.k12.va.us (pen1.pen.k12.va.us [141.104.22.202]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id UAA19039 for <flight-gear@infoplane.com>; Fri, 5 Jul 1996 20:07:39 -0500
+Received: by pen1.pen.k12.va.us (8.7.3/8.6.6)
+          id UAA08563; Fri, 5 Jul 1996 20:03:28 -0400
+From: "David L. Murr" <dmurr@pen.k12.va.us>
+Message-Id: <199607060003.UAA08563@pen1.pen.k12.va.us>
+Subject: Re: Group selection update...
+To: flight-gear@infoplane.com
+Date: Fri, 5 Jul 96 20:03:28 EDT
+In-Reply-To: <199607052144.RAA21859@sequoia.together.net>; from "Kevin Plant" at Jul 5, 96 5:38 pm
+X-Mailer: PENELM [version 2.3.1 PL11]
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+According to Kevin Plant:
+> 
+> This not only pointed out 
+> to me that there's really nothing I can do here, but that I wouldn't 
+> care to anyway, with within such closed off and isolated 
+> conversations between yourselves <s>.
+
+Nooooo, noooo, nooo! I think we've miscommunicated somewhere! :(
+The programming part is only a slice out of the pie of what
+needs to be done! We posted warnings that the list topics were
+often highly technical, as that is almost a requirement for
+this project. But, our first objective, as I pointed out in the
+memo, is to get everyone into teams that would like to take an
+ever-present active role in the development of the simulator. 
+
+Without specific teams, it would be incredibly difficult to get
+anything done. Or am I wrong here? Should we just be spread out,
+with sproadic communication between programmers? It would seem
+that this would only bring on confusion and a poorly written
+simulator. Have I missed something? I really don't understand
+why you're talking about, Kevin. :(
+
+> For the good of the project, I hope that 'programmer elite" attitude 
+> will disappear.  I now question your motives for doing this project.  
+> Perhaps it would be wise to ask yourselves, "am I doing this out of 
+> pride and recognition, or is it really for the good of many?"  With 
+> no hard fellings (maybe a little miffed <g>.), I wish you all well.
+
+Again, I don't really understand... who presents this
+"programmer elite" attitude? I'm pretty sure it's not me, as I
+know very little programming! :) 
+
+And I'm not going to lie and say this is 100% "for the
+people"... hell, that's against human nature... but yes, mostly
+we're doing this because (hopefully) we know what the want in a
+sim, and we can provide it for ourselves. Hopefully. Obviously,
+I cannot comment on individual motives for joining the project,
+mine are that I want a flight sim that fufills my "wanted"
+features in a sim... and obviously, the big companies aren't
+doing that so... here we are...
+
+So, Kevin, and everyone -- please tell me if it's something I'm
+doing that's given you this perspective, because I'd like to
+change it right now. Since you may have already unsubscribed,
+I'll forward youa copy to your e-mail address.. hopefully
+you'll stay with us, but if not, well... that's certainly your
+perogative. :(
+
+Regards,
+David Murr
+FGADMIN-01DM
+-- 
+   _________  __              | Editor - FSNews
+  / __/ __/ |/ /__ _    _____ | http://users.aol.com/fsnews/
+ / _/_\ \/    / -_) |/|/ (_-< | The #1 source for flight-sim news!
+/_/ /___/_/|_/\__/|__,__/___/ | "Taking virtual aviation to new heights!"
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Fri Jul  5 22:19:48 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id WAA19738; Fri, 5 Jul 1996 22:19:38 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from ravel.n2.net (ravel.n2.net [204.250.22.20]) by calvin.infoplane.com (8.7.1/8.7.1) with SMTP id WAA19734 for <flight-gear@infoplane.com>; Fri, 5 Jul 1996 22:19:33 -0500
+Received: from ppp160.n2.net (ppp160.n2.net [204.250.22.160]) by ravel.n2.net (8.6.12/8.6.12) with SMTP id UAA02512 for <flight-gear@infoplane.com>; Fri, 5 Jul 1996 20:32:24 -0700
+From: bythebay@n2.net (Edward "T-Man" Kinateder)
+To: flight-gear@infoplane.com
+Subject: Action Plan.....huh?
+Date: Sat, 06 Jul 1996 03:19:34 GMT
+Organization: SimReal Tech
+Message-ID: <31ddd7be.5305328@mail.n2.net>
+X-Mailer: Forte Agent .99e/32.227
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+David,
+
+I've been just listening in since I introducing myself a couple of
+months ago.  It looks like all have the best of intentions.  As you
+know, finding talent is not the difficult part.  Bringing everyone
+together and getting them all pointed in the same direction is
+Flight-Gear's greatest challenge (as will all worthwhile
+undertakings).  Flight-Gear needs to determine through collaboration
+and consensus, with great detail, what it is Flight-Gear intends to
+create and when it intends to have it completed.  From here, all
+constructive turmoil and strife will arise.  Objectives with
+deadlines.  (suddenly everyone screams...furiously typing hate mail to
+this "Ed" character).
+
+Best regards with a grin,
+
+Ed
+
+
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Fri Jul  5 22:32:32 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id WAA19824; Fri, 5 Jul 1996 22:32:26 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from kksys.skypoint.net (kksys.skypoint.net [199.86.32.5]) by calvin.infoplane.com (8.7.1/8.7.1) with SMTP id WAA19820 for <flight-gear@infoplane.com>; Fri, 5 Jul 1996 22:32:17 -0500
+Received: by kksys.skypoint.net (Smail3.1.29.1 #2)
+	id m0ucOJ6-00034MC; Fri, 5 Jul 96 22:45 CDT
+Received: (from curt@localhost) by sledge.infoplane.com (8.7.5/8.6.9) id WAA02468; Fri, 5 Jul 1996 22:37:54 -0500
+Date: Fri, 5 Jul 1996 22:37:54 -0500
+Message-Id: <199607060337.WAA02468@sledge.infoplane.com>
+From: "Curtis L. Olson" <curt@sledge.mn.org>
+To: flight-gear@infoplane.com
+Subject: Is this ship on the right course?
+In-Reply-To: <31dda8af.188579372@mail.psnw.com>
+References: <31dda8af.188579372@mail.psnw.com>
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Robert Epps writes:
+> I think I will unsub too, but for a different reason:  I think this
+> project is drifting way off course.
+
+It's a shame to see people leave, but we are at a point right now
+where not to many people can contribute.  We need to get a basic sim
+with an open architecture up and running before lots of people will
+jump on the band wagan.  Flight-Gear is a great idea, but we haven't
+moved too far forward yet.
+
+For any who are considering leaving this list, I wish you the best in
+all your future endevours.  Please check in on us once in a while.  
+
+> I presume the whole reason for getting FS enthusiasts together to
+> write a freeware flight simulator is to make the BEST simulator money
+> can't buy, not just a MFS clone.  But the MFS clone is where this
+> project seems to be headed; you all are aiming way too low!
+
+This is, and will always be the goal.  However, we cannot achieve this
+instantly.  We must build up to it incrementally.  I think MSFS
+compatibility is a worthy first step.  It would give us access to a
+huge amount of scenery.  There's no reason why we can't support .bgl
+format while also developing a much better format.
+
+> Well then, BLOW OFF the 486!!!  Why does Flight Gear have to run on
+> your grandmother's four-year-old machine?
+
+Unfortunately, a lot of us still have 486's.  I was thinking of
+upgrading to a Cyrix 5x86 120 this month, but it doesn't look like its
+going to happen this summer.
+
+> I want to see a flight simulator with a realistic flight model and
+> realistic scenery, with lots of buildings, telephone poles, bridges,
+> trees, moving cars on the streets, etc. -- not just a few textured
+> cubes and triangles plunked down on a flat painted landscape.  I
+> think many others want that too.
+
+Like I said before, this is a great target to shoot towards.  However,
+we are all doing this in our spare time as a hobby.  We need to bite
+off chunks we can chew.  Once we get going though, with enough people
+chewing, we just might get there.
+
+> This project probably has a year at least before it produces even the
+> beginnings of an actual running simulator.  By then, $1500 computers
+> at K-Mart will be 200 MHz Pentiums with MMX extensions (or Macs with
+> 150 MHz PowerPC 604 chips).  I think that nothing less than a 90 MHz
+> Pentium, running a real multithreaded OS like Windows 95 or NT or OS/2
+> or Linux, should be the target for Flight Gear -- it's not supposed to
+> be an FS clone, but the best flight simulator for serious enthusiasts!
+> Don't let ridiculously low platform requirements cripple it.
+
+Now's a great time to buy a computer, hopefully in a year it will be
+even better.  However, someone with a 486 isn't going to be too
+excited about writing software they can't run.  I think if we can
+write a simulator that runs acceptably on a 486, we will be much
+better off when running on higher end machines.  We will have much
+more room to add even cooler features (every byte of code slows things
+down just a bit.)
+
+We will all have different goals and ideas about what FlightGear
+should be.  My "vision" is for FlightGear to be a common framework
+upon which we can all pursue our own directions, goals, and ideas,
+while at the same time cooperating so our work benifits everyone.
+
+Curt.
+-- 
+Curtis Olson   E-mail: curt@sledge.mn.org
+Try Linux!     WWW:    http://www.me.umn.edu/home/clolson/main.html
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Fri Jul  5 22:39:23 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id WAA19869; Fri, 5 Jul 1996 22:39:20 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from pen1.pen.k12.va.us (pen1.pen.k12.va.us [141.104.22.202]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id WAA19865 for <flight-gear@infoplane.com>; Fri, 5 Jul 1996 22:39:14 -0500
+Received: by pen1.pen.k12.va.us (8.7.3/8.6.6)
+          id XAA11913; Fri, 5 Jul 1996 23:50:19 -0400
+From: "David L. Murr" <dmurr@pen.k12.va.us>
+Message-Id: <199607060350.XAA11913@pen1.pen.k12.va.us>
+Subject: Re: Is this ship on the right course?
+To: flight-gear@infoplane.com
+Date: Fri, 5 Jul 96 23:50:19 EDT
+In-Reply-To: <31dda8af.188579372@mail.psnw.com>; from "Robert Epps" at Jul 5, 96 11:59 pm
+X-Mailer: PENELM [version 2.3.1 PL11]
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+According to Robert Epps:
+> 
+> I think I will unsub too, but for a different reason:  I think this
+> project is drifting way off course.
+> 
+> I presume the whole reason for getting FS enthusiasts together to
+> write a freeware flight simulator is to make the BEST simulator money
+> can't buy, not just a MFS clone.  But the MFS clone is where this
+> project seems to be headed; you all are aiming way too low!
+
+Okay... let me put my opinion into the pot. This is the second
+time I've seen a message of someone who intends to unsubscribe
+for whatever reason. This is a cooperative project, is it not?
+So why put in your $0.02 and then unsubscribe? If that happens,
+we all lose - you (you is a generic term here) won't get to
+continue giving your input, which is the core of this project
+(i.e., what the users want) and the project will suffer greatly
+if everyone
+starts unsubing because things aren't going the way they'd
+like. Now, I'm not trying to flame anyone, but -- we haven't
+gone ANYWHERE yet in terms of WHAT we're going to do! If we go
+Pentium only, fine... we haven't decided yet... that's why we
+need everyone's input... the drafts that I've been putting
+together are just suggestions, as I've said. They're certainly
+not written in stone. All I wanted to do last night was to try
+to get the ball rolling again by putting us into logical groups
+so that we could get together and brainstorm and express our
+opinions -- without this kind of organization, the project is
+going to flop before we can ever do anything. 
+
+> In the area of scenery, for example, I keep seeing messages saying
+> things like "it would be nice to do realistic full-polygon-shaded
+> super 3D texturing bla-de-bla, but we can't because it won't run with
+> acceptable frame rates on a 486."  Well then, BLOW OFF the 486!!!  Why
+> does Flight Gear have to run on your grandmother's four-year-old
+
+<ROFL> :) You make excellent points, and that's what we need to
+continue doing, but please don't unsubscribe. The thread you
+mention is over a month old, and everything's been rather
+static since then, and we need to keep going with it...
+determine how and why and when this thing will run... right?
+
+So, am I completely insane and really missing something big
+here or what? Someone please comment.
+
+/dlm
+
+-- 
+   _________  __              | Editor - FSNews
+  / __/ __/ |/ /__ _    _____ | http://users.aol.com/fsnews/
+ / _/_\ \/    / -_) |/|/ (_-< | The #1 source for flight-sim news!
+/_/ /___/_/|_/\__/|__,__/___/ | "Taking virtual aviation to new heights!"
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Sat Jul  6 00:41:11 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id AAA20491; Sat, 6 Jul 1996 00:40:36 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from chava.netmedia.net.il (chava.netmedia.net.il [192.115.153.20]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id AAA20487 for <flight-gear@infoplane.com>; Sat, 6 Jul 1996 00:40:30 -0500
+Received: from LOCALNAME (cs32a5.netmedia.net.il [192.115.152.85]) by chava.netmedia.net.il (8.7.5/8.7.3) with SMTP id IAA26893 for <flight-gear@infoplane.com>; Sat, 6 Jul 1996 08:52:40 +0200 (IST)
+Date: Sat, 6 Jul 1996 08:52:40 +0200 (IST)
+Message-Id: <199607060652.IAA26893@chava.netmedia.net.il>
+X-Sender: sba@mail.netmedia.net.il
+X-Mailer: Windows Eudora Light Version 1.5.2
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+To: flight-gear@infoplane.com
+From: Shmuel Ben-Artzi <sba@netmedia.net.il>
+Subject: Re: Group selection update...
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Dave,
+
+Nope, sounds to me like you're right on target.
+
+Shmuel
+
+>Without specific teams, it would be incredibly difficult to get
+>anything done. Or am I wrong here? Should we just be spread out,
+>with sproadic communication between programmers? It would seem
+>that this would only bring on confusion and a poorly written
+>simulator. 
+
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Sat Jul  6 00:41:12 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id AAA20497; Sat, 6 Jul 1996 00:40:48 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from chava.netmedia.net.il (chava.netmedia.net.il [192.115.153.20]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id AAA20493 for <flight-gear@infoplane.com>; Sat, 6 Jul 1996 00:40:40 -0500
+Received: from LOCALNAME (cs32a5.netmedia.net.il [192.115.152.85]) by chava.netmedia.net.il (8.7.5/8.7.3) with SMTP id IAA26888; Sat, 6 Jul 1996 08:52:35 +0200 (IST)
+Date: Sat, 6 Jul 1996 08:52:35 +0200 (IST)
+Message-Id: <199607060652.IAA26888@chava.netmedia.net.il>
+X-Sender: sba@mail.netmedia.net.il
+X-Mailer: Windows Eudora Light Version 1.5.2
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+To: flight-gear@infoplane.com
+From: Shmuel Ben-Artzi <sba@netmedia.net.il>
+Subject: Re: Is this ship on the right course?
+Cc: robepps@valleynet.com
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Rob,
+
+If that's what you honestly believe, then stick around and fight for it. I,
+for one, value your input. 
+
+BTW, remember Spectrum HoloByte's approach in Falcon 3, where they created a
+*true* high fidelity model of the F-16 cockpit for those machines capable of
+running it, with a reduced fidelity model for less-capable machines? Why not
+adopt the same approach? We're seeing the same kind of thing on all over the
+Web today with sites being mirrored for forms-capable/not capable or
+frames-capable/not capable browsers.
+
+Hang in there.
+
+Shmuel
+
+
+At 23:59 5/7/96 GMT, you wrote:
+>I think I will unsub too, but for a different reason:  I think this
+>project is drifting way off course.
+>
+> I think that nothing less than a 90 MHz
+>Pentium, running a real multithreaded OS like Windows 95 or NT or OS/2
+>or Linux, should be the target for Flight Gear -- it's not supposed to
+>be an FS clone, but the best flight simulator for serious enthusiasts!
+>Don't let ridiculously low platform requirements cripple it.
+>
+>       --- Rob
+
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Sat Jul  6 02:07:42 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id CAA20946; Sat, 6 Jul 1996 02:07:27 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from psnw.com (sierra.valleynet.com [205.199.144.107]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id CAA20942 for <flight-gear@infoplane.com>; Sat, 6 Jul 1996 02:07:23 -0500
+Received: from cheetah.psnw.com (cheetah.psnw.com [206.43.252.100]) by psnw.com (8.7.4/8.6.9) with SMTP id AAA03840 for <flight-gear@infoplane.com>; Sat, 6 Jul 1996 00:18:27 -0700 (PDT)
+From: robepps@psnw.com (Robert Epps)
+To: flight-gear@infoplane.com
+Subject: Re: Is this ship on the right course?
+Date: Sat, 06 Jul 1996 07:17:25 GMT
+Message-ID: <31de108e.215170649@mail.psnw.com>
+References: <199607060652.IAA26888@chava.netmedia.net.il>
+In-Reply-To: <199607060652.IAA26888@chava.netmedia.net.il>
+X-Mailer: Forte Agent .99e/32.227
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+> > I presume the whole reason for getting FS enthusiasts together to
+> > write a freeware flight simulator is to make the BEST simulator money
+> > can't buy, not just a MFS clone.  But the MFS clone is where this
+> > project seems to be headed; you all are aiming way too low!
+> 
+> This is, and will always be the goal.  However, we cannot achieve this
+> instantly.  We must build up to it incrementally.  I think MSFS
+> compatibility is a worthy first step.  It would give us access to a
+> huge amount of scenery.  There's no reason why we can't support .bgl
+> format while also developing a much better format.
+
+Well, I typed a big long eloquent reply to this, it took me nearly an
+hour, then just before I clicked on the "send" button, Netscape
+crashed and blew it all away.  So here's the short, humorless version
+(sent from Agent this time!):
+
+I think the main message I am trying to get across is that time needs
+to be taken to make sure that the world model and 3D engine have no
+arbitrary limits to the number, complexity and density of the polygons
+and textures.  None of this "gee there's no way any computer is going
+to handle an airplane made out of 10000 textured polygons, so let's
+make our data structure simple by limiting each 3D object to 16
+polygons" crap.  Maybe your 486/50 can't handle it, but in two years,
+your Octium MegaPro/300 will fly through that much detail at 60 frames
+per second and beg for more.  The key word here is SCALEABILITY.
+Flight Simulator has blocky, jagged, sparse terrain regardless of
+whether you run it on a 486/33 or Pentium/200, because it does not
+have that degree of scaleability -- the data is built the lowest
+common denominator platform.  Don't make the same mistake with FG!
+
+        --- Rob
+
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Sat Jul  6 03:05:29 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id DAA21305; Sat, 6 Jul 1996 03:05:21 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from chava.netmedia.net.il (chava.netmedia.net.il [192.115.153.20]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id DAA21301 for <flight-gear@infoplane.com>; Sat, 6 Jul 1996 03:05:14 -0500
+Received: from LOCALNAME (cs31a10.netmedia.net.il [192.115.152.74]) by chava.netmedia.net.il (8.7.5/8.7.3) with SMTP id LAA29296 for <flight-gear@infoplane.com>; Sat, 6 Jul 1996 11:17:20 +0200 (IST)
+Date: Sat, 6 Jul 1996 11:17:20 +0200 (IST)
+Message-Id: <199607060917.LAA29296@chava.netmedia.net.il>
+X-Sender: sba@mail.netmedia.net.il
+X-Mailer: Windows Eudora Light Version 1.5.2
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+To: flight-gear@infoplane.com
+From: Shmuel Ben-Artzi <sba@netmedia.net.il>
+Subject: Re: Is this ship on the right course?
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Curt,
+
+>It's a shame to see people leave, but we are at a point right now
+>where not to many people can contribute.  
+
+That *may* be true within the tight confines of developing flight models. I
+wouldn't presume to wade into the morass of mathematical calculations, 3
+DOF/6 DOF trade-offs, reality vs. plausibility compromises, etc. in that area.
+
+But that's not the whole picture. The flight model will not exist as an
+island apart. It will have to be part of a total approach that will involve
+scenery design, interactive ATC interfaces, cross-platform considerations,
+programming objects to make possible the design of all forms of
+instrumentation and flight control needed for realistic flight control,
+advanced panel designs. The list goes on.
+
+>We need to get a basic sim
+>with an open architecture up and running before lots of people will
+>jump on the band wagan.  Flight-Gear is a great idea, but we haven't
+>moved too far forward yet.
+
+The basic architecture will have to include as much as possible of the
+"goodies" which will make up a fully integrated system before it will
+develop much enthusiasm. If we want to entice more causal simmers into
+becoming serious sim enthusiasts (and this is a requirement if our project
+is to become more than just the "toy of the elite few") then everything must
+fit together from the beginning into a seamless, user-friendly (don't you
+just hate that term) environment.
+
+>> I presume the whole reason for getting FS enthusiasts together to
+>> write a freeware flight simulator is to make the BEST simulator money
+>> can't buy, not just a MFS clone.  But the MFS clone is where this
+>> project seems to be headed; you all are aiming way too low!
+>
+>This is, and will always be the goal.  However, we cannot achieve this
+>instantly.  We must build up to it incrementally.  I think MSFS
+>compatibility is a worthy first step.  It would give us access to a
+>huge amount of scenery.  There's no reason why we can't support .bgl
+>format while also developing a much better format.
+
+Please keep in mind that FS-compatible and FS clone are not necessarily the
+same thing. I think that you and Robert are really arguing two sides of the
+same coin here. We don't need to create a MS-lookalike in order for it to be
+operationally compatible with FS.
+
+>Unfortunately, a lot of us still have 486's.  I was thinking of
+>upgrading to a Cyrix 5x86 120 this month, but it doesn't look like its
+>going to happen this summer.
+
+When will FG be ready to beta, let alone to "market" (yes, I know that it'll
+be freeware). Next week? Next month? *Maybe* next year. And the decisions
+regarding platforms and technologies have to be made with those
+considerations in mind. If you only have a 486 available and you want to
+test out some advanced graphics concepts that are only practical on high-end
+machines, then I'm sure that someone on the list will find a way to make the
+services of one available to you for that purpose (just as long as you don't
+need a Cray 2B).
+
+But that's one of the reasons that we will also need as part of our team one
+or two people who are adept at reading cybermarket trends and can produce
+reliable "guesstimates" (how's that for an oxymoron) about what hardware and
+software technologies will be *broadly available* and *commonly in use* by
+the projected release time.
+
+>> I want to see a flight simulator with a realistic flight model and
+>> realistic scenery, with lots of buildings, telephone poles, bridges,
+>> trees, moving cars on the streets, etc. -- not just a few textured
+>> cubes and triangles plunked down on a flat painted landscape.  I
+>> think many others want that too.
+>
+>Like I said before, this is a great target to shoot towards.  However,
+>we are all doing this in our spare time as a hobby.  We need to bite
+>off chunks we can chew.  Once we get going though, with enough people
+>chewing, we just might get there.
+
+And that's one of the reasons for attracting as broad a talent base as
+possible from the beginning. There's no reason that part of the team can't
+already be looking at how Phase I can easily transition into Phase II right
+from the start.
+
+>We will all have different goals and ideas about what FlightGear
+>should be.  My "vision" is for FlightGear to be a common framework
+>upon which we can all pursue our own directions, goals, and ideas,
+>while at the same time cooperating so our work benifits everyone.
+
+Very true, Curt. And I would think that one of the responsibilities of the
+admin group would be to keep the broad picture in view so that each
+individual in each specialized group doesn't have to constantly relate their
+own work to other fields that they possibly don't have a great deal of
+expertise in. Thus the work of the programmers can be melded with the work
+of the aeornautical theoreticains, the designers of broad sceneries, the
+specialists in major airports, the panel designers, the creators of
+adventures, and so on. 
+
+Perhaps it will develop that there will be a number of lists like this, each
+devoted to specialized aspects of the overall package. Perhaps the process
+will develop along the lines of a whole new paradigm in small group/large
+group team efforts. Whatever, the end result must be to make it possible to
+maximize the efforts of each individual "technician" by allowing them to
+apply themself fully to their own area of expertise.
+
+Basically, what I'm saying in this response is that everything that you've
+said is valid and makes perfect sense in the restricted context in which you
+said it. But I'm also arguing for a look at the broader picture.
+
+Shalom,
+
+Shmuel
+
+
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Sun Jul  7 06:31:44 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id GAA29646; Sun, 7 Jul 1996 06:30:49 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from relay-2.mail.demon.net (disperse.demon.co.uk [158.152.1.77]) by calvin.infoplane.com (8.7.1/8.7.1) with SMTP id GAA29639 for <flight-gear@infoplane.com>; Sun, 7 Jul 1996 06:30:36 -0500
+Received: from post.demon.co.uk ([158.152.1.72]) by relay-2.mail.demon.net
+           id ab23626; 7 Jul 96 12:41 +0100
+Received: from chivcons.demon.co.uk ([194.222.21.254]) by relay-3.mail.demon.net
+          id aa20640; 7 Jul 96 10:19 +0100
+Message-ID: <+EsPPHAEC43xEwCa@chivcons.demon.co.uk>
+Date: Sun, 7 Jul 1996 10:16:52 +0100
+To: flight-gear@infoplane.com
+From: Bill Chivers <Bill@chivcons.demon.co.uk>
+Subject: Re: ANNOUNCEMENT
+In-Reply-To: <199607032031.QAA44639@pen1.pen.k12.va.us>
+MIME-Version: 1.0
+X-Mailer: Turnpike Version 1.12 <KVqWLYSYk2E1I2DS3mitlZLzB2>
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+"David L. Murr" <dmurr@pen.k12.va.us> writes
+>
+>
+>ARCHIVE SERIAL: #001-020796
+>ANNOUNCEMENT DATED: 02.July 1996 19:24EDT [FGADM.01-DM]
+>
+>ATTN all Flight Gear FS developers and list participants
+>
+>
+>These are all of the groups that I can think of at the moment, but
+>you are certainly free to add to these in any way you see fit.
+
+Suggested additional subdivisions of programming group:
+
+- Aircraft Systems Modelling.
+- Testing.
+
+Aircraft Systems Modelling
+
+As discussed in many other postings, we must start simple before adding
+complexity. But I think we ought to make a point of looking at the
+things which cause real world problems, and looking at accident /
+incident statistics for light aircraft, systems problems (usually pilot
+induced) are often a factor. This doesn't seem to be covered by the
+descriptions of the groups so far, it seems to me to be a different
+issue than 'flight modelling'.
+
+
+Testing
+
+There are a few real world pilots like myself following this list. I
+don't know about the others, but speaking for myself whilst I have a
+good understanding of the basic principles of software design and have
+done a bit of coding over the years, I am not experienced in any
+'powerful' language and definitely not up to coding any of these things.
+So it seems that the best thing to do with me (and perhaps some of the
+others) is to act as testers, as well as acting as general consultants
+for 'what really happens' questions.
+
+
+
+You could put me down for either of these roles as well as consulting on
+the ATC module.
+
+
+
+Bill Chivers
+'my other signature file has something funny at the bottom of it'
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Mon Jul  8 07:08:56 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id HAA25844; Mon, 8 Jul 1996 07:06:53 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from mailserver.iris.firenze.it (risc-en0.iris.firenze.it [193.43.110.130]) by calvin.infoplane.com (8.7.1/8.7.1) with SMTP id HAA25840 for <flight-gear@infoplane.com>; Mon, 8 Jul 1996 07:06:14 -0500
+Received: from iris01.iris.firenze.it by mailserver.iris.firenze.it (AIX 3.2/UCB 5.64/951203)
+          id AA24351; Mon, 8 Jul 1996 13:18:58 +0100
+Date: Mon, 8 Jul 1996 13:18:58 +0100
+Message-Id: <9607081218.AA24351@mailserver.iris.firenze.it>
+X-Sender: mmg@risc.iris.firenze.it
+X-Mailer: Windows Eudora Light Version 1.5.2
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+To: flight-gear@infoplane.com
+From: "Maurizio M. Gavioli" <mmg@risc.iris.firenze.it>
+Subject: Re: ANNOUNCEMENT
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+At 16.31 03/07/96 EDT, you wrote:
+
+>* Programming (specific subdivisions included)
+>	- Kernel module:
+>		SUGGESTED GROUP PARTICIPANTS:
+>			* Maurizio Gavioli
+
+OK!
+
+>	- Scenery:
+>		SUGGESTED GROUP PARTICIPANTS:
+>			* Maurizio Gavioli
+
+Also OK, if not conflicting with the previous.
+
+Recently, I have been a bit lazy (well, I had to pay attention to other
+things...) and I'm not sure I will be more productive in the near future.
+So, it would be better to have other persons in the same department(s)...
+
+Maurizio M. Gavioli
+
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Mon Jul  8 11:16:18 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id LAA27109; Mon, 8 Jul 1996 11:15:27 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from albert.ssl.berkeley.edu (albert.ssl.berkeley.edu [128.32.147.187]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id LAA27105 for <flight-gear@infoplane.com>; Mon, 8 Jul 1996 11:15:21 -0500
+Received: (korpela@localhost) by albert.ssl.berkeley.edu (8.7.5/CEA) id JAA08720; Mon, 8 Jul 1996 09:24:36 -0700 (PDT)
+From: "Eric J. Korpela" <korpela@ssl.Berkeley.EDU>
+Message-Id: <199607081624.JAA08720@albert.ssl.berkeley.edu>
+Subject: Re: ANNOUNCEMENT
+To: flight-gear@infoplane.com
+Date: Mon, 8 Jul 1996 09:24:35 -0700 (PDT)
+In-Reply-To: <199607032031.QAA44639@pen1.pen.k12.va.us> from "David L. Murr" at Jul 3, 96 04:31:29 pm
+X-Geek-Code: GAT d-(?) H s+:-- g+ p? au--- a- w++ v++(--) C+++ US+++ P- L 3 
+X-Geek-Cont1: E--- N++ K? W M- V -po+(--) Y+ t+ 5++ j? R- G? tv+ b++ D+ B---
+X-Geek-Cont2: e+++>++++ u- h--- f+(?) r+++ n+(---) y@(?) 
+X-PGP-ID: FF0C92DD
+X-PGP-Fingerprint: 96 BD 9D 77 12 FE 04 9B  3E F5 5B 8D 2D D1 4C 6B
+X-Mailer: ELM [version 2.4 PL25]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Sorry it took me so long to respond to this.  I apparently get to
+spend most of my summer with bronchitis.  The groups idea is great.
+Sign me up for the Administration, Kernel, and Visuals/graphics
+group.  (It's pretty much what I've been doing anyway.)
+
+> is the original goal of this program in the first place. I believe we
+> are going by the GNU license? 
+
+Yes, as far as I'm concerned.  
+
+> Our next problem is: in what language do we write this? I strongly 
+> suggest C, as this is the native language of the bulk of our programmers.
+> I think we have decided on DJGPP for the DOS and Linux versions?
+> What compiler will we use for Windows95? Let's say right off, that we're
+> going to avoid Visual Basic completely. VB is simply too slow for the 
+> kind of work that this simulator is going to require. 
+> Microsoft Visual C++ perhaps?
+
+For windows 95 we could use the Win-32 version of GCC, but I think that's
+up to the windows programmers to standardize on.  (I think it's available
+from the Cygnus ftp site.) For OS/2, I think that EMX is the way to go.
+
+> My opinion is: we should work on the DOS version first, then on to
+> Windows95, and then port it to Linux and whatever other operating
+> systems we see fit. DOS is what MOST people in "our target market"
+>  are using right now, even though the architecture is a little old. 
+> Win95 seems to be the "wave of the future" <groan>, so I suppose that 
+> will be next.
+
+Agreed, but I think that concurrent development is possible, in that
+all routines should be as platform independent as possible.  All of my code
+to date will run on DJGPP, EMX, Sunos, and Linux/ELF.  I intend to keep
+everything I write that way.  (I still haven't gotten the entire demo package 
+together, but I'm working on it slowly but surely.  Any volunteers wishing
+to help, raise your hands. Especially Mac/Windows programmers)  For DOS, I'm 
+only up to 320x200 graphics, but I hope to expand that to 640x480 soon.
+
+I looked at jlib, and there are some good ideas there that I may coopt into
+the demo package, but as a whole the library has a few snags.  I'm also
+not sure it's license is compatible with the GPL, so I may have to reverse
+engineer the good parts.
+
+Eric
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Mon Jul  8 13:11:33 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id NAA27708; Mon, 8 Jul 1996 13:11:29 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from chava.netmedia.net.il (chava.netmedia.net.il [192.115.153.20]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id NAA27704 for <flight-gear@infoplane.com>; Mon, 8 Jul 1996 13:11:19 -0500
+Received: from LOCALNAME (cs31a15.netmedia.net.il [192.115.152.79]) by chava.netmedia.net.il (8.7.5/8.7.3) with SMTP id VAA06841 for <flight-gear@infoplane.com>; Mon, 8 Jul 1996 21:23:31 +0200 (IST)
+Date: Mon, 8 Jul 1996 21:23:31 +0200 (IST)
+Message-Id: <199607081923.VAA06841@chava.netmedia.net.il>
+X-Sender: sba@mail.netmedia.net.il
+X-Mailer: Windows Eudora Light Version 1.5.2
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+To: flight-gear@infoplane.com
+From: Shmuel Ben-Artzi <sba@netmedia.net.il>
+Subject: Re: ANNOUNCEMENT
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Eric, 
+
+Your point about cross-platforming is well taken. It will be well to keep in
+mind that Win95 may be the LAST Windows product that includes a DOS shell.
+If the "basic" platform is created for DOS, it may wind up being obsolete
+before it is released, as MS already has little reason to support the future
+development of DOS.
+
+Shalom,
+
+Shmuel
+
+>> My opinion is: we should work on the DOS version first, then on to
+>> Windows95, and then port it to Linux and whatever other operating
+>> systems we see fit. DOS is what MOST people in "our target market"
+>>  are using right now, even though the architecture is a little old. 
+>> Win95 seems to be the "wave of the future" <groan>, so I suppose that 
+>> will be next.
+>
+>Agreed, but I think that concurrent development is possible, in that
+>all routines should be as platform independent as possible.  All of my code
+>to date will run on DJGPP, EMX, Sunos, and Linux/ELF.  I intend to keep
+>everything I write that way.  (I still haven't gotten the entire demo package 
+>together, but I'm working on it slowly but surely.  Any volunteers wishing
+>to help, raise your hands. Especially Mac/Windows programmers)  For DOS, I'm 
+>only up to 320x200 graphics, but I hope to expand that to 640x480 soon.
+>
+
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Mon Jul  8 15:03:29 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id PAA28277; Mon, 8 Jul 1996 15:02:53 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from psnw.com (sierra.psnw.com [205.199.144.107]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id PAA28273 for <flight-gear@infoplane.com>; Mon, 8 Jul 1996 15:02:49 -0500
+Received: from cheetah.psnw.com (cheetah.psnw.com [206.43.252.100]) by psnw.com (8.7.4/8.6.9) with SMTP id NAA24992 for <flight-gear@infoplane.com>; Mon, 8 Jul 1996 13:13:47 -0700 (PDT)
+From: robepps@psnw.com (Robert Epps)
+To: flight-gear@infoplane.com
+Subject: Re: ANNOUNCEMENT
+Date: Mon, 08 Jul 1996 20:13:44 GMT
+Message-ID: <31e16b86.434955062@mail.psnw.com>
+References: <199607081923.VAA06841@chava.netmedia.net.il>
+In-Reply-To: <199607081923.VAA06841@chava.netmedia.net.il>
+X-Mailer: Forte Agent .99e/32.227
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+>Eric, 
+>
+>Your point about cross-platforming is well taken. It will be well to keep in
+>mind that Win95 may be the LAST Windows product that includes a DOS shell.
+>If the "basic" platform is created for DOS, it may wind up being obsolete
+>before it is released, as MS already has little reason to support the future
+>development of DOS.
+
+I suspect that DOS will be around for quite a while longer, in the
+form of a "virtual DOS window" (like the one in Windows NT), or even
+an emulator program.  You sure won't want to run a flight simulator in
+it, though!
+
+         --- Rob
+
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Sat Jul 27 01:01:06 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id AAA11023; Sat, 27 Jul 1996 00:57:47 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from chava.netmedia.net.il (chava.netmedia.net.il [192.115.153.20]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id AAA11019 for <Flight-Gear@infoplane.com>; Sat, 27 Jul 1996 00:57:29 -0500
+Received: from LOCALNAME (cs31a1.netmedia.net.il [192.115.152.65]) by chava.netmedia.net.il (8.7.5/8.7.3) with SMTP id JAA24724; Sat, 27 Jul 1996 09:10:09 +0200 (IST)
+Date: Sat, 27 Jul 1996 09:10:09 +0200 (IST)
+Message-Id: <199607270710.JAA24724@chava.netmedia.net.il>
+X-Sender: sba@mail.netmedia.net.il
+X-Mailer: Windows Eudora Light Version 1.5.2
+Mime-Version: 1.0
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+To: Flight-Sim@grove.iup.edu, Flight-Gear@infoplane.com
+From: Shmuel Ben-Artzi <sba@netmedia.net.il>
+Subject: MS ActiveX
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+To all developers,
+
+It was announced yesterday that MS is planning to turn ActiveX over to an
+impartial standards group made up of apps developers, hardware manufacturers
+and others. This will allow them to take the high road and get the jump on
+Netscape re: cross-platform and open architecture operability.
+
+If this policy is fully implemented, it could make it easier for our
+designers to make full use of ActiveX and OLE standards in designing
+add-ons. For those who would like to pursue this in greater depth, C|CNET=FD
+(www.cnet.com) has a more in depth analysis of this story on their Front
+Page under the title "ZctiveX could be becoming Brand X".
+
+Shalom,
+
+Shmuel
+
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Mon Jul 29 21:26:37 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id VAA21028; Mon, 29 Jul 1996 21:24:16 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from kksys.skypoint.net (kksys.skypoint.net [199.86.32.5]) by calvin.infoplane.com (8.7.1/8.7.1) with SMTP id VAA21023 for <flight-gear@infoplane.com>; Mon, 29 Jul 1996 21:24:09 -0500
+Received: by kksys.skypoint.net (Smail3.1.29.1 #2)
+	id m0ul4hP-00042qC; Mon, 29 Jul 96 21:38 CDT
+Received: (from curt@localhost) by sledge.infoplane.com (8.7.5/8.6.9) id VAA00663; Mon, 29 Jul 1996 21:30:56 -0500
+Date: Mon, 29 Jul 1996 21:30:56 -0500
+Message-Id: <199607300230.VAA00663@sledge.infoplane.com>
+From: "Curtis L. Olson" <curt@sledge.mn.org>
+To: flight-gear@infoplane.com
+Subject: Flight Gear Web Page
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Hi guys,
+
+This is just a quick note to let you know that I have moved the
+flightgear web page to a new server.  The *new* URL is:
+
+    http://www2.me.umn.edu/~clolson/fgfs
+
+Note, the old web page still exists and points you to the new web
+page.
+
+Thanks,
+
+Curt.
+-- 
+Curtis Olson   E-mail: curt@sledge.mn.org
+Try Linux!     WWW:    http://www2.me.umn.edu/~clolson
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www2.me.umn.edu/~clolson/fgfs
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Wed Jul 31 13:43:54 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id NAA00657; Wed, 31 Jul 1996 13:41:50 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from meserv.me.umn.edu (meserv.me.umn.edu [134.84.196.1]) by calvin.infoplane.com (8.7.1/8.7.1) with SMTP id NAA00653 for <flight-gear@infoplane.com>; Wed, 31 Jul 1996 13:41:41 -0500
+Received: from kenai.me.umn.edu (kenai.me.umn.edu [134.84.197.42]) by meserv.me.umn.edu (8.6.11/8.6.11) with ESMTP id NAA29423 for <flight-gear@infoplane.com>; Wed, 31 Jul 1996 13:53:29 -0500
+Received: (from clolson@localhost) by kenai.me.umn.edu (8.7.5/8.7.3) id NAA04738; Wed, 31 Jul 1996 13:52:43 -0500
+Date: Wed, 31 Jul 1996 13:52:43 -0500
+Message-Id: <199607311852.NAA04738@kenai.me.umn.edu>
+From: "Curtis L. Olson" <clolson@me.umn.edu>
+To: flight-gear@infoplane.com
+Subject: Yet another proposal.
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Hi guys,
+
+Lately I've been playing around with ACM on my Linux box.  ACM stands
+for Air Combat Maneuvers.  It is a free (src included) flight sim for
+Unix/X.  If any of you are interested in looking at this, check out:
+
+    ftp://ftp.netcom.com/pub/ra/rainey/acm/index.html
+
+After playing around with this sim for a while, I have concluded that
+it represents a significant amount of work, and is a very worth-while
+program.
+
+I have a little proposal for you all to consider.  I propose that we
+base our Flight Gear project off of this product.  I have put some ACM
+screen shots up on the new flight gear web page:
+
+    http://www2.me.umn.edu/~clolson/fgfs
+
+
+Some of the current features of ACM are:
+
+  - Freeware -- all source code included.
+  - Pretty good flight model that can be tailored to different kinds
+    of aircraft / missles / flying things.
+  - Sound support (with some pretty descent sound effects).
+  - Allows definition of new planes.
+  - U.S. Navy Postgraduate School's Distributed Interactive
+    Simulation (IEEE DIS, RFC <something or other>) code integrated
+    into it.  This allows multiple ACM servers to talk to each other
+    over local subnets.  You can go 2 vs. 2 over a network.
+    This also allows you to integrate with other simulation packages that
+    use this same standard.  (i.e. a tank simulation, or ATC simulation or
+    whatever.)
+  - Some serial-port joystick support
+  - Currently has a nice rendition of the Hawaiian Islands based on DEM data.
+  - Has distance visibility effects (haze).
+  - Models springiness of landing gear.
+  - Has a very nice HUD display.
+  - Has an HSI on the instrument panel.
+
+
+Features in the upcoming version (due out real soon now):
+
+  - True spheroidal world.
+  - Scene descriptions in latitude/longitude/MSL-height coordinates.
+  - Automated extracts of scene descriptions from the FAA databases.
+  - Support for a non-zero feet MSL surface height.
+  - NAVAID support for the features listed above.
+
+
+Weaknesses:
+
+  - Terrain modeling has room for improvement in the area of hidden surface
+    removal and shading.
+  - Usability -- no menus and such.
+  - Scenery object descriptors are pretty primitive.
+  - Code is not structured well for modularity.
+  - Currently only supports Unix/X11
+  - Saying the representation of the instrument panel is crude would
+    be heaping undeserved praise upon said instrument panel.  Although it
+    does have an HSI which FS5/6/7/... still lacks.
+  - Scenery is pretty scarce.
+  - Although it does have a single overcast cloud layer, this is the
+    totallity of it's weather modeling.
+  - Currently only support X11 for graphics.
+
+
+Comments:
+
+Civilian vs. Military:
+
+ACM is currently focused towards military combat, but it does come
+with a Cesna 172 airplane.  Slap on a censa inst. panel, and add some
+scenery and we would already be pretty close to FS4 functionality.
+Although it would be a bummer to have an F-18 swoop down and knock you
+out of the sky on your way from Souix City, IA to Des Moines ... :-)
+
+
+Cooperating with Riley Rainey and the ACM devel team:
+
+Ideally, we would join forces and work together with the ACM devel
+team.  However, integrating our efforts with the ACM devel team might
+prove to be difficult.  This is Riley Rainey's program and he does
+most of the work on it.  I don't mean this in a negative way at all.
+He wrote the program, he should be able to manage and control it's
+development in any way that suits him.  I wrote a freeware check book
+balancer and know exactly how he feels.  On the down side, Riley is
+currently very busy with his real job and doesn't have a lot of time
+to put into acm.  The pieces of the source are not very modular, so it
+currently would be difficult to have multiple people working on it at
+the same time.
+
+One option, would be to take the current source, or wait for the soon
+to be released version, and branch off in our own direction.  This
+would be fine, as long as we adhere to the GNU general public license
+under which ACM is licensed.
+
+We could split everything apart into logical modules (we have
+previously discussed various breakdowns.)  From that point we could
+just start going to it.
+
+
+Then what:
+
+Initially, we would want to carefully separate out the generic
+graphics routines from the system specific graphics routines, and
+organize things so we can easily port to new graphics systems.  Then
+we could try to port the rest of it (or as much of the rest of it as
+possible) to DOS.  We would want to look at how scenery and objects
+are represented.  We would want to add real instrument panels, and
+look at adding more joystick and sound support.
+
+I think all the weaknesses which I previously addressed are very
+addressable ... especially if we can modularize the code so we can all
+work on different sections concurrently.
+
+
+Then what:
+
+By now we have a kick butt, world famous flight simulator.  Microsoft,
+already devestated by the Caldera/Dr. DOS lawsuit, watches sales of
+it's last best money making hope (FS6) dwindle.  Meanwhile, Bill Gates
+baracades himself in his office as the forces of good close in on all
+sides ... ok, I'll stop before any physical harm befalls Bill and I
+lose my "G" rating.
+
+
+So,
+
+Check out the screen shots, have a look at the ACM home page, if you
+can and if you want to, compile and run ACM, then let me know what you
+think about this idea.
+
+Thanks,
+
+Curt.
+-- 
+Curtis Olson   E-mail: clolson@me.umn.edu
+Try Linux!     WWW:    http://www2.me.umn.edu/~clolson
+
+This message is infected by the "Good Times" virus!  Your computer's
+processor has been placed in an nth-complexity infinite binary loop.
+http://www.vuw.ac.nz/~helpdesk/Good.Times.hoax.html
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www2.me.umn.edu/~clolson/fgfs
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Wed Jul 31 14:33:12 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id OAA00959; Wed, 31 Jul 1996 14:33:11 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from anshar.shadow.net (anshar.shadow.net [204.177.71.2]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id OAA00955 for <flight-gear@infoplane.com>; Wed, 31 Jul 1996 14:33:01 -0500
+Received: from ppp-mia-75.shadow.net (ppp-mia-75.shadow.net [204.177.71.75]) by anshar.shadow.net (8.7.3/8.7.3) with SMTP id PAA06176 for <flight-gear@infoplane.com>; Wed, 31 Jul 1996 15:50:05 -0400 (EDT)
+Date: Wed, 31 Jul 1996 15:50:05 -0400 (EDT)
+Message-Id: <199607311950.PAA06176@anshar.shadow.net>
+X-Sender: mavidal@shadow.net
+X-Mailer: Windows Eudora Light Version 1.5.2
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+To: flight-gear@infoplane.com
+From: Mike Vidal <mavidal@shadow.net>
+Subject: Re: Yet another proposal.
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Hi Curt:
+
+Just my thoughts on this subject before I take off here for the month of
+August on business again :-(
+
+At 01:52 PM 7/31/96 -0500, you wrote:
+>Comments:
+>
+>Cooperating with Riley Rainey and the ACM devel team:
+
+This in and of itself may not be a bad idea, since you could in essence
+assit Riley with the port of ACM to the DOS world.  Then you would have a
+program engine that support both combat and non combat situations!  Take
+that MI$ :-)
+
+I understand your concerns about his feelings and lack of time, but he may
+be amicable to the suggestion.  The only way to find out is to ask.
+
+>One option, would be to take the current source, or wait for the soon
+>to be released version, and branch off in our own direction.  This
+>would be fine, as long as we adhere to the GNU general public license
+>under which ACM is licensed.
+
+I would consider the following:  Study (aka analysis paralysis) to see what
+would really be involved in porting the code to a dos environment.  I
+presume ACM was written in C?  I would also consider cross porting back to
+the LINUX environment.  Now we can really kick MI$'s butt! :-)  If you think
+that the new version would have some major changes made to it, then wait for
+it, but I have to let you be the judge of that.
+
+>We could split everything apart into logical modules (we have
+>previously discussed various breakdowns.)  From that point we could
+>just start going to it.
+
+You guys are the code heads, and I would leave those decisions to you, but
+looking at it from a time line standpoint I see the following benefits with
+your proposal:
+
+1.  We would gain much time in the development front, since we (meaning the
+coders) would not need to start working from scratch.
+
+2.  From what you describe of ACM's attributes, it has many of the features
+that I have seen discussed on this list (the only one I do not unsub from
+during my trips!)  This in and of itself would help you in reducing the
+effort required (If my feeble mind understands this correctly).
+
+3.  If Mr Riley would not object, when the system is modularized, it would
+be possible to port to many other OS's, since I would presume that the
+graphics interface section is what would need to be customized for the
+different OS platforms.  Although I know our intentions was to stick to a
+dos based platform, This would give you the flexibility to run on OS's or
+machines that may provide soem performance enhancments other than the ISA
+architecture.  (Of course, not all of us are lucky enough to have a silicone
+graphics or sun machine at home, but hey, its a thought is it not?)
+
+This message was produced by the genius dog ONYX, my 90Lb lap dog.
+
+Regards to all
+
+Mike Vidal
+Miami, FL
+mavidal@shadow.net
+Knowledge gained and not shared is lost forever!
+Work smarter, not harder.  More gets done that way!
+FSA member US-MVD
+
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www2.me.umn.edu/~clolson/fgfs
+To unsubscribe:  send email to "majordomo@infoplane.com" with a
+message body of "unsubscribe flight-gear"
+

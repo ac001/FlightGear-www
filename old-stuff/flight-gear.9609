@@ -1,0 +1,2214 @@
+From owner-flight-gear  Wed Sep  4 14:09:00 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id OAA09558; Wed, 4 Sep 1996 14:06:47 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from islay.ssl.berkeley.edu (islay.ssl.berkeley.edu [128.32.147.192]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id OAA09549 for <flight-gear@infoplane.com>; Wed, 4 Sep 1996 14:05:56 -0500
+Received: (korpela@localhost) by islay.ssl.berkeley.edu (8.7.5/CEA) id MAA13948; Wed, 4 Sep 1996 12:08:29 -0700 (PDT)
+From: "Eric J. Korpela" <korpela@ssl.Berkeley.EDU>
+Message-Id: <199609041908.MAA13948@islay.ssl.berkeley.edu>
+Subject: Request for assistance.....
+To: flight-gear@infoplane.com
+Date: Wed, 4 Sep 1996 12:08:29 -0700 (PDT)
+In-Reply-To: <199608092217.RAA01236@kenai.me.umn.edu> from "Curtis L. Olson" at Aug 9, 96 05:17:05 pm
+X-Geek-Code: GAT d-(?) H s+:-- g+ p? au--- a- w++ v++(--) C+++ US+++ P- L 3 
+X-Geek-Cont1: E--- N++ K? W M- V -po+(--) Y+ t+ 5++ j? R- G? tv+ b++ D+ B---
+X-Geek-Cont2: e+++>++++ u- h--- f+(?) r+++ n+(---) y@(?) 
+X-PGP-ID: FF0C92DD
+X-PGP-Fingerprint: 96 BD 9D 77 12 FE 04 9B  3E F5 5B 8D 2D D1 4C 6B
+X-Mailer: ELM [version 2.4 PL22]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+It's come to the point where I could use some assistance with
+some of the flight-gear stuff I'm working on.  What I'd like
+someone to volunteer for right now is some instrument panel
+work.  Lets start simple.  For now lets only use the 16 EGA colors
+to start with.  Assume they're the first 16 colors in the palette. 
+(I don't have the palette code fully working yet .... :( )
+Here are the prototypes of the functions I'd like to see written.
+
+void fg_draw_number(int number, int x, int y, int w, int h, int color,
+   FG_BITMAP *bmp);
+/* Draws a number between 0 and 9 at x,y with width w, and height h 
+ */
+
+FG_BITMAP *fg_dial_face(int width,int height,int minvalue,int maxvalue, 
+   int interval, int minoffset, int maxoffset)
+/* returns a pointer to a FG_BITMAP of width w, and height h, containing a 
+   basic dial face (everything but the pointers) running from minvalue
+   to maxvalue with major ticks (numbers) every interval.  The range
+   of the pointer is between minoffset and maxoffset degrees from the top.
+   (clockwise is positive)
+   
+   For example: clock=fg_dial_face(100,100,0,12,1,0,360)      clock face
+                asi=fg_dial_face(100,100,0,180,20,0,330)      airspeed indicator
+                altim=fg_dial_face(100,100,0,10,0,360)        altimeter
+                vsi=fg_dial_face(100,100,4,-4,1,-30,180+30)   VSI
+ */
+
+void fg_draw_pointer(int x, int y, int theta, int l, int color,
+   FG_BITMAP *bmp);
+/* Draws a pointer of length l at x,y at angle from top, 
+   (clockwise is positive)
+ */
+
+void fg_draw_indicator(int x, int y, double value, int n_pointers, 
+   int width, int height, int minvalue, int maxvalue, minoffset, maxoffset
+   FG_BITMAP *bmp);
+/* Draws pointers on a dial for reading value 
+
+   For example:
+      fg_draw_indicator(50,50,(double)hour*12+(double)minute*144./60.,2,
+         100,100,0,12,0,360,clock)  Draw the time on the clock
+      fg_draw_indicator(50,50,(double)airspeed,1,100,100,0,180,0,330,asi)
+         Draw the airspeed on the ASI
+ */            
+
+void fg_draw_digital_display(int x, int y, int w, int h, int number,
+         int n_places, FG_BITMAP *bmp)
+/* draws a n_digit display of number at x,y with width w and height h
+   For example:
+     fg_draw_digital_display(0,0,50,10,com1_freq,5, com1_bmp);
+ */
+
+
+You'll have to use the fggrx routines which means looking at the prototypes
+in "fggrx.h"  Hopefully most of them are self explanatory.
+
+I'd also like to have someone take over "fggrx.h" and "fggrx.c"
+fg_rasterize_convex_POLY and fg_fill_convex_POLY still need to be finished.
+We also need routines for circles and the like to be added,
+something that fills non-convex polygons would help, too.
+The documentation also leaves much to be desired. (There is none) 
+Any volunteers?
+
+Eric
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Wed Sep  4 14:27:26 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id OAA09672; Wed, 4 Sep 1996 14:27:25 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from meserv.me.umn.edu (meserv.me.umn.edu [134.84.196.1]) by calvin.infoplane.com (8.7.1/8.7.1) with SMTP id OAA09668 for <flight-gear@infoplane.com>; Wed, 4 Sep 1996 14:27:20 -0500
+Received: from kenai.me.umn.edu (kenai.me.umn.edu [134.84.197.42]) by meserv.me.umn.edu (8.6.11/8.6.11) with ESMTP id OAA04921 for <flight-gear@infoplane.com>; Wed, 4 Sep 1996 14:29:59 -0500
+Received: (from clolson@localhost) by kenai.me.umn.edu (8.7.5/8.7.3) id OAA31554; Wed, 4 Sep 1996 14:29:15 -0500
+Date: Wed, 4 Sep 1996 14:29:15 -0500
+Message-Id: <199609041929.OAA31554@kenai.me.umn.edu>
+From: "Curtis L. Olson" <clolson@me.umn.edu>
+To: flight-gear@infoplane.com
+Subject: Request for assistance.....
+In-Reply-To: <199609041908.MAA13948@islay.ssl.berkeley.edu>
+References: <199608092217.RAA01236@kenai.me.umn.edu>
+	<199609041908.MAA13948@islay.ssl.berkeley.edu>
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Eric,
+
+It's good to hear from you.
+
+Do you have something we could grab and compile?  (I know you bundled
+up a zip file a couple months ago.)  I do a lot better when I can add
+to some existing code, rather than writing separate code in a
+"vacuum".
+
+If you are to the point where you are ready to start working on
+instrument panels, then I'd definitely like to see a snapshot of the
+code you have.
+
+Thanks,
+
+Curt.
+-- 
+Curtis Olson   E-mail: clolson@me.umn.edu
+Try Linux!     WWW:    http://www.menet.umn.edu/~clolson
+
+
+Eric J. Korpela writes:
+> It's come to the point where I could use some assistance with
+> some of the flight-gear stuff I'm working on.  What I'd like
+> someone to volunteer for right now is some instrument panel
+> work.  Lets start simple.  For now lets only use the 16 EGA colors
+> to start with.  Assume they're the first 16 colors in the palette. 
+> (I don't have the palette code fully working yet .... :( )
+> Here are the prototypes of the functions I'd like to see written.
+> 
+> [ function prototypes deleted ]
+> 
+> You'll have to use the fggrx routines which means looking at the prototypes
+> in "fggrx.h"  Hopefully most of them are self explanatory.
+> 
+> I'd also like to have someone take over "fggrx.h" and "fggrx.c"
+> fg_rasterize_convex_POLY and fg_fill_convex_POLY still need to be finished.
+> We also need routines for circles and the like to be added,
+> something that fills non-convex polygons would help, too.
+> The documentation also leaves much to be desired. (There is none) 
+> Any volunteers?
+> 
+> Eric
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Wed Sep  4 16:29:12 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id QAA10360; Wed, 4 Sep 1996 16:29:11 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from pen1.pen.k12.va.us (pen1.pen.k12.va.us [141.104.22.202]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id QAA10356 for <flight-gear@infoplane.com>; Wed, 4 Sep 1996 16:29:06 -0500
+Received: by pen1.pen.k12.va.us (8.7.3/8.6.6)
+          id RAA54591; Wed, 4 Sep 1996 17:31:16 -0400
+From: "David L. Murr" <dmurr@pen.k12.va.us>
+Message-Id: <199609042131.RAA54591@pen1.pen.k12.va.us>
+Subject: Re: MS con [27965] [27968]
+To: peter@wunili.ironbark.id.au (Peter Narkauskas)
+Date: Wed, 4 Sep 96 17:31:16 EDT
+Cc: flight-sim@grove.iup.edu, flight-gear@infoplane.com
+In-Reply-To: <no.id>; from "Peter Narkauskas" at Sep 4, 96 6:56 pm
+X-Mailer: PENELM [version 2.3.1 PL11]
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+According to Peter Narkauskas:
+> 
+> Neither MS or any other company has the benevolent attitude that our
+> wonderful bunch of freeware designers have had for this hobby. Can we really
+> expect the same from a company? 
+
+Note: I've cross-posted this message to the FGFS Development
+list and the grove FS list.
+
+Not really associated with the MS con(ference), but wanted to
+touch on this point for a second... Peter's statement above really
+illustrates why we're working on Flight Gear. (Unfourtunately,
+we've all been at a loss for free time lately, so not much has
+been done in the last couple of months.) Curt? Are we still
+looking at ACM for a base or are we going to start from
+scratch. That thread seems to have died out lately.
+
+In any case, I think we can all agree that we, the so called
+"power users" know what we want in a simulator -- that's why
+we've posted wish lists for years. And obviously, it would not
+be feasible to M$ to invest the time and money it would take to
+integrate these features while probably 85% of the consumers
+don't really care whether these options and features are there
+or not. (Or don't know to care, I suppose, if they're not a
+"serious" simmer.)
+
+With FGFS (Flight Gear), our target "audience" is rather small,
+basically just Internet users at this point, and of that,
+mostly the people on this list. *AND*, a big plus of the sim
+will be that it will totally customizable by the user. All of
+the code will be available, and every feature is documented so
+people that are able to understand the information (primarily
+programmers)... and even if you can't program, there'll be
+plenty of add-on/replacement modules available out there for you
+to try. I guess the keywords here are modularity and
+customization.
+
+Hmm... I'd better stop now and quit sounding like a salesman...
+;)
+
+Regards,
+Dave
+
+P.S.: and the best thing -- every part of Flight Gear will be
+free, save for any costs incurred by your service provider
+during the download. :)
+
+-- 
+   _________  __              | Editor - FSNews
+  / __/ __/ |/ /__ _    _____ | http://users.aol.com/fsnews/
+ / _/_\ \/    / -_) |/|/ (_-< | The #1 source for flight-sim news!
+/_/ /___/_/|_/\__/|__,__/___/ | "Taking virtual aviation to new heights!"
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Wed Sep  4 16:24:25 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id QAA10320; Wed, 4 Sep 1996 16:24:20 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from chava.netmedia.net.il (chava.netmedia.net.il [192.115.153.20]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id QAA10316 for <flight-gear@infoplane.com>; Wed, 4 Sep 1996 16:24:11 -0500
+Received: from LOCALNAME (cs31a2.netmedia.net.il [192.115.152.66]) by chava.netmedia.net.il (8.7.5/8.7.3) with SMTP id AAA09724 for <flight-gear@infoplane.com>; Thu, 5 Sep 1996 00:28:09 +0200 (IST)
+Date: Thu, 5 Sep 1996 00:28:09 +0200 (IST)
+Message-Id: <199609042228.AAA09724@chava.netmedia.net.il>
+X-Sender: sba@netmedia.net.il
+X-Mailer: Windows Eudora Light Version 1.5.2
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+To: flight-gear@infoplane.com
+From: Shmuel Ben-Artzi <sba@netmedia.net.il>
+Subject: Re: Request for assistance.....
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Eric,
+
+Give me an idea of the full scope of documentation that will needed for the
+projects currently under way and I'll see what I can do.
+
+Shmuel
+
+>The documentation also leaves much to be desired. (There is none) 
+>Any volunteers?
+>
+>Eric
+
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Wed Sep  4 17:03:03 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id RAA10540; Wed, 4 Sep 1996 17:03:01 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from barb.wchat.on.ca (barb.wchat.on.ca [204.138.239.65]) by calvin.infoplane.com (8.7.1/8.7.1) with SMTP id RAA10531 for <flight-gear@infoplane.com>; Wed, 4 Sep 1996 17:02:51 -0500
+Received: from g5-p8.brantford.wchat.on.ca by barb.wchat.on.ca id aa02003;
+          4 Sep 96 18:05 EDT
+Message-ID: <322DFD49.14D1@worldchat.com>
+Date: Wed, 04 Sep 1996 18:06:01 -0400
+From: Matt Pickering <mattp@worldchat.com>
+Organization: Hurricane Pneumatic Conveying
+X-Mailer: Mozilla 2.0 (Win95; I)
+MIME-Version: 1.0
+To: "Flight Gear Developer's List" <flight-gear@infoplane.com>
+Subject: Terrain data
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Greetings everyone.
+
+I have looked over the material and I am willing and able to begin 
+development from a Win95 perspective.  I have copies of the current 
+sources from the FG website and I would like to co-ordinate with Eric 
+and Curt on the code so the code base will function on a variety of 
+platforms.  :)
+
+My interest is the terrain data, scenery and dynamic scenery.  Since 
+Eric is working on the insturment panels, it may be possible to do 
+"insturment flying" with a highly simple flight model so we can begin 
+integration into a position management system within our virtual world 
+and scenery manager.
+
+Any thoughts?
+
+Matt
+
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Wed Sep  4 18:47:58 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id SAA11097; Wed, 4 Sep 1996 18:47:57 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from maude.state.net (NS.STATE.NET [204.75.238.240]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id SAA11093 for <flight-gear@infoplane.com>; Wed, 4 Sep 1996 18:47:52 -0500
+Received: from islay.ssl.berkeley.edu (islay.ssl.berkeley.edu [128.32.147.192]) by maude.state.net (8.7.3/8.7.2) with ESMTP id SAA19193 for <flight-gear@infoplane.com>; Wed, 4 Sep 1996 18:51:52 -0500 (CDT)
+Received: (korpela@localhost) by islay.ssl.berkeley.edu (8.7.5/CEA) id QAA15386; Wed, 4 Sep 1996 16:45:11 -0700 (PDT)
+From: "Eric J. Korpela" <korpela@ssl.Berkeley.EDU>
+Message-Id: <199609042345.QAA15386@islay.ssl.berkeley.edu>
+Subject: Re: Request for assistance.....
+To: flight-gear@infoplane.com
+Date: Wed, 4 Sep 1996 16:45:10 -0700 (PDT)
+In-Reply-To: <199609042228.AAA09724@chava.netmedia.net.il> from "Shmuel Ben-Artzi" at Sep 5, 96 00:28:09 am
+X-Geek-Code: GAT d-(?) H s+:-- g+ p? au--- a- w++ v++(--) C+++ US+++ P- L 3 
+X-Geek-Cont1: E--- N++ K? W M- V -po+(--) Y+ t+ 5++ j? R- G? tv+ b++ D+ B---
+X-Geek-Cont2: e+++>++++ u- h--- f+(?) r+++ n+(---) y@(?) 
+X-PGP-ID: FF0C92DD
+X-PGP-Fingerprint: 96 BD 9D 77 12 FE 04 9B  3E F5 5B 8D 2D D1 4C 6B
+X-Mailer: ELM [version 2.4 PL22]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+> Give me an idea of the full scope of documentation that will needed for the
+> projects currently under way and I'll see what I can do.
+
+Just going through the files and adding a comment explaining what each
+function does would be a big help.....
+
+Eric
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Wed Sep  4 18:55:21 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id SAA11144; Wed, 4 Sep 1996 18:55:20 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from maude.state.net (NS.STATE.NET [204.75.238.240]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id SAA11140 for <flight-gear@infoplane.com>; Wed, 4 Sep 1996 18:55:15 -0500
+Received: from islay.ssl.berkeley.edu (islay.ssl.berkeley.edu [128.32.147.192]) by maude.state.net (8.7.3/8.7.2) with ESMTP id SAA19301 for <flight-gear@infoplane.com>; Wed, 4 Sep 1996 18:59:30 -0500 (CDT)
+Received: (korpela@localhost) by islay.ssl.berkeley.edu (8.7.5/CEA) id QAA15407; Wed, 4 Sep 1996 16:52:42 -0700 (PDT)
+From: "Eric J. Korpela" <korpela@ssl.Berkeley.EDU>
+Message-Id: <199609042352.QAA15407@islay.ssl.berkeley.edu>
+Subject: Re: Terrain data
+To: flight-gear@infoplane.com
+Date: Wed, 4 Sep 1996 16:52:41 -0700 (PDT)
+In-Reply-To: <322DFD49.14D1@worldchat.com> from "Matt Pickering" at Sep 4, 96 06:06:01 pm
+X-Geek-Code: GAT d-(?) H s+:-- g+ p? au--- a- w++ v++(--) C+++ US+++ P- L 3 
+X-Geek-Cont1: E--- N++ K? W M- V -po+(--) Y+ t+ 5++ j? R- G? tv+ b++ D+ B---
+X-Geek-Cont2: e+++>++++ u- h--- f+(?) r+++ n+(---) y@(?) 
+X-PGP-ID: FF0C92DD
+X-PGP-Fingerprint: 96 BD 9D 77 12 FE 04 9B  3E F5 5B 8D 2D D1 4C 6B
+X-Mailer: ELM [version 2.4 PL22]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+
+> I have looked over the material and I am willing and able to begin 
+> development from a Win95 perspective.  I have copies of the current 
+> sources from the FG website and I would like to co-ordinate with Eric 
+> and Curt on the code so the code base will function on a variety of 
+> platforms.  :)
+
+Great to have you aboard.  Check out the new stuff I upload tonight,
+especially the keyboard, display and driver stuff and see if you can
+add some appropriate Win95 Code.  You'll also need to make changes
+to fgtypes.h to match your compiler.
+
+> My interest is the terrain data, scenery and dynamic scenery.  Since 
+> Eric is working on the insturment panels, it may be possible to do 
+> "insturment flying" with a highly simple flight model so we can begin 
+> integration into a position management system within our virtual world 
+> and scenery manager.
+
+Hopefully soon....... :)
+
+Eric
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Wed Sep  4 18:42:15 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id SAA11059; Wed, 4 Sep 1996 18:42:10 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from islay.ssl.berkeley.edu (islay.ssl.berkeley.edu [128.32.147.192]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id SAA11053 for <flight-gear@infoplane.com>; Wed, 4 Sep 1996 18:41:33 -0500
+Received: (korpela@localhost) by islay.ssl.berkeley.edu (8.7.5/CEA) id QAA15363; Wed, 4 Sep 1996 16:44:11 -0700 (PDT)
+From: "Eric J. Korpela" <korpela@ssl.Berkeley.EDU>
+Message-Id: <199609042344.QAA15363@islay.ssl.berkeley.edu>
+Subject: Re: Request for assistance.....
+To: flight-gear@infoplane.com
+Date: Wed, 4 Sep 1996 16:44:11 -0700 (PDT)
+In-Reply-To: <199609041929.OAA31554@kenai.me.umn.edu> from "Curtis L. Olson" at Sep 4, 96 02:29:15 pm
+X-Geek-Code: GAT d-(?) H s+:-- g+ p? au--- a- w++ v++(--) C+++ US+++ P- L 3 
+X-Geek-Cont1: E--- N++ K? W M- V -po+(--) Y+ t+ 5++ j? R- G? tv+ b++ D+ B---
+X-Geek-Cont2: e+++>++++ u- h--- f+(?) r+++ n+(---) y@(?) 
+X-PGP-ID: FF0C92DD
+X-PGP-Fingerprint: 96 BD 9D 77 12 FE 04 9B  3E F5 5B 8D 2D D1 4C 6B
+X-Mailer: ELM [version 2.4 PL22]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+> Do you have something we could grab and compile?  (I know you bundled
+> up a zip file a couple months ago.)  I do a lot better when I can add
+> to some existing code, rather than writing separate code in a
+> "vacuum".
+
+I'll put the current code at the Web site sometime tonight.  Should be
+there by tomorrow morning (Thursday).  So far I have code for screen
+display (DJGPP, OS/2, and X) that compiles. (I haven't gotten the full 
+program working so I don't know that it actually works yet.)  I still haven't
+done the palette code, so whatever the palette is, that's what you get.
+If you're working under DJGPP you'll need allegro for the blitter routines.
+
+There are a lot of little fixups I need to do (Exporting symbols, creating
+base .ini files, etc.) before we'll have a working slew model.  If anyone
+out there choses to work on a file let me know so I can lock it at this end.
+
+I'm also looking at changing the setup of the public variables,
+but that can be done at a later date.
+
+Eric
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Thu Sep  5 11:05:10 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id LAA16156; Thu, 5 Sep 1996 11:02:28 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from meserv.me.umn.edu (meserv.me.umn.edu [134.84.196.1]) by calvin.infoplane.com (8.7.1/8.7.1) with SMTP id LAA16152 for <flight-gear@infoplane.com>; Thu, 5 Sep 1996 11:02:22 -0500
+Received: from kenai.me.umn.edu (kenai.me.umn.edu [134.84.197.42]) by meserv.me.umn.edu (8.6.11/8.6.11) with ESMTP id LAA15828; Thu, 5 Sep 1996 11:05:03 -0500
+Received: (from clolson@localhost) by kenai.me.umn.edu (8.7.5/8.7.3) id LAA03762; Thu, 5 Sep 1996 11:04:12 -0500
+Date: Thu, 5 Sep 1996 11:04:12 -0500
+Message-Id: <199609051604.LAA03762@kenai.me.umn.edu>
+From: "Curtis L. Olson" <clolson@me.umn.edu>
+To: korpela@ssl.Berkeley.EDU
+CC: flight-gear@infoplane.com
+Subject: Re: Request for assistance.....
+In-Reply-To: <199609042344.QAA15363@islay.ssl.berkeley.edu>
+References: <199609041929.OAA31554@kenai.me.umn.edu>
+	<199609042344.QAA15363@islay.ssl.berkeley.edu>
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Eric J. Korpela writes:
+> I'll put the current code at the Web site sometime tonight.  Should be
+> there by tomorrow morning (Thursday).  So far I have code for screen
+> display (DJGPP, OS/2, and X) that compiles. (I haven't gotten the full 
+> program working so I don't know that it actually works yet.)  I still haven't
+> done the palette code, so whatever the palette is, that's what you get.
+> If you're working under DJGPP you'll need allegro for the blitter
+> routines.
+
+Eric (and everyone else),
+
+I grabbed your code, and I realize it is only a snap shot of what you
+have right now, but I'm impressed, you've definitely been busy.  I was
+interested in getting a general feel for where you are at right now.
+It looks like you have a lot of the necessary basics in place, but not
+too much "glue" to put it all together.
+
+Here's a couple of items I'm interested in right now:
+
+1.  Basic bare bones executable.  I noticed there was not too much in
+the makefiles.  What would it take to compile all the pieces together
+to get a runable program, even if all it does is draw something really
+simple on the screen (i.e. hello world) and sit there waiting for the
+pause key (or whatever your demo module does)?
+
+2.  Code organization.  I can see that we will be generating tons of
+code here.  What would you think about organizing it somehow in
+subdirectories?  Maybe something like one directory per module, or
+maybe break it down by world_model, graphics (3d/2d), flight model,
+aircraft model, inst. panels, etc. etc.
+
+3.  3d world modeling.  I've been thinking alot about how to model the
+world.  Before anyone gets too far along in this area, I'd like to
+share some thoughts and ideas with you.  Matt, I know you expressed
+interest in this area.
+
+> There are a lot of little fixups I need to do (Exporting symbols, creating
+> base .ini files, etc.) before we'll have a working slew model.  If anyone
+> out there chooses to work on a file let me know so I can lock it at
+> this end.
+> 
+> I'm also looking at changing the setup of the public variables,
+> but that can be done at a later date.
+
+It looks like things are really coming along well at your end.  When
+these things get cleaned up, and the basic internal structure is all
+there, we should all regroup, see where we are at, and figure out the
+best way to divide up the work and proceed.
+
+Thanks for all you hard work Eric,
+
+Curt.
+-- 
+Curtis Olson   E-mail: clolson@me.umn.edu
+Try Linux!     WWW:    http://www.menet.umn.edu/~clolson
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Thu Sep  5 14:53:44 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id OAA17330; Thu, 5 Sep 1996 14:51:52 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from barb.wchat.on.ca (barb.wchat.on.ca [204.138.239.65]) by calvin.infoplane.com (8.7.1/8.7.1) with SMTP id OAA17326 for <flight-gear@infoplane.com>; Thu, 5 Sep 1996 14:51:41 -0500
+Received: from g1-p2.brantford.wchat.on.ca by barb.wchat.on.ca id aa07931;
+          5 Sep 96 15:54 EDT
+Message-ID: <322F2EC9.6373@worldchat.com>
+Date: Thu, 05 Sep 1996 15:49:29 -0400
+From: Matt Pickering <mattp@worldchat.com>
+Organization: Hurricane Pneumatic Conveying
+X-Mailer: Mozilla 2.0 (Win95; I)
+MIME-Version: 1.0
+To: flight-gear@infoplane.com
+Subject: Re: Request for assistance.....
+References: <199609041929.OAA31554@kenai.me.umn.edu>
+		<199609042344.QAA15363@islay.ssl.berkeley.edu> <199609051604.LAA03762@kenai.me.umn.edu>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+To Curt, Eric and rest of the FG Development Team...
+
+Here are my thoughts on these issues
+
+> 1.  Basic bare bones executable.  I noticed there was not too much in
+> the makefiles.  What would it take to compile all the pieces together
+> to get a runable program, even if all it does is draw something really
+
+I am going to pull down all of Eric's latest sources this weekend and go 
+over them in depth.  I am going to review them and decide what it will 
+take to get them operational on Win95.  If there are OS/2 PM/Workplace 
+Shell specific code in them, it will be useful, as Windows and OS/2 
+shared a similar windowing model.  The X11 specific code (if any) that 
+is tied to the GUI. will also be useful.
+
+> 2.  Code organization.  I can see that we will be generating tons of
+> code here.  What would you think about organizing it somehow in
+> subdirectories?  Maybe something like one directory per module, or
+
+Sounds good.  We may have to further subdivide for platform specific 
+modules as well.
+
+> 3.  3d world modeling.  I've been thinking alot about how to model the
+> world.  Before anyone gets too far along in this area, I'd like to
+> share some thoughts and ideas with you.  Matt, I know you expressed
+> interest in this area.
+
+Yes, and I have been thinking about it.  Here are my thoughts/feelings 
+on this...
+
+1)  Co-ordinate system
+
+I think a spherical lattitude/longitude system for all positioning will 
+be most useful.  It is natural for everyone involved. 
+
+Internally, I propose the following basic representation.  Convert all 
+lattitude/longitude co-ordinates to 32-bit unsigned long integer 
+co-ordinates.  This will permit *very* precise placement of ANY object 
+we can imagine, right down to people on the street if we wish.  (I am 
+looking to the future here).
+
+I will be able to give exacting figures on the smallest unit of 
+representable data by the end of the week.  Here are my estimates:
+
+	Longitude: 33 co-ordinate units = 1/100th of a second
+	Latitude: 66 co-ordinate units = 1/100th of a second 
+
+We can translate easily to and from integer co-ordinates back to 
+Lat/Long co-ordinates.  (I will write the routines now if they are 
+needed).
+
+2)  Terrain and world data
+
+I am starting to think our best method of representing the world might 
+be to build a custom GIS in FG for starters.  We can use USGS or other 
+similar data source to get the baseline terrain information.  Acquiring 
+terrain data should be our first priority, as this will tell us how we 
+need to shape our world model to fit and how to arrange the data.
+
+3)  World rendering
+
+For viewing our 3D world, routines need to be devised that display, in 
+increasing order of detail, the world outside.  The view system should 
+evaluate altitude and distance to objects within sight and display them 
+with an appropriate level of detail, fudging it where necessary for 
+speed.
+
+I think a system of "terrain patches" might work here.  After 
+determining our position in the virtual world, the view manager will 
+load scenery patches for all the regions immediately surrounding the 
+aircraft out to limit of sight and little bit extra as caching to 
+accomodate movement towards yet unseen areas.
+
+The patches can each contain relevant terrain features and are linked to 
+other patches.  Patches that possess only terrain data will be 
+rendered, with a necessary level of detail to make it the most realistic 
+as possible to the viewer.
+
+Linking of the patches to their neighbours will have to be precise.  All 
+patches for an area will be linked topologically from the main terrain 
+database (where the basic world patches are derived from) and extended 
+with specific scenery to a patch or a group of patches.
+
+An advantage to this will be the fact we only load the patches we need 
+immediately.  We would have to decide on a resolution for each patch 
+(i.e 100x100 feet, 1000x1000 feet, etc).  This would allow us to ship 
+real-time (hopefully) scenery data over the net without large overhead.
+
+4)  Object representation
+
+A straight-forward Lat/Long (stored as integers internally) positioning 
+of scenery objects, orientation in degrees, and width, height, etc info 
+in feet or metres.  Further information such as texture, colors, etc can 
+be stored as well.  This would allow us to use solid modelling and 
+texture mapping as we see fit.
+
+These are my thoughts.  Any feedback on this?
+
+
+I'll be able to give a more definitive answer on cross-platform issues 
+when I review Eric's code.  (Portable data types are a big one here.)  
+:)
+
+Matt
+
+
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Thu Sep  5 15:19:37 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id PAA17479; Thu, 5 Sep 1996 15:19:34 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from islay.ssl.berkeley.edu (islay.ssl.berkeley.edu [128.32.147.192]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id PAA17475 for <flight-gear@infoplane.com>; Thu, 5 Sep 1996 15:19:18 -0500
+Received: (korpela@localhost) by islay.ssl.berkeley.edu (8.7.5/CEA) id NAA17890; Thu, 5 Sep 1996 13:21:30 -0700 (PDT)
+From: "Eric J. Korpela" <korpela@ssl.Berkeley.EDU>
+Message-Id: <199609052021.NAA17890@islay.ssl.berkeley.edu>
+Subject: Re: Request for assistance.....
+To: flight-gear@infoplane.com
+Date: Thu, 5 Sep 1996 13:21:29 -0700 (PDT)
+In-Reply-To: <322F2EC9.6373@worldchat.com> from "Matt Pickering" at Sep 5, 96 03:49:29 pm
+X-Geek-Code: GAT d-(?) H s+:-- g+ p? au--- a- w++ v++(--) C+++ US+++ P- L 3 
+X-Geek-Cont1: E--- N++ K? W M- V -po+(--) Y+ t+ 5++ j? R- G? tv+ b++ D+ B---
+X-Geek-Cont2: e+++>++++ u- h--- f+(?) r+++ n+(---) y@(?) 
+X-PGP-ID: FF0C92DD
+X-PGP-Fingerprint: 96 BD 9D 77 12 FE 04 9B  3E F5 5B 8D 2D D1 4C 6B
+X-Mailer: ELM [version 2.4 PL22]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+
+> 1)  Co-ordinate system
+
+> I think a spherical lattitude/longitude system for all positioning will 
+> be most useful.  It is natural for everyone involved. 
+
+> Internally, I propose the following basic representation.  Convert all 
+> lattitude/longitude co-ordinates to 32-bit unsigned long integer 
+> co-ordinates.  This will permit *very* precise placement of ANY object 
+> we can imagine, right down to people on the street if we wish.  (I am 
+> looking to the future here).
+
+> I will be able to give exacting figures on the smallest unit of 
+> representable data by the end of the week.  Here are my estimates:
+
+> 	Longitude: 33 co-ordinate units = 1/100th of a second
+
+Yep.  Look in the file fgvars.h and you'll see some definitions I did a long
+time ago....
+
+#define FG_DEGREE 11930464
+#define FG_ARCMINUTE 198841
+#define FG_NMILE 198841
+#define FG_ARCSECOND 3314
+#define FG_R_EARTH 683565275
+#define FG_RADIAN 683565275
+#define FG_METER 215
+
+> 2)  Terrain and world data
+
+> I am starting to think our best method of representing the world might 
+> be to build a custom GIS in FG for starters.  We can use USGS or other 
+> similar data source to get the baseline terrain information.  Acquiring 
+> terrain data should be our first priority, as this will tell us how we 
+> need to shape our world model to fit and how to arrange the data.
+
+Agreed.  Willing to look into getting the USGS stuff and choosing a format?
+
+> 3)  World rendering
+
+> I think a system of "terrain patches" might work here.  
+
+I agree.  A while ago I posted a message describing a sort of recursive
+scenery format that allows grouping of objects. It was something like
+this.
+
+typedef struct _FG_SCN_RECORD {
+  FG_INT32  objtype;             /* code for type of object            */
+  FG_INT32  length;              /* length of this record              */
+  FG_INT32  lat0,lon0,lat1,lon1; /* lat/lon range where it is visibile */
+/* object data goes here */
+} FG_SCN_RECORD;
+
+typedef struct _FG_3DPOLY_RECORD {
+  FG_INT32  objtype;             /* set to FG_OBJ_3DPOLY               */
+  FG_INT32  length;              /* set to length of this record       */
+  FG_INT32  lat0,lon0,lat1,lon1; /* lat/lon range where it is visible  */
+  FG_INT32  color;               /* color of this polygon (RGB)        */
+  FG_I3VECT center;              /* polygon center                     */
+  FG_I3VECT normal;              /* polygon normal                     */
+  FG_INT32  n_vertices;          /* number of vertices                 */
+/* vertex list goes here */
+} FG_3DPOLY_RECORD;
+.etc...
+
+#define FG_OBJ_GROUP 0
+#define FG_OBJ_3DPOLY 1
+
+Groups of scenery can be easily define and a quick bounds check will
+tell the scenery manager to skip to the next group.  How groups
+should be arranged in files is another thing entirely.  My guess it
+we want the world divided into somewhat overlapping regions of
+managable size that are individually installable/deletable.  Perhaps
+the regions could be based on the boundaries of sectional charts.
+50 nmi of overlap for visible and 150 nmi of overlap for navaids would
+be great.
+
+> I'll be able to give a more definitive answer on cross-platform issues 
+> when I review Eric's code.  (Portable data types are a big one here.)  
+> :)
+
+Don't be too hard on me. :)
+
+Eric
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Thu Sep  5 16:35:12 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id QAA17873; Thu, 5 Sep 1996 16:33:50 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from meserv.me.umn.edu (meserv.me.umn.edu [134.84.196.1]) by calvin.infoplane.com (8.7.1/8.7.1) with SMTP id QAA17869 for <flight-gear@infoplane.com>; Thu, 5 Sep 1996 16:33:45 -0500
+Received: from kenai.me.umn.edu (kenai.me.umn.edu [134.84.197.42]) by meserv.me.umn.edu (8.6.11/8.6.11) with ESMTP id QAA20636 for <flight-gear@infoplane.com>; Thu, 5 Sep 1996 16:36:26 -0500
+Received: (from clolson@localhost) by kenai.me.umn.edu (8.7.5/8.7.3) id QAA05239; Thu, 5 Sep 1996 16:35:34 -0500
+Date: Thu, 5 Sep 1996 16:35:34 -0500
+Message-Id: <199609052135.QAA05239@kenai.me.umn.edu>
+From: "Curtis L. Olson" <clolson@me.umn.edu>
+To: flight-gear@infoplane.com
+Subject: Flight Gear Web Page
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Flight Gear Developers,
+
+I have gone through and done some updating of the Flight Gear web
+page:
+
+    http://www.menet.umn.edu/~clolson/fgfs/
+
+This web page is intended to be a common ground meeting place for all
+of us developers.  Right now, it mostly represents my view of the
+flight gear project.  That is why I am requesting your input.
+
+I'd like to request that you have a look through the web page (at
+least the top level) and send me any comments, additions, and changes
+you'd like to see.
+
+I'd like this page to be a place where we can go to see the current
+status of various aspects of the project, see who's working on what,
+see what needs to be done, and to see the outstanding issues that
+still require thought and solutions.
+
+So, if you are working on something, or are interested in working on
+something; if you want to bring up some issue that will need to be
+resolved; if you have a solution for an existing problem; or if you
+recognize some area that needs work or attention, please drop me a
+note and let me know so I can update the web page.
+
+Thanks!
+
+Curt.
+-- 
+Curtis Olson   E-mail: clolson@me.umn.edu
+Try Linux!     WWW:    http://www.menet.umn.edu/~clolson
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Mon Sep 23 20:14:25 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id UAA32602; Mon, 23 Sep 1996 20:11:25 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from barb.wchat.on.ca (barb.wchat.on.ca [204.138.239.65]) by calvin.infoplane.com (8.7.1/8.7.1) with SMTP id UAA32598 for <flight-gear@infoplane.com>; Mon, 23 Sep 1996 20:11:19 -0500
+Received: from g1-p12.brantford.wchat.on.ca by barb.wchat.on.ca id aa08661;
+          23 Sep 96 21:16 EDT
+Message-ID: <32473684.6762@worldchat.com>
+Date: Mon, 23 Sep 1996 21:16:52 -0400
+From: Matt Pickering <mattp@worldchat.com>
+Organization: Hurricane Pneumatic Conveying
+X-Mailer: Mozilla 2.0 (Win95; I)
+MIME-Version: 1.0
+To: flight-gear@infoplane.com
+Subject: FG Development
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Greetings fellow FG developers,
+
+I apologize for my absence, I have been in Dallas and I have been going 
+through some personal crisis.  However, I am currently examining the FG 
+prototype code by Eric and I am quickly concluding this will not port 
+easily to Win95/Win32.  (I am going to use Win32 from now on, as this is 
+the API used to develop 32-bit Windows apps and it does not necessarily 
+mean just Win95.)
+
+I will give a detailed list shortly.
+
+As to my other tasks.  USGS data for terrain is not easy to dig out, but 
+I am working on it.  I am working on preliminary co-ordinate systems.  I 
+would like to see an operational basic scenery generator inside of 90 
+days.  That is my primary goal.
+
+A note of good news and potential help.  On the plane back from Dallas, 
+I sat beside a woman who works for Bombardier Canada Inc in Montreal.  
+She is the PR officer for the Global Express bizjet.  (The 32M dollar 
+wonder).  I told her about FG and our various goals and requirements, 
+specifically, our difficulties in finding flight dynamics information.  
+She asked me to forward a copy of the FG proposal along with a list of 
+requirements.  She is willing to provide as much technical data on 
+Bombardier aircraft as we need and will consult with their aero 
+engineers about the possibility of consulting in helping us develop 
+simplified flight models.  Their aircraft are the Dash 6/7/8 series 
+turboprop commuters, the Canadair Challenger and Global Express business 
+jets, the Learjets (they own Lear), and the DeHavilland series of GA 
+aircraft including the Otter and Twin Otter.  
+
+She is willing to give me a tour of the plant and let me speak with 
+their people if I want to fly out to Montreal.  I am keeping this in 
+mind.  I think this might be a very good source of help and information 
+for us.  She also gave me the card for a Canadian Forces pilot who flies 
+CT-114 Tutor training jets, and he might be able to provide additional 
+information as well.  I will keep everyone posted of the developments in 
+this direction.  I will be mailing her all available info on FG this 
+week, as well as a detailed requirements and "wish list".  If you have 
+any specific requirements, please post them ASAP.
+
+That is all I have to report for now.  I am getting into the groove.  I 
+will have more info soon.
+
+Take care everyone.
+
+Matt
+Win32 development
+
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Mon Sep 23 20:58:42 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id UAA00089; Mon, 23 Sep 1996 20:58:41 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from pen1.pen.k12.va.us (pen1.pen.k12.va.us [141.104.22.202]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id UAA00085 for <flight-gear@infoplane.com>; Mon, 23 Sep 1996 20:58:36 -0500
+Received: by pen1.pen.k12.va.us (8.7.3/8.6.6)
+          id WAA37831; Mon, 23 Sep 1996 22:03:49 -0400
+From: "David L. Murr" <dmurr@pen.k12.va.us>
+Message-Id: <199609240203.WAA37831@pen1.pen.k12.va.us>
+Subject: Re: FG Development
+To: flight-gear@infoplane.com
+Date: Mon, 23 Sep 96 22:03:49 EDT
+In-Reply-To: <32473684.6762@worldchat.com>; from "Matt Pickering" at Sep 23, 96 9:16 pm
+X-Mailer: PENELM [version 2.3.1 PL11]
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+According to Matt Pickering:
+> 
+
+[snip]
+
+> She is willing to provide as much technical data on 
+> Bombardier aircraft as we need and will consult with their aero 
+> engineers about the possibility of consulting in helping us develop 
+> simplified flight models.  Their aircraft are the Dash 6/7/8 series 
+
+[snip]
+
+> She is willing to give me a tour of the plant and let me speak with 
+> their people if I want to fly out to Montreal.  I am keeping this in 
+> mind.  I think this might be a very good source of help and information 
+> for us.  She also gave me the card for a Canadian Forces pilot who flies 
+
+I don't know if anyone else is thinking this, but this project
+is already getting much bigger and broader than I ever thought
+it would. Our FGFS project was featured recently in a blurb in
+Computer Pilot magazine. Unfourtunately, they published the
+"old" URL to the FG page. :(
+
+Great work Matt! Making these kinds of "real world" contacts
+could really help us getting, as you've pointed out, flight
+model data, terrain information, etc., etc.
+
+I'm working on a simple page where you can sign up for what
+team you want to be on (includes a list of the teams and what
+they're doing as well as who has signed up for what). If you
+want to be on a team, please visit this page once I release the
+URL and sign up, even if you did this a few months ago, as I
+have extensively revised the team structures based on some
+advice by Shmuel, as well as the addition of some testing
+people. 
+
+More to come on this later -- and Matt, if you go to the plant
+-- take pictures! <grin> We can scan them in and post them on
+Curt's website possibly as part of the "in the making". <BG>
+
+Thanks and regards!!
+Dave
+AdminFG
+
+-- 
+   _________  __              | Senior Editor - FSNews
+  / __/ __/ |/ /__ _    _____ | http://users.aol.com/fsnews/
+ / _/_\ \/    / -_) |/|/ (_-< | Flight Simulation News Network
+/_/ /___/_/|_/\__/|__,__/___/ | "Taking virtual aviation to new heights!"
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Mon Sep 23 21:31:39 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id VAA00285; Mon, 23 Sep 1996 21:31:36 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from on-ramp.ior.com (on-ramp.ior.com [199.79.239.11]) by calvin.infoplane.com (8.7.1/8.7.1) with SMTP id VAA00281 for <flight-gear@infoplane.com>; Mon, 23 Sep 1996 21:31:31 -0500
+From: deanc@on-ramp.ior.com
+Received: from hyflyr.ior.com(really [204.212.119.58]) by on-ramp.ior.com
+	via sendmail with smtp
+	id <m0v5NMt-000X8NC@on-ramp.ior.com>
+	for <flight-gear@infoplane.com>; Mon, 23 Sep 96 19:37:03 -0700 (PDT)
+	(/\##/\ Smail3.1.30.16 #30.4 built 17-mar-96)
+Message-Id: <m0v5NMt-000X8NC@on-ramp.ior.com>
+Comments: Authenticated sender is <deanc@on-ramp.ior.com>
+To: flight-gear@infoplane.com
+Date: Mon, 23 Sep 1996 19:36:29 +0000
+MIME-Version: 1.0
+Content-type: text/plain; charset=US-ASCII
+Content-transfer-encoding: 7BIT
+Subject: Re: FG Development
+Priority: normal
+X-mailer: Pegasus Mail for Win32 (v2.42)
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+
+> She asked me to forward a copy of the FG proposal along with a list of 
+> requirements.  She is willing to provide as much technical data on 
+> Bombardier aircraft as we need and will consult with their aero 
+> engineers about the possibility of consulting in helping us develop 
+> simplified flight models.  Their aircraft are the Dash 6/7/8 series 
+> turboprop commuters, the Canadair Challenger and Global Express business 
+> jets, the Learjets (they own Lear), and the DeHavilland series of GA 
+> aircraft including the Otter and Twin Otter.  
+
+Most Excellent!!!! This would definately be a great starting point 
+for aerodynamic and systems info. And a diversified field of aircraft 
+to choose from. Looking forward to more.
+
+Dean
+Flight model/systems
+****************************************************************
+                 Senior Captain Dean Catalano     
+ Hub Commander, Seattle-Tacoma Hub - Aero Airlines
+           (http://www.aeroair.net/sea/index.html)  
+                Aero Airlines, Test Pilot (Heavy)
+****************************************************************
+Aero Airlines - "The Best in the Air...Because we Care!" 
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Mon Sep 23 21:56:45 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id VAA00430; Mon, 23 Sep 1996 21:56:44 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from kksys.skypoint.net (kksys.skypoint.net [199.86.32.5]) by calvin.infoplane.com (8.7.1/8.7.1) with SMTP id VAA00426 for <flight-gear@infoplane.com>; Mon, 23 Sep 1996 21:56:38 -0500
+Received: by kksys.skypoint.net (Smail3.1.29.1 #2)
+	id m0v5Nnx-0003ivC; Mon, 23 Sep 96 22:05 CDT
+Received: (from curt@localhost) by sledge.infoplane.com (8.7.5/8.6.9) id WAA11703; Mon, 23 Sep 1996 22:02:12 -0500
+Date: Mon, 23 Sep 1996 22:02:12 -0500
+Message-Id: <199609240302.WAA11703@sledge.infoplane.com>
+From: "Curtis L. Olson" <curt@sledge.mn.org>
+To: flight-gear@infoplane.com
+Subject: FG Development
+In-Reply-To: <32473684.6762@worldchat.com>
+References: <32473684.6762@worldchat.com>
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Matt Pickering writes:
+> Greetings fellow FG developers,
+> 
+> I apologize for my absence, I have been in Dallas and I have been
+> going through some personal crisis.  However, I am currently
+> examining the FG prototype code by Eric and I am quickly concluding
+> this will not port easily to Win95/Win32.  (I am going to use Win32
+> from now on, as this is the API used to develop 32-bit Windows apps
+> and it does not necessarily mean just Win95.)
+
+Matt,
+
+I think that it is important that Flight Gear works under current and
+future versions of windows.  As annoying as Microsoft is sometimes, we
+can't and shouldn't ignore the multitudes of people who primarily run
+windows.  As with anything, the earlier we can build in support, the
+less headaches we will have later on.
+
+The primary things Eric is working on so far that have portability
+issues is the dynamic module loading routines, and the low level
+graphics routines.  Maybe you could coordinate with Eric to work in
+support for these items that work cleanly under windows.
+
+> As to my other tasks.  USGS data for terrain is not easy to dig out,
+> but I am working on it.  I am working on preliminary co-ordinate
+> systems.  I would like to see an operational basic scenery generator
+> inside of 90 days.  That is my primary goal.
+
+I've browsed some of this data myself, and it is a little
+overwhelming.  I don't know if I've official suggested this, but I
+would propose that scenery be developed in a (lat, lon, elev)
+coordinate system.  This coordinate system would then be converted to
+points on/near the unit sphere in (x, y, z) form.  So for instance
+(45deg, 45deg, 0meters) = (.707, .707, .707) These coordinates could
+be scaled up to large integers or something if we wanted to avoid
+floating point calculations.  Then, and this is the reason for
+converting to (x,y,z) the coodinates could be easily rotated via a
+matrix transformation so that the current aircraft position is at or
+near (0 lat, 0 lon, elev).  Ok, at this point I get a little foggy
+about how I've seen this done before, but I think if we convert the
+rotated information back to (lat, lon, elev) we wind up with the north
+pole being at (0 lat, 0 lon, 0 elev).  Then we can make the
+assumption/approximation that new_x = lon, new_y = lon, new_z = elev.
+This way we have no problems whatsoever with things blowing up on us
+at the poles.
+
+Most of this could be done in advance via a "scenery compiler".  We
+could partition out the globe in predifined sections, and do all the
+transformations in advance.  Each section would start to get a little
+distortion around the edges, but this would not be noticable.  
+
+I hope that made some sort of sense. :-)  My dog is giving me blank
+stares and I've explained it to him three times.
+
+> A note of good news and potential help. 
+>
+>   [ lots of great contanct info deleted ]
+>
+
+This sounds great, don't lose track of these people, it sounds like
+they will be a valuable resource.
+
+> That is all I have to report for now.  I am getting into the groove.  I 
+> will have more info soon.
+
+Wow, it looks like things are moving along here!  Keep up the great
+work guys!
+
+Curt.
+-- 
+Curtis Olson   E-mail: curt@sledge.mn.org
+Try Linux!     WWW:    http://www.menet.umn.edu/~clolson
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Mon Sep 23 22:11:36 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id WAA00519; Mon, 23 Sep 1996 22:11:34 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from kksys.skypoint.net (kksys.skypoint.net [199.86.32.5]) by calvin.infoplane.com (8.7.1/8.7.1) with SMTP id WAA00515 for <flight-gear@infoplane.com>; Mon, 23 Sep 1996 22:11:29 -0500
+Received: by kksys.skypoint.net (Smail3.1.29.1 #2)
+	id m0v5O2L-0003WaC; Mon, 23 Sep 96 22:19 CDT
+Received: (from curt@localhost) by sledge.infoplane.com (8.7.5/8.6.9) id WAA11840; Mon, 23 Sep 1996 22:18:18 -0500
+Date: Mon, 23 Sep 1996 22:18:18 -0500
+Message-Id: <199609240318.WAA11840@sledge.infoplane.com>
+From: "Curtis L. Olson" <curt@sledge.mn.org>
+To: flight-gear@infoplane.com
+Subject: Re: FG Development
+In-Reply-To: <199609240203.WAA37831@pen1.pen.k12.va.us>
+References: <32473684.6762@worldchat.com>
+	<199609240203.WAA37831@pen1.pen.k12.va.us>
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+David L. Murr writes:
+> I don't know if anyone else is thinking this, but this project
+> is already getting much bigger and broader than I ever thought
+> it would. Our FGFS project was featured recently in a blurb in
+> Computer Pilot magazine. Unfourtunately, they published the
+> "old" URL to the FG page. :(
+
+David,
+
+Wow, this is way cool.  Is there any way to get a copy of this
+magazine?  What was the flight-gear url they published?  I will try to
+make sure that it at least resolves to a pointer to the new page.
+
+Thanks,
+
+Curt.
+-- 
+Curtis Olson   E-mail: curt@sledge.mn.org
+Try Linux!     WWW:    http://www.menet.umn.edu/~clolson
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Mon Sep 23 22:36:38 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id WAA00659; Mon, 23 Sep 1996 22:36:20 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from kksys.skypoint.net (kksys.skypoint.net [199.86.32.5]) by calvin.infoplane.com (8.7.1/8.7.1) with SMTP id WAA00652 for <flight-gear@infoplane.com>; Mon, 23 Sep 1996 22:36:15 -0500
+Received: by kksys.skypoint.net (Smail3.1.29.1 #2)
+	id m0v5OQH-0003I0C; Mon, 23 Sep 96 22:44 CDT
+Received: (from curt@localhost) by sledge.infoplane.com (8.7.5/8.6.9) id WAA11978; Mon, 23 Sep 1996 22:43:48 -0500
+Date: Mon, 23 Sep 1996 22:43:48 -0500
+Message-Id: <199609240343.WAA11978@sledge.infoplane.com>
+From: "Curtis L. Olson" <curt@sledge.mn.org>
+To: flight-gear@infoplane.com
+Subject: Re: Bombardier Canada Inc
+In-Reply-To: <32473684.6762@worldchat.com>
+References: <32473684.6762@worldchat.com>
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Matt Pickering writes:
+> A note of good news and potential help.  On the plane back from Dallas, 
+> I sat beside a woman who works for Bombardier Canada Inc in Montreal.  
+> She is the PR officer for the Global Express bizjet.  (The 32M dollar 
+> wonder).  I told her about FG and our various goals and requirements, 
+> specifically, our difficulties in finding flight dynamics information.  
+> She asked me to forward a copy of the FG proposal along with a list of 
+> requirements.  She is willing to provide as much technical data on 
+> Bombardier aircraft as we need and will consult with their aero 
+> engineers about the possibility of consulting in helping us develop 
+> simplified flight models.  Their aircraft are the Dash 6/7/8 series 
+> turboprop commuters, the Canadair Challenger and Global Express business 
+> jets, the Learjets (they own Lear), and the DeHavilland series of GA 
+> aircraft including the Otter and Twin Otter.  
+
+Ok, how's this for a wild idea: (It's much to early for this ... but
+since I had the idea I thought I would share it.)
+
+So lets say some aero-type company out there makes some gadget they'd
+like to sell ... it could be a matching set of various instruments /
+radios, it could be the whole aircraft, it could be a new, fancy gps,
+or the latest greatest whatever.  Wouldn't it be great for this
+company if they could distribute for "free" a full blown, high quality
+flight-simulator that runs on everyday machines that includes a
+simulated version of whatever they are trying to sell.  This way they
+could show you how great xxxxx is and allow the consumer to take a
+virtual test drive.  And if this proved to be a valuable marketing
+tool, wouldn't it be in this companies best interest to contribute to
+its continued development?  Contribute could mean pay an employee to
+work 1/2 time on various aspects of flight-gear.  It could mean
+provide key performance data on various aircraft.  It could mean
+buying and donating a cd-rom full of highly accurate terrain, feature
+data.  A company could contribute in a number of meaningful ways.
+
+As long as Flight Gear remains completely free, everybody would win.
+
+Well, we've got a little ways to go before any of these scenarios
+could begin to unfold, but it seemed like an interesting thought, so I
+wanted to share it. :-)
+
+Curt.
+-- 
+Curtis Olson   E-mail: curt@sledge.mn.org
+Try Linux!     WWW:    http://www.menet.umn.edu/~clolson
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Tue Sep 24 13:51:13 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id NAA05353; Tue, 24 Sep 1996 13:49:17 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from pen1.pen.k12.va.us (pen1.pen.k12.va.us [141.104.22.202]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id NAA05349 for <flight-gear@infoplane.com>; Tue, 24 Sep 1996 13:49:08 -0500
+Received: by pen1.pen.k12.va.us (8.7.3/8.6.6)
+          id OAA62660; Tue, 24 Sep 1996 14:54:16 -0400
+From: "David L. Murr" <dmurr@pen.k12.va.us>
+Message-Id: <199609241854.OAA62660@pen1.pen.k12.va.us>
+Subject: Re: FG Development
+To: flight-gear@infoplane.com
+Date: Tue, 24 Sep 96 14:54:15 EDT
+In-Reply-To: <199609240318.WAA11840@sledge.infoplane.com>; from "Curtis L. Olson" at Sep 23, 96 10:18 pm
+X-Mailer: PENELM [version 2.3.1 PL11]
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+According to Curtis L. Olson:
+> 
+> David L. Murr writes:
+> > I don't know if anyone else is thinking this, but this project
+> > is already getting much bigger and broader than I ever thought
+> > it would. Our FGFS project was featured recently in a blurb in
+> > Computer Pilot magazine. Unfourtunately, they published the
+> > "old" URL to the FG page. :(
+> 
+> Wow, this is way cool.  Is there any way to get a copy of this
+> magazine?  What was the flight-gear url they published?  I will try to
+> make sure that it at least resolves to a pointer to the new page.
+
+In fact, this was CP's first US issue, and they say it should
+be in most bookstore. I have yet to find it, though. My
+assistant editor over here sent me a Xerox of some of the
+pertinent pages, and it says the following about FG...
+
+page 36... "A recent online development is a proposed flight
+simulator called Flight Gear and is a project to keep an eye
+on. Ayone who was interested in computer graphics in the late
+80's remembers a program called POV. I was a raytracing program
+developed by many people by programming all the code in public
+and allowing anyone to contribute to the pragramming. This
+union of talent quickly resulted in POV becoming arguably the
+finest raytracer in the world. There is now an attempt being
+made to do the same thing with a flight simulator. The project
+is called Flight Gear and the programming is already being
+started. If it is successful you can expect a very fine flight
+sim to be teh result sometime in the future. You can follow the
+programm of this undertaking at the Flight Gear Flight
+Simulator home page at:
+http://www.me.umn.edu/home/clolson/fgfs/flightgear.html."
+
+Good thing we're getting more mainstream attention, too and
+this project not just being confined to the Internet (though
+our primary distribution will, I suppose, be the Intnernet.)
+
+Regards,
+Dave
+AdminFG
+-- 
+   _________  __              | Senior Editor - FSNews
+  / __/ __/ |/ /__ _    _____ | http://users.aol.com/fsnews/
+ / _/_\ \/    / -_) |/|/ (_-< | Flight Simulation News Network
+/_/ /___/_/|_/\__/|__,__/___/ | "Taking virtual aviation to new heights!"
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Fri Sep 27 10:23:54 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id KAA26639; Fri, 27 Sep 1996 10:22:38 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from barb.wchat.on.ca (barb.wchat.on.ca [204.138.239.65]) by calvin.infoplane.com (8.7.1/8.7.1) with SMTP id KAA26635 for <flight-gear@infoplane.com>; Fri, 27 Sep 1996 10:22:19 -0500
+Received: from g3-p11.brantford.wchat.on.ca by barb.wchat.on.ca id aa20012;
+          27 Sep 96 11:27 EDT
+Message-ID: <324BF27C.2B1E@worldchat.com>
+Date: Fri, 27 Sep 1996 11:27:56 -0400
+From: Matt Pickering <mattp@worldchat.com>
+Organization: Hurricane Pneumatic Conveying
+X-Mailer: Mozilla 2.0 (Win95; I)
+MIME-Version: 1.0
+To: flight-gear@infoplane.com
+Subject: Flight modelling
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+To FG developers interested in flight models:
+
+I have ordered two books from Cambridge University Press.  One is Flight 
+Simulation, a general text on the subject with equations, etc.  The 
+other is Aircraft Performance.  This one discusses issues of fuel flow, 
+climb/turning performance, speed at altitude, thrust and drag, etc.
+
+What looks interesting about this second book is it goes light on the 
+math.  It uses analytical and empirical data versus all-out simulation 
+apparently.  (Based on description, I haven't seen the book, ordered it 
+on faith).  This might translate into speedy calculations for some of 
+the realism portions of the flight model.  
+
+I am also currently plowing through two books on fluid dynamics.  :)
+
+When I get these books, I will cover any relevant sections and make them 
+available to those who need them.
+
+Matt
+
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Fri Sep 27 10:18:11 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id KAA26590; Fri, 27 Sep 1996 10:14:16 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from barb.wchat.on.ca (barb.wchat.on.ca [204.138.239.65]) by calvin.infoplane.com (8.7.1/8.7.1) with SMTP id KAA26583 for <flight-gear@infoplane.com>; Fri, 27 Sep 1996 10:14:08 -0500
+Received: from g3-p11.brantford.wchat.on.ca by barb.wchat.on.ca id aa19312;
+          27 Sep 96 11:19 EDT
+Message-ID: <324BF036.2DC3@worldchat.com>
+Date: Fri, 27 Sep 1996 11:18:14 -0400
+From: Matt Pickering <mattp@worldchat.com>
+Organization: Hurricane Pneumatic Conveying
+X-Mailer: Mozilla 2.0 (Win95; I)
+MIME-Version: 1.0
+To: flight-gear@infoplane.com
+Subject: ODL and co-ordinate systems
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Greetings everyone,
+
+Well, here is my progress report:
+
+Co-ordinate systems.  After looking over Eric and Curt's notes on 
+co-ordinate systems and thinking about it, here is my idea for 
+co-ordinates.
+
+As discussed, 32-bit long integers.  A lat/long co-ordinate will be 
+converted to a normalized (x,y) pair.  The lat/long values will cover 
+equal ranges.  
+
+My aim for a co-ordinate system is to achieve resolutions of detail on 
+the order of 1 metre or less.  This is well within the range of 32 bit 
+values for position.  My reasoning is simple: 1 metre resolution in 
+co-ordinates will allow extremely precise placement of scenery as small 
+as a sidewalk.  I might even want to go as low as 1/10th metre 
+resolution.  That will allow us to literally place ANYTHING as scenery. 
+ I want at some point to see lines on roads and cars driving on them as 
+I cross an interstate on final approach.  :)
+
+I am having some difficultly in the math for placement of terrain and 
+scenery data.  Mainly in determining what lat/long regions are visible 
+from any given point.  (Approx 100nm in every direction).  Gets dicey at 
+the poles.  Any suggestions?
+
+Terrain data:  the best I have come up with is 1:100 000 DEM data from 
+USGS.  About 10km resolution, this is WAY too coarse.  I would like 1km 
+topological grid maps.  We may have to digitize our own regional maps 
+for this level of detail.  Lack of accurate high resolution terrain 
+contours is my major annoyance with FS5.  (Along with broad scenery 
+swaths).
+
+This is all interrelated to scenery.  I have been looking at the 
+prototype code and I am certain it will not port without major work.  I 
+think we need to be more general in our design.  Dynamic modules 
+(especially machine code) require different mechanisms to load and bind. 
+ We lose flexibility.  Timers and signals are implemented differently on 
+each platform.
+
+I am trying to think generic here.  The data types look good.  I suggest 
+for prototypes we use a simple loop and let the machine go as fast as it 
+can.  Right now, we are going to have two different main() functions.  
+(main for everyone else and WinMain for Win32).  
+
+Scenery:
+
+Here is where most of my thinking is directed.  I want a world to move 
+around in.  As far as I am concerned, everything one way or the other is 
+scenery.  
+
+First, I recommend a synthetic camera approach.  The camera will be tied 
+to axis of movement within the "cockpit".  We should be able to model 
+the cockpit for each aircraft in such a way that we can slide forward, 
+turn our "head" in fine degrees of movement and "lean" and look up and 
+down.  This would be our head and it goes where the aircraft goes.  
+Extremely flexible.
+
+Next, objects.  I propose we define a language to allow us to describe 
+the entire world and simulator.  This Object Definition Language (ODL) 
+could be used for everything from buildings to aircraft.  It would allow 
+us to extend the sim without binding new code in (except to handle the 
+new objects).  Old versions of the sim could simply ignore objects it 
+knows nothing about.  
+
+The ODL would define the object, its shape (through vertex lists, 
+facets, color, textures and light sources), orientation and position.  
+The ODL would be hierarchal, starting from the world and working 
+downward, right down to individual scenery patches and objects.  
+
+The smallest unit of scenery would be a "patch".  I am thing maybe as 
+small as 1x1 metre, at maximum detail.  (Depends on system, I am looking 
+future ward here).  Patches can be varied sizes and would be contained 
+in a region of maybe 100x100 metres.  Regions would form blocks of 
+scenery.  This would be the smallest loadable unit from a scenery 
+management standpoint.  A group of blocks together would permit coarse 
+detail at high altitude (general terrain), with level of detail 
+increasing to the patch level as we get lower (landing and takeoff).  A 
+block would probably be anywhere from 500 metres to 2km.  (I'm just 
+thinking out loud here).
+
+Although preliminary, here is what I am picturing for the ODL:
+
+OBJECT SCENEBLOCK
+{
+	TOPLEFT 77d53s45W  43d33s10N   // lat/long co-ords 
+	TOPRIGHT ...
+	BOTLEFT ...
+	BOTRIGHT ....
+
+	// These corners would cover a fixed size of terrain, i.e 1x1km 
+
+	PATCHBLOCK LOWDETAIL
+	{
+		// Each patch is 100x100 metres
+		RESOLUTION 10x10
+		DEFINE PATCH 1
+		{
+			TYPE	LAND
+			ELEVATIONS
+				// position of height points and ID's
+				x,y,height  ID
+				x,y,height  ID
+				// Vertex join list by ID, forms the
+				// terrain in the patch
+				ID1-ID2
+			BASETERRAIN GRASSLAND
+			DEFINE SPECIAL
+			{
+				OBJECT LAKE
+				{
+				CENTERED ON lat/long
+				POINTS
+				points describing outline
+				SURFACE BLUE (or MUDDY, CHOPPY, CLEAR)
+				}
+			}
+		}
+		etc.
+	}
+
+	PATCHBLOCK HIGHDETAIL
+	{
+		// High detail data for low detail patch 1
+		PATCHID 1
+		{
+			// 1 metre patches
+			RESOLUTION 100x100
+
+			OBJECT ROAD
+			{
+				ORIENTATION 256
+				POINTS
+					x,y  ID
+					x,y  ID
+					x,y  ID
+				VERTEX
+					ID1-ID2
+					ID2-ID4
+				COLOR GRAY
+				or
+				TEXTURE PAVEMENT1
+				HASCENTERLINE YES
+				CENTERLINECOLOR WHITE
+			}
+		}
+	}
+}
+
+You get the idea.
+
+Here is one for aircraft
+
+OBJECT AIRCRAFT
+{
+	NAME Boeing 737
+	WIREFRAME b737-200.wfr  // file containing 3D aircraft info
+	AIRMODEL b737-200.air   // file containing flight model
+	ENGINES 2
+	TYPE JET
+
+	OBJECT COCKPIT
+	{
+		INSTURMENT ALTIMETER=GAUGE
+		INSTURMENT AHORIZON=DIGITAL1 (GAUGE, DIGITAL1,2 etc)
+		INSTURMENT AIRSPEED=GAUGE
+		INSTURMENTMAP
+			InstID   x,y
+			InstID   x,y
+	}
+
+	// These object would be defined in the aircraft data file
+	// These describe their properties	
+	OBJECT ENGINE1
+	{
+		TYPE JT8D
+		MAXTHRUST 13700
+		SPOOLTIME 1.43
+		REVERSIBLE YES			
+		LOCATION LW
+		DRAGCOEFFICIENT 0.65
+		FUELFLOWEQN x + 2y + 3z
+	}
+
+	OBJECT FLAPS
+	{
+		POSITIONS 3
+		DRAGCOEFFICIENT 1 = 0.0
+		DRAGCOEFFICIENT 2 = 0.21
+		DRAGCOEFFICIENT 3 = 0.78
+	}
+
+	OBJECT SPOILER
+	{
+		POSITIONS 1
+		DRAGCOEFFICIENT 1 = 0.45
+	}
+}
+
+OBJECT RUNWAY
+{
+	NAME D/FW Runway 21L
+	LAT
+	LONG
+	ORIENTATION 211
+
+	WIDTH 150
+	LENGTH 12400
+
+	COLOR BLACK
+	or
+	TEXTURE RUNWAY2	
+
+	CENTERLINE=YES,THICK,WHITE
+	TOUCHDOWNMARKERS=YES
+	CENTERLIGHTS=YES,FLASHING,NUM=60
+	TOPNUM=21L
+	BOTNUM=3L
+}
+
+And so on.  
+
+OBJECT VOR
+{
+	LAT  43d21s50N
+	LONG  77d32s44W 
+
+	FREQUENCY 118.9
+	RANGE 4.5nm
+	NAME Chirper
+	HASDME YES
+}
+
+Anyhow, you can see where I am going with this.  These ODL scripts would 
+be compiled into data files for the target platform.  That way, we don't 
+worry about byte ordering, data size variances, etc.  Allows us to 
+easily extend the simulator.  Once we have defined an object hierarchy, 
+interpreting these scripts is trivial.
+
+I would like to work on the scenery model first.  If we can come up with 
+a good database structure for this, and a compiled binary format for 
+faster loading/interpreting, I can see this being quite flexible.
+
+I welcome any comments/critiques.
+
+Matt
+
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Fri Sep 27 11:31:44 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id LAA26995; Fri, 27 Sep 1996 11:31:25 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from sierra.psnw.com (sierra.psnw.com [205.199.144.107]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id LAA26991 for <flight-gear@infoplane.com>; Fri, 27 Sep 1996 11:31:11 -0500
+Received: from cheetah.psnw.com (cheetah.psnw.com [206.43.252.100]) by sierra.psnw.com (8.7.4/8.7.3) with SMTP id JAA16338 for <flight-gear@infoplane.com>; Fri, 27 Sep 1996 09:36:27 -0700 (PDT)
+From: robepps@relm.com (Robert Epps)
+To: flight-gear@infoplane.com
+Subject: Re: ODL and co-ordinate systems
+Date: Fri, 27 Sep 1996 16:36:13 GMT
+Message-ID: <324c010b.923369715@mail.psnw.com>
+References: <324BF036.2DC3@worldchat.com>
+In-Reply-To: <324BF036.2DC3@worldchat.com>
+X-Mailer: Forte Agent .99e/32.227
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+>The ODL would define the object, its shape (through vertex lists, 
+>facets, color, textures and light sources), orientation and position.  
+>The ODL would be hierarchal, starting from the world and working 
+>downward, right down to individual scenery patches and objects.  
+
+There is another parameter you may want to consider in the ODL:  an
+optional  member function (or block of script language code or
+whatever) that gets called by the scene renderer every time it fetches
+the ODL parameters.  This member function would be given the
+opportunity to change one or more of the parameters, based on the
+current time, or an internal counter.  Thus, you could have animated
+objects, such as a raising drawbridge, blinking neon sign, person
+waving, all kinds of possibilities!  This may be getting way ahead of
+what can be accomplished in a first-cut Flight Gear, but it's
+something to think about.
+
+        --- Rob Epps
+
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Fri Sep 27 12:59:17 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id MAA27442; Fri, 27 Sep 1996 12:58:55 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from albert.ssl.berkeley.edu (albert.ssl.berkeley.edu [128.32.147.187]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id MAA27438 for <flight-gear@infoplane.com>; Fri, 27 Sep 1996 12:58:47 -0500
+Received: (korpela@localhost) by albert.ssl.berkeley.edu (8.7.5/CEA) id LAA18863; Fri, 27 Sep 1996 11:01:43 -0700 (PDT)
+From: "Eric J. Korpela" <korpela@ssl.Berkeley.EDU>
+Message-Id: <199609271801.LAA18863@albert.ssl.berkeley.edu>
+Subject: Re: ODL and co-ordinate systems
+To: flight-gear@infoplane.com
+Date: Fri, 27 Sep 1996 11:01:42 -0700 (PDT)
+In-Reply-To: <324BF036.2DC3@worldchat.com> from "Matt Pickering" at Sep 27, 96 11:18:14 am
+X-Geek-Code: GAT d-(?) H s+:-- g+ p? au--- a- w++ v++(--) C+++ US+++ P- L 3 
+X-Geek-Cont1: E--- N++ K? W M- V -po+(--) Y+ t+ 5++ j? R- G? tv+ b++ D+ B---
+X-Geek-Cont2: e+++>++++ u- h--- f+(?) r+++ n+(---) y@(?) 
+X-PGP-ID: FF0C92DD
+X-PGP-Fingerprint: 96 BD 9D 77 12 FE 04 9B  3E F5 5B 8D 2D D1 4C 6B
+X-Mailer: ELM [version 2.4 PL22]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+
+> As discussed, 32-bit long integers.  A lat/long co-ordinate will be 
+> converted to a normalized (x,y) pair.  The lat/long values will cover 
+> equal ranges.  
+
+I think that having the coordinates overflow at +360 degrees is a good
+idea  That'll give us about 1/2 mm scenerery resolution which is more
+than adequate.
+
+> My aim for a co-ordinate system is to achieve resolutions of detail on 
+> the order of 1 metre or less.  This is well within the range of 32 bit 
+> values for position.  My reasoning is simple: 1 metre resolution in 
+> co-ordinates will allow extremely precise placement of scenery as small 
+> as a sidewalk.  I might even want to go as low as 1/10th metre 
+> resolution.  That will allow us to literally place ANYTHING as scenery. 
+>  I want at some point to see lines on roads and cars driving on them as 
+> I cross an interstate on final approach.  :)
+
+> I am having some difficultly in the math for placement of terrain and 
+> scenery data.  Mainly in determining what lat/long regions are visible 
+> from any given point.  (Approx 100nm in every direction).  Gets dicey at 
+> the poles.  Any suggestions?
+
+Personally, I think that the latitude, longitude range of visibility
+should be a property of the scenery objects, not something that is
+calculated.  (The difference in calculation time between a lat/lon
+comparison and an angular distance calculation is huge.)
+
+But at some time you will need to do angular and linear distance calcs,
+so I've included formuale below.  Unfortunately, this seems to be one place
+where we need the accuracy of floating point calcs.  These two routines
+will be found in fggeom.c  I'm thinking of adding some range checking to
+allow for faster means at small delta_lat, delta_lon and at 
+MAX(ABS(lat1,lat2))<60 degrees
+
+#include <math.h>
+#include "fgvars.h"
+
+FG_INT32 iangdist(FG_INT32 lat1, FG_INT32 lon1, FG_INT32 lat2, FG_INT32 lon2)
+{
+  double dist,d,dlon1,dlon2,dlat1,dlat2;
+  dlon1=(double)lon1/FG_RADIAN;
+  dlon2=(double)lon2/FG_RADIAN;
+  dlat1=(double)lat1/FG_RADIAN;
+  dlat2=(double)lat2/FG_RADIAN;
+  dist=sin(dlat2)*sin(dlat1)+cos(dlat1)*cos(dlat2)*cos(dlon1-dlon2);
+  d=sqrt(1.-dist*dist)
+  return (FG_INT32)rint(atan2(d,dist)*FG_RADIAN);
+} 
+
+FG_INT32  ilindist(FG_INT32 alt1, FG_INT32 lat1, FG_INT32 lon1,
+                  FG_INT32 alt2, FG_INT32 lat2, FG_INT32 lon2)
+{
+  double r=(double)alt1+FG_R_EARTH;
+  double x=r*sin((double)lon1/FG_RADIAN)*cos((double)lat1/FG_RADIAN);
+  double y=r*cos((double)lon1/FG_RADIAN)*cos((double)lat1/FG_RADIAN);
+  double z=r*sin((double)lat1/FG_RADIAN);
+  r=(double)alt2+FG_R_EARTH;
+  x-=r*sin((double)lon2/FG_RADIAN)*cos((double)lat2/FG_RADIAN);
+  y-=r*cos((double)lon2/FG_RADIAN)*cos((double)lat2/FG_RADIAN);
+  z-=r*sin((double)lat2/FG_RADIAN);
+  return ((FG_INT32)rint(sqrt(x*x+y*y+z*z)));
+}
+
+
+> Terrain data:  the best I have come up with is 1:100 000 DEM data from 
+> USGS.  About 10km resolution, this is WAY too coarse.  I would like 1km 
+> topological grid maps.  We may have to digitize our own regional maps 
+> for this level of detail.  Lack of accurate high resolution terrain 
+> contours is my major annoyance with FS5.  (Along with broad scenery 
+> swaths).
+
+I think the DEM data would make a good base scenery set.  We'd need to
+have it as a base, but the end user should be able to overlay a higher
+resolution star at specific areas.
+
+> This is all interrelated to scenery.  I have been looking at the 
+> prototype code and I am certain it will not port without major work.  I 
+> think we need to be more general in our design.  Dynamic modules 
+> (especially machine code) require different mechanisms to load and bind. 
+>  We lose flexibility.  Timers and signals are implemented differently on 
+> each platform.
+
+I'm fairly sure that the Windows version of fgload.c would be identical
+to the OS/2 version except that DosLoadModule would become LoadModule
+and DosQueryProcAddress becomes GetProcAddress.
+
+The different implementaion of timers and signals can be bypassed by using
+standard C calls for timers and signals.  (Which is why fgtimer.c doesn't
+use Unix, or OS/2 or Windows timers.  It uses clock() and time() which
+exist in every C implementaion.
+
+> I am trying to think generic here.  The data types look good.  I suggest 
+> for prototypes we use a simple loop and let the machine go as fast as it 
+> can.  Right now, we are going to have two different main() functions.  
+> (main for everyone else and WinMain for Win32).  
+
+Maybe we should replace main() with fgmain().  Then in all but windows,
+main would be....
+
+int main(int argc, char *argv[]) 
+{
+  return (fgmain(argc,argv));
+}
+
+In windows it would be...
+HANDLE my_hInstance, my_hPrevInstance;
+LPSTR my_lpszCmdLine;
+int my_nCmdShow;
+int my_argc=0; 
+char *my_argv[30];
+
+int PASCAL WinMain (HANDLE hInstance, HANDLE hPrevInstance,
+                      LPSTR lpszCmdLine, int nCmdShow)
+{
+  int i=0;
+  my_hInstance=hInstance;
+  my_hPrevInstance=hPrevInstance;
+  my_lpszCmdLine=lpszCmdLine;
+  my_nCmdShow=nCmdShow;
+  my_argv[my_argc++]=strtok(lpszCmdLine," ");
+  while (my_argv[my_argc++]=strtok(NULL," "));
+  return (fgmain(my_argc,my_argv));
+}
+
+The Message handling procedure could then be in fgscreen (where the OS/2
+message prodedure is).  For Windows 95 you could spawn a message handling
+thread like I do for the OS/2 version.  For Win 3.1 you'd need to hook
+the message processing thread to the "master" event.
+  
+  
+> Next, objects.  I propose we define a language to allow us to describe 
+> the entire world and simulator.  This Object Definition Language (ODL) 
+> could be used for everything from buildings to aircraft.  It would allow 
+> us to extend the sim without binding new code in (except to handle the 
+> new objects).  Old versions of the sim could simply ignore objects it 
+> knows nothing about.  
+
+It looks like most of the ODL could be handled by using the C preprocessor
+to turn the into structures that can be compiled and dynamically loaded
+the same way drivers are.
+
+Eric
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Fri Sep 27 13:34:34 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id NAA27642; Fri, 27 Sep 1996 13:34:33 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from islay.ssl.berkeley.edu (islay.ssl.berkeley.edu [128.32.147.192]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id NAA27638 for <flight-gear@infoplane.com>; Fri, 27 Sep 1996 13:34:25 -0500
+Received: (korpela@localhost) by islay.ssl.berkeley.edu (8.7.5/CEA) id LAA01717; Fri, 27 Sep 1996 11:39:45 -0700 (PDT)
+From: "Eric J. Korpela" <korpela@ssl.Berkeley.EDU>
+Message-Id: <199609271839.LAA01717@islay.ssl.berkeley.edu>
+Subject: Re: ODL and co-ordinate systems
+To: flight-gear@infoplane.com
+Date: Fri, 27 Sep 1996 11:39:45 -0700 (PDT)
+In-Reply-To: <199609271801.LAA18863@albert.ssl.berkeley.edu> from "Eric J. Korpela" at Sep 27, 96 11:01:42 am
+X-Geek-Code: GAT d-(?) H s+:-- g+ p? au--- a- w++ v++(--) C+++ US+++ P- L 3 
+X-Geek-Cont1: E--- N++ K? W M- V -po+(--) Y+ t+ 5++ j? R- G? tv+ b++ D+ B---
+X-Geek-Cont2: e+++>++++ u- h--- f+(?) r+++ n+(---) y@(?) 
+X-PGP-ID: FF0C92DD
+X-PGP-Fingerprint: 96 BD 9D 77 12 FE 04 9B  3E F5 5B 8D 2D D1 4C 6B
+X-Mailer: ELM [version 2.4 PL22]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+
+> I think that having the coordinates overflow at +360 degrees is a good
+> idea  That'll give us about 1/2 mm scenerery resolution which is more
+> than adequate.
+
+I actually meant +180 and -180 equaling the range of a signed 32 bit integer.
+
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Fri Sep 27 13:38:14 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id NAA27672; Fri, 27 Sep 1996 13:38:13 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from halcyon.com (coho.halcyon.com [198.137.231.21]) by calvin.infoplane.com (8.7.1/8.7.1) with SMTP id NAA27665 for <flight-gear@infoplane.com>; Fri, 27 Sep 1996 13:38:08 -0500
+Received: from localhost by halcyon.com with SMTP id AA10629
+  (5.65c/IDA-1.4.4 for <flight-gear@infoplane.com>); Fri, 27 Sep 1996 11:34:25 -0700
+Date: Fri, 27 Sep 1996 11:34:24 -0700 (PDT)
+From: "J. Adam Szofran" <zof@halcyon.com>
+To: flight-gear@infoplane.com
+Subject: Re: ODL and co-ordinate systems
+In-Reply-To: <324BF036.2DC3@worldchat.com>
+Message-Id: <Pine.ULT.3.93.960927111553.9743A-100000@coho.halcyon.com>
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Hi Matt:
+
+> I am having some difficultly in the math for placement of terrain and 
+> scenery data.  Mainly in determining what lat/long regions are visible 
+> from any given point.  (Approx 100nm in every direction).  Gets dicey at 
+> the poles.  Any suggestions?
+
+Think about using direction cosines instead of latitude and longitude.
+The math using direction cosines is much simpler and doesn't blow up at
+the poles.  For more information, have a look at the December 1992 issue
+of Dr. Dobb's Journal.  It has an article on constructing a global
+database that uses a direction cosine based coordinate system.  You can
+download the sample code from the Dr. Dobb's web site.  You can also find
+more information about the advantages of direction cosines by reading
+http://www.cuug.ab.ca:8001/~russellj/hipparchus.html.
+
+> Terrain data:  the best I have come up with is 1:100 000 DEM data from 
+> USGS.  About 10km resolution, this is WAY too coarse.  I would like 1km 
+> topological grid maps.  
+
+Try the 1-degree DEM data.  It has a resolution of 3-arc-seconds, which
+translates to about 90 meters at the equator.  You can obtain data for the
+entire U.S. via ftp from the USGS.  Have a look at
+http://edcwww.cr.usgs.gov/glis/hyper/guide/1_dgr_dem.
+
+Also, the USGS is working on making 2-arc-second DEM data available.  That
+data would have a resolution of about 60 meters at the equator.  Partial
+coverage of the U.S. is available now.  They estimate full coverage in
+about two years.  Check out 
+http://rmmcweb.cr.usgs.gov/elevation/2arcinfo.html
+
+Regards,
+Adam Szofran
+
+
+
+
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Fri Sep 27 13:14:50 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id NAA27531; Fri, 27 Sep 1996 13:14:49 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from meserv.me.umn.edu (meserv.me.umn.edu [134.84.196.1]) by calvin.infoplane.com (8.7.1/8.7.1) with SMTP id NAA27527 for <flight-gear@infoplane.com>; Fri, 27 Sep 1996 13:14:43 -0500
+Received: from kenai.me.umn.edu (kenai.me.umn.edu [134.84.197.42]) by meserv.me.umn.edu (8.6.11/8.6.11) with ESMTP id NAA25613 for <flight-gear@infoplane.com>; Fri, 27 Sep 1996 13:20:00 -0500
+Received: (from clolson@localhost) by kenai.me.umn.edu (8.7.5/8.7.3) id NAA14250; Fri, 27 Sep 1996 13:18:01 -0500
+Date: Fri, 27 Sep 1996 13:18:01 -0500
+Message-Id: <199609271818.NAA14250@kenai.me.umn.edu>
+From: "Curtis L. Olson" <clolson@me.umn.edu>
+To: flight-gear@infoplane.com
+Subject: ODL and co-ordinate systems
+In-Reply-To: <324BF036.2DC3@worldchat.com>
+References: <324BF036.2DC3@worldchat.com>
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Matt Pickering writes:
+> After looking over Eric and Curt's notes on co-ordinate systems and
+> thinking about it, here is my idea for co-ordinates.
+> 
+> As discussed, 32-bit long integers.  A lat/long co-ordinate will be
+> converted to a normalized (x,y) pair.  The lat/long values will
+> cover equal ranges.
+> 
+> I am having some difficultly in the math for placement of terrain and 
+> scenery data.  Mainly in determining what lat/long regions are visible 
+> from any given point.  (Approx 100nm in every direction).  Gets dicey at 
+> the poles.  Any suggestions?
+
+Yes!  I've thought a bit about this problem and here is what I have
+come up with.
+
+As you suggest, scenery can be developed in a (lat, lon, elev)
+coordinate system.  This is nice because near the equator, lon = x,
+lat = y, elev = z (with a little bit of scaling.)  The problem is that
+this scheme goes to H - E - double toothpicks at or near the poles.
+
+While we are flying near the poles we need a simple transformation to
+rotate the polar areas (and the aircraft) so they are all down towards
+the equator again.  This way our previous scheme will be able to work
+again while we are flying near the poles.  We could generalize this
+even further and subdivide the entire globe into sections.  Each
+section could be run through this tranformation, so that no matter
+where we are on the globe, distortion is minimized.
+
+So, how can we do this transformation?  
+
+(This is basically the technique used by xearth to draw a picture of
+the earth from any perspective.)
+
+First, the original (lat, lon) coordinates are converted to points on
+the unit sphere in (x, y, z) form.  (For now we can ignore elevation.)
+A scenery point at (45deg, 45deg, 0meters) on our earth would equal
+(.707, .707, .707) on the unit sphere.
+
+Now, this (x,y,z) point on the unit sphere can easily be rotated via a
+matrix transformation so that it lays on top of the equivalent of (0
+lat, 0 lon).  I'll leave the details as an excercise for the reader.
+It's due in a week and a half by the way. :-)
+
+Finally we do the reverse of the first step and translate back into
+(lat, lon) coordinates.  Our starting point (45deg, 45deg) (and
+surrounding area) now will lie conveniently on the equator and our
+inital scheme of lon = x, lat = y, elev = z works great with extremely
+little distortion.
+
+I chose (45deg, 45deg) as an example, but using the north pole (0deg,
+90deg) would work equally as well.  We just have to rotate the polar
+area around so it lies near the equator.
+
+Most of this could be done in advance via a "scenery compiler".  We
+could partition out the globe in predifined sections, and do all the
+transformations in advance.  Each section would start to get a little
+distortion around it's edges, but this would not be noticable.  The
+final coordinates could be scaled up to 32 bit integers by the scenery
+compiler.
+
+What do you think?
+
+Curt.
+-- 
+Curtis Olson   E-mail: clolson@me.umn.edu
+Try Linux!     WWW:    http://www.menet.umn.edu/~clolson
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Fri Sep 27 18:54:06 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id SAA29308; Fri, 27 Sep 1996 18:54:05 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from islay.ssl.berkeley.edu (islay.ssl.berkeley.edu [128.32.147.192]) by calvin.infoplane.com (8.7.1/8.7.1) with ESMTP id SAA29302 for <flight-gear@infoplane.com>; Fri, 27 Sep 1996 18:54:00 -0500
+Received: (korpela@localhost) by islay.ssl.berkeley.edu (8.7.5/CEA) id QAA05336; Fri, 27 Sep 1996 16:59:20 -0700 (PDT)
+From: "Eric J. Korpela" <korpela@ssl.Berkeley.EDU>
+Message-Id: <199609272359.QAA05336@islay.ssl.berkeley.edu>
+Subject: Re: ODL and co-ordinate systems
+To: flight-gear@infoplane.com
+Date: Fri, 27 Sep 1996 16:59:19 -0700 (PDT)
+In-Reply-To: <199609271818.NAA14250@kenai.me.umn.edu> from "Curtis L. Olson" at Sep 27, 96 01:18:01 pm
+X-Geek-Code: GAT d-(?) H s+:-- g+ p? au--- a- w++ v++(--) C+++ US+++ P- L 3 
+X-Geek-Cont1: E--- N++ K? W M- V -po+(--) Y+ t+ 5++ j? R- G? tv+ b++ D+ B---
+X-Geek-Cont2: e+++>++++ u- h--- f+(?) r+++ n+(---) y@(?) 
+X-PGP-ID: FF0C92DD
+X-PGP-Fingerprint: 96 BD 9D 77 12 FE 04 9B  3E F5 5B 8D 2D D1 4C 6B
+X-Mailer: ELM [version 2.4 PL22]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+
+> Matt Pickering writes:
+> > After looking over Eric and Curt's notes on co-ordinate systems and
+> > thinking about it, here is my idea for co-ordinates.
+> > 
+> > As discussed, 32-bit long integers.  A lat/long co-ordinate will be
+> > converted to a normalized (x,y) pair.  The lat/long values will
+> > cover equal ranges.
+> > 
+> > I am having some difficultly in the math for placement of terrain and 
+> > scenery data.  Mainly in determining what lat/long regions are visible 
+> > from any given point.  (Approx 100nm in every direction).  Gets dicey at 
+> > the poles.  Any suggestions?
+
+> Yes!  I've thought a bit about this problem and here is what I have
+> come up with.
+
+> As you suggest, scenery can be developed in a (lat, lon, elev)
+> coordinate system.  This is nice because near the equator, lon = x,
+> lat = y, elev = z (with a little bit of scaling.)  The problem is that
+> this scheme goes to H - E - double toothpicks at or near the poles.
+
+The problem is probably best expressed as a transformation lat/lon/alt
+to airplane relative x,y,z
+
+Actually the transformation is more like (assuming x,y,z,alt in NMI, lon,
+lat in arcmin)
+
+dx = x-x_ac = (lon*cos(lat)-lon_ac*cos(lat_ac))
+dy = y-y_ac = (lat-lat_ac)
+dz = z-z_ac = (alt-alt_ac)-sqrt(dx*dx+dy*dy)/R_earth
+
+Of course that still has the pole problem (It also has bearing problems
+at distances > (100*cos(lat)) nmi, and altitude problems on the same scale)
+
+The other option is rotate to keep the ac at the pole, then calculate
+dist,bearing,altitude_angle.  That's pretty fp extensive.  I'll play
+around a bit to see if I can make some useful approximations.
+
+Eric
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+From owner-flight-gear  Fri Sep 27 18:46:34 1996
+Received: (from majordom@localhost) by calvin.infoplane.com (8.7.1/8.7.1) id SAA29256; Fri, 27 Sep 1996 18:46:18 -0500
+X-Authentication-Warning: calvin.infoplane.com: majordom set sender to owner-flight-gear using -f
+Received: from upsmot03.msn.com (upsmot03.msn.com [204.95.110.85]) by calvin.infoplane.com (8.7.1/8.7.1) with SMTP id SAA29252 for <flight-gear@infoplane.com>; Fri, 27 Sep 1996 18:46:12 -0500
+Received: from upmajb02.msn.com (upmajb02.msn.com [204.95.110.74]) by upsmot03.msn.com (8.6.8.1/Configuration 4) with SMTP id QAA00941 for <flight-gear@infoplane.com>; Fri, 27 Sep 1996 16:46:46 -0700
+Date: Fri, 27 Sep 96 21:50:09 UT
+From: "Skip Meisch" <MeischSkip@msn.com>
+Message-Id: <UPMAIL06.199609272351190351@msn.com>
+To: flight-gear@infoplane.com
+Subject: RE: ODL and co-ordinate systems
+Sender: owner-flight-gear
+Precedence: bulk
+Reply-To: flight-gear@infoplane.com
+
+Curt,
+
+I'm new here and not a very apt programmer, but wouldn't that also work if you 
+sectioned off the earth like a soccer ball?  That is, with a series of 
+hexagons and pentagons each with equal length sides. 
+If I'm totally off track here just say so and I'll but out and just listen.
+
+Skip
+
+---- BEGINNING OF ORIGINAL MESSAGE ----
+From: 	owner-flight-gear@calvin.infoplane.com on behalf of Curtis L. Olson
+Sent: 	Friday, September 27, 1996 1:18 PM
+To: 	flight-gear@infoplane.com
+Subject: 	ODL and co-ordinate systems
+
+Matt Pickering writes:
+> After looking over Eric and Curt's notes on co-ordinate systems and
+> thinking about it, here is my idea for co-ordinates.
+> 
+> As discussed, 32-bit long integers.  A lat/long co-ordinate will be
+> converted to a normalized (x,y) pair.  The lat/long values will
+> cover equal ranges.
+> 
+> I am having some difficultly in the math for placement of terrain and 
+> scenery data.  Mainly in determining what lat/long regions are visible 
+> from any given point.  (Approx 100nm in every direction).  Gets dicey at 
+> the poles.  Any suggestions?
+
+Yes!  I've thought a bit about this problem and here is what I have
+come up with.
+
+As you suggest, scenery can be developed in a (lat, lon, elev)
+coordinate system.  This is nice because near the equator, lon = x,
+lat = y, elev = z (with a little bit of scaling.)  The problem is that
+this scheme goes to H - E - double toothpicks at or near the poles.
+
+While we are flying near the poles we need a simple transformation to
+rotate the polar areas (and the aircraft) so they are all down towards
+the equator again.  This way our previous scheme will be able to work
+again while we are flying near the poles.  We could generalize this
+even further and subdivide the entire globe into sections.  Each
+section could be run through this tranformation, so that no matter
+where we are on the globe, distortion is minimized.
+
+So, how can we do this transformation?  
+
+(This is basically the technique used by xearth to draw a picture of
+the earth from any perspective.)
+
+First, the original (lat, lon) coordinates are converted to points on
+the unit sphere in (x, y, z) form.  (For now we can ignore elevation.)
+A scenery point at (45deg, 45deg, 0meters) on our earth would equal
+(.707, .707, .707) on the unit sphere.
+
+Now, this (x,y,z) point on the unit sphere can easily be rotated via a
+matrix transformation so that it lays on top of the equivalent of (0
+lat, 0 lon).  I'll leave the details as an excercise for the reader.
+It's due in a week and a half by the way. :-)
+
+Finally we do the reverse of the first step and translate back into
+(lat, lon) coordinates.  Our starting point (45deg, 45deg) (and
+surrounding area) now will lie conveniently on the equator and our
+inital scheme of lon = x, lat = y, elev = z works great with extremely
+little distortion.
+
+I chose (45deg, 45deg) as an example, but using the north pole (0deg,
+90deg) would work equally as well.  We just have to rotate the polar
+area around so it lies near the equator.
+
+Most of this could be done in advance via a "scenery compiler".  We
+could partition out the globe in predifined sections, and do all the
+transformations in advance.  Each section would start to get a little
+distortion around it's edges, but this would not be noticable.  The
+final coordinates could be scaled up to 32 bit integers by the scenery
+compiler.
+
+What do you think?
+
+Curt.
+-- 
+Curtis Olson   E-mail: clolson@me.umn.edu
+Try Linux!     WWW:    http://www.menet.umn.edu/~clolson
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+
+---- END OF ORIGINAL MESSAGE ----
+-------------------------------------
+Please visit the Flight Gear web page:
+http://www.menet.umn.edu/~clolson/fgfs/
+To unsubscribe:  send email to "majordomo@infoplane.com"
+with a message body of "unsubscribe flight-gear"
+

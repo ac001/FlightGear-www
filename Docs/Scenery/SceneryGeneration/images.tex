@@ -1,0 +1,75 @@
+\batchmode
+
+
+\documentclass[12pt]{article}
+\makeatletter
+
+\usepackage{anysize}
+\papersize{11in}{8.5in}
+\marginsize{1in}{1in}{1in}{1in}
+
+\usepackage{amsmath}
+
+\usepackage{epsfig}
+
+\usepackage{setspace}
+\onehalfspacing
+
+\usepackage{url}
+
+
+
+\makeatother
+\newenvironment{tex2html_wrap}{}{}
+\newwrite\lthtmlwrite
+\def\lthtmltypeout#1{{\let\protect\string\immediate\write\lthtmlwrite{#1}}}%
+\newbox\sizebox
+\begin{document}
+\pagestyle{empty}
+\stepcounter{section}
+\stepcounter{section}
+\stepcounter{subsection}
+{\newpage
+\clearpage
+\samepage \begin{figure}[hbt]
+ \begin{center}
+  \begin{tabular}{||l|l||} \hline
+    Latitude Range & Tile Width \\  \hline
+    $[0, 22)$  & $\frac{1}{8}$ degree \\  \hline
+    $[22, 62)$ & $\frac{1}{4}$ degree \\  \hline
+    $[62, 76)$ & $\frac{1}{2}$ degree \\  \hline
+    $[76, 83)$ & $1$ degree \\  \hline
+    $[83, 86)$ & $2$ degrees \\  \hline
+    $[86, 88)$ & $4$ degrees \\  \hline
+    $[88, 89)$ & $8$ degrees \\  \hline
+    $[89, 90]$ & polar cap \\  \hline
+   \hline
+  \end{tabular}
+ \end{center}
+
+ 
+ \label{fig:lats}
+\end{figure}
+}
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{section}
+\stepcounter{subsection}
+\stepcounter{subsubsection}
+\stepcounter{subsubsection}
+\stepcounter{subsubsection}
+\stepcounter{subsubsection}
+\stepcounter{subsection}
+\stepcounter{subsubsection}
+\stepcounter{subsubsection}
+\stepcounter{subsubsection}
+\stepcounter{subsubsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsubsection}
+\stepcounter{subsubsection}
+\stepcounter{section}
+
+\end{document}

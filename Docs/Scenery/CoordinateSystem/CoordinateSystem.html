@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 96.1 (Feb 5, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<HTML>
+<HEAD>
+<TITLE> Flight Gear Internal Scenery Coordinate Systems and Representations. </TITLE>
+<META NAME="description" CONTENT=" Flight Gear Internal Scenery Coordinate Systems and Representations. ">
+<META NAME="keywords" CONTENT="CoordinateSystem">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<LINK REL=STYLESHEET HREF="CoordinateSystem.css">
+</HEAD>
+<BODY LANG="EN">
+<P>
+<H1 ALIGN=CENTER>
+  Flight Gear Internal Scenery Coordinate Systems and
+  Representations.
+</H1>
+<P ALIGN=CENTER><STRONG>
+    Curtis L. Olson<BR> 
+    (<tt>curt@me.umn.edu</tt>)
+</STRONG></P><P>
+<P>
+<H1><A NAME="SECTION00010000000000000000">1 Coordinate Systems</A></H1>
+<P>
+<H2><A NAME="SECTION00011000000000000000">1.1 Geocentric Coordinates</A></H2>
+<P>
+Geocentric coordinates are the polar coordinates centered at the
+center of the earth.  Points are defined by the geocentric longitude,
+geocentric latitude, and distance from the <i>center</i> of the
+earth.  Note, due to the non-spherical nature of the earth, the
+geocentric latitude is not exactly the same as the traditional
+latitude you would see on a map.
+<P>
+<H2><A NAME="SECTION00012000000000000000">1.2 Geodetic Coordinates</A></H2>
+<P>
+Geodetic coordinates are represented by longitude, latitude, and
+elevation above sea level.  These are the coordinates you would read
+off a map, or see on your GPS.  However, the geodetic latitude does
+not precisely correspond to the angle (in polar coordinates) from the
+center of the earth which the geocentric coordinate system reports.
+<P>
+<H2><A NAME="SECTION00013000000000000000">1.3 Geocentric vs. Geodetic coordinates</A></H2>
+<P>
+The difference between geodetic and geocentric coordinates is subtle
+and must be understood.  The problem arose because people started
+mapping the earth using latitude and longitude back when they thought
+the Earth was round (or a perfect sphere.)  It's not though.  It is
+more of an ellipse.
+<P>
+Early map makers defined the standard <i>geodetic</i> latitude as
+the angle between the local up vector and the equator.  This is shown
+in figure <A HREF="CoordinateSystem.html#figgeodesy">1</A>.  The point  <IMG WIDTH=13 HEIGHT=13 ALIGN=BOTTOM ALT="tex2html_wrap_inline67" SRC="img1.gif"  >  marks our current
+position.  The line  <IMG WIDTH=45 HEIGHT=13 ALIGN=BOTTOM ALT="tex2html_wrap_inline69" SRC="img2.gif"  >  is tangent to the ellipse at point
+ <IMG WIDTH=13 HEIGHT=13 ALIGN=BOTTOM ALT="tex2html_wrap_inline67" SRC="img1.gif"  >  and represents the local ``horizontal.''  The line
+ <IMG WIDTH=27 HEIGHT=13 ALIGN=BOTTOM ALT="tex2html_wrap_inline73" SRC="img3.gif"  >  represents the local ``up'' vector.  Thus, in
+traditional map maker terms, the current latitude is the angle defined
+by  <IMG WIDTH=53 HEIGHT=13 ALIGN=BOTTOM ALT="tex2html_wrap_inline75" SRC="img4.gif"  > .
+<P>
+However, as you can see from the figure, the line  <IMG WIDTH=27 HEIGHT=13 ALIGN=BOTTOM ALT="tex2html_wrap_inline73" SRC="img3.gif"  >  does
+not extend through the center of the earth.  Instead, the line
+ <IMG WIDTH=28 HEIGHT=13 ALIGN=BOTTOM ALT="tex2html_wrap_inline79" SRC="img5.gif"  >  extends through the center of the earth.  So in
+<i>geocentric</i> coordinates, our latitude would be reported as the
+angle  <IMG WIDTH=54 HEIGHT=13 ALIGN=BOTTOM ALT="tex2html_wrap_inline81" SRC="img6.gif"  > .
+<P>
+<P><A NAME="33">&#160;</A><A NAME="figgeodesy">&#160;</A> <IMG WIDTH=425 HEIGHT=402 ALIGN=BOTTOM ALT="figure31" SRC="img7.gif"  > <BR>
+<STRONG>Figure 1:</STRONG> Geocentric vs. Geodetic coordinates<BR>
+<P>
+<P>
+The LaRCsim flight model operates in geocentric coordinates
+internally, but reports the current position in both coordinate
+systems.
+<P>
+<H2><A NAME="SECTION00014000000000000000">1.4 World Geodetic System 1984 (WGS 84)</A></H2>
+<P>
+The world is not a perfect sphere.  WGS-84 defines a standard model
+for dealing with this.  The LaRCsim flight model code already uses the
+WGS-84 standard in its calculations.
+<P>
+For those that are interested here are a couple of URLS for more
+information:
+<P>
+http://acro.harvard.edu/SSA/BGA/wg84figs.html <BR> 
+http://www.afmc.wpafb.af.mil/organizations/HQ-AFMC/IN/mist/dma/wgs1984.htm
+<BR> 
+http://www.nima.mil/publications/guides/dtf/datums.html
+<P>
+To maintain simulation accuracy, the WGS-84 model should be used when
+translating geodetic coordinates (via geocentric coordinates) into the
+FG Cartesian coordinate system.  The code to do this can probably be
+borrowed from the LaRCsim code.  It is located in
+<tt>ls_geodesy.c</tt>.
+<P>
+<H2><A NAME="SECTION00015000000000000000">1.5 Cartesian Coordinates</A></H2>
+<P>
+Internally, all flight gear scenery is represented using a Cartesian
+coordinate system.  The origin of this coordinate system is the center
+of the earth.  The X axis runs along a line from the center of the
+earth out to the equator at the zero meridian.  The Z axis runs along
+a line between the north and south poles with north being positive.
+The Y axis is parallel to a line running through the center of the
+earth out through the equator somewhere in the Indian Ocean.  Figure
+<A HREF="CoordinateSystem.html#figcoords">2</A> shows the orientation of the X, Y, and Z axes in
+relationship to the earth.
+<P>
+<P><A NAME="45">&#160;</A><A NAME="figcoords">&#160;</A> <IMG WIDTH=438 HEIGHT=433 ALIGN=BOTTOM ALT="figure43" SRC="img8.gif"  > <BR>
+<STRONG>Figure 2:</STRONG> Flight Gear Coordinate System<BR>
+<P>
+<P>
+<H2><A NAME="SECTION00016000000000000000">1.6 Converting between coordinate systems</A></H2>
+<P>
+Different aspects of the simulation will need to deal with positions
+represented in the various coordinate systems.  Typically map data is
+presented in the geodetic coordinate system.  The LaRCsim code uses
+the geocentric coordinate system.  FG will use a Cartesian coordinate
+system for representing scenery internally.  Potential add on items
+such as GPS's will need to know positions in the geodetic coordinate
+system, etc.
+<P>
+FG will need to be able to convert positions between any of these
+coordinate systems.  LaRCsim comes with code to convert back and forth
+between geodetic and geocentric coordinates.  So, we only need to
+convert between geocentric and cartesian coordinates to complete the
+picture.  Converting from geocentric to cartesian coordinates is done
+by using the following formula:
+<P>
+<P> <IMG WIDTH=467 HEIGHT=21 ALIGN=BOTTOM ALT="displaymath87" SRC="img9.gif"  > <P>
+<P> <IMG WIDTH=467 HEIGHT=21 ALIGN=BOTTOM ALT="displaymath88" SRC="img10.gif"  > <P>
+<P> <IMG WIDTH=394 HEIGHT=21 ALIGN=BOTTOM ALT="displaymath89" SRC="img11.gif"  > <P>
+<P>
+Here is the formula to convert from cartesian coordinates back into
+geocentric coordinates:
+<P>
+<P> <IMG WIDTH=319 HEIGHT=20 ALIGN=BOTTOM ALT="displaymath90" SRC="img12.gif"  > <P>
+<P> <IMG WIDTH=389 HEIGHT=34 ALIGN=BOTTOM ALT="displaymath91" SRC="img13.gif"  > <P>
+<P> <IMG WIDTH=377 HEIGHT=20 ALIGN=BOTTOM ALT="displaymath92" SRC="img14.gif"  > <P><H1><A NAME="SECTION00020000000000000000">  About this document ... </A></H1>
+<P>
+ <STRONG>
+  Flight Gear Internal Scenery Coordinate Systems and
+  Representations.
+</STRONG><P>
+This document was generated using the <A HREF="http://www-dsed.llnl.gov/files/programs/unix/latex2html/manual/"><STRONG>LaTeX</STRONG>2<tt>HTML</tt></A> translator Version 96.1 (Feb 5, 1996) Copyright &#169; 1993, 1994, 1995, 1996,  <A HREF="http://cbl.leeds.ac.uk/nikos/personal.html">Nikos Drakos</A>, Computer Based Learning Unit, University of Leeds. <P> The command line arguments were: <BR>
+<STRONG>latex2html</STRONG> <tt>-split 0 -show_section_numbers CoordinateSystem.tex</tt>. <P>The translation was initiated by Curtis L. Olson on Sun Feb 14 18:52:21 CST 1999<BR> <HR>
+<P><ADDRESS>
+<I>Curtis L. Olson <BR>
+Sun Feb 14 18:52:21 CST 1999</I>
+</ADDRESS>
+</BODY>
+</HTML>

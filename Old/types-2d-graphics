@@ -1,0 +1,272 @@
+From: "Eric J. Korpela" <korpela@ssl.Berkeley.EDU>
+To: dmurr@pen.k12.va.us (David L. Murr)
+Cc: fl182@cleveland.freenet.edu
+Subject: Re: Where's everyone??
+Date: Mon, 29 Apr 1996 11:12:55 -0700 (PDT)
+
+--%#%record%#%
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Content-Length: 979       
+
+> Everybody still out there? Haven't seen much traffic lately...
+
+> I have a guy from somewhere (I think he's an engineer ?)He's
+> sent us some motion equations that we might be able to use (in
+> C++). His company is developingan "engineering" flight -sim...
+> If I want a demo, I've got to sign a non-disclosure agreement.
+> Should I get it?
+
+Read the non-disclosure agreement carefully before signing.  It may
+try to prevent you from contributing to the development of any simulator.
+You can also be fairly sure their lawyers will look at our source
+when it comes out.
+
+I've been playing with integer trig functions.  So far the only thing that's
+faster than the sparc fp sin and cos functions is using a large (32K) lookup
+table.  I haven't tried on intel yet.  My guess is the results will be similar.
+I'll post my current "fgtypes.h" and prototypes of the functions that
+I've been working on. 
+
+------------------------------------------------------------------------------
+
+--%#%record%#%
+Content-Type: text/plain
+Content-Name: ~/tmp/fltgear/fgtypes.h
+Content-Length: 2660
+
+#ifndef _FGTYPES_H
+
+#define _FGTYPES_H
+
+#if defined(__sparc__) || defined(__mc68000__)
+#define BIGENDIAN
+#endif
+
+typedef unsigned int FG_UINT;
+typedef void FG_VOID;
+typedef int FG_INT;
+typedef unsigned char FG_CHAR;
+
+#if defined(__GNUC__) && !defined(__alpha__)
+
+typedef double FG_FLOAT64;
+typedef float FG_FLOAT32;
+
+typedef long long FG_INT64;
+typedef int FG_INT32;
+typedef short FG_INT16;
+typedef char FG_INT8;
+
+typedef unsigned long long FG_UINT64;
+typedef unsigned int FG_UINT32;
+typedef unsigned short FG_UINT16;
+typedef unsigned char FG_UINT8;
+
+#define FG_INT32_MAX LONG_MAX
+#define FG_INT32_MIN LONG_MIN
+
+#endif
+
+/* A bitmap type that won't conflict with every other bitmap type */
+
+typedef struct _FG_BITMAP {
+   FG_UINT struct_size;            /* set to sizeof(FG_BITMAP) for          */
+                                   /* version identification                */
+   FG_INT w,h;                    /* width and height in pixels            */
+   FG_INT clip, cl, cr, ct, cb;   /* clipping flag and rectangle           */
+                                   /* these should default to:              */
+                                   /*  {TRUE,0,w-1,0,h-1}                   */
+   FG_UINT8  **lines;              /* The actual bitmap...                  */
+                                   /* Pixels  are addressed as:             */
+                                   /*  bmp.Lines[y][x]                      */
+   FG_INT type;                    /* Type of bitmap                        */
+                                   /*  FG_NORMALBITMAP                      */
+                                   /*  FG_SUBBITMAP                         */
+
+                                   /* BITMAPS ARE TOP DOWN !!!!!            */
+} FG_BITMAP;
+
+#define FG_NORMALBITMAP 0
+#define FG_SUBBITMAP 1
+
+typedef struct _FG_RECT {
+   FG_INT left,top,right,bottom;
+} FG_RECT;
+
+typedef struct _FG_POLYGON {
+   FG_INT vertices;
+   FG_INT *x; 
+   FG_INT *y;
+} FG_POLYGON;
+    
+typedef struct _FG_I2VECT {
+  FG_INT32 x,y;
+} FG_I2VECT;
+
+typedef struct _FG_I3VECT {
+  FG_INT32 x,y,z;
+} FG_I3VECT;
+
+
+
+#if defined(BIGENDIAN)
+
+#define FG_LOW32(x)  *(((FG_UINT32 *)(&x))+1)
+#define FG_LOW16(x)  *(((FG_UINT16 *)(&x))+1)
+#define FG_LOW8(x)   *(((FG_UINT8  *)(&x))+1)
+
+#define FG_HIGH32(x) *(FG_UINT32 *)(&x)
+#define FG_HIGH16(x) *(FG_UINT16 *)(&x)
+#define FG_HIGH8(x)  *(FG_UINT8 *)(&x)
+
+#else
+
+#define FG_HIGH32(x)  *(((FG_UINT32 *)(&x))+1)
+#define FG_HIGH16(x)  *(((FG_UINT16 *)(&x))+1)
+#define FG_HIGH8(x)   *(((FG_UINT8  *)(&x))+1)
+
+#define FG_LOW32(x) *(FG_UINT32 *)(&x)
+#define FG_LOW16(x) *(FG_UINT16 *)(&x)
+#define FG_LOW8(x)  *(FG_UINT8 *)(&x)
+
+#endif
+
+#endif
+
+--%#%record%#%
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Content-Length: 5224      
+
+------------------------------------------------------------------------------
+
+IN FILE "fggrx.c" 2D graphics.
+
+  /* to create and allocate memory for a bitmap */
+FG_BITMAP *fg_create_bitmap(FG_UINT width, FG_UINT height);
+
+  /* to destroy and deallocate a bitmap */
+void fg_destroy_bitmap(FG_BITMAP *bmp);
+
+  /* to create a bitmap that is a subsection of a larger bitmap */
+FG_BITMAP *fg_create_subbitmap(FG_BITMAP *bmp, FG_INT x, FG_INT y, 
+                                 FG_INT width, FG_INT height);
+
+  /* to plot a point in a bitmap */
+inline void fg_plot(FG_INT x, FG_INT y, FG_INT color, FG_BITMAP *bmp);
+
+  /* to plot a horizonatal line in a bitmap, (x1<=x2) */
+inline void fg_hline(FG_INT x1, FG_INT x2, FG_INT y, 
+                  FG_INT color, FG_BITMAP *bmp);
+
+  /* to plot a vertical line in a bitmap  (y1<=y2) */
+inline void fg_vline(FG_INT x, FG_INT y1, FG_INT y2, 
+                  FG_INT color, FG_BITMAP *bmp);
+
+  /* to plot a arbitrary line */
+inline void fg_line(FG_INT x1, FG_INT y1, FG_INT x2, FG_INT y2, FG_INT color,
+                     FG_BITMAP *bitmap);
+
+  /* to plot a rectangle given 2 points, no rotation */
+void fg_rect(FG_INT x1, FG_INT y1, FG_INT x2, FG_INT y2, 
+                   FG_INT color, FG_BITMAP *bmp);
+
+  /* to plot a rectangle given a RECT structure, no rotation */
+void fg_RECT(FG_RECT *rect, FG_INT color, FG_BITMAP *bmp);
+
+  /* to draw a filled rectangle given 2 points, no rotation */
+void fg_fillrect(FG_INT x1, FG_INT y1, FG_INT x2, FG_INT y2, 
+                   FG_INT color, FG_BITMAP *bmp);
+
+  /* to draw a filled rectangle given a RECT structure, no rotation */
+void fg_fillRECT(FG_RECT *rect, FG_INT color, FG_BITMAP *bmp);
+
+  /* create a POLYGON structure with a given number of vertices */
+FG_POLYGON *fg_create_POLY(FG_INT vertices);
+
+  /* destroy a POLYGON structure */
+void fg_destroy_POLY(FG_POLYGON *ply);
+
+  /* creates a POLYGON structure from a RECT structure */
+FG_POLYGON *fg_RECT_to_POLY(FG_RECT *rect);
+
+  /* creates a copy of a polygon */
+void fg_copy_POLY(FG_POLYGON *original, FG_POLYGON **copy);
+
+  /* scale a polygon about point x,y by scale/32768 times */
+void fg_scale_POLY(FG_POLYGON *poly, FG_INT x, FG_INT y, FG_INT32 scale);
+
+  /* scale a polygon about point x,y by scale/32768 times, retaining original */
+void fg_scale_copy_POLY(FG_POLYGON *original, FG_POLYGON **copy, FG_INT x,
+                         FG_INT y, FG_INT32 scale);
+
+  /* translate a POLYGON by dx, dy */
+void fg_translate_POLY(FG_POLYGON *poly, FG_INT dx, FG_INT dy)
+
+  /* translate a POLYGON by dx, dy retaining original */
+void fg_translate_copy_POLY(FG_POLYGON *original, FG_POLYGON **copy, FG_INT dx,
+                              FG_INT dx);
+
+  /* rotate a POLYGON around a point */
+void fg_rotate_POLYGON(FG_POLYGON *poly, FG_INT x, FG_INT y, FG_INT32 angle);
+
+  /* rotate polygon without altering original */
+void fg_rotate_copy_POLYGON(FG_POLYGON *original, FG_POLYGON **copy, FG_INT x,
+                              FG_INT y, FG_INT32 angle); 
+
+  /* draw a polygon */
+void fg_draw_POLY(FG_POLYGON *poly, FG_INT color, FG_BITMAP *bmp);
+
+  /* draw a filled polygon */
+void fg_draw_filledPOLY(FG_POLYGON *poly, FG_INT color, FG_BITMAP *bmp);
+
+-------------------------------------------------------------------------------
+
+ROUTINES IN "fggeom.c" geometrical and mathematical routines
+
+  /* isin and icos take an angle between -pi and pi (LONG_MIN and LONG_MAX)  */
+  /* isin and icos return a fixed point number -1 and 1 (-32768 and 32768)   */
+inline FG_INT32 fg_isin(FG_INT32 x);
+inline FG_INT32 fg_icos(FG_INT32 x);
+
+  /* itan takes an angle between -pi and pi (LONG_MIN and LONG_MAX)          */
+  /* and returns a fixed point number normalized at 32768==1.0               */
+inline FG_INT32 fg_itan(FG_INT32 x);
+
+  /* iatan2 takes an X and Y valie and returns the coordinates of the angle  */
+  /* between -pi and pi (LONG_MIN and LONG_MAX)                              */
+inline FG_INT32 fg_iatan2(FG_INT32 y, FG_INT32 x);
+
+  /* returns the fixed point square root of a fixed point number normalized  */
+  /* at 32768=1.0                                                            */
+inline FG_INT32 fg_isqrt(FG_INT64 x);
+
+  /* returns the angular distance between two points between 0 and pi        */
+  /* (0 and LONG_MAX)                                                        */
+FG_INT32 fg_iangdist(FG_INT32 lat1, FG_INT32 lon1, FG_INT32 lat2, 
+            FG_INT32 lon2);
+
+  /* return the integer dot product of two vectors (no normalization)        */
+inline FG_INT64 i2dot(FG_I2VECT *a, FG_I2VECT *b);
+inline FG_INT64 i3dot(FG_I3VECT *a, FG_I3VECT *b);
+
+  /* return the integer magnitude of a vector (no normalization)             */
+inline FG_INT32 i2mag(FG_I2VECT *a);
+inline FG_INT32 i3mag(FG_I3VECT *a);
+
+-------------------------------------------------------------------------------
+MACROS defined in "fgdefs.h"
+  #define FG_MAX(x,y)  ( ((x)<(y)) ? (y) : (x) )
+  #define FG_MIN(x,y)  ( ((x)>(y)) ? (y) : (x) )
+  #define FG_ABS(x)    ( ((x)>0) ? (x) : (x*-1))
+
+-------------------------------------------------------------------------------
+
+I'm also trying to put together a "slew" flight model for testing purposes.
+
+Eric
+
+
+--%#%record%#%--
+
