@@ -1,6 +1,6 @@
 <?php
 
-$version = 0.2;
+$version = 0.3;
 
 //****************************************************
 //                                                   *
@@ -50,10 +50,11 @@ else {
   $blades = 4;
   $dia = $LBI * 0.5;
   }
+$dia = 75.0;
 
 // estimate moment of inertia
 
-$L = $LBI / $blades /12; // length each blade (feet)
+$L = $dia / 24;          // length each blade (feet)
 $M = $L * 0.09317;       // mass each blade (slugs)
 $ixx = $blades * (0.33333 * $M * $L * $L);
 
@@ -72,7 +73,7 @@ if($ac_pitch == 0)
 else
   print("       pitch:        variable\n\n");
 print("     Outputs:\n");
-print("       linear-blade-inches: $LBI\n\n");
+print("       linear-blade-inches: $LBI\n");
 print("-->\n\n");
 
 print("<FG_PROPELLER NAME=\"prop\">\n");
@@ -89,18 +90,18 @@ print("  MINRPM    700\n");
 print("  MAXRPM   2700\n");
 
 if($ac_pitch == 0) {          // fixed pitch
- print("  C_THRUST   11 1\n");
- print("  0.0  0.0936\n");
- print("  0.1  0.0927\n");
- print("  0.2  0.0918\n");
- print("  0.3  0.0909\n");
- print("  0.4  0.0828\n");
- print("  0.5  0.0738\n");
- print("  0.6  0.0630\n");
- print("  0.7  0.0490\n");
- print("  0.8  0.0360\n");
- print("  0.9  0.0200\n");
- print("  1.0  0.0040\n");
+print("  C_THRUST   11 1\n");
+print("  0.0  0.0936\n");
+print("  0.1  0.0927\n");
+print("  0.2  0.0918\n");
+print("  0.3  0.0909\n");
+print("  0.4  0.0828\n");
+print("  0.5  0.0738\n");
+print("  0.6  0.0630\n");
+print("  0.7  0.0490\n");
+print("  0.8  0.0360\n");
+print("  0.9  0.0200\n");
+print("  1.0  0.0040\n");
 } else {                      // variable pitch
  print("  C_THRUST   11 2\n");
  print("       10      30\n");
@@ -118,18 +119,18 @@ if($ac_pitch == 0) {          // fixed pitch
 }
 
 if($ac_pitch == 0) {          // fixed pitch
- print("  C_POWER   11 1\n");
- print("  0.0  0.0594\n");
- print("  0.1  0.0585\n");
- print("  0.2  0.0576\n");
- print("  0.3  0.0558\n");
- print("  0.4  0.0540\n");
- print("  0.5  0.0522\n");
- print("  0.6  0.0495\n");
- print("  0.7  0.0432\n");
- print("  0.8  0.0342\n");
- print("  0.9  0.0225\n");
- print("  1.0  0.0090\n");
+print("  C_POWER   11 1\n");
+print("  0.0  0.0594\n");
+print("  0.1  0.0585\n");
+print("  0.2  0.0576\n");
+print("  0.3  0.0558\n");
+print("  0.4  0.0540\n");
+print("  0.5  0.0522\n");
+print("  0.6  0.0495\n");
+print("  0.7  0.0432\n");
+print("  0.8  0.0342\n");
+print("  0.9  0.0225\n");
+print("  1.0  0.0090\n");
 } else {                      // variable pitch
  print("  C_POWER   11 2\n");
  print("       10      30\n");

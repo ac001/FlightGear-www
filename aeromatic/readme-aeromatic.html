@@ -202,9 +202,36 @@ The airplane's moments of inertia about three axes are estimated using
 Roskam's formula and constants for various airplane types. Presently I'm
 increasing the moments by 50% to make up for a lack of feel in the
 control stick.<br><br>
-The aircaft's ZFW, zero-fuel weight, 
+The aircaft's ZFW, zero-fuel weight, is estimated by multplying the maximum 
+weight by a factor according to aircraft type.  This value is named "empty
+weight" in the JSBSim configuration, but ZFW should be used.<br><br>
+Next the aircraft's center of gravity, CG, location is estimated.  The
+longitudinal (x axis) location was already assumed when the horizontal
+stablizer moment arm was estimated, so this distance is used to get the
+longitudinal location of the CG from the nose, in inches.  The CG is located
+on the intersection of the x and y axes, under the assumtion that the 
+aircraft is laterally symetric, so the y location is zero.  I've put the
+vertical (z) location of the CG a bit below centerline.  The location of
+the aerodynamic center is, for simplicity, the same as the CG, except it 
+is a bit above the CG to help with stability.<br><br>
+The location of the pilot's eyepoint is then estimated based on aircraft
+type.<br><br>
+The landing gear location is based on the CG location.  Tricycle main wheels
+are placed slightly behind the CG, and taildragger main wheels slightly ahead.
+The lateral spread of the main gear is a function of wing span and airplane 
+type.  The z-position of the main gear is based on the airplane's length. 
+This is the distance in inches from the centerline to the bottom of the tire
+when the gear is extended and hanging freely.  Note that the glider presents
+a problem in that JSBSim presently supports three ground contact points,
+whereas a glider needs five (main wheel, nose skid, tail wheel, and two
+wing tip skids).  The locations of the nose or tail wheels is estimated from
+the airplane length and the location of the main gear.<br><br>
+More to come. Under construction ... 
+
+
 <br><br><hr>
 David Culp, 30 June 2003, (davidculp2 at comcast.net)
+update: 26 July 2003
 
 
 </body>

@@ -10,6 +10,7 @@ $version = 0.3;
 // July 2003, David P. Culp, davidculp2@comcast.net  *
 //                                                   * 
 //****************************************************
+// Updated: 16 July 2003, DPC
 
 
 //***** GET DATA FROM USER ***************************
@@ -162,17 +163,18 @@ switch($ac_type) {  // moment-of-inertia factors
   case 8: $Rx = 0.32;$Ry = 0.34;$Rz = 0.47; break;
   }
 
-$ac_ixx = ($ac_weight / 32.2)* pow(($Rx * $ac_wingspan / 2), 2);
-$ac_iyy = ($ac_weight / 32.2)* pow(($Ry * $ac_length / 2), 2);
-$ac_izz = ($ac_weight / 32.2)* pow(($Rz * (($ac_wingspan + $ac_length)/2) / 2), 2);
-$ac_ixz = 0; // a non-zero value here can destablize the airplane
+$ac_rawixx = ($ac_weight / 32.2)* pow(($Rx * $ac_wingspan / 2), 2);
+$ac_rawiyy = ($ac_weight / 32.2)* pow(($Ry * $ac_length / 2), 2);
+$ac_rawizz = ($ac_weight / 32.2)* pow(($Rz * (($ac_wingspan + $ac_length)/2) / 2), 2);
+// assume 4 degree angle between longitudinal and inertial axes
+// $ac_rawixz = abs($ac_rawizz - $ac_rawixx) * 0.06975647;
 
 
 // increase moments to make up for lack of control feel
-$ac_ixx *= 1.5;
-$ac_iyy *= 1.5;
-$ac_izz *= 1.5;
-$ac_ixz *= 1.5;
+$ac_ixx = $ac_rawixx * 1.5;
+$ac_iyy = $ac_rawiyy * 1.5;
+$ac_izz = $ac_rawizz * 1.5;
+$ac_ixz = 0;
 
 
 //***** EMPTY WEIGHT *********************************
@@ -461,17 +463,17 @@ switch($ac_type) {
 // estimate stall CL
 $ac_CLmax = 1.4;
 
-// estimate CL due to flaps, based on airplane type
+// estimate delta-CL, based on airplane type
 switch($ac_type) {
-  case 0: $ac_dCLflaps = 0.20; break;
-  case 1: $ac_dCLflaps = 0.40; break;
-  case 2: $ac_dCLflaps = 0.40; break;
-  case 3: $ac_dCLflaps = 0.30; break;
-  case 4: $ac_dCLflaps = 0.35; break;
-  case 5: $ac_dCLflaps = 0.35; break;
-  case 6: $ac_dCLflaps = 1.00; break;
-  case 7: $ac_dCLflaps = 1.00; break;
-  case 8: $ac_dCLflaps = 1.00; break;
+  case 0: $ac_dCLflaps = 0.200; break;
+  case 1: $ac_dCLflaps = 0.400; break;
+  case 2: $ac_dCLflaps = 0.400; break;
+  case 3: $ac_dCLflaps = 0.300; break;
+  case 4: $ac_dCLflaps = 0.350; break;
+  case 5: $ac_dCLflaps = 0.350; break;
+  case 6: $ac_dCLflaps = 1.0; break;
+  case 7: $ac_dCLflaps = 1.0; break;
+  case 8: $ac_dCLflaps = 1.0; break;
   }
 
 // some types have speedbrakes in wings, affecting lift
@@ -534,7 +536,18 @@ switch($ac_type) {
   case 8: $ac_K = 0.042; break;
   }
 
-$ac_CDflaps = 0.03;     // flaps down full
+// CD flaps
+switch($ac_type) {
+  case 0: $ac_CDflaps = 0.024; break;
+  case 1: $ac_CDflaps = 0.030; break;
+  case 2: $ac_CDflaps = 0.039; break;
+  case 3: $ac_CDflaps = 0.030; break;
+  case 4: $ac_CDflaps = 0.030; break;
+  case 5: $ac_CDflaps = 0.030; break;
+  case 6: $ac_CDflaps = 0.059; break;
+  case 7: $ac_CDflaps = 0.057; break;
+  case 8: $ac_CDflaps = 0.055; break;
+  }
 
 // estimate drag from landing gear down
 switch($ac_type) {
@@ -544,8 +557,8 @@ switch($ac_type) {
   case 3: $ac_CDgear = 0.030; break;
   case 4: $ac_CDgear = 0.020; break;
   case 5: $ac_CDgear = 0.020; break;
-  case 6: $ac_CDgear = 0.011; break;
-  case 7: $ac_CDgear = 0.011; break;
+  case 6: $ac_CDgear = 0.015; break;
+  case 7: $ac_CDgear = 0.013; break;
   case 8: $ac_CDgear = 0.011; break;
   }
 
@@ -978,7 +991,7 @@ print("    </COEFFICIENT>\n");
 
 print("    <COEFFICIENT NAME=\"dCLflap\" TYPE=\"VALUE\">\n"); 
 print("       Delta_Lift_due_to_flaps\n");
-print("       aero/qbar-psf|metrics/Sw-sqft|fcs/flap-pos-norm\n");
+print("       aero/qbar-psf|metrics/Sw-sqft|fcs/components/flaps-control/output-norm\n");
 print("       $ac_dCLflaps\n");
 print("    </COEFFICIENT>\n");
 
@@ -1025,7 +1038,7 @@ print("    </COEFFICIENT>\n");
 
 print("    <COEFFICIENT NAME=\"CDflap\" TYPE=\"VALUE\">\n"); 
 print("       Drag_due_to_flaps\n");
-print("       aero/qbar-psf|metrics/Sw-sqft|fcs/flap-pos-norm\n");
+print("       aero/qbar-psf|metrics/Sw-sqft|fcs/components/flaps-control/output-norm\n");
 print("       $ac_CDflaps\n");
 print("    </COEFFICIENT>\n");
 
