@@ -16,21 +16,51 @@
     <tbody><tr>
       <td id="menu">
 	<!-- Use a replacescript to update the menu -->
-	<h3>About</h3>
+
+<!-- SiteSearch Google -->
+<form method="get" action="http://www.google.com/custom" target="_top">
+<table border="0" bgcolor="#ffffff" id="page">
+<tr><td nowrap="nowrap" valign="top" align="left" height="32">
+<a href="http://www.google.com/">
+<img src="http://www.google.com/logos/Logo_25wht.gif"
+border="0" alt="Google"></img></a>
+<br/>
+<input type="hidden" name="domains" value="flightgear.org"></input>
+<input type="text" name="q" size="20" maxlength="255" value=""></input>
+</td></tr>
+<tr>
+<td nowrap="nowrap">
+<table>
+<tr>
+<td>
+<input type="radio" name="sitesearch" value=""></input>
+<font size="-1" color="#000000">Web</font>
+</td>
+<td>
+<input type="radio" name="sitesearch" value="flightgear.org" checked="checked"></input>
+<font size="-1" color="#000000">flightgear.org</font>
+</td>
+</tr>
+</table>
+<input type="submit" name="sa" value="Search"></input>
+<input type="hidden" name="client" value="pub-2485404446552133"></input>
+<input type="hidden" name="forid" value="1"></input>
+<input type="hidden" name="ie" value="ISO-8859-1"></input>
+<input type="hidden" name="oe" value="ISO-8859-1"></input>
+<input type="hidden" name="safe" value="active"></input>
+<input type="hidden" name="cof" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;FORID:1;"></input>
+<input type="hidden" name="hl" value="en"></input>
+
+</td></tr></table>
+</form>
+<!-- SiteSearch Google -->
+	<h3>Main</h3>
 	<a href="/index.html">Home</a><br>
 	<a href="/introduction.html">Introduction</a><br>
 	<a href="/features.html">Features</a><br>
-	<!-- about.hook.1-->
         <a href="/Gallery/">Screenshots</a><br>
-	<!-- about.hook.2-->
-	<h3>Downloads</h3>
-	<a href="/Downloads/binary.html">Download Application</a><br>
-	<a href="/Downloads/scenery.html">Download Scenery</a><br>
-	<a href="/Downloads/source.html">Download Source Code</a><br>
-	<a href="http://cdrom.flightgear.org">FlightGear CD's</a><br>
-	<a href="/mirrors.html#ftp">FTP Mirrors</a><br>
-	<!-- downloads.hook.1-->
-	<!-- downloads.hook.2-->
+	<a href="/Downloads/">Downloads</a><br>
+	<a href="http://cdrom.flightgear.org">Purchase FG CD's</a><br>
 	<h3>Support</h3>
 	<a href="/version.html">Version Change Log</a><br>
 	<a href="/hardwarereq.html">Hardware Requirements</a><br>
@@ -38,13 +68,9 @@
 	<a href="/places.html">Places to Fly</a><br>
 	<a href="/mail.html">Lists, Forums, and IRC</a><br>
 	<a href="/Docs/FAQ.shtml">FAQ</a><br>
-	<!-- support.hook.1-->
-	<!-- support.hook.2-->
 	<h3>Links</h3>
 	<a href="/links.html">Related Websites</a><br>
 	<a href="/Projects/">Related Projects</a><br>
-	<!-- support.hook.1-->
-	<!-- support.hook.2-->
 	<h3>Contribute</h3>
 	<a href="/contributing.html">Contributing</a><br>
 	<a href="/cvs.html">CVS Resources</a><br>
@@ -52,44 +78,43 @@
 	<a href="/thanks.shtml">Contributors</a><br>
 	<a href="/design.html">Design Proposals</a><br>
 	<a href="/events.html">Events</a><br>
-	<!-- support.hook.1-->
-	<!-- support.hook.2-->
       </td>
       <td id="page">
 <!-- Standard Header End -->
 
  <H1>FlightGear Download Central</H1>
 
- <table>
-  <tr>
-   <td valign="top" id="section">
-    <h3><a href="binary.html">Download FlightGear</A></h3>
+ <TABLE>
+  <TR>
+   <TD VALIGN="top" ID="section">
+    <H3><A HREF="binary.html">Download FlightGear</A></H3>
     Ready to run versions of FlightGear are available for many different
     platforms:
     <P>
-    <a href="binary.html#windows">Windows</a><br>
-    <a href="binary.html#linux">Linux</a><br>
-    <a href="binary.html#sun">Solaris (sparc/x86)</a><br>
-    <a href="binary.html#sgi">sgi</a><br>
-    <a href="binary.html#mac">Mac OS X</a><br>
-    <a href="binary.html#freebsd">FreeBSD</a><br>
-   </td>
-   <td valign="top" id="section">
-    <h3><a href="aircraft/index.html">Download Aircraft</A></h3>
+    <A HREF="binary.html#windows">Windows</A><BR>
+    <A HREF="binary.html#linux">Linux</A><BR>
+    <A HREF="binary.html#sun">Solaris (sparc/x86)</A><BR>
+    <A HREF="binary.html#sgi">sgi</A><BR>
+    <A HREF="binary.html#mac">Mac OS X</A><BR>
+    <A HREF="binary.html#freebsd">FreeBSD</A><BR>
+   </TD>
+   <TD VALIGN="top" ID="section">
+    <H3><A HREF="aircraft/index.html">Download Aircraft</A></H3>
     The FlightGear base package includes only a few representative aircraft.
     Download more aircraft here:
     <P>
-    <a href="aircraft/index.html#737">Boeing 737.</a><br>
-    <a href="aircraft/index.html#747">Boeing 747-100.</a><br>
-    <a href="aircraft/index.html#A-10">Fairchild A-10 Warthog.</a><br>
-    <a href="aircraft/index.html#A320">Airbus A320.</a><br>
-    <a href="aircraft/index.html#a4">Douglas A-4 Skyhawk.</a><br>
-    <a href="aircraft/index.html">More aircraft ...</a>
-   </td>
-  </tr>
-  <tr>
-   <td valign="top" id="section">
-    <h3><a href="scenery.html">Download Scenery</A></h3>
+    <A HREF="aircraft/index.html#737">Boeing 737.</A><BR>
+    <A HREF="aircraft/index.html#747">Boeing 747-100.</A><BR>
+    <A HREF="aircraft/index.html#A-10">Fairchild A-10 Warthog.</A><BR>
+    <A HREF="aircraft/index.html#bo105">Bo105 Eurocopter.</A><BR>
+    <A HREF="aircraft/index.html#Citation">Cessna Citation-II.</A><BR>
+    <A HREF="aircraft/index.html#ornithopter">Ornithopter.</A><BR>
+    <A HREF="aircraft/index.html">More aircraft ...</A>
+   </TD>
+  </TR>
+  <TR>
+   <TD VALIGN="top" ID="section">
+    <H3><A HREF="scenery.html">Download Scenery</A></H3>
     FlightGear has a seamless, continuous oblate ellipsoid world
     available for you to explore.  Our terrain is based on 90m SRTM
     data and is very detailed.  There are over 20,000 airports you can
@@ -97,48 +122,63 @@
     world, run a utility called terrasync to fetch scenery as you fly
     (just in time), or purchase the entire world on a 3 DVD set.
     <P>
-    <a href="scenery.html">Go to the scenery download map.</a>
-   </td>
-   <td valign="top" id="section">
-    <h3><a href="source.html">Download Source Code</A></h3>
+    <A HREF="scenery.html">Go to the scenery download map.</A>
+   </TD>
+   <TD VALIGN="top" ID="section">
+    <H3><A HREF="source.html">Download Source Code</A></H3>
     Here's the best part.  Every line of source code for this project
     is available under the GPL license.  Cockpit builders,
     researchers, do-it-yourselfers, industry groups, and students will
     all find FlightGear very open, very flexible, very adaptable, and
     very interfacable.
     <P>
-    <a href="source.html">Go to the source code download pagex.</a>
-   </td>
-  </tr>
-  <tr>
-   <td valign="top" id="section">
-    <h3><a href="/mirrors.html#ftp">FTP Mirrors</a></h3>
+    <A HREF="source.html">Go to the source code download page.</A>
+   </TD>
+  </TR>
+  <TR>
+   <TD VALIGN="top" ID="section">
+    <H3><A HREF="/mirrors.html#ftp">FTP Mirrors</A></H3>
     In the event that the primary FlightGear server is busy or slow we
-    have a number of ftp mirror sites.  <em>Note:</em> many web
+    have a number of ftp mirror sites.  <EM>Note:</EM> many web
     browsers will report a failed login rather than a busy server.
     <P>
 
-    <a href="/mirrors.html#ftp">Go to the FTP mirror list</a>
-   </td>
-   <td valign="top" id="section">
-     <h3><a href="http://cdrom.flightgear.org">FlightGear CD and DVD
-         sets</a></h3>
+    <A HREF="/mirrors.html#ftp">Go to the FTP mirror list</A>
+   </TD>
+   <TD VALIGN="top" ID="section">
+     <H3><A HREF="http://cdrom.flightgear.org">FlightGear CD and DVD
+         sets</A></H3>
      Those who have slow or expensive network connections can purchase
      a ready to run version of FlightGear on CD as well as the entire
      world scenery collection as a 3-DVD set.  A portion of the CD
      sales goes towards supporting the project and a portion is
      donated to charity.
      <P>
-     <a href="http://cdrom.flightgear.org">Purchase a FlightGear CD or DVD
+     <A HREF="http://cdrom.flightgear.org">Purchase a FlightGear CD or DVD
      set.</A>
-   </td>
-  </tr>
- </table>
+   </TD>
+  </TR>
+ </TABLE>
 
 <!-- Standard Footer Begin -->
       </td>
       <td id="googleads" valign="top">
        <!-- insert google add here if we decide to do that sort of thing -->
+<script type="text/javascript"><!--
+google_ad_client = "pub-2485404446552133";
+google_ad_width = 120;
+google_ad_height = 600;
+google_ad_format = "120x600_as";
+google_ad_channel ="";
+google_color_border = "2D5893";
+google_color_bg = "99AACC";
+google_color_link = "000000";
+google_color_url = "000099";
+google_color_text = "003366";
+//--></script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
       </td>
      </tr>
     </tbody>
@@ -146,15 +186,12 @@
   <br>
   <div id="bottom">
     <a href="/">Home</a> | 
-    Download:
-      <a href="/Downloads/binary.html">FGFS</a> -
-      <a href="/Downloads/source.html">Source</a> -
-      <a href="/Downloads/scenery.html">Scenery</a> |
+    <a href="/Downloads/">Downloads</a> |
     <a href="/Gallery/index.shtml">Screenshots</a> |
     <a href="/docs.html">Documentation</a>
     <br>
     <br>
-    Last modified:  1/14/2005 <BR>
+    Last modified:  1/17/2005 <BR>
     <A HREF="http://www.flightgear.org/~curt/">Curtis L. Olson</A>
     <IMG ALIGN="MIDDLE" SRC="/email-fg.png">
   </div>

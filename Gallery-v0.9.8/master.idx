@@ -5,15 +5,21 @@ closer you get to the bottom, the older the code was when the image
 was captured.
 <P>
 
-<STRONG><A HREF="../Gallery.hist01/">Click here to see additional historical
-images chronicling several years of FlightGear
-development</A></STRONG>
-
-<HR>
-
 <H3>January 2005</H3>
 
+<B>January 18, 2005</B> - Coninciding with the official Airbus A380 roll out
+and unveiling of the new Airbus livery, here are a few screenshots of the
+FlightGear A380.
+
+A380-1.jpg
+A380-2.jpg
+A380-3.jpg
+A380-4.jpg
+A380-5.jpg
+A380-6.jpg
+
 Syd Adams has built a nice deHavilland Beaver and a nice Citation-II.
+Frederic built a very detailed model of Alcatraz.
 Here are a few pictures:
 
 Citation-II-3d-panel.jpg
@@ -24,7 +30,7 @@ Recent images from Erik Hofman:
 
 3dcockpitview.jpg
 4plane.jpg
-glasscockpit.jpg 
+glasscockpit.jpg
 
 
 <H3>December 2003</H3>
@@ -68,8 +74,6 @@ terrain5.jpg
 terrain6.jpg
 
 
-<HR>
-
 <H3>June 2002</H3>
 
 Quite a bit of work has been done in support of 3d aircraft models and
@@ -82,8 +86,6 @@ a4-02.jpg
 a4-03.jpg
 
 
-<HR>
-
 <H3>April 2002</H3>
 
 Here are a few new screen shots taken in the March/April 2002 time frame.
@@ -93,8 +95,6 @@ c172shortfinal.jpg
 c310u3a-panel.jpg
 
 
-<HR>
-
 <H3>Open Glass Cockpit Project</H3>
 
 FlightGear now has an interface to the <A
@@ -103,7 +103,6 @@ HREF="http://www.opengc.org">OpenGC</A> glass cockpit displays.
 opengc-turning.jpg
 opengc-tower.jpg
 
-<HR>
 
 <H3>Taxiways</H3>
 
@@ -114,8 +113,6 @@ KSFO-Approach2.jpg
 KSFO-Approach3.jpg
 KSFO-Approach4.jpg
 
-
-<HR>
 
 <H3>Photo-real airport environments</H3>
 
@@ -154,7 +151,6 @@ KSJC-signex2.jpg
 KSJC-signex3.jpg
 KSJC-signex4.jpg
 
-<HR>
 
 <H3>Multiple Display Synchronization</H3>
 
@@ -165,7 +161,6 @@ a network.
 trucksim-comp-setup.jpg
 display-syncing.jpg
 
-<HR>
 
 <H3>Land Use / Land Cover</H3>
 
@@ -179,3 +174,9 @@ lc1.jpg
 lc2.jpg
 lc3.jpg
 wh-tux.jpg
+
+<H3>Historical Images</H3>
+
+<STRONG><A HREF="../Gallery.hist01/">Click here to see historical
+images chronicaling the development of Flightgear from 1996-2001.</A></STRONG>
+
