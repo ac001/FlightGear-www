@@ -69,9 +69,11 @@ switch($ac_type) {
 
 // if no wing area given, use wing loading to estimate
 if ($ac_wingarea == 0) {
+    $wingarea_input = false;
     $ac_wingarea = $ac_weight / $ac_wingloading;
   }
   else {
+    $wingarea_input = true;
     $ac_wingloading = $ac_weight / $ac_wingarea;
   }
 
@@ -571,8 +573,58 @@ switch($ac_type) {                   // adverse yaw
 
 print("<FDM_CONFIG NAME=\"$ac_name\" VERSION=\"1.60\">\n");
 print("<!--\n  File:     $ac_name.xml\n");
-print("  Author:   Aero-Matic v.$version\n");
-print("-->\n"); 
+print("  Author:   Aero-Matic v $version\n\n");
+print("  Inputs:\n");
+print("    name:          $ac_name\n");
+switch($ac_type) {
+  case 0: print("    type:          glider\n"); break;
+  case 1: print("    type:          light single\n"); break;
+  case 2: print("    type:          light twin\n"); break;
+  case 3: print("    type:          WWII fighter\n"); break;
+  case 4: print("    type:          single-engine jet fighter\n"); break;
+  case 5: print("    type:          two-engine jet fighter\n"); break;
+  case 6: print("    type:          two-engine transport\n"); break;
+  case 7: print("    type:          three-engine transport\n"); break;
+  case 8: print("    type:          four-engine transport\n"); break;
+  }
+print("    max weight:    $ac_weight lb\n");
+print("    wing span:     $ac_wingspan ft\n");
+print("    length:        $ac_length ft\n");
+if($wingarea_input == false)
+  print("    wing area:     unspecified\n");
+else
+  print("    wing area:     $ac_wingarea sq-ft\n");
+switch($ac_geartype) {
+  case 0: print("    gear type:     tricycle\n"); break;
+  case 1: print("    gear type:     taildragger\n"); break; 
+}
+print("    # engines:     $ac_numengines\n");
+switch($ac_enginetype) {
+  case 0: print("    engine type:   piston\n"); break; 
+  case 1: print("    engine type:   turbine\n"); break; 
+  case 2: print("    engine type:   turboprop\n"); break; 
+  case 3: print("    engine type:   rocket\n"); break; 
+}
+switch($ac_enginelayout) {
+  case 0: print("    engine layout: forward fuselage\n"); break; 
+  case 1: print("    engine layout: middle fuselage\n"); break; 
+  case 2: print("    engine layout: aft fuselage\n"); break; 
+  case 3: print("    engine layout: wings\n"); break; 
+  case 4: print("    engine layout: wings and tail\n"); break; 
+  case 5: print("    engine layout: wings and nose\n"); break; 
+}
+if($ac_yawdamper)
+  print("    yaw damper?    yes\n");
+else
+  print("    yaw damper?    no\n\n");
+print("  Outputs:\n");
+print("    wing loading:  $ac_wingloading lb/sq-ft\n");
+print("    CL-alpha:      $ac_CLalpha per radian\n");
+print("    CL-0:          $ac_CL0\n");
+print("    CL-max:        $ac_CLmax\n");
+print("    CD-0:          $ac_CD0\n");
+ 
+print("\n-->\n\n"); 
 
 //***** METRICS **********************************
 

@@ -38,6 +38,33 @@ if($ac_engineunits == 3) {
 //*                                              *
 //************************************************
 
+print("<?xml version=\"1.0\"?>\n");
+print("<!--\n  File:     $ac_enginename.xml\n");
+print("  Author:   Aero-Matic v $version\n\n");
+print("  Inputs:\n");
+print("    name:           $ac_enginename\n");
+switch($ac_enginetype) {
+  case 0: print("    type:           piston\n"); break;
+  case 1: print("    type:           turbine\n"); break;
+  case 2: print("    type:           turboprop\n"); break;
+  case 3: print("    type:           rocket\n"); break;
+  }  
+switch($ac_enginetype) {
+  case 0: print("    power:          $ac_enginepower hp\n"); break;
+  case 1: print("    thrust:         $ac_enginepower lb\n"); break;
+  case 2: print("    power:          $ac_enginepower hp\n"); break;
+  case 3: print("    thrust:         $ac_enginepower lb\n"); break;
+  }  
+if($ac_augmented)
+  print("    augmented?      yes\n");
+else
+  print("    augmented?      no\n");
+if($ac_injected)
+  print("    injected?       yes\n");
+else
+  print("    injected?       no\n");
+print("-->\n\n"); 
+
 switch ($ac_enginetype) {
   case 0: MakePiston(); break;
   case 1: MakeTurbine(); break;
@@ -50,13 +77,9 @@ switch ($ac_enginetype) {
 //************************************************
 function MakePiston() {
 
-  global $ac_enginename, $ac_enginepower, $version;
+  global $ac_enginename, $ac_enginepower;
   $displacement = $ac_enginepower * 1.6;
 
-  print("<?xml version=\"1.0\"?>\n");
-  print("<!--\n  File:     $ac_enginename.xml\n");
-  print("  Author:   Aero-Matic v.$version\n");
-  print("-->\n\n"); 
   print("<FG_PISTON NAME=\"$ac_enginename\">\n");
   print("  MINMP          6.0\n");
   print("  MAXMP         30.0\n");
@@ -75,13 +98,9 @@ function MakePiston() {
 //************************************************
 function MakeTurbine() {
 
-  global $ac_enginename, $ac_enginepower, $version,
+  global $ac_enginename, $ac_enginepower,
          $ac_augmented, $ac_injected;
 
-  print("<?xml version=\"1.0\"?>\n");
-  print("<!--\n  File:     $ac_enginename.xml\n");
-  print("  Author:   Aero-Matic v.$version\n");
-  print("-->\n\n"); 
   print("<FG_SIMTURBINE NAME=\"$ac_enginename\">\n");  
   print("  MAXMILTHRUST $ac_enginepower\n");
   print("  BYPASSRATIO    1.0\n");
@@ -183,7 +202,7 @@ function MakeTurbine() {
 //************************************************
 function MakeTurboprop() {
 
-  global $ac_enginename, $ac_enginepower, $version,
+  global $ac_enginename, $ac_enginepower,
          $ac_augmented, $ac_injected;
 
 // estimate thrust if given power
@@ -191,11 +210,6 @@ if(($ac_engineunits == 0) || ($ac_engineunits == 1)) {
   $ac_enginepower *= 1.67;
   }
 
-
-  print("<?xml version=\"1.0\"?>\n");
-  print("<!--\n  File:     $ac_enginename.xml\n");
-  print("  Author:   Aero-Matic v.$version\n");
-  print("-->\n\n"); 
   print("<FG_SIMTURBINE NAME=\"$ac_enginename\">\n");  
   print("  MAXMILTHRUST $ac_enginepower\n");
   print("  BYPASSRATIO    0.0\n");
@@ -295,12 +309,8 @@ if(($ac_engineunits == 0) || ($ac_engineunits == 1)) {
 //************************************************
 function MakeRocket() {
 
-  global $ac_enginename, $ac_enginepower, $version;
+  global $ac_enginename, $ac_enginepower;
 
-  print("<?xml version=\"1.0\"?>\n");
-  print("<!--\n  File:     $ac_enginename.xml\n");
-  print("  Author:   Aero-Matic v.$version\n");
-  print("-->\n\n"); 
   print("<FG_ROCKET NAME=\"$ac_enginename\">\n");
   print("  SHR              1.23\n");
   print("  MAX_PC       86556.0\n");
