@@ -2,16 +2,17 @@
       </td></tr>
     </tbody>
   </table>
+  <br>
   <div id="bottom">
-    <a href="http://www.flightgear.org">Home</a> |
-    <a href="http://www.flightgear.org/docs.html">Documentation</a> | 
-    <a href="http://www.flightgear.org/binary.html">Downloads</a> |
-    <a href="http://www.flightgear.org/Gallery/index.html">Screenshots</a>
+    <a href="/">Home</a> |
+    <a href="/docs.html">Documentation</a> | 
+    <a href="/Downloads/binary.html">Downloads</a> |
+    <a href="/Gallery/index.html">Screenshots</a>
     <br>
     <br>
-    <h1>%%INSERT_LAST_MODIFIED_DATE%%
-        <A HREF="http://www.menet.umn.edu/~curt/">Curtis L. Olson</A>
-        <IMG ALIGN="MIDDLE" SRC="http://www.flightgear.org/email-fg.png"></h1>
+    %%INSERT_LAST_MODIFIED_DATE%%
+    <A HREF="http://www.menet.umn.edu/~curt/">Curtis L. Olson</A>
+    <IMG ALIGN="MIDDLE" SRC="/email-fg.png">
   </div>
 </body>
 

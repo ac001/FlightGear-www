@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title> FlightGear Flight Simulator</title>
+  <title>FlightGear Flight Simulator</title>
   <link rel="stylesheet" type="text/css" href="http://www.flightgear.org/default.css"> 
 </head>
 
@@ -24,9 +24,9 @@
         <a href="/Gallery/index.html">Screenshots</a><br>
 	<!-- about.hook.2-->
 	<h3>Downloads</h3>
-	<a href="/source.html">Source Code</a><br>
-	<a href="/binary.html">Executables</a><br>
-	<a href="/scenery.html">Worldwide Scenery</a><br>
+	<a href="/Downloads/source.html">Source Code</a><br>
+	<a href="/Downloads/binary.html">Executables</a><br>
+	<a href="/Downloads/scenery.html">Worldwide Scenery</a><br>
 	<!-- downloads.hook.1-->
 	<!-- downloads.hook.2-->
 	<h3>Support</h3>
