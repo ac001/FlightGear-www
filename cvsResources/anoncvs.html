@@ -28,7 +28,7 @@ open-source product.  Cyclic makes a living by selling support.
 
 <HR>
 
-<H3>Checking Out a Copy of the FGFS Source</H3>
+<H3>Checking Out a Copy of the source code</H3>
 
 The Flight Gear source code comes in a large tree of subdirectories.
 However, you should now be able to check out the entire tree with one
@@ -40,21 +40,34 @@ live.  The top level "FlightGear" source directory will be created
 here.
 <P>
 
-<UL>
-<LI>
-For the development tree, run the following commands exactly as you see
-them here:
-<P>
+<STRONG>Stable Branch:</STRONG>
+This is the "stable branch".  The goal is stability.  We will fix bugs
+here, but not much else.
 
+<UL>
 <PRE>
-    cvs -d :pserver:cvs@cvs.flightgear.org:/var/cvs/FlightGear-0.7 login
+    cvs -d :pserver:cvsguest@cvs.simgear.org:/var/cvs/FlightGear-0.8 login
     CVS passwd: guest
 
-    cvs -d :pserver:cvs@cvs.flightgear.org:/var/cvs/FlightGear-0.7 co FlightGear
+    cvs -d :pserver:cvsguest@cvs.simgear.org:/var/cvs/FlightGear-0.8 co FlightGear
 </PRE>
 </UL>
 
 <P>
+
+<STRONG>Development Branch:</STRONG>
+This is where all new development and new features go.
+
+<UL>
+<PRE>
+    cvs -d :pserver:cvsguest@cvs.simgear.org:/var/cvs/FlightGear-0.9 login
+    CVS passwd: guest
+
+    cvs -d :pserver:cvsguest@cvs.simgear.org:/var/cvs/FlightGear-0.9 co FlightGear
+</PRE>
+</UL>
+<P>
+
 <HR>
 
 <H3>Now that you are a Developer ...</H3>
