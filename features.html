@@ -1,4 +1,3 @@
-
 <!-- Standard Header Begin -->
 <html>
 
@@ -22,7 +21,7 @@
 	<a href="/overview.html">Overview</a><br>
 	<a href="/features.html">Features</a><br>
 	<!-- about.hook.1-->
-        <a href="/Gallery/index.html">Screenshots</a><br>
+        <a href="/Gallery/index.shtml">Screenshots</a><br>
 	<!-- about.hook.2-->
 	<h3>Downloads</h3>
 	<a href="/Downloads/source.html">Source Code</a><br>
@@ -56,12 +55,201 @@
       </td>
       <td id="page">
 <!-- Standard Header End -->
-<H1>FlightGear Features</H1>
 
-Waiting for someone to contribute a list<BR>
-a_barbu2@yahoo.com<BR>
-Or the flightgear devel maillist<BR>
-Thanks
+<H1>FlightGear Features</H1>
+<BR>
+
+<H3>High degree of Freedom</H3>
+
+FlightGear is an open-source project.  This means as long as you abide
+by the terms of the GPL license you may freely download and copy
+FlightGear.  Anyway can have easy and open access to the latest
+development source code.  Being an open-source project, we have made
+our file formats open and easily accessible.  We support standard 3d
+model formats and much of the simulator configuration is controlled
+through xml based ascii files.  Writing 3rd party extensions for
+FlightGear (or even directly modifying the FlightGear source code) is
+straightforward and doesn't require a large amount of reverse
+engineering.  This makes FlightGear an attractive option for use in
+private, commercial, research, or hobby projects.<P>
+
+FlightGear is known to run on Windows, Linux, Mac OS-X, FreeBSD,
+Solaris, and IRIX platforms allowing the user run on their platform of
+preference.
+
+<H3>Flight Dynamics Models</H3>
+
+With FlightGear it is possible to choose between three primary Flight
+Dynamics Models.  It is possible to add new dynamics models or even
+interface to external "proprietary" flight dynamics models:<BR>
+ 
+ <OL>
+  <LI> <A HREF="http://www.jsbsim.org"><STRONG>JSBSim</STRONG></A>:
+       This FDM uses tables to simulate the behavior of an
+       aircraft. This approach is in use by many commercial research
+       simulators and has the advantage that the reactions of the
+       aircraft are very close to the real aircraft within a known
+       range. If a simulated aircraft gets beyond that range the
+       outcome is unsure and often unpredictable.  </LI><BR>
+
+  <LI> <STRONG>YASim</STRONG>: This FDM is an integrated part of
+       FlightGear and uses a different approach by simulating the
+       effect of the airflow on the different parts of an aircraft.
+       The advantage of this approach is that it is possible to
+       perform the simulation based on geometry information and speed
+       settings of the aircraft.  </LI><BR>
+
+  <LI> <A
+       HREF="http://www.aae.uiuc.edu/m-selig/"><STRONG>UIUC</STRONG></A>:
+       This FDM is based on <A
+       HREF="http://techreports.larc.nasa.gov/ltrs/PDF/NASA-95-tm110164.pdf">
+       LaRCsim</A> originally written by the NASA. UIUC extends the
+       code by allowing aircraft configuration files instead and by
+       adding code for simulation of aircraft under icing
+       conditions.<P> UIUC (like JSBSim) uses lookup tables to
+       simulate an aircraft.  </LI><BR>
+
+</OL>
+
+<H3>Extensive and Accurate World Scenery Data Base</H3>
+
+<UL>
+  <LI> Over 20,000 real world airports included in the full scenery set.
+
+  <LI> Correct runway markings and placement, correct runway and
+       approach lighting.
+
+  <LI> Taxiways available for many larger airports (even including the
+       green center line lights when appropriate.)
+
+  <LI> Sloping runways (runways change elevation like they usually do
+       in real life.)
+
+  <LI> Directional airport lighting that smoothly changes intensity as
+       your relative view direction changes.
+
+  <LI> World scenery consumes 11 CD's.  (I'm not sure that's a feature
+       or a problem!)  But it means we have pretty detailed coverage
+       of the entire world.
+
+  <LI> Accurate terrain worldwide, based on the most recently released
+       SRTM terrain data.)  3 arc second resolution (about 90m post
+       spacing) for north and south america, 30 arc second resolution
+       (about 1km post spacing) for the rest of the world.  When the 3
+       arc second data becomes available for other areas of the world
+       we will generate new scenery based on the higher resolution
+       terrain.
+
+  <LI> Scenery includes all vmap0 lakes, rivers, roads, railroads,
+       cities, towns, land cover, etc.
+
+  <LI> Nice scenery night lighting with ground lighting concentrated
+       in urban areas (based on real maps) and headlights visible on
+       major highways.  This allows for realistic night VFR flying
+       with the ability to spot towns and cities and follow roads.
+
+  <LI> Scenery tiles are paged (loaded/unloaded) in a separate thread
+       to minimize the frame rate hit when you need to load new areas.
+
+</UL>
+
+<H3>Accurate and Detailed Sky Model</H3>
+
+FlightGear implements extremely accurate time of day modeling with
+correctly placed sun, moon, stars, and planets for the specified time
+and date.  FlightGear can track the current computer clock time in
+order to correctly place the sun, moon, stars, etc. in their current
+and proper place relative to the earth.  If it's dawn in Sydney right
+now, it's dawn in the sim right now when you locate yourself in
+virtual Sidney.  The sun, moon, stars, and planets all follow their
+correct courses through the sky.  This modeling also correctly takes
+into account seasonal effects so you have 24 hour days north of the
+arctic circle in the summer, etc.  We also illuminate the correctly
+placed moon with the correctly placed sun to get the correct phase of
+the moon for the current time/date, just like in real life.
+
+
+<H3>Flexible and Open Aircraft Modeling System</H3>
+
+FlightGear has the ability to model a wide variety of aircraft.
+Currently you can fly the 1903 Wright Flyer, strange flapping wing
+"ornithopters", a 747 and A320, various military jets, and several
+light singles.  FlightGear has the ability to model those aircraft and
+just about everything in between.<P>
+
+FlightGear has extremely smooth and fluid instrument animation that
+updates at the same rate as your out-the-window view updates (i.e. as
+fast as your computer can crank, and not artificially limited and
+chunky like in some sims.)<P>
+
+FlightGear has the infrastructure to allow aircraft designers to build
+fully animated, fully operational, fully interactive 3d cockpits
+(which even update and display correctly from external chase plane
+views.)<P>
+
+FlightGear realistically models real world instrument behavior.
+Instruments that lag in real life, lag correctly in FlightGear, gyro
+drift is modeled correctly, the magnetic compass is subject to
+aircraft body forces -- all those things that make real world flying a
+challenge.<P>
+
+FlightGear also accurately models many instrument and system failures.
+If the vacuum system fails, the HSI gyros spin down slowly with a
+corresponding degradation in response as well as a slowly increasing
+bias/error.
+
+<H3>Moderate Hardware Requirements</H3>
+
+The intention of FlightGear is to look nice, but not at the expense of
+other aspects of a realistic simulator.  Our focus is not on competing
+in the "game" market and not on the ultra-flashy graphic tricks.<P>
+
+The result is a simulator with moderate hardware requirements to run
+at smooth frame rates.  You can be reasonably happy on a $500-1000
+(USD) machine (possibly even less if you are careful) and don't
+necessarily need $3000 (USD) worth of new hardware like you do with
+the many of the newest games.<P>
+
+That said, the more hardware you throw at FlightGear, the better it
+looks and runs, so don't feel like you have to chuck your expensive
+new hardware if you just purchased it. :-)
+
+<H3>Internal Properties EXPOSED!</H3>
+
+FlightGear allows users and aircraft designers access to a very large
+number of internal state variables via numerous internal and external
+access mechanisms.  These state variables are organized into a
+convenient hierarchal "property" tree.<P>
+
+Using the properties tree it is possible to monitor just about any
+internal state variable in FlightGear.  It's possible to remotely
+control FlightGear from an external script.  You can create model
+animations, sound effects, instrument animations and network protocols
+for about any situation imaginable just by editing a small number of
+human readable configuration files.  This is a powerful system that
+makes FlightGear immensely flexible, configurable, and adaptable.
+
+<H3>Networking options</H3>
+
+A number of networking options allow FlightGear to communicate with
+other instances of FlightGear, GPS receivers, external flight dynamics
+modules, external autopilot or control modules, as well as other
+software such as <A HREF="http://www.opengc.org/">the Open Glass
+Cockpit project</A> and the <A
+HREF="http://atlas.sourceforge.net/">Atlas</A> mapping utility.<P>
+
+A generic input/output option allows for a user defined output
+protocol to a file, serial port or network client.<P>
+
+A multi player protocol is available for using FlightGear on a local
+network in a multi aircraft environment, for example to practice
+formation flight or for tower simulation purposes.<P>
+
+The powerful network options make it possible to synchronize several
+instances of FlightGear allowing for a multi-display, or even a cave
+environment.  If all instances are running at the same frame rate
+consistently, it is possible to get extremely good and tight
+synchronization between displays.
 
 <!-- Standard Footer Begin -->
       </td></tr>
@@ -69,13 +257,16 @@ Thanks
   </table>
   <br>
   <div id="bottom">
-    <a href="/">Home</a> |
-    <a href="/docs.html">Documentation</a> | 
-    <a href="/Downloads/binary.html">Downloads</a> |
-    <a href="/Gallery/index.html">Screenshots</a>
+    <a href="/">Home</a> | 
+    Download:
+      <a href="/Downloads/binary.html">FGFS</a> -
+      <a href="/Downloads/source.html">Source</a> -
+      <a href="/Downloads/scenery.html">Scenery</a> |
+    <a href="/Gallery/index.shtml">Screenshots</a> |
+    <a href="/docs.html">Documentation</a>
     <br>
     <br>
-    Last modified:  10/01/2003 <BR>
+    Last modified:  10/13/2003 <BR>
     <A HREF="http://www.menet.umn.edu/~curt/">Curtis L. Olson</A>
     <IMG ALIGN="MIDDLE" SRC="/email-fg.png">
   </div>

@@ -1,13 +1,4 @@
-<HTML>
-
-<HEAD>
-  <TITLE>FGFS Photo Gallery</TITLE>
-  <LINK REL="StyleSheet" TYPE="text/css" HREF="../fgfs.css">
-</HEAD>
-
-<BODY>
-
-<H2>FGFS [Historic] Photo Gallery - 01</H2>
+<H1>FGFS [Historic] Photo Gallery - 01</H1>
 
 These are some images that document the historical development of the
 project.  They show aspects of the project in it's early stages, and
@@ -196,19 +187,3 @@ by flight gear.
   <LI><A HREF="Compare/khsp.html">Hot Springs, VA</A>
   <LI><A HREF="Compare/ksez.html">Sedona, AZ</A>
 </UL>
-
-<!-- Standard Footer Begin -->
-
-<HR>
-
-<ADDRESS>
-Last modified:  6/28/2002 <BR>
-<A HREF="http://www.menet.umn.edu/~curt/">Curtis L. Olson</A> <BR>
-<IMG SRC="http://www.flightgear.org/email-fg.png">
-</ADDRESS>
-
-<!-- Standard Footer End -->
-
-</BODY>
-
-</HTML>

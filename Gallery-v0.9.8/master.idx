@@ -1,13 +1,4 @@
-<HTML>
-
-<HEAD>
-  <TITLE>FGFS Photo Gallery</TITLE>
-  <LINK REL="StyleSheet" TYPE="text/css" HREF="../fgfs.css">
-</HEAD>
-
-<BODY>
-
-<H2>FGFS Photo Gallery</H2>
+<H1>FGFS Photo Gallery</H1>
 
 I will typically put the most recent images first.  In general, the
 closer you get to the bottom, the older the code was when the image
@@ -19,6 +10,14 @@ images chronicling several years of FlightGear
 development</A></STRONG>
 
 <HR>
+
+<H3>September 2003</H3>
+
+Here is a 60 second movie of Lee's YF-23 cruising over some SRTM derived
+terrain.
+
+fgfs-movie1.AVI
+
 
 <H3>March 2003</H3>
 
@@ -38,7 +37,7 @@ terrain6.jpg
 
 <HR>
 
-<H3>June 2002 Vintage Images</H3>
+<H3>June 2002</H3>
 
 Quite a bit of work has been done in support of 3d aircraft models and
 animation which can be viewed from tower or chase plane views.  Also a
@@ -52,7 +51,7 @@ a4-03.jpg
 
 <HR>
 
-<H3>April 2002 Vintage Images</H3>
+<H3>April 2002</H3>
 
 Here are a few new screen shots taken in the March/April 2002 time frame.
 
@@ -147,20 +146,3 @@ lc1.jpg
 lc2.jpg
 lc3.jpg
 wh-tux.jpg
-
-
-<!-- Standard Footer Begin -->
-
-<HR>
-
-<ADDRESS>
-Last modified:  6/28/2002 <BR>
-<A HREF="http://www.menet.umn.edu/~curt/">Curtis L. Olson</A> <BR>
-<IMG SRC="http://www.flightgear.org/email-fg.png">
-</ADDRESS>
-
-<!-- Standard Footer End -->
-
-</BODY>
-
-</HTML>

@@ -1,0 +1,211 @@
+
+<!-- Standard Header Begin -->
+<html>
+
+<head>
+  <title>FlightGear Flight Simulator</title>
+  <link rel="stylesheet" type="text/css" href="http://www.flightgear.org/default.css"> 
+</head>
+
+<body>
+  <div id="top">
+    <a href="http://www.flightgear.org/"><img id="titlebar" src="http://www.flightgear.org/images/fglogosm.jpg" alt=""></a>
+  </div>
+
+  <table id="global">
+    <tbody><tr>
+      <td id="menu">
+	<!-- Use a replacescript to update the menu -->
+	<h3>About</h3>
+	<a href="/index.html">Home</a><br>
+	<a href="/introduction.html">Introduction</a><br>
+	<a href="/overview.html">Overview</a><br>
+	<a href="/features.html">Features</a><br>
+	<!-- about.hook.1-->
+        <a href="/Gallery/index.shtml">Screenshots</a><br>
+	<!-- about.hook.2-->
+	<h3>Downloads</h3>
+	<a href="/Downloads/source.html">Source Code</a><br>
+	<a href="/Downloads/binary.html">Executables</a><br>
+	<a href="/Downloads/scenery.html">Worldwide Scenery</a><br>
+	<!-- downloads.hook.1-->
+	<!-- downloads.hook.2-->
+	<h3>Support</h3>
+	<a href="/version.html">Version Summary</a><br>
+	<a href="/hardwarereq.html">Hardware Requirements</a><br>
+	<a href="/docs.html">Documentation</a><br>
+	<a href="/places.html">Places to Fly</a><br>
+	<a href="/mail.html">Mailing Lists</a><br>
+	<a href="/Docs/FAQ.shtml">FAQ</a><br>
+	<!-- support.hook.1-->
+	<!-- support.hook.2-->
+	<h3>Links</h3>
+	<a href="/links.html">Related Websites</a><br>
+	<a href="/projects.html">Related Projects</a><br>
+	<!-- support.hook.1-->
+	<!-- support.hook.2-->
+	<h3>Contribute</h3>
+	<a href="/contributing.html">Contributing</a><br>
+	<a href="/cvs.html">CVS Resources</a><br>
+	<a href="/goals.html">Goals</a><br>
+	<a href="/thanks.html">Contributors</a><br>
+	<a href="/design.html">Design Proposals</a><br>
+	<a href="/events.html">Events</a><br>
+	<!-- support.hook.1-->
+	<!-- support.hook.2-->
+      </td>
+      <td id="page">
+<!-- Standard Header End -->
+
+<H1>FGFS Hardware Information</H1><BR>
+
+Flight Gear is a fairly typical OpenGL application in terms of it's
+performance and hardware requirements.  It requires a reasonable
+hardware accelerated 3D card with full <STRONG>OpenGL</STRONG> drivers
+to achieve smooth frame rates.  Software only rendering typically
+yields frame rates in the neighborhood of 1 frame per second.  But,
+with a 3d accelerated card you can expect much higher.  On a 1Ghz
+class CPU with a GeForce card, frame rates in excess of 60 fps are
+reasonable to expect in many situations.  The actual frame rate varies
+of course with scene complexity (which changes from area to area and
+changes as your view direction changes.)
+
+<BR><BR>
+
+<H3>OpenGL Drivers for Win32 and Mac</H3>
+
+Most modern computers these days ship with hardware accelerated 3D
+cards.  If you are having trouble running FlightGear it is often worth
+your time to visit your card manufacturer's web site and download and
+install the latest drivers for your card.
+<A HREF="../Docs/InstallGuide/getstartap2.html#x13-57000B">
+Appendix B of the FlightGear Installation and Getting Started
+Guide</A> has some further information on configuring your machine to
+run OpenGL applications.<BR><BR>
+
+<H3>OpenGL Drivers for Linux, FreeBSD, etc.</H3>
+
+I believe that voodoo, ati, and nvidia cards are all pretty well
+supported by the PC Unixen.  Depending on your video card, your
+distribution, and your sys-admin experience, getting accelerated
+drivers running can be more or less of a challenge.  We have assembled
+some information and pointers to information for configuring your 3d
+card in
+<A HREF="../Docs/InstallGuide/getstartap2.html#x13-57000B">
+Appendix B of the FlightGear Installation and Getting Started
+Guide</A>.
+
+<BR>
+<BR>
+<H3>The Big Picture</H3>
+
+Here is a bit of general background information on OpenGL and 3D
+hardware acceleration contributed by Steve Baker 
+(<A HREF="mailto:sbaker@link.com">sbaker@link.com</A>) <BR>
+Updated by Curt Olson (9/25/2000)
+<P>
+
+When you are drawing graphics in 3D, there are generally a hierarchy
+of things to do:
+
+<OL>
+  <LI> Stuff you do per-frame (like reading the mouse, doing flight
+       dynamics)
+
+  <LI> Stuff you do per-object (like coarse culling, level-of-detail)
+
+  <LI> Stuff you do per-polygon or per-vertex (like
+       rotate/translate/clip/illuminate)
+
+  <LI> Stuff you do per-pixel (shading, texturing, Z-buffering,
+       alpha-blend)
+</OL>
+
+On a $1M full-scale flight simulator visual system, you do step (1) in
+the main CPU, and the hardware takes care of (2), (3) and (4)
+<P>
+
+On a $100k SGI workstation, you do (1) and (2) and the hardware takes
+care of (3) and (4)
+<P>
+
+On a $100 PC 3D card, you (or your OpenGL library software - which
+runs on the main CPU) do (1), (2) and (3) and the hardware takes care
+of (4).
+<P>
+
+On a machine without 3D hardware, the main CPU has to do everything.
+<P>
+
+The amount of work to do each of these operations goes up by one or
+two orders of magnitude at each step. One eyepoint, perhaps a hundred
+objects, tens of polygons per object, hundreds of pixels per polygon.
+<P>
+
+Hence, putting step (4) into hardware is vital - you could easily need
+to draw a million pixels for each time you read the mouse. Putting
+step (3) into hardware is also very nice - cards like the nVidia
+GeForce are now doing this.
+<P>
+
+So, if you put a cheap accelerated 3D card onto a slow-ish PC, you
+still get all the benefits of not doing the per-pixel math in software
+- so your frame rate will speed up. But since that per-pixel stuff now
+goes very fast, you are probably limited by the speed that your old
+clunker can do step (3) - the per-vertex math.
+<P>
+A card like the GeForce which can do step (3) will bring you even
+greater performance benefits on a slow-ish PC.
+<P>
+
+It has been suggested that even a 400MHz Pentium II couldn't feed
+vertices to a Voodoo-2 card faster than it could process them.  That
+was for a 'typical' scene though. If your polygons are very large (in
+terms of screen area) then the amount of per-pixel math will increase
+up to the point where even a slow PC would end up waiting for the 3D
+card to complete the rendering of one polygon before it can accept the
+next.
+<P>
+
+If your polygons are very small then the 3D card may not give you much
+benefit.  There is a certain amount of overhead in sending each
+polygon to the hardware from the main CPU - and that cost could
+ultimately be more than the cost of drawing the pixels in software if
+the polygons only cover a few pixels each.
+<P>
+ 
+If your 3D card doesn't provide a speedup then make sure you have a
+proper OpenGL driver installed for that card - some cards only support
+Direct3D which FGFS is unable to interface to. Some 3D cards can't
+function if you set the display resolution too large or the pixel
+depth to something that card won't support. Some OpenGL drivers
+silently drop back to software-only rendering under those
+circumstances.
+<P>
+
+In summary: Will a 3D card speed up FGFS on a standard PC? Yes -
+immensely.
+
+<!-- Standard Footer Begin -->
+      </td></tr>
+    </tbody>
+  </table>
+  <br>
+  <div id="bottom">
+    <a href="/">Home</a> | 
+    Download:
+      <a href="/Downloads/binary.html">FGFS</a> -
+      <a href="/Downloads/source.html">Source</a> -
+      <a href="/Downloads/scenery.html">Scenery</a> |
+    <a href="/Gallery/index.shtml">Screenshots</a> |
+    <a href="/docs.html">Documentation</a>
+    <br>
+    <br>
+    Last modified:  8/12/2003 <BR>
+    <A HREF="http://www.menet.umn.edu/~curt/">Curtis L. Olson</A>
+    <IMG ALIGN="MIDDLE" SRC="/email-fg.png">
+  </div>
+</body>
+
+</html>
+<!-- Standard Footer End -->

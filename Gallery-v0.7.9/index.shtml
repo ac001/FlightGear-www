@@ -55,3 +55,29 @@
       </td>
       <td id="page">
 <!-- Standard Header End -->
+
+<!--#include file="gallery.html"-->
+
+<!-- Standard Footer Begin -->
+      </td></tr>
+    </tbody>
+  </table>
+  <br>
+  <div id="bottom">
+    <a href="/">Home</a> | 
+    Download:
+      <a href="/Downloads/binary.html">FGFS</a> -
+      <a href="/Downloads/source.html">Source</a> -
+      <a href="/Downloads/scenery.html">Scenery</a> |
+    <a href="/Gallery/index.shtml">Screenshots</a> |
+    <a href="/docs.html">Documentation</a>
+    <br>
+    <br>
+    Last modified:  10/06/2003 <BR>
+    <A HREF="http://www.menet.umn.edu/~curt/">Curtis L. Olson</A>
+    <IMG ALIGN="MIDDLE" SRC="/email-fg.png">
+  </div>
+</body>
+
+</html>
+<!-- Standard Footer End -->
