@@ -25,7 +25,7 @@
         <a href="/Gallery/">Screenshots</a><br>
 	<!-- about.hook.2-->
 	<h3>Downloads</h3>
-	<a href="/Downloads/binary.html">Download Program</a><br>
+	<a href="/Downloads/binary.html">Download Application</a><br>
 	<a href="/Downloads/scenery.html">Download Scenery</a><br>
 	<a href="/Downloads/source.html">Download Source Code</a><br>
 	<a href="http://cdrom.flightgear.org">FlightGear CD's</a><br>
@@ -37,7 +37,7 @@
 	<a href="/hardwarereq.html">Hardware Requirements</a><br>
 	<a href="/docs.html">Documentation</a><br>
 	<a href="/places.html">Places to Fly</a><br>
-	<a href="/mail.html">Mailing Lists & Forums</a><br>
+	<a href="/mail.html">Lists, Forums, and IRC</a><br>
 	<a href="/Docs/FAQ.shtml">FAQ</a><br>
 	<!-- support.hook.1-->
 	<!-- support.hook.2-->
@@ -60,6 +60,36 @@
 <!-- Standard Header End -->
 
 <H1>FlightGear Flight Simulator Version Summary</H1>
+
+
+<H3>October 12, 2004: Version 0.9.6 released</H3>
+  <UL>
+    <LI> Added some initial support for "submodels" which can be used to
+  impliment things like contrails, flares, tracers, etc.
+    <LI> Make real world weather fetching a bit more robust and network friendly.
+    <LI> Ensure the entire world is initially loaded before initializing the
+  flight dynamics (avoids wildly varying frame rates at a time when
+  the FDM might be trying to do various initialization steps that
+  might benefit from consistent and fast frame rates.)
+    <LI> Other various (and minor) code cleanups, tweaks, and fixes.
+    <LI> Fixed ATIS voice file.
+    <LI> Updated aircraft: A320, Bo-105, Comper Swift, Concorde, F16,
+  Fokker-50, Fokker-100, Hunter, MD11, PC7, Spitfire, adjust
+  C172 cockpit sound levels, and Sgs-233.
+    <LI> Updated joystick configs: CH pro yoke usb, Cyborg Evo, Thrustmaster FCS.
+    <LI> Fix a bug in the nasal fuel tank management code.
+    <LI> Return Canadian ILS's to nav data.
+    <LI> Cleaned up some of the 3d models around the bay area.
+    <LI> Add support for display list based rendering which yields
+  substantial performance gains for many systems.
+    <LI> Synced with latest JSBSim code.
+    <LI> Fixed a reference point bug in YASim.
+    <LI> Revived the hi-res (tiled) screen shot code so you can again produce
+  insanely and arbitrarily large resolution screen shots.
+    <LI> Beefed up the tile pager so it can more sensibly handle insanely
+  rapid motion.
+  </UL>
+
 
 <H3>July 29, 2004: Version 0.9.5 released</H3>
   <UL>
