@@ -28,7 +28,7 @@
     <h2>
       <a name="toc">Table of Contents</a>
     </h2>
-    <h4>1 -
+    <h4>1 - 
     <a href="#1">The FAQ</a>
     </h4>
     <div class="indent">1.1 -
@@ -44,8 +44,8 @@
       <a href="#1.4">What other important documentation should I read?</a>
     </div>
     <br>
-    <h4>1 -
-    <a href="#1">Distribution</a>
+    <h4>2 - 
+    <a href="#2">Distribution</a>
     </h4>
     <div class="indent">2.1 -
       <a href="#2.1">Where can I get FlightGear?</a>
@@ -78,8 +78,8 @@
       <a href="#2.10">Why don't you charge money for this?</a>
     </div>
     <br>
-    <h4>1 -
-    <a href="#1">Compiling</a>
+    <h4>3 - 
+    <a href="#3">Compiling</a>
     </h4>
     <div class="indent">3.1 -
       <a href="#3.1">Why won't FlightGear compile?</a>
@@ -91,8 +91,8 @@
       <a href="#3.3">I'm using MSVC 6.0, and ...?</a>
     </div>
     <br>
-    <h4>1 -
-    <a href="#1">Configuring</a>
+    <h4>4 - 
+    <a href="#4">Configuring</a>
     </h4>
     <div class="indent">4.1 -
       <a href="#4.1">How do I install new scenery?</a>
@@ -104,8 +104,8 @@
       <a href="#4.3">What format should my personal .fgfsrc file be in?</a>
     </div>
     <br>
-    <h4>1 -
-    <a href="#1">Running</a>
+    <h4>5 - 
+    <a href="#5">Running</a>
     </h4>
     <div class="indent">5.1 -
       <a href="#5.1">Why do I get an error loading libmk4.so.0?</a>
@@ -135,8 +135,8 @@
       <a href="#5.9">Why does FlightGear die on startup saying "time zone reading failed"?</a>
     </div>
     <br>
-    <h4>1 -
-    <a href="#1">Hacking</a>
+    <h4>6 - 
+    <a href="#6">Hacking</a>
     </h4>
     <div class="indent">6.1 -
       <a href="#6.1">What language is FlightGear written in?</a>
@@ -169,8 +169,8 @@
       <a href="#6.10">How do I generate my own scenery?</a>
     </div>
     <br>
-    <h4>1 -
-    <a href="#1">Flying</a>
+    <h4>7 - 
+    <a href="#7">Flying</a>
     </h4>
     <div class="indent">7.1 -
       <a href="#7.1">Where can I learn about instrument flying and navigation?</a>
@@ -185,18 +185,25 @@
       <a href="#7.4">Is there support for any military scenarios like dog fighting or bomb dropping?</a>
     </div>
     <br>
-    <h4>1 -
-    <a href="#1">FlightGear v0.7.6</a>
+    <h4>8 - 
+    <a href="#8">FlightGear v0.9.0</a>
     </h4>
     <div class="indent">8.1 -
-      <a href="#8.1">Why do I get an error in viewer.cxx about `exit' being undeclared?</a>
+      <a href="#8.1">Why do I get an error saying 'uiuc_getwind.h' isn't found?</a>
+    </div>
+    <br>
+    <h4>9 - 
+    <a href="#9">FlightGear v0.7.6</a>
+    </h4>
+    <div class="indent">9.1 -
+      <a href="#9.1">Why do I get an error in viewer.cxx about `exit' being undeclared?</a>
     </div>
     <br>
 
   
     <hr>
     <h2>
-      <a name="1">1 -
+      <a name="1">1 - 
     The FAQ</a>
     </h2>
         <b>
@@ -246,7 +253,7 @@
 
     <hr>
     <h2>
-      <a name="1">1 -
+      <a name="2">2 - 
     Distribution</a>
     </h2>
         <b>
@@ -370,7 +377,7 @@
       </a>
     </b>
         <div class="indent">
-          <p>A popular moving map display is avaliable under a separate
+          <p>A popular moving map display is available under a separate
           project called <i>Atlas</i>.  See
           <a href="http://atlas.sf.net/">http://atlas.sf.net/</a>.</p>
         </div>
@@ -393,7 +400,7 @@
 
     <hr>
     <h2>
-      <a name="1">1 -
+      <a name="3">3 - 
     Compiling</a>
     </h2>
         <b>
@@ -451,7 +458,7 @@
 
     <hr>
     <h2>
-      <a name="1">1 -
+      <a name="4">4 - 
     Configuring</a>
     </h2>
         <b>
@@ -504,7 +511,7 @@
 
     <hr>
     <h2>
-      <a name="1">1 -
+      <a name="5">5 - 
     Running</a>
     </h2>
         <b>
@@ -689,7 +696,7 @@
 
     <hr>
     <h2>
-      <a name="1">1 -
+      <a name="6">6 - 
     Hacking</a>
     </h2>
         <b>
@@ -732,9 +739,17 @@
           <p>To define an aircraft for FlightGear's primary FDM (JSBSIM),
           see <a href="http://jsbsim.sf.net/">http://jsbsim.sf.net/</a>.</p>
           <p>If you want a simpler FDM to work with, try your hand at YASim,
-          an alternative FDM.  For an guide on creating a YASim aircraft,
+          an alternative FDM.  For a guide on creating a YASim aircraft,
           look in the FlightGear base package for
           <code>Aircraft-yasim/README.yasim</code>.</p>
+          <p>Another FDM that is based fundamentally on conventional
+          aerodynamic coefficients and stability derivatives (like JSBSim) is
+          the UIUC Aeromodel.  Examples of those aircraft are ones that have
+          the "uiuc" in the file name in the base package Aircraft directory
+          (e.g., Fokker Dr.1, Sopwith Camel, ASW-20, and Airwave hang glider).
+          Additional information on the UIUC Aeromodel can be found at
+          <a href="http://www.aae.uiuc.edu/m-selig/apasim/Aircraft-uiuc.html">http://www.aae.uiuc.edu/m-selig/apasim/Aircraft-uiuc.html</a>
+      </p>
         </div>
       
         <b>
@@ -886,7 +901,7 @@
 
     <hr>
     <h2>
-      <a name="1">1 -
+      <a name="7">7 - 
     Flying</a>
     </h2>
         <b>
@@ -921,9 +936,9 @@
         <div class="indent">
           <p>We have an initial stab at this that is incomplete and only seems
           to work under Linux.  We'd love to find someone to pick up the
-          slack here and develop this further.  Specifically, plib now has
-          some low level networking support for mult-player games.  It would
-          also be nice to develop support for the DIS protocol.</p>
+          slack here and develop this further.  Plib now has some low level
+          networking support for multi-player games.  It would also be nice to
+          develop support for the DIS protocol.</p>
         </div>
       
         <b>
@@ -932,20 +947,37 @@
       </a>
     </b>
         <div class="indent">
-          <p>No, not at this time.  Most of our developers are primarily
-          interested and focused on civilian aviation.  We aren't explicitly
+          <p>No, we do not currently support combat.  Most of our developers
+          are primarily focused on civilian aviation.  We aren't explicitly
           excluding these features -- we just haven't had anyone who seriously
           wanted to develop these areas.</p>
+          <p>However, FlightGear does contain several military aircraft, albeit
+          without munitions.</p>
         </div>
       
 
     <hr>
     <h2>
-      <a name="1">1 -
-    FlightGear v0.7.6</a>
+      <a name="8">8 - 
+    FlightGear v0.9.0</a>
     </h2>
         <b>
       <a name="8.1">8.1 -
+    <u>Why do I get an error saying 'uiuc_getwind.h' isn't found?</u>
+      </a>
+    </b>
+        <div class="indent">
+          <p>This error was caused by a packaging blunder.  Please upgrade to v0.9.1.</p>
+        </div>
+      
+
+    <hr>
+    <h2>
+      <a name="9">9 - 
+    FlightGear v0.7.6</a>
+    </h2>
+        <b>
+      <a name="9.1">9.1 -
     <u>Why do I get an error in viewer.cxx about `exit' being undeclared?</u>
       </a>
     </b>
