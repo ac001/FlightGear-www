@@ -1,6 +1,16 @@
 <?php
 
-$version = 0.1;
+$version = 0.2;
+
+//****************************************************
+//                                                   *
+// This is the CGI back-end for the Aero-Matic gen-  *
+// erator. The front-end is aeromatic.html.          *
+//                                                   *
+// June 2003, David P. Culp, davidculp2@comcast.net  *
+//                                                   * 
+//****************************************************
+
 
 //***** GET DATA FROM USER ***************************
 

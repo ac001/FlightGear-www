@@ -1,11 +1,22 @@
 <?php
 
-$version = 0.1;
+$version = 0.2;
+
+//****************************************************
+//                                                   *
+// This is the CGI back-end for the Aero-Matic gen-  *
+// erator. The front-end is aeromatic.html.          *
+//                                                   *
+// July 2003, David P. Culp, davidculp2@comcast.net  *
+//                                                   * 
+//****************************************************
+
 
 //***** GET DATA FROM USER ***************************
 
 $ac_enginepower     = $_POST['ac_enginepower'];
 $ac_engineunits     = $_POST['ac_engineunits'];
+$ac_pitch           = $_POST['ac_prop_pitch'];
 
 //***** CONVERT TO ENGLISH UNITS *********************
 
@@ -59,34 +70,73 @@ print("<FG_PROPELLER NAME=\"prop\">\n");
 print("  IXX        $ixx\n");
 print("  DIAMETER   $dia\n");
 print("  NUMBLADES  $blades\n");
-print("  MINPITCH   23\n");
-print("  MAXPITCH   23\n");
+if($ac_pitch == 0) {
+  print("  MINPITCH   30\n");
+ } else {
+  print("  MINPITCH   10\n");
+ }
+print("  MAXPITCH   30\n");
 print("  MINRPM    700\n");
 print("  MAXRPM   2700\n");
-print("  C_THRUST   11 1\n");
-print("  0.0  0.936\n");
-print("  0.1  0.927\n");
-print("  0.2  0.918\n");
-print("  0.3  0.909\n");
-print("  0.4  0.828\n");
-print("  0.5  0.738\n");
-print("  0.6  0.063\n");
-print("  0.7  0.049\n");
-print("  0.8  0.036\n");
-print("  0.9  0.020\n");
-print("  1.0  0.004\n");
-print("  C_POWER   11 1\n");
-print("  0.0  0.0594\n");
-print("  0.1  0.0585\n");
-print("  0.2  0.0576\n");
-print("  0.3  0.0558\n");
-print("  0.4  0.0540\n");
-print("  0.5  0.0522\n");
-print("  0.6  0.0495\n");
-print("  0.7  0.0432\n");
-print("  0.8  0.0342\n");
-print("  0.9  0.0225\n");
-print("  1.0  0.0090\n");
+
+if($ac_pitch == 0) {          // fixed pitch
+ print("  C_THRUST   11 1\n");
+ print("  0.0  0.936\n");
+ print("  0.1  0.927\n");
+ print("  0.2  0.918\n");
+ print("  0.3  0.909\n");
+ print("  0.4  0.828\n");
+ print("  0.5  0.738\n");
+ print("  0.6  0.063\n");
+ print("  0.7  0.049\n");
+ print("  0.8  0.036\n");
+ print("  0.9  0.020\n");
+ print("  1.0  0.004\n");
+} else {                      // variable pitch
+ print("  C_THRUST   11 2\n");
+ print("       10      30\n");
+ print("  0.0  0.07488 0.0936\n");
+ print("  0.1  0.07416 0.0927\n");
+ print("  0.2  0.07344 0.0918\n");
+ print("  0.3  0.07272 0.0909\n");
+ print("  0.4  0.06625 0.0828\n");
+ print("  0.5  0.05904 0.0738\n");
+ print("  0.6  0.05040 0.0630\n");
+ print("  0.7  0.03920 0.0490\n");
+ print("  0.8  0.02880 0.0360\n");
+ print("  0.9  0.01600 0.0200\n");
+ print("  1.0  0.00320 0.0040\n");
+}
+
+if($ac_pitch == 0) {          // fixed pitch
+ print("  C_POWER   11 1\n");
+ print("  0.0  0.0594\n");
+ print("  0.1  0.0585\n");
+ print("  0.2  0.0576\n");
+ print("  0.3  0.0558\n");
+ print("  0.4  0.0540\n");
+ print("  0.5  0.0522\n");
+ print("  0.6  0.0495\n");
+ print("  0.7  0.0432\n");
+ print("  0.8  0.0342\n");
+ print("  0.9  0.0225\n");
+ print("  1.0  0.0090\n");
+} else {                      // variable pitch
+ print("  C_POWER   11 2\n");
+ print("       10      30\n");
+ print("  0.0  0.02287 0.10395\n");
+ print("  0.1  0.02252 0.10237\n");
+ print("  0.2  0.02217 0.10080\n");
+ print("  0.3  0.02148 0.09765\n");
+ print("  0.4  0.02079 0.09450\n");
+ print("  0.5  0.02009 0.09135\n");
+ print("  0.6  0.01905 0.08662\n");
+ print("  0.7  0.01663 0.07560\n");
+ print("  0.8  0.01316 0.05985\n");
+ print("  0.9  0.00866 0.03937\n");
+ print("  1.0  0.00346 0.01575\n");
+}
+
 print("</FG_PROPELLER>\n");
 
 ?>
