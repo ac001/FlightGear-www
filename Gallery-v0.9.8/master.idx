@@ -15,6 +15,24 @@ was captured.
 
 <HR>
 
+<H3>March 2003</H3>
+
+A new terrain approximation algorithm has been implimented which yields
+much nicer results than the previous (really stupid) algorithm.  Here are some
+samples from near the SFO bay area.  The new algorithm does a much nicer
+job at preserving the important underlying terrain structure including
+ridges and valleys.
+
+terrain1.jpg
+terrain2.jpg
+terrain3.jpg
+terrain4.jpg
+terrain5.jpg
+terrain6.jpg
+
+
+<HR>
+
 <H3>June 2002 Vintage Images</H3>
 
 Quite a bit of work has been done in support of 3d aircraft models and
