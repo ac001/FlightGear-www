@@ -1,0 +1,144 @@
+<H1>John Wojnaroski's 747 Project</H1>
+
+<H3>INTRODUCTION</H3>
+
+Two years ago Curtis posted a query to see if anyone was interested in
+developing glass displays for FlightGear based on the OpenGC
+project. One thing led to another and after developing some early
+software (<A HREF="http://www.opengc.org">http://www.opengc.org</A>)
+and meeting with Jim Brennan and several months browsing websites of
+sim developers and cockpit builders I decided to take it one step
+further and build some hardware.  <P>
+
+Curtis has graciously offered the services and resources of the
+FlightGear website to publish the results of the project and on-going
+progress towards a fully functional system.  Here is an initial, brief
+description of a work in progress to build a functional flight
+simulator with a cluster of Linux based PCs.
+<P>
+
+
+<H3>FUNCTIONAL DESCRIPTION</H3>
+
+The preliminary design consists of four PCs connected with a LAN,
+display monitors, and a prototype interface board for driving LED
+displays and reading the wide variety of switches and controls that
+populate a modern flightdeck.
+<P>
+
+The Captain's PC (CAP_PC) operates the left joystick,
+captain's primary displays, standby instruments, primary
+EICAS, and left FMC #1 . The First Officer's PC (FO_PC)
+operates the first officers primary displays, secondary EICAS, right
+joystick, throttles, and right FMC #2. The MCDU PC (MCDU_PC) operates
+the MCDU displays, FMC #3 and provides the primary interface to the
+cockpit hardware. It also serves as the network center or master
+controller and interface to the FlightGear PC (FG_PC) that provides
+all the scenery and flight dynamics and out-the-window view.
+<P>
+
+The network is built around the FlightGear options for sending state
+data to the display machines and receiving control data from the
+flightdeck to activate aircraft systems, avionics, flight controls,
+and throttles.
+<P>
+ 
+107_0705.JPG
+107_0719.jpg
+
+
+<H3>GLARESHIELD DESCRIPTION</H3>
+
+The row of switches and panels located above the displays provide for
+aircrew control and selection of a variety of display modes,
+navigation and system data, and data entry to the autopilot systems. A
+good description of flightdecks and glass displays is available at <A
+REF="http://www.meriweather.com/flightdeck.html">http://www.meriweather.com/flightdeck.html</A>
+<P>
+
+The panels were provided by Advanced Graphics Technologies <A
+HREF="http://www.aircraftsimulators.com">http://www.aircraftsimulators.com</A>
+and the electronics provide for interfacing 48 momentary switches, 128
+static switches, and six rotary encoders, plus the drivers for 16
+7-segment LEDs. The interface to the PC is via a parallel port and an
+interrupt driven linux device driver.
+<P>
+
+107_0726.jpg
+107_0728.jpg
+
+
+<H3>2004 PLANS</H3>
+
+Complete fabrication of the main display overlay panels and
+installation of gear panel, master caution lights, and red/white flood
+lights
+<P>
+
+Install digital projection system for center screen.
+<P>
+
+Complete fabrication of center console with throttle/flap assembly and
+radio/nav panels
+<P>
+
+Procure or fabricate MCDU faceplates and build electronics to
+interface panel keys
+<P>
+
+Continue software development and models for fuel, electrical,
+hydraulic, etc systems
+  
+
+<H3>2005 PLANS</H3>
+
+More software development
+<P>
+
+Left and right digital projection screens and supporting PCs
+<P>
+
+Design refinement as time and budget warrant
+<P>
+
+747hull.jpg
+
+Continue the scavenge hunt for spare parts and equipment
+
+
+<H3>ACKNOWLEDGEMENTS</H3>
+
+Special thanks to the following for their time and support:
+<P>
+
+Curtis Olson, who provided assistance and help in my understanding of
+the FlightGear architecture and C++
+<P>
+
+Jim Brennan, who provided volumes of data, manuals, and information on
+the 747 and its systems
+<P>
+
+Damion Shelton, the author of OpenGC, for his critique and assistance
+in the early development of the display software
+<P>
+
+Mark Harris, for the sophisticated and elegant 3D cloud software,
+I'm still trying to fully comprehend,
+<P>
+
+David Culp, who provided information on current cockpit procedures
+required to execute instrument approaches and engine start sequences,
+and finally
+<P>
+
+The FlightGear community and user groups for providing a wealth of
+ideas, discussions, and opinions through their emails on every aspect
+of computer modeling.
+<P>
+
+Here are a couple additional pictures:
+
+107_0701.JPG
+107_0704.JPG
+107_0716.jpg
