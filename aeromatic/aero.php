@@ -1,6 +1,6 @@
 <?php
 
-$version = 0.4;
+$version = 0.7;
 
 //****************************************************
 //                                                   *
@@ -10,7 +10,11 @@ $version = 0.4;
 // July 2003, David P. Culp, davidculp2@comcast.net  *
 //                                                   * 
 //****************************************************
+// Updated: 29 Sep 2003, DPC - added high alpha/beta drag
 // Updated: 5 Sep 2003, DPC - added prop transport
+// Updated: 16 Oct 2003, DPC - added better FCS
+
+header("Content-type: text/plain");
 
 
 //***** GET DATA FROM USER ***************************
@@ -58,16 +62,16 @@ if ($ac_units == 1) {
 
 // first, estimate wing loading in psf
 switch($ac_type) { 
-  case 0: $ac_wingloading = 7.0; break;
-  case 1: $ac_wingloading = 14.0; break;
-  case 2: $ac_wingloading = 29.0; break;
-  case 3: $ac_wingloading = 45.0; break;
-  case 4: $ac_wingloading = 95.0; break;
-  case 5: $ac_wingloading = 100.0; break;
-  case 6: $ac_wingloading = 110.0; break;
-  case 7: $ac_wingloading = 110.0; break;
-  case 8: $ac_wingloading = 110.0; break;
-  case 9: $ac_wingloading = 57.0; break;
+  case 0: $ac_wingloading = 7.0; break;   // glider
+  case 1: $ac_wingloading = 14.0; break;  // light single
+  case 2: $ac_wingloading = 29.0; break;  // light twin
+  case 3: $ac_wingloading = 45.0; break;  // WW2 fighter, racer
+  case 4: $ac_wingloading = 95.0; break;  // single-eng jet fighter
+  case 5: $ac_wingloading = 100.0; break; // 2-eng jet fighter
+  case 6: $ac_wingloading = 110.0; break; // 2-eng jet transport
+  case 7: $ac_wingloading = 110.0; break; // 3-eng jet transport
+  case 8: $ac_wingloading = 110.0; break; // 4-eng jet transport
+  case 9: $ac_wingloading = 57.0; break;  // prop transport
   }
 
 // if no wing area given, use wing loading to estimate
@@ -294,13 +298,13 @@ $ac_gearlocx_tail = $ac_length * 0.91 * 12;
 $ac_gearlocy_tail = 0;
 $ac_gearlocz_tail = $ac_gearlocz_main * 0.30;
 
-$ac_gearspring_main = $ac_weight * 0.5;
-$ac_gearspring_nose = $ac_weight * 0.3;
-$ac_gearspring_tail = $ac_weight * 0.3;
+$ac_gearspring_main = $ac_weight * 5.0;
+$ac_gearspring_nose = $ac_weight * 1.4;
+$ac_gearspring_tail = $ac_weight * 1.0;
 
-$ac_geardamp_main = $ac_weight * 0.1;
-$ac_geardamp_nose = $ac_weight * 0.05;
-$ac_geardamp_tail = $ac_weight * 0.1;
+$ac_geardamp_main = $ac_weight * 0.2;
+$ac_geardamp_nose = $ac_weight * 0.1;
+$ac_geardamp_tail = $ac_weight * 0.8;
 
 $ac_geardynamic = 0.5;
 $ac_gearstatic  = 0.8;
@@ -356,18 +360,18 @@ if ($ac_enginelayout == 3) {
   $remainder = $ac_numengines - ($halfcount * 2);
   for($i=0; $i<$halfcount; $i++) {                 //left wing
       $ac_englocx[$i] = $ac_cglocx;
-      $ac_englocy[$i] = $ac_wingspan * -2.0;
+      $ac_englocy[$i] = $ac_wingspan * -2.0;       // span/-2/3*12
       $ac_englocz[$i] = -40; 
      }    
-  for($j=$i; $j<$halfcount+$remainder; $j++) {      //center
+  for($j=$i; $j<$halfcount+$remainder; $j++) {     //center
       $ac_englocx[$j] = $ac_cglocx;
       $ac_englocy[$j] = 0;
       $ac_englocz[$j] = -20; 
      }    
-  for($k=$j; $k<$ac_numengines; $k++) {             //right wing
-      $ac_englocx[$i] = $ac_cglocx;
-      $ac_englocy[$i] = $ac_wingspan * 2.0;
-      $ac_englocz[$i] = -40; 
+  for($k=$j; $k<$ac_numengines; $k++) {            //right wing
+      $ac_englocx[$k] = $ac_cglocx;
+      $ac_englocy[$k] = $ac_wingspan * 2.0;        // span/2/3*12
+      $ac_englocz[$k] = -40; 
      }    
   }
 
@@ -377,18 +381,18 @@ if ($ac_enginelayout == 4) {
   $remainder = $ac_numengines - ($halfcount * 2);
   for($i=0; $i<$halfcount; $i++) {                 //left wing
       $ac_englocx[$i] = $ac_cglocx;
-      $ac_englocy[$i] = $ac_wingspan * -2.0;
+      $ac_englocy[$i] = $ac_wingspan * -2.0;       // span/-2/3*12
       $ac_englocz[$i] = -40; 
      }    
-  for($j=$i; $j<$halfcount+$remainder; $j++) {      //center
-      $ac_englocx[$j] = 36.0;
+  for($j=$i; $j<$halfcount+$remainder; $j++) {     //center
+      $ac_englocx[$j] = $ac_length - 60;
       $ac_englocy[$j] = 0;
-      $ac_englocz[$j] = 0; 
+      $ac_englocz[$j] = 60; 
      }    
-  for($k=$j; $i<$ac_numengines; $i++) {             //right wing
-      $ac_englocx[$i] = $ac_cglocx;
-      $ac_englocy[$i] = $ac_wingspan * 2.0;
-      $ac_englocz[$i] = -40; 
+  for($k=$j; $i<$ac_numengines; $i++) {            //right wing
+      $ac_englocx[$k] = $ac_cglocx;
+      $ac_englocy[$k] = $ac_wingspan * 2.0;        // span/2/3*12 
+      $ac_englocz[$k] = -40; 
      }    
   }
 
@@ -398,18 +402,18 @@ if ($ac_enginelayout == 5) {
   $remainder = $ac_numengines - ($halfcount * 2);
   for($i=0; $i<$halfcount; $i++) {                 //left wing
       $ac_englocx[$i] = $ac_cglocx;
-      $ac_englocy[$i] = $ac_wingspan * -2.0;
+      $ac_englocy[$i] = $ac_wingspan * -2.0;       //span/-2/3*12
       $ac_englocz[$i] = -40; 
      }    
-  for($j=$i; $j<$halfcount+$remainder; $j++) {      //center
-      $ac_englocx[$j] = $ac_length - 60;
+  for($j=$i; $j<$halfcount+$remainder; $j++) {     //center
+      $ac_englocx[$j] = 36.0;
       $ac_englocy[$j] = 0;
-      $ac_englocz[$j] = 60; 
+      $ac_englocz[$j] = 0; 
      }    
-  for($k=$j; $i<$ac_numengines; $i++) {             //right wing
-      $ac_englocx[$i] = $ac_cglocx;
-      $ac_englocy[$i] = $ac_wingspan * 2.0;
-      $ac_englocz[$i] = -40; 
+  for($k=$j; $i<$ac_numengines; $i++) {            //right wing
+      $ac_englocx[$k] = $ac_cglocx;
+      $ac_englocy[$k] = $ac_wingspan * 2.0;        //span/2/3*12
+      $ac_englocz[$k] = -40; 
      }    
   }
 
@@ -435,13 +439,25 @@ switch($ac_enginetype) {
 
 //***** FUEL TANKS **********************************
 
-// all tanks at CG and contain 500 pounds fuel
+// an N-engined airplane will have N+1 fuel tanks
+// all tanks located at CG and are half full
 $ac_tanklocx = $ac_cglocx;
 $ac_tanklocy = $ac_cglocy;
 $ac_tanklocz = $ac_cglocz;
 $ac_tankradius = 1;
-$ac_tankcapacity = 500.0;
-$ac_tankcontents = $ac_tankcapacity;
+switch($ac_type) {
+  case 0: $ac_tankcapacity = 0; break;
+  case 1: $ac_tankcapacity = 20; break;
+  case 2: $ac_tankcapacity = 50; break;
+  case 3: $ac_tankcapacity = 200; break;
+  case 4: $ac_tankcapacity = 500; break;
+  case 5: $ac_tankcapacity = 700; break;
+  case 6: $ac_tankcapacity = $ac_weight/23.0/($ac_numengines + 1); break;
+  case 7: $ac_tankcapacity = $ac_weight/16.0/($ac_numengines + 1); break;
+  case 8: $ac_tankcapacity = $ac_weight/16.0/($ac_numengines + 1); break;
+  case 9: $ac_tankcapacity = $ac_weight/18.0/($ac_numengines + 1); break;
+  }
+$ac_tankcontents = $ac_tankcapacity/2;
 
 //***** LIFT ****************************************
 
@@ -452,8 +468,8 @@ switch($ac_type) {
   case 1: $ac_CLalpha = 5.0; break;
   case 2: $ac_CLalpha = 4.8; break;
   case 3: $ac_CLalpha = 4.5; break;
-  case 4: $ac_CLalpha = 4.0; break;
-  case 5: $ac_CLalpha = 4.0; break;
+  case 4: $ac_CLalpha = 3.5; break;
+  case 5: $ac_CLalpha = 3.6; break;
   case 6: $ac_CLalpha = 4.4; break;
   case 7: $ac_CLalpha = 4.4; break;
   case 8: $ac_CLalpha = 4.4; break;
@@ -474,10 +490,21 @@ switch($ac_type) {
   case 9: $ac_CL0 = 0.24; break;
   }
 
-// estimate stall CL
-$ac_CLmax = 1.4;
+// estimate stall CL, based on airplane type
+switch($ac_type) {
+  case 0: $ac_CLmax = 1.40; break;
+  case 1: $ac_CLmax = 1.40; break;
+  case 2: $ac_CLmax = 1.30; break;
+  case 3: $ac_CLmax = 1.20; break;
+  case 4: $ac_CLmax = 1.00; break;
+  case 5: $ac_CLmax = 1.00; break;
+  case 6: $ac_CLmax = 1.20; break;
+  case 7: $ac_CLmax = 1.20; break;
+  case 8: $ac_CLmax = 1.20; break;
+  case 9: $ac_CLmax = 1.40; break;
+  }
 
-// estimate delta-CL, based on airplane type
+// estimate delta-CL-flaps, based on airplane type
 switch($ac_type) {
   case 0: $ac_dCLflaps = 0.200; break;
   case 1: $ac_dCLflaps = 0.400; break;
@@ -485,10 +512,10 @@ switch($ac_type) {
   case 3: $ac_dCLflaps = 0.300; break;
   case 4: $ac_dCLflaps = 0.350; break;
   case 5: $ac_dCLflaps = 0.350; break;
-  case 6: $ac_dCLflaps = 1.0; break;
-  case 7: $ac_dCLflaps = 1.0; break;
-  case 8: $ac_dCLflaps = 1.0; break;
-  case 9: $ac_dCLflaps = 0.400; break;
+  case 6: $ac_dCLflaps = 1.500; break;
+  case 7: $ac_dCLflaps = 1.500; break;
+  case 8: $ac_dCLflaps = 1.500; break;
+  case 9: $ac_dCLflaps = 0.600; break;
   }
 
 // some types have speedbrakes in wings, affecting lift
@@ -517,8 +544,8 @@ switch($ac_type) {
   case 1: $ac_CD0 = 0.024; break;
   case 2: $ac_CD0 = 0.025; break;
   case 3: $ac_CD0 = 0.020; break;
-  case 4: $ac_CD0 = 0.025; break;
-  case 5: $ac_CD0 = 0.025; break;
+  case 4: $ac_CD0 = 0.021; break;
+  case 5: $ac_CD0 = 0.024; break;
   case 6: $ac_CD0 = 0.020; break;
   case 7: $ac_CD0 = 0.019; break;
   case 8: $ac_CD0 = 0.017; break;
@@ -547,9 +574,9 @@ switch($ac_type) {
   case 1: $ac_K = 0.040; break;
   case 2: $ac_K = 0.041; break;
   case 3: $ac_K = 0.045; break;
-  case 4: $ac_K = 0.050; break;
-  case 5: $ac_K = 0.050; break;
-  case 6: $ac_K = 0.042; break;
+  case 4: $ac_K = 0.090; break;
+  case 5: $ac_K = 0.090; break;
+  case 6: $ac_K = 0.043; break;
   case 7: $ac_K = 0.042; break;
   case 8: $ac_K = 0.042; break;
   case 9: $ac_K = 0.039; break;
@@ -560,9 +587,9 @@ switch($ac_type) {
   case 0: $ac_CDflaps = 0.024; break;
   case 1: $ac_CDflaps = 0.030; break;
   case 2: $ac_CDflaps = 0.039; break;
-  case 3: $ac_CDflaps = 0.030; break;
-  case 4: $ac_CDflaps = 0.030; break;
-  case 5: $ac_CDflaps = 0.030; break;
+  case 3: $ac_CDflaps = 0.040; break;
+  case 4: $ac_CDflaps = 0.080; break;
+  case 5: $ac_CDflaps = 0.075; break;
   case 6: $ac_CDflaps = 0.059; break;
   case 7: $ac_CDflaps = 0.057; break;
   case 8: $ac_CDflaps = 0.055; break;
@@ -617,12 +644,12 @@ switch($ac_type) {     // aileron
   case 1: $ac_Clda = 0.17; break;
   case 2: $ac_Clda = 0.17; break;
   case 3: $ac_Clda = 0.18; break;
-  case 4: $ac_Clda = 0.05; break;
-  case 5: $ac_Clda = 0.07; break;
-  case 6: $ac_Clda = 0.05; break;
-  case 7: $ac_Clda = 0.04; break;
-  case 8: $ac_Clda = 0.03; break;
-  case 9: $ac_Clda = 0.09; break;
+  case 4: $ac_Clda = 0.11; break;
+  case 5: $ac_Clda = 0.12; break;
+  case 6: $ac_Clda = 0.10; break;
+  case 7: $ac_Clda = 0.10; break;
+  case 8: $ac_Clda = 0.10; break;
+  case 9: $ac_Clda = 0.15; break;
   }
 $ac_Cldr = 0.01;       // rudder deflection
 
@@ -697,7 +724,7 @@ switch($ac_type) {
 // estimate yaw coefficients
 $ac_Cnbeta = 0.12;     // sideslip
 $ac_Cnr = -0.15;       // yaw rate
-$ac_Cndr = -0.10;       // rudder deflection
+$ac_Cndr = -0.10;      // rudder deflection
 if($ac_type == 0) $ac_Cndr = -0.03;  // glider
 
 switch($ac_type) {                   // adverse yaw
@@ -827,23 +854,23 @@ if($ac_type == 0) {  // if this is a glider
  }
  else {
    if ($ac_geartype == 0) {
-     print("  AC_GEAR NOSE_LG   $ac_gearlocx_nose $ac_gearlocy_nose $ac_gearlocz_nose ");
-     print("$ac_gearspring_nose $ac_geardamp_nose $ac_geardynamic $ac_gearstatic ");
-     print("$ac_gearrolling $ac_gearsteerable_nose NONE $ac_gearmaxsteer $ac_retract\n");
+     printf("  AC_GEAR NOSE_LG   %2.1f %2.1f %2.1f", $ac_gearlocx_nose, $ac_gearlocy_nose, $ac_gearlocz_nose);
+     printf(" %2.1f %2.1f %2.1f %2.1f", $ac_gearspring_nose, $ac_geardamp_nose, $ac_geardynamic, $ac_gearstatic);
+     printf(" %2.1f $ac_gearsteerable_nose NONE %2.1f $ac_retract\n", $ac_gearrolling, $ac_gearmaxsteer);
    }
 
-   print("  AC_GEAR LEFT_MLG  $ac_gearlocx_main -$ac_gearlocy_main $ac_gearlocz_main ");
-   print("$ac_gearspring_main $ac_geardamp_main $ac_geardynamic $ac_gearstatic ");
-   print("$ac_gearrolling $ac_gearsteerable_main LEFT 0 $ac_retract\n");
+   printf("  AC_GEAR LEFT_MLG  %2.1f %2.1f %2.1f", $ac_gearlocx_main, -$ac_gearlocy_main, $ac_gearlocz_main);
+   printf(" %2.1f %2.1f %2.1f %2.1f", $ac_gearspring_main, $ac_geardamp_main, $ac_geardynamic, $ac_gearstatic);
+   printf(" %2.1f $ac_gearsteerable_main LEFT  0 $ac_retract\n", $ac_gearrolling);
 
-   print("  AC_GEAR RIGHT_MLG $ac_gearlocx_main $ac_gearlocy_main $ac_gearlocz_main ");
-   print("$ac_gearspring_main $ac_geardamp_main $ac_geardynamic $ac_gearstatic ");
-   print("$ac_gearrolling $ac_gearsteerable_main RIGHT 0 $ac_retract\n");
+   printf("  AC_GEAR RIGHT_MLG %2.1f %2.1f %2.1f", $ac_gearlocx_main, $ac_gearlocy_main, $ac_gearlocz_main);
+   printf(" %2.1f %2.1f %2.1f %2.1f", $ac_gearspring_main, $ac_geardamp_main, $ac_geardynamic, $ac_gearstatic);
+   printf(" %2.1f $ac_gearsteerable_main RIGHT 0 $ac_retract\n", $ac_gearrolling);
 
    if ($ac_geartype == 1) {
-     print("  AC_GEAR TAIL_LG  $ac_gearlocx_tail $ac_gearlocy_tail $ac_gearlocz_tail ");
-     print("$ac_gearspring_tail $ac_geardamp_tail $ac_geardynamic $ac_gearstatic ");
-     print("$ac_gearrolling $ac_gearsteerable_tail NONE 0 $ac_retract\n");
+     printf("  AC_GEAR TAIL_LG  %2.1f %2.1f %2.1f", $ac_gearlocx_tail, $ac_gearlocy_tail, $ac_gearlocz_tail);
+     printf(" %2.1f %2.1f %2.1f %2.1f", $ac_gearspring_tail, $ac_geardamp_tail, $ac_geardynamic, $ac_gearstatic);
+     printf(" %2.1f $ac_gearsteerable_tail NONE 0 $ac_retract\n", $ac_gearrolling);
    }
  }
 
@@ -888,8 +915,8 @@ if($ac_type == 0) { // if glider, do nothing here
   print("    YLOC $ac_tanklocy \n");
   print("    ZLOC $ac_tanklocz \n");
   print("    RADIUS $ac_tankradius \n");
-  print("    CAPACITY $ac_tankcapacity \n");
-  print("    CONTENTS $ac_tankcontents \n");
+  printf("    CAPACITY %5.1f\n", $ac_tankcapacity);
+  printf("    CONTENTS %5.1f\n", $ac_tankcontents);
   print("  </AC_TANK>\n");
  }
 }
@@ -905,9 +932,8 @@ print("      CLIPTO  -1 1\n");
 print("   </COMPONENT>\n");
 print("   <COMPONENT NAME=\"Elevator Control\" TYPE=\"AEROSURFACE_SCALE\">\n");
 print("      INPUT   fcs/pitch-trim-sum\n");
-print("      MIN     -25\n");
-print("      MAX     35\n");
-print("      GAIN    0.018\n");
+print("      MIN     -0.350\n");
+print("      MAX      0.175\n");
 print("      OUTPUT  fcs/elevator-pos-rad\n");
 print("   </COMPONENT>\n");
 
@@ -918,55 +944,68 @@ print("      CLIPTO  -1 1\n");
 print("   </COMPONENT>\n");
 print("   <COMPONENT NAME=\"Left Aileron Control\" TYPE=\"AEROSURFACE_SCALE\">\n");
 print("      INPUT   fcs/roll-trim-sum\n");
-print("      MIN     -20\n");
-print("      MAX     15\n");
-print("      GAIN    0.02\n");
+print("      MIN    -0.35\n");
+print("      MAX     0.35\n");
 print("      OUTPUT  fcs/left-aileron-pos-rad\n");
 print("   </COMPONENT>\n");
 print("   <COMPONENT NAME=\"Right Aileron Control\" TYPE=\"AEROSURFACE_SCALE\">\n");
 print("      INPUT   fcs/roll-trim-sum\n");
-print("      MIN     -20\n");
-print("      MAX     15\n");
+print("      MIN    -0.35\n");
+print("      MAX     0.35\n");
 print("      INVERT\n");
-print("      GAIN    0.02\n");
 print("      OUTPUT  fcs/right-aileron-pos-rad\n");
 print("   </COMPONENT>\n");
 
-print("   <COMPONENT NAME=\"Yaw Trim Sum\" TYPE=\"SUMMER\">\n");
+print("   <COMPONENT NAME=\"Rudder Command Sum\" TYPE=\"SUMMER\">\n");
 print("      INPUT   fcs/rudder-cmd-norm\n");
 print("      INPUT   fcs/yaw-trim-cmd-norm\n");
 print("      CLIPTO  -1 1\n");
 print("   </COMPONENT>\n");
 
 if($ac_yawdamper == 1) {
-  print("   <COMPONENT NAME=\"Yaw Damper Rate\" TYPE=\"PURE_GAIN\">\n");
-  print("      INPUT   velocities/r-aero-rad_sec\n");
-  print("      GAIN    2.00\n");
+  print("   <COMPONENT NAME=\"Yaw Damper Rate\" TYPE=\"SCHEDULED_GAIN\">\n");
+  print("      INPUT        velocities/r-aero-rad_sec\n");
+  print("      SCHEDULED_BY aero/qbar-psf\n");
+  print("      ROWS         2\n");
+  print("       3.00        0.00\n");
+  print("      11.00        2.00\n");
   print("   </COMPONENT>\n");
-  print("   <COMPONENT NAME=\"Yaw Damper Beta\" TYPE=\"PURE_GAIN\">\n");
-  print("      INPUT   aero/beta-rad\n");
-  print("      GAIN    -5.00\n");
+  print("   <COMPONENT NAME=\"Yaw Damper Beta\" TYPE=\"SCHEDULED_GAIN\">\n");
+  print("      INPUT        aero/beta-rad\n");
+  print("      SCHEDULED_BY aero/qbar-psf\n");
+  print("      ROWS         2\n");
+  print("       3.00        0.00\n");
+  print("      11.00        0.00\n");
+  print("   </COMPONENT>\n");
+  print("   <COMPONENT NAME=\"Yaw Damper Sum\" TYPE=\"SUMMER\">\n");
+  print("      INPUT        fcs/yaw-damper-beta\n");
+  print("      INPUT        fcs/yaw-damper-rate\n");
+  print("      CLIPTO      -0.2 0.2\n");
+  print("   </COMPONENT>\n");
+  print("   <COMPONENT NAME=\"Yaw Damper Final\" TYPE=\"SCHEDULED_GAIN\">\n");
+  print("      INPUT        fcs/yaw-damper-sum\n");
+  print("      SCHEDULED_BY aero/qbar-psf\n");
+  print("      ROWS         2\n");
+  print("      2.99         0.0\n");
+  print("      3.00         1.0\n");
   print("   </COMPONENT>\n");
   print("   <COMPONENT NAME=\"Rudder Sum\" TYPE=\"SUMMER\">\n");
-  print("      INPUT   fcs/yaw-trim-sum\n");
-  print("      INPUT   fcs/yaw-damper-rate\n");
-  print("      INPUT   fcs/yaw-damper-beta\n");
+  print("      INPUT   fcs/rudder-command-sum\n");
+  print("      INPUT   fcs/yaw-damper-final\n");
   print("      CLIPTO  -1 1\n");
   print("   </COMPONENT>\n");
   print("   <COMPONENT NAME=\"Rudder Control\" TYPE=\"AEROSURFACE_SCALE\">\n");
   print("      INPUT   fcs/rudder-sum\n");
-  print("      MIN     -25\n");
-  print("      MAX     25\n");
-  print("      GAIN    0.01745\n");
+  print("      MIN     -0.35\n");
+  print("      MAX      0.35\n");
   print("      OUTPUT  fcs/rudder-pos-rad\n");
   print("   </COMPONENT>\n"); 
   }
   else {
    print("   <COMPONENT NAME=\"Rudder Control\" TYPE=\"AEROSURFACE_SCALE\">\n");
-   print("      INPUT   fcs/yaw-trim-sum\n");
-   print("      MIN     -25\n");
-   print("      MAX     25\n");
-   print("      GAIN    0.01745\n");
+   print("      INPUT   fcs/rudder-command-sum\n");
+   print("      MIN     -0.35\n");
+   print("      MAX      0.35\n");
    print("      OUTPUT  fcs/rudder-pos-rad\n");
    print("   </COMPONENT>\n"); 
   }
@@ -975,8 +1014,8 @@ print("   <COMPONENT NAME=\"Flaps Control\" TYPE=\"KINEMAT\">\n");
 print("     INPUT   fcs/flap-cmd-norm\n");
 print("     DETENTS 3\n");
 print("             0   0\n");
-print("             15  2\n");
-print("             30  2\n");
+print("             15  4\n");
+print("             30  3\n");
 print("     OUTPUT  fcs/flap-pos-deg\n");
 print("   </COMPONENT>\n");
 
@@ -1044,10 +1083,17 @@ print("  </AXIS>\n");
 
 print("  <AXIS NAME=\"DRAG\">\n");
 
-print("    <COEFFICIENT NAME=\"CD0\" TYPE=\"VALUE\">\n"); 
+print("    <COEFFICIENT NAME=\"CD0\" TYPE=\"VECTOR\">\n"); 
 print("       Drag_at_zero_lift\n");
+print("       5\n");
+print("       aero/alpha-rad\n");
 print("       aero/qbar-psf|metrics/Sw-sqft\n");
-print("       $ac_CD0\n");
+print("       -1.57       1.500\n");
+$ac_CD02 = $ac_CD0 * 2;
+printf("       -0.26    %4.3f\n", $ac_CD02);   
+printf("        0.00    %4.3f\n", $ac_CD0);
+printf("        0.26    %4.3f\n", $ac_CD02);   
+print("        1.57       1.500\n");
 print("    </COEFFICIENT>\n");
 
 print("    <COEFFICIENT NAME=\"CDi\" TYPE=\"VALUE\">\n"); 
@@ -1061,10 +1107,10 @@ print("       Drag_due_to_mach\n");
 print("       4\n");
 print("       velocities/mach-norm\n");
 print("       aero/qbar-psf|metrics/Sw-sqft\n");
-print("       0.0       0.00\n");
-print("       $ac_Mcrit      0.00\n");
-print("       1.1       0.02\n");
-print("       2.0       0.01\n");
+print("       0.0       0.000\n");
+print("       $ac_Mcrit      0.000\n");
+print("       1.1       0.023\n");
+print("       1.8       0.015\n");
 print("    </COEFFICIENT>\n");
 
 print("    <COEFFICIENT NAME=\"CDflap\" TYPE=\"VALUE\">\n"); 
@@ -1087,10 +1133,17 @@ print("       aero/qbar-psf|metrics/Sw-sqft|fcs/speedbrake-pos-norm\n");
 print("       $ac_CDspeedbrake\n");
 print("    </COEFFICIENT>\n");
 
-print("    <COEFFICIENT NAME=\"CDbeta\" TYPE=\"VALUE\">\n"); 
+print("    <COEFFICIENT NAME=\"CDbeta\" TYPE=\"VECTOR\">\n"); 
 print("       Drag_due_to_sideslip\n");
-print("       aero/qbar-psf|metrics/Sw-sqft|aero/beta-rad\n");
-print("       $ac_CDbeta\n");
+print("       5\n");
+print("       aero/beta-rad\n");
+print("       aero/qbar-psf|metrics/Sw-sqft\n");
+print("       -1.57       1.230\n");
+$ac_CDb26 = $ac_CDbeta * 0.25;  // CD at beta of 0.26 radians
+printf("       -0.26    %4.3f\n", $ac_CDb26);   
+printf("        0.00       0.00\n");
+printf("        0.26    %4.3f\n", $ac_CDb26);   
+print("        1.57       1.230\n");
 print("    </COEFFICIENT>\n");
 
 print("    <COEFFICIENT NAME=\"CDde\" TYPE=\"VALUE\">\n"); 
@@ -1133,10 +1186,14 @@ print("       aero/qbar-psf|metrics/Sw-sqft|metrics/bw-ft|aero/bi2vel|velocities
 print("       $ac_Clr\n");
 print("    </COEFFICIENT>\n");
 
-print("    <COEFFICIENT NAME=\"Clda\" TYPE=\"VALUE\">\n");
+print("    <COEFFICIENT NAME=\"Clda\" TYPE=\"VECTOR\">\n");
 print("       Roll_moment_due_to_aileron\n");
+print("       2\n");
+print("       velocities/mach-norm\n"); 
 print("       aero/qbar-psf|metrics/Sw-sqft|metrics/bw-ft|fcs/left-aileron-pos-rad\n");
-print("       $ac_Clda\n");
+print("       0.0       $ac_Clda\n");
+$ac_Clda3 = $ac_Clda * 0.333;
+printf("       2.0    %4.3f\n", $ac_Clda3);
 print("    </COEFFICIENT>\n");
 
 print("    <COEFFICIENT NAME=\"Cldr\" TYPE=\"VALUE\">\n");
@@ -1157,10 +1214,14 @@ print("       aero/qbar-psf|metrics/Sw-sqft|metrics/cbarw-ft|aero/alpha-rad\n");
 print("       $ac_Cmalpha\n");
 print("    </COEFFICIENT>\n");
 
-print("    <COEFFICIENT NAME=\"Cmde\" TYPE=\"VALUE\">\n");
+print("    <COEFFICIENT NAME=\"Cmde\" TYPE=\"VECTOR\">\n");
 print("       Pitch_moment_due_to_elevator\n");
+print("       2\n");
+print("       velocities/mach-norm\n");
 print("       aero/qbar-psf|metrics/Sw-sqft|metrics/cbarw-ft|fcs/elevator-pos-rad\n");
-print("       $ac_Cmde\n");
+print("       0.0       $ac_Cmde\n");
+$ac_Cmde4 = $ac_Cmde * 0.25;
+printf("       2.0     %4.3f\n", $ac_Cmde4);
 print("    </COEFFICIENT>\n");
 
 print("    <COEFFICIENT NAME=\"Cmq\" TYPE=\"VALUE\">\n");

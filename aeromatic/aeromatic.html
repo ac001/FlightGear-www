@@ -1,12 +1,14 @@
 <HTML>
-<HEAD><TITLE>Aero-Matic v 0.2</TITLE>
+<HEAD><TITLE>Aero-Matic v 0.7</TITLE>
 </HEAD>
 <BODY>
 <h1>Aero-Matic</h1>
-<b>version 0.4</b>
+<b>version 0.7</b>
 <!-- 03 July 2003, David P. Culp, davidculp2@comcast.net -->
 <!-- update: 26 July 2003, DPC, new aero.php with flap changes -->
-<!-- update:  5 Sept 2003, DPC, added multi-engine prop transport
+<!-- update:  5 Sept 2003, DPC, added multi-engine prop transport -->
+<!-- update: 29 Sept 2003, DPC, added high-alpha/beta drag -->
+<!-- update: 16  Oct 2003, DPC, better FCS, version 0.7 -->
 <br><hr>
 
 <H3><A HREF="readme-aeromatic.html">README! INSTRUCTIONS!</A></H3>
@@ -49,7 +51,7 @@ is the same as the name of the engine configuration file.
 <input type="radio" name="ac_enginetype" value="3">rocket&nbsp
 
 <br><hr>
-<b>Engine Power or Thrust</b>&nbsp(per engine)<br>&nbsp
+<b>Engine Power or Thrust</b>&nbsp(per engine, without afterburning)<br>&nbsp
 <input type="text" name="ac_enginepower" value="1000.0"><br>&nbsp
 <input type="radio" name="ac_engineunits" value="0" checked>horsepower&nbsp
 <input type="radio" name="ac_engineunits" value="1">kw&nbsp

@@ -41,7 +41,7 @@ Afterburning and water injection are enabled if so selected.
 <br><br>
 The turboprop engine is modeled as a turbine with a bypass ratio of 0 and
 a TSFC of 0.55.  The maximum power value is converted to a maximum thrust
-value using the rough approximation that 1 hp equals 1.67 pounds of thrust.  Thrust
+value using the rough approximation that 1 hp equals 2.24 pounds of thrust.  Thrust
 is then set to decrease at high speeds, thus simulating a propeller.
 <br><br>
 The rocket engine is Jon Berndt's X-15 engine.
@@ -100,7 +100,7 @@ per this chart:<br><br>
   <td width="50%">29</td>
  </tr>
  <tr align="center">
-  <td width="50%">WWII Fighter</td>
+  <td width="50%">WWII Fighter, racer, aerobatic</td>
   <td width="50%">45</td>
  </tr>
  <tr align="center">
@@ -123,6 +123,10 @@ per this chart:<br><br>
   <td width="50%">Four+ Engine Transonic Transport</td>
   <td width="50%">110</td>
  </tr>
+ <tr align="center">
+  <td width="50%">Multi-engine Prop Transport</td>
+  <td width="50%">57</td>
+ </tr>
 </table><br>
 </center><br><br>
 If the user did not supply a wing area, then the wing loading and
@@ -140,7 +144,7 @@ increasing the moments by 50% to make up for a lack of feel in the
 control stick.<br><br>
 The aircaft's ZFW, zero-fuel weight, is estimated by multplying the maximum 
 weight by a factor according to aircraft type.  This value is named "empty
-weight" in the JSBSim configuration, but ZFW should be used.<br><br>
+weight" in the JSBSim configuration.<br><br>
 Next the aircraft's center of gravity, CG, location is estimated.  The
 longitudinal (x axis) location was already assumed when the horizontal
 stablizer moment arm was estimated, so this distance is used to get the
@@ -189,6 +193,6 @@ rudder deflection), and Cnda (adverse yaw).<br><br>
 
 <br><br><hr>
 David Culp, 30 June 2003, (davidculp2 at comcast.net)<br>
-update: 12 Aug 2003
+update: 16 Oct 2003
 </BODY>
 </HTML>
