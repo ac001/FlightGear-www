@@ -1,4 +1,3 @@
-
 <!-- Standard Header Begin -->
 <html>
 
@@ -56,34 +55,9 @@
       </td>
       <td id="page">
 <!-- Standard Header End -->
-<H1>FGFS Older News</H1>
 
-    <H2>December 20, 2002:</H2> Two papers were recently presented
-        at the European Space Agency ASTRA 2002 conference.  Both
-        projects used FlightGear as the frame work for plugging in
-        their research.  One paper involves navigation of autonomous
-        vehicles on foreign planets using terrain recognition; the
-        other discusses the development of a fuzzy autopilot designed
-        to control an autonomous flying vehicle operating in the Mars
-        atmosphere.  Both can be found in the <A HREF="Docs/index.html">Papers
-        section of the Documenation page</A>
-    <H2>December 10, 2002:</H2> The prebuilt Win32 binary for
-        Version 0.9.1 is now (at long last) available.
-        <A HREF="Downloads/index.html">Download here</A>.
-    <H2>December 10, 2002:</H2> Version 0.9.1 of the base package
-        (textures, models, data, and config files) is finally
-        available. Sorry for the delay.  <A HREF="Downloads/index.html">Download
-        here</A>.<BR>
-    <H2>December 5, 2002:</H2> Version 0.9.1 is available for
-        download (requires SimGear-0.3.1.)
-        <A HREF="Downloads/index.html">Download here</A>.<BR> 
-    <H2>September 7, 2002:</H2> Version 0.8.0 is available for
-        download (requires SimGear-0.2.0.)
-        <A HREF="Downloads/index.html">Download here</A>.<BR>
-    <H2>September 5, 2002:</H2> A new tutorial,
-        <A HREF="Docs/Tutorials/circuit/index.html"><CITE>A Circuit in
-        FlightGear</CITE></A>, is now available online.<BR>
-</UL>
+<!--#include file="FlightGear-FAQ.html"-->
+
 <!-- Standard Footer Begin -->
       </td></tr>
     </tbody>
