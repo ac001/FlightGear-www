@@ -1,6 +1,6 @@
 <?php
 
-$version = 0.2;
+$version = 0.3;
 
 //****************************************************
 //                                                   *
@@ -22,6 +22,7 @@ $ac_wingspan        = $_POST['ac_wingspan'];
 $ac_length          = $_POST['ac_length'];
 $ac_wingarea        = $_POST['ac_wingarea'];
 $ac_geartype        = $_POST['ac_geartype'];
+$ac_gearretract     = $_POST['ac_gearretract'];
 $ac_numengines      = $_POST['ac_numengines'];
 $ac_enginetype      = $_POST['ac_enginetype'];
 $ac_enginelayout    = $_POST['ac_enginelayout'];
@@ -79,6 +80,9 @@ if ($ac_wingarea == 0) {
 
 // calculate wing chord
 $ac_wingchord = $ac_wingarea / $ac_wingspan;
+
+// calculate aspect ratio
+$ac_aspectratio = $ac_wingspan / $ac_wingchord;
 
 // calculate half-span
 $ac_halfspan = $ac_wingspan / 2;
@@ -249,7 +253,7 @@ switch($ac_geartype) {
 
 // set main gear lateral location
 switch($ac_type) {
-  case 0: $ac_gearlocy_main = $ac_wingspan * 0.00 * 12; break;
+  case 0: $ac_gearlocy_main = $ac_wingspan * 0.005 * 12; break;
   case 1: $ac_gearlocy_main = $ac_wingspan * 0.09 * 12; break;
   case 2: $ac_gearlocy_main = $ac_wingspan * 0.09 * 12; break;
   case 3: $ac_gearlocy_main = $ac_wingspan * 0.15 * 12; break;
@@ -293,7 +297,10 @@ $ac_gearsteerable_nose = 'STEERABLE';
 $ac_gearsteerable_main = 'FIXED';
 $ac_gearsteerable_tail = 'CASTERED';
 $ac_gearmaxsteer = 80.0;
-$ac_gearretract = 'RETRACT';
+if($ac_gearretract == 0)
+  $ac_retract = 'FIXED';
+else
+  $ac_retract = 'RETRACT';
 
 //***** PROPULSION ************************************
 
@@ -427,9 +434,9 @@ $ac_tankcontents = $ac_tankcapacity;
 // estimate slope of lift curve based on airplane type
 // units: per radian
 switch($ac_type) {
-  case 0: $ac_CLalpha = 5.2; break;
+  case 0: $ac_CLalpha = 5.5; break;
   case 1: $ac_CLalpha = 5.0; break;
-  case 2: $ac_CLalpha = 4.9; break;
+  case 2: $ac_CLalpha = 4.8; break;
   case 3: $ac_CLalpha = 4.5; break;
   case 4: $ac_CLalpha = 4.0; break;
   case 5: $ac_CLalpha = 4.0; break;
@@ -486,23 +493,62 @@ $ac_CLde = 0.2;
 //***** DRAG *****************************************
 
 // estimate drag at zero lift, based on airplane type
+// NOT including landing gear
 switch($ac_type) {
-  case 0: $ac_CD0 = 0.01; break;
-  case 1: $ac_CD0 = 0.03; break;
-  case 2: $ac_CD0 = 0.04; break;
-  case 3: $ac_CD0 = 0.02; break;
-  case 4: $ac_CD0 = 0.02; break;
-  case 5: $ac_CD0 = 0.022; break;
-  case 6: $ac_CD0 = 0.015; break;
-  case 7: $ac_CD0 = 0.015; break;
-  case 8: $ac_CD0 = 0.015; break;
+  case 0: $ac_CD0 = 0.010; break;
+  case 1: $ac_CD0 = 0.024; break;
+  case 2: $ac_CD0 = 0.025; break;
+  case 3: $ac_CD0 = 0.020; break;
+  case 4: $ac_CD0 = 0.025; break;
+  case 5: $ac_CD0 = 0.025; break;
+  case 6: $ac_CD0 = 0.020; break;
+  case 7: $ac_CD0 = 0.019; break;
+  case 8: $ac_CD0 = 0.017; break;
   }
 
-// estimate drag from other parts
-$ac_CDflaps = 0.03;          // flaps down full
-$ac_CDgear = 0.04;           // gear down
-if($ac_type == 0) $ac_CDgear = 0.01;  // glider
-$ac_CDalpha = 0.6;           // per radian alpha
+// add gear drag if fixed gear
+if($ac_gearretract == 0) {
+switch($ac_type) {
+  case 0: $ac_CD0 += 0.002; break;
+  case 1: $ac_CD0 += 0.004; break;
+  case 2: $ac_CD0 += 0.004; break;
+  case 3: $ac_CD0 += 0.004; break;
+  case 4: $ac_CD0 += 0.005; break;
+  case 5: $ac_CD0 += 0.005; break;
+  case 6: $ac_CD0 += 0.002; break;
+  case 7: $ac_CD0 += 0.002; break;
+  case 8: $ac_CD0 += 0.002; break;
+  }
+}
+
+// estimate induced drag coefficient K
+switch($ac_type) {
+  case 0: $ac_K = 0.023; break;
+  case 1: $ac_K = 0.040; break;
+  case 2: $ac_K = 0.041; break;
+  case 3: $ac_K = 0.045; break;
+  case 4: $ac_K = 0.050; break;
+  case 5: $ac_K = 0.050; break;
+  case 6: $ac_K = 0.042; break;
+  case 7: $ac_K = 0.042; break;
+  case 8: $ac_K = 0.042; break;
+  }
+
+$ac_CDflaps = 0.03;     // flaps down full
+
+// estimate drag from landing gear down
+switch($ac_type) {
+  case 0: $ac_CDgear = 0.012; break;
+  case 1: $ac_CDgear = 0.030; break;
+  case 2: $ac_CDgear = 0.030; break;
+  case 3: $ac_CDgear = 0.030; break;
+  case 4: $ac_CDgear = 0.020; break;
+  case 5: $ac_CDgear = 0.020; break;
+  case 6: $ac_CDgear = 0.011; break;
+  case 7: $ac_CDgear = 0.011; break;
+  case 8: $ac_CDgear = 0.011; break;
+  }
+
 $ac_CDde = 0.04;             // elevator deflection
 $ac_CDbeta = 0.2;            // sideslip
 $ac_CDspeedbrake = $ac_CD0;  // speedbrake
@@ -523,33 +569,93 @@ switch($ac_type) {
 //***** SIDE *************************************
 
 // estimate side force due to sideslip (beta)
-$ac_CSbeta = -1.5;
+$ac_CYbeta = -1;
 
 //***** ROLL *************************************
 
 // estimate roll coefficients
-$ac_Clbeta = -0.03;    // sideslip
-if($ac_type == 0) $ac_Clbeta = -0.01;  // glider
-$ac_Clp = -0.5;        // roll rate
-$ac_Clr = 0.1;         // yaw rate
-$ac_Clda = 0.2;        // aileron deflection
-if($ac_type == 0) $ac_Clda = 0.06;  // glider
-$ac_Cldr = 0.005;      // rudder deflection
+$ac_Clbeta = -0.1;     // sideslip
+$ac_Clp = -0.4;        // roll rate
+$ac_Clr = 0.15;        // yaw rate
+switch($ac_type) {     // aileron
+  case 0: $ac_Clda = 0.06; break;
+  case 1: $ac_Clda = 0.17; break;
+  case 2: $ac_Clda = 0.17; break;
+  case 3: $ac_Clda = 0.18; break;
+  case 4: $ac_Clda = 0.05; break;
+  case 5: $ac_Clda = 0.07; break;
+  case 6: $ac_Clda = 0.05; break;
+  case 7: $ac_Clda = 0.04; break;
+  case 8: $ac_Clda = 0.03; break;
+  }
+$ac_Cldr = 0.01;       // rudder deflection
 
 //***** PITCH ************************************
 
 // estimate pitch coefficients
-$ac_Cmalpha = -5.0;    // per radian alpha
-$ac_Cmde = -1.5;       // elevator deflection
-$ac_Cmq = -12.0;       // pitch rate
-$ac_Cmadot = -12.0;    // alpha-dot
+switch($ac_type) {
+  case  0: // glider
+    $ac_Cmalpha = -0.5;    // per radian alpha
+    $ac_Cmde = -0.8;       // elevator deflection
+    $ac_Cmq = -9.0;        // pitch rate
+    $ac_Cmadot = -12.0;    // alpha-dot
+    break;
+  case  1: // light single
+    $ac_Cmalpha = -0.5;    // per radian alpha
+    $ac_Cmde = -1.1;       // elevator deflection
+    $ac_Cmq = -12.0;       // pitch rate
+    $ac_Cmadot = -7.0;     // alpha-dot
+    break;
+  case  2: // light twin
+    $ac_Cmalpha = -0.4;    // per radian alpha
+    $ac_Cmde = -1.0;       // elevator deflection
+    $ac_Cmq = -22.0;       // pitch rate
+    $ac_Cmadot = -8.0;     // alpha-dot
+    break;
+  case  3: // WWII fighter/racer/aerobatic
+    $ac_Cmalpha = -0.5;    // per radian alpha
+    $ac_Cmde = -1.0;       // elevator deflection
+    $ac_Cmq = -15.0;       // pitch rate
+    $ac_Cmadot = -7.0;     // alpha-dot
+    break;
+  case  4: // single engine jet fighter
+    $ac_Cmalpha = -0.3;    // per radian alpha
+    $ac_Cmde = -0.8;       // elevator deflection
+    $ac_Cmq = -18.0;       // pitch rate
+    $ac_Cmadot = -9.0;     // alpha-dot
+    break;
+  case  5: // two engine jet fighter
+    $ac_Cmalpha = -0.3;    // per radian alpha
+    $ac_Cmde = -0.8;       // elevator deflection
+    $ac_Cmq = -18.0;       // pitch rate
+    $ac_Cmadot = -9.0;     // alpha-dot
+    break;
+  case  6: // two engine jet transport
+    $ac_Cmalpha = -0.6;    // per radian alpha
+    $ac_Cmde = -1.2;       // elevator deflection
+    $ac_Cmq = -17.0;       // pitch rate
+    $ac_Cmadot = -6.0;     // alpha-dot
+    break;
+  case  7: // three engine jet transport
+    $ac_Cmalpha = -0.6;    // per radian alpha
+    $ac_Cmde = -1.2;       // elevator deflection
+    $ac_Cmq = -17.0;       // pitch rate
+    $ac_Cmadot = -6.0;     // alpha-dot
+    break;
+  case  8: // four+ engine jet transport
+    $ac_Cmalpha = -0.7;    // per radian alpha
+    $ac_Cmde = -1.3;       // elevator deflection
+    $ac_Cmq = -21.0;       // pitch rate
+    $ac_Cmadot = -4.0;     // alpha-dot
+    break;
+  }
 
 //***** YAW **************************************
 
 // estimate yaw coefficients
-$ac_Cnbeta = 0.16;     // sideslip
-$ac_Cnr = -0.04;       // yaw rate
-$ac_Cndr = -0.35;      // rudder deflection
+$ac_Cnbeta = 0.12;     // sideslip
+$ac_Cnr = -0.15;       // yaw rate
+$ac_Cndr = -0.10;       // rudder deflection
 if($ac_type == 0) $ac_Cndr = -0.03;  // glider
 
 switch($ac_type) {                   // adverse yaw
@@ -579,13 +685,13 @@ print("    name:          $ac_name\n");
 switch($ac_type) {
   case 0: print("    type:          glider\n"); break;
   case 1: print("    type:          light single\n"); break;
-  case 2: print("    type:          light twin\n"); break;
-  case 3: print("    type:          WWII fighter\n"); break;
-  case 4: print("    type:          single-engine jet fighter\n"); break;
-  case 5: print("    type:          two-engine jet fighter\n"); break;
-  case 6: print("    type:          two-engine transport\n"); break;
-  case 7: print("    type:          three-engine transport\n"); break;
-  case 8: print("    type:          four-engine transport\n"); break;
+  case 2: print("    type:          light twin, prop transport\n"); break;
+  case 3: print("    type:          WWII fighter, subsonic sport, aerobatic\n"); break;
+  case 4: print("    type:          single-engine transonic/supersonic fighter\n"); break;
+  case 5: print("    type:          two-engine transonic/supersonic fighter\n"); break;
+  case 6: print("    type:          two-engine transonic transport\n"); break;
+  case 7: print("    type:          three-engine transonic transport\n"); break;
+  case 8: print("    type:          four-engine transonic transport\n"); break;
   }
 print("    max weight:    $ac_weight lb\n");
 print("    wing span:     $ac_wingspan ft\n");
@@ -597,6 +703,10 @@ else
 switch($ac_geartype) {
   case 0: print("    gear type:     tricycle\n"); break;
   case 1: print("    gear type:     taildragger\n"); break; 
+}
+switch($ac_gearretract) {
+  case 0: print("    retractable?:  no\n"); break;
+  case 1: print("    retractable?:  yes\n"); break; 
 }
 print("    # engines:     $ac_numengines\n");
 switch($ac_enginetype) {
@@ -623,7 +733,7 @@ print("    CL-alpha:      $ac_CLalpha per radian\n");
 print("    CL-0:          $ac_CL0\n");
 print("    CL-max:        $ac_CLmax\n");
 print("    CD-0:          $ac_CD0\n");
- 
+print("    K:             $ac_K\n"); 
 print("\n-->\n\n"); 
 
 //***** METRICS **********************************
@@ -651,41 +761,45 @@ print(" </METRICS>\n");
 print(" <UNDERCARRIAGE>\n");
 
 if($ac_type == 0) {  // if this is a glider
-   print("  AC_GEAR MLG  $ac_gearlocx_main $ac_gearlocy_main $ac_gearlocz_main ");
+   print("  AC_GEAR LEFT_MLG  $ac_gearlocx_main -$ac_gearlocy_main $ac_gearlocz_main ");
    print("$ac_gearspring_main $ac_geardamp_main $ac_geardynamic $ac_gearstatic ");
-   print("$ac_gearrolling $ac_gearsteerable_main NONE 0 $ac_gearretract\n");
+   print("$ac_gearrolling $ac_gearsteerable_main NONE 0 $ac_retract\n");
+
+   print("  AC_GEAR RIGHT_MLG  $ac_gearlocx_main $ac_gearlocy_main $ac_gearlocz_main ");
+   print("$ac_gearspring_main $ac_geardamp_main $ac_geardynamic $ac_gearstatic ");
+   print("$ac_gearrolling $ac_gearsteerable_main NONE 0 $ac_retract\n");
 
    print("  AC_GEAR NOSE_LG   $ac_gearlocx_nose $ac_gearlocy_nose $ac_gearlocz_nose ");
    print("$ac_gearspring_nose $ac_geardamp_nose $ac_geardynamic $ac_gearstatic ");
-   print("$ac_gearrolling $ac_gearsteerable_nose NONE $ac_gearmaxsteer $ac_gearretract\n");
+   print("$ac_gearrolling $ac_gearsteerable_nose NONE $ac_gearmaxsteer $ac_retract\n");
 
    print("  AC_GEAR LEFT_WING $ac_cglocx -$ac_halfspan $ac_cglocz ");
    print("$ac_gearspring_nose $ac_geardamp_nose $ac_geardynamic $ac_gearstatic ");
-   print("$ac_gearrolling $ac_gearsteerable_main NONE 0 $ac_gearretract\n");
+   print("$ac_gearrolling $ac_gearsteerable_main NONE 0 $ac_retract\n");
 
    print("  AC_GEAR RIGHT_WING $ac_cglocx -$ac_halfspan $ac_cglocz ");
    print("$ac_gearspring_nose $ac_geardamp_nose $ac_geardynamic $ac_gearstatic ");
-   print("$ac_gearrolling $ac_gearsteerable_main NONE 0 $ac_gearretract\n");
+   print("$ac_gearrolling $ac_gearsteerable_main NONE 0 $ac_retract\n");
  }
  else {
    if ($ac_geartype == 0) {
      print("  AC_GEAR NOSE_LG   $ac_gearlocx_nose $ac_gearlocy_nose $ac_gearlocz_nose ");
      print("$ac_gearspring_nose $ac_geardamp_nose $ac_geardynamic $ac_gearstatic ");
-     print("$ac_gearrolling $ac_gearsteerable_nose NONE $ac_gearmaxsteer $ac_gearretract\n");
+     print("$ac_gearrolling $ac_gearsteerable_nose NONE $ac_gearmaxsteer $ac_retract\n");
    }
 
    print("  AC_GEAR LEFT_MLG  $ac_gearlocx_main -$ac_gearlocy_main $ac_gearlocz_main ");
    print("$ac_gearspring_main $ac_geardamp_main $ac_geardynamic $ac_gearstatic ");
-   print("$ac_gearrolling $ac_gearsteerable_main LEFT 0 $ac_gearretract\n");
+   print("$ac_gearrolling $ac_gearsteerable_main LEFT 0 $ac_retract\n");
 
    print("  AC_GEAR RIGHT_MLG $ac_gearlocx_main $ac_gearlocy_main $ac_gearlocz_main ");
    print("$ac_gearspring_main $ac_geardamp_main $ac_geardynamic $ac_gearstatic ");
-   print("$ac_gearrolling $ac_gearsteerable_main RIGHT 0 $ac_gearretract\n");
+   print("$ac_gearrolling $ac_gearsteerable_main RIGHT 0 $ac_retract\n");
 
    if ($ac_geartype == 1) {
      print("  AC_GEAR TAIL_LG  $ac_gearlocx_tail $ac_gearlocy_tail $ac_gearlocz_tail ");
      print("$ac_gearspring_tail $ac_geardamp_tail $ac_geardynamic $ac_gearstatic ");
-     print("$ac_gearrolling $ac_gearsteerable_tail NONE 0 $ac_gearretract\n");
+     print("$ac_gearrolling $ac_gearsteerable_tail NONE 0 $ac_retract\n");
    }
  }
 
@@ -822,13 +936,15 @@ print("             30  2\n");
 print("     OUTPUT  fcs/flap-pos-deg\n");
 print("   </COMPONENT>\n");
 
-print("   <COMPONENT NAME=\"Gear Control\" TYPE=\"KINEMAT\">\n");
-print("     INPUT   gear/gear-cmd-norm\n");
-print("     DETENTS 2\n");
-print("             0   0\n");
-print("             1   5\n");
-print("     OUTPUT  gear/gear-pos-norm\n");
-print("   </COMPONENT>\n");
+if($ac_gearretract == 1) {
+  print("   <COMPONENT NAME=\"Gear Control\" TYPE=\"KINEMAT\">\n");
+  print("     INPUT   gear/gear-cmd-norm\n");
+  print("     DETENTS 2\n");
+  print("             0   0\n");
+  print("             1   5\n");
+  print("     OUTPUT  gear/gear-pos-norm\n");
+  print("   </COMPONENT>\n");
+}
 
 print("   <COMPONENT NAME=\"Speedbrake Control\" TYPE=\"KINEMAT\">\n");
 print("     INPUT   fcs/speedbrake-cmd-norm\n");
@@ -890,10 +1006,10 @@ print("       aero/qbar-psf|metrics/Sw-sqft\n");
 print("       $ac_CD0\n");
 print("    </COEFFICIENT>\n");
 
-print("    <COEFFICIENT NAME=\"CDalpha\" TYPE=\"VALUE\">\n"); 
-print("       Drag_due_to_alpha\n");
-print("       aero/qbar-psf|metrics/Sw-sqft|aero/alpha-rad\n");
-print("       $ac_CDalpha\n");
+print("    <COEFFICIENT NAME=\"CDi\" TYPE=\"VALUE\">\n"); 
+print("       Induced_drag\n");
+print("       aero/qbar-psf|metrics/Sw-sqft|aero/cl-squared-norm\n");
+print("       $ac_K\n");
 print("    </COEFFICIENT>\n");
 
 print("    <COEFFICIENT NAME=\"CDmach\" TYPE=\"VECTOR\">\n"); 
@@ -913,11 +1029,13 @@ print("       aero/qbar-psf|metrics/Sw-sqft|fcs/flap-pos-norm\n");
 print("       $ac_CDflaps\n");
 print("    </COEFFICIENT>\n");
 
-print("    <COEFFICIENT NAME=\"CDgear\" TYPE=\"VALUE\">\n"); 
-print("       Drag_due_to_gear\n");
-print("       aero/qbar-psf|metrics/Sw-sqft|gear/gear-pos-norm\n");
-print("       $ac_CDgear\n");
-print("    </COEFFICIENT>\n");
+if($ac_gearretract == 1) {
+  print("    <COEFFICIENT NAME=\"CDgear\" TYPE=\"VALUE\">\n"); 
+  print("       Drag_due_to_gear\n");
+  print("       aero/qbar-psf|metrics/Sw-sqft|gear/gear-pos-norm\n");
+  print("       $ac_CDgear\n");
+  print("    </COEFFICIENT>\n");
+}
 
 print("    <COEFFICIENT NAME=\"CDsb\" TYPE=\"VALUE\">\n"); 
 print("       Drag_due_to_speedbrakes\n");
@@ -942,10 +1060,10 @@ print("  </AXIS>\n");
 //***** SIDE *************************************************
 
 print("  <AXIS NAME=\"SIDE\">\n");
-print("    <COEFFICIENT NAME=\"CSb\" TYPE=\"VALUE\">\n");
+print("    <COEFFICIENT NAME=\"CYb\" TYPE=\"VALUE\">\n");
 print("       Side_force_due_to_beta\n");
 print("       aero/qbar-psf|metrics/Sw-sqft|aero/beta-rad\n");
-print("       $ac_CSbeta\n");
+print("       $ac_CYbeta\n");
 print("    </COEFFICIENT>\n");
 print("  </AXIS>\n");
 
