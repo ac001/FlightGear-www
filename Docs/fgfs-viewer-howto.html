@@ -1,115 +1,121 @@
 
+<!-- Standard Header Begin -->
+<html>
+
 <head>
-<title> FlightGear Flight Simulator</title>
-<link rel="stylesheet" type="text/css" href="../default.css"> 
-
+  <title> FlightGear Flight Simulator</title>
+  <link rel="stylesheet" type="text/css" href="default.css"> 
 </head>
- <body>
-<div id="top"><a href="http://www.flightgear.org/"><img id="titlebar" src="../images/fglogosm.jpg" alt=""></a>
-</div>
-<table id="global">
-	<tbody><tr>
-		<td id="menu">
-		<!-- Use a replacescript to update the menu -->
-		<h3>About</h3>
-		<a href="../index.html">Home</a><br>
-		<a href="../introduction.html">Introduction</a><br>
-		<a href="../overview.html">Overview</a><br>
-		<a href="../features.html">Features</a><br>
-		<a href="../Gallery/index.html">Screenshots</a><br>
-		<!-- about.hook.1-->
-		<!-- about.hook.2-->
-		<h3>Downloads</h3>
-		<a href="../source.html">Source</a><br>
-		<a href="../binary.html">Binary</a><br>
-		<a href="../scenery.html">Scenery</a><br>
-		<!-- downloads.hook.1-->
-		<!-- downloads.hook.2-->
-		<h3>Support</h3>
-		<a href="../version.html">Version Summary</a><br>
-		<a href="../hardwarereq.html">Hardware Requirements</a><br>
-		<a href="../docs.html">Documentation</a><br>
-		<a href="../places.html">Places to Fly</a><br>
-		<a href="../mail.html">Mailing Lists</a><br>
-		<a href="../Docs/FlightGear-FAQ.html">Faq</a><br>
-		<!-- support.hook.1-->
-		<!-- support.hook.2-->
-		<h3>Links</h3>
-		<a href="../links.html">Related Websites</a><br>
-		<a href="../projects.html">Related Projects</a><br>
-		<a href="http://sourceforge.net/projects/flightgear/">SourceForge Project Page</a><br>
-		<!-- support.hook.1-->
-		<!-- support.hook.2-->
-		<h3>Contribute</h3>
-		<a href="../contributing.html">Contributing</a><br>
-		<a href="../cvs.html">CVS Resources</a><br>
-		<a href="../goals.html">Goals</a><br>
-		<a href="../thanks.html">Contributors</a><br>
-		<a href="../design.html">Design Proposals</a><br>
-		<a href="../events.html">Events</a><br>
-		<!-- support.hook.1-->
-		<!-- support.hook.2-->
-</td>
-<td id="page">
-<h1>Mini-HOWTO: Configuring Views in FlightGear</h1>
-<h2>24 April 2002</h2>
-<h2>Jim Wilson</h2>
-<br>
-<h3>Introduction</h3>
 
-<p>This mini-HOWTO explains how to configure <i>views</i> in FlightGear.
+<body>
+  <div id="top">
+    <a href="http://www.flightgear.org/"><img id="titlebar" src="images/fglogosm.jpg" alt=""></a>
+  </div>
+
+  <table id="global">
+    <tbody><tr>
+      <td id="menu">
+	<!-- Use a replacescript to update the menu -->
+	<h3>About</h3>
+	<a href="index.html">Home</a><br>
+	<a href="introduction.html">Introduction</a><br>
+	<a href="overview.html">Overview</a><br>
+	<a href="features.html">Features</a><br>
+	<!-- about.hook.1-->
+        <a href="Gallery/index.html">Screenshots</a><br>
+	<!-- about.hook.2-->
+	<h3>Downloads</h3>
+	<a href="source.html">Source</a><br>
+	<a href="binary.html">Binary</a><br>
+	<a href="scenery.html">Scenery</a><br>
+	<!-- downloads.hook.1-->
+	<!-- downloads.hook.2-->
+	<h3>Support</h3>
+	<a href="version.html">Version Summary</a><br>
+	<a href="hardwarereq.html">Hardware Requirements</a><br>
+	<a href="docs.html">Documentation</a><br>
+	<a href="places.html">Places to Fly</a><br>
+	<a href="mail.html">Mailing Lists</a><br>
+	<a href="Docs/FlightGear-FAQ.html">Faq</a><br>
+	<!-- support.hook.1-->
+	<!-- support.hook.2-->
+	<h3>Links</h3>
+	<a href="links.html">Related Websites</a><br>
+	<a href="projects.html">Related Projects</a><br>
+	<a href="http://sourceforge.net/projects/flightgear/">SourceForge Project Page</a><br>
+	<!-- support.hook.1-->
+	<!-- support.hook.2-->
+	<h3>Contribute</h3>
+	<a href="contributing.html">Contributing</a><br>
+	<a href="cvs.html">CVS Resources</a><br>
+	<a href="goals.html">Goals</a><br>
+	<a href="thanks.html">Contributors</a><br>
+	<a href="design.html">Design Proposals</a><br>
+	<a href="events.html">Events</a><br>
+	<!-- support.hook.1-->
+	<!-- support.hook.2-->
+      </td>
+      <td id="page">
+<!-- Standard Header End -->
+<H1>Mini-HOWTO: Configuring Views in FlightGear</H1>
+<H2>24 April 2002</H2>
+<H2>Jim Wilson</H2>
+<BR>
+<H3>Introduction</H3>
+
+<P>This mini-HOWTO explains how to configure <I>views</I> in FlightGear.
 Views define the position of the eye in the rendered scene and 
-what if any object the eye is focused on or <i>tracking</i>.  The 
-<i>eye</i> is the imaginary or constructed eye that is simulated 
+what if any object the eye is focused on or <I>tracking</I>.  The 
+<I>eye</I> is the imaginary or constructed eye that is simulated 
 by the 3D rendering.  It makes the picture on your screen represent 
-<i>what things would look like if you were standing or sitting at a 
-given location</i>.</p>
+<I>what things would look like if you were standing or sitting at a 
+given location</I>.</P>
 
-<p>Formerly there were two views hard coded into FlightGear, but as 
+<P>Formerly there were two views hard coded into FlightGear, but as 
 this document describes, it is possible to configure any number of 
 views with XML configuration files.  Views may be configured to switch 
 between pilot and co-pilot, tower view, or view of an observer on the 
-ground.</p>
+ground.</P>
 
 <!-- end of "Summary" -->
-</div>
+</DIV>
 
 
-<div><a name="types"></a>
-<h3>1. Types of Views</h3>
+<DIV><A NAME="types"></A>
+<H3>1. Types of Views</H3>
 
-<p>There are two basic types of views:</p>
+<P>There are two basic types of views:</P>
 
-<p><b>LookFrom</b> - This type requires a single coordinate position.  The 
+<P><B>LookFrom</B> - This type requires a single coordinate position.  The 
 direction of the view is independant of any particular object.  Adjusting 
 the heading and pitch offsets moves the direction of observation around.
-In the default Flight Gear configuration <i>panning</i> with the mouse will 
-move the view around as if the observer was turning their head.</p>
+In the default Flight Gear configuration <I>panning</I> with the mouse will 
+move the view around as if the observer was turning their head.</P>
 
-<p><b>LookAt</b> - This type requires a two coordinate positions.  The 
+<P><B>LookAt</B> - This type requires a two coordinate positions.  The 
 direction of the view is always oriented toward a target and tracks the 
-target if it moves.</p>
+target if it moves.</P>
 
-<p>(see configuration examples below for usage
-of the &lt;type&gt; paramter)</p>
-</div>
+<P>(see configuration examples below for usage
+of the &lt;type&gt; paramter)</P>
+</DIV>
 
-<div><a name="positions"></a>
-<h3>2. Defining Positions</h3>
+<DIV><A NAME="positions"></A>
+<H3>2. Defining Positions</H3>
 
-<p>There are two methods to define a postion and orientation for use in 
-configuring a view.  One method is <i>tied to a model</i> which means the view 
+<P>There are two methods to define a postion and orientation for use in 
+configuring a view.  One method is <I>tied to a model</I> which means the view 
 references the position and orientation of a model (e.g. Aircraft 3D Model)
-and the other is an <i>idependant postion</i> which simply means that the 
-view references location data directly (via the Flight Gear property tree):</p>
+and the other is an <I>idependant postion</I> which simply means that the 
+view references location data directly (via the Flight Gear property tree):</P>
 
-<p><b>Tied to a Model</b> - This method allows definition of the "eye",
+<P><B>Tied to a Model</B> - This method allows definition of the "eye",
 that is where you are looking from and/or the "target" or objected being 
 looked at based on a model position and orientation.  The following 
 illustrates defining the positon of a "Cockpit View" that is positioned 
 and oriented according to the position and orientation of a model:
 
-<blockquoute><pre>
+<BLOCKQUOUTE><PRE>
 &lt;sim&gt;
   &lt;view&gt;
     &lt;name&gt;Cockpit View&lt;/name&gt;
@@ -122,30 +128,30 @@ and oriented according to the position and orientation of a model:
   &lt;/view&gt;
 &lt;/sim&gt;
 
-</pre></blockquoute>
+</PRE></BLOCKQUOUTE>
 
-Syntax for the <b>eye position</b> is:
-<blockquoute><pre>
-    &lt;from-model type="bool"&gt;<i>true or false</i>&lt;/from-model&gt;
-    &lt;from-model-idx type="int"&gt;<i>modelnumber</i>&lt;/from-model-idx&gt;
-</pre></blockquoute>
+Syntax for the <B>eye position</B> is:
+<BLOCKQUOUTE><PRE>
+    &lt;from-model type="bool"&gt;<I>true or false</I>&lt;/from-model&gt;
+    &lt;from-model-idx type="int"&gt;<I>modelnumber</I>&lt;/from-model-idx&gt;
+</PRE></BLOCKQUOUTE>
 
-Syntax for the target or <b>at position</b> used in views of type "lookat" is:
-<blockquoute><pre>
-    &lt;at-model type="bool"&gt;<i>true or false</i>&lt;/at-model&gt;
-    &lt;at-model-idx type="int"&gt;<i>modelnumber</i>&lt;/at-model-idx&gt;
-</pre></blockquoute>
+Syntax for the target or <B>at position</B> used in views of type "lookat" is:
+<BLOCKQUOUTE><PRE>
+    &lt;at-model type="bool"&gt;<I>true or false</I>&lt;/at-model&gt;
+    &lt;at-model-idx type="int"&gt;<I>modelnumber</I>&lt;/at-model-idx&gt;
+</PRE></BLOCKQUOUTE>
 
-<p>Note that from-model or at-model must be <i>true</i> in order for the 
-position and orientation data from the model to be used.</p>
+<P>Note that from-model or at-model must be <I>true</I> in order for the 
+position and orientation data from the model to be used.</P>
 
-<p><b>Independant Position</b> - This method allows definition of the <i>eye</i>,
-that is where you are looking from or the <i>target</i> (objected being 
+<P><B>Independant Position</B> - This method allows definition of the <I>eye</I>,
+that is where you are looking from or the <I>target</I> (objected being 
 looked at) based on arbitrary position and orientation data obtained from the 
 property tree (i.e. any source).  The following illustrates a Tower defined as 
-a "lookat", a view that can be used to track or follow a moving model:</p>
+a "lookat", a view that can be used to track or follow a moving model:</P>
 
-<blockquoute><pre>
+<BLOCKQUOUTE><PRE>
 &lt;sim&gt;
   &lt;view&gt;
     &lt;name&gt;Tower View&lt;/name&gt;
@@ -165,77 +171,77 @@ a "lookat", a view that can be used to track or follow a moving model:</p>
   &lt;/view&gt;
 &lt;/sim&gt;
 
-</pre></blockquoute>
+</PRE></BLOCKQUOUTE>
 
-<p>Note that the definition is constructed as a path to a numeric data item in 
+<P>Note that the definition is constructed as a path to a numeric data item in 
 the global property tree.  If you are unfamiliar with these properties, take 
 a look at the "Property Picker" dialog while Flight Gear is running and you 
 can see the kinds of values in use.  You may define your own static values, say 
 for a fixed location of an observer, by adding the following xml to your 
-setup (prefrences.xml or another file):</p>
+setup (prefrences.xml or another file):</P>
 
-<blockquoute><pre>
+<BLOCKQUOUTE><PRE>
 &lt;somepath&gt;
   &lt;ground-observer-lon-deg&gt;48.6124&lt;/ground-observer-lon-deg&gt;
   &lt;ground-observer-lat-deg&gt;63.1243&lt;/ground-observer-lat-deg&gt;
   &lt;ground-observer-alt-ft&gt;123.5&lt;/ground-observer-alt-ft&gt;
 &lt;/somepath&gt;
 
-</pre></blockquoute>
+</PRE></BLOCKQUOUTE>
 
-<p>These values can then then be referenced in your view by including their 
+<P>These values can then then be referenced in your view by including their 
 path in the definition.  For example to reference the above longitude for 
-the ground observer:</p>
+the ground observer:</P>
 
-<blockquoute><pre>
+<BLOCKQUOUTE><PRE>
 &lt;sim&gt;
   &lt;view&gt;
     &lt;config&gt;
       &lt;eye-lat-deg-path&gt;/somepath/ground-observer-lat-deg>&lt;/eye-lon-deg-path&gt;
       ..
 
-</pre></blockquoute>
+</PRE></BLOCKQUOUTE>
 
-<p>All three longitude, latitude, and altitude must be defined to have a valid
+<P>All three longitude, latitude, and altitude must be defined to have a valid
 position (otherwise the missing items default to 0).  You may also define 
 orientation such as heading (the direction to look toward) and pitch (the 
 angle up or down to be looking).  In the case of a cockpit view the orientation 
 will be that of the aircraft itself,  but in the case of a "lookfrom" view like a
 ground observer or tower it can be an arbitrary view direction that is either 
-static, or changing.</p>
+static, or changing.</P>
 
-Syntax for the <b>eye position and orientation</b> is:
-<blockquoute><pre>
-    &lt;eye-lat-deg-path&gt;<i>path-to-property-value</i>&lt;/eye-lat-deg-path&gt;
-    &lt;eye-lon-deg-path&gt;<i>path-to-property-value</i>&lt;/eye-lon-deg-path&gt;
-    &lt;eye-alt-ft-path&gt;<i>path-to-property-value</i>&lt;/eye-alt-ft-path&gt;
-    &lt;eye-roll-deg-path&gt;<i>path-to-property-value</i>&lt;/eye-roll-deg-path&gt;
-    &lt;eye-pitch-deg-path&gt;<i>path-to-property-value</i>&lt;/eye-pitch-deg-path&gt;
-    &lt;eye-heading-deg-path&gt;<i>path-to-property-value</i>&lt;/eye-heading-deg-path&gt;
+Syntax for the <B>eye position and orientation</B> is:
+<BLOCKQUOUTE><PRE>
+    &lt;eye-lat-deg-path&gt;<I>path-to-property-value</I>&lt;/eye-lat-deg-path&gt;
+    &lt;eye-lon-deg-path&gt;<I>path-to-property-value</I>&lt;/eye-lon-deg-path&gt;
+    &lt;eye-alt-ft-path&gt;<I>path-to-property-value</I>&lt;/eye-alt-ft-path&gt;
+    &lt;eye-roll-deg-path&gt;<I>path-to-property-value</I>&lt;/eye-roll-deg-path&gt;
+    &lt;eye-pitch-deg-path&gt;<I>path-to-property-value</I>&lt;/eye-pitch-deg-path&gt;
+    &lt;eye-heading-deg-path&gt;<I>path-to-property-value</I>&lt;/eye-heading-deg-path&gt;
 
-</pre></blockquoute>
+</PRE></BLOCKQUOUTE>
 
 
-Syntax for the target or <b>at position</b> used in views of type "lookat" is:
-<blockquoute><pre>
-    &lt;target-lat-deg-path&gt;<i>path-to-property-value</i>&lt;/target-lat-deg-path&gt;
-    &lt;target-lon-deg-path&gt;<i>path-to-property-value</i>&lt;/target-lon-deg-path&gt;
-    &lt;target-alt-ft-path&gt;<i>path-to-property-value</i>&lt;/target-alt-ft-path&gt;
+Syntax for the target or <B>at position</B> used in views of type "lookat" is:
+<BLOCKQUOUTE><PRE>
+    &lt;target-lat-deg-path&gt;<I>path-to-property-value</I>&lt;/target-lat-deg-path&gt;
+    &lt;target-lon-deg-path&gt;<I>path-to-property-value</I>&lt;/target-lon-deg-path&gt;
+    &lt;target-alt-ft-path&gt;<I>path-to-property-value</I>&lt;/target-alt-ft-path&gt;
 
-</pre></blockquoute>
-</div>
+</PRE></BLOCKQUOUTE>
+</DIV>
 
-<div><a name="offsets"></a>
-<h3>3. View Offsets</h3>
+<DIV><A NAME="offsets"></A>
+<H3>3. View Offsets</H3>
 
-<p>There are two types of offsets, but only one is used in building viewer configurations.
+<P>There are two types of offsets, but only one is used in building viewer configurations.
 This is an offset from the eye position applied to the position defined for the eye as
-described in the section on <b>Defining Positon</b>.</p>
+described in the section on <B>Defining Positon</B>.</P>
 
-<p>These offsets are defined in meters. Here is an example of a <b>Cockpit View</b> definition
-that includes offsets for the <i>pilot's eye</i>:
+<P>These offsets are defined in meters. Here is an example of a <B>Cockpit View</B> definition
+that includes offsets for the <I>pilot's eye</I>:
 
-<blockquoute><pre>
+<BLOCKQUOUTE><PRE>
 &lt;sim&gt;
   &lt;view&gt;
     &lt;name&gt;Cockpit View&lt;/name&gt;
@@ -252,20 +258,20 @@ that includes offsets for the <i>pilot's eye</i>:
   &lt;/view&gt;
 &lt;/sim&gt;
 
-</pre></blockquoute>
+</PRE></BLOCKQUOUTE>
 
-<p>Note that these offsets are actually best applied differently to specific 
+<P>Note that these offsets are actually best applied differently to specific 
 aircraft models.  The size of the aircraft and the actual position of the 
 pilot's seat make a big difference.  So typically these offset entries 
-are included per aircraft in the <i>aircraft-set.xml</i> files.</p>
+are included per aircraft in the <I>aircraft-set.xml</I> files.</P>
 
-<p>In other circumstances, such as defining a Chase View, you can possibly get away with 
+<P>In other circumstances, such as defining a Chase View, you can possibly get away with 
 defining the x-offsets in a more global location so that they apply to all 
-aircraft.  Here is an example of a <b>Chase View</b> configuration that 
+aircraft.  Here is an example of a <B>Chase View</B> configuration that 
 includes offsets to define the eye as being 25 meters behind the model 
- origin:</p>
+ origin:</P>
 
-<blockquoute><pre>
+<BLOCKQUOUTE><PRE>
 &lt;sim&gt;
   &lt;view&gt;
     &lt;name&gt;Chase View&lt;/name&gt;
@@ -283,37 +289,37 @@ includes offsets to define the eye as being 25 meters behind the model
   &lt;/view&gt;
 &lt;/sim&gt;
 
-</pre></blockquoute>
+</PRE></BLOCKQUOUTE>
 
 
-<p>At the time of this writing (and this is subject to change), offsets
+<P>At the time of this writing (and this is subject to change), offsets
 define the change in eye position as follows:
 
-<dt><strong>x-offset-m</strong></dt>
-<dd>Positive values to the right of origin (view position).</dd>
+<DT><STRONG>x-offset-m</STRONG></DT>
+<DD>Positive values to the right of origin (view position).</DD>
 
-<dt><strong>y-offset-m</strong></dt>
-<dd>Positive values move up from origin.</dd>
+<DT><STRONG>y-offset-m</STRONG></DT>
+<DD>Positive values move up from origin.</DD>
 
-<dt><strong>z-offset-m</strong></dt>
-<dd>Positive values move back (or <i>in</i>) from origin.</dd>
-</div>
-<p></p>
-<div><a name="nearplane"></a>
-<h3>4. Ground Level Near Plane</h3>
+<DT><STRONG>z-offset-m</STRONG></DT>
+<DD>Positive values move back (or <I>in</I>) from origin.</DD>
+</DIV>
+<P></P>
+<DIV><A NAME="nearplane"></A>
+<H3>4. Ground Level Near Plane</H3>
 
-<p>Generally, a higher Near Plane value will result in a better quality 
+<P>Generally, a higher Near Plane value will result in a better quality 
 rendering of distant scenery and models.  Currently when the aircraft is 
-in flight the Near Plane is set at 10 meters.</p>
+in flight the Near Plane is set at 10 meters.</P>
 
-<p>Any object (including terrain) that is closer to the <i>eye</i> or 
-<i>camera</i> than 10 meters will not be visible.  For this reason, when 
+<P>Any object (including terrain) that is closer to the <I>eye</I> or 
+<I>camera</I> than 10 meters will not be visible.  For this reason, when 
 the eye is close to the ground, the Near Plane must be set lower.  Here is 
 an example of a Cockpit view that is configured to have only a 0.5 meter Near 
 Plane when sitting on the ground (or below a given flight level which currently
-defaults to 30ft AGL altitude).</p>
+defaults to 30ft AGL altitude).</P>
 
-<blockquoute><pre>
+<BLOCKQUOUTE><PRE>
   &lt;view&gt;
     &lt;name&gt;Cockpit View&lt;/name&gt;
     &lt;type&gt;lookfrom&lt;/type&gt;
@@ -326,12 +332,12 @@ defaults to 30ft AGL altitude).</p>
     &lt;/config&gt;
   &lt;/view&gt;
 
-</pre></blockquoute>
+</PRE></BLOCKQUOUTE>
 
-<p>The example <b>Tower View</b> however, is able to set the value to 10 meters since 
-the tower position is 50ft AGL altitude to start with:</p>
+<P>The example <B>Tower View</B> however, is able to set the value to 10 meters since 
+the tower position is 50ft AGL altitude to start with:</P>
 
-<blockquoute><pre>
+<BLOCKQUOUTE><PRE>
   &lt;view&gt;
     &lt;name&gt;Tower View&lt;/name&gt;
     &lt;type&gt;lookat&lt;/type&gt;
@@ -351,22 +357,22 @@ the tower position is 50ft AGL altitude to start with:</p>
     &lt;/config&gt;
   &lt;/view&gt;
 
-</pre></blockquoute>
-</div>
+</PRE></BLOCKQUOUTE>
+</DIV>
 
-<div><a name="examples"></a>
-<h3>5. Other examples</h3>
+<DIV><A NAME="examples"></A>
+<H3>5. Other examples</H3>
 
-<p><b>Example 1</b> - The configuration of a <b>Chase View without a rotating frutstum</b> 
+<P><B>Example 1</B> - The configuration of a <B>Chase View without a rotating frutstum</B> 
 (the view does not tilt with the aircraft's roll and pitch) is easy.  Since the aircraft model's 
-orientation is contained in it's location definition, you must set <i>from-model</i> 
+orientation is contained in it's location definition, you must set <I>from-model</I> 
 property to false so you may define your own source for position and orientation.  Then
-define <i>eye</i> position properties for the appropriate values.  If you leave
-<i>eye-roll-deg</i> and <i>eye-pitch-deg</i> out then they will be fixed at 0 degrees.
+define <I>eye</I> position properties for the appropriate values.  If you leave
+<I>eye-roll-deg</I> and <I>eye-pitch-deg</I> out then they will be fixed at 0 degrees.
 Note that technically this example does rotate, but only on the heading :) 
-</p>
+</P>
 
-<blockquoute><pre>
+<BLOCKQUOUTE><PRE>
   &lt;view&gt;
     &lt;name&gt;Chase View&lt;/name&gt;
     &lt;type&gt;lookat&lt;/type&gt;
@@ -388,26 +394,31 @@ Note that technically this example does rotate, but only on the heading :)
       &lt;z-offset-m type="double"&gt;-25&lt;/z-offset-m&gt;
     &lt;/config&gt;
   &lt;/view&gt;
-</pre></blockquoute>
+</PRE></BLOCKQUOUTE>
 
-<p>more to come?</p>
+<P>more to come?</P>
 
-</div>
-<br>
-<address>Jim Wilson, 24 April 2002 - last update 11 June 2002</address>
+</DIV>
+<BR>
+<ADDRESS>Jim Wilson, 24 April 2002 - last update 11 June 2002</ADDRESS>
 
 
 
-</td> </tr> </tbody></table>
-   <div id="bottom">
-      <a href="http://flightgear.org">Home</a> |
-      <a href="../docs.html">Documentation</a> | 
-      <a href="../binary.html">Downloads</a> |
-      <a href="../Gallery/index.html">Screenshots</a>
-	  <br>
-	  <br>
-	  <br>
-	  <br>
-	  Copyright 2003, Curtis L. Olson <a href="mailto:curt@flightgear.org">curt@flightgear.org</a>
-	   and Andrei barbu <a href="mailto:a_barbu2@yahoo.com">a_barbu2@yahoo.com</a>
-</div>
+<!-- Standard Footer Begin -->
+      </td></tr>
+    </tbody>
+  </table>
+  <div id="bottom">
+    <a href="http://flightgear.org">Home</a> |
+    <a href="docs.html">Documentation</a> | 
+    <a href="binary.html">Downloads</a> |
+    <a href="Gallery/index.html">Screenshots</a>
+    <br>
+    <br>
+    Copyright 2003, Curtis L. Olson <IMG ALIGN="MIDDLE" SRC="email-fg.png">
+    and Andrei Barbu <a href="mailto:a_barbu2@yahoo.com">a_barbu2@yahoo.com</a>
+  </div>
+</body>
+
+</html>
+<!-- Standard Footer End -->

@@ -1,57 +1,63 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD htm 4.01 Strict//EN">
+<!-- Standard Header Begin -->
+<html>
+
 <head>
-<title> FlightGear Flight Simulator</title>
-<link rel="stylesheet" type="text/css" href="../../../default.css"> 
-<LINK REL=STYLESHEET HREF="fgfs-portability-guide.css">
+  <title> FlightGear Flight Simulator</title>
+  <link rel="stylesheet" type="text/css" href="default.css"> 
 </head>
- <body>
-<div id="top"><a href="http://www.flightgear.org/"><img id="titlebar" src="../../../images/fglogosm.jpg" alt=""></a>
-</div>
-<table id="global">
-	<tbody><tr>
-		<td id="menu">
-		<!-- Use a replacescript to update the menu -->
-		<h3>About</h3>
-		<a href="../../../index.html">Home</a><br>
-		<a href="../../../introduction.html">Introduction</a><br>
-		<a href="../../../overview.html">Overview</a><br>
-		<a href="../../../features.html">Features</a><br>
-		<a href="../../../Gallery/index.html">Screenshots</a><br>
-		<!-- about.hook.1-->
-		<!-- about.hook.2-->
-		<h3>Downloads</h3>
-		<a href="../../../source.html">Source</a><br>
-		<a href="../../../binary.html">Binary</a><br>
-		<a href="../../../scenery.html">Scenery</a><br>
-		<!-- downloads.hook.1-->
-		<!-- downloads.hook.2-->
-		<h3>Support</h3>
-		<a href="../../../version.html">Version Summary</a><br>
-		<a href="../../../hardwarereq.html">Hardware Requirements</a><br>
-		<a href="../../../docs.html">Documentation</a><br>
-		<a href="../../../places.html">Places to Fly</a><br>
-		<a href="../../../mail.html">Mailing Lists</a><br>
-		<a href="../../../Docs/FlightGear-FAQ.html">Faq</a><br>
-		<!-- support.hook.1-->
-		<!-- support.hook.2-->
-		<h3>Links</h3>
-		<a href="../../../links.html">Related Websites</a><br>
-		<a href="../../../projects.html">Related Projects</a><br>
-		<a href="http://sourceforge.net/projects/flightgear/">SourceForge Project Page</a><br>
-		<!-- support.hook.1-->
-		<!-- support.hook.2-->
-		<h3>Contribute</h3>
-		<a href="../../../contributing.html">Contributing</a><br>
-		<a href="../../../cvs.html">CVS Resources</a><br>
-		<a href="../../../goals.html">Goals</a><br>
-		<a href="../../../thanks.html">Contributors</a><br>
-		<a href="../../../design.html">Design Proposals</a><br>
-		<a href="../../../events.html">Events</a><br>
-		<!-- support.hook.1-->
-		<!-- support.hook.2-->
-</td>
-<td id="page">
-<H1 ALIGN=CENTER><em>FlightGear</em> Portability Guide</H1>
+
+<body>
+  <div id="top">
+    <a href="http://www.flightgear.org/"><img id="titlebar" src="images/fglogosm.jpg" alt=""></a>
+  </div>
+
+  <table id="global">
+    <tbody><tr>
+      <td id="menu">
+	<!-- Use a replacescript to update the menu -->
+	<h3>About</h3>
+	<a href="index.html">Home</a><br>
+	<a href="introduction.html">Introduction</a><br>
+	<a href="overview.html">Overview</a><br>
+	<a href="features.html">Features</a><br>
+	<!-- about.hook.1-->
+        <a href="Gallery/index.html">Screenshots</a><br>
+	<!-- about.hook.2-->
+	<h3>Downloads</h3>
+	<a href="source.html">Source</a><br>
+	<a href="binary.html">Binary</a><br>
+	<a href="scenery.html">Scenery</a><br>
+	<!-- downloads.hook.1-->
+	<!-- downloads.hook.2-->
+	<h3>Support</h3>
+	<a href="version.html">Version Summary</a><br>
+	<a href="hardwarereq.html">Hardware Requirements</a><br>
+	<a href="docs.html">Documentation</a><br>
+	<a href="places.html">Places to Fly</a><br>
+	<a href="mail.html">Mailing Lists</a><br>
+	<a href="Docs/FlightGear-FAQ.html">Faq</a><br>
+	<!-- support.hook.1-->
+	<!-- support.hook.2-->
+	<h3>Links</h3>
+	<a href="links.html">Related Websites</a><br>
+	<a href="projects.html">Related Projects</a><br>
+	<a href="http://sourceforge.net/projects/flightgear/">SourceForge Project Page</a><br>
+	<!-- support.hook.1-->
+	<!-- support.hook.2-->
+	<h3>Contribute</h3>
+	<a href="contributing.html">Contributing</a><br>
+	<a href="cvs.html">CVS Resources</a><br>
+	<a href="goals.html">Goals</a><br>
+	<a href="thanks.html">Contributors</a><br>
+	<a href="design.html">Design Proposals</a><br>
+	<a href="events.html">Events</a><br>
+	<!-- support.hook.1-->
+	<!-- support.hook.2-->
+      </td>
+      <td id="page">
+<!-- Standard Header End -->
+<H1 ALIGN=CENTER><EM>FlightGear</EM> Portability Guide</H1>
 <P ALIGN=CENTER><STRONG>Bernie Bright (bbright@c031.aone.net.au)</STRONG></P><P>
 <P ALIGN=CENTER><STRONG>28 November 1998</STRONG></P><P>
 <P>
@@ -61,7 +67,7 @@ can contribute patches or new features.<BR>
 <P>
 <H1>1 Introduction</H1>
 <P>
-The file <em>Include/compiler.h</em> attempts to capture the differences between
+The file <EM>Include/compiler.h</EM> attempts to capture the differences between
 C++ compiler and STL implementations through the use of ``feature test macros''.
 The file is divided into two parts. The first part contains a section for each
 compiler, consisting of manifest constants specifying the features supported
@@ -81,17 +87,17 @@ Inprise (Borland) C++Builder 1 (5.20)
 <H3>1.2.1 STL</H3>
 <P>
 <DL ><DT><STRONG>FG_NEED_AUTO_PTR</STRONG>
-<DD>Some STL implementations don't supply an <tt>auto_ptr&lt;&gt;</tt>
+<DD>Some STL implementations don't supply an <TT>auto_ptr&lt;&gt;</TT>
 class template. Define this to provide one.
 <DT><STRONG>FG_NO_DEFAULT_TEMPLATE_ARGS</STRONG>
 <DD>Define this if the compiler doesn't support
-default arguments in template declarations. <em>(example)</em>
+default arguments in template declarations. <EM>(example)</EM>
 <DT><STRONG>FG_INCOMPLETE_FUNCTIONAL</STRONG>
-<DD>Some STL implementations don't have <tt>mem_fun_ref()</tt>.
+<DD>Some STL implementations don't have <TT>mem_fun_ref()</TT>.
 Define this to provide one. 
 <DT><STRONG>FG_NO_ARROW_OPERATOR</STRONG>
-<DD>Define this if iterators don't support <tt>operator-&gt;()</tt>.
-<em>(example)</em>
+<DD>Define this if iterators don't support <TT>operator-&gt;()</TT>.
+<EM>(example)</EM>
 <DT><STRONG>FG_EXPLICIT_FUNCTION_TMPL_ARGS</STRONG>
 <DD>&nbsp;
 <DT><STRONG>FG_MEMBER_TEMPLATES</STRONG>
@@ -104,25 +110,25 @@ Define this to provide one.
 <DT><STRONG>FG_HAVE_STD</STRONG>
 <DD>Define if std:: namespace supported.
 <DT><STRONG>FG_HAVE_STD_INCLUDES</STRONG>
-<DD>Define if headers should be included as <tt>&lt;iostream&gt;</tt>
-instead of <tt>&lt;iostream</tt>.h&gt;. Also implies that all ISO C++ standard include
+<DD>Define if headers should be included as <TT>&lt;iostream&gt;</TT>
+instead of <TT>&lt;iostream</TT>.h&gt;. Also implies that all ISO C++ standard include
 files are present.
 <DT><STRONG>FG_HAVE_STREAMBUF</STRONG>
-<DD>Define if <tt>&lt;streambuf&gt;</tt> or <tt>&lt;streambuf</tt>.h&gt;
+<DD>Define if <TT>&lt;streambuf&gt;</TT> or <TT>&lt;streambuf</TT>.h&gt;
 are present.
 <DT><STRONG>FG_CLASS_PARTIAL_SPECIALIZATION</STRONG>
 <DD>&nbsp;
 <DT><STRONG>FG_NEED_EXPLICIT</STRONG>
-<DD>Define if the compiler doesn't support the <tt><b>explicit</b></tt>
+<DD>Define if the compiler doesn't support the <TT><B>explicit</B></TT>
 keyword.
 <DT><STRONG>FG_NEED_TYPENAME</STRONG>
-<DD>Define if the compiler doesn't support the <tt><b>typename</b></tt>
+<DD>Define if the compiler doesn't support the <TT><B>typename</B></TT>
 keyword.
 <DT><STRONG>FG_NEED_MUTABLE</STRONG>
-<DD>Define if the compiler doesn't support the <tt><b>mutable</b></tt>
+<DD>Define if the compiler doesn't support the <TT><B>mutable</B></TT>
 keyword.
 <DT><STRONG>FG_NEED_BOOL</STRONG>
-<DD>Define if the compiler doesn't have the <tt><b>bool</b></tt>
+<DD>Define if the compiler doesn't have the <TT><B>bool</B></TT>
 type.
 <P>
  </DL><H3>1.2.3 Include Files</H3>
@@ -152,8 +158,8 @@ In use, instead of writing #include &lt;iostream&gt; you write #include STD_IOST
  <BR> 
 The situation becomes complicated with missing header files. &lt;streambuf&gt; is
 a good example. In this case we must rely on FG_HAVE_STD_INCLUDES and FG_HAVE_STREAMBUF.<BR> 
- <em></em><BR> 
-<em>TODO</em>
+ <EM></EM><BR> 
+<EM>TODO</EM>
 <P>
 <H3>1.3 and the rest</H3>
 <P>
@@ -177,29 +183,34 @@ a good example. In this case we must rely on FG_HAVE_STD_INCLUDES and FG_HAVE_ST
 <P>
  </DL> <P><A NAME="SECTIONREF"><H3>References</H3></A><P>
 <DL COMPACT>
-<DT><A NAME="1"><STRONG>1</STRONG></A><DD>Stroustrup, Bjarne, <em>The C++ Programming Programming Language</em>, 3rd edition,
+<DT><A NAME="1"><STRONG>1</STRONG></A><DD>Stroustrup, Bjarne, <EM>The C++ Programming Programming Language</EM>, 3rd edition,
 June 1997, ISBN 0-201-88954-4
 <DT><A NAME="2"><STRONG>2</STRONG></A><DD>SGI Standard Template Library (STL) release 3.11
 </DL><H1>About this document ... </H1>
 <P>
- <STRONG><em>FlightGear</em> Flight Simulator<BR> 
+ <STRONG><EM>FlightGear</EM> Flight Simulator<BR> 
 Portability Guide</STRONG><P>
-This document was generated using the <A HREF="http://www-dsed.llnl.gov/files/programs/unix/latex2html/manual/"><STRONG>LaTeX</STRONG>2<tt>HTML</tt></A> translator Version 96.1 (Feb 5, 1996) Copyright &#169; 1993, 1994, 1995, 1996,  <A HREF="http://cbl.leeds.ac.uk/nikos/personal.html">Nikos Drakos</A>, Computer Based Learning Unit, University of Leeds. <P> The command line arguments were: <BR>
-<STRONG>latex2html</STRONG> <tt>-show_section_numbers -split 0 fgfs-portability-guide</tt>. <P>The translation was initiated by Curtis L. Olson on Mon Dec  7 15:43:47 CST 1998<BR> <HR>
+This document was generated using the <A HREF="http://www-dsed.llnl.gov/files/programs/unix/latex2html/manual/"><STRONG>LaTeX</STRONG>2<TT>HTML</TT></A> translator Version 96.1 (Feb 5, 1996) Copyright &#169; 1993, 1994, 1995, 1996,  <A HREF="http://cbl.leeds.ac.uk/nikos/personal.html">Nikos Drakos</A>, Computer Based Learning Unit, University of Leeds. <P> The command line arguments were: <BR>
+<STRONG>latex2html</STRONG> <TT>-show_section_numbers -split 0 fgfs-portability-guide</TT>. <P>The translation was initiated by Curtis L. Olson on Mon Dec  7 15:43:47 CST 1998<BR> <HR>
 <P><ADDRESS>
 <I>Curtis L. Olson <BR>
 Mon Dec  7 15:43:47 CST 1998</I>
 </ADDRESS>
-</td> </tr> </tbody></table>
-   <div id="bottom">
-      <a href="http://flightgear.org">Home</a> |
-      <a href="../../../docs.html">Documentation</a> | 
-      <a href="../../../binary.html">Downloads</a> |
-      <a href="../../../Gallery/index.html">Screenshots</a>
-	  <br>
-	  <br>
-	  <br>
-	  <br>
-	  Copyright 2003, Curtis L. Olson <a href="mailto:curt@flightgear.org">curt@flightgear.org</a>
-	   and Andrei barbu <a href="mailto:a_barbu2@yahoo.com">a_barbu2@yahoo.com</a>
-</div>
+<!-- Standard Footer Begin -->
+      </td></tr>
+    </tbody>
+  </table>
+  <div id="bottom">
+    <a href="http://flightgear.org">Home</a> |
+    <a href="docs.html">Documentation</a> | 
+    <a href="binary.html">Downloads</a> |
+    <a href="Gallery/index.html">Screenshots</a>
+    <br>
+    <br>
+    Copyright 2003, Curtis L. Olson <IMG ALIGN="MIDDLE" SRC="email-fg.png">
+    and Andrei Barbu <a href="mailto:a_barbu2@yahoo.com">a_barbu2@yahoo.com</a>
+  </div>
+</body>
+
+</html>
+<!-- Standard Footer End -->

@@ -1,92 +1,98 @@
 <!DOCTYPE htm PUBLIC "-//W3C//DTD htm 4.01 Strict//EN">
-<head>
-<title> FlightGear Flight Simulator</title>
-<link rel="stylesheet" type="text/css" href="../../default.css"> 
+<!-- Standard Header Begin -->
+<html>
 
+<head>
+  <title> FlightGear Flight Simulator</title>
+  <link rel="stylesheet" type="text/css" href="default.css"> 
 </head>
- <body>
-<div id="top"><a href="http://www.flightgear.org/"><img id="titlebar" src="../../images/fglogosm.jpg" alt=""></a>
-</div>
-<table id="global">
-	<tbody><tr>
-		<td id="menu">
-		<!-- Use a replacescript to update the menu -->
-		<h3>About</h3>
-		<a href="../../index.html">Home</a><br>
-		<a href="../../introduction.html">Introduction</a><br>
-		<a href="../../overview.html">Overview</a><br>
-		<a href="../../features.html">Features</a><br>
-		<a href="../../Gallery/index.html">Screenshots</a><br>
-		<!-- about.hook.1-->
-		<!-- about.hook.2-->
-		<h3>Downloads</h3>
-		<a href="../../source.html">Source</a><br>
-		<a href="../../binary.html">Binary</a><br>
-		<a href="../../scenery.html">Scenery</a><br>
-		<!-- downloads.hook.1-->
-		<!-- downloads.hook.2-->
-		<h3>Support</h3>
-		<a href="../../version.html">Version Summary</a><br>
-		<a href="../../hardwarereq.html">Hardware Requirements</a><br>
-		<a href="../../docs.html">Documentation</a><br>
-		<a href="../../places.html">Places to Fly</a><br>
-		<a href="../../mail.html">Mailing Lists</a><br>
-		<a href="../../Docs/FlightGear-FAQ.html">Faq</a><br>
-		<!-- support.hook.1-->
-		<!-- support.hook.2-->
-		<h3>Links</h3>
-		<a href="../../links.html">Related Websites</a><br>
-		<a href="../../projects.html">Related Projects</a><br>
-		<a href="http://sourceforge.net/projects/flightgear/">SourceForge Project Page</a><br>
-		<!-- support.hook.1-->
-		<!-- support.hook.2-->
-		<h3>Contribute</h3>
-		<a href="../../contributing.html">Contributing</a><br>
-		<a href="../../cvs.html">CVS Resources</a><br>
-		<a href="../../goals.html">Goals</a><br>
-		<a href="../../thanks.html">Contributors</a><br>
-		<a href="../../design.html">Design Proposals</a><br>
-		<a href="../../events.html">Events</a><br>
-		<!-- support.hook.1-->
-		<!-- support.hook.2-->
-</td>
-<td id="page">
+
+<body>
+  <div id="top">
+    <a href="http://www.flightgear.org/"><img id="titlebar" src="images/fglogosm.jpg" alt=""></a>
+  </div>
+
+  <table id="global">
+    <tbody><tr>
+      <td id="menu">
+	<!-- Use a replacescript to update the menu -->
+	<h3>About</h3>
+	<a href="index.html">Home</a><br>
+	<a href="introduction.html">Introduction</a><br>
+	<a href="overview.html">Overview</a><br>
+	<a href="features.html">Features</a><br>
+	<!-- about.hook.1-->
+        <a href="Gallery/index.html">Screenshots</a><br>
+	<!-- about.hook.2-->
+	<h3>Downloads</h3>
+	<a href="source.html">Source</a><br>
+	<a href="binary.html">Binary</a><br>
+	<a href="scenery.html">Scenery</a><br>
+	<!-- downloads.hook.1-->
+	<!-- downloads.hook.2-->
+	<h3>Support</h3>
+	<a href="version.html">Version Summary</a><br>
+	<a href="hardwarereq.html">Hardware Requirements</a><br>
+	<a href="docs.html">Documentation</a><br>
+	<a href="places.html">Places to Fly</a><br>
+	<a href="mail.html">Mailing Lists</a><br>
+	<a href="Docs/FlightGear-FAQ.html">Faq</a><br>
+	<!-- support.hook.1-->
+	<!-- support.hook.2-->
+	<h3>Links</h3>
+	<a href="links.html">Related Websites</a><br>
+	<a href="projects.html">Related Projects</a><br>
+	<a href="http://sourceforge.net/projects/flightgear/">SourceForge Project Page</a><br>
+	<!-- support.hook.1-->
+	<!-- support.hook.2-->
+	<h3>Contribute</h3>
+	<a href="contributing.html">Contributing</a><br>
+	<a href="cvs.html">CVS Resources</a><br>
+	<a href="goals.html">Goals</a><br>
+	<a href="thanks.html">Contributors</a><br>
+	<a href="design.html">Design Proposals</a><br>
+	<a href="events.html">Events</a><br>
+	<!-- support.hook.1-->
+	<!-- support.hook.2-->
+      </td>
+      <td id="page">
+<!-- Standard Header End -->
 <H1>Airport, navigation aid and IFR intersection data in FlightGear</H1>
 <H2>June 17<SUP>th</SUP>, 2001</H2>
-<H2>Robin Peel <a href="mailto:robin@cpwd.com">robin@cpwd.com</a></H2><BR>
+<H2>Robin Peel <A HREF="mailto:robin@cpwd.com">robin@cpwd.com</A></H2><BR>
 <H3>Version FG1.4</H3>
 
 <A HREF="AptNavFAQ.FlightGear.htm#_Toc493997498">Purpose of this FAQ</A><BR>
-<A HREF="AptNavFAQ.FlightGear.htm#_Toc493997499">Who am I &amp; what do I do?</A><br>
-<A HREF="AptNavFAQ.FlightGear.htm#_Toc493997500">What is the &quot;master database&quot;?</A><br>
-<A HREF="AptNavFAQ.FlightGear.htm#_Toc493997501">How is the data created, updated and generated for FlightGear?</A><br>
-<A HREF="AptNavFAQ.FlightGear.htm#_Toc493997502"><FONT>How complete is the data?</a><br>
-<A HREF="AptNavFAQ.FlightGear.htm#_Toc493997503"><FONT>How can I correct errors or omissions I find in the data?</a><br>
-<A HREF="AptNavFAQ.FlightGear.htm#_Toc493997504"><FONT>Where is the data stored in FlightGear and what data does each file contain?</a><br>
-<A HREF="AptNavFAQ.FlightGear.htm#_Toc493997505"><FONT>General structure of default.apt, default.nav, default.ils and default.fix files</a><br>
-<A HREF="AptNavFAQ.FlightGear.htm#_Toc493997506"><FONT>Details  what do the entries in default.apt mean?</a><br>
-<A HREF="AptNavFAQ.FlightGear.htm#_Toc493997507"><FONT>Details  what do the entries in default.nav mean?</a><br>
-<A HREF="AptNavFAQ.FlightGear.htm#_Toc493997508"><FONT>Details  what do the entries in default.ils mean?</a><br>
-<A HREF="AptNavFAQ.FlightGear.htm#_Toc493997509"><FONT>Details  what do the entries in fix.dat mean?</a><br>
-<A HREF="AptNavFAQ.FlightGear.htm#_Toc493997510"><FONT>Where are the localiser and glideslope aerials positioned in the &quot;real world&quot;?</a><br>
-<A HREF="AptNavFAQ.FlightGear.htm#_Toc493997511"><FONT>How do I convert my data to decimal degrees?</a><br>
-<br><br>
-<h3><A NAME="_Toc493997498"></A>Purpose of this FAQ</h3><BR>
+<A HREF="AptNavFAQ.FlightGear.htm#_Toc493997499">Who am I &amp; what do I do?</A><BR>
+<A HREF="AptNavFAQ.FlightGear.htm#_Toc493997500">What is the &quot;master database&quot;?</A><BR>
+<A HREF="AptNavFAQ.FlightGear.htm#_Toc493997501">How is the data created, updated and generated for FlightGear?</A><BR>
+<A HREF="AptNavFAQ.FlightGear.htm#_Toc493997502"><FONT>How complete is the data?</A><BR>
+<A HREF="AptNavFAQ.FlightGear.htm#_Toc493997503"><FONT>How can I correct errors or omissions I find in the data?</A><BR>
+<A HREF="AptNavFAQ.FlightGear.htm#_Toc493997504"><FONT>Where is the data stored in FlightGear and what data does each file contain?</A><BR>
+<A HREF="AptNavFAQ.FlightGear.htm#_Toc493997505"><FONT>General structure of default.apt, default.nav, default.ils and default.fix files</A><BR>
+<A HREF="AptNavFAQ.FlightGear.htm#_Toc493997506"><FONT>Details  what do the entries in default.apt mean?</A><BR>
+<A HREF="AptNavFAQ.FlightGear.htm#_Toc493997507"><FONT>Details  what do the entries in default.nav mean?</A><BR>
+<A HREF="AptNavFAQ.FlightGear.htm#_Toc493997508"><FONT>Details  what do the entries in default.ils mean?</A><BR>
+<A HREF="AptNavFAQ.FlightGear.htm#_Toc493997509"><FONT>Details  what do the entries in fix.dat mean?</A><BR>
+<A HREF="AptNavFAQ.FlightGear.htm#_Toc493997510"><FONT>Where are the localiser and glideslope aerials positioned in the &quot;real world&quot;?</A><BR>
+<A HREF="AptNavFAQ.FlightGear.htm#_Toc493997511"><FONT>How do I convert my data to decimal degrees?</A><BR>
+<BR><BR>
+<H3><A NAME="_Toc493997498"></A>Purpose of this FAQ</H3><BR>
 This FAQ describes the contents and structure of the files that store airport, nav-aid (NDB, VOR, DME and ILS) and IFR intersection data within the Flight Gear flight simulator.  <BR><BR>
-<h3><A NAME="_Toc493997499"></A>Who am I &amp; what do I do?</h3><BR>
+<H3><A NAME="_Toc493997499"></A>Who am I &amp; what do I do?</H3><BR>
 Sometime in 1997, I volunteered to Austin Meyer (the owner/developer of the X-Plane simulator) to try and improve upon the very basic airport data included in X-Plane version 3.x.  I built an application in Microsoft Access 97 (now converted to Access 2000) to store and manipulate the airport, nav-aid and intersection data.  I have worked with Austin to add additional airport and nav-aid details to X-Plane (such as custom taxiways, airports outside the boundaries of the USA, more accurate runway markings, etc) and during this time the master database has grown to over 20MB in size.  This database is also now used to generate data for the FlightGear simulator, using data files that are different in format (and more sophisticated) than the X-Plane data files.<BR><BR>
 
 I perform this task as a volunteer.  The data is published as a free resource to the X-Plane and FlightGear communities.<BR><BR>
 
 At present, I have around 450hrs of &quot;real&quot; flying experience, gained since 1989.  I have a UK Private Pilots Licence (gained at White Waltham, EGLM), a US Private Certificate and a US Instrument Rating.  I currently fly a rented new C-172 SP out of Albuquerque Double Eagle II (KAEG), or more elderly knackered C-172s out of Santa Fe (KSAF).  I have just ordered a new Liberty XL-2 from Liberty Aerospace in Montrose, Colorado (www.libertyaircraft.com).<BR><BR>
 
-<h3><A NAME="_Toc493997500"></A>What is the &quot;master database&quot;?</h3><BR>
+<H3><A NAME="_Toc493997500"></A>What is the &quot;master database&quot;?</H3><BR>
 The master database is my Microsoft Access 2000 database that stores all the airport, nav-aid and intersection data.  In database parlance, it is highly &quot;normalized&quot; and consists of over 35 Access tables accessed from a custom-designed Access 2000 application.  The master database currently contains over 22,000 airports.  I may &quot;upsize&quot; the database back-end to Microsoft SQLServer (7.0) in the very near future.<BR><BR>
-<h3><A NAME="_Toc493997501"></A>How is the data created, updated and generated for FlightGear?</h3><BR>
+<H3><A NAME="_Toc493997501"></A>How is the data created, updated and generated for FlightGear?</H3><BR>
 I regularly import updates and amendments to the master database using routines that will automatically read fragments of new data sent to me by other users, and save the new data into my Access tables.  Similarly, I have routines that will generate the data required by FlightGear and X-Plane in the necessary form<BR><BR>
-<h3><A NAME="_Toc493997502"></A>How complete is the data?</h3><BR>
+<H3><A NAME="_Toc493997502"></A>How complete is the data?</H3><BR>
 The data is pretty complete for the USA (based upon FAA data sources).  Quality data for other countries is harder to obtain, but dedicated FlightGear and/or X-Plane users have sent me data for much of Canada, Western Europe (with some gaps), Japan and Australia.  Some other random major airports also exist (eg. in Central and South America).<BR><BR>
-<h3><A NAME="_Toc493997503"></A>How can I correct errors or omissions I find in the data?</h3><BR>
+<H3><A NAME="_Toc493997503"></A>How can I correct errors or omissions I find in the data?</H3><BR>
 First, you need to find a good source of information.  An official chart of the airport (such as those published by Jeppesen) is a good starting point  they often have a helpful latitude/longitude scale around the edges that you can use to figure out the exact positions of runways and taxiways.  Remember that these scales appear to be backwards for western longitudes and southern latitudes!<BR><BR>
 
 Then you need to get the data into the appropriate files (see below for file names and formats.<BR><BR>
@@ -99,7 +105,7 @@ Please do <U>not</U> send me:<BR><BR>
 <LI>Your entire file (with your corrections embedded somewhere in its midst)  these are impossible for me to sort through!</LI>
 <LI>Scanned copies of charts in the hope that I will spend several hours trying to plot the positions of runways and taxiways for you.  Unless I have a personal interest in the particular airport, this takes just too much of my time.  Sorry!</LI></UL>
 
-<h3><A NAME="_Toc493997504"></A>Where is the data stored in FlightGear and what data does each file contain?</h3><BR>
+<H3><A NAME="_Toc493997504"></A>Where is the data stored in FlightGear and what data does each file contain?</H3><BR>
 The following files contain airport, nav-aid and intersection data in FlightGear.  They may be stored in the Airports and Navaid folders of your FlightGear installation as .gz archives:<BR><BR>
 <DIR>
 <DIR>
@@ -116,7 +122,7 @@ The following files contain airport, nav-aid and intersection data in FlightGear
 </DIR>
 
 When un-archived, they are all plain text files that can be viewed or edited with any text editor (such as Notepad on a Windows PC).  <BR><BR>
-<h3><A NAME="_Toc493997505"></A>General structure of default.apt, default.nav, default.ils and default.fix files</h3><BR>
+<H3><A NAME="_Toc493997505"></A>General structure of default.apt, default.nav, default.ils and default.fix files</H3><BR>
 Features common to each file are:<BR><BR>
 
 <UL>
@@ -150,7 +156,7 @@ Since the default.fix file contains only IFR intersections, no &quot;prefix&quot
 
 Individual data elements on each line can be separated by any number of spaces or other white space  however, it is a good plan to keep them aligned in tidy columns (this is harder in default.apt, with its mixture of line types)  it is easier to spot silly errors and/or omissions in this way. <BR><BR>
 
-<h3><A NAME="_Toc493997506"></A>Details  what do the entries in default.apt mean?</h3><BR><BR>
+<H3><A NAME="_Toc493997506"></A>Details  what do the entries in default.apt mean?</H3><BR><BR>
 Each airport has a header line (code &quot;A&quot;) and one or more runway/taxiway lines (code &quot;R&quot; or &quot;T&quot;).  The runways for each airport MUST follow the airport header line. Taxiways should follow the runways.  A blank line can be used to separate different airports  this helps improve readability but is not required. <BR><BR>
 <DIR>
 
@@ -247,7 +253,7 @@ B Edge Lights (N=None, B=Blue taxiway, R=Red edge lights)<BR><BR>
 
 </FONT><FONT COLOR="#ff0000">[Taxiway definition is still subject to change]<BR><BR>
 </FONT>
-<h3><A NAME="_Toc493997507"></A>Details  what do the entries in default.nav mean?</h3><BR>
+<H3><A NAME="_Toc493997507"></A>Details  what do the entries in default.nav mean?</H3><BR>
 Each nav-aid is on a separate line, usually sorted by the nav-aid name within each nav-aid type.<BR><BR>
 
 Here are some example lines, showing selected nav-aids in the Albuquerque area:<BR><BR>
@@ -267,7 +273,7 @@ Y Co-located DME (Y=Yes, N=No).<BR><BR>
 ABQNav-aid identifier (note  these are not unique).<BR><BR>
 XXXMagnetic variation, if known, in format 13E for 13 degrees east.<BR><BR>
 &quot;Albuquerque VORTAC&quot;Nav-aid name.<BR><BR>
-<h3><A NAME="_Toc493997508"></A>Details  what do the entries in default.ils mean?</h3><BR>
+<H3><A NAME="_Toc493997508"></A>Details  what do the entries in default.ils mean?</H3><BR>
 Each ILS installation is on a separate line.  Here are some example lines, showing the ILS 08 for KABQ (Albuquerque, New Mexico).  These lines are long  so they are wrapped onto multiple lines here (but are on a single long line in default.ils):<BR><BR>
 
 </FONT><FONT FACE="Courier New">I ILS   KABQ 08   111.90 ISPT 090.43  35.044026 -106.570548  <BR><BR>
@@ -314,7 +320,7 @@ MMLS (Microwave Landing System)<BR><BR>
 <LI>If an ILS component does not exist, its latitude/longitude will be set to zero (eg. the Inner Marker in the above example).</LI>
 <LI>For a Locator Outer Marker (LOM), which is an NDB co-located with an OM, the NDB must be added to default.nav as a separate, stand-alone NDB (at the same location!).  </LI></UL>
 
-<h3><A NAME="_Toc493997509"></A>Details  what do the entries in fix.dat mean?</h3><BR>
+<H3><A NAME="_Toc493997509"></A>Details  what do the entries in fix.dat mean?</H3><BR>
 This is the easiest file to interpret!  Each intersection is on a separate line.  Here is an example line:<BR><BR>
 
 </FONT><FONT FACE="Courier New">WOBIN  35.162472 -106.646500 <BR><BR>
@@ -323,7 +329,7 @@ The meaning of this data is:<BR><BR>
 WOBINIntersection name (always five characters and must be unique).<BR><BR>
 35.162472Latitude in decimal degrees.<BR><BR>
 -106.646500Longitude in decimal degrees<BR><BR>
-<h3><A NAME="_Toc493997510"></A>Where are the localiser and glideslope aerials positioned in the &quot;real world&quot;?</h3><BR>
+<H3><A NAME="_Toc493997510"></A>Where are the localiser and glideslope aerials positioned in the &quot;real world&quot;?</H3><BR>
 Flight simulator pilots often get confused about where the aerials that form the components of an ILS are positioned in relation to the runway.  Here is a simple example for a fictitious ILS for runway 09.<BR><BR>
 
 The localiser aerial (which provides left-right guidance to the pilot) is usually positioned just beyond (500  1000 feet) the <B><U>far</B></U> end of the runway it serves (ie. beyond the eastern end of our example runway).  The localisers beam points back down the runway (westward in our example) towards an approaching plane  the center of the beam passes through the runways touch down zone.  You can see the localiser aerial at your nearest major airport  the aerial is a wide, flat thing, usually painted red, and hidden amongst the forest of approach lighting for the opposite runway (runway 27 in our example).  It is usually the first valuable thing destroyed by an aeroplane that over-runs the end of a runway  or by an aeroplane the approaches the opposite end of the runway a little low.  <BR><BR>
@@ -343,8 +349,8 @@ Where:<BR><BR>
 #  - Glideslope aerial<BR><BR>
 @  - Localiser aerial<BR><BR>
 =  - Runway 09/27<BR><BR>
-() - Marker beacons<BR><BR></font>
-<h3><A NAME="_Toc493997511"></A>How do I convert my data to decimal degrees?</h3><BR>
+() - Marker beacons<BR><BR></FONT>
+<H3><A NAME="_Toc493997511"></A>How do I convert my data to decimal degrees?</H3><BR>
 The FlightGear data files define all positions as &quot;decimal degrees&quot; to six decimal places (eg. 123.456789).  This makes mathematical calculations faster.  <BR><BR>
 
 But remember from your basic school geometry that a degree is <I>traditionally</I> subdivided into 60 minutes, and that a minute can be further subdivided in 60 seconds.  Some aviation data sources choose not to use the &quot;seconds&quot;  instead they use decimal parts of a minute.  Other sources use data defined in degrees and the decimal part of degrees, just as in FlightGear.  Here are some example data formats (all refer to the same position):<BR><BR>
@@ -367,19 +373,24 @@ So, to convert a dd mm.mm format (eg. 35 30.00N) to decimal degrees), you need t
 [From JJ Brennan]  For those who don't like to do the math, there is a very useful little program called LLCALC that will do latitude/longitude calculations.  It's also very useful if you wish to locate a point in some relation to another point (like placing an ILS GS transmitter alongside a runway, or finding the end points of a runway from its center point).<BR><BR>
 
 A copy can be found at:<BR><BR>
-<a href="ftp://ftp.kingmont.com/pub/kingmont/x-plane/llcalc.zip">ftp://ftp.kingmont.com/pub/kingmont/x-plane/llcalc.zip</a><BR><BR>
+<A HREF="ftp://ftp.kingmont.com/pub/kingmont/x-plane/llcalc.zip">ftp://ftp.kingmont.com/pub/kingmont/x-plane/llcalc.zip</A><BR><BR>
 
 &nbsp;</FONT>
-</td> </tr> </tbody></table>
-   <div id="bottom">
-      <a href="http://flightgear.org">Home</a> |
-      <a href="../../docs.html">Documentation</a> | 
-      <a href="../../binary.html">Downloads</a> |
-      <a href="../../Gallery/index.html">Screenshots</a>
-	  <br>
-	  <br>
-	  <br>
-	  <br>
-	  Copyright 2003, Curtis L. Olson <a href="mailto:curt@flightgear.org">curt@flightgear.org</a>
-	   and Andrei barbu <a href="mailto:a_barbu2@yahoo.com">a_barbu2@yahoo.com</a>
-</div>
+<!-- Standard Footer Begin -->
+      </td></tr>
+    </tbody>
+  </table>
+  <div id="bottom">
+    <a href="http://flightgear.org">Home</a> |
+    <a href="docs.html">Documentation</a> | 
+    <a href="binary.html">Downloads</a> |
+    <a href="Gallery/index.html">Screenshots</a>
+    <br>
+    <br>
+    Copyright 2003, Curtis L. Olson <IMG ALIGN="MIDDLE" SRC="email-fg.png">
+    and Andrei Barbu <a href="mailto:a_barbu2@yahoo.com">a_barbu2@yahoo.com</a>
+  </div>
+</body>
+
+</html>
+<!-- Standard Footer End -->

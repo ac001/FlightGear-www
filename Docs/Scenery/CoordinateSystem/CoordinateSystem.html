@@ -1,56 +1,62 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD htm 4.01 Strict//EN">
+<!-- Standard Header Begin -->
+<html>
+
 <head>
-<title> FlightGear Flight Simulator</title>
-<link rel="stylesheet" type="text/css" href="../../../default.css"> 
-<LINK REL=STYLESHEET HREF="CoordinateSystem.css">
+  <title> FlightGear Flight Simulator</title>
+  <link rel="stylesheet" type="text/css" href="default.css"> 
 </head>
- <body>
-<div id="top"><a href="http://www.flightgear.org/"><img id="titlebar" src="../../../images/fglogosm.jpg" alt=""></a>
-</div>
-<table id="global">
-	<tbody><tr>
-		<td id="menu">
-		<!-- Use a replacescript to update the menu -->
-		<h3>About</h3>
-		<a href="../../../index.html">Home</a><br>
-		<a href="../../../introduction.html">Introduction</a><br>
-		<a href="../../../overview.html">Overview</a><br>
-		<a href="../../../features.html">Features</a><br>
-		<a href="../../../Gallery/index.html">Screenshots</a><br>
-		<!-- about.hook.1-->
-		<!-- about.hook.2-->
-		<h3>Downloads</h3>
-		<a href="../../../source.html">Source</a><br>
-		<a href="../../../binary.html">Binary</a><br>
-		<a href="../../../scenery.html">Scenery</a><br>
-		<!-- downloads.hook.1-->
-		<!-- downloads.hook.2-->
-		<h3>Support</h3>
-		<a href="../../../version.html">Version Summary</a><br>
-		<a href="../../../hardwarereq.html">Hardware Requirements</a><br>
-		<a href="../../../docs.html">Documentation</a><br>
-		<a href="../../../places.html">Places to Fly</a><br>
-		<a href="../../../mail.html">Mailing Lists</a><br>
-		<a href="../../../Docs/FlightGear-FAQ.html">Faq</a><br>
-		<!-- support.hook.1-->
-		<!-- support.hook.2-->
-		<h3>Links</h3>
-		<a href="../../../links.html">Related Websites</a><br>
-		<a href="../../../projects.html">Related Projects</a><br>
-		<a href="http://sourceforge.net/projects/flightgear/">SourceForge Project Page</a><br>
-		<!-- support.hook.1-->
-		<!-- support.hook.2-->
-		<h3>Contribute</h3>
-		<a href="../../../contributing.html">Contributing</a><br>
-		<a href="../../../cvs.html">CVS Resources</a><br>
-		<a href="../../../goals.html">Goals</a><br>
-		<a href="../../../thanks.html">Contributors</a><br>
-		<a href="../../../design.html">Design Proposals</a><br>
-		<a href="../../../events.html">Events</a><br>
-		<!-- support.hook.1-->
-		<!-- support.hook.2-->
-</td>
-<td id="page">
+
+<body>
+  <div id="top">
+    <a href="http://www.flightgear.org/"><img id="titlebar" src="images/fglogosm.jpg" alt=""></a>
+  </div>
+
+  <table id="global">
+    <tbody><tr>
+      <td id="menu">
+	<!-- Use a replacescript to update the menu -->
+	<h3>About</h3>
+	<a href="index.html">Home</a><br>
+	<a href="introduction.html">Introduction</a><br>
+	<a href="overview.html">Overview</a><br>
+	<a href="features.html">Features</a><br>
+	<!-- about.hook.1-->
+        <a href="Gallery/index.html">Screenshots</a><br>
+	<!-- about.hook.2-->
+	<h3>Downloads</h3>
+	<a href="source.html">Source</a><br>
+	<a href="binary.html">Binary</a><br>
+	<a href="scenery.html">Scenery</a><br>
+	<!-- downloads.hook.1-->
+	<!-- downloads.hook.2-->
+	<h3>Support</h3>
+	<a href="version.html">Version Summary</a><br>
+	<a href="hardwarereq.html">Hardware Requirements</a><br>
+	<a href="docs.html">Documentation</a><br>
+	<a href="places.html">Places to Fly</a><br>
+	<a href="mail.html">Mailing Lists</a><br>
+	<a href="Docs/FlightGear-FAQ.html">Faq</a><br>
+	<!-- support.hook.1-->
+	<!-- support.hook.2-->
+	<h3>Links</h3>
+	<a href="links.html">Related Websites</a><br>
+	<a href="projects.html">Related Projects</a><br>
+	<a href="http://sourceforge.net/projects/flightgear/">SourceForge Project Page</a><br>
+	<!-- support.hook.1-->
+	<!-- support.hook.2-->
+	<h3>Contribute</h3>
+	<a href="contributing.html">Contributing</a><br>
+	<a href="cvs.html">CVS Resources</a><br>
+	<a href="goals.html">Goals</a><br>
+	<a href="thanks.html">Contributors</a><br>
+	<a href="design.html">Design Proposals</a><br>
+	<a href="events.html">Events</a><br>
+	<!-- support.hook.1-->
+	<!-- support.hook.2-->
+      </td>
+      <td id="page">
+<!-- Standard Header End -->
 
 <H1 ALIGN=CENTER>
   Flight Gear Internal Scenery Coordinate Systems and
@@ -58,7 +64,7 @@
 </H1>
 <P ALIGN=CENTER><STRONG>
     Curtis L. Olson<BR> 
-    (<tt>curt@me.umn.edu</tt>)
+    (<TT>curt@me.umn.edu</TT>)
 </STRONG></P><P>
 <P>
 <H1>1 Coordinate Systems</H1>
@@ -67,7 +73,7 @@
 <P>
 Geocentric coordinates are the polar coordinates centered at the
 center of the earth.  Points are defined by the geocentric longitude,
-geocentric latitude, and distance from the <i>center</i> of the
+geocentric latitude, and distance from the <I>center</I> of the
 earth.  Note, due to the non-spherical nature of the earth, the
 geocentric latitude is not exactly the same as the traditional
 latitude you would see on a map.
@@ -88,7 +94,7 @@ mapping the earth using latitude and longitude back when they thought
 the Earth was round (or a perfect sphere.)  It's not though.  It is
 more of an ellipse.
 <P>
-Early map makers defined the standard <i>geodetic</i> latitude as
+Early map makers defined the standard <I>geodetic</I> latitude as
 the angle between the local up vector and the equator.  This is shown
 in figure <A HREF="CoordinateSystem.html#figgeodesy">1</A>.  The point  <IMG WIDTH=13 HEIGHT=13 ALIGN=BOTTOM ALT="tex2html_wrap_inline67" SRC="img1.gif"  >  marks our current
 position.  The line  <IMG WIDTH=45 HEIGHT=13 ALIGN=BOTTOM ALT="tex2html_wrap_inline69" SRC="img2.gif"  >  is tangent to the ellipse at point
@@ -100,7 +106,7 @@ by  <IMG WIDTH=53 HEIGHT=13 ALIGN=BOTTOM ALT="tex2html_wrap_inline75" SRC="img4.
 However, as you can see from the figure, the line  <IMG WIDTH=27 HEIGHT=13 ALIGN=BOTTOM ALT="tex2html_wrap_inline73" SRC="img3.gif"  >  does
 not extend through the center of the earth.  Instead, the line
  <IMG WIDTH=28 HEIGHT=13 ALIGN=BOTTOM ALT="tex2html_wrap_inline79" SRC="img5.gif"  >  extends through the center of the earth.  So in
-<i>geocentric</i> coordinates, our latitude would be reported as the
+<I>geocentric</I> coordinates, our latitude would be reported as the
 angle  <IMG WIDTH=54 HEIGHT=13 ALIGN=BOTTOM ALT="tex2html_wrap_inline81" SRC="img6.gif"  > .
 <P>
 <P><A NAME="33">&#160;</A><A NAME="figgeodesy">&#160;</A> <IMG WIDTH=425 HEIGHT=402 ALIGN=BOTTOM ALT="figure31" SRC="img7.gif"  > <BR>
@@ -129,7 +135,7 @@ To maintain simulation accuracy, the WGS-84 model should be used when
 translating geodetic coordinates (via geocentric coordinates) into the
 FG Cartesian coordinate system.  The code to do this can probably be
 borrowed from the LaRCsim code.  It is located in
-<tt>ls_geodesy.c</tt>.
+<TT>ls_geodesy.c</TT>.
 <P>
 <H3>1.5 Cartesian Coordinates</H3>
 <P>
@@ -180,22 +186,27 @@ geocentric coordinates:
   Flight Gear Internal Scenery Coordinate Systems and
   Representations.
 </STRONG><P>
-This document was generated using the <A HREF="http://www-dsed.llnl.gov/files/programs/unix/latex2html/manual/"><STRONG>LaTeX</STRONG>2<tt>HTML</tt></A> translator Version 96.1 (Feb 5, 1996) Copyright &#169; 1993, 1994, 1995, 1996,  <A HREF="http://cbl.leeds.ac.uk/nikos/personal.html">Nikos Drakos</A>, Computer Based Learning Unit, University of Leeds. <P> The command line arguments were: <BR>
-<STRONG>latex2html</STRONG> <tt>-split 0 -show_section_numbers CoordinateSystem.tex</tt>. <P>The translation was initiated by Curtis L. Olson on Sun Feb 14 18:52:21 CST 1999<BR> <HR>
+This document was generated using the <A HREF="http://www-dsed.llnl.gov/files/programs/unix/latex2html/manual/"><STRONG>LaTeX</STRONG>2<TT>HTML</TT></A> translator Version 96.1 (Feb 5, 1996) Copyright &#169; 1993, 1994, 1995, 1996,  <A HREF="http://cbl.leeds.ac.uk/nikos/personal.html">Nikos Drakos</A>, Computer Based Learning Unit, University of Leeds. <P> The command line arguments were: <BR>
+<STRONG>latex2html</STRONG> <TT>-split 0 -show_section_numbers CoordinateSystem.tex</TT>. <P>The translation was initiated by Curtis L. Olson on Sun Feb 14 18:52:21 CST 1999<BR> <HR>
 <P><ADDRESS>
 <I>Curtis L. Olson <BR>
 Sun Feb 14 18:52:21 CST 1999</I>
 </ADDRESS>
-</td> </tr> </tbody></table>
-   <div id="bottom">
-      <a href="http://flightgear.org">Home</a> |
-      <a href="../../../docs.html">Documentation</a> | 
-      <a href="../../../binary.html">Downloads</a> |
-      <a href="../../../Gallery/index.html">Screenshots</a>
-	  <br>
-	  <br>
-	  <br>
-	  <br>
-	  Copyright 2003, Curtis L. Olson <a href="mailto:curt@flightgear.org">curt@flightgear.org</a>
-	   and Andrei barbu <a href="mailto:a_barbu2@yahoo.com">a_barbu2@yahoo.com</a>
-</div>
+<!-- Standard Footer Begin -->
+      </td></tr>
+    </tbody>
+  </table>
+  <div id="bottom">
+    <a href="http://flightgear.org">Home</a> |
+    <a href="docs.html">Documentation</a> | 
+    <a href="binary.html">Downloads</a> |
+    <a href="Gallery/index.html">Screenshots</a>
+    <br>
+    <br>
+    Copyright 2003, Curtis L. Olson <IMG ALIGN="MIDDLE" SRC="email-fg.png">
+    and Andrei Barbu <a href="mailto:a_barbu2@yahoo.com">a_barbu2@yahoo.com</a>
+  </div>
+</body>
+
+</html>
+<!-- Standard Footer End -->
