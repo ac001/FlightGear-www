@@ -1,58 +1,105 @@
-<HTML>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD htm 4.01 Strict//EN">
+<!-- Standard Header Begin -->
+<html>
 
-<HEAD>
-  <TITLE>FGFS Documentation</TITLE>
-  <LINK REV="MADE" HREF="mailto:curt@me.umn.edu">
-  <LINK REL="StyleSheet" TYPE="text/css" HREF="../fgfs.css">
-</HEAD>
+<head>
+  <title>FlightGear Flight Simulator</title>
+  <link rel="stylesheet" type="text/css" href="http://www.flightgear.org/default.css"> 
+</head>
 
+<body>
+  <div id="top">
+    <a href="http://www.flightgear.org/"><img id="titlebar" src="http://www.flightgear.org/images/fglogosm.jpg" alt=""></a>
+  </div>
 
-<BODY>
-
+  <table id="global">
+    <tbody><tr>
+      <td id="menu">
+	<!-- Use a replacescript to update the menu -->
+	<h3>About</h3>
+	<a href="/index.html">Home</a><br>
+	<a href="/introduction.html">Introduction</a><br>
+	<a href="/overview.html">Overview</a><br>
+	<a href="/features.html">Features</a><br>
+	<!-- about.hook.1-->
+        <a href="/Gallery/index.shtml">Screenshots</a><br>
+	<!-- about.hook.2-->
+	<h3>Downloads</h3>
+	<a href="/Downloads/source.html">Source Code</a><br>
+	<a href="/Downloads/binary.html">Executables</a><br>
+	<a href="/Downloads/scenery.html">Worldwide Scenery</a><br>
+	<!-- downloads.hook.1-->
+	<!-- downloads.hook.2-->
+	<h3>Support</h3>
+	<a href="/version.html">Version Summary</a><br>
+	<a href="/hardwarereq.html">Hardware Requirements</a><br>
+	<a href="/docs.html">Documentation</a><br>
+	<a href="/places.html">Places to Fly</a><br>
+	<a href="/mail.html">Mailing Lists</a><br>
+	<a href="/Docs/FAQ.shtml">FAQ</a><br>
+	<!-- support.hook.1-->
+	<!-- support.hook.2-->
+	<h3>Links</h3>
+	<a href="/links.html">Related Websites</a><br>
+	<a href="/projects.html">Related Projects</a><br>
+	<!-- support.hook.1-->
+	<!-- support.hook.2-->
+	<h3>Contribute</h3>
+	<a href="/contributing.html">Contributing</a><br>
+	<a href="/cvs.html">CVS Resources</a><br>
+	<a href="/goals.html">Goals</a><br>
+	<a href="/thanks.html">Contributors</a><br>
+	<a href="/design.html">Design Proposals</a><br>
+	<a href="/events.html">Events</a><br>
+	<!-- support.hook.1-->
+	<!-- support.hook.2-->
+      </td>
+      <td id="page">
+<!-- Standard Header End -->
 <H1>FGFS User Documentation</H1>
-
+<BR>
 <UL>
-  <LI> <H3>Installation and Getting Started</H3>
+   <H3>Installation and Getting Started</H3><BR>
 
        This is designed to be "The Manual that comes with the
        Software."  The PDF version is intended to be viewed or printed
-       and has a very professional look.  The HTML version is not as
+       and has a very professional look.  The html version is not as
        polished (it is machine generated from the LaTeX source) but
        all the information is still there.
        <P>
 
-       <A HREF="InstallGuide/getstart.pdf">FlightGear Installation and
+       <A HREF="Docs/InstallGuide/getstart.pdf">FlightGear Installation and
        Getting Started</A> (Adobe PDF) <BR>
-       <A HREF="InstallGuide/getstart.html">FlightGear Installation and
-       Getting Started</A> (HTML)
+       <A HREF="Docs/InstallGuide/getstart.html">FlightGear Installation and
+       Getting Started</A> (html)
+<BR>
+   <H3>FlightGear Quick Reference Guide</H3><BR>
 
-  <LI> <H3>FlightGear Quick Reference Guide</H3>
-
-       <A HREF="InstallGuide/FGShortRef.pdf">FlightGear Short
+       <A HREF="Docs/FGShortRef.pdf">FlightGear Short
        Reference</A> (Adobe PDF)<BR>
-       <A HREF="InstallGuide/FGShortRef.html">FlightGear Short
-       Reference</A> (HTML)
+       <A HREF="Docs/FGShortRef.html">FlightGear Short
+       Reference</A> (html)
        <P>
 
-  <LI> <A HREF="FlightGear-FAQ.html">FlightGear FAQ</A>
+  <LI> <A HREF="Docs/FAQ.shtml">FlightGear FAQ</A>
        <P>
 
-  <LI> <A HREF="fgfs-model-howto.html">Mini-HOWTO: 3D Aircraft Models
+  <LI> <A HREF="Docs/fgfs-model-howto.html">Mini-HOWTO: 3D Aircraft Models
        in FlightGear</A> 
-  <LI> <A HREF="fgfs-viewer-howto.html">Mini-HOWTO: Configuring Views
+  <LI> <A HREF="Docs/fgfs-viewer-howto.html">Mini-HOWTO: Configuring Views
        in FlightGear </A> 
 </UL>
 
 
-<HR>
+<BR>
 <H1>FGFS Tutorials</H1>
-
+<BR>
 Additional tutorials are always welcome.  FlightGear has a zillion features
 that aren't immediately obvious.  Tutorials can be a great way to point out
 some of the more subtle features and details of FlightGear.
 
 <UL>
-  <LI> <A HREF="Tutorials/circuit/index.html"><CITE>A Circuit in
+  <LI> <A HREF="Docs/Tutorials/circuit/index.html"><CITE>A Circuit in
        FlightGear</CITE></A> uses over 20 screenshots to show how to
        fly the FlightGear Cessna 172 smoothly by concentrating on
        attitudes.
@@ -61,9 +108,9 @@ some of the more subtle features and details of FlightGear.
 </UL>
 
 
-<HR>
+<BR>
 
-<H1>FGFS Papers and Presentations</H1>
+<H1>FGFS Papers and Presentations</H1><BR>
 
 Several papers have been published that center on or at least
 reference FlightGear.  As we can provide copies or links, I will add
@@ -73,10 +120,10 @@ them here:
   <LI> Here are two papers presented at the European Space Agency
        ASTRA conference 2002 (ASTRA = Advanced Space Technologies in
        Robotics and Automation.)<BR>
-       <A HREF="../Papers/ASTRA/astra_andy_02.pdf">Landmark
+       <A HREF="/Papers/ASTRA/astra_andy_02.pdf">Landmark
        Recognition for Localization and Navigation of Aerial
        Vehicles</A><BR>
-       <A HREF="../Papers/ASTRA/astra_phil_02.pdf">Determination of
+       <A HREF="/Papers/ASTRA/astra_phil_02.pdf">Determination of
        Planetary Meteorology from Aerobot Flight Sensors</A>
        <P>
   <LI> FlightGear was presented at the May 7, 2002
@@ -95,40 +142,40 @@ them here:
        by Bipin Sehgal, Robert Deters, and Michael Selig.
        <P>
   <LI> The FlightGear Flight Simulator History, Status and Future -
-       <A HREF="../Papers/LinuxTag-2001/">[html]</A>
-       <A HREF="../Papers/LinuxTag-2001/handout.pdf">[pdf]</A> -
+       <A HREF="/Papers/LinuxTag-2001/index.html">[html]</A>
+       <A HREF="/Papers/LinuxTag-2001/handout.pdf">[pdf]</A> -
        slides from Alex Perry's talk at
        <A HREF="http://www.linuxtag.org">LinuxTag 2001</A>
        <P>
   <LI> FlightGear visual scenery -
-       <A HREF="../Papers/UKUUG-2001/">[html]</A>
-       <A HREF="../Papers/UKUUG-2001/handout.pdf">[pdf]</A> - the
+       <A HREF="/Papers/UKUUG-2001/index.html">[html]</A>
+       <A HREF="/Papers/UKUUG-2001/handout.pdf">[pdf]</A> - the
        slides from Alex Perry's talk at 
        <A HREF="http://www.ukuug.org/events/linux2001/">UKUUG Linux
        2001 - Linux Developers' Conference</A>
        <P>
-  <LI> <A HREF="../Papers/ADAPaper/UsingPCsForFlightSimulationResearch.html">
+  <LI> <A HREF="/Papers/ADAPaper/UsingPCsForFlightSimulationResearch.html">
        Using PCs in Flight Simulation Research</A> - Presented at a
        flight simulation conference, May 24 - 25, 2001.  Moscow,
        Russia.
        <P>
-  <LI> <A HREF="../Papers/Basler-1998/FGFD3_98.html">Flight Gear - The
+  <LI> <A HREF="/Papers/Basler-1998/FGFD3_98.html">Flight Gear - The
        Flight Simulator for free?</A> - Written by Michael Basler,
        1998.
        <P>
-  <LI> <A HREF="../Papers/Basler-1997/FSFD1_97.html">Flight Gear - noch
+  <LI> <A HREF="/Papers/Basler-1997/FSFD1_97.html">Flight Gear - noch
        (k)ein neuer Flugsimulator</A> - Written by Michael Basler,
        1997.  Comment: This gives a really interesting historical
        perspective on how far this project has come since the early
        days. <BR>
-       (<A HREF="../Papers/Basler-1997/FSFD1_97_en.html">Rough Babel
+       (<A HREF="/Papers/Basler-1997/FSFD1_97_en.html">Rough Babel
        Fish translation to english</A>)
 </UL>
 
 
-<HR>
+<BR>
 
-<H1>FGFS Development Docs</H1>
+<H1>FGFS Development Docs</H1><BR>
 
 Here is a collection of documentation which attempts to describe the
 development side of Flight Gear.
@@ -137,7 +184,7 @@ development side of Flight Gear.
 <H3>Airport / Nav Aids</H3>
 
 <UL>
-  <LI> <A HREF="AirNav/AptNavFAQ.FlightGear.html">Robin Peel's AirNav
+  <LI> <A HREF="Docs/AirNav/AptNavFAQ.FlightGear.html">Robin Peel's AirNav
        format specification.</A>
 </UL>
 
@@ -145,9 +192,9 @@ development side of Flight Gear.
 <H3>Autopilot</H3>
 
 <UL>
-  <LI> <A HREF="Autopilot/AltitudeHold/AltitudeHold.html">Altitude Hold
+  <LI> <A HREF="Docs/Autopilot/AltitudeHold/AltitudeHold.html">Altitude Hold
        Module</A>
-  <LI> <A HREF="Autopilot/HeadingHold/HeadingHold.html">Heading Hold
+  <LI> <A HREF="Docs/Autopilot/HeadingHold/HeadingHold.html">Heading Hold
        Module</A>
 </UL>
 
@@ -155,11 +202,11 @@ development side of Flight Gear.
 <H3>Flight Model</H3>
 
 <UL>
-  <LI> <A HREF="Flight/LaRCsim/LaRCsim-notes/LaRCsim-notes.html"> 
+  <LI> <A HREF="Docs/Flight/LaRCsim/LaRCsim-notes/LaRCsim-notes.html"> 
        Notes on/Summary of LaRCsim code</A>
-  <LI> <A HREF="Flight/LaRCsim/LaRCsim-vars/LaRCsim-vars.html"> 
+  <LI> <A HREF="Docs/Flight/LaRCsim/LaRCsim-vars/LaRCsim-vars.html"> 
        Description of all the LaRCsim public variables</A>
-  <LI> <A HREF="Flight/LaRCsim/manual.ps">The Official LaRCsim
+  <LI> <A HREF="Docs/Flight/LaRCsim/manual.ps">The Official LaRCsim
        manual (postscript file)</A> 
 </UL>
 
@@ -167,7 +214,7 @@ development side of Flight Gear.
 <H3>Portability</H3>
 
 <UL>
-  <LI> <A HREF="Portability/fgfs-portability-guide/fgfs-portability-guide.html">
+  <LI> <A HREF="Docs/Portability/fgfs-portability-guide/fgfs-portability-guide.html">
        Portability guide</A> - notes to developers.
 </UL>
 
@@ -175,14 +222,14 @@ development side of Flight Gear.
 <H3>Scenery</H3>
 
 <UL>
-  <LI> <A HREF="Scenery/CoordinateSystem/CoordinateSystem.html"> 
+  <LI> <A HREF="Docs/Scenery/CoordinateSystem/CoordinateSystem.html"> 
        FG Internal Coordinate Systems for Scenery</A>
-  <LI> <A HREF="http://people.A2000.nl/dtals/planets.htm">Sun, Moon,
+  <LI> <A HREF="http://people.A2000.nl/dtals/planets.html">Sun, Moon,
        and Planets</A>
-  <LI> <A HREF="Scenery/Stars/Stars.html">Stars</A>
-  <LI> <A HREF="Scenery/Sky/Sky.html">The Sky Dome (sky to haze
+  <LI> <A HREF="Docs/Scenery/Stars/Stars.html">Stars</A>
+  <LI> <A HREF="Docs/Scenery/Sky/Sky.html">The Sky Dome (sky to haze
        blending, and dusk/dawn effects)</A>
-  <LI> <A HREF="Scenery/SceneryGeneration/SceneryGeneration.html">
+  <LI> <A HREF="Docs/Scenery/SceneryGeneration/SceneryGeneration.html">
        Scenery Generation for Flight Gear</A> (A brief overview)
 </UL>
 
@@ -190,7 +237,7 @@ development side of Flight Gear.
 <H3>Time</H3>
 
 <UL>
-  <LI> <A HREF="Time/Events/Events.html">The Periodic Event Scheduler</A>
+  <LI> <A HREF="Docs/Time/Events/Events.html">The Periodic Event Scheduler</A>
 </UL>
 
 
@@ -209,7 +256,7 @@ development side of Flight Gear.
     <a href="/docs.html">Documentation</a>
     <br>
     <br>
-    Last modified:  1/22/2003 <BR>
+    Last modified:  10/16/2003 <BR>
     <A HREF="http://www.menet.umn.edu/~curt/">Curtis L. Olson</A>
     <IMG ALIGN="MIDDLE" SRC="/email-fg.png">
   </div>
@@ -217,7 +264,3 @@ development side of Flight Gear.
 
 </html>
 <!-- Standard Footer End -->
-
-
-</BODY>
-</HTML>
