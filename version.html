@@ -62,6 +62,58 @@
 <H1>FlightGear Flight Simulator Version Summary</H1>
 
 
+<H3>December 20, 2004: Version 0.9.8-pre1 released</H3>
+  <UL>
+    <LI> Added an encoder and transponder to the available avionics modules.
+
+    <LI> Updates to the AI traffic manager.
+    <LI> Updates to the submodel system.  This allows things like contrails,
+         payload dropping, projectile firing, and aircraft carrier landings.
+    <LI> Added some controls for aircraft carrier operations.
+    <LI> Updated to sync with latest JSBSim developments.
+    <LI> YAsim adds support for contra-rotating propeller pairs as well as
+         crude models for ITT, Oil Temp and Oil Pressure in the jet turbine
+         engine model.
+    <LI> Instruments, avionics, and subsystems are now configurable per
+         aircraft.  You can assemble the correct componets available for each
+         particular aircraft.
+    <LI> Updates to the wet compass to make it behave much more like a real
+         wet compass including various errors and motion effects.
+    <LI> Make display list usage optional since these can be a net
+         performance loss on some older or low memory platforms.
+    <LI> Make sound inaudible until after the scenery is loaded.
+
+    <LI> Move radio stack and avionics code from cockpit library to
+         instrumentation library.
+    <LI> Added several digital filters to the autopilot: exponential, dobule
+         exponential, moving average, and noise spike.  These are available
+         to aircraft designers via the autopilot config file.
+
+    <LI> Fix a crash that could occur when the joystick config specified more
+         buttons or axes than the physical hardware provided.
+    <LI> Fixes to make FlightGear work with 16bpp visual depth.
+
+    <LI> Various FreeBSD fixes.
+    <LI> Various MSVC fixes.
+    <LI> Various Mac OS X fixes.
+    <LI> gcc 2.95 and 4.0 fixes.
+
+    <LI> Updated aircraft: 737, A-10, AN-225, B-52, BAC-TSR2, Concorde,
+         Spitfire, BO-105 Helicopter, F-15 (updated flight control system),
+         Fokker 50, Fokker 100, Seahawk made carrier capable (working
+         arresting hook), 
+
+    <LI> New aircraft: Cessna Citation-II (wip), Beech 1900D, DHC-2 Beaver
+         (on floats)
+
+    <LI> Updated KAP140 autopilot instrument (used in default C172.)
+
+    <LI> Updated Nimitz model (aircraft carrier), updated radio tower models,
+         added Oracle head quarters to bay area scenery, added Dumbarton
+         bridge at the south end of the SFO bay, added a model of Alcatraz, 
+
+  </UL>
+
 <H3>October 12, 2004: Version 0.9.6 released</H3>
   <UL>
     <LI> Added some initial support for "submodels" which can be used to
