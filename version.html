@@ -1,0 +1,1549 @@
+
+<!-- Standard Header Begin -->
+<html>
+
+<head>
+  <title>FlightGear Flight Simulator</title>
+  <link rel="stylesheet" type="text/css" href="http://www.flightgear.org/default.css"> 
+</head>
+
+<body>
+  <div id="top">
+    <a href="http://www.flightgear.org/"><img id="titlebar" src="http://www.flightgear.org/images/fglogosm.jpg" alt=""></a>
+  </div>
+
+  <table id="global">
+    <tbody><tr>
+      <td id="menu">
+	<!-- Use a replacescript to update the menu -->
+	<h3>About</h3>
+	<a href="/index.html">Home</a><br>
+	<a href="/introduction.html">Introduction</a><br>
+	<a href="/overview.html">Overview</a><br>
+	<a href="/features.html">Features</a><br>
+	<!-- about.hook.1-->
+        <a href="/Gallery/">Screenshots</a><br>
+	<!-- about.hook.2-->
+	<h3>Downloads</h3>
+	<a href="/Downloads/binary.html">Download Program</a><br>
+	<a href="/Downloads/scenery.html">Download Scenery</a><br>
+	<a href="/Downloads/source.html">Download Source Code</a><br>
+	<a href="http://cdrom.flightgear.org">FlightGear CD's</a><br>
+	<a href="/mirrors.html#ftp">FTP Mirrors</a><br>
+	<!-- downloads.hook.1-->
+	<!-- downloads.hook.2-->
+	<h3>Support</h3>
+	<a href="/version.html">Version Summary</a><br>
+	<a href="/hardwarereq.html">Hardware Requirements</a><br>
+	<a href="/docs.html">Documentation</a><br>
+	<a href="/places.html">Places to Fly</a><br>
+	<a href="/mail.html">Mailing Lists & Forums</a><br>
+	<a href="/Docs/FAQ.shtml">FAQ</a><br>
+	<!-- support.hook.1-->
+	<!-- support.hook.2-->
+	<h3>Links</h3>
+	<a href="/links.html">Related Websites</a><br>
+	<a href="/Projects/">Related Projects</a><br>
+	<!-- support.hook.1-->
+	<!-- support.hook.2-->
+	<h3>Contribute</h3>
+	<a href="/contributing.html">Contributing</a><br>
+	<a href="/cvs.html">CVS Resources</a><br>
+	<a href="/goals.html">Goals</a><br>
+	<a href="/thanks.shtml">Contributors</a><br>
+	<a href="/design.html">Design Proposals</a><br>
+	<a href="/events.html">Events</a><br>
+	<!-- support.hook.1-->
+	<!-- support.hook.2-->
+      </td>
+      <td id="page">
+<!-- Standard Header End -->
+
+<H1>FlightGear Flight Simulator Version Summary</H1> <BR>
+
+<H3>March 26, 2004: Version 0.9.4 released</H3>
+  <UL>
+
+    <LI> Implement SimGear's (aka Andy's) Nasal scripting language in
+         FlightGear and integrate with the FG property system.
+    <LI> Many updates from David Culp and David Luff to the AI
+         aircraft and ATC modules.
+    <LI> Complete overhaul of the autopilot system.  The new system
+         uses a much more advanced PID algorithm, is much more
+         flexible, and is completely reconfigurable for each aircraft.
+    <LI> Added the ability to fetch current weather in real time
+         during a flight (via a thread) from the weather.noaa.gov web
+         site and update the current weather conditions in the sim.
+    <LI> Added properly working VASI/PAPI lights.
+    <LI> Make the ground intersection code smart so allow flying under
+         bridges, taxiing on the lower level of the bay bridge,
+         taxiing into hangers, etc.
+    <LI> Added a utility to automatically manage scenery installation and
+         removal.
+    <LI> Several updated ground textures, plus a variety of new random
+         scenery objects.
+
+    <LI> Much additional work on the San Francisco area buildings and bridges.
+
+    <LI> Added a Comper Swift (nice), a Hawker Hunter (nice), added a
+         T37 Tweet,
+
+    <LI> Updates to the 737 (nice panel, 3d model, and flight model),
+         updates to the 747 flight dynamics, updates to the OV10, T38,
+         AN-225, bo105 (helicopter), better sounds for the DC-3,
+         updates to f104 model, many updates to the F16, updates to
+         the J3 Cub, 3D cockpit added to the pa28-161, updates to the
+         sgs233, overhaul of the tsr2 and yf23 models.
+
+    <LI> The UFO became Santa Claus over the holidays, but it is back
+         to being extra terrestrial.
+
+    <LI> First stab at a weather radar instrument.
+
+    <LI> Added a number of basic 3d instruments to the instrument
+         library that could be reused used for any general aviation
+         cockpit.
+
+    <LI> Clean up much of the extraneous alias system entries for
+         aircraft.  Generally this means that if there is only one
+         version of an aircraft, there is only one entry and no
+         aliases.  If there are multiple versions of an aircraft, we
+         may still have an alias to point to the preferred or default
+         version.
+
+    <LI> Added RedHat packaging files.
+
+    <LI> Added some perl script utility functions which are useful
+         when writing remote perl scripts that interact with a running
+         copy of FlightGear.  Includes routines to facility remote
+         control of data logging and even some simple graph plotting.
+
+    <LI> Updates to OpenGC interface.
+    <LI> Various JSBSim updates.
+    <LI> Various YASim updates.
+    <LI> Various UIUCsim updates.
+    <LI> More work on the native multiplayer system.
+
+    <LI> Sorted out the confusion between left, right, and parking
+         brakes vs. the cockpit controls vs. the wheels they apply to.
+
+    <LI> Much infrastructure added to support future GPS instruments.
+
+    <LI> Fixed a meter/feet conversion problem in DME distance
+         calculations which would cause it to often read quite high.
+
+    <LI> Fixes to nmea output so it can better trick a moving map
+         software application into thinking it is talking to a real
+         gps.
+
+    <LI> Fixed a subtle problem with our star database that has been
+         lurking for many years, but it took an astronomy expert to
+         spot the subtle misalignments.
+
+    <LI> Add support for Logitech Extreme 3D Pro, thrustmaster top gun
+         afterburner USB, Logitech WingMan Force 3D, Logitech Extreme
+         3D Pro USB, and Microsoft SideWinder 3D Pro joysticks.
+
+    <LI> Removed the old WeatherCM module (it can be resurrected from
+         CVS if any one ever wants to do that.)
+
+    <LI> Removed the NetworkOLK module (it can be resurrected from CVS
+         if any one ever wants to do that.)
+
+    <LI> Removed support for the PSL scripting language.
+  </UL>
+
+<H3>October 24, 2003: Version 0.9.3 released</H3>
+  <UL>
+    <LI> Added a flight "replay" system.
+    <LI> Many updates to the ATC and AI aircraft subsystem. (David Luff)
+    <LI> Add support for moving cloud layers.
+    <LI> New "symbolic" time of day dialog box for easily setting dawn, dusk,
+         noon, etc.
+    <LI> Aircraft are now each self contained in their own individual
+         subdirectories for easier end user addition and removal.
+    <LI> Many improvements to scene lighting throughout the day->night
+         range including more realistic sky and fog colors, more
+         realistic scene illumination, better dusk/dawn sky coloring,
+         better specular lighting support.
+    <LI> A nice new chase view has been added.
+    <LI> Added displaced thresholds on all runways that have them.
+    <LI> Updated default scenery for the KSFO area.
+    <LI> Many buildings and bridges added in the San Francisco area.
+    <LI> Updated airport and navaid database, many new taxiways, many
+         corrected runways, many new airports (especially outside the USA.)
+    <LI> Updates to the man page.
+    <LI> Better Win32 packaging (more standardized installer, plus a launcher
+         which allows selection of starting location and starting aircraft.)
+    <LI> Added an initial cut at modeling helicopters.
+    <LI> Support multiple inside the cockpit views.
+    <LI> Updated FlightGear Flight School tutorial.
+    <P>
+
+    <LI> Use the field elevation for GS when no specific altitude listed in
+         FAA/DAFIF data
+    <LI> Fix to translate DME and TACAN X/Y channels to paired VHF frequencies
+         correctly.  Thanks to Jorge Van Hemelryck <ML@JVH.NET> for the fix.
+    <LI> Fixes to runway search routines (didn't always work correctly under
+         some circumstances.)
+    <LI> Many fixes and updates to the autopilot.  Autothrottle tracks speed
+         much better with much less jumping around.  
+    <LI> Expose the tuned navaid via the property system to support building
+         more advanced avionics.
+    <LI> Improvements to the environment manager and gui's, more
+         control over turbulence, ability to specify boundary
+         condition layers as well as aloft condition layers.
+    <LI> JSBSim updates including a new turbine engine model that supports
+         things like starting and stopping procedures and thrust reversing.
+    <LI> UIUCsim updates (compiler warning and namespace conflict fixes.)
+    <LI> YASim updates (fix drag from shutdown engine, helicopter support,
+         better in air startup support.)
+    <LI> Support for "clock" instruments that operate independently of
+         computer system time.
+    <LI> Annunciators shouldn't work if electrical system not serviceable.
+    <LI> A few updated splash screens.
+    <LI> Added various fields to net_ctrls and net_fdm to include various
+         failures, faults, control surface positions, and other interesting
+         things.
+    <LI> A few updated joystick definition files.
+    <LI> Various keyboard mapping tweaks and changes.
+    <LI> Many updates and tweaks to default material properties and random
+         land cover objects.
+    <LI> Updated aircraft: 747, A320, T-38, A-10, B-52, F-104, Fokker 50,
+         Fokker 100, Piper Cub, P-51, UFO, YF-23, Ornithopter, A-4, C172,
+         and F-16
+    <LI> New Aircraft: J-22, Paraglider, SGS-126 Sailplane, ASW 20, and
+         AN-225 aircraft; Bell 206 JetRanger, CH-47 Chinook, and Ecureuil
+         AS-350 helicoptors.
+    <LI> Updated cloud textures.
+    <P>
+
+    <LI> Removed dependency on Metakit.  The airport and runway
+         databases are now stored in a simple flat file ascii
+         database.
+    <P>
+
+    <LI> FreeBSD, Solaris, MSVC, Irix, Mac OSX, cygwin, and mingwin fixes.
+
+  </UL>
+
+  <H3>June 4, 2003: Version 0.9.2 released</H3>
+    <UL>
+      <LI> New aircraft available: P51-D (w/ full 3d cockpit), Sea Hawk
+  (WV908), a research ornithopter (propelled by actual flapping
+  wings), A10, B-52, F-104, F-15, F-16, OV10, PA28-161, T-6A Texan II,
+  T-38, British TSR2, YF-23, 737,
+      <P>
+
+      <LI> Updated aircraft: airwave extreme hang glider, asw20 glider, A-4
+  Skyhawk, Beech-99, Cessna 172 w/ 3d cockpit, Cessna 310 w/ 3d
+  cockpit, DC3, Piper J3 Cub, 1903 Wright Flyer, Sopwith Camel, Space
+  Shuttle, Boeing 747-400
+      <P>
+
+      <LI> Overhauled menu/gui system and made it xml configurable rather than
+  hardwired.  Include support for things like checkboxes, sliders, and
+  dials.
+      <P>
+
+      <LI> Added some early multiplayer features.
+      <P>
+
+      <LI> Added support for in-air presets relative to a VOR, NDB, or fix.
+      <P>
+
+      <LI> Support for Futaba, Airtronics, Hitec, JR, Multiplex and Tower R/C
+  transmitters using the RCJoy USB interface box (see
+  http://www.rcjoy.com).
+      <P>
+
+      <LI> Much improved sky and coloring as well as more realistic coloring of
+  the sunset and sunrise.
+      <P>
+
+      <LI> Clouds are drawn on a surface that better matches the underlying
+  curve of the earth.
+      <P>
+
+      <LI> A few updated terrain textures, better variety of random ground
+  cover objects.
+      <P>
+
+      <LI> Most weather options can now be set via the GUI.  Added an option to
+  randomize the weather.
+      <P>
+
+      <LI> Various instruments and systems can now be failed/unfailed via the
+  GUI.
+      <P>
+
+      <LI> Developed scripts to build Navaid and ILS databases from DAFIFT,
+  FAA, and other data sources.
+      <LI> Update Navaid and ILS databases based on DAFIFT, FAA, and other data
+  sources.
+      <P>
+
+      <LI> Continued development of voice ATC, robot aircraft AI, logical
+  taxiway networks (continues to be a work in progess, but much
+  progress has been made.)
+      <LI> Separated out much of the low level model/material management code
+  and moved it over to SimGear where it can be potentially used by
+  other projects.
+      <LI> Separated out the low level sound effect playing/management code and
+  moved it over to SimGear.
+      <LI> Added functions to the "telnet" interface to allow remote management
+  of autopilot waypoints.
+      <LI> Support the parking brake in the "external" flight dynamics interface.
+      <LI> Added support for an audio panel (set of switches to set various
+  avionics audio sources on/off in the aircraft.)
+      <LI> Add support for speed brake and spoiler controls.
+      <LI> Many code updates to UIUCmodel including support for ornithopters
+  (flapping wing vehicles.)
+      <LI> Many JSBsim code updates include a new turbine engine model.
+      <LI> Added a "named pipe" external flight dynamics model interface.
+      <LI> YASim updates including support for manual-pitch control props,
+  support for wing washout, and adjusting aircraft masses as fuel is
+  consumed.
+      <LI> The property picker interface now shows the property values changing
+1  dynamically.
+      <LI> Added support for a simple annunciator panel (fuel, oil, vacuum,
+  volts dummy warning lights.)
+      <LI> Added a "gyro" model.  This can be driven electrically (turn
+  coordinator) or via vacuum (attitude indicator).  If one of these
+  systems failes, the corresponding gyro will spin down realistically
+  an introduce realistic errors in the gauge reading.
+      <LI> Model attitude indicator tumbling at extreme attitudes.
+      <LI> Modeled the pitot system and use that drive the air speed indicator. 
+      <LI> Added a very simplistic volts/amps model to the electrical
+  system...enough to make the gauges behave plausibly and drive the
+  annunciator panel correctly.
+      <LI> Updated the vacuum/suction model to behave more realistically.
+      <LI> Added Italian and Polish translation for the GUI.
+      <P>
+
+      <LI> Mac OS X fixes.
+      <LI> Better FreeBSD support.
+      <LI> Mingwin fixes.
+      <LI> Improved native sgi compiler support.
+      <LI> MSVC fixes.
+      <P>
+
+      <LI> Fixed problems in marker beacon audio.
+      <LI> Fixed several subtle problems in the modeling/positioning of glide
+  slope transmitters in FlightGear
+      <LI> Don't allow the dewpoint to go higher than the temperature.
+      <LI> Don't allow gust speed to be less than base wind speed.
+      <LI> Fix a couple problems in the external fdm interface that prevented
+  FlightGear from being driven properly by an external source (i.e. to
+  act as a image generator only.)
+      <LI> Fixes to camera parameters for external views (especially when rotating
+  the view around the different axes.)
+      <LI> Many miscellaneous code clean ups, many bug fixes, and much code
+  refactoring.
+
+    </UL>
+
+  <H3>December 5, 2002: Version 0.9.1 released</H3><P>
+    <UL>
+      <LI> Fixes a problem with a missing file in the source
+           distribution of 0.9.0 
+      <LI> Updates to AI aircraft subsystem (this is a work in progress)
+      <LI> Added a canned ATC voice handling class (using prerecorded
+           voice snippets.) 
+      <LI> Added voice ATIS
+    </UL>
+
+  <H3>December 3, 2002: Version 0.9.0 released</H3><P>
+    <UL>
+      <LI> Support for fully animated, fully clickable 3d instrument panels.
+      <LI> Support for runway, approach, and taxiway lighting.  Lighting is
+           directional and intensity varies smoothly with relative
+           view direction. 
+      <LI> Many new and updated aircraft.
+      <LI> Improved runway textures.
+      <LI> Some improved terrain textures.
+      <LI> Added a util called terrasync to runtime fetch just the
+           scenery you  need from the master scenery server as you
+           fly.  No need to  pre-download large chunks of data.  
+      <LI> Add a vacuum system and support for it's failure.
+      <LI> Add a pitot system and support for it's failure.
+      <LI> Model gyro spin for various instruments.
+      <LI> Added support for modeling complex aircraft electrical
+           system.  Sample implimentation for a C172, simplistic
+           electrical model provided for other aircraft until their
+           specific system is modeled. 
+      <LI> Added a "presets" section to the GUI.
+      <LI> Localization support for GUI and for command line option
+           help, including the ability to specify a custom per language font.
+      <LI> Support for specifying an initial startup runway.
+      <LI> Splash screen now slowly fades out revealing the ready to run sim.
+      <LI> Support additional joysticks: Logitech WingMan Force,
+           Logitech WingMan Extreme Digital 3D (USB), and Saitek
+           Cyborg Gold 3D USB, CH Virtual Pilot USB/USB CH Pedals, 
+      <P>
+
+      <LI> Many updates to External/Network FDM interface.
+      <LI> Many updates to the JSBSim FDM model code.
+      <LI> Many updates from the UIUC folk to their FDM package.
+      <LI> Many updates to the YASim FDM model code (fuel usage,
+           tunable induced drag parameter, better gear tuning, fix a
+           ground effect bug, and a standalone config file compiler.
+      <LI> Make rotational rate FDM values available in the property tree.
+      <LI> Fix a subtle bug in the ssg partial tree deleter code.
+      <LI> Started a new XML configurable GUI subsystem.
+      <LI> Some preliminary support for AI driven aircraft.
+      <LI> Fix ILS back course needle deflection.
+      <LI> Fix for ATI driver "issue" causing instrument panels to be all gray.
+      <LI> Support for toggling 3d instrument hotspot visibility
+           (debugging/learning tool.)
+      <LI> Tweaks to instrument panel night lighting.
+      <LI> Added a per engine fuel pump switch.
+      <P>
+
+      <LI> NOMINMAX fix for cygwin/gcc-3.2
+      <LI> Renamed External FDM to NullFDM
+      <LI> New module/submodule system.
+      <LI> IRIX build fixes
+      <LI> Restructured some of the initialization code to facilitate
+           reseting the sim to alternate presets (airport, runway,
+           offset distance, altitude, speed, etc.) 
+      <LI> Fixed DG heading bug hold to work with new instrumentation updates.
+      <LI> Updates to autopilot to let it work with perfect values as
+           a compile time option.
+      <LI> Split Nav/Com units, and DME out into their own source files.
+      <LI> Fixes to support newer versions of plib/cvs
+    </UL>
+
+	
+  <H3>September 7, 2002: Version 0.8.0 released</H3><P>
+    <UL>
+      <LI> The world is now populated with random ground objects with
+           appropriate type and density for the local ground cover type
+           (buildings, water towers, farm houses, silos, cows, trees, etc.)
+      <LI> Many (most?) ground textures updated for a much nicer, more coherent,
+           more realistic overall look and feel.
+      <LI> Added a java client library for FlightGear.
+      <LI> Added some external scripting examples (python.)
+      <LI> Implemented a Bendix/King KT 70 transponder.
+      <LI> Implemented a Bendix/King KR 87 adf.
+      <LI> Added support for 3d instrument panels inside 3d cockpits.
+      <LI> Added support for animation of 3d models tied to internal properties.
+      <LI> New/updated aircraft include: Cessna 172, Piper J3 Cub, DC-3, A4
+      Skyhawk, Cessna 310, 747, 1903 Wright Flyer (non-linear with stall
+      modeled, based on wind tunnel data.)
+      <LI> Convert the magic carpet into a UFO, complete with sound effects and
+      a 3d model (based on real world data of course.) :-)
+      <LI> Environment manager overhaul
+      <LI> Support for a base wind speed with gusts.
+      <LI> Support for a base wind direction with variation.
+      <LI> Support for more dynamically reconfigurable cloud layers.  Cloud
+      layers are no longer hard coded.
+      <P>
+
+      <LI> Updates and additions to the FAQ
+      <LI> Improvements to the sound effects module.
+      <LI> Autopilot fixes to allow it to work much better on large airliners.
+      <LI> Added a generic interface for running the flight dynamics model as a
+      separate process communicating via a network connection.
+      <LI> Synced with the latest JSBSim code.
+      <LI> Synced with the latest UIUCmodel code.
+      <LI> Many fixes and updates to the YASim FDM (fixed flap drag issue, new
+      tail wheel lock, lots of solver fixes, and fixes to other internal
+      stuff.)
+      <LI> Added support for menus defined in an xml file.
+      <LI> Make the help system start more robustly/quickly in Win32
+      <LI> Added support for detecting the name of a joystick and using the
+      appropriate default joystick config file.
+      <LI> Overhauled the remote/network property interface.
+      <LI> Added a --show-aircraft option to dump out a list of all the
+      available aircraft you can select with the --aircraft=NAME option.
+      <LI> Added a --random-wind command line option.
+      <LI> --wind= option can now contain ranges,
+      i.e. --wind=min_dir:max_dir@min_speed:max_speed; the system will
+      automatically vary the wind within these ranges.
+      <LI> A "physical" crash (i.e. too-hard impact with the ground) causes the
+      sim to freeze.  You can then reset the sim to the starting state
+      with the menu->reset option.
+      <P>
+
+      <LI> Support in the scenery tile cache for maintaining tiles in the cache
+      relative to several view points that could be
+      <EM>very</EM> far apart. 
+      <LI> Brake makes the magic carpet fly backwards.
+      <LI> Many clean ups, fixes, and improvements with the tile
+      pager.  Memory free is now done incrementally and spread out
+      through multiple frames to hide it. 
+      <LI> Modernized the autoconf/make scripts.
+      <LI> Cleaned up old cruft from the build system.
+      <LI> Default to using FGEnvironment
+      <LI> Removed support for efence (in favor of valgrind.)
+      <LI> Bumped minimum plib version required up to 1.4.2, however the latest
+      cvs (and hopefully release) works much better.
+      <LI> Added valgrind debugging config files/scripts.
+      <LI> Weeded out many warnings/errors flagged by valgrind.
+      <LI> Overhauled the FGSubsystem class.
+      <LI> Fixed reporting of winds, cloudbase and altimeter setting.
+      <LI> FGSteam converted to a proper FGSubsystem.
+      <LI> Fix fog on 3dfx cards.
+      <LI> Added internal support for turning each tank on/off individually.
+      <LI> Added support for a fuel selector switch.
+      <LI> Fixes to builtin property browser.
+      <LI> Fixed several math overflow problems with time elapsed calculations
+      that had crept in.  These would cause some things to stop updating
+      (like portions of the instrument panel, and radio station frequency
+      matching.)
+      <LI> Updates to the network OpenGC interface.
+      <P>
+
+      <LI> Irix fixes.
+      <LI> Mac OS X fixes.
+      <LI> MSVC fixes.
+      <LI> IA-64 w/ Intel compiler fixes.
+      <P>
+
+      <LI> automake/conf script enhancemnts and fixes.
+      <LI> Updated the UIUCModel code.
+      <LI> Removed some dos line endings that crept in.
+      <LI> Spelling fixes.
+      <LI> Removed some depricated code related to the old view
+           management system. 
+      <LI> Fix a problem with VOR station lookups where we wouldn't
+           always find the closest station of a given frequency.
+      <LI> Changed the default Nav radio frequencies to be more
+           appropriate for SFO. 
+      <LI> Retrimmed the C172
+      <LI> Added seats and other interior stuff to the J3 Cub, and
+           retrimmed.  Also fixed wing incidence in the 3d visual model.
+      <LI> Fixed C310u3a-3d.  3d cockpit instruments can now be seen.
+      <LI> Fixes to the DC-3 such as tank location; other surface and
+           wheel position adjustments.  Increase effectiveness of
+           rudder, vstab, and hstab.
+      <LI> Updated some of the preconfigured joystick files.
+      <P>
+
+      <LI> Updated man pages
+      <LI> Fixed problem with pressure/altitude getting botched up after a reset
+      <LI> Use a nicer helvetica font for the menus.
+      <LI> Various fixes to the internal pui property browser.
+      <LI> Fixed a typo in the scenery file loader that could cause a crash on
+           some platforms.
+      <LI> More joystick configuration defaults. (Saitek Cyborg Gold 3D USB,
+           non FF sidewinder precision 2 usb)
+      <LI> More texture tweaks.
+      <LI> Additional fixes and panel work for the J3 Cub.
+   </UL>
+
+   
+  <H3>April 20, 2002: Version 0.7.10 released</H3><P>
+    <UL>
+      <LI> Much work on drawing and animating 3d aircraft models for
+      things like the chase and tower views.  Propellers spin, control
+      surfaces move, gear retracts, etc.
+      <LI> Overhauled mouse handling code and make it user configurable.
+      <LI> Added a new environment (as in weather) subsystem.
+      <LI> Added a new logging module
+      <LI> Added a new ATC subsystem.
+      <LI> Virtual 3d Cessna 172 cockpit (work in progress) but many
+      things are animated and working.
+      <LI> Virtual 3d Cessna 310 cockpit.
+      <LI> Instrument panel background can now be a set of tiled
+      textures so we can achieve *much* higher resolution.
+
+      <LI> Major property manager overhaul.
+      <LI> Major view code overhaul.  All views are now configurable
+      via config files. 
+      <LI> Major overhaul of the sound manager, it is now much more
+      configurable with many sound effect improvements. 
+      <LI> Separate XML I/O operations into a separate header.
+      <LI> Implement a standard FGSubsystem interface for module consistency.
+      <LI> Add waypoint dialog now shows entire current waypoint list
+      in a scroll box. 
+      <LI> Use an LED font for radios (and added infrastructure/support
+      for additional fonts.)
+      <LI> Continued work on developing a generalized network
+      interface to an external flight dynamics model running as a
+      separate process on the same or different machine.
+      <LI> Initial glideslope and climb rate can be specified from the
+      command line. 
+      <LI> Fixes and improvements to make ground trimming more robust.
+      <LI> Many JSBSim updates and improvements, JSBSim now exports
+      all it's interesting internal state via the property manager.
+      <LI> Many updates to UIUCsim including support for non-linear
+      models, flaps. 
+      <LI> Move tower view location when teleporting to a new airport.
+      <LI> Created a new /devices subtree in the property manager to
+      display current device status.
+
+      <LI> Many YASim updates and bug fixes, autogen contact points
+      for collision detection, support for full engine startup
+      procedure, minimal support for magnetos, support skid objects
+      (non-rolling gear objects), reduce idle power a bit, export gear
+      compression amount to the property tree, include wind when
+      computing airspeed.
+
+      <LI> Fixes to the property picker/browser.
+      <LI> Fixes and updates to the configure script.
+      <LI> Several potential memory abuse bugs detected (valgrind) and
+      fixed (Melchior) 
+      <LI> Fix an instrument panel text bug ... an integer overflow
+      could prevent the text from displaying if the panel was turned
+      off for more than 37.8 minutes.
+      <LI> Fixed a segfault when trying to audibly ident a nav
+      station.  Changes in the sound manager code broke some
+      assumptions.  
+      <LI> Fixed a bug (another int overflow) which could trick the
+      event manager into thinking the next time to run the events is
+      *way* in the future.
+      <LI> Various performance optimizations.
+      <LI> More work on saving/restoring flights
+      <LI> Of all the ILS stations of the specified frequency, pick
+      the one the most directly points at us.
+      <LI> Various restructures in the scenery loading code in
+      preparation for more flexible runway lighting support.
+      <LI> Fixes/improvements to the scenery/line intersection code.
+
+      <LI> Various IRIX fixes.
+      <LI> Various MSVC fixes.
+      <LI> Various compiler warning messages fixed.
+    </UL>
+
+	
+  <H3>February 16, 2002:  Version 0.7.9 (final) released</H3><P>
+    <UL>
+      <LI> Fixes to the Thanks file.
+      <LI> Fix --time-offset in the man page and options help.
+      <LI> Fixed the spelling of Celsius.
+      <LI> Cleaned up some stray cout's
+      <LI> Removed some redundant FG* class qualifiers in various headers.
+      <LI> GUI dialog box fixes for autopilot.
+      <LI> Ensure that initial engine settings are copied over from FlightGear
+           to JSBSim.
+      <LI> FreeBSD fix from JSBSim.
+    </UL>
+
+	
+  <H3>February 13, 2002:  Version 0.7.9pre2 released</H3><P>
+    <UL>
+      <LI> JSBSim FGPiston mixture improvements
+      <LI> Enable Audio by default in MSVC builds
+      <LI> Added a clock freeze option.
+    </UL>
+
+	
+  <H3>February 12, 2002:  Version 0.7.9pre1 released</H3><P>
+    <UL>
+      <LI> Switch to JSBSim (jsbsim.sf.net) as our default flight model.
+      <LI> Added additional aircraft: Cessna 182, Cessna 172 (ifr panel),
+  and a Cessna 310 (twin prop).
+      <LI> Added an entirely new set of flight dynamics modeling code by Andy Ross.
+  Includes several aircraft such as a 747, A4, and DC-3.
+  This is (Y)et (A)nother Flight Dynamics (Sim)ulator.  It is a first cut
+  of a "different take" on FDM design.  It's intended to be very simple
+  to use, producing reasonable results for aircraft of all sorts and sizes,
+  while maintaining simulation plausibility even in odd flight conditions
+  like spins and aerobatics.  It's at the point now where one can
+  actually fly the planes around.
+      <LI> Added an optional embedded http server that provides a property
+  manager interface to external programs and scripts.
+      <LI> Added an optional embedded http server that can serve out live
+  screen shots to anyone on the web.
+      <LI> Sync with the latest JSBSim code.
+      <LI> Added simple ATIS support.
+      <LI> More flexible autopilot that can be tuned per aircraft.
+      <LI> Many updates to the HUD to allow it to handle a much bigger set of
+  symbology and functionality
+      <LI> Support for back course ILS approaches.
+      <LI> Implimented DME ETE and speed.
+      <LI> Added support for rudder and aileron trim.
+      <LI> Many improvents with piston engine and propeller modeling.  Engine
+  startup procedures work, and engine guages work.
+      <LI> Added support for retractable gear.
+      <LI> Added 'master freeze' and 'fuel freeze' modes.  Would like to add
+  other freeze modes soon.
+      <LI> Added a 'high' level aircraft config file that specifies things like
+  the FDM code to use, the aircraft config file, the 3d model, the
+  instrument panel, autopilot config, etc.
+      <LI> Added a neat external 'chase' view control panel.
+      <LI> Added a GUI interface to the property manager system.
+      <LI> Moved keybinding definitions to a config file.
+      <LI> Many additions and improvements to the sound effects including
+  stall horn, tire squeek, ground rumble, wind noise, flaps, etc.
+      <LI> Enable introduction music in windows (off by default on all platforms)
+      <LI> Added support for the OpenGC glass cockpit project.
+      <LI> Added support for flying ILS approaches in both runway directions if the
+  same frequency is used in both cases.
+      <P>
+
+      <LI> Added an autogen.sh script for those compiling from CVS code.
+      <LI> Attempt to support more incompatible varients of the
+  automake/autoconf tools.
+      <LI> Added basic man pages.
+      <LI> Removed old remnants of plib-1.2.x support.  Plib-1.4.x is now required.
+      <LI> Added support for building mandrake packages (other packaging system
+  contributions welcom.)
+      <LI> Various initialization and startup sequence fixes and tweaks.
+  This helps get the flight dynamics model going reliably and robustly.
+  It also helps get initial time of day effects correct.
+      <LI> Fixed a config problem that could lead to bogus builds for people with
+  Voodoo cards.
+      <LI> Better support for running with an alternate time/date for when we
+  are being slaved to an external data source.
+      <LI> Fixed (simplistic) terrain following autopilot mode.
+      <LI> Fixes to problems with window aspect ratio that could surface if the
+  window was resized.
+      <LI> Fix several off by one errors in hud_card.cxx
+      <LI> Fix gauge spelling error.
+      <LI> Modified FGSubsystem::update() to take an int parameter for delta time.
+      <LI> Many internal fixes and enhancements to the core code that manages
+  instrument panel modeling and rendering.
+      <LI> LaRCsim EGT doesn't show 'running' values while cranking.
+      <LI> Fixes to JSBSim so that the slip/skid ball is much more realistically modelled
+      <LI> Added support for an unlimited number of fuel tanks.
+      <LI> Multi-engine throttle fixes.
+      <LI> A round of updates to the UIUC flight dynamics model.
+      <LI> Fixed an annoying tile cache scheduling bug.  This makes tile paging
+  much more robust even with teleporting and reseting.
+      <LI> Fixed a potential mouse freeze up condition on windows.
+      <LI> Converted the materials file to xml.
+      <LI> Tweaked and updated initial option and config file parsing to be
+  more intuitive and robust.
+      <LI> Check for the proper version of the base file and exit gracefully
+  if not found.
+      <LI> Fixed a problem with the initial view offset being lost.
+      <LI> Various floating point / initial value bug fixes
+      <LI> Added support for tracing property manager reads and writes (for
+  debugging purposes.)
+      <LI> Fixed the problem where the simulator clock time would go goofy
+  when scenery was being loaded.
+      <LI> Make the tile cache system more tolerant of situations where the tile
+  cache is full, but no entry qualifies for removal.
+      <P>
+
+      <LI> MSVC fixes.
+      <LI> IRIX fixes.
+      <LI> FreeBSD fixes.
+      <LI> Mac OS X fixes.
+      <LI> Better cygwin and mingwin support.
+      <LI> Better support for gcc-3.0
+    </UL>
+
+	
+  <H3>July 13, 2001:  Version 0.7.8 released</H3><P>
+    <UL>
+      <LI> Updated to the latest JSBSim flight dynamics model
+           (http://jsbsim.sf.net)
+      <LI> First release of a bundled utility: fgjs which assists you
+           in creating a joystick/button configuration for your setup.
+      <LI> Updated airport data file with taxiways at many major airports.
+      <LI> Better support for using an external browser to view online
+           help components.  Windows support for this will be included
+           in the next revision.
+      <LI> Now using plib-1.4.x which supports more than 3 concurrent sounds.
+      <LI> Most of the README's and documentation has been reviewed
+           and brought up to date.
+      <LI> Support for ultra-hires screen dumps suitable for large
+           scale printed output.
+      <LI> Updated, more flexible binary scenery format.
+      <LI> Support for using digital axes (i.e. a hat) as a pair of
+           buttons which can be mapped to any function a button could be mapped
+           to.
+      <LI> Added user documentation to the base package
+      <LI> Added a c172 mini panel.
+      <LI> Improved c172 panel graphics.
+      <LI> Added units to configuration files
+      <LI> Fixed X15 panel
+      <LI> External view panning fix ups.
+      <LI> Fixed the segfault on exit bug.
+      <LI> Lots of property manager tweaks.  Appened units to property
+           name to make it explicit, adjusted read/write/archive bits
+           and defaults
+      <LI> MSVC fixups.
+      <LI> gcc-3.0 fixups.
+      <LI> Irix fixups.
+      <LI> Fixed a potential segfault in radio station lookup/search code.
+      <LI> Fixed a bug in the audio system intialization order that
+           could cause a segfault in some circumstances.
+      <LI> Fixed a typo in the 2nd tank property name so it's value is
+           now accessible from the instrument panel.
+      <LI> Fixed a bug when loading the "old" binary scenery which
+           prevented ground lighting from being generated.
+      <LI> Jettison old conditionally compiled plib-1.2.x code, we now
+           require plib-1.4.x or higher.
+      <LI> Eliminated some convoluted that generated a harmless, but
+           confusing "*** NO TIMEZONE" error message,
+      <LI> Fixed doubled bindings for joystick buttons.
+      <LI> Threading fixups.
+      <LI> Fixed a bug with the time warping/offset code.  You can
+           again startup with a proper time offset if you like.
+      <LI> Fixed a couple memory problems ... attempting to
+           access/use/write to previously freed memory.
+    </UL>
+
+	
+  <H3>June 20, 2001:  Version 0.7.7 released</H3><P>
+    <UL>
+      <LI> Support for setting a starting position as and offset
+           distance (and / or radial) from your specified starting
+           postition.  This allows you to initialize on final x miles
+           out at y altitude.
+      <LI> Many updates to make a much more realistic single engine
+           and prop model with atmospheric and velocity dependencies.
+           Fuel flow now modeled.
+      <LI> Straightened out magnetic offset issues with VOR stations
+           so we can navigate properly from real avaition charts.
+      <LI> Added a direct network interface support for the "Atlas"
+           moving map program.  (Output radio stack settings so
+           current VOR and OBS can be visualized.)
+      <LI> Autopilot made to work more like a real world autopilot
+           (rather than based on perfect values.)  Autopilot wing
+           leveler is slaved off the turn coordinator.  Heading hold
+           is slaved from the DG (which drifts).  Nav and ILS holds
+           slave off the needle position.
+      <LI> Backcorse ILS needle should move in correct direction now.
+      <LI> Identing of NAV radios (and individual volume control) now work.
+      <LI> Don't play DME ident if no colocated DME.
+      <LI> VOR/ILS/ADF range pickup realistically modeled as per AIM.
+      <LI> Added support for marker beacons.
+      <LI> Support for loading and saving the current 'simulator
+           state' using an xml formated file.
+      <LI> Added threaded tile paging for systems with pthread support.
+      <LI> Added high level support for creating airport taxiway and
+           runway signs.
+      <LI> Many updates and fixes to the "installation and getting
+           started" manual.
+      <LI> Support for adding static objects to the scenery.
+      <LI> Many updates and new features for the xml configurable
+           panel engine.  Many corresponding improvements to the
+           default instrument panel.
+      <LI> Support added for incrementally numbering screen snapshots.
+      <LI> Added support for a new, smaller, faster binary scenery format.
+      <LI> Added an xml configurable HUD engine.
+      <LI> Added interface glue to propogate wind values to LaRCsim.
+      <P>
+
+      <LI> Converted from hardcoded to configurable keyboard bindings.
+      <LI> Added an FGSubsystem base class so subsystems can be
+           managed with a common api.
+      <LI> Keyboard commands are now completely remapable.  Removed
+           BFI and keyboard in place of remapable inputs.
+      <LI> Started to impliment a command manager.  This along with
+           the property manager will go a long ways toward building
+           infrastructure for scripting.
+      <LI> Started laying infrastructure for creating ultra-high-res
+           tiled screen shots suitable for printers.
+      <LI> Synced with a recent version of JSBSim.
+      <LI> GUI code split into smaller logical subcomponents.
+      <LI> FGOptions converted to use property manager directly.
+      <LI> "delta-t" and fdm interface timing fixes and tweaks.
+      <LI> Added a sound effect manager class at the FlightGear level.
+      <P>
+
+      <LI> Check for null panel before passing mouse events to panel object.
+      <LI> Fixed panel edge artifacts (due to unwanted texture wrapping.)
+      <LI> Fixed a typo in the base/materials file.
+      <LI> Various property manager fixes.
+      <LI> Various property manager lookup optimizations.
+      <LI> Fixed a bug in the autopilot altitude hold that crept in.
+      <P>
+
+      <LI> Cleaned up various warning messages
+      <LI> Various Cygwin fixes.
+      <LI> Various MSVC fixes.
+      <LI> Various Irix Mips fixes.
+    </UL>
+
+	
+  <H3>December 19, 2000:  Version 0.7.6 released</H3><P>
+    <UL>
+      <LI> Added night ground cover lights with user controllable densities on
+           a per texture basis.  Lights have a bit of a "fog punch
+	   through" effect.
+      <LI> Support added for "shaped" instrument panels.
+      <LI> Added support for virtual panels that are larger than the
+           screen space which can scroll.
+      <LI> Added waypoint and route flying support to the autopilot and HUD.
+      <LI> New highly detailed runway textures with accurate markings.
+      <LI> Added a basic piston engine model, with support for rpm,
+           egt, cht, mp, and mixture.
+      <LI> Many tweaks and improvements to the c172 instrument panel.
+      <LI> Corrections and additions to the airport and navaid database.
+      <LI> Added an external interface to the property manager so you can
+           "telnet" into a running copy of FlightGear, cd through the
+	   property tree and examine and even change values, all from
+	   a remote computer.
+      <LI> Improvements to flight model initialization.
+      <LI> Fixes and improvements to the save/restore code.
+      <LI> Added a load/save dialog box for saving/restoring your
+           current flight. 
+      <LI> Program notes max texture size for your card/driver so it
+           can load higher resultion textures if they are available
+	   and if you can use them.
+      <LI> Added a visibility= command line option for setting intial
+           visibility distance.
+      <LI> Range of tiles loaded and drawn are now directly calculated
+           from the current visibility distance so that the ground
+	   always blends smoothly into sky. 
+      <LI> Rewrote the tile caching scheme so it is now more flexible,
+           more dynamic, simpler, and more robust.
+      <LI> Updates to the FDM bus.
+      <LI> Many clean ups with the view code to prepare the way for a
+           greater variety of external views.
+      <LI> MSVC project files now included in the source distribution.
+      <LI> Fixed a view bug that could make the aircraft model appear
+           rotated incorrectly
+      <LI> Fixed a bug with the autopilot rate of climb hold.
+      <LI> Internal property manager tweaks.
+      <LI> Additional materials can be aliased to an existing material
+           to save texture space (at the expense of less texture variety)
+      <LI> MSVC tweaks.
+      <LI> MacOS tweaks.
+    </UL>
+ 
+  <H3>September 18, 2000:  Version 0.7.5 released</H3>
+       <P>
+    <UL>
+      <LI> Aircraft now starts at end of runway closest to desired heading.
+      <LI> Runways now have accurate markings.
+      <LI> Addition of a completely reconfigurable instrument panel.
+      <LI> Tons of panel tweaks and fixes.  Gyro now drifts, relocated
+           whisky compass, skid ball moves in the right direction, etc.
+      <LI> Updates and tweaks to network multiplayer code.
+      <LI> Tweaks to ground steering sensitivity.
+      <LI> Updates to the UIUC flightmodel and icing research code.
+      <LI> Fixed the sound problem in the previous version.
+      <LI> Current scenery normal is now available for use.
+      <LI> Current load queue size is now available for use.
+      <LI> Added a configure time check for proper simgear version.
+      <LI> Explicitely link in -lpthread if it exists.
+      <LI> Fixed a couple namespace problems.
+      <LI> MacOS and MSVC tweaks.
+      <LI> Renamed JSBsim to JSBSim
+      <LI> Added support in the material library for non-repeating textures.
+    </UL>
+ 
+  <H3>July 20, 2000:  Version 0.7.4 released</H3>
+       <P>
+    <UL>
+      <LI> VOR reception now scales with altitude.
+      <LI> Added differential braking support.
+      <LI> Landing gear modeling code now works in JSBSim
+      <LI> Overhauled cloud code substantially, new cloud textures.
+      <LI> Added support for Ray Woodworth's 5 axis motion chair.
+      <LI> Red light the panel at night and shade based on time of day.
+
+      <LI> Fixed autopilot altitude hold increment bug.
+      <LI> Fixed screen snap shot function.
+      <LI> Fixed mach number for LaRCsim.
+      <LI> --start-date-gmt option fixed.
+      <LI> Fixes to uiuc includes and initializations
+      <LI> Fixes to periodic scheduler.
+      <LI> Fixed a tile loading bug if the load queue wasn't empty
+           before a reset or teleport.
+
+      <LI> Some additional MSVC5 portability fixes.
+      <LI> Tweaks to build with newest gcc under Irix contributed by
+           Erik Hofman. 
+
+      <LI> Clean out a pile of old junk in the material manager
+           library from the pre-ssg days, and majorly overhauled it.
+      <LI> Complete reengineering of the panel code in preparation for
+           moving the configuration out into a data file.
+      <LI> Lots of hashing around with Joystick support trying to
+           achieve something that is flexible enough to handle the
+	   zillions of possible configurations out there.  Hopefully
+	   we are approaching a workable solution. 
+      <LI> Better windows support in our joystick module.
+      <LI> View code simplifications and optimizations contributed by
+           Norman Vine. 
+
+      <LI> Added support for $FG_SCENERY and --fg-scenery=path so
+           scenery can have a different location from the base package.
+      <LI> Moved drop in sky module, world time module, ephemeris
+           module, and low level communications modules over to simgear.
+      <LI> Replaced gdbm with metakit
+      <LI> Added David Megginson's property manager
+    </UL>
+ 
+  <H3>May 18, 2000:  Development Version 0.7.3 released</H3>
+       <P>
+    <UL>
+      <LI> Added a radio stack 2 VOR/ILS and an ADF to the instrument panel.
+           You can change the frequencies by clicking on the knobs on the
+	   instrument panels.  You can now navigate with VOR/ADF/DME and fly
+	   ILS approaches.
+      <LI> Added a chronometer to the instrument panel.
+      <LI> Added a "wet" compass to the top of the instrument panel.
+      <LI> Compass, vsi, and altitute instruments and vacuum system are more
+           accurately modeled.
+      <LI> Added a magnetic variation model.
+      <LI> Added navaid database management and query code.
+      <LI> Added magvar offset to VOR radials.
+      <LI> Heading bug now display magnetic heading rather than true heading.
+      <LI> Autopilot now has modes to track a VOR and GS.
+      <LI> Added custom joystick client support so sim can be flown from a
+           remote joystick connected to another machine.  This is in support of
+	   some custom hardware located in the human factors research lab of the
+	   university of minnesota.
+      <LI> HUD controls are a bit different "h" toggles through day/night/off
+           modes and "H" cycles through brightness levels.
+      <LI> Norman Vine contributed code to optionally do antialiased hud lines
+           on hardware that supports this.  Norman also contributed additional
+	   hud cleanups and updates.
+      <LI> Updates to JSBsim flight dynamics code that includes a generic
+           reconfigurable flight control system, a initial state trimming
+	   routine, support for wind and weather, support for flaps,
+	   independent trim control, config files changes
+      <LI> Updates to LaRCsim flight dynamcis code contributed by UIUC that
+           allows loading aircraft specifications at runtime from
+	   config files.  UIUC is using flightgear as a platform to do
+	   icing research.  The UIUC aircraft use the c172 gear model
+	   for now which causes some weirdness on the ground for some
+	   of the larger aircraft. 
+      <LI> Flight model no longer has to be chosen at compile time.
+      <LI> Separated ephemeris code from the actual sky rendering code
+           and gave this whole section a big overhaul.  The moon
+	   should now consistantly have the correct phase.
+      <LI> Rebuilt the sky dome using ssg.
+      <LI> Removed dependencies on mat3.h and friends (old srgp support lib)
+      <LI> Airport lookups now done through gdbm (a light weight
+           embedded database.) 
+      <LI> Converted ssgVTable's to ssgVtxTables which do proper memory
+           management and should facilitate use of compiled vertex arrays once
+           ssg add support for these.
+      <LI> Overhauled autopilot internals, separated out the gui controls from
+           the actual autopilot code.
+      <LI> Cygwin32 build fixes
+      <LI> MSVC++ build fixes
+      <LI> Mac build fixes
+    </UL>
+ 
+  <H3>February 17, 2000:  Development Version 0.7.2 released</H3>
+       <P>
+    <UL>
+      <LI> Lots of code reorganizations
+      <LI> Build requires plib-1.1.x
+      <LI> Build requires SimGear-0.0.x
+      <LI> LaRCsim/c172 is now the default aircraft model.
+      <LI> Added flaps support to control model.
+      <LI> Lots of updates and tweaks for the LaRCsim/c172 model.
+      <LI> Use a more standard texture/blend mode combination for
+           sun/moon halos to avoid render path that's not supported by
+	   all cards/drivers.
+      <LI> Change reported speed on hud from V_equiv_kts to V_calibrated_kts
+      <LI> Instrument panel rewrite by David Megginson.  This isn't
+           quite as flashy as the first pass, but is much more
+	   functional, plays much better with opengl, and it should be
+	   relatively easy for someone with graphical skills to make
+	   it look more spiffy.
+      <LI> MacOS fixes contributed by Darrell Walisser.
+      <LI> Many JSBsim updates.
+      <LI> Added a screen snapshot facility (F3).
+      <LI> Added a load/save state function contributed by David Megginson.
+      <LI> Added support for various I/O protocols and channels so
+           that flightgear can communicate with itself and other
+	   programs through a variety of means.
+      <LI> Bug fix:  The aircraft model used for external views was
+           being included in the height above terrain check so when
+	   the view position and the aircraft model collided the
+	   current altitude kept getting pushed up to compensate, but
+	   of course the aircraft model would get pushed up as well
+	   because it tracks the current aircraft position and
+	   orientation.  Thus you had a never ending cycle ...
+      <LI> Oliver's multiplayer network code now moved to his own
+           subdirectory: NetworkOLK
+      <LI> Added simulated cloud puffs as we pass through the cloud layer.
+      <LI> Cleaned up some memory leaks occuring between ssg and flightgear.
+      <LI> Update to Christian's weather data base code.
+    </UL>
+ 
+  <H3>October 22, 1999:  Development Version 0.7.1 released</H3>
+       <P>
+    <UL>
+      <LI> Durk Talsma added a nifty cloud layer.
+      <LI> Default to Christian Mayer's new weather system.
+      <LI> Added routines to do screen printing contributed by Mark Vallevand.
+      <LI> Added routines to do screen shots to ppm graphics file (all 
+           platforms) contributed Rich Kaszeta.
+      <LI> Added a magic carpet (aka slew) mode.
+      <LI> Added a hot air balloon simulator mode. (alpha)
+      <LI> Added a simple (direct lincage) autocoordation feature.
+      <LI> Added a mode to control view (side to side and up and down) with 
+           the mouse.
+      <LI> Fixed a DEM decoding problem which caused most of the terrain to 
+           be 256 meter too high (and regenerated the world scenery with 
+           proper elevations.)
+      <LI> Updates to JSBsim.
+      <LI> Added support for a pilot view offset from the center of gravity.
+      <LI> Various platform portability fixes.
+      <LI> Updated time-offset/syncing command line options.
+      <LI> Updated the FDM <==> Flight Gear interface to be more object 
+           oriented.  This should hopefully pave the way for being able to 
+           simulate several concurrent entities.
+      <LI> Removed unimplemented menu entries.
+      <LI> Various scenery tools changes and enhancements in preparation for 
+           adding runways (hopefully for the next release.)
+    </UL>
+	 
+  <H3>September 11, 1999:  Development Version 0.7.0 released</H3>
+       This is the first release of the new 0.7.x development tree.
+       <P>
+
+    <UL>
+      <LI> Autopilot can now fly great circle routes.
+      <LI> Incorporated a first stab at some networking code contributed by 
+           Oliver Delise.
+      <LI> Added Christian Mayer's new weather subsystem.
+      <LI> Started adding support for "external" views ... still needs some
+           work.
+      <LI> Added a flight model acceleration funtion.
+      <LI> Added support for mouse yoke control contributed by David Megginson.
+      <LI> FDM model hertz now definable from the command line.
+      <LI> Added initial timezone support so the user can have better control 
+           and more options for setting the starting time of the sim.
+      <LI> We now draw nonexistant tiles as ocean which means we only have to 
+           create and distribute tiles that contain some sort of land mass.
+      <P>
+
+      <LI> Replaced basic render engine with plib's ssg (simple scene graph).
+      <LI> Now expect plib to be installed in it's one true and official 
+           location.
+      <LI> Added support for timegm() if it exists which explicitely expects
+           GMT input.
+      <LI> A bit of your basic code reorganization and shuffling.
+      <P>
+
+      <LI> Removed tools dependency on libgfc.  Functionality is now covered by 
+           shapelib which has been added into the Tools tree.
+      <LI> Added support for the wonderful GSHHS global land mass data set.
+      <LI> Removed dependecy on process-dem.pl script.
+      <LI> Created a new distributed/parallel tile build system ... hmmm kind
+           of super computer or beowulf style stuff for getting large chunks
+           of scenery built as fast as possible.
+      <LI> Only generate tiles that have land mass data since the sim can 
+           recreate pure ocean tiles on the fly.
+      <LI> First stab at a water flattening scheme to prevent oceans, lakes, 
+           and rivers from running up and down the sides of hills.
+      <LI> Changed the default "Work/" subdirectory layout.
+      <LI> Updates to better handle segment boundaries in preparation for 
+           real airport runway and lighting modeling.
+      <LI> Updates and enhancements to my polygon management class.
+      <P>
+
+      <LI> Updates to JSBsim.
+      <LI> Updates to Tony's c172 model.
+      <LI> Updated getting started guide from Micheal Basler.
+      <P>
+
+      <LI> FreeBSD portability tweaks.
+      <LI> MACos portability tweaks.
+      <LI> Borland C++ tweaks.
+      <LI> MSVC++ tweaks.
+    </UL>
+ 
+  <H3>September 11, 1999:  Stable Version 0.6.2 released</H3>
+       This is a minor bug fix release with no new features.
+       <P>
+
+    <UL>
+      <LI> MSVC++ and FreeBSD portability enhancements.
+      <LI> MACos fixes.
+      <LI> JSBsim updates.
+      <LI> c172 updates.
+    </UL>
+ 
+  <H3>June 21, 1999:  USA Scenery Version 0.3
+       released</H3>
+       <P>
+       The scenery tools are not yet entirely perfected, but we have
+       made wonderful progress.  This new release adds urban areas.
+ 
+  <H3>June 21, 1999:  Development branch 0.7.x
+       launched</H3>
+       <P>
+       This will allow us to launch off with new experimental code
+       addtions without disrupting our ability to always have a stable
+       version available for people to run.
+ 
+  <H3>June 21, 1999:  Stable Version 0.6.1 released</H3>
+       <P>
+
+    <UL>
+      <LI> Tony Peden contributed a c172 flight model replacement for
+           the Navion.  Still needs to be debugged a bit before it is
+           usable.
+      <LI> More MacOS portability fixes.
+      <LI> More Borland C++ fixes.
+      <LI> More IRIX fixes.
+      <LI> Fixed a bug in handling windows drive letter, colon "C:"
+           notation. 
+      <LI> Minor tweaks to the Astro sub section contributed by Durk
+           Talsma. 
+      <LI> GUI updated contributed by Norman Vine.
+      <LI> Fixed a problem with ambiguous constructors in the fgText
+           class. 
+      <LI> Updates to JSBsim contributed by Jon Berndt.
+      <LI> Created a tile load queue so that we only load one tile per
+           frame.  This isn't entirely satisfactory, but it reduces
+	   the length of the pause when crossing a tile boundary with
+	   several shorter pauses.
+      <LI> Fixed bug with passing PUI keystrokes on to glut.
+      <LI> Fixed a bug in tilecache size which caused occasional tiles
+           to drop out when more than one row is scheduled
+	   "simultaneously".
+      <LI> Changes to scenery building tools to handle sliver
+           detection and resolution.
+      <LI> Fixed several other minor bugs in the scenery creation
+           tools. 
+      <LI> Added urban area support to scenery creation tools.
+      <LI> Made the parallel scenery building tools a bit more robust
+           if a requested client machine happens to be offline by
+	   pinging it first to see if it is alive. 
+      <LI> Added support for libgpc's new hole tracking interface.
+    </UL>
+ 
+  <H3>May 26, 1999:  Version 0.6.0 released</H3>
+       <P>
+
+    <UL>
+      <LI> Tons of improvements with scenery creation.  Inter-tile
+           gaps have been fixed, distorted textures have been fixed,
+	   real coastlines have been added, and many other subtle
+	   improvements. 
+      <LI> Tools for parallelizing the scenery building tasks.  For
+           instance by using 20 machines in parallel, scenery for the
+	   entire USA can be regenerated in just over 4 hours vs. 70+
+	   hours on a single machine.  
+      <LI> Texture scale can be specified (and changed)( in the
+           materials file.  The sim must be rerun for the change to
+	   take effect.
+      <LI> Windows now uses plib joystick code so rudder pedals should
+           now work. 
+      <LI> Now builds against Steve Baker's plib (portable game devel
+           library) distributed separately
+	   (www.woodsoup.org/~sbaker/plib/) 
+      <LI> Many source code changes for the MacOS port contributed by
+           Darrell Walisser (the port isn't quite there yet ...)
+      <LI> Source code changes for better compiling with the Borland
+           compiler. 
+      <LI> Source code changes for better compiling with the native
+           Irix compilers. 
+      <LI> Fixed a bug so you can now fly across the international
+           date line (or more precisely the division between longitude
+	   = +/-180. 
+      <LI> Tweaks to the Astro section contributed by Durk Talsma.
+      <LI> Autopilot improvements contributed by Norman Vine.
+      <LI> Fonts/characters now drawn with texture maps for increased speed.
+      <LI> Instrument panel can be toggled on and off with "P".
+      <LI> GUI interface for tweaking some autopilot parameters.
+      <LI> HUD appearance and layout changes contributed by Norman
+           Vine, includes faster font drawing for much better performance.
+      <LI> Reset function added to reset you to your starting conditions.
+      <LI> GUI function to enter a new airport id (and be transported there)
+      <LI> Added serial output support for an "in-development" full
+           motion cockpit. 
+      <LI> "Just in time" texture loading to reduce initial sim loading time.
+    </UL>
+ 
+  <H3>March 31, 1999:  Version 0.59 released</H3>
+    <P>
+    (This is an intermediate/stepping stone release.  Skip this if you are
+    interested in stability.)
+    <P>
+
+    <UL>
+      <LI> IRIX portability changes and support for native SGI compilers.
+      <LI> Solaris portability tweaks
+      <LI> Incorporated some MacOS portability changes (although the
+           port is not yet complete.)
+      <LI> Changes to allow adjustment of the autopilot settings while it is
+           activated.
+      <LI> Began complete overhaul of scenery generation tools.
+      <LI> Fixed a view frustum culling bug.
+      <LI> separated lib GPC (generic polygon clipper.)  GPC is not
+           "freeware" and the author has explicitely refused our
+	   request to distribute source code for this library with
+	   Flight Gear.
+      <LI> updated installation and getting started guide
+      <LI> switched to a simpler, lighter weight frame rate calculation method.
+      <LI> new tile division scheme.
+      <LI> GPS serial *output* fixes.
+      <LI> Added a nifty halo to both the sun and moon.  Preparation
+           for allowing subtle moon lighting effects at night.
+      <LI> Incorporated Jon Berndt's new C++ flight model rewrite.
+      <LI> Autopilot settings can be adjusted while active.
+      <LI> Updates to the instrument panel.
+      <LI> Fixed AOA reading on the HUD.
+      <LI> Added random splash screens.
+      <LI> Modified scenery loader to accept tri-fans.
+      <LI> Other non-backwards compatible changes to scenery file
+           format and tile layout.
+    </UL>
+ 
+  <H3>Februrary 10, 1999:  Version 0.58 released</H3>
+    <UL>
+      <LI> Added JSBsim alpha code ... this is Jon S. Berndts alpha FDM rewrite.
+           Still lots to do, but you can watch a balistic flight for a short 
+           time.
+      <LI> Renamed Simulator/Flight to Simulator/FDM
+      <LI> Tweaks to assist building FGFS on solaris platforms.
+      <LI> Moved Lib/DEM to Tools/DEM
+      <LI> Started preparations for scenery generation tools overhaul.
+      <LI> More MSVC++ support.
+      <LI> Removed code that made the sun bigger at the horizon since this is 
+           just an optical illusion in real life.
+      <LI> Bug fixed so that the sim can start out at an airport below sea 
+           level.
+    </UL>
+    <P>
+
+  <H3>January 21, 1999:  Version 0.57 released</H3>
+    <UL>
+      <LI> Converted to a simpler frame rate counting method.
+      <LI> Fixed the AOA reading on the HUD.
+      <LI> Removed gpc from the Lib section of distribution by request of the
+           gpc Author.  The gpc license is unfortunately not compatible with
+           the GPL.  I may look for an alternative library, or just require
+           that developers download this library separately.
+      <LI> First slew of changes from the MacOS porting effort
+           contributed by "Robert Puyol" <PUYOL@ABVENT.FR>.
+      <LI> Support for an arbitrary number of serial ports +
+           additional serial port output tweaks.
+      <LI> Serial output tweaks to make things more robust and act
+           more like a GPS.
+      <LI> Portability enhancements for Borland, Solaris, and SGI.
+      <LI> Some internal class renaming and reorganizations.  fgFLIGHT
+           becomes FGState.  fgCONTROLS becomes FGControls.
+      <LI> Started work on an "external" flight model so the sim can
+           be driven from external input (serial port, network, file,
+           etc.)
+      <LI> Fixed a problem that creeped in with setting the initial
+           startup altitude.  This could cause an unrecoverable bounce
+           and you'd end up flipped on your back.  Should be fixed
+           now.
+      <LI> Sun now appears to grow in size as it gets very low in the
+           horizon.
+      <LI> Fixed a view frustum culling bug where the scene was not
+           accurately culled when your view was anything other than
+           straight forward.
+    </UL>
+    <P>
+
+  <H3>November 23, 1998:  Version 0.56 released</H3>
+    <UL>
+      <LI> Changed default HUD units to the more standard feet units.
+           You can still use meters by specifying the command line
+           option "--units-meters".
+      <LI> Added some initial joystick support using Steve's joystick
+           interface class.  This works great under Linux, but Steve's
+	   class now needs to be ported to Windoze and other platforms.
+      <LI> Also added a fall back to the GLUT joystick routines for
+           windows (until we can find better joystick support.)
+      <LI> Added some initial serial port support for acting like gps
+           and outputing nmea data such that could be fed into a
+	   flight map software package. 
+      <LI> Miscellaneous code clean ups, portability improvements, and
+           optimizations. 
+      <LI> Switched to a streams based error/debug logging system that
+           can be completely stripped out for a release build
+	   (./configure --without-logging) 
+      <LI> Support for cygwin32 b20 compiler (latest release)
+      <LI> Continued progress on instrument panel
+      <LI> Support for starting fgfs at higher resolutions.
+      <LI> Updated user manual.
+    </UL>
+    <P>
+
+  <H3>October 23, 1998:  Version 0.55 released</H3>
+    <UL>
+      <LI> New version of gpc (generic polygon clipping library) from 
+           http://www.cs.man.ac.uk/aig/staff/alan/software/
+      <LI> Brakes (use "b" to toggle)
+      <LI> Added an altitude hold module to the autopilot.  Lock your
+           current altitude with "ctrl-a", "cntr-a" again will
+	   deactivate.  (Also lock your current heading with "ctrl-h",
+           and again to deactivate.) 
+      <LI> Added a terrain following module ... "ctrl-t" to activate.
+      <LI> Added an autothrottle ... "ctrl-s" to activate.
+      <LI> Fixes so that terrain tools will work in windoze.
+      <LI> More STL & Compiler compatibility fixes.
+      <LI> Changes to use a Point3 class.
+      <LI> Fixed win95/98 time problem that limited fps to about 18.3
+    </UL>
+    <P>
+
+  <H3>September 25, 1998:  Version 0.54 released</H3>
+       <UL>
+         <LI> Implimented audio envelopes so that pitch of engine
+	      changes with throttle
+	 <LI> Textured moon, and rewritten/restructured Astro code.
+	 <LI> More optimizations and code cleanups.  (Norman Vine,
+              Bernie Bright, Charlie Hotchkiss.)
+         <LI> Bug fixed that was causing odd display artifacts due to
+              a degenerate fragment being created for every tile.
+         <LI> Bug fixed that caused scenery generation to go bad
+              (misplaced fclose on an invalid file descriptor.)
+         <LI> Code changes to support g++ 2.7 STL (from Bernie Bright)
+       </UL>
+       <P>
+
+  <H3>September 25, 1998:  USA Scenery now
+       available</H3>  Through the graceous contribution of Jim
+       Brennan, the entire FG rendition of the USA terrain is now
+       available online for download at
+       <A HREF="ftp://ftp.kingmont.com/pub/kingmont/">
+       ftp://ftp.kingmont.com/pub/kingmont/</A>
+       <P>
+       The files are in 10 x 10 degree chunks and are labeled by the
+       lon/lat of their lower left hand corner.
+       <P>
+       To fly out of a particular scenery area you just specify a
+       starting airport in that area with the --airport-id=ABCD option.
+       You can also start at a specific lon/lat with the --lon=nnn.nnn
+       --lat=nnn.nnn options. 
+       <P>
+       If you would like to arrange to receive the entire USA scenery
+       on cdrom, you can contact me at
+       <IMG ALIGN="CENTER" SRC="email-fg.png">
+       <P>
+
+  <H3>September 4, 1998: New textures released</H3>
+       There is a new texture package that should include all the textures
+       required by version 0.53 available at:
+       <P>
+
+       <UL>
+         <A HREF="ftp://ftp.flightgear.org/pub/fgfs/Scenery/">
+         ftp://ftp.flightgear.org/pub/fgfs/Scenery/</A>
+       </UL>
+       <P>
+
+
+  <H3>September 2, 1998: Version 0.53 released</H3>
+    <UL>
+      <LI> Some initial "GameGLUT" support contributed by Gary R. Van
+           Sickle (tiberius@braemarinc.com)
+      <LI> Tracked down and eliminated some memory access type bugs
+           that were causing segfaults on some platforms, with some
+	   compilers using various optimization flags.
+      <LI> Assorted code optimizations submitted by Norman Vine.
+      <LI> Renamed fg to fgfs
+      <LI> Shuffled files.  
+        <UL>
+          <LI> Created a new directory Simulator/Airports/ to handle
+               airport data specific tasks 
+          <LI> Created Simulator/Object/ to handle basic rendering
+               objects 
+        </UL>
+      <LI> Panel code update from Friedemann Reinhard (use
+           --enable-panel to activate) 
+      <LI> Contributions from Bernie Bright
+        <UL>
+          <LI> Created some new classes to enable
+               pointers-to-functions and pointers-to-class-methods to
+	       be treated like objects.  These objects can be
+	       registered with fgEVENT_MGR.
+          <LI> File "Include/fg_callback.hxx" contains the callback
+               class defns.
+          <LI> Modified fgEVENT and fgEVENT_MGR to use the callback
+               classes.  Also some minor tweaks to STL usage.
+          <LI> Added file "Include/fg_stl_config.h" to deal with STL
+               portability issues.  Added an initial config for egcs
+	       (and probably gcc-2.8.x). Don't have access to Visual
+	       C++ so I've left that for someone else. 
+          <LI> This file is influenced by the stl_config.h file
+               delivered with egcs. 
+          <LI> Added "Include/auto_ptr.hxx" which contains an
+               implementation of the STL auto_ptr class which is not
+	       provided in all STL implementations and is needed to
+	       use the callback classes.
+          <LI> Deleted fgLightUpdate() which was just a wrapper to
+               call fgLIGHT::Update(). 
+          <LI> Modified fg_init.cxx to register two method callbacks
+               in place of the old wrapper functions.
+          <LI> The new classes in libmisc.tgz define a stream
+               interface into zlib.  I've put these in a new
+	       directory, Lib/Misc.  Feel free to rename it to
+	       something more appropriate.  However you'll have to
+	       change the include directives in all the other files.
+	       Additionally you'll have add the library to
+	       Lib/Makefile.am and Simulator/Main/Makefile.am.
+
+          <LI> The StopWatch class in Lib/Misc requires a
+               HAVE_GETRUSAGE autoconf test so I've included the
+	       required changes in config.tgz.
+                                                                              
+          <LI> There are a fair few changes to Simulator/Objects as
+               I've moved things around.  Loading tiles is quicker but
+	       thats not where the delay is.  Tile loading takes a few
+	       tenths of a second per file on a P200 but it seems to
+	       be the post-processing that leads to a noticeable blip
+	       in framerate.  I suppose its time to start profiling to
+	       see where the delays are.
+
+          <LI> I've included a brief description of each archives contents.
+
+            <UL>
+              <LI> Lib/Misc/
+                   zfstream.cxx
+                   zfstream.hxx
+                   C++ stream interface into zlib.
+                   Taken from zlib-1.1.3/contrib/iostream/.
+                   Minor mods for STL compatibility.
+                   There's no copyright associated with these so I
+		   assume they're covered by zlib's.
+
+              <LI> fgstream.cxx
+                   fgstream.hxx
+                   FlightGear input stream using gz_ifstream.  Tries to open the
+                   given filename.  If that fails then filename is
+		   examined and a ".gz" suffix is removed or appended
+		   and that file is opened. 
+
+              <LI> stopwatch.hxx
+                   A simple timer for benchmarking.  Not used in
+		   production code.  Taken from the Blitz++ project.
+		   Covered by GPL. 
+
+              <LI> strutils.cxx
+                   strutils.hxx
+                   Some simple string manipulation routines.
+
+              <LI> Simulator/Airports/
+                   Load airports database using fgstream.
+                   Changed fgAIRPORTS to use set<> instead of map<>.
+                   Added bool fgAIRPORTS::search() as a neater way
+		   doing the lookup.  Returns true if found.
+
+              <LI> Simulator/Astro/
+                   Modified fgStarsInit() to load stars database using fgstream.
+
+              <LI> Simulator/Objects/
+                   Modified fgObjLoad() to use fgstream.
+                   Modified fgMATERIAL_MGR::load_lib() to use fgstream.
+                   Many changes to fgMATERIAL.
+                   Some changes to fgFRAGMENT but I forget what!
+            </UL>
+        </UL>
+    </UL>
+    <P>
+
+  <H3>Auguest 28, 1998</H3>: Flight Gear get's it's own
+       domain and a new home courtesy of Woodsoup.org (www.woodsoup.org)
+       The official FGFS home page is now at:
+       <A HREF="index.html">http://www.flightgear.org</A>
+       <P>
+
+  <H3>August 15, 1998: Version 0.52 released</H3>
+    <UL>
+      <LI> Stars added in 8 stages as sky gets darker for a smoother 
+           more realistic transition.
+      <LI> rewrote star loader to significantly improve load times.
+      <LI> Tweaked sky brightness and dawn/dusk colors.
+      <LI> Fixed a small problem with moon rendering.
+      <LI> Fog color tries to track the sky color at the center of view 
+           in sunrise and sunset situations.
+      <LI> Optimizations from Norman Vine
+      <LI> Code fixes and tweaks from Charlie Hotchkiss.
+      <LI> Added an --enable/disable-sound option.
+      <LI> Added a pause key "p"
+      <LI> Added command line options to specify initial position 

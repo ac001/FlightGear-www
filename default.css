@@ -1,0 +1,137 @@
+body{
+	background:#efefef;
+	color:black;
+	font-family:arial,helvetica,sans-serif;
+	margin:0px;
+	padding:0px;
+}
+/* Links*/
+a{
+	color:#0f7a71;
+	text-decoration:none;
+}
+a:hover{
+	color:#b51717;
+}
+/* Main image header */
+img{
+	border:none;
+}
+/* Image at top of homepage*/
+img.mainscreen{
+	border-style:solid;
+	border-color:#d9e2e2;
+	border-width:1px;
+	padding: 5px;
+}
+
+img.screenshot{
+	width: 600;
+}
+/*News name header */
+h1{
+	background:#efefef;
+	border-style:solid;
+	border-color:#d9e2e2;
+	border-width:1px;
+	padding-top:2px;
+	padding-bottom:2px;
+	padding-left:2px;
+	padding-right:2px;
+	font-size:100%;
+	text-align:center;
+}
+/*News date header*/
+
+h2{
+	background:#efefef;
+	border-style:solid;
+	border-color:#d9e2e2;
+	border-width:1px;
+	padding-top:2px;
+	padding-bottom:2px;
+	padding-left:2px;
+	padding-right:2px;
+	width: 22%;
+	font-size:70%;
+	text-align:center;
+}
+/*Menu subheadings*/
+h3{
+	background: #f2f2f2;
+	white-space: nowrap;
+	border-style:solid;
+	border-color:#d9e2e2;
+	border-width:1px;
+	padding:1px;
+	font-size:80%;
+	color: #720c0c;
+	text-align:center;
+}
+/*Menu desing*/
+#menu{
+background:#efefef;
+font-weight:bold;
+font-size:85%;
+padding:12px;
+vertical-align:top;
+white-space:nowrap;
+}
+/*The entire page*/
+#global{
+border-collapse:collapse;
+padding:0px;
+clear:both;
+margin:0px;
+border:none;
+width:90%;
+}
+/*The top flightgear banner*/
+#top{
+background-repeat:repeat-x;
+background-image:url("images/titleback.jpg");
+height:112px;
+}
+/* The main area of the page with the text*/
+td#page{
+padding:10px;
+vertical-align:top;
+width:100%;
+}
+
+table#caption{
+font-size: 80%;
+}
+
+div#page{
+padding:10px;
+vertical-align:top;
+}
+
+#page{
+background:white;
+padding-right:0px;
+padding-left:0px;
+border-style:solid;
+border-color:#d9e2e2;
+border-top-width:1px;
+border-bottom-width:1px;
+border-left-width:1px;
+border-right-width:1px;
+font-size:93%;
+}
+
+/*The bottom links and copyright*/
+#bottom{
+clear:both;
+background:#efefef;
+padding-right:5px;
+padding-left:5px;
+padding-top:5xp;
+padding-bottom:5xp;
+font-weight:bold;
+text-align:center;
+font-size:80%;
+}
+
+}

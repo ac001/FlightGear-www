@@ -1,0 +1,257 @@
+
+<!-- Standard Header Begin -->
+<html>
+
+<head>
+  <title>FlightGear Flight Simulator</title>
+  <link rel="stylesheet" type="text/css" href="http://www.flightgear.org/default.css"> 
+</head>
+
+<body>
+  <div id="top">
+    <a href="http://www.flightgear.org/"><img id="titlebar" src="http://www.flightgear.org/images/fglogosm.jpg" alt=""></a>
+  </div>
+
+  <table id="global">
+    <tbody><tr>
+      <td id="menu">
+	<!-- Use a replacescript to update the menu -->
+	<h3>About</h3>
+	<a href="/index.html">Home</a><br>
+	<a href="/introduction.html">Introduction</a><br>
+	<a href="/overview.html">Overview</a><br>
+	<a href="/features.html">Features</a><br>
+	<!-- about.hook.1-->
+        <a href="/Gallery/">Screenshots</a><br>
+	<!-- about.hook.2-->
+	<h3>Downloads</h3>
+	<a href="/Downloads/binary.html">Download Program</a><br>
+	<a href="/Downloads/scenery.html">Download Scenery</a><br>
+	<a href="/Downloads/source.html">Download Source Code</a><br>
+	<a href="http://cdrom.flightgear.org">FlightGear CD's</a><br>
+	<a href="/mirrors.html#ftp">FTP Mirrors</a><br>
+	<!-- downloads.hook.1-->
+	<!-- downloads.hook.2-->
+	<h3>Support</h3>
+	<a href="/version.html">Version Summary</a><br>
+	<a href="/hardwarereq.html">Hardware Requirements</a><br>
+	<a href="/docs.html">Documentation</a><br>
+	<a href="/places.html">Places to Fly</a><br>
+	<a href="/mail.html">Mailing Lists & Forums</a><br>
+	<a href="/Docs/FAQ.shtml">FAQ</a><br>
+	<!-- support.hook.1-->
+	<!-- support.hook.2-->
+	<h3>Links</h3>
+	<a href="/links.html">Related Websites</a><br>
+	<a href="/Projects/">Related Projects</a><br>
+	<!-- support.hook.1-->
+	<!-- support.hook.2-->
+	<h3>Contribute</h3>
+	<a href="/contributing.html">Contributing</a><br>
+	<a href="/cvs.html">CVS Resources</a><br>
+	<a href="/goals.html">Goals</a><br>
+	<a href="/thanks.shtml">Contributors</a><br>
+	<a href="/design.html">Design Proposals</a><br>
+	<a href="/events.html">Events</a><br>
+	<!-- support.hook.1-->
+	<!-- support.hook.2-->
+      </td>
+      <td id="page">
+<!-- Standard Header End -->
+<H1>FlightGear Anonymous CVS instructions</H1>
+
+Please follow these instructions to check out a copy of the FlightGear source
+code and data.  This instructions are slanted towards the command line
+version of CVS.
+<P>
+
+<BR>
+
+
+<H3>Getting the CVS software:</H3>
+
+You must have a recent version of cvs installed on your system in
+order for any of this to work.
+<A HREF="http://www.cyclic.com/">Cyclic Software</A> supports and
+maintains CVS.  CVS continues to be a free, open-source product.
+Cyclic makes a living by selling support.  Cygwin and most modern
+linux distributions offer an installable cvs package that should work
+great.
+<P>
+
+<BR>
+
+<H3>1. Make a directory to hold everything.</H3>
+
+<UL>
+<PRE>
+cd /some/path
+mkdir FlightGear-0.9
+</PRE>
+</UL>
+
+<BR>
+
+<H3>2. Go to the new directory.</H3>
+
+<UL>
+<PRE>
+cd /some/path/FlightGear-0.9
+</PRE>
+</UL>
+
+<BR>
+
+<H3>3. Check out a copy of the source code.</H3>
+
+<UL>
+<PRE>
+cvs -d :pserver:cvsguest@cvs.flightgear.org:/var/cvs/FlightGear-0.9 login
+CVS passwd: guest
+
+cvs -d :pserver:cvsguest@cvs.flightgear.org:/var/cvs/FlightGear-0.9 co source
+</PRE>
+</UL>
+
+<BR>
+
+<H3>4. Check out a copy of the data (base package.)</H3>
+
+<UL>
+<PRE>
+cvs -d :pserver:cvsguest@cvs.flightgear.org:/var/cvs/FlightGear-0.9 login
+CVS passwd: guest
+
+cvs -d :pserver:cvsguest@cvs.flightgear.org:/var/cvs/FlightGear-0.9 co data
+</PRE>
+</UL>
+
+<BR>
+
+<H3>5. Compile the source code.</H3>
+
+Note: FlightGear has several prerequisites that must be installed
+before you can build this source code.  If you attack these
+prerequisites in the order listed below, you should be good.
+
+<UL>
+  <LI> Glut.  Most distributions include glut packages, although you
+       may have to hunt for them.  Make sure you install both the glut
+       and glut-devel packages.
+  <LI> Zlib.  Most distributions install the basic zlib libraries by
+       default, but not the development portions.  If you don't have
+       zlib.h, you probably need to install the zlib-devel package for
+       your distribution.
+  <LI> <A HREF="http://plib.sf.net">Plib</A> - portability libraries and
+       scene graph.
+  <LI> Metakit.  A suitable version of MetaKit is included in the
+       SimGear/src-libs/ subdirectory.  If your distribution doesn't
+       provide a Metakit (and Metakit-devel) package, you will have to
+       build and install it before you can compile SimGear.
+  <LI> <A HREF="http://www.simgear.org">SimGear</A> - Simulation
+       support libraries.  If you are building FlightGear from CVS,
+       you need the CVS version of SimGear.  If you have strange build
+       errors, one of the first things to check is that you have an
+       up-to-date version of SimGear built <B>and</B> installed. 
+</UL>
+
+Now, configure and compile the FlightGear source code.
+
+<UL>
+<PRE>
+cd /some/path/FlightGear-0.9/source
+./autogen.sh
+./configure
+make
+</PRE>
+</UL>
+
+Note that the configure script can take many options.  Run
+"./configure --help" to see what they are.  Some interesting options
+to consider are "--prefix=/desired/install/path" and "--with-threads"
+
+<BR>
+
+<H3>6. Test run your freshly built version of fgfs.</H3>
+
+The executable is created at
+/some/path/FlightGear-0.9/source/src/Main/fgfs
+
+Run this with the -fg-root= option so it can find the data.  You can
+put this option in your ~/.fgfsrc to save some typing each time you
+run FlightGear.
+
+<UL>
+<PRE>
+cd /some/path/FlightGear-0.9/source/src/Main/
+./fgfs --fg-root=/some/path/FlightGear-0.9
+</PRE>
+</UL>
+
+<BR>
+
+<H3>7. Keep your local source and data copies up-to-date.</H3>
+
+Finally (and this is the good part) if you cd to the
+/some/path/FlightGear-0.9/source directory (the one that was created
+with the very first checkout command) and run "cvs update -d -P", your
+local source tree will be automatically synced with the master
+repository.  The "-d" flag automatically adds any new directories that
+have been created in the repository, and the "-P" automatically
+removes any old directories that have been removed from the
+repository.
+<P>
+
+Also be aware that the latest CVS source code usually requires the
+latest CVS data (base package.)  You must cvs update both.
+
+<UL>
+<PRE>
+cd /some/path/FlightGear-0.9/source
+cvs update -d -P
+cd /some/path/FlightGear-0.9/data
+cvs update -d -P
+</PRE>
+</UL>
+
+If you pulled new source code files you must rebuild FlightGear:
+<UL>
+<PRE>
+cd /some/path/FlightGear-0.9/source
+make
+</PRE>
+</UL>
+
+CVS is pretty smart, so if you have made local changes that don't conflict
+with any changes to the master repository, cvs should be able to merge the 
+changes together, even when the changes have been made to the same file.
+
+If you have made changes that do conflict with new changes to the master 
+repository, cvs will let you know, and you can go edit the file with 
+conflicts and resolve them.
+
+<P>
+
+<!-- Standard Footer Begin -->
+      </td></tr>
+    </tbody>
+  </table>
+  <br>
+  <div id="bottom">
+    <a href="/">Home</a> | 
+    Download:
+      <a href="/Downloads/binary.html">FGFS</a> -
+      <a href="/Downloads/source.html">Source</a> -
+      <a href="/Downloads/scenery.html">Scenery</a> |
+    <a href="/Gallery/index.shtml">Screenshots</a> |
+    <a href="/docs.html">Documentation</a>
+    <br>
+    <br>
+    Last modified:  8/12/2003 <BR>
+    <A HREF="http://www.menet.umn.edu/~curt/">Curtis L. Olson</A>
+    <IMG ALIGN="MIDDLE" SRC="/email-fg.png">
+  </div>
+</body>
+
+</html>
+<!-- Standard Footer End -->

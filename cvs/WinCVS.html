@@ -1,0 +1,196 @@
+
+<!-- Standard Header Begin -->
+<html>
+
+<head>
+  <title>FlightGear Flight Simulator</title>
+  <link rel="stylesheet" type="text/css" href="http://www.flightgear.org/default.css"> 
+</head>
+
+<body>
+  <div id="top">
+    <a href="http://www.flightgear.org/"><img id="titlebar" src="http://www.flightgear.org/images/fglogosm.jpg" alt=""></a>
+  </div>
+
+  <table id="global">
+    <tbody><tr>
+      <td id="menu">
+	<!-- Use a replacescript to update the menu -->
+	<h3>About</h3>
+	<a href="/index.html">Home</a><br>
+	<a href="/introduction.html">Introduction</a><br>
+	<a href="/overview.html">Overview</a><br>
+	<a href="/features.html">Features</a><br>
+	<!-- about.hook.1-->
+        <a href="/Gallery/">Screenshots</a><br>
+	<!-- about.hook.2-->
+	<h3>Downloads</h3>
+	<a href="/Downloads/binary.html">Download Program</a><br>
+	<a href="/Downloads/scenery.html">Download Scenery</a><br>
+	<a href="/Downloads/source.html">Download Source Code</a><br>
+	<a href="http://cdrom.flightgear.org">FlightGear CD's</a><br>
+	<a href="/mirrors.html#ftp">FTP Mirrors</a><br>
+	<!-- downloads.hook.1-->
+	<!-- downloads.hook.2-->
+	<h3>Support</h3>
+	<a href="/version.html">Version Summary</a><br>
+	<a href="/hardwarereq.html">Hardware Requirements</a><br>
+	<a href="/docs.html">Documentation</a><br>
+	<a href="/places.html">Places to Fly</a><br>
+	<a href="/mail.html">Mailing Lists & Forums</a><br>
+	<a href="/Docs/FAQ.shtml">FAQ</a><br>
+	<!-- support.hook.1-->
+	<!-- support.hook.2-->
+	<h3>Links</h3>
+	<a href="/links.html">Related Websites</a><br>
+	<a href="/Projects/">Related Projects</a><br>
+	<!-- support.hook.1-->
+	<!-- support.hook.2-->
+	<h3>Contribute</h3>
+	<a href="/contributing.html">Contributing</a><br>
+	<a href="/cvs.html">CVS Resources</a><br>
+	<a href="/goals.html">Goals</a><br>
+	<a href="/thanks.shtml">Contributors</a><br>
+	<a href="/design.html">Design Proposals</a><br>
+	<a href="/events.html">Events</a><br>
+	<!-- support.hook.1-->
+	<!-- support.hook.2-->
+      </td>
+      <td id="page">
+<!-- Standard Header End -->
+<H1>Windows & CVS Tips (WinCVS)</H1>
+
+<PRE>
+From: "Gary R. Van Sickle" (tiberius@braemarinc.com)
+Sender: owner-flight-gear@me.umn.edu
+Subject: [FGFS] CVS Intructions
+Date: Wed, 16 Sep 1998 01:50:21 -0500
+</PRE>
+
+<HR>
+
+Several people have asked me how to get CVS working on Windows.
+Here's what I did:
+<P>
+
+<OL>
+  <LI> Download WinCVS (and/or MacCVS) from here: 
+       <A HREF="http://mirror.openspace.ch/maccvs/">
+       http://mirror.openspace.ch/maccvs/</A>
+       <P>
+
+  <LI> Install it. As of beta 23 (9-10-98) it has a fancy installer,
+       but you still have to unzip it first. So unzip it to a
+       temporary directory, then run Setup.exe.  (Incidentally, if you
+       don't have WinZip from <A
+       HREF="http://www.winzip.com/">http://www.winzip.com/</A>, do
+       yourself a favor and get it, it is probably the single best
+       argument in favor of shareware that there is).
+       <P>
+ 
+  <LI> Run it. It will pop up a dialog box and ask you for a 'CVS
+       Root'. Give it this: anoncvs@kenai.me.umn.edu:/cvs/FlightGear 
+       <P>
+
+  <LI> In that same dialog, set 'Authentication' to 'passwd' file on
+       the cvs server', and version to 1.9
+       <P>
+
+  <LI> In the same dialog, go to the 'Globals' tab, and push the
+       'Change Folder' button to set the HOME directory. I created a
+       'CVSTest' directory on my PC to test it out, but I think the
+       could just as easily point to the root of your general
+       development tree (a FlightGear directory gets created in here).
+       <P>
+
+  <LI> That should be all you need to do in that dialog. Hit OK.
+       <P>
+
+  <LI> Now, WinCVS should be sitting there looking like it's waiting
+       for you to do something. So, get your IE or Nav up and go to <A
+       HREF="anoncvs.html">
+       ../cvs.htm/anoncvs.html</A>. This
+       is Curt's CVS instruction page.
+       <P>
+
+  <LI> The current instructions are for command line, but we can work
+       around that pretty easy, since WinCVS has a command line
+       dialog. Ignore the first command on that page: it should have
+       been done automatically.  NOTE: There's a Tcl/Tk option with
+       WinCVS which, if installed, gives you a regular command line in
+       the lower right pane.  This might make the next step somewhat
+       easier, but I haven't tried it as yet.
+       <P>
+
+  <LI> Go to the menu item "CVS Admin / Command Line...". Starting
+       with "cvs -d :pserver:anoncvs@kenai.me.umn.edu:/cvs/FlightGear
+       co FlightGear", cut-and-paste the commands, one at a time, into
+       the command line box. (NOTE: the \'s at the end of the lines
+       are line breaks (i.e. delete them after you paste the command
+       line in). That one threw me at first). If WinCVS asks you for a
+       password or username, use 'guest'.
+       <P>
+
+  <LI> Wherever the instructions say 'cd ', click on the 'click to
+       specify directory' box and use that to change directories. I
+       believe they are created automatically by the cvs commands, but
+       if not, create them manually.
+       <P>
+
+  <LI> Once you finish all the commands, you should have a complete
+       Flight Gear directory tree set up.
+       <P>
+
+  <LI> On Curt's CVS page, he's got the following command line:
+       aclocal ; automake -a ; autoconf. That is supposed to set up
+       the config.h file to your specific setup, but Windows doesn't
+       have the required commands. I used a config.h from the regular
+       source download (I think, might have been from the VC++5.0
+       project download). I don't know how else to get around this
+       one.
+       <P>
+
+       <STRONG>Note from Curt:</STRONG>  aclocal, automake, and
+       autoconf are Unix tools which build the configure script and
+       construct the Unix makefiles from much simpler input
+       files. Windows users will only be able to use these tools if
+       they have the cygnus/egcs compiler environment installed. The
+       cygnus/egcs packages provides a free windows port of the basic
+       unix development tools.
+</OL>
+
+<HR>
+
+That should do it, just 12 easy steps ;-).
+
+<PRE>
+Gary R. Van Sickle (tiberius@braemarinc.com)
+Electrical Design Engineer
+Braemar Inc.
+11481 Rupp Dr.
+Burnsville, MN 55337
+</PRE>
+
+<!-- Standard Footer Begin -->
+      </td></tr>
+    </tbody>
+  </table>
+  <br>
+  <div id="bottom">
+    <a href="/">Home</a> | 
+    Download:
+      <a href="/Downloads/binary.html">FGFS</a> -
+      <a href="/Downloads/source.html">Source</a> -
+      <a href="/Downloads/scenery.html">Scenery</a> |
+    <a href="/Gallery/index.shtml">Screenshots</a> |
+    <a href="/docs.html">Documentation</a>
+    <br>
+    <br>
+    Last modified:  8/12/2003 <BR>
+    <A HREF="http://www.menet.umn.edu/~curt/">Curtis L. Olson</A>
+    <IMG ALIGN="MIDDLE" SRC="/email-fg.png">
+  </div>
+</body>
+
+</html>
+<!-- Standard Footer End -->
