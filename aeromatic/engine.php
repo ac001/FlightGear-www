@@ -1,6 +1,6 @@
 <?php
 
-$version = 0.2;
+$version = 0.3;
 
 //****************************************************
 //                                                   *
@@ -83,8 +83,8 @@ function MakePiston() {
   print("<FG_PISTON NAME=\"$ac_enginename\">\n");
   print("  MINMP          6.0\n");
   print("  MAXMP         30.0\n");
-  print("  DISPLACEMENT $displacement\n");
-  print("  MAXHP        $ac_enginepower\n");
+  printf("  DISPLACEMENT %3.2f\n", $displacement);
+  printf("  MAXHP        %3.2f\n", $ac_enginepower);
   print("  CYCLES         2.0\n");
   print("  IDLERPM      700.0\n");
   print("  MAXTHROTTLE    1.0\n");
@@ -211,7 +211,7 @@ if(($ac_engineunits == 0) || ($ac_engineunits == 1)) {
   }
 
   print("<FG_SIMTURBINE NAME=\"$ac_enginename\">\n");  
-  print("  MAXMILTHRUST $ac_enginepower\n");
+  printf("  MAXMILTHRUST %2.2f\n", $ac_enginepower);
   print("  BYPASSRATIO    0.0\n");
   print("  TSFC           0.55\n");
   print("  ATSFC          0.0\n");

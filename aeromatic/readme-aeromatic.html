@@ -41,7 +41,7 @@ and place it in the $FGROOT/Engine directory with all the other engines.
 Use your browser's "back" button to return to <i>aeromatic.html</i>.  Skip over the
 propeller form and fill in the aero form.  You must first select a system of units,
 either English or metric. You cannot mix units! Now for the airplane data. For the
-MiG-21 I have the following data. Name: mig21, type: Single Engine Fighter, maximum
+MiG-21 I have the following data. Name: Mig21, type: Single Engine Fighter, maximum
 takeoff weight: 22,000 lb., span: 23.5 feet, length: 51.75 feet, wing area: 247 square
 feet, tricycle landing gear (meaning the third wheel is in front of the main wheels),
 one engine, engine type: Turbine, engine layout: aft fuselage.  My source doesn't
@@ -52,16 +52,21 @@ Now click on "generate" and the data will be sent to <i>
 aero.php</i>, which will do some calculations and return the configuration file to you.
 As with the previous configuration file, it will look like garbage in your browser
 window, but will look properly if you view the document source.  Save this file as
-<b>mig21.xml</b>, and place it in a $FGROOT/Aircraft/mig21 folder.  You will now have
+<b>Mig21.xml</b>, and place it in a $FGROOT/Aircraft/Mig21 folder.  You will now have
 to open the file in a text editor and make a change.  In the Propulsion section of
 the aero file you will find a reference to the file name of your engine,
-"mig21_engine".  Edit this name to read "Tumansky_R25".  Your Mig-21 will now be
+"Mig21_engine".  Edit this name to read "Tumansky_R25".  Your Mig-21 will now be
 matched with a correct engine.
 <br><br>
 If you model a multi-engined airplane you must make the above change for each engine.
 If you are modeling a propeller-driven airplane you must also change the thruster
 file name to reflect the file name of the propeller configuration file.  This must
 be done for each propeller.
+<br><br>
+Be aware that some browsers can be configured to add HTML tags and make other changes
+to files without telling you.  This will prevent Aero-Matic from working!  Also, 
+some browsers will reload the current page when displaying the document source.  This
+may result in a bad document.  
 <br><br>
 <h5><sup>1</sup>The Encyclopedia of World Airpower, ed. Bill Gunston, Cresent Books,
 New York, 1981</h5>
@@ -199,7 +204,7 @@ estimated by multiplying wing area by a factor depending on aircraft
 type.  The moment arms of the tail surfaces are similarly estimated
 from the aircraft length and type.<br><br>
 The airplane's moments of inertia about three axes are estimated using
-Roskam's formula and constants for various airplane types. Presently I'm
+Roskam's formulae and constants for various airplane types. Presently I'm
 increasing the moments by 50% to make up for a lack of feel in the
 control stick.<br><br>
 The aircaft's ZFW, zero-fuel weight, is estimated by multplying the maximum 
@@ -226,12 +231,26 @@ a problem in that JSBSim presently supports three ground contact points,
 whereas a glider needs five (main wheel, nose skid, tail wheel, and two
 wing tip skids).  The locations of the nose or tail wheels is estimated from
 the airplane length and the location of the main gear.<br><br>
+The engines and thrusters are positioned according to the user-selected engine
+layout, and some assumptions on engine spacing and location.  There are N+1 
+fuel tanks for an N-engined airplane.  All fuel tanks are located at the aircraft 
+center of gravity and contain 500 pounds of fuel.<br><br>
+The FCS, flight control system, is the same for every airplane, except for the
+yaw damper, which is only added if desired by the user.<br><br>
+The lift force is based on a lift-vs-alpha curve made from four points, using
+the assumed CL_0, CL_alpha and CL_max for the aircraft type.  Additional lift
+due to flaps is estimated based on aircraft type.  Some types will have a lift
+decrement due to speedbrakes (or spoilers).  All types have a lift contribution
+due to elevator deflection, based on aircraft type.<br><br>
+The drag force consists of CD0 (drag at zero-lift), CDi (induced drag), CDmach
+(drag due to compressibility), CDflap, CDgear, CDsb (speedbrakes), CDbeta (drag
+due to side slip), and CDde (drag due to elevator deflection).<br><br>
 More to come. Under construction ... 
 
 
 <br><br><hr>
-David Culp, 30 June 2003, (davidculp2 at comcast.net)
-update: 26 July 2003
+David Culp, 30 June 2003, (davidculp2 at comcast.net)<br>
+update: 06 Aug 2003
 
 
 </body>

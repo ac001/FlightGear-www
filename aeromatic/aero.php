@@ -741,7 +741,7 @@ if($ac_yawdamper)
 else
   print("    yaw damper?    no\n\n");
 print("  Outputs:\n");
-print("    wing loading:  $ac_wingloading lb/sq-ft\n");
+printf("    wing loading:  %2.2f lb/sq-ft\n", $ac_wingloading);
 print("    CL-alpha:      $ac_CLalpha per radian\n");
 print("    CL-0:          $ac_CL0\n");
 print("    CL-max:        $ac_CLmax\n");
@@ -752,21 +752,21 @@ print("\n-->\n\n");
 //***** METRICS **********************************
 
 print(" <METRICS>\n");
-print("   AC_WINGAREA  $ac_wingarea \n");
-print("   AC_WINGSPAN  $ac_wingspan \n");
-print("   AC_CHORD     $ac_wingchord \n");
-print("   AC_HTAILAREA $ac_htailarea \n");
-print("   AC_HTAILARM  $ac_htailarm \n");
-print("   AC_VTAILAREA $ac_vtailarea \n");
-print("   AC_LV        $ac_vtailarm \n");
-print("   AC_IXX       $ac_ixx \n");
-print("   AC_IYY       $ac_iyy \n");
-print("   AC_IZZ       $ac_izz \n");
-print("   AC_IXZ       $ac_ixz \n");
-print("   AC_EMPTYWT   $ac_emptyweight \n");
-print("   AC_CGLOC     $ac_cglocx $ac_cglocy $ac_cglocz \n");
-print("   AC_AERORP    $ac_aerorpx $ac_aerorpy $ac_aerorpz \n");
-print("   AC_EYEPTLOC  $ac_eyeptlocx $ac_eyeptlocy $ac_eyeptlocz \n");
+printf("   AC_WINGAREA  %2.2f\n", $ac_wingarea);
+printf("   AC_WINGSPAN  %2.2f\n", $ac_wingspan);
+printf("   AC_CHORD     %2.2f\n", $ac_wingchord);
+printf("   AC_HTAILAREA %2.2f\n", $ac_htailarea);
+printf("   AC_HTAILARM  %2.2f\n", $ac_htailarm);
+printf("   AC_VTAILAREA %2.2f\n", $ac_vtailarea);
+printf("   AC_LV        %2.2f\n", $ac_vtailarm);
+printf("   AC_IXX       %1.0f\n", $ac_ixx);
+printf("   AC_IYY       %1.0f\n", $ac_iyy);
+printf("   AC_IZZ       %1.0f\n", $ac_izz);
+printf("   AC_IXZ       %1.0f\n", $ac_ixz);
+printf("   AC_EMPTYWT   %1.0f\n", $ac_emptyweight);
+printf("   AC_CGLOC     %2.1f %2.1f %2.1f\n", $ac_cglocx, $ac_cglocy, $ac_cglocz);
+printf("   AC_AERORP    %2.1f %2.1f %2.1f\n", $ac_aerorpx, $ac_aerorpy, $ac_aerorpz);
+printf("   AC_EYEPTLOC  %2.1f %2.1f %2.1f\n", $ac_eyeptlocx, $ac_eyeptlocy, $ac_eyeptlocz);
 print(" </METRICS>\n");
 
 //***** LANDING GEAR ******************************
@@ -980,13 +980,13 @@ print("      Lift_due_to_alpha\n");
 print("      4\n");
 print("      aero/alpha-rad\n");
 print("      aero/qbar-psf|metrics/Sw-sqft\n");
-$point = $ac_CL0 - ($ac_CLalpha * 0.1);
-print("      -0.10 $point\n");
-print("       0.00 $ac_CL0\n");
+$point = -($ac_CLalpha * 0.2) + $ac_CL0;
+printf("      -0.20 %4.3f\n", $point);
+printf("       0.00 %4.3f\n", $ac_CL0);
 $alpha = ($ac_CLmax - $ac_CL0) / $ac_CLalpha;
-print("       $alpha $ac_CLmax\n");
+printf("     %3.2f %4.3f\n", $alpha, $ac_CLmax);
 $point = $ac_CLmax - (0.6 * $alpha * $ac_CLalpha);
-print("       0.60 $point\n");
+printf("       0.60 %4.3f\n", $point);
 print("    </COEFFICIENT>\n");
 
 print("    <COEFFICIENT NAME=\"dCLflap\" TYPE=\"VALUE\">\n"); 
@@ -1031,7 +1031,7 @@ print("       4\n");
 print("       velocities/mach-norm\n");
 print("       aero/qbar-psf|metrics/Sw-sqft\n");
 print("       0.0       0.00\n");
-print("       $ac_Mcrit     0.00\n");
+print("       $ac_Mcrit      0.00\n");
 print("       1.1       0.02\n");
 print("       2.0       0.01\n");
 print("    </COEFFICIENT>\n");
