@@ -9,9 +9,14 @@
 
 <H2>FGFS Photo Gallery</H2>
 
-I will try to put the most recent images first.  In general, the
+I will typically put the most recent images first.  In general, the
 closer you get to the bottom, the older the code was when the image
 was captured.
+<P>
+
+<STRONG><A HREF="../Gallery.hist01/">Click here to see additional historical
+images cronicaling several years of FlightGear
+development</A></STRONG>
 
 <HR>
 
@@ -143,187 +148,6 @@ lc2.jpg
 lc3.jpg
 wh-tux.jpg
 
-<HR>
-
-<H3>Runways</H3>
-
-Work has begun on adding runway markings.  Precision, non-precision, and
-visual marking schemes will be supported as well as concrete, asphalt, dirt,
-and turf surface types.
-<P>
-Our initial approach to drawing runway lines is to split the runway up into
-sections and apply the proper texture to that section.  This way a huge variety
-of runways can be constructed with a relatively "few" number of textures.
-
-klax-runway.jpg
-kmsp-runway.jpg
-
-<HR>
-
-<H3>Clouds</H3>
-
-Sure, these aren't quite the 3D clouds of "Fly!", but they still look very
-nice and have a minimal impact on frame rates.
-<P>
-
-cloud2.jpg
-puget-sound.jpg
-crater-lk-island.jpg
-clouds1.jpg
-
-<HR>
-
-<H3>Scenery Work</H3>
-
-I have begun an overhaul of the current scenery system to facilitate
-adding things like lakes, rivers, urban areas, other land use areas,
-and eventually streams and roads.  I finally got tile edge matching to 
-work so I have added some new images.  Please note that the frame rate shown
-in these images is misleading.  I have a 3dfx voodoo-2 and to take a screen
-shot I have to flip the card into "in-a-window-hack" mode which kills 
-frame rates.
-<P>
-
-Most recently, I have added "urban" areas.
-<P>
-
-mt-rainier.jpg
-crater-lake.jpg
-KTVL.jpg
-KPVU.jpg
-KLAX1.jpg
-juneau.jpg
-PAJN.jpg
-E81.jpg
-ranger-creek.jpg
-lopez-island.jpg
-lopez-island-n.jpg
-san-juan.jpg
-new-scene-03.jpg
-new-scene-04.jpg
-hydro.gif
-
-<HR>
-
-Here are some screen shots from the old scenery system (without lakes
-and rivers.)
-<P>
-
-grand-canyon2.jpg
-grand-canyon3.jpg
-grand-canyon1.jpg
-wireframe.jpg
-
-<HR>
-
-Here are some additional interesting snap shots hilighting various
-aspects of the Flight Gear scenery.
-<P>
-
-AZ38.jpg
-terrain1.jpg
-tucson.jpg
-texture1.jpg
-texture2.jpg
-texture3.jpg
-texture4.jpg
-
-<HR>
-
-<H3>Night shots</H3>
-
-Here are some snap shots which show the night sky.  The Sun, Moon,
-stars, and planets are all rendered in their correct position in the
-sky.  Flight Gear has a large star data base so the stars (and
-planets) are rendered with correct magnitude (brightness.)  Also, the
-moon is rendered in the correct phase.
-<P>
-
-moon-full.jpg
-moon-halo.jpg
-moon-tex.jpg
-night1.jpg
-night2.jpg
-
-<HR>
-
-<H3>HUD and Instrument Panel Work</H3>
-<P>
-
-panel2.jpg
-panel1.gif
-hori.gif
-ksad1.jpg
-ksad2.jpg
-hud1.jpg
-hud2.jpg
-hud3.jpg
-hud4.jpg
-
-<HR>
-
-<H3>The Sky</H3>
-<P>
-
-astro1.jpg
-early-dusk.jpg
-late-dusk.jpg
-moon-night.jpg
-sky.jpg
-
-<HR>
-
-<H3>Sunsets</H3>
-<P>
-
-sunset1.jpg
-sunset2.jpg
-
-<HR>
-
-<H3>Smooth Terrain</H3>
-
-The following images shows how the terrain is smoothly lit underneath
-the texture maps.
-<P>
-
-smooth1.jpg
-smooth2.jpg
-
-<HR>
-
-<H3>Irregular Terrain Gridding</H3>
-
-Flight Gear uses sophisticated <EM>irregularly gridded</EM> terrain.
-Irregular grids are able to achieve the same detail level as a regular
-grid, but with 4-6x fewer polygons.  We use a tool called Triangle
-written by Jonathan R Shewchuk (Jonathan_R_Shewchuk@ux4.sp.cs.cmu.edu)
-to connect the dots into a Delauney triangulation.
-<P>
-
-irregular1.gif
-irregular2.gif
-
-<HR>
-
-<H3>Miscellaneous Images</H3>
-
-mesa-e-1.jpg
-mesa-e-4.jpg
-navion.jpg
-
-<HR>
-
-<H3>Real versus Virtually Real</H3>
-
-These images compare a real photo with an image generated
-by flight gear.
-
-<UL>
-  <LI><A HREF="Compare/pinals.html">The Pinals, AZ</A>
-  <LI><A HREF="Compare/khsp.html">Hot Springs, VA</A>
-  <LI><A HREF="Compare/ksez.html">Sedona, AZ</A>
-</UL>
 
 <!-- Standard Footer Begin -->
 
