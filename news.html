@@ -13,6 +13,126 @@
 <HR>
 
 <UL>
+  <LI> <STRONG>June 4, 2003: Version 0.9.2 released.</STRONG><P>
+    <UL>
+      <LI> New aircraft available: P51-D (w/ full 3d cockpit), Sea Hawk
+  (WV908), a research ornithopter (propelled by actual flapping
+  wings), A10, B-52, F-104, F-15, F-16, OV10, PA28-161, T-6A Texan II,
+  T-38, British TSR2, YF-23, 737,
+      <P>
+
+      <LI> Updated aircraft: airwave extreme hang glider, asw20 glider, A-4
+  Skyhawk, Beech-99, Cessna 172 w/ 3d cockpit, Cessna 310 w/ 3d
+  cockpit, DC3, Piper J3 Cub, 1903 Wright Flyer, Sopwith Camel, Space
+  Shuttle, Boeing 747-400
+      <P>
+
+      <LI> Overhauled menu/gui system and made it xml configurable rather than
+  hardwired.  Include support for things like checkboxes, sliders, and
+  dials.
+      <P>
+
+      <LI> Added some early multiplayer features.
+      <P>
+
+      <LI> Added support for in-air presets relative to a VOR, NDB, or fix.
+      <P>
+
+      <LI> Support for Futaba, Airtronics, Hitec, JR, Multiplex and Tower R/C
+  transmitters using the RCJoy USB interface box (see
+  http://www.rcjoy.com).
+      <P>
+
+      <LI> Much improved sky and coloring as well as more realistic coloring of
+  the sunset and sunrise.
+      <P>
+
+      <LI> Clouds are drawn on a surface that better matches the underlying
+  curve of the earth.
+      <P>
+
+      <LI> A few updated terrain textures, better variety of random ground
+  cover objects.
+      <P>
+
+      <LI> Most weather options can now be set via the GUI.  Added an option to
+  randomize the weather.
+      <P>
+
+      <LI> Various instruments and systems can now be failed/unfailed via the
+  GUI.
+      <P>
+
+      <LI> Developed scripts to build Navaid and ILS databases from DAFIFT,
+  FAA, and other data sources.
+      <LI> Update Navaid and ILS databases based on DAFIFT, FAA, and other data
+  sources.
+      <P>
+
+      <LI> Continued development of voice ATC, robot aircraft AI, logical
+  taxiway networks (continues to be a work in progess, but much
+  progress has been made.)
+      <LI> Separated out much of the low level model/material management code
+  and moved it over to SimGear where it can be potentially used by
+  other projects.
+      <LI> Separated out the low level sound effect playing/management code and
+  moved it over to SimGear.
+      <LI> Added functions to the "telnet" interface to allow remote management
+  of autopilot waypoints.
+      <LI> Support the parking brake in the "external" flight dynamics interface.
+      <LI> Added support for an audio panel (set of switches to set various
+  avionics audio sources on/off in the aircraft.)
+      <LI> Add support for speed brake and spoiler controls.
+      <LI> Many code updates to UIUCmodel including support for ornithopters
+  (flapping wing vehicles.)
+      <LI> Many JSBsim code updates include a new turbine engine model.
+      <LI> Added a "named pipe" external flight dynamics model interface.
+      <LI> YASim updates including support for manual-pitch control props,
+  support for wing washout, and adjusting aircraft masses as fuel is
+  consumed.
+      <LI> The property picker interface now shows the property values changing
+1  dynamically.
+      <LI> Added support for a simple annunciator panel (fuel, oil, vacuum,
+  volts dummy warning lights.)
+      <LI> Added a "gyro" model.  This can be driven electrically (turn
+  coordinator) or via vacuum (attitude indicator).  If one of these
+  systems failes, the corresponding gyro will spin down realistically
+  an introduce realistic errors in the gauge reading.
+      <LI> Model attitude indicator tumbling at extreme attitudes.
+      <LI> Modeled the pitot system and use that drive the air speed indicator. 
+      <LI> Added a very simplistic volts/amps model to the electrical
+  system...enough to make the gauges behave plausibly and drive the
+  annunciator panel correctly.
+      <LI> Updated the vacuum/suction model to behave more realistically.
+      <LI> Added Italian and Polish translation for the GUI.
+      <P>
+
+      <LI> Mac OS X fixes.
+      <LI> Better FreeBSD support.
+      <LI> Mingwin fixes.
+      <LI> Improved native sgi compiler support.
+      <LI> MSVC fixes.
+      <P>
+
+      <LI> Fixed problems in marker beacon audio.
+      <LI> Fixed several subtle problems in the modeling/positioning of glide
+  slope transmitters in FlightGear
+      <LI> Don't allow the dewpoint to go higher than the temperature.
+      <LI> Don't allow gust speed to be less than base wind speed.
+      <LI> Fix a couple problems in the external fdm interface that prevented
+  FlightGear from being driven properly by an external source (i.e. to
+  act as a image generator only.)
+      <LI> Fixes to camera parameters for external views (especially when rotating
+  the view around the different axes.)
+      <LI> Many miscellaneous code clean ups, many bug fixes, and much code
+  refactoring.
+
+    </UL>
+</UL>
+
+<HR>
+
+<UL>
   <LI> <STRONG>December 5, 2002: Version 0.9.1 released.</STRONG><P>
     <UL>
       <LI> Fixes a problem with a missing file in the source
