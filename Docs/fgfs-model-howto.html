@@ -1,36 +1,69 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Mini-HOWTO: 3D Aircraft Models in FlightGear</title>
-</head>
+<title> FlightGear Flight Simulator</title>
+<link rel="stylesheet" type="text/css" href="../default.css"> 
 
-<body>
+</head>
+ <body>
+<div id="top"><a href="http://www.flightgear.org/"><img id="titlebar" src="../images/fglogosm.jpg" alt=""></a>
+</div>
+<table id="global">
+	<tbody><tr>
+		<td id="menu">
+		<!-- Use a replacescript to update the menu -->
+		<h3>About</h3>
+		<a href="../index.html">Home</a><br>
+		<a href="../introduction.html">Introduction</a><br>
+		<a href="../overview.html">Overview</a><br>
+		<a href="../features.html">Features</a><br>
+		<a href="../Gallery/index.html">Screenshots</a><br>
+		<!-- about.hook.1-->
+		<!-- about.hook.2-->
+		<h3>Downloads</h3>
+		<a href="../source.html">Source</a><br>
+		<a href="../binary.html">Binary</a><br>
+		<a href="../scenery.html">Scenery</a><br>
+		<!-- downloads.hook.1-->
+		<!-- downloads.hook.2-->
+		<h3>Support</h3>
+		<a href="../version.html">Version Summary</a><br>
+		<a href="../hardwarereq.html">Hardware Requirements</a><br>
+		<a href="../docs.html">Documentation</a><br>
+		<a href="../places.html">Places to Fly</a><br>
+		<a href="../mail.html">Mailing Lists</a><br>
+		<a href="../Docs/FlightGear-FAQ.html">Faq</a><br>
+		<!-- support.hook.1-->
+		<!-- support.hook.2-->
+		<h3>Links</h3>
+		<a href="../links.html">Related Websites</a><br>
+		<a href="../projects.html">Related Projects</a><br>
+		<a href="http://sourceforge.net/projects/flightgear/">SourceForge Project Page</a><br>
+		<!-- support.hook.1-->
+		<!-- support.hook.2-->
+		<h3>Contribute</h3>
+		<a href="../contributing.html">Contributing</a><br>
+		<a href="../cvs.html">CVS Resources</a><br>
+		<a href="../goals.html">Goals</a><br>
+		<a href="../thanks.html">Contributors</a><br>
+		<a href="../design.html">Design Proposals</a><br>
+		<a href="../events.html">Events</a><br>
+		<!-- support.hook.1-->
+		<!-- support.hook.2-->
+</td>
+<td id="page">
 <h1>Mini-HOWTO: 3D Aircraft Models in FlightGear</h1>
 
-<table>
-
-<tr>
-<th>Date:</th>
-<td>11 March 2002</td>
-</tr>
-
-<tr>
-<th>Author:</th>
-<td>David Megginson</td>
-</tr>
-
-</table>
-
+<h2>11 March 2002</h2>
+<h2>David Megginson</h2>
+<BR>
 <div>
-<h2>Introduction</h2>
+<h3>Introduction</h3>
 
-<p>This mini-HOWTO explains how to add 3D aircraft models to
+<BR>This mini-HOWTO explains how to add 3D aircraft models to
 FlightGear, and how to animate and position those models.  No C++
 programming is required, but the user will need some knowledge of
 FlightGear's property system and XML markup, and will need to
-understand the coordinate system FlightGear uses for its models:</p>
+understand the coordinate system FlightGear uses for its models:<BR>
 
 <ul>
 <li>distances are in meters</li>
@@ -51,9 +84,9 @@ viewed from behind</li>
 <p>This mini-HOWTO contains three parts:</p>
 
 <ol>
-<li><a href="#loading">Loading the model</a></li>
-<li><a href="#repositioning">Repositioning the model</a></li>
-<li><a href="#animating">Animating the model</a></li>
+<li><a href="fgfs-model-howto.htm#loading">Loading the model</a></li>
+<li><a href="fgfs-model-howto.htm#repositioning">Repositioning the model</a></li>
+<li><a href="fgfs-model-howto.htm#animating">Animating the model</a></li>
 </ol>
 
 <!-- end of "Summary" -->
@@ -61,7 +94,7 @@ viewed from behind</li>
 
 
 <div><a name="loading"></a>
-<h2>1. Loading the model</h2>
+<h3>1. Loading the model</h3>
 
 <p>Through <a href="http://plib.sourceforge.net/">plib</a>, FlightGear
 supports many different 3D file formats, including VRML1, AC3D, DXF,
@@ -170,7 +203,7 @@ fgfs --prop:/sim/model/path=Models/my-cessna.xml
 
 
 <div><a name="repositioning"></a>
-<h2>2. Repositioning the Model</h2>
+<h3>2. Repositioning the Model</h3>
 
 <p>Often, an aircraft model not designed specifically for FlightGear
 will not be positioned or oriented correctly; for example, it might be
@@ -230,7 +263,7 @@ positioned correctly.</p>
 
 
 <div><a name="animating"></a>
-<h2>3. Animating the Model</h2>
+<h3>3. Animating the Model</h3>
 
 <p>Now for the interesting part.  FlightGear allows you to animate
 models by having parts rotate or spin in response to property changes:
@@ -583,10 +616,20 @@ engine exhaust only above a certain velocity).</p>
 
 <!-- end of "Animating the Model" -->
 </div>
-
-<hr />
-
+<br>
 <address>David Megginson, 11 March 2002</address>
 
-</body>
-</html>
+
+</td> </tr> </tbody></table>
+   <div id="bottom">
+      <a href="http://flightgear.org">Home</a> |
+      <a href="../docs.html">Documentation</a> | 
+      <a href="../binary.html">Downloads</a> |
+      <a href="../Gallery/index.html">Screenshots</a>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  Copyright 2003, Curtis L. Olson <a href="mailto:curt@flightgear.org">curt@flightgear.org</a>
+	   and Andrei barbu <a href="mailto:a_barbu2@yahoo.com">a_barbu2@yahoo.com</a>
+</div>

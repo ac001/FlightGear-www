@@ -1,16 +1,58 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<!--Converted with LaTeX2HTML 96.1 (Feb 5, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
-<HTML>
-<HEAD>
-<TITLE> Flight Gear Sky Representation and Rendering. </TITLE>
-<META NAME="description" CONTENT=" Flight Gear Sky Representation and Rendering. ">
-<META NAME="keywords" CONTENT="Sky">
-<META NAME="resource-type" CONTENT="document">
-<META NAME="distribution" CONTENT="global">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD htm 4.01 Strict//EN">
+<head>
+<title> FlightGear Flight Simulator</title>
+<link rel="stylesheet" type="text/css" href="../../../default.css"> 
 <LINK REL=STYLESHEET HREF="Sky.css">
-</HEAD>
-<BODY LANG="EN">
-<P>
+</head>
+ <body>
+<div id="top"><a href="http://www.flightgear.org/"><img id="titlebar" src="../../../images/fglogosm.jpg" alt=""></a>
+</div>
+<table id="global">
+	<tbody><tr>
+		<td id="menu">
+		<!-- Use a replacescript to update the menu -->
+		<h3>About</h3>
+		<a href="../../../index.html">Home</a><br>
+		<a href="../../../introduction.html">Introduction</a><br>
+		<a href="../../../overview.html">Overview</a><br>
+		<a href="../../../features.html">Features</a><br>
+		<a href="../../../Gallery/index.html">Screenshots</a><br>
+		<!-- about.hook.1-->
+		<!-- about.hook.2-->
+		<h3>Downloads</h3>
+		<a href="../../../source.html">Source</a><br>
+		<a href="../../../binary.html">Binary</a><br>
+		<a href="../../../scenery.html">Scenery</a><br>
+		<!-- downloads.hook.1-->
+		<!-- downloads.hook.2-->
+		<h3>Support</h3>
+		<a href="../../../version.html">Version Summary</a><br>
+		<a href="../../../hardwarereq.html">Hardware Requirements</a><br>
+		<a href="../../../docs.html">Documentation</a><br>
+		<a href="../../../places.html">Places to Fly</a><br>
+		<a href="../../../mail.html">Mailing Lists</a><br>
+		<a href="../../../Docs/FlightGear-FAQ.html">Faq</a><br>
+		<!-- support.hook.1-->
+		<!-- support.hook.2-->
+		<h3>Links</h3>
+		<a href="../../../links.html">Related Websites</a><br>
+		<a href="../../../projects.html">Related Projects</a><br>
+		<a href="http://sourceforge.net/projects/flightgear/">SourceForge Project Page</a><br>
+		<!-- support.hook.1-->
+		<!-- support.hook.2-->
+		<h3>Contribute</h3>
+		<a href="../../../contributing.html">Contributing</a><br>
+		<a href="../../../cvs.html">CVS Resources</a><br>
+		<a href="../../../goals.html">Goals</a><br>
+		<a href="../../../thanks.html">Contributors</a><br>
+		<a href="../../../design.html">Design Proposals</a><br>
+		<a href="../../../events.html">Events</a><br>
+		<!-- support.hook.1-->
+		<!-- support.hook.2-->
+</td>
+<td id="page">
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+
 <H1 ALIGN=CENTER>
   Flight Gear Sky Representation and Rendering.
 </H1>
@@ -19,14 +61,14 @@
     (<tt>curt@me.umn.edu</tt>)
 </STRONG></P><P>
 <P>
-<H1><A NAME="SECTION00010000000000000000">1 Introduction</A></H1>
+<H1>1 Introduction</A></H1>
 <P>
 No flight simulator should be without a nice sky that smoothly
 transitions into haze at the horizon.  Such a sky should also be able
 to render sunrise and sunset effects.  This document describes how we
 have implemented such a sky.
 <P>
-<H1><A NAME="SECTION00020000000000000000">2 Overview</A></H1>
+<H1>2 Overview</A></H1>
 <P>
 The sky is represent as a 12 sided dome (or upside down bowl if you
 prefer.)  Figure <A HREF="Sky.html#figdome">1</A> shows how a 6 sided dome might be
@@ -45,7 +87,7 @@ glow, and one side of the sky can easily be made brighter than the
 other.  By enabling smooth shading in OpenGL, the colors will be
 blended together for a very nice effect.
 <P>
-<H1><A NAME="SECTION00030000000000000000">3 Implementation</A></H1>
+<H1>3 Implementation</A></H1>
 <P>
 This sections describes how the sky has been implemented in OpenGL.
 <P>
@@ -56,7 +98,7 @@ view point at sea level.  This way we could paste cloud textures on
 the dome if we liked.  So, we simply have to generate vertices for a
 fixed dome, and then use OpenGL calls to transform and rotate it to
 the desired place.  Please refer to the actual code
-(.../Src/Scenery/sky.c) for specifics, but
+(.../../../Src/Scenery/sky.c) for specifics, but
 to generate the vertices we simply create a 12 element array for the
 inner set of vertices, another 12 element array for the middle set of
 vertices and a last 12 element array for the outer set of vertices.
@@ -68,7 +110,7 @@ array.  This way we don't have to compute each vertex color every
 iteration.  Also, by being able to individually control the color at
 each vertex, we can do all sorts of nice sky to haze blending with
 dusk and dawn effects.  Again, please refer to the source
-(.../Src/Scenery/sky.c) for specific details on how the coloring is
+(.../../../Src/Scenery/sky.c) for specific details on how the coloring is
 implemented.  However, here's the quick overview.
 <P>
 <H3><A NAME="SECTION00032100000000000000">3.2.1 Day and Night Coloring</A></H3>
@@ -170,7 +212,7 @@ product of  <IMG WIDTH=11 HEIGHT=9 ALIGN=BOTTOM ALT="tex2html_wrap_inline194" SR
 hemisphere  <IMG WIDTH=11 HEIGHT=9 ALIGN=BOTTOM ALT="tex2html_wrap_inline194" SRC="img5.gif"  >  is in.  And, from this, we can uniquely
 determine the proper angle for the sky dome rotation.
 <P>
-<H1><A NAME="SECTION00040000000000000000">  About this document ... </A></H1>
+<H1>  About this document ... </A></H1>
 <P>
  <STRONG>
   Flight Gear Sky Representation and Rendering.
@@ -181,5 +223,16 @@ This document was generated using the <A HREF="http://www-dsed.llnl.gov/files/pr
 <I>Curtis L. Olson <BR>
 Wed Feb 18 18:10:55 CST 1998</I>
 </ADDRESS>
-</BODY>
-</HTML>
+</td> </tr> </tbody></table>
+   <div id="bottom">
+      <a href="http://flightgear.org">Home</a> |
+      <a href="../../../docs.html">Documentation</a> | 
+      <a href="../../../binary.html">Downloads</a> |
+      <a href="../../../Gallery/index.html">Screenshots</a>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  Copyright 2003, Curtis L. Olson <a href="mailto:curt@flightgear.org">curt@flightgear.org</a>
+	   and Andrei barbu <a href="mailto:a_barbu2@yahoo.com">a_barbu2@yahoo.com</a>
+</div>

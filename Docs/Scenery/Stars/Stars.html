@@ -1,25 +1,65 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<!--Converted with LaTeX2HTML 96.1 (Feb 5, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
-<HTML>
-<HEAD>
-<TITLE> Flight Gear Stars Representation and Rendering. </TITLE>
-<META NAME="description" CONTENT=" Flight Gear Stars Representation and Rendering. ">
-<META NAME="keywords" CONTENT="Stars">
-<META NAME="resource-type" CONTENT="document">
-<META NAME="distribution" CONTENT="global">
-<LINK REL=STYLESHEET HREF="Stars.css">
-</HEAD>
-<BODY LANG="EN">
-<P>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD htm 4.01 Strict//EN">
+<head>
+<title> FlightGear Flight Simulator</title>
+<link rel="stylesheet" type="text/css" href="../../../default.css">
+<LINK REL=STYLESHEET HREF="Stars.css"> 
+</head>
+ <body>
+<div id="top"><a href="http://www.flightgear.org/"><img id="titlebar" src="../../../images/fglogosm.jpg" alt=""></a>
+</div>
+<table id="global">
+	<tbody><tr>
+		<td id="menu">
+		<!-- Use a replacescript to update the menu -->
+		<h3>About</h3>
+		<a href="../../../index.html">Home</a><br>
+		<a href="../../../introduction.html">Introduction</a><br>
+		<a href="../../../overview.html">Overview</a><br>
+		<a href="../../../features.html">Features</a><br>
+		<a href="../../../Gallery/index.html">Screenshots</a><br>
+		<!-- about.hook.1-->
+		<!-- about.hook.2-->
+		<h3>Downloads</h3>
+		<a href="../../../source.html">Source</a><br>
+		<a href="../../../binary.html">Binary</a><br>
+		<a href="../../../scenery.html">Scenery</a><br>
+		<!-- downloads.hook.1-->
+		<!-- downloads.hook.2-->
+		<h3>Support</h3>
+		<a href="../../../version.html">Version Summary</a><br>
+		<a href="../../../hardwarereq.html">Hardware Requirements</a><br>
+		<a href="../../../docs.html">Documentation</a><br>
+		<a href="../../../places.html">Places to Fly</a><br>
+		<a href="../../../mail.html">Mailing Lists</a><br>
+		<a href="../../../Docs/FlightGear-FAQ.html">Faq</a><br>
+		<!-- support.hook.1-->
+		<!-- support.hook.2-->
+		<h3>Links</h3>
+		<a href="../../../links.html">Related Websites</a><br>
+		<a href="../../../projects.html">Related Projects</a><br>
+		<a href="http://sourceforge.net/projects/flightgear/">SourceForge Project Page</a><br>
+		<!-- support.hook.1-->
+		<!-- support.hook.2-->
+		<h3>Contribute</h3>
+		<a href="../../../contributing.html">Contributing</a><br>
+		<a href="../../../cvs.html">CVS Resources</a><br>
+		<a href="../../../goals.html">Goals</a><br>
+		<a href="../../../thanks.html">Contributors</a><br>
+		<a href="../../../design.html">Design Proposals</a><br>
+		<a href="../../../events.html">Events</a><br>
+		<!-- support.hook.1-->
+		<!-- support.hook.2-->
+</td>
+<td id="page">
 <H1 ALIGN=CENTER>
   Flight Gear Stars Representation and Rendering.
 </H1>
-<P ALIGN=CENTER><STRONG>
-    Curtis L. Olson<BR> 
-    (<tt>curt@me.umn.edu</tt>)
-</STRONG></P><P>
+
+    <h2>Curtis L. Olson</h2>
+    <h2><a href="mailto:curt@flightgear.org">curt@flightgear.org</a></h2>
+
 <P>
-<H1><A NAME="SECTION00010000000000000000">Introduction</A></H1>
+<H1>Introduction</H1>
 <P>
 Flight Gear attempts to render the top several hundred stars in the
 correct position in the sky for the current time and position as will
@@ -27,9 +67,9 @@ as rendering these stars with the correct ``magnitude''.
 <P>
 This document will give a quick overview of our approach.
 <P>
-<H1><A NAME="SECTION00020000000000000000">Resources</A></H1>
+<H1>Resources</H1>
 <P>
-<H3><A NAME="SECTION00020100000000000000">XEphem</A></H3>
+<H3>XEphem</A></H3>
 <P>
 The set of bright stars was extracted from the xephem program.  For a
 full list of features and the latest news, please see the xephem home
@@ -56,14 +96,14 @@ instrumental in helping me understand sidereal time, accurate star
 placement, and even contributed some really hairy sections of code.
 Thanks Elwood!
 <P>
-<H1><A NAME="SECTION00030000000000000000">Terminology and Definitions</A></H1>
+<H1>Terminology and Definitions</H1>
 <P>
 The following information is repeated verbatim from
 http://www.lclark.edu/&nbsp;wstone/skytour/celest.html: If you are
 interested in these sorts of things I urge you to visit this site.  It
 contains much more complete information.
 <P>
-<H2><A NAME="SECTION00031000000000000000">Celestial Measurements</A></H2>
+<H2>Celestial Measurements</H2>
 <P>
 Although we know that the objects we see in the sky are of different
 sizes and at different distances from us, it is convenient to
@@ -73,7 +113,7 @@ looks like a dome (the half of the celestial sphere above our local
 horizon).  The celestial sphere is mapped in Right Ascension (RA) and
 Declination (Dec).
 <P>
-<H3><A NAME="SECTION00031100000000000000">Declination</A></H3>
+<H3>Declination</H3>
 <P>
 Declination is the celestial equivalent of latitude, and is simply the
 Earth's latitude lines projected onto the celestial sphere. A star
@@ -87,7 +127,7 @@ Northern declinations are given positive signs, and southern
 declinations are given negative signs. So, the South Celestial Pole
 has a declination of -90 degrees .
 <P>
-<H3><A NAME="SECTION00031200000000000000">Right Ascension &amp; Sidereal Time</A></H3>
+<H3>Right Ascension &amp; Sidereal Time</H3>
 <P>
 Right Ascension is the equivalent of longitude, but since the Earth
 rotates with respect to the celestial sphere we cannot simply use the
@@ -110,7 +150,7 @@ came back 24 hours later, the telescope would now be pointing at
 (RA=0h 4m, Dec=0 degrees). A consequence is that the fixed stars
 appear to rise about four minutes earlier each day.
 <P>
-<H2><A NAME="SECTION00032000000000000000">Implementation</A></H2>
+<H1>Implementation</H1>
 <P>
 Here is a brief overview of how stars were implemented in Flight Gear.
 The right ascension and declination of each star is used to build a
@@ -120,7 +160,7 @@ positioned just inside the far clip plane.  When rendering the stars,
 this structure (display list) is rotated about the <I>Z</I> axis by the
 current sidereal time and translated to the current view point.
 <P>
-<H3><A NAME="SECTION00032100000000000000">Data file format</A></H3>
+<H3>Data file format</H3>
 <P>
 The star information is stored in a simple data file called
 ``Stars.dat'' with the following comma delimited format: name, right
@@ -137,7 +177,7 @@ Rigel,1.372432,-0.136107,0.120000
 Procyon,2.004082,0.091193,0.380000
 Achernar,0.426362,-0.990707,0.460000</PRE>
 <P>
-<H3><A NAME="SECTION00032200000000000000">Building the display list</A></H3>
+<H3>Building the display list</H3>
 <P>
 The display list is built up from a collection of point objects as the
 star data file is loaded.  For each star, the magnitude is mapped into
@@ -148,7 +188,7 @@ equator, and Y out at the Indian ocean at the equator.  Given this
 coordinate system, the position of each star at 0:00H sidereal time is
 calculated as follows:
 <P>
-<P> <IMG WIDTH=582 HEIGHT=87 ALIGN=BOTTOM ALT="align76" SRC="img1.gif"  > <P><H3><A NAME="SECTION00032300000000000000">Transformations and Rendering</A></H3>
+<P> <IMG WIDTH=582 HEIGHT=87 ALIGN=BOTTOM ALT="align76" SRC="img1.gif"  > <P><H3>Transformations and Rendering</H3>
 <P>
 The tricky part about rendering the stars is calculating sidereal time
 correctly.  Here's where Elwood Downey saved my butt.  0:00H sidereal
@@ -163,7 +203,7 @@ The stars are drawn out by the far clip plane so they don't occult
 anything.  They are translated using the same x/y/z as the eye point
 so that you can never fly any closer to them.
 <P>
-<H1><A NAME="SECTION00040000000000000000">  About this document ... </A></H1>
+<H1>  About this document ... </H1>
 <P>
  <STRONG>
   Flight Gear Stars Representation and Rendering.
@@ -174,5 +214,16 @@ This document was generated using the <A HREF="http://www-dsed.llnl.gov/files/pr
 <I>Curtis L. Olson <BR>
 Sun Dec 14 11:31:19 CST 1997</I>
 </ADDRESS>
-</BODY>
-</HTML>
+</td> </tr> </tbody></table>
+   <div id="bottom">
+      <a href="http://flightgear.org">Home</a> |
+      <a href="../../../docs.html">Documentation</a> | 
+      <a href="../../../binary.html">Downloads</a> |
+      <a href="../../../Gallery/index.html">Screenshots</a>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  Copyright 2003, Curtis L. Olson <a href="mailto:curt@flightgear.org">curt@flightgear.org</a>
+	   and Andrei barbu <a href="mailto:a_barbu2@yahoo.com">a_barbu2@yahoo.com</a>
+</div>

@@ -1,30 +1,61 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Mini-HOWTO: Configuring Views in FlightGear</title>
+<title> FlightGear Flight Simulator</title>
+<link rel="stylesheet" type="text/css" href="../default.css"> 
+
 </head>
-
-<body>
+ <body>
+<div id="top"><a href="http://www.flightgear.org/"><img id="titlebar" src="../images/fglogosm.jpg" alt=""></a>
+</div>
+<table id="global">
+	<tbody><tr>
+		<td id="menu">
+		<!-- Use a replacescript to update the menu -->
+		<h3>About</h3>
+		<a href="../index.html">Home</a><br>
+		<a href="../introduction.html">Introduction</a><br>
+		<a href="../overview.html">Overview</a><br>
+		<a href="../features.html">Features</a><br>
+		<a href="../Gallery/index.html">Screenshots</a><br>
+		<!-- about.hook.1-->
+		<!-- about.hook.2-->
+		<h3>Downloads</h3>
+		<a href="../source.html">Source</a><br>
+		<a href="../binary.html">Binary</a><br>
+		<a href="../scenery.html">Scenery</a><br>
+		<!-- downloads.hook.1-->
+		<!-- downloads.hook.2-->
+		<h3>Support</h3>
+		<a href="../version.html">Version Summary</a><br>
+		<a href="../hardwarereq.html">Hardware Requirements</a><br>
+		<a href="../docs.html">Documentation</a><br>
+		<a href="../places.html">Places to Fly</a><br>
+		<a href="../mail.html">Mailing Lists</a><br>
+		<a href="../Docs/FlightGear-FAQ.html">Faq</a><br>
+		<!-- support.hook.1-->
+		<!-- support.hook.2-->
+		<h3>Links</h3>
+		<a href="../links.html">Related Websites</a><br>
+		<a href="../projects.html">Related Projects</a><br>
+		<a href="http://sourceforge.net/projects/flightgear/">SourceForge Project Page</a><br>
+		<!-- support.hook.1-->
+		<!-- support.hook.2-->
+		<h3>Contribute</h3>
+		<a href="../contributing.html">Contributing</a><br>
+		<a href="../cvs.html">CVS Resources</a><br>
+		<a href="../goals.html">Goals</a><br>
+		<a href="../thanks.html">Contributors</a><br>
+		<a href="../design.html">Design Proposals</a><br>
+		<a href="../events.html">Events</a><br>
+		<!-- support.hook.1-->
+		<!-- support.hook.2-->
+</td>
+<td id="page">
 <h1>Mini-HOWTO: Configuring Views in FlightGear</h1>
-
-<table>
-
-<tr>
-<th>Date:</th>
-<td>24 April 2002</td>
-</tr>
-
-<tr>
-<th>Author:</th>
-<td>Jim Wilson</td>
-</tr>
-
-</table>
-
-<div>
-<h2>Introduction</h2>
+<h2>24 April 2002</h2>
+<h2>Jim Wilson</h2>
+<br>
+<h3>Introduction</h3>
 
 <p>This mini-HOWTO explains how to configure <i>views</i> in FlightGear.
 Views define the position of the eye in the rendered scene and 
@@ -45,7 +76,7 @@ ground.</p>
 
 
 <div><a name="types"></a>
-<h2>1. Types of Views</h2>
+<h3>1. Types of Views</h3>
 
 <p>There are two basic types of views:</p>
 
@@ -64,7 +95,7 @@ of the &lt;type&gt; paramter)</p>
 </div>
 
 <div><a name="positions"></a>
-<h2>2. Defining Positions</h2>
+<h3>2. Defining Positions</h3>
 
 <p>There are two methods to define a postion and orientation for use in 
 configuring a view.  One method is <i>tied to a model</i> which means the view 
@@ -195,7 +226,7 @@ Syntax for the target or <b>at position</b> used in views of type "lookat" is:
 </div>
 
 <div><a name="offsets"></a>
-<h2>3. View Offsets</h2>
+<h3>3. View Offsets</h3>
 
 <p>There are two types of offsets, but only one is used in building viewer configurations.
 This is an offset from the eye position applied to the position defined for the eye as
@@ -269,7 +300,7 @@ define the change in eye position as follows:
 </div>
 <p></p>
 <div><a name="nearplane"></a>
-<h2>4. Ground Level Near Plane</h2>
+<h3>4. Ground Level Near Plane</h3>
 
 <p>Generally, a higher Near Plane value will result in a better quality 
 rendering of distant scenery and models.  Currently when the aircraft is 
@@ -324,7 +355,7 @@ the tower position is 50ft AGL altitude to start with:</p>
 </div>
 
 <div><a name="examples"></a>
-<h2>5. Other examples</h2>
+<h3>5. Other examples</h3>
 
 <p><b>Example 1</b> - The configuration of a <b>Chase View without a rotating frutstum</b> 
 (the view does not tilt with the aircraft's roll and pitch) is easy.  Since the aircraft model's 
@@ -362,13 +393,21 @@ Note that technically this example does rotate, but only on the heading :)
 <p>more to come?</p>
 
 </div>
-
-<hr />
-
+<br>
 <address>Jim Wilson, 24 April 2002 - last update 11 June 2002</address>
 
-</body>
 
 
-
-
+</td> </tr> </tbody></table>
+   <div id="bottom">
+      <a href="http://flightgear.org">Home</a> |
+      <a href="../docs.html">Documentation</a> | 
+      <a href="../binary.html">Downloads</a> |
+      <a href="../Gallery/index.html">Screenshots</a>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  Copyright 2003, Curtis L. Olson <a href="mailto:curt@flightgear.org">curt@flightgear.org</a>
+	   and Andrei barbu <a href="mailto:a_barbu2@yahoo.com">a_barbu2@yahoo.com</a>
+</div>

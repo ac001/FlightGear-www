@@ -1,21 +1,64 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<!--Converted with LaTeX2HTML 96.1 (Feb 5, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
-<HTML>
-<HEAD>
-<TITLE>No Title</TITLE>
-<META NAME="description" CONTENT="No Title">
-<META NAME="keywords" CONTENT="LaRCsim-notes">
-<META NAME="resource-type" CONTENT="document">
-<META NAME="distribution" CONTENT="global">
-<LINK REL=STYLESHEET HREF="LaRCsim-notes.css">
-</HEAD>
-<BODY LANG="EN">
+
+<head>
+<title> FlightGear Flight Simulator</title>
+<link rel="stylesheet" type="text/css" href="../../../../default.css"> 
+
+</head>
+ <body>
+<div id="top"><a href="http://www.flightgear.org/"><img id="titlebar" src="../../../../images/fglogosm.jpg" alt=""></a>
+</div>
+<table id="global">
+	<tbody><tr>
+		<td id="menu">
+		<!-- Use a replacescript to update the menu -->
+		<h3>About</h3>
+		<a href="../../../../index.html">Home</a><br>
+		<a href="../../../../introduction.html">Introduction</a><br>
+		<a href="../../../../overview.html">Overview</a><br>
+		<a href="../../../../features.html">Features</a><br>
+		<a href="../../../../Gallery/index.html">Screenshots</a><br>
+		<!-- about.hook.1-->
+		<!-- about.hook.2-->
+		<h3>Downloads</h3>
+		<a href="../../../../source.html">Source</a><br>
+		<a href="../../../../binary.html">Binary</a><br>
+		<a href="../../../../scenery.html">Scenery</a><br>
+		<!-- downloads.hook.1-->
+		<!-- downloads.hook.2-->
+		<h3>Support</h3>
+		<a href="../../../../version.html">Version Summary</a><br>
+		<a href="../../../../hardwarereq.html">Hardware Requirements</a><br>
+		<a href="../../../../docs.html">Documentation</a><br>
+		<a href="../../../../places.html">Places to Fly</a><br>
+		<a href="../../../../mail.html">Mailing Lists</a><br>
+		<a href="../../../../Docs/FlightGear-FAQ.html">Faq</a><br>
+		<!-- support.hook.1-->
+		<!-- support.hook.2-->
+		<h3>Links</h3>
+		<a href="../../../../links.html">Related Websites</a><br>
+		<a href="../../../../projects.html">Related Projects</a><br>
+		<a href="http://sourceforge.net/projects/flightgear/">SourceForge Project Page</a><br>
+		<!-- support.hook.1-->
+		<!-- support.hook.2-->
+		<h3>Contribute</h3>
+		<a href="../../../../contributing.html">Contributing</a><br>
+		<a href="../../../../cvs.html">CVS Resources</a><br>
+		<a href="../../../../goals.html">Goals</a><br>
+		<a href="../../../../thanks.html">Contributors</a><br>
+		<a href="../../../../design.html">Design Proposals</a><br>
+		<a href="../../../../events.html">Events</a><br>
+		<!-- support.hook.1-->
+		<!-- support.hook.2-->
+</td>
+<td id="page">
+
+<H1>LaRCsim Files</H1>
  Here is my attempt to organize descriptions of the various LaRCsim
 files required to implement the equations of flight.  99% of the
 following text is copied straight out of email from Bruce, source code
 comments, or the LaRCsim manual.
 <P>
-<H1><A NAME="SECTION00010000000000000000">Core LaRCsim Header Files</A></H1>
+<H3>Core LaRCsim Header Files</H3>
 <P>
 <DL ><DT><STRONG>ls_generic.h:</STRONG>
 <DD>1 LaRCSim generic parameters header file.  Defines
@@ -34,7 +77,7 @@ comments, or the LaRCsim manual.
 <DD> LaRCSim simulation control parameters
     header file
 <P>
- </DL><H1><A NAME="SECTION00020000000000000000">Core LaRCsim Routines</A></H1>
+ </DL><H3>Core LaRCsim Routines</H3>
 <P>
 The following share the ls_generic.h, ls_types.h, and ls_constants.h
 header files.
@@ -69,7 +112,7 @@ header files.
 <DD> ls_gravity( SCALAR radius, SCALAR lat, SCALAR
     *gravity ) Gravity model for LaRCsim.
 <P>
- </DL><H1><A NAME="SECTION00030000000000000000">Secondary LaRCsim Routines</A></H1>
+ </DL><H3>Secondary LaRCsim Routines</H3>
 <P>
 The following routines help manage the simulation
 <P>
@@ -82,7 +125,7 @@ The following routines help manage the simulation
 <DD> Provides stub routines for the
     routines that are normally provided by the user.
 <P>
- </DL><H1><A NAME="SECTION00040000000000000000">Navion Specific Routines</A></H1>
+ </DL><H3>Navion Specific Routines</H3>
 <P>
 <DL ><DT><STRONG>ls_cockpit.h:</STRONG>
 <DD> Header for cockpit IO.  Stores the current
@@ -105,7 +148,7 @@ The following routines help manage the simulation
   <DT><STRONG>navion_init.c:</STRONG>
 <DD> model_init() Initializes navion math model
 <P>
- </DL><H1><A NAME="SECTION00050000000000000000">  About this document ... </A></H1>
+ </DL><H3>About this document ... </H3>
 <P>
  <STRONG></STRONG><P>
 This document was generated using the <A HREF="http://www-dsed.llnl.gov/files/programs/unix/latex2html/manual/"><STRONG>LaTeX</STRONG>2<tt>HTML</tt></A> translator Version 96.1 (Feb 5, 1996) Copyright &#169; 1993, 1994, 1995, 1996,  <A HREF="http://cbl.leeds.ac.uk/nikos/personal.html">Nikos Drakos</A>, Computer Based Learning Unit, University of Leeds. <P> The command line arguments were: <BR>
@@ -114,5 +157,17 @@ This document was generated using the <A HREF="http://www-dsed.llnl.gov/files/pr
 <I>Curtis L. Olson <BR>
 Mon Dec 15 13:14:31 CST 1997</I>
 </ADDRESS>
-</BODY>
-</HTML>
+
+</td> </tr> </tbody></table>
+   <div id="bottom">
+      <a href="http://flightgear.org">Home</a> |
+      <a href="../../../../docs.html">Documentation</a> | 
+      <a href="../../../../binary.html">Downloads</a> |
+      <a href="../../../../Gallery/index.html">Screenshots</a>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  Copyright 2003, Curtis L. Olson <a href="mailto:curt@flightgear.org">curt@flightgear.org</a>
+	   and Andrei barbu <a href="mailto:a_barbu2@yahoo.com">a_barbu2@yahoo.com</a>
+</div>

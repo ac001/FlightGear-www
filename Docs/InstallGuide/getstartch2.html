@@ -1,23 +1,64 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
-  "http://www.w3.org/TR/html4/loose.dtd">  
-<html > 
-<head><title>2 Building the plane: Compiling the program</title> 
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
-<meta name="generator" content="TeX4ht (http://www.cis.ohio-state.edu/~gurari/TeX4ht/mn.html)"> 
-<!-- html,2,info,next,sections+ --> 
-<meta name="src" content="getstart.tex"> 
-<meta name="date" content="2002-12-15 21:48:00"> 
+
+<head>
+<title> FlightGear Flight Simulator</title>
+<link rel="stylesheet" type="text/css" href="../../default.css"> 
+<link rel="stylesheet" type="text/css" href="FGShortRef.css">
 <link rel="stylesheet" type="text/css" href="getstart.css"> 
-</head><body 
->
-   <div class="crosslinks"><p class="noindent">[<a 
-href="getstartch3.html" >next</a>] [<a 
-href="getstartch1.html" >prev</a>] [<a 
-href="getstartch1.html#tailgetstartch1.html" >prev-tail</a>] [<a 
-href="#tailgetstartch2.html">tail</a>] [<a 
-href="getstartpa1.html#getstartch2.html" >up</a>] </p></div>
-   <h2 class="chapterHead"><span class="titlemark">Chapter&nbsp;2</span><br><a 
-href="getstart.html#QQ2-6-10" name="x6-100002">Building the plane: Compiling the program</a></h2>
+</head>
+ <body>
+<div id="top"><a href="http://www.flightgear.org/"><img id="titlebar" src="../../images/fglogosm.jpg" alt=""></a>
+</div>
+<table id="global">
+	<tbody><tr>
+		<td id="menu">
+		<!-- Use a replacescript to update the menu -->
+		<h3>About</h3>
+		<a href="../../index.html">Home</a><br>
+		<a href="../../introduction.html">Introduction</a><br>
+		<a href="../../overview.html">Overview</a><br>
+		<a href="../../features.html">Features</a><br>
+		<a href="../../Gallery/index.html">Screenshots</a><br>
+		<!-- about.hook.1-->
+		<!-- about.hook.2-->
+		<h3>Downloads</h3>
+		<a href="../../source.html">Source</a><br>
+		<a href="../../binary.html">Binary</a><br>
+		<a href="../../scenery.html">Scenery</a><br>
+		<!-- downloads.hook.1-->
+		<!-- downloads.hook.2-->
+		<h3>Support</h3>
+		<a href="../../version.html">Version Summary</a><br>
+		<a href="../../hardwarereq.html">Hardware Requirements</a><br>
+		<a href="../../docs.html">Documentation</a><br>
+		<a href="../../places.html">Places to Fly</a><br>
+		<a href="../../mail.html">Mailing Lists</a><br>
+		<a href="../../Docs/FlightGear-FAQ.html">Faq</a><br>
+		<!-- support.hook.1-->
+		<!-- support.hook.2-->
+		<h3>Links</h3>
+		<a href="../../links.html">Related Websites</a><br>
+		<a href="../../projects.html">Related Projects</a><br>
+		<a href="http://sourceforge.net/projects/flightgear/">SourceForge Project Page</a><br>
+		<!-- support.hook.1-->
+		<!-- support.hook.2-->
+		<h3>Contribute</h3>
+		<a href="../../contributing.html">Contributing</a><br>
+		<a href="../../cvs.html">CVS Resources</a><br>
+		<a href="../../goals.html">Goals</a><br>
+		<a href="../../thanks.html">Contributors</a><br>
+		<a href="../../design.html">Design Proposals</a><br>
+		<a href="../../events.html">Events</a><br>
+		<!-- support.hook.1-->
+		<!-- support.hook.2-->
+</td>
+<td id="page">   <div class="crosslinks"><p class="noindent"><h3><a 
+href="getstartch3.html" >[next]</a> <a 
+href="getstartch1.html" >[prev]</a> <a 
+href="getstartch1.htm#tailgetstartch1.html" >[prev-tail]</a> <a 
+href="getstartch2.htm#tailgetstartch2.html">[end]</a> <a 
+href="getstartpa1.htm#getstartch2.html" >[up]</a> </h3></p></div>
+   <h1 class="chapterHead"><span class="titlemark">Chapter&nbsp;2</span><br><a 
+href="getstart.htm#QQ2-6-10" name="x6-100002">Building the plane: Compiling the program</a></h1>
 <!--l. 33--><p class="noindent">This central chapter describes how to build <span 
 class="ptmbi7t---109">FlightGear </span>on several systems. In case you
 are on a Win32 (i. e. Windows95/98/ME/NT/2000/XP) platform or any of the other
@@ -70,11 +111,11 @@ class="ptmbi7t---109">FlightGear </span>on. Other compilers
      <li class="itemize">The GNU compiler is free in the same sense of the GPL as <span 
 class="ptmbi7t---109">FlightGear </span>is.</li></ul>
 <!--l. 70--><p class="noindent">You might want to check Section <a 
-href="getstartap1.html#x12-66000A">A<!--tex4ht:ref: missed--></a>, <span 
+href="getstartap1.htm#x12-66000A">A<!--tex4ht:ref: missed--></a>, <span 
 class="ptmri7t---109">Missed approach</span>, if anything fails during
 compilation. In case this does not help we recommend sending a note to one of the
 mailing lists (for hints on subscription see Chapter <a 
-href="getstartap3.html#x14-80000C">C<!--tex4ht:ref: landing--></a>).
+href="getstartap3.htm#x14-80000C">C<!--tex4ht:ref: landing--></a>).
 <!--l. 73--><p class="indent">   There are several Linux distributions<a 
   name="dx6-10009"></a> on the market, and most of them should work.
 Some come even bundled with (often outdated) versions of <span 
@@ -89,7 +130,7 @@ sense, before building the plane you will have to build the plant for building p
 This will be the topic of the following section, which can be omitted by Linux
 users.
    <h3 class="sectionHead"><span class="titlemark">2.1</span> <a 
-href="getstart.html#QQ2-6-11" name="x6-110002.1">Preparing the development environment under Windows</a></h3>
+href="getstart.htm#QQ2-6-11" name="x6-110002.1">Preparing the development environment under Windows</a></h3>
 <!--l. 86--><p class="noindent">There is a powerful development environment available for Windows and this
 even for free: The Cygnus development tools,<a 
   name="dx6-11001"></a> resp. <span 
@@ -230,7 +271,7 @@ the named directory.
 nearly UNIX-like (command line) development environment. Because of this, the
 following steps are nearly identical under Windows and Linux/Unix.
    <h3 class="sectionHead"><span class="titlemark">2.2</span> <a 
-href="getstart.html#QQ2-6-12" name="x6-120002.2">Preparing the development environment under Windows</a></h3>
+href="getstart.htm#QQ2-6-12" name="x6-120002.2">Preparing the development environment under Windows</a></h3>
 <!--l. 165--><p class="noindent">Linux, like any UNIX, usually comes with a compiler pre-installed. On the other hand,
 you still have to make sure several required libraries being present.
 <!--l. 167--><p class="indent">   First, make sure you have all necessary OpenGL libraries. Fortunately, most of the
@@ -260,7 +301,7 @@ class="ptmb7t---109">Linux distribution. </span>It might be the case that <span
 class="ptmbi7t---109">FlightGear </span>requires a newer one that is not
 yet provided by your vendor.
    <h3 class="sectionHead"><span class="titlemark">2.3</span> <a 
-href="getstart.html#QQ2-6-13" name="x6-130002.3">One-time preparations for Linux and Windows users</a></h3>
+href="getstart.htm#QQ2-6-13" name="x6-130002.3">One-time preparations for Linux and Windows users</a></h3>
 <!--l. 186--><p class="noindent">There are a couple of 3rd party libraries which your Linux or Windows system may or
 may have not installed, i.e. the <span 
 class="ptmbi7t---109">ZLIB </span>library and the <span 
@@ -278,7 +319,7 @@ automatically install them. For installing either of them, get the most recent f
 class="pcrr7t---109">SimGear-X.X.X.tar.gz</span><a 
   name="dx6-13001"></a> from
 <!--l. 193--><p class="indent">   <a 
-href="http://www.simgear.org/downloads.html" >http://www.simgear.org/downloads.html</a>
+href="http://www.simgear.org/downloads.html" >http://www.simgear.org/downloads.htm</a>
 <!--l. 196--><p class="noindent">Download it to <span 
 class="pcrr7t---109">/usr/local/source</span>. Change to that directory and unpack <span 
 class="ptmbi7t---109">SimGear</span>
@@ -289,7 +330,7 @@ class="pcrr7t---109">tar xvfz SimGear-X.X.X.tar.gz</span>.
 class="pcrr7t---109">src-libs </span>which contains the two names
 libraries.
    <h4 class="subsectionHead"><span class="titlemark">2.3.1</span> <a 
-href="getstartli1.html#QQ2-6-14" name="x6-140002.3.1">Installation of <span 
+href="getstartli1.htm#QQ2-6-14" name="x6-140002.3.1">Installation of <span 
 class="ptmbi7t---109">ZLIB</span></a></h4>
 <!--l. 206--><p class="noindent"><span 
 class="pcrr7t---109">cd </span>into <span 
@@ -313,7 +354,7 @@ class="pcrr7t---109">make install</span>, for instance
 via the <span 
 class="pcrr7t---109">su </span>command.
    <h4 class="subsectionHead"><span class="titlemark">2.3.2</span> <a 
-href="getstartli1.html#QQ2-6-15" name="x6-150002.3.2">Installation of <span 
+href="getstartli1.htm#QQ2-6-15" name="x6-150002.3.2">Installation of <span 
 class="ptmbi7t---109">Metakit</span></a></h4>
 <!--l. 229--><p class="noindent"><span 
 class="pcrr7t---109">cd </span>into <span 
@@ -339,7 +380,7 @@ class="pcrr7t---109">su </span>command.
 class="pcrr7t---109">SimGear-X.X.X/scr-libs </span>in
 case you run into trouble.
    <h3 class="sectionHead"><span class="titlemark">2.4</span> <a 
-href="getstart.html#QQ2-6-16" name="x6-160002.4">Compiling <span 
+href="getstart.htm#QQ2-6-16" name="x6-160002.4">Compiling <span 
 class="ptmbi7t---109">FlightGear </span>under Linux/Windows </a></h3>
 <!--l. 256--><p class="noindent">The following steps are identical under Linux/Unix and under Windows with minor
 modifications. Under Windows, just open the <span 
@@ -418,7 +459,7 @@ class="pcrr7t---109">SimGear-X.X.X.tar.gz</span><a
   name="dx6-16012"></a>
      from
      <!--l. 302--><p class="noindent"><a 
-href="http://www.simgear.org/downloads.html" >http://www.simgear.org/downloads.html</a>
+href="http://www.simgear.org/downloads.html" >http://www.simgear.org/downloads.htm</a>
      <!--l. 305--><p class="noindent">Download  it  to  <span 
 class="pcrr7t---109">/usr/local/source</span>.  Change  to  that  directory  and
      unpack <span 
@@ -449,7 +490,7 @@ class="ptmbi7t---109">FlightGear </span>itself, finally. Get
      <br class="newline"><span 
 class="pcrr7t---109">FlightGear-X.X.X.tar.gz </span>from
      <!--l. 326--><p class="noindent"><a 
-href="http://www.flightgear.org/Downloads/" >http://www.flightgear.org/Downloads/</a>
+href="../../Downloads/index.html" >http://www.flightgear.org/Downloads/</a>
      <!--l. 329--><p class="noindent">and download it to <span 
 class="pcrr7t---109">/usr/local/source</span>. Unpack <span 
 class="ptmbi7t---109">FlightGear </span>using
@@ -567,7 +608,7 @@ these same directories before.
 
                                                                      
    <h3 class="sectionHead"><span class="titlemark">2.5</span> <a 
-href="getstart.html#QQ2-6-17" name="x6-170002.5">Compiling <span 
+href="getstart.htm#QQ2-6-17" name="x6-170002.5">Compiling <span 
 class="ptmbi7t---109">FlightGear </span>under Mac OS X </a></h3>
 <!--l. 410--><p class="noindent">For compiling under Mac OS X you will need
      <ul class="itemize1">
@@ -772,7 +813,7 @@ class="pcrr7t---109">cd $BUILDDIR</span>
      <br class="newline"><span 
 class="pcrr7t---109">src/FlightGear/src/Main/fgfs</span></li></ol>
    <h3 class="sectionHead"><span class="titlemark">2.6</span> <a 
-href="getstart.html#QQ2-6-18" name="x6-180002.6">Compiling on other systems</a></h3>
+href="getstart.htm#QQ2-6-18" name="x6-180002.6">Compiling on other systems</a></h3>
 <!--l. 535--><p class="noindent">Compiling on other UNIX<a 
   name="dx6-18001"></a> systems - at least on IRIX<a 
   name="dx6-18002"></a> and on Solaris<a 
@@ -817,7 +858,7 @@ src="getstart4x.gif" alt="~"  class="tilde" > walisser/fg/</a>.
 included in the source code under <span 
 class="pcrr7t---109">docs-mini</span>.
    <h3 class="sectionHead"><span class="titlemark">2.7</span> <a 
-href="getstart.html#QQ2-6-19" name="x6-190002.7">Installing the base package</a></h3>
+href="getstart.htm#QQ2-6-19" name="x6-190002.7">Installing the base package</a></h3>
                                                                      
 
                                                                      
@@ -857,17 +898,17 @@ class="pcrr7t---109">/usr/local/Flightgear/bin</span>
 <!--l. 609--><p class="indent">   <span 
 class="pcrr7t---109">/usr/local/Flightgear/Weather</span>.
    <h3 class="sectionHead"><span class="titlemark">2.8</span> <a 
-href="getstart.html#QQ2-6-20" name="x6-200002.8">For test pilots only: Building the CVS snapshots</a></h3>
+href="getstart.htm#QQ2-6-20" name="x6-200002.8">For test pilots only: Building the CVS snapshots</a></h3>
 <!--l. 616--><p class="noindent">It you are into adventures or feel you&#8217;re an advanced user, you can try one of the recent
 bleeding edge snapshots<a 
   name="dx6-20001"></a><a 
   name="dx6-20002"></a> at
 <!--l. 619--><p class="indent">   <a 
-href="http://www.flightgear.org/Downloads/" >http://www.flightgear.org/Downloads/</a>.
+href="../../Downloads/index.html" >http://www.flightgear.org/Downloads/</a>.
 <!--l. 622--><p class="noindent">In this case you have to get the most recent Snapshot from <span 
 class="ptmbi7t---109">SimGear </span>at
 <!--l. 626--><p class="indent">   <a 
-href="http://www.simgear.org/downloads.html" >http://www.simgear.org/downloads.html</a>
+href="http://www.simgear.org/downloads.html" >http://www.simgear.org/downloads.htm</a>
 <!--l. 629--><p class="noindent">as well. But be prepared: These are for development and may (and often do) contain
 bugs.
 <!--l. 633--><p class="indent">   If you are using these CVS snapshots, the base package named above will usually not
@@ -889,11 +930,24 @@ class="pcrr7t---109">base-snap.X.X.X.tar.gz</span>.
                                                                      
 
                                                                      
-   <div class="crosslinks"><p class="noindent">[<a 
-href="getstartch3.html" >next</a>] [<a 
-href="getstartch1.html" >prev</a>] [<a 
-href="getstartch1.html#tailgetstartch1.html" >prev-tail</a>] [<a 
-href="getstartch2.html" >front</a>] [<a 
-href="getstartpa1.html#getstartch2.html" >up</a>] </p></div><a 
-  name="tailgetstartch2.html"></a>   
-</body></html> 
+   <div class="crosslinks"><p class="noindent"><h3><a 
+href="getstartch3.html" >[next]</a> <a 
+href="getstartch1.html" >[prev]</a> <a 
+href="getstartch1.htm#tailgetstartch1.html" >[prev-tail]</a> <a 
+href="getstartch2.html" >[front]</a> <a 
+href="getstartpa1.htm#getstartch2.html" >[up]</a> </p></div><a 
+  name="tailgetstartch2.html"></h3></a>   
+</td> </tr> </tbody></table>
+   <div id="bottom">
+      <a href="http://flightgear.org">Home</a> |
+      <a href="../../docs.html">Documentation</a> | 
+      <a href="../../binary.html">Downloads</a> |
+      <a href="../../Gallery/index.html">Screenshots</a>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  Copyright 2003, Curtis L. Olson <a href="mailto:curt@flightgear.org">curt@flightgear.org</a>
+	   and Andrei barbu <a href="mailto:a_barbu2@yahoo.com">a_barbu2@yahoo.com</a>
+</div>
+
