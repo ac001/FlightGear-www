@@ -190,34 +190,25 @@ in many areas.
 
  <HR>
 
- <FORM METHOD="get" ACTION="http://search.umn.edu/query.html" NAME="seek">
-  <TABLE ALIGN="center" CELLSPACING="0" CELLPADDING="0" BORDER="0" SUMMARY="Search Form Table">
-    <TBODY><TR>
-      <TD ALIGN="center" VALIGN="middle">
-        <!-- <LABEL FOR="srchbox">Search:</LABEL> -->
-        <INPUT TYPE="text" NAME="qt" VALUE="" SIZE="25" MAXLENGTH="2047" ID="srchbox">
-        <INPUT TYPE="submit" NAME="submit" VALUE="Search Site">
-        <INPUT TYPE="hidden" NAME="rq" VALUE="0">
-        <INPUT TYPE="hidden" NAME="qp" VALUE="url:www.menet.umn.edu/~curt/fgfs">
-        <INPUT TYPE="hidden" NAME="qs" VALUE="">
-        <INPUT TYPE="hidden" NAME="qc" VALUE="">
-        <INPUT TYPE="hidden" NAME="pw" VALUE="100%">
-        <INPUT TYPE="hidden" NAME="ws" VALUE="0">
-        <INPUT TYPE="hidden" NAME="qm" VALUE="0">
-        <INPUT TYPE="hidden" NAME="st" VALUE="1">
-        <INPUT TYPE="hidden" NAME="nh" VALUE="10">
-        <INPUT TYPE="hidden" NAME="lk" VALUE="1">
-        <INPUT TYPE="hidden" NAME="rf" VALUE="0">
-        <INPUT TYPE="hidden" NAME="oq" VALUE="">
-        <INPUT TYPE="hidden" NAME="rq2" VALUE="0">
-        <INPUT TYPE="hidden" NAME="col" VALUE="uofm">
-      </TD>
-      <TD> 
-        <IMG SRC="http://seneca.flightgear.org/cgi-bin/wwwcount.cgi?df=curt_flightgear.dat&amp;dd=fatpt&amp;ft=3" ALIGN="MIDDLE" ALT="counter">
-      </TD>
-    </TR>
-  </TBODY></TABLE>
- </FORM>
+<!-- Search Google -->
+<center>
+<FORM method=GET action=http://www.google.com/custom>
+<TABLE bgcolor=#FFFFFF cellspacing=0 border=0>
+<tr valign=top><td>
+<A HREF=http://www.google.com/search>
+<IMG SRC=http://www.google.com/logos/Logo_40wht.gif border=0 ALT=Google align=middle></A>
+</td>
+<td>
+<INPUT TYPE=text name=q size=31 maxlength=255 value="">
+<INPUT type=submit name=sa VALUE="Google Search">
+<INPUT type=hidden name=cof VALUE="AH:center;GL:0;S:http://flightgear.org;AWFID:173bb6744620348d;">
+<font face=arial,sans-serif size=-1><input type=hidden name=domains
+value="flightgear.org"><br><input type=radio name=sitesearch value="">
+Search WWW <input type=radio name=sitesearch value="flightgear.org" checked> Search flightgear.org </font><br>
+</td></tr></TABLE>
+</FORM>
+</center>
+<!-- Search Google -->
 
  <DIV ALIGN="center">
   <A HREF="http://www.opengl.org/"><IMG SRC="opengl.jpg" WIDTH="61" HEIGHT="31" BORDER="1" ALT="OpenGL"></A>
@@ -229,6 +220,7 @@ in many areas.
   <!-- <A HREF="http://www.sun.com/"><IMG SRC="mini_sun.jpg" WIDTH="77" HEIGHT="31" BORDER="1" ALT="Sun"></A> -->
   <A HREF="http://www.apple.com/"><IMG SRC="apple.gif" WIDTH="39" HEIGHT="31" BORDER="1" ALT="Apple"></A>
   <A HREF="http://www.annoyances.org/"><IMG SRC="win2.gif" WIDTH="34" HEIGHT="31" BORDER="1" ALT="Windows"></A>
+  <IMG SRC="http://seneca.flightgear.org/cgi-bin/wwwcount.cgi?df=curt_flightgear.dat&amp;dd=fatpt&amp;ft=3" ALT="counter">
  </DIV>
 
 <!-- Standard Footer Begin -->
@@ -236,7 +228,7 @@ in many areas.
 <HR>
 
 <ADDRESS>
-Last modified:  9/9/2002 <BR>
+Last modified:  10/7/2002 <BR>
 <A HREF="http://www.menet.umn.edu/~curt/">Curtis L. Olson</A> <BR>
 <IMG SRC="http://www.flightgear.org/email-fg.png">
 </ADDRESS>
