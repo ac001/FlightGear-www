@@ -53,7 +53,7 @@ h2{
 	padding-left:2px;
 	padding-right:2px;
 	width: 22%;
-	font-size:70%;
+	font-size:80%;
 	text-align:center;
 }
 /*Menu subheadings*/
@@ -97,11 +97,10 @@ td#page{
 padding:10px;
 vertical-align:top;
 width:100%;
-font-size:75;
 }
 
 table#caption{
-font-size: 75%;
+font-size: 80%;
 }
 
 div#page{
@@ -119,7 +118,7 @@ border-top-width:1px;
 border-bottom-width:1px;
 border-left-width:1px;
 border-right-width:1px;
-font-size:75%;
+font-size:93%;
 }
 
 /*The bottom links and copyright*/
