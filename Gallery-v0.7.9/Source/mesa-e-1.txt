@@ -1,0 +1,3 @@
+A very detailed regular grid of the mesa-e area.  Current versions of FG
+use an <EM>irregularly gridded</EM> terrain.  Irregular grids should be
+able to achieve the same detail level with 4-6x fewer polygons.

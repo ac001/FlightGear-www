@@ -1,0 +1,4 @@
+Haze at the horizon - This images demonstrates my first attempt at making
+a nice sky that transitions into haze at the horizons.  It should be mostly
+straight forward to make a particlar side of the sky brighter or add a pink
+glow on one side to make nice sunsets and sunrises.
