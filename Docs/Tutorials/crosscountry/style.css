@@ -1,0 +1,31 @@
+A:link {
+	COLOR: #483d8b
+}
+A:visited {
+	COLOR: #483d8b
+}
+A:hover {
+	COLOR: #6a5acd
+}
+A:active {
+	COLOR: #483d8b
+}
+BODY {
+	background:#FFFFFF; COLOR: #000000; FONT-FAMILY: "Arial", Helvetica, Geneva, Swiss, SunSans-Regular; TEXT-DECORATION: none
+}
+
+IMG {
+  ALIGN: CENTER; padding: 10px
+}
+
+.label {
+  ALIGN: CENTER; padding: 5px
+}
+
+.p {
+  padding:10px
+}
+
+.title {
+ background:#80DDCC; color: white; padding=5px,10px; FONT-FAMILY: "Bradley Hand ITC", "Arial", Helvetica, Geneva, Swiss, SunSans-Regular; font-size: large
+}
