@@ -1,84 +1,29 @@
 <!-- Standard Header Begin -->
+
 <html>
 
 <head>
   <title>FlightGear Flight Simulator</title>
-  <link rel="stylesheet" type="text/css" href="http://www.flightgear.org/default.css"> 
+  <link rel="stylesheet" type="text/css" href="/default.css"> 
+  <meta http-equiv="Content-Script-Type" Content="text/javascript">
+  <script src="/templates.js"></script>
 </head>
 
 <body>
-  <div id="top">
-    <a href="http://www.flightgear.org/"><img id="titlebar" src="http://www.flightgear.org/images/fglogosm.jpg" alt=""></a>
-  </div>
+  <!-- Display the main logo -->
+  <script>MainLogo();</script>
 
   <table id="global">
     <tbody><tr>
       <td id="menu">
-	<!-- Use a replacescript to update the menu -->
+        <!-- SiteSearch Google -->
+        <script>SiteSearchGoogle();</script>
 
-<!-- SiteSearch Google -->
-<form method="get" action="http://www.google.com/custom" target="_top">
-<table border="0" bgcolor="#ffffff" id="page">
-<tr><td nowrap="nowrap" valign="top" align="left" height="32">
-<a href="http://www.google.com/">
-<img src="http://www.google.com/logos/Logo_25wht.gif"
-border="0" alt="Google"></img></a>
-<br/>
-<input type="hidden" name="domains" value="flightgear.org"></input>
-<input type="text" name="q" size="20" maxlength="255" value=""></input>
-</td></tr>
-<tr>
-<td nowrap="nowrap">
-<table>
-<tr>
-<td>
-<input type="radio" name="sitesearch" value=""></input>
-<font size="-1" color="#000000">Web</font>
-</td>
-<td>
-<input type="radio" name="sitesearch" value="flightgear.org" checked="checked"></input>
-<font size="-1" color="#000000">flightgear.org</font>
-</td>
-</tr>
-</table>
-<input type="submit" name="sa" value="Search"></input>
-<input type="hidden" name="client" value="pub-2485404446552133"></input>
-<input type="hidden" name="forid" value="1"></input>
-<input type="hidden" name="ie" value="ISO-8859-1"></input>
-<input type="hidden" name="oe" value="ISO-8859-1"></input>
-<input type="hidden" name="safe" value="active"></input>
-<input type="hidden" name="cof" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;FORID:1;"></input>
-<input type="hidden" name="hl" value="en"></input>
-
-</td></tr></table>
-</form>
-<!-- SiteSearch Google -->
-	<h3>Main</h3>
-	<a href="/index.html">Home</a><br>
-	<a href="/introduction.html">Introduction</a><br>
-	<a href="/features.html">Features</a><br>
-        <a href="/Gallery/">Screenshots</a><br>
-	<a href="/Downloads/">Downloads</a><br>
-	<a href="http://cdrom.flightgear.org">Purchase FG CD's</a><br>
-	<h3>Support</h3>
-	<a href="/version.html">Version Change Log</a><br>
-	<a href="/hardwarereq.html">Hardware Requirements</a><br>
-	<a href="/docs.html">Documentation</a><br>
-	<a href="/places.html">Places to Fly</a><br>
-	<a href="/mail.html">Lists, Forums, and IRC</a><br>
-	<a href="/Docs/FAQ.shtml">FAQ</a><br>
-	<h3>Links</h3>
-	<a href="/links.html">Related Websites</a><br>
-	<a href="/Projects/">Related Projects</a><br>
-	<h3>Contribute</h3>
-	<a href="/contributing.html">Contributing</a><br>
-	<a href="/cvs.html">CVS Resources</a><br>
-	<a href="/goals.html">Goals</a><br>
-	<a href="/thanks.shtml">Contributors</a><br>
-	<a href="/design.html">Design Proposals</a><br>
-	<a href="/events.html">Events</a><br>
+        <!-- Display the main menu -->
+        <script>MainMenu();</script>
       </td>
       <td id="page">
+
 <!-- Standard Header End -->
 
 <H1>FGFS Related Links</H1><BR>
@@ -89,7 +34,7 @@ These pages are maintained by FlightGear contributors and may directly or
 indirectly contain FlightGear info.
 
 <UL>
-  <LI> <A HREF="index.html">The official Flight Gear page.</A>
+  <LI> <A HREF="http://www.flightgear.org">The official Flight Gear page.</A>
   <LI> <A HREF="http://www.jsbsim.org"> JSBSim Flight Dynamics
        Modeling Site</A> - JSBSim is an object-oriented,
        multi-platform, flight dynamics model written in C++.  It is
@@ -99,6 +44,16 @@ indirectly contain FlightGear info.
        also strives to serve as a resource to flight simulation
        engineers, hosting and providing links to relevant technical
        papers and references to other sites.
+  <LI> <A HREF="http://x-plane.org/home/robinp/">Robin Peel's Airport
+       and Navaid data homepage</A>.
+  <LI> <A HREF="http://www.nottingham.ac.uk/~eazdluf/taxidraw/airportdata.html">
+       Dave Luff's Airport Data Page</A> - This is Robin's data with
+       some specific FG additions/changes merged in.
+  <LI> <A HREF="http://www.nottingham.ac.uk/~eazdluf/taxidraw.html">
+       Dave Luff's TaxiDraw</A>.  TaxiDraw is a taxiway editor for
+       FlightGear and X-Plane, written by David Luff. 
+  <LI> <A HREF="http://fgfsdb.stockill.org/">Jon Stockill's FlightGear Scenery
+       Object Database</A>.
   <LI> <A HREF="http://fgatd.sourceforge.net/">Flight Gear Aviation
        Training Device</A> project (FAA Certification sought)
   <LI> <A HREF="http://atlas.sourceforge.net/">Atlas</A> - Cartography for
@@ -112,10 +67,6 @@ indirectly contain FlightGear info.
        hangar for FlightGear Flight Simulator planes</A> - This is a
        large collection of fgfs compatible 3d aircraft models.  You
        can download these and use them in flightgear.
-  <LI> <A HREF="http://www.unet.univie.ac.at/~a8603365/flightgear.html">
-       FlightGear: Support for joysticks with digital axes</A>
-  <LI> <A HREF="http://matrixsoft.50megs.com/BGL/">John Tsao - Importing
-       BGL Scenery into FlightGear</A>
   <LI> <A HREF="http://www.opengc.org">OpenGC</A> - Open source glass cockpit
        display project.
   <LI> <A HREF="http://unbeatenpath.net/software/fgfs/Developers/Developers.html">
@@ -126,10 +77,12 @@ indirectly contain FlightGear info.
        Space Flight Simulation.
   <LI> <A HREF="http://fg-server.sourceforge.net">FGFS Online Flight
        Zone</A>
-  <LI> <A HREF="http://www.flightgear.de.vu">A German language
-       translation of the FlightGear website</A>.
   <LI> <A HREF="http://www.jp.flightgear.org">A Japanese language
        translation of the FlightGear website</A>.
+  <LI> <A HREF="http://members.aon.at/mfranz/flightgear/signs.html">Signs</A>:
+       Displays city/airport/object names as floating text within the 
+       FlightGear visuals.  Requires no changes to the FG code, but requires
+       write access to the FlightGear data tree.
 </UL>
 
 
@@ -138,7 +91,10 @@ indirectly contain FlightGear info.
 <H3>Other Flight Sim Related sites on the Net</H3><BR>
 
 <UL>
-  <LI> <A HREF="http://f15sim.com">Gene Buckle</A> is
+  <LI> <A HREF="http://www.flightsimaviation.com/">The Flightsim
+       Aviation Zone</A> - Source for aviation and flight simulator
+       related news and forums.
+  <LI> <A HREF="http://www.f15sim.com">Gene Buckle</A> is
        working on building his own lifesize flight sim out of an old
        airplane fuselage.  He hopes to drive the display and
        instruments with Flight Gear.
@@ -158,7 +114,7 @@ indirectly contain FlightGear info.
        class piloted flight simulation laboratories, the Vertical
        Motion Simulator (VMS) and the Crew Vehicle Systems Research
        Facility (CVSRF). 
-  <LI> <A HREF="http://home.online.no/~tseval/sw/">Silent Wings</A> -
+  <LI> <A HREF="http://www.silentwings.no/">Silent Wings</A> -
        Soaring Simulator.
   <LI> <A HREF="http://www.inf.bme.hu/~jet/eagles/">Eagles</A> - A Heli
        sim with impressive looking terrain and helicopters.  (DOS)
@@ -167,12 +123,6 @@ indirectly contain FlightGear info.
   <LI> <A HREF="http://www.astro.ku.dk/~norup/vertigo/vertigo.html">
        Vertigo</A> - Another promising sim that models several different
        aircraft and has some decent graphics. (DOS)
-  <LI> <A HREF="http://www.berkelium.com/OpenGL/flight.html">Silicon 
-       Graphics Flight Simulator</A> - This is the classic "Flight/Dog" demo
-       that comes with SGI workstations, but ported to win95/NT running
-       on top of a beta version of Cosmo OpenGL.  It does texture mapping
-       and fog effects, and has beautiful external views of it's
-       planes.
   <LI> <A HREF="http://www.acesim.com/">
        Build your own full motion cockpit</A>
   <LI> <A HREF="http://www.funet.fi/pub/msdos/games/demos/fgfly01c.dsc">
@@ -213,7 +163,7 @@ indirectly contain FlightGear info.
        1:2,000,000-scale Digital Line Graph (DLG) data (USGS)</A>
   <LI> <A HREF="ftp://www-nmd.usgs.gov/pub/gnis/">The Geographic Names
        Information System (GNIS)</A>
-  <LI> <A HREF="http://www.ngdc.noaa.gov/seg/topo/globe.shtml">The Global 
+  <LI> <A HREF="http://www.ngdc.noaa.gov/mgg/topo/globe.html">The Global 
        Land One-km Base Elevation (GLOBE) Project</A>
   <LI> <A HREF="http://edcwww.cr.usgs.gov/landdaac/gtopo30/gtopo30.html">
        Global 30 Arc Second Elevation Data Set</A>
@@ -224,18 +174,11 @@ indirectly contain FlightGear info.
   <LI> <A HREF="http://www.manifold.net/download/download_set.html">
        Manifold Systems</A> - Free maps and GIS data (including
        Digital Chart of the World "DCW")
-  <LI> <A HREF="http://www.lib.berkeley.edu/GSSI/uc_cdrom.html">
-       Digital Chart of the World</A>
   <LI> <A HREF="http://www.cast.uark.edu/local/hunt/index.html">Guide
        To Mostly On-line And Mostly Free U.S. Geospatial and Attribute
        Data</A>
-  <LI> <A HREF="http://www.nima.mil/geospatial/geospatial.html">
-       National Imagery and Mapping Agency</A> - lower resolution
-       world data sets.
   <LI> <A HREF="http://mapping.usgs.gov/">Another USGS site for DEM &
        DLG data (and other stuff)</A>
-  <LI> <A HREF="http://mapping.usgs.gov/www/html/2nmpgds.html">A more
-       specific URL for the above site.</A>
   <LI> <A HREF="http://crusty.er.usgs.gov/coast/getcoast.html">USGS
        Coastline Extractor</A>
   <LI> <A HREF="http://www.nima.mil/GandG/ngdc-wmm2000.html">
@@ -247,15 +190,11 @@ indirectly contain FlightGear info.
        National Geographics Maps</A>
   <LI> <A HREF="http://riemann.usno.navy.mil/AA/software/novas/novas_info.html">
        Code to model and calculate positions of astronomical objects</A>
-  <LI> <A HREF="http://www.cs.arizona.edu/icon/oddsends/tiger/tiger.html">
-       Feature mapping code</A>
   <LI> <A HREF="http://www-atlas.usgs.gov/atlasftp.html">National Atlas
        of the United States</A> - Tons of various feature data (in shape 
        file format)
   <LI> <A HREF="http://www.soest.hawaii.edu/wessel/gshhs/gshhs.html">Global
        Unified land mass polygons</A>
-  <LI> <A HREF="http://www.auslig.gov.au/mapping/global_m/specv1_0.html">
-       Global Map</A> - Global Mapping project
   <LI> <A HREF="http://geogratis.cgdi.gc.ca/frames.html">Canadian
        Spatial Data</A> - GeoGratis.
   <LI> <A HREF="http://edcwww.cr.usgs.gov/landdaac/glcc/glcc.html">Global 
@@ -267,7 +206,7 @@ indirectly contain FlightGear info.
        [ Download ]</A>
   <LI> <A HREF="http://cads.nos.noaa.gov/">Other GIS data in various formats
        from the NOAA</A>
-  <LI> <A HREF="http://www.geocities.com/drgportugal/dgtv/">Terrain
+  <LI> <A HREF="http://www.dgadv.com/dgtv/">Terrain
        Viewer</A> - a "free" tool to visualize various terrain data
        sets.  Includes pointers to free terrain data sets (nothing not
        already listed here as of 2/27/2003.)
@@ -282,39 +221,24 @@ indirectly contain FlightGear info.
        Cultivation intensity, Fractional inundation, Normalized
        difference vegetation index, Population density, Soil units,
        Vegetation, Wetland ecosystems ...
-  <LI> <A HREF="http://www.streamnet.org/ff/Glossary/glossaryforest.html">
-       Glossary of Forest Related Terms</A>
 </UL>
 
 
 <H3>Airport and Navaid info</H3><BR>
 
 <UL>
-  <LI> <A HRFE="http://jhcloos.com">The FAA's NASD</A>
-  <LI> <A HREF="http://www.fallingrain.com/air/airports.cgi">Worldwide 
-       Airport Path Finder</A> - Awsome worldwide data base.
+  <LI> <A HREF="http://jhcloos.com">The FAA's NASD</A>
   <LI> <A HREF="http://www.airnav.com">AirNav</A> - Provides free
        access to detailed aeronautical information on airports and
        navigational aids in the USA.
-  <LI> <A HREF="http://www.tgf.tc.faa.gov/nfdc/">FAA data on airports,
-       ILS's, and navigational aids</A> 
   <LI> <A HREF="http://www.fcc.gov/oet/info/">FCC Databases and Info</A>
-  <LI> <A HREF="http://www.calle.com/aviation/airports.cgi?NEW=1">
-       Worldwide Airport Path Finder</A> 
-  <LI> <A HREF="http://www2.nima.mil/products/digitalaero/dafifindex.cfm">
+  <LI> <A HREF="https://164.214.2.62/products/digitalaero/index.cfm">
        Digital Aeronautical Flight Information File (DAFIF)</A>
   <LI> <A HREF="http://zowie.metnet.navy.mil/cgi-bin/oleg/search-mslib">A
        query page for a Master Stations Library, a database of all
        "major" airports, worldwide.</A>
   <LI> <A HREF="http://www.recherche.enac.fr/opti/papers/author.html?todo=author&type=Alliot">
        Various ATC links</A>.
-  <LI> <A HREF="http://www.efdlant.navfac.navy.mil/Lantops_15/topics/Facilities/NAVAIR_51-50AAA-2.PDF">
-       US Navy's General Requirements for Shorebased Airfield Marking
-       and Lighting</A>
-  <LI> <A HREF="http://www.efdlant.navfac.navy.mil/Lantops_15/documents/UFC/UFC%203-535-01.pdf">Design Standards for Visual Air Navigation Facilities</A>
-       (SSALR)
-  <LI> <A HREF="http://neds.nebt.daps.mil/Directives/3722/a5.pdf">Approach
-       Lighting Systems</A> (SALS)
   <LI> <A HREF="http://www.ngs.noaa.gov/AERO/aerospecs.htm#FAA405">
        Standards/Specifications for Aeronautical Surveys</A>
   <LI> <A HREF="http://www.tpub.com/celec/20.html">Approach lighting
@@ -327,12 +251,10 @@ indirectly contain FlightGear info.
 <H3>World Weather Info Sources</H3><BR>
 
 <UL>
-  <LI> <A HREF="http://tgsv5.nws.noaa.gov/oso/oso1/oso12/metar.html">
+  <LI> <A HREF="http://www.nws.noaa.gov/tg/index.html">
        National Weather Service METAR/TAF Information</A>
   <LI> <A HREF="ftp://weather.noaa.gov/data/observations/metar/cycles/">
        NOAA Metar Observations</A>
-  <LI> <A HREF="http://www.oakcrest.com/satco/library/tafmetar.html">
-       METAR TAF Decoder</A> - cheat sheet.
   <LI> <A HREF="http://www.crh.noaa.gov/cgi-bin-ncrfc/uncgi/gts2">Snow
         Depths for the Midwest (USA)</A>
   <LI> <A HREF="http://www.comet.ucar.edu/dstreme/">The DataStreme Project</A>
@@ -345,27 +267,17 @@ indirectly contain FlightGear info.
 <H3>World Modeling Tools</H3><BR>
 
 <UL>
-  <LI> <A HREF="http://www.remotesensing.org/ossim/">Remote Sensing dot 
-       org</A> - A site dedicated to developing remote sensing algorithms,
-       code, and technology.
-  <LI> <A HREF="http://phoenix.cs.utah.edu:2222/vissim/papers/sunsky/">
-       A Practical Analytic Model for Daylight</A> - Accurate sky coloring.
+  <LI> <A HREF="http://www.remotesensing.org/">RemoteSensing.org</A> -
+       A site dedicated to developing remote sensing algorithms, code,
+       and technology.
   <LI> <A HREF="ftp://sunsite.unc.edu/pub/Linux/science/cartography/">
        Linux programs to manipulate cartography data</A>
   <LI> <A HREF="http://sal.kachinatech.com/E/6/DRAWMAP.html">drawmap</A>
        processes 250K Digital Elevation Model (DEM) files, 100K
        Digital Line Graph (DLG) files (in the 'optional' format), and
        Geographic Names Information System (GNIS) files.  (GPL'd)
-  <LI> <A HREF="http://home.sol.no/~bjostens/diplom/">Continuous LOD Terrain
-       Rendering</A>  If you are interested in this stuff,
-       definitely check out their paper on their terrain rendering
-       investigations and their screen shots.
   <LI> <A HREF="http://www.planetside.co.uk/">Terragen</A>
        landscape generator</A>
-  <LI> <A HREF=" http://www.ogsinc.com/product.html">The now commercial
-       gfc lib</A> - Liujian Qian
-  <LI> <A HREF="http://pages.infinit.net/danmo/e00/index.html">e00 
-       processing code</A>
   <LI> <A HREF="http://gdal.velocet.ca/projects/shapelib/index.html">
        Shapefile processing code</A>
   <LI> <A HREF="http://gdal.velocet.ca/projects/aigrid/index.html">
@@ -373,8 +285,6 @@ indirectly contain FlightGear info.
   <LI> <A HREF="http://ddg.sourceforge.net">Digital Dawn Graphics Toolkit</A>
   <LI> <A HREF="http://www.cs.utah.edu/vissim/papers/snowTerrain/">Geospecific
        rendering of alpine terrain</A>
-  <LI> <A HREF="http://www.vsl.ist.ucf.edu/groups/vtb/projectZCAP.html">
-       Z Correlation Analysis Program (ZCAP)</A> - relates to terrain.
   <LI> <A HREF="http://vterrain.org/">Virtual Terrain Project (VTP)</A>
   <LI> <A HREF="http://www.ai.sri.com/digital-earth">SRI's Digital Earth 
        Project</A>
@@ -394,22 +304,12 @@ indirectly contain FlightGear info.
   <LI> <A HREF="http://www.allstar.fiu.edu/aero/flighttheory.htm">ALLSTAR
        Network Theory of Flight - Level 3</A> - Nicely done introduction
        to the theory of flight.  Goes into pretty good detail.
-  <LI> <A HREF="http://www.warplane.org/plane/h.html">
-       http://www.warplane.org/plane/h.html</A> - Navion info and
-       photo.
   <LI> <A HREF="http://aeroweb.brooklyn.cuny.edu/aircraft/l17a.html">
        http://aeroweb.brooklyn.cuny.edu/aircraft/l17a.html</A> - Navion info
-  <LI> <A HREF="http://www.ai.mit.edu/projects/cbcl/heli/">The Helicopter
-       Aviation Home Page</A> - tons of info and diagrams describing how
-       helicopters work.
   <LI> <A HREF="http://members.fortunecity.com/inedesca/">Airplane
        3-View Drawings</A> - lots of 'em (mixed quality).
   <LI> <A HREF="http://www.aerospaceweb.org/aircraft/index.shtml">
        Aerospaceweb.org</A> - Online info for over 150 aircraft.
-  <LI> <A HREF="http://bkweb01.ais.honeywell.com/static/bk_club/pilotguides/pilotguide.html">
-       Manuals for many Bendix/King products</A>
-  <LI> <A HREF="http://www.bendixking.com/static/literature/brochures/brochures.html#noswoosh">
-       Brochures for many Bendix/King products</A>
 </UL>
 
 
@@ -420,7 +320,7 @@ indirectly contain FlightGear info.
 <H3>Philosophy and Tips</H3><BR>
 
 <UL>
-  <LI> <A HREF="http://www.ccil.org/~esr/writings/cathedral-paper.html">
+  <LI> <A HREF="http://www.catb.org/~esr/writings/cathedral-bazaar/">
        The Cathedral and the Bazaar</A> by Eric S. Raymond.  Required
        reading for anyone involved in a cooperative software
        development project.
@@ -433,33 +333,12 @@ indirectly contain FlightGear info.
   <LI> <A HREF="http://www.graphicsgems.org">Graphics Gems</A>
   <LI> <A HREF="http://www.acm.org/tog/resources/RTNews/html/rtn_index.html">
        Ray tracing news</A>
-  <LI> <A HREF="http://www.cs.umu.se/~christer/GR/development.html">
-       Computer Graphics</A> - Huge collection of links.
-  <LI> <A HREF="http://reality.sgi.com/mjk_asd/opengl-links.html">
-       http://reality.sgi.com/mjk_asd/opengl-links.html</A> - A
-       <STRONG>large</STRONG> collection of OpenGL links including
-       overviews, tutorials, utilities, toolkits, OS dependent info,
-       books, benchmarks, hardware, people, courses, gaming,
-       rendering, etc.
-  <LI> <A HREF="http://reality.sgi.com/mjk_asd/opengl-links.html#technique">
-        http://reality.sgi.com/mjk_asd/opengl-links.html#technique</A>	-
-	General OpenGL Graphics Techniques.
-  <LI> <A HREF="http://www.sgi.com/Technology/OpenGL/advanced97/notes/notes.html">
-       Programming with OpenGL: Advanced Rendering</A>
-  <LI> <A HREF="http://reality.sgi.com/mjk_asd/tips/rts/">
-       http://reality.sgi.com/mjk_asd/tips/rts/</A> - Shadows in OpenGL.
   <LI> <A HREF="http://www.mesa3d.org">The Mesa
        3-D graphics library</A> - software only OpenGL implementation
        for many platforms, now with support for hardware acceleration
        begin built in.
   <LI> <A HREF="http://incolor.inetnebr.com/jepler/asm_3dnow.S">Experimental
        3dnow patch for Mesa</A>
-  <LI> <A HREF="http://reality.sgi.com/mjk_asd/glut3/glut3.html">GLUT</A> -
-       The GLUT toolkit.
-  <LI> <A HREF="http://glide.xxedgexx.com/">Linux 3D</A> - Dedicated to 
-       providing useful information on 3D graphics in Linux.
-  <LI> <A HREF="http://www.cs.unc.edu/~hoff/research/index.html">View
-       Frustum Culling</A> - Kenny Hoff.
   <LI> <A HREF="http://www.findmail.com/listsaver/opengl-gamedev-l/">OpenGL
        Game Developer's Mailing list (archives)</A>
   <LI> <A HREF="http://www.cs.unc.edu/~rademach/glui/">GLUI</A> - a 
@@ -470,20 +349,13 @@ indirectly contain FlightGear info.
        (SG), Simple Scene Graph Library (SSG), and Joystick (JS).
        Intended to be very portable to be used with OpenGL and GLUT to
        produce very portable 3D applications.
-  <LI> <A HREF="http://www.pseudonymz.demon.co.uk/">OpenGL Info</A> -- a
-       practical collection of random opengl information and tidbits.  Includes
-       info on platform support and platform issues.
 </UL>
 
 <H3>OpenGL for Win32</H3><BR>
 
 <UL>
-  <LI> <A HREF="ftp://ftp.microsoft.com/Softlib/MSLFILES/Opengl95.exe">
-       MS OpenGL for Win95</A> (Old)
   <LI> <A HREF="http://www.cs.utah.edu/~narobins/glut.html">GLUT for
        win95/nt</A> - OpenGL Utility Toolkit
-  <LI> <A HREF="http://dragon.acadiau.ca/~025668b/develop/opengl/">
-       Using Cygnus Win32 gcc and Sgi OpenGL</A>
 </UL>
 
 <H3>OpenGL for Mac</H3><BR>
@@ -491,8 +363,6 @@ indirectly contain FlightGear info.
 <UL>
   <LI> <A HREF="http://www.conix3d.com/">http://www.conix3d.com/</A> -
        OpenGL for the Macintosh.
-  <LI> <A HREF="http://www.inf.elte.hu/~boga/Mesa.html">Mesa 3D Graphics 
-       Library for MAC OS</A>
 </UL>
 
 
@@ -501,10 +371,6 @@ indirectly contain FlightGear info.
 <UL>
   <LI> <A HREF="http://cyclone.cs.clemson.edu/~rmg/linux.html">
        http://cyclone.cs.clemson.edu/~rmg/linux.html</A>
-  <LI> <A HREF="http://www.3dfx.com/software/download_3dfxgl.html">
-       3Dfxgl OpenGL hardware drivers for Voodoo Graphics or Voodo
-       Rush Accelerators</A>
-  <LI> <A HREF="http://glx.on.openprojects.net">GLX for PC Unix</A>
 </UL>
 
 
@@ -513,16 +379,11 @@ indirectly contain FlightGear info.
 <UL>
   <LI> <A HREF="http://www-users.informatik.rwth-aachen.de/~roberts/meshgeneration.html">
        Mesh Generation & Grid Generation on the Web</A>
-  <LI> <A HREF="http://www.cs.sunysb.edu/~evans/stripe.html">
-       http://www.cs.sunysb.edu/~evans/stripe.html</A> - Convert
-       Polygon models into more efficient "strips".
   <LI> <A HREF="http://tofu.alt.net/~grantham/meshifier/show.html">
        http://tofu.alt.net/~grantham/meshifier/show.html</A> - Convert
        Polygon models into more efficient "strips".
   <LI> <A HREF="http://www.cs.man.ac.uk/aig/staff/alan/software/">
        A Generic Polygon Clipping Library</A>
-  <LI> <A HREF="http://members.xoom.com/msleonov/pbcomp.html">Comparison 
-       of the different algorithms for Polygon boolean operations</A>
   <LI> <A HREF="http://www.cs.cmu.edu/~quake/triangle.html">Triangle</A> -
        A Two-Dimensional Quality Mesh Generator and Delaunay Triangulator.
   <LI> <A HREF="http://gts.sourceforge.net/">GTS</A> - GNU Triangulated
@@ -533,26 +394,19 @@ indirectly contain FlightGear info.
 <H3>Terrain Rendering Techniques</H3><BR>
 
 <UL>
-  <LI> <A HREF="http://www.dgp.toronto.edu/people/JamesStewart/">James
+  <LI> <A HREF="http://www.cs.queensu.ca/home/jstewart/">James
        Stewart</A> - Interesting research into terrain illumination (self
        shading, and shadow casting) and visibility culling in terrains.
-  <LI> <A HREF="http://www.opengl.org/News/Special/oim/Orth.html">Orthogonal
-       Illumination Maps</A> - slick multi-texturing technique for
-       complex terrain feature lighting without needing complex
-       polygon meshes.
 </UL>
 
 
 <H3>Cloud Rendering Techniques</H3><BR>
 
 <UL>
-  <LI> <A HREF="http://www.cs.unc.edu/~harrism/clouds">Real-time Cloud
+  <LI> <A HREF="http://www.markmark.net/clouds/">Real-time Cloud
        Rendering</A> - by Mark Harris.
-  <LI> <A HREF="http://www.cs.unc.edu/~harrism/SkyWorks">SkyWorks Demo</A>
+  <LI> <A HREF="http://www.markmark.net/SkyWorks/">SkyWorks Demo</A>
        - by Mark Harris.
-  <LI> <A HREF="http://freespace.virgin.net/hugo.elias/models/m_clouds.html">
-       Cloud Cover</A> - realtime Perlin Noise algorithm for
-       generating clouds.
 </UL>
 
 
@@ -563,27 +417,9 @@ indirectly contain FlightGear info.
        EGCS Development Toolchain for GNU-Win32 b19</A> - installs over the 
        top of Cygwin32-beta19 and fixes C++ template problems with 
        Cygwin32.
-  <LI> <A HREF="http://www.cygnus.com/misc/gnu-win32/">The GNU-Win32
-       Project Page</A> - The GNU-Win32 tools are ports of the
-       popular GNU development tools to Windows NT/95 for the x86 and
-       PowerPC processors. Applications built with these tools have
-       access to the Microsoft Win32 API as well as the Cygwin32 API
-       which provides additional UNIX-like functionality including
-       UNIX sockets, process control with a working fork and select,
-       etc. 
   <LI> <A HREF="ftp://ftp.dante.de/tex-archive/systems/msdos/dpmigcc/">
        Recompiled EMX GNU C/C++ port for Win32 and DOS</A> - You need
        nt09* as well as rsxnt*. 
-  <LI> <A HREF="http://www.geocities.com/SiliconValley/Heights/9069/index.html">
-       LCC-Win32 Unofficial Home Page</A> - LCC-Win32 is a complete free
-       Win32 (Win95/NT) C programming enviroment.
-  <LI> <A HREF="http://www.delorie.com/djgpp/">DJGPP</A> is a complete
-       32-bit C/C++ development system for Intel 80386 (and higher)
-       PCs running DOS. It includes ports of many GNU development
-       utilities. The development tools require a 80386 or newer
-       computer to run, as do the programs they produce. In most
-       cases, the programs it produces can be sold commercially
-       without license or royalties.  
   <LI> <A HREF="http://www.perl.com/">Perl</A> - A powerful, high level 
        scripting language.
   <LI> <A HREF="http://sources.redhat.com/autobook/">Gnu Autotools book</A>
@@ -593,9 +429,7 @@ indirectly contain FlightGear info.
 <H3>3D Objects (Aircraft, etc.)</H3><BR>
 
 <UL>
-  <LI> <A HREF="http://subscriptionflight.homestead.com/SAHOME.html">How
-       to build a simple, inexpensive digitizer ($3) that is actually
-       quite effective.</A>
+  <LI> [empty]
 </UL>
 
 
@@ -610,43 +444,30 @@ indirectly contain FlightGear info.
        comp.graphics.algorithms Frequently Asked Questions</A>
   <LI> <A HREF="http://riot.ieor.berkeley.edu/riot/Applications/ConvexHull/CHDetails.html">
        Finding the convex hull of a set of points.</A>
-  <LI> <A HREF="http://www.woodsoup.org/projs/ORKiD/index.html">ORKiD</A> -
-       object-oriented library for simulating the kinematics and dynamics 
-       of rigid bodies acting under the influence of external forces and 
-       torques.
 </UL>
 
 
 <H1>Sound</H1><BR>
 
 <UL>
-  <LI> <A HREF="http://www.woodsoup.org/projs/plib">plib</A> - plib
+  <LI> <A HREF="http://plib.sf.net">plib</A> - plib
        has multiplatform sound support.
   <LI> <A HREF="http://sunsite.auc.dk/penguinplay/">
        PenguinPlay</A> - Potential source for a portable sound library.
   <LI> <A HREF="http://flits102-126.flits.rug.nl/~rolf/NetStreamer.html">
        NetStreamer</A> - Stream audio across the net.
-  <LI> <A HREF="http://www.devolution.com/~slouken/projects/SDL/">
-       SDL</A> - Simple DirectMedia Layer.  Multiplatform, free sound
-       library in development.
+  <LI> <A HREF="http://www.libsdl.org/">SDL</A> - Simple DirectMedia
+       Layer.  Multiplatform, free sound library in development.
 </UL>
 
 
 <H3>Other</H3><BR>
 
 <UL>
-  <LI> <A HREF="ftp://ftp.freesoftware.com/pub/infozip/zlib">zlib</A> -
-       On the fly compression and decompression library.  Very slick.
   <LI> <A HREF="http://www.xraylith.wisc.edu/~khan/software/stl/STL.newbie.html">
        Mumit's STL Newbie guide</A>
-  <LI> <A HREF="http://www.infosys.tuwien.ac.at/Research/Component/tutorial/prwmain.html">
-       The Standard Template Library Tutorial</A>
   <LI> <A HREF="http://www.cpsc.ucalgary.ca/~kremer/STL/monitor/index.html">
        Standard Template Library Overview</A>
-  <LI> <A HREF="http://www.cs.rpi.edu/projects/STL/htdocs/stl.html">Standard 
-       Template Library Online Reference Home Page</A>
-  <LI> <A HREF="http://www.win.tue.nl/cs/tt/gino/solid/">Solid</A> - 
-       Software Library for Interference (Collision) Detection.
 </UL>
 
 
@@ -657,45 +478,21 @@ indirectly contain FlightGear info.
 <H3>3d Modeling Tools</H3><BR>
 
 <UL>
-  <LI> <A HREF="http://www.mech.ed.ac.uk/~dom/3d/3d.html">3d Modeling</A>
-       - Nice discussion and collection of 3D modeling links.
-  <LI> <A HREF="http://charter.Linuxberg.com/x11html/gra_3d.html">X11 - 
-       3D Modeling</A> - a list of about 40 modelling tools for 3D.
-  <LI> <A HREF="http://rufus.w3.org/linux/moonlight/">Moonlight
-       Creator</A> - a highly portable environment dedicated to
-       virtual creation.  It is distributed under the terms of the GNU
-       General Public License.  It currently supports 3D creation:
-       modelling, illuminating and rendering 3D objects and scenes.
-  <LI> <A HREF="http://www.EasternGraphics.com/standards/afml/">AFML</A>
-       Yet another 3d modeling language, but free to FreeWare projects.
-  <LI> <A HREF="http://www.easyway.net/~mshannon/fs51.html">
-       http://www.easyway.net/~mshannon/fs51.html</A> - This site is
-       devoted to generating MSFS scenery from online world data.
   <LI> <A HREF="http://www.multigen.com">http://www.multigen.com</A>
        - Comercial.
   <LI> <A HREF="http://radsite.lbl.gov/mgf/HOME.html">
        http://radsite.lbl.gov/mgf/HOME.html</A>
-  <LI> <A HREF="http://users.deltanet.com/~powerg/Apprentice/">
-       http://users.deltanet.com/~powerg/Apprentice/</A>  
-  <LI> <A HREF="http://www.cs.uni-bonn.de/~schaefer/mrt.html">
-       http://www.cs.uni-bonn.de/~schaefer/mrt.html</A>
-  <LI> <A HREF="http://www.bearcave.com/dxf/dxfintro.html">
-       http://www.bearcave.com/dxf/dxfintro.htm</A> - DXF to GL,
-       dynamic mem management. 
   <LI> <A HREF="http://www.3dnature.com/">
        http://www.3dnature.com/</A> - comercial.
   <LI> <A HREF="http://www.ac3d.org">http://www.ac3d.org</A>
        - A nice shareware 3d modeler.
-  <LI> <A HREF="http://www.stmuc.com/thbaier/">3DWin</A> a 
-       tool to convert between quite a few of the major 3d formats.
 </UL>
 
 
 <H1>Other Useful Sites</H1><BR>
 
 <UL>
-  <LI> <A HREF="http://graphics.stanford.edu/~lizhang/collision.html">
-       Collision Detection Pages</A>
+  <LI> [empty]
 </UL>
 
 
@@ -703,6 +500,22 @@ indirectly contain FlightGear info.
       </td>
       <td id="googleads" valign="top">
        <!-- insert google add here if we decide to do that sort of thing -->
+<script type="text/javascript"><!--
+google_ad_client = "pub-2485404446552133";
+google_ad_width = 120;
+google_ad_height = 120;
+google_ad_format = "120x90_0ads_al_s";
+google_ad_channel ="";
+google_color_border = "2D5893";
+google_color_bg = "99AACC";
+google_color_link = "000000";
+google_color_url = "000099";
+google_color_text = "003366";
+//--></script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<BR>
 <script type="text/javascript"><!--
 google_ad_client = "pub-2485404446552133";
 google_ad_width = 120;
@@ -724,13 +537,12 @@ google_color_text = "003366";
   </table>
   <br>
   <div id="bottom">
-    <a href="/">Home</a> | 
-    <a href="/Downloads/">Downloads</a> |
-    <a href="/Gallery/index.shtml">Screenshots</a> |
-    <a href="/docs.html">Documentation</a>
+    <!-- Bottom menu -->
+    <script>BottomMenu();</script>
+
     <br>
     <br>
-    Last modified:  11/01/2004 <BR>
+    Last modified:  5/23/2005 <BR>
     <A HREF="http://www.flightgear.org/~curt/">Curtis L. Olson</A>
     <IMG ALIGN="MIDDLE" SRC="/email-fg.png">
   </div>

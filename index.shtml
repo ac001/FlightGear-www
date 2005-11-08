@@ -1,0 +1,152 @@
+
+<!-- Standard Header Begin -->
+
+<html>
+
+<head>
+  <title>FlightGear Flight Simulator</title>
+  <link rel="stylesheet" type="text/css" href="/default.css"> 
+  <meta http-equiv="Content-Script-Type" Content="text/javascript">
+  <script src="/templates.js"></script>
+</head>
+
+<body>
+  <!-- Display the main logo -->
+  <script>MainLogo();</script>
+
+  <table id="global">
+    <tbody><tr>
+      <td id="menu">
+        <!-- SiteSearch Google -->
+        <script>SiteSearchGoogle();</script>
+
+        <!-- Display the main menu -->
+        <script>MainMenu();</script>
+      </td>
+      <td id="page">
+
+<!-- Standard Header End -->
+
+ <H1>FlightGear is an open-source, multi-platform flight
+ simulator.</H1>
+
+ <DIV ALIGN="CENTER">
+   View the FlightGear web site in:
+   [<A HREF="http://www.flightgear.org/">English</A>]
+   [<A HREF="http://www.fr.flightgear.org/">French</A>]
+   [<A HREF="http://www.jp.flightgear.org/">Japanese</A>]
+ </DIV>
+ <P>
+
+ <DIV ID="topscreens" ALIGN="center">
+  <A HREF="images/crop-variety.jpg"><IMG CLASS="mainscreen" WIDTH="100" HEIGHT="75" SRC="images/thumbnails/crop-variety-thumb.jpg" ALT="A4 3D cockpit"></A>
+  <A HREF="images/SeaHawk.jpg"><IMG CLASS="mainscreen" WIDTH="100" HEIGHT="75" SRC="images/thumbnails/SeaHawk-thumb.jpg" ALT="SeaHawk over KSFO"></A>
+  <A HREF="images/flyer.jpg"><IMG CLASS="mainscreen" WIDTH="100" HEIGHT="75" SRC="images/thumbnails/flyer-thumb.jpg" ALT="1903 Wright Flyer"></A>
+  <A HREF="images/an225-departing-KSFO.jpg"><IMG CLASS="mainscreen" WIDTH="100" HEIGHT="75" SRC="images/thumbnails/an225-departing-KSFO-thumb.jpg" ALT="AN225 departing KSFO"></A> 
+  <A HREF="images/cockpit.jpg"><IMG CLASS="mainscreen" WIDTH="100" HEIGHT="75" SRC="images/thumbnails/cockpit-thumb.jpg" ALT="C-172 3D cockpit"></A>
+  <A HREF="images/approach-lighting.jpg"><IMG WIDTH="100" CLASS="mainscreen" HEIGHT="75" SRC="images/thumbnails/approach-lighting-thumb.jpg" ALT="Approach Lighting"></A>
+ </DIV>
+
+ <TABLE>
+  <TR>
+   <TD VALIGN="TOP">
+    <DIV ID="page">
+     <H3>Announcements</H3>
+     <UL>
+      <LI> <A HREF="announce.html#obam"><B>Sep 19</B> - OV-10 Bronco
+           Association Museum Simulator Project.</A>
+      <LI> <A HREF="announce.html#taxidraw-0.3.2"><B>Aug 16</B> -
+           TaxiDraw-0.3.2 released.</A>
+      <LI> <B>Aug 16</B> - FlightGear 0.9.8 receives
+           <A HREF="http://mac.softpedia.com/progClean/FlightGear-Clean-8944.html">
+           SOFTPEDIA's "100% FREE" award</A> and also recieves
+           <A HREF="http://mac.softpedia.com/get/Games/FlightGear.shtml">
+           5 out of 5 stars and the SoftPedia Pick Award.</A>
+      <LI> <A HREF="announce.html#atlas-0.3.0"><B>Aug 10</B> -
+           Atlas-0.3.0 released.</A>
+      <LI> <A HREF="announce.html#aerospace2"><B>July 11</B> -
+           Mathworks releases their Aerospace Blockset 2 with native
+           built in FlightGear interface.</A>
+      <LI> <A HREF="announce.html#aircraft"><B>Jan 25</B> -
+           New Boeing 314, Concorde v2.0, B-52F Update.</A>
+      <LI> <A HREF="announce.html#v0.9.8"><B>Jan 18</B> -
+           FlightGear v0.9.8 released.</A>
+      <LI> <A HREF="announce.html#plib-1.8.4"><B>Jan 15</B> -
+           Plib-v1.8.4 is released.</A>
+      <LI> <A HREF="announce.html#kim"><B>Dec 19, 2004</B> -
+           Kim Komando Cool Site of the Day.</A>
+      <LI> <B><A HREF="http://www.flightgear.org/oldnews.html">
+           More news ...</A></B>
+    </UL>
+   </TD>
+
+   <TD VALIGN="TOP">
+    <DIV ID="page">
+     <H3>Quick Links</H3>
+     <UL>
+      <LI> Download FlightGear for Windows Now:
+<!--#exec cmd="/usr/local/bin/rand-mirrors.pl Win32/fgsetup-0.9.8a.exe"-->
+      <LI> <A HREF="http://www.flightgear.org/Downloads/aircraft/">
+           Download Aircraft.</A><BR>
+      <LI> <A HREF="http://www.flightgear.org/Downloads/scenery.html">
+           Download World Scenery.</A><BR>
+      <LI> <A HREF="http://www.flightgear.org/Downloads/source.shtml">
+           Download Source Code.</A><BR>
+      <LI> <A HREF="http://cdrom.flightgear.org">Purchase a FlightGear CDROM
+           or DVD set.</A><BR>
+     </UL>
+
+     <H3>Upcoming Events</H3>
+     <UL>
+      <LI> [nothing currently scheduled]
+      <!--
+      <LI> <A HREF="events.html#avsim05"><B>Sept 16-18</B> - AVSIM's
+           2005 Conference and Exhibition, San Diego, CA.</A>
+      -->
+     </UL>
+
+    </DIV>
+   </TD>
+  </TR>
+ </TABLE>
+
+ <H3><IMG ALIGN="MIDDLE" SRC="http://baron.flightgear.org/cgi-bin/wwwcount.cgi?df=curt_flightgear.dat&amp;dd=fatpt&amp;ft=3" ALT="counter"></H3>
+
+<!-- Standard Footer Begin -->
+      </td>
+      <td id="googleads" valign="top">
+       <!-- insert google add here if we decide to do that sort of thing -->
+<script type="text/javascript"><!--
+google_ad_client = "pub-2485404446552133";
+google_ad_width = 120;
+google_ad_height = 120;
+google_ad_format = "120x90_0ads_al_s";
+google_ad_channel ="";
+google_color_border = "2D5893";
+google_color_bg = "99AACC";
+google_color_link = "000000";
+google_color_url = "000099";
+google_color_text = "003366";
+//--></script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+      </td>
+     </tr>
+    </tbody>
+  </table>
+  <br>
+  <div id="bottom">
+    <!-- Bottom menu -->
+    <script>BottomMenu();</script>
+
+    <br>
+    <br>
+    Last modified:  11/01/2005 <BR>
+    <A HREF="http://www.flightgear.org/~curt/">Curtis L. Olson</A>
+    <IMG ALIGN="MIDDLE" SRC="/email-fg.png">
+  </div>
+</body>
+
+</html>
+<!-- Standard Footer End -->

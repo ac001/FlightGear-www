@@ -1,96 +1,123 @@
 
 <!-- Standard Header Begin -->
+
 <html>
 
 <head>
   <title>FlightGear Flight Simulator</title>
-  <link rel="stylesheet" type="text/css" href="http://www.flightgear.org/default.css"> 
+  <link rel="stylesheet" type="text/css" href="/default.css"> 
+  <meta http-equiv="Content-Script-Type" Content="text/javascript">
+  <script src="/templates.js"></script>
 </head>
 
 <body>
-  <div id="top">
-    <a href="http://www.flightgear.org/"><img id="titlebar" src="http://www.flightgear.org/images/fglogosm.jpg" alt=""></a>
-  </div>
+  <!-- Display the main logo -->
+  <script>MainLogo();</script>
 
   <table id="global">
     <tbody><tr>
       <td id="menu">
-	<!-- Use a replacescript to update the menu -->
+        <!-- SiteSearch Google -->
+        <script>SiteSearchGoogle();</script>
 
-<!-- SiteSearch Google -->
-<form method="get" action="http://www.google.com/custom" target="_top">
-<table border="0" bgcolor="#ffffff" id="page">
-<tr><td nowrap="nowrap" valign="top" align="left" height="32">
-<a href="http://www.google.com/">
-<img src="http://www.google.com/logos/Logo_25wht.gif"
-border="0" alt="Google"></img></a>
-<br/>
-<input type="hidden" name="domains" value="flightgear.org"></input>
-<input type="text" name="q" size="20" maxlength="255" value=""></input>
-</td></tr>
-<tr>
-<td nowrap="nowrap">
-<table>
-<tr>
-<td>
-<input type="radio" name="sitesearch" value=""></input>
-<font size="-1" color="#000000">Web</font>
-</td>
-<td>
-<input type="radio" name="sitesearch" value="flightgear.org" checked="checked"></input>
-<font size="-1" color="#000000">flightgear.org</font>
-</td>
-</tr>
-</table>
-<input type="submit" name="sa" value="Search"></input>
-<input type="hidden" name="client" value="pub-2485404446552133"></input>
-<input type="hidden" name="forid" value="1"></input>
-<input type="hidden" name="ie" value="ISO-8859-1"></input>
-<input type="hidden" name="oe" value="ISO-8859-1"></input>
-<input type="hidden" name="safe" value="active"></input>
-<input type="hidden" name="cof" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;FORID:1;"></input>
-<input type="hidden" name="hl" value="en"></input>
-
-</td></tr></table>
-</form>
-<!-- SiteSearch Google -->
-	<h3>Main</h3>
-	<a href="/index.html">Home</a><br>
-	<a href="/introduction.html">Introduction</a><br>
-	<a href="/features.html">Features</a><br>
-        <a href="/Gallery/">Screenshots</a><br>
-	<a href="/Downloads/">Downloads</a><br>
-	<a href="http://cdrom.flightgear.org">Purchase FG CD's</a><br>
-	<h3>Support</h3>
-	<a href="/version.html">Version Change Log</a><br>
-	<a href="/hardwarereq.html">Hardware Requirements</a><br>
-	<a href="/docs.html">Documentation</a><br>
-	<a href="/places.html">Places to Fly</a><br>
-	<a href="/mail.html">Lists, Forums, and IRC</a><br>
-	<a href="/Docs/FAQ.shtml">FAQ</a><br>
-	<h3>Links</h3>
-	<a href="/links.html">Related Websites</a><br>
-	<a href="/Projects/">Related Projects</a><br>
-	<h3>Contribute</h3>
-	<a href="/contributing.html">Contributing</a><br>
-	<a href="/cvs.html">CVS Resources</a><br>
-	<a href="/goals.html">Goals</a><br>
-	<a href="/thanks.shtml">Contributors</a><br>
-	<a href="/design.html">Design Proposals</a><br>
-	<a href="/events.html">Events</a><br>
+        <!-- Display the main menu -->
+        <script>MainMenu();</script>
       </td>
       <td id="page">
+
 <!-- Standard Header End -->
 
  <H1>FlightGear Announcements</H1>
 
+ <B><A NAME="obam"></A>September 19, 2005 - OV-10 Bronco Association
+     Museum Simulator Project.</B><BR>
+     Dave Culp, a former USAF Bronco pilot, constructed a
+     FlightGear-based OV-10 Bronco flight simulator for the OV-10
+     Bronco Association at Meacham Field, Fort Worth Texas.
+     <A HREF="Projects/obam">More details ...</A>
+     <P>
+
+ <B><A NAME="taxidraw-0.3.2"></A>August 16, 2005 - TaxiDraw-0.3.2
+    released.</B><BR>
+    The next version of TaxiDraw is available at
+    <A HREF="http://taxidraw.sf.net/">http://taxidraw.sf.net/</A><BR>
+    This is new version has been moved to SourceForge.  It supports
+    X-Plane v810 file formats, includes a few bug fixes, build system
+    improvements, and new features.
+    <P>
+
+ <B><A NAME="atlas-0.3.0"></A>August 10, 2005 - Atlas-0.3.0 released.</B><BR>
+    <A HREF="http://atlas.sf.net">Atlas</A> is a real time moving map
+    (and background bitmap generator)
+    designed to work with FlightGear.  The latest version can display
+    ILS approaches and has several other improvements and bug fixes.
+    <P>
+
+ <B><A NAME="aerospace2"></A>July 11, 2005 - The MathWorks Announces
+    Aerospace Blockset 2.</B><P>
+
+    <EM>New FlightGear Flight Simulator Interface Brings Vehicle
+    Modeling, Simulation, and Visualization Capabilities to the
+    Desktop.</EM>
+    <P>
+
+    NATICK, Mass. - (BUSINESS WIRE) - July 11, 2005
+    <A HREF="http://www.mathworks.com">The MathWorks</A>
+    today announced the availability of the
+    <A HREF="http://www.mathworks.com/products/aeroblks/">Aerospace
+    Blockset 2</A>,
+    which builds on the foundation of Simulink(R) and Model-Based
+    Design for aerospace vehicle modeling, simulation, and
+    visualization. New features bring high-quality flight simulation
+    graphics to the desktop, where modeling and simulation is more
+    accessible and economical than design and test conducted in a
+    lab. Additionally, the new version provides off-the-shelf,
+    drag-and-drop representations of aerospace components using
+    standards-based reference models. Consequently, engineers can use
+    the Aerospace Blockset 2 to optimize vehicle subsystem
+    configurations and rapidly perform subsequent tradeoff studies
+    earlier in the design stage.
+    <P>
+
+    Interfacing with FlightGear flight simulator software, new
+    animation blocks in the Aerospace Blockset 2 enable users to
+    visualize vehicle dynamics in a sophisticated 3-D simulation
+    framework. Engineers can now quickly evaluate and verify complex
+    flight dynamics before committing to a final design by using
+    Simulink for multidomain simulation and Model-Based Design.
+    <P>
+
+    Contact: <A HREF="http://www.mathworks.com">The MathWorks,
+    Inc.</A> Dave Smith, 508-647-7427.
+    <P>
+
+    <A HREF="http://www10.mcadcafe.com/nbc/articles/view_article.php?section=CorpNews&articleid=192193">Click
+    here for the full text of the announcement.</A>
+    <P>
+
+ <B><A NAME="taxidraw"></A>March 24, 2005 - TaxiDraw-0.3.1 released.</B><BR>
+    The next version of TaxiDraw is available at
+    <A HREF="http://www.nottingham.ac.uk/~eazdluf/taxidraw.html">
+    http://www.nottingham.ac.uk/~eazdluf/taxidraw.html</A><BR>
+    This is primarily a bug-fix release - a couple of X-Plane format
+    writing bugs are fixed so all users should upgrade.
+    <P>
+
+ <B><A NAME="aircraft"></A>January 25, 2005 - New Aircraft.</B><BR>
+    We have just added a new
+    Boeing 314 Seaplane, the Concorde has been updated to v2.0, and
+    several updates have been made to the B-52F Stratofortress.  These
+    can all be downloaded from the aircraft download page.  (Note some
+    mirror sites may lag ...)
+    <P>
+
  <B><A NAME="v0.9.8"></A>January 18, 2005 - FlightGear v0.9.8
     released.</B><BR>
-    Version 0.9.8 (source code) is available for download.<BR>
-    <A HREF="/Downloads/source.html">Download source code.</A>
-    (requires SimGear-0.3.8)<BR>
-    <!-- <A HREF="/Downloads/binary.html">Download a ready to run version
-    for your platform</A> (as they become available.) -->
+    Version 0.9.8 is available for download.<BR>
+    <A HREF="/Downloads/">Download a ready to run version for your
+    platform</A> (as they become available.)<BR>  You can also
+    download additional aircraft, scenery, and the entire source code.
+    (requires SimGear-0.3.8)
     <P>
 
  <B><A NAME="simgear"></A>January 18, 2005 - SimGear v0.3.8
@@ -100,7 +127,7 @@ border="0" alt="Google"></img></a>
     <P>
 
  <B><A NAME="plib-1.8.4"></A>January 15, 2005 - Plib v1.8.4 is released.</B><BR>
-    FlightGear makes heave use of plib and you will need this new stable
+    FlightGear makes heavy use of plib and you will need this new stable
     version to build the upcoming release of FlightGear.  Here is the
     <A HREF="http://plib.sf.net">Plib home page</A>.
     <P>
@@ -138,42 +165,28 @@ border="0" alt="Google"></img></a>
     <A HREF="http://www.jp.flightgear.org/">http://www.jp.flightgear.org/</A>
     <P>
 
- <B><A NAME="irc"></A>October 15, 2004 - FlightGear IRC Channel.</B><BR>
-    Here is a reminder that we have an IRC channel available for live
-    discussions:<BR>
-    <B>Host =</B> irc.flightgear.org, <B>channel =</B> #flightgear
-    <P>
-
- <B><A NAME="v0.9.6win32"></A>October 14, 2004 - v0.9.6 for Windows
-    released.</B><BR>
-    The <A HREF="/Downloads/binary.html">Win32 build of v0.9.6</A> is
-    now available for free download.<BR>
-    The <A HREF="http://cdrom.flightgear.org">Win32 v0.9.6 CDROM
-    distribution</A> is available for purchase <EM>(for those that want
-    to save a large download or help support the FlightGear project.)</EM>
-    <P>
-
- <B><A NAME="v0.9.6"></A>October 12, 2004 - FlightGear v0.9.6 released</B><BR>
-    Version 0.9.6 (in source code form) is available for download.<BR>
-    <A HREF="/Downloads/source.html">Download source code.</A>
-    (requires SimGear-0.3.7)<BR>
-    <A HREF="/Downloads/binary.html">Download a ready to run version
-    for your platform</A> (as they become available.)
-    <P>
-
- <B><A NAME="centennial"></A>December 17, 2003 - Celebrate the Centennial
-    of Flight with FlightGear.</B><BR>
-    Here is a page with movies of the <A
-    HREF="http://www.flightgear.org/~curt/WrightSim/">FlightGear 1903
-    Wright Flyer</A> in action.
-    <P>
-
  <B><A HREF="http://www.flightgear.org/oldnews.html">More news ...</A></B>
 
 <!-- Standard Footer Begin -->
       </td>
       <td id="googleads" valign="top">
        <!-- insert google add here if we decide to do that sort of thing -->
+<script type="text/javascript"><!--
+google_ad_client = "pub-2485404446552133";
+google_ad_width = 120;
+google_ad_height = 120;
+google_ad_format = "120x90_0ads_al_s";
+google_ad_channel ="";
+google_color_border = "2D5893";
+google_color_bg = "99AACC";
+google_color_link = "000000";
+google_color_url = "000099";
+google_color_text = "003366";
+//--></script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<BR>
 <script type="text/javascript"><!--
 google_ad_client = "pub-2485404446552133";
 google_ad_width = 120;
@@ -195,13 +208,12 @@ google_color_text = "003366";
   </table>
   <br>
   <div id="bottom">
-    <a href="/">Home</a> | 
-    <a href="/Downloads/">Downloads</a> |
-    <a href="/Gallery/index.shtml">Screenshots</a> |
-    <a href="/docs.html">Documentation</a>
+    <!-- Bottom menu -->
+    <script>BottomMenu();</script>
+
     <br>
     <br>
-    Last modified:  1/18/2005 <BR>
+    Last modified:  9/19/2005 <BR>
     <A HREF="http://www.flightgear.org/~curt/">Curtis L. Olson</A>
     <IMG ALIGN="MIDDLE" SRC="/email-fg.png">
   </div>
