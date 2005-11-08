@@ -53,6 +53,8 @@
     <DIV ID="page">
      <H3>Announcements</H3>
      <UL>
+      <LI> <A HREF="announce.html#v0.9.9-pre1"><B>Nov 8</B> -
+           FlightGear v0.9.9-pre0 released.</A>
       <LI> <A HREF="announce.html#obam"><B>Sep 19</B> - OV-10 Bronco
            Association Museum Simulator Project.</A>
       <LI> <A HREF="announce.html#taxidraw-0.3.2"><B>Aug 16</B> -
@@ -69,8 +71,6 @@
            built in FlightGear interface.</A>
       <LI> <A HREF="announce.html#aircraft"><B>Jan 25</B> -
            New Boeing 314, Concorde v2.0, B-52F Update.</A>
-      <LI> <A HREF="announce.html#v0.9.8"><B>Jan 18</B> -
-           FlightGear v0.9.8 released.</A>
       <LI> <A HREF="announce.html#plib-1.8.4"><B>Jan 15</B> -
            Plib-v1.8.4 is released.</A>
       <LI> <A HREF="announce.html#kim"><B>Dec 19, 2004</B> -

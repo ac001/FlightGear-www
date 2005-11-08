@@ -30,6 +30,91 @@
 <H1>FlightGear Flight Simulator Version Summary</H1>
 
 
+<H3>November 8, 2005: Version 0.9.9-pre1 released</H3>
+  <UL>
+    <LI> New well integrated volumetric clouds by Harald Johnsen
+    <LI> Removed 'old' 3D clouds code.
+    <LI> Fixed the jitter problem with 3d cockpits.
+    <LI> Volumetric shadows are now supported so that aircraft can cast
+  shadows upon themselves as well as the ground.
+    <LI> Better support for redoing livery textures on an individual aircraft.
+    <LI> Support for seasonal terrain textures.  (Updates to summer textures
+  plus new winter textures added.)
+    <LI> Carrier - added working arrester wires and catapults. The carrier is
+  selectable as a starting position. AI has been added to the
+  carrier in the form of an operating box and an automated turn
+  into/out of wind. TACAN beacon added.
+    <LI> Enhanced weather modeling (lightning and rain.)
+    <LI> Support for high G redout/blackout effects.
+    <LI> Add status updates to the initial splash/startup screen.
+    <LI> Allow switching the tower view location at any time.
+    <LI> Add support for configuring views with asymmetric view frustums.
+    <LI> Many updates to gui/dialog box infrastructure.  Ability to alter
+  border thickness, change fonts, dialog boxes are draggable across
+  the screen, you can enable automatic line wrapping, select
+  colors, and allow key presses to be bound to widgets.
+    <LI> Support for xml configurable gui themes.
+    <LI> Help dialog boxes supported for each aircraft listing special keys,
+  global keys, procedures and performance data.
+    <LI> Updates and enhancements to many of the dialog boxes to fix problems,
+  expose new features, enhance usability, etc.
+    <LI> Added a generic, XML configurable, autopilot framework, and several
+  high level, configurable filter implementations for use by autopilot
+  designers.
+    <LI> Added a transponder and Altitude encoder.
+    <LI> Made the instruments code much more configurable, it is now possible to
+  only include instruments that are actually present.
+    <LI> Implemented the groundcache code which made it possible for aircraft
+  to follow the ground precisely and, as a result, made it possible to
+  land on aircraft carriers.
+
+    <LI> Updated JSBSim version since the last release.  (More updates
+  pending after this release.)
+    <LI> YASim: expose "spool-time" of a jet engine as a config parameter,
+  add an oil temp model, support gear compression along any arbitrary axis,
+  reworked MP calculations for super/turbochargers.
+    <LI> Allow setting individual sample/update rates for any of the PID
+  autopilot stages.
+
+    <LI> Support TACAN instruments.  And an IVSI instrument.
+    <LI> Support for new animations and effects such as heat-haze and chrome.
+    <LI> Dynamic taxiway following at airports equipped with a logical ground
+  network.
+    <LI> Ability to define "AI" scenarios with scripted moving objects that
+  interact intelligently with the environment and the simulator state.
+    <LI> Depricated old (somewhat less the spectacularly conceived)
+  electrical system model in favor of a much more flexible script based
+  system that can be tailored to any individual aircraft.
+    <LI> Include an external utility that can feed saved nmea tracks back
+  into FlightGear.  If you take a gps on a real flight with you and
+  capture the output, you can replay your flight in FlightGear.
+
+    <LI> Many updates and fixes to the joystick configuration files, many new
+  joysticks directly supported.
+
+    <LI> Removed all lingering dependencies on plib's SL sound library.
+    <LI> Add support for OpenAL 1.1 and alut.  OpenAL is a 3d sound system supporting
+  directional sound and doppler effects.
+
+
+    <LI> Better cross platform compatibility with our standard network structures.
+    <LI> More cpu friendly frame rate throttling code that can leave more cpu
+  available for other apps.
+    <LI> Various Nasal (scripting) bug fixes and language improvements.
+    <LI> Various bug fixes, various platform/compiler compatibility fixes,
+  several memory leaks fixed.
+
+    <LI> New aircraft available (in various stages of developement): A380,
+  Boeing 314 (seaplane), Citation Bravo (glass cockpit), F-8E
+  Crusader, Hurricane IIb, MiG-15bis, TU-114, B29, C150, and SR20.
+
+    <LI> Aircraft that have had updates since the last release: 737, A-10,
+  AN-225, B-52F, BAC-TSR2, Citation-II (550), Comper Swift, Concorde,
+  Hunter, OV10, Spitfire, T37, B1900d, bo105, C172 et. al., DHC2F
+  (Beaver), F16, Fokker DR1 Triplane, Fokker 50 (turboprop), Fokker
+  100 (jet), J3 Cub, P51, Santa, Seahawk, and 1903 Wright Flyer.
+  </UL>
+
 <H3>January 18, 2005: Version 0.9.8 released</H3>
   <UL>
     <LI> Added an encoder and transponder to the available avionics modules.
@@ -634,7 +719,7 @@
       things are animated and working.
       <LI> Virtual 3d Cessna 310 cockpit.
       <LI> Instrument panel background can now be a set of tiled
-      textures so we can achieve *much* higher resolution.
+      textures so we can achieve <B>much</B> higher resolution.
 
       <LI> Major property manager overhaul.
       <LI> Major view code overhaul.  All views are now configurable
