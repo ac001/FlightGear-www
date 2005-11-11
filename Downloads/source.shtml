@@ -41,18 +41,18 @@
 </UL>
 </FONT>
 
-<H3>Source Code Release: Version 0.9.9-pre2 (Updated November 9, 2005)</H3>
+<H3>Source Code Release: Version 0.9.9-pre3 (Updated November 10, 2005)</H3>
 
 <UL>
   <LI> Download the latest source code release:
-<!--#exec cmd="/usr/local/bin/rand-mirrors.pl Source/FlightGear-0.9.9-pre2.tar.gz"-->
+<!--#exec cmd="/usr/local/bin/rand-mirrors.pl Source/FlightGear-0.9.9-pre3.tar.gz"-->
   <LI> Download the latest base package release (86Mb).  (Includes Textures,
        models, data, aircraft, sample scenery, and config files.)
-<!--#exec cmd="/usr/local/bin/rand-mirrors.pl Shared/fgfs-base-0.9.9-pre2.tar.bz2"-->
+<!--#exec cmd="/usr/local/bin/rand-mirrors.pl Shared/fgfs-base-0.9.9-pre3.tar.bz2"-->
        <BR>
        Or download a patch to upgrade the base package from version
-       0.9.8 to 0.9.9-pre2. (17Mb):
-<!--#exec cmd="/usr/local/bin/rand-mirrors.pl Shared/fgfs-base-0.9.8-to-0.9.9-pre2.tar.bz2"-->
+       0.9.8 to 0.9.9-pre3. (17Mb):
+<!--#exec cmd="/usr/local/bin/rand-mirrors.pl Shared/fgfs-base-0.9.8-to-0.9.9-pre3.tar.bz2"-->
   <LI> Prerequisite: <A HREF="http://freeglut.sf.net">Glut (FreeGlut)</A> -
        OpenGL Utility Toolkit (GLUT) library.
   <LI> Prerequisite: <A HREF="http://www.openal.org">OpenAL</A> -
