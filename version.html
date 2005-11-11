@@ -30,7 +30,7 @@
 <H1>FlightGear Flight Simulator Version Summary</H1>
 
 
-<H3>November 8, 2005: Version 0.9.9-pre1 released</H3>
+<H3>November 9, 2005: Version 0.9.9-pre2 released</H3>
   <UL>
     <LI> New well integrated volumetric clouds by Harald Johnsen
     <LI> Removed 'old' 3D clouds code.
@@ -41,9 +41,11 @@
     <LI> Support for seasonal terrain textures.  (Updates to summer textures
   plus new winter textures added.)
     <LI> Carrier - added working arrester wires and catapults. The carrier is
-  selectable as a starting position. AI has been added to the
+  selectable as a starting position. AI has been added to the 
   carrier in the form of an operating box and an automated turn
   into/out of wind. TACAN beacon added.
+    <LI> Extensive revisions to the Multiplayer code. Multiplayer servers are
+  now available.  A Google-based map server is also available
     <LI> Enhanced weather modeling (lightning and rain.)
     <LI> Support for high G redout/blackout effects.
     <LI> Add status updates to the initial splash/startup screen.
@@ -53,6 +55,7 @@
   border thickness, change fonts, dialog boxes are draggable across
   the screen, you can enable automatic line wrapping, select
   colors, and allow key presses to be bound to widgets.
+    <LI> Replaced many hardcoded dialog boxes with xml configurable dialog boxes.
     <LI> Support for xml configurable gui themes.
     <LI> Help dialog boxes supported for each aircraft listing special keys,
   global keys, procedures and performance data.
@@ -66,7 +69,7 @@
   only include instruments that are actually present.
     <LI> Implemented the groundcache code which made it possible for aircraft
   to follow the ground precisely and, as a result, made it possible to
-  land on aircraft carriers.
+  land on aircraft carriers. 
 
     <LI> Updated JSBSim version since the last release.  (More updates
   pending after this release.)
@@ -88,15 +91,16 @@
     <LI> Include an external utility that can feed saved nmea tracks back
   into FlightGear.  If you take a gps on a real flight with you and
   capture the output, you can replay your flight in FlightGear.
-
+    <LI> Added a function that can intersect any arbitrary vector with the
+  loaded scenery and return the hit point.
     <LI> Many updates and fixes to the joystick configuration files, many new
   joysticks directly supported.
 
     <LI> Removed all lingering dependencies on plib's SL sound library.
     <LI> Add support for OpenAL 1.1 and alut.  OpenAL is a 3d sound system supporting
   directional sound and doppler effects.
-
-
+  
+  
     <LI> Better cross platform compatibility with our standard network structures.
     <LI> More cpu friendly frame rate throttling code that can leave more cpu
   available for other apps.
@@ -765,7 +769,7 @@
       assumptions.  
       <LI> Fixed a bug (another int overflow) which could trick the
       event manager into thinking the next time to run the events is
-      *way* in the future.
+      <B>way</B> in the future.
       <LI> Various performance optimizations.
       <LI> More work on saving/restoring flights
       <LI> Of all the ILS stations of the specified frequency, pick
