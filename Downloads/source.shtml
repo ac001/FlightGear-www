@@ -60,10 +60,10 @@
        versioned releases so you generally have to grab the latest CVS.
   <LI> Prerequisite: <A HREF="http://plib.sourceforge.net">plib</A> -
        portability libraries and scene graph.  You need plib-1.8.4 or
-       newer to build FlightGear 0.9.9-pre2.
+       newer to build FlightGear 0.9.9-pre3.
   <LI> Prerequisite: <A HREF="http://www.simgear.org">SimGear</A> - simulation
-       construction tools.  You need SimGear-0.3.9-pre2 to build
-       FlightGear-0.9.9-pre2. 
+       construction tools.  You need SimGear-0.3.9-pre3 to build
+       FlightGear-0.9.9-pre3. 
   <LI> Documentation is included with the base package.
 </UL>
 
@@ -159,7 +159,7 @@ google_color_text = "003366";
 
     <br>
     <br>
-    Last modified:  11/09/2005 <BR>
+    Last modified:  11/11/2005 <BR>
     <A HREF="http://www.flightgear.org/~curt/">Curtis L. Olson</A>
     <IMG ALIGN="MIDDLE" SRC="/email-fg.png">
   </div>

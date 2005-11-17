@@ -198,6 +198,20 @@ If you have made changes that do conflict with new changes to the master
 repository, cvs will let you know, and you can go edit the file with 
 conflicts and resolve them.
 
+<H3>Tip to save time and bandwidth</H3>
+If you have limited bandwith or just want to save time, you can add a file 
+called .cvsrc into you home directory. (usually <I>/home/your-username/</I>).
+Copy the following lines into <I>/home/your-username/.cvsrc</I>.
+<P>
+
+<PRE>
+cvs -z3 -q
+diff -up
+update -dP
+checkout -P
+rdiff -u
+</PRE>
+
 <P>
 
 <!-- Standard Footer Begin -->
@@ -246,7 +260,7 @@ google_color_text = "003366";
 
     <br>
     <br>
-    Last modified:  8/12/2003 <BR>
+    Last modified:  11/15/2005 <BR>
     <A HREF="http://www.flightgear.org/~curt/">Curtis L. Olson</A>
     <IMG ALIGN="MIDDLE" SRC="/email-fg.png">
   </div>
