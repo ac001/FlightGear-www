@@ -1,0 +1,41 @@
+<HTML>
+
+<HEAD>
+<TITLE>Phil Cobbin's Synthetic Vision and RV-7A aircraft project</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+</HEAD>
+
+<BODY>
+
+las-vegas-airspace_s25.jpg
+
+<H3>Open Source Synthetic Vision Project</H3>
+
+<a href="http://www.cobbin.com">http://www.cobbin.com</a>
+<P>
+
+Phil Cobbin is developing an open source synthetic vision system
+largely based on FlightGear.  In his spare time he is also
+constructing a Van's RV-7A aircraft which is the intended recipient of
+the synthetic vision system.
+
+2005-08-22-rv7-02_s25.jpg
+
+This project combines use of a Crossbow uNAV sensor as the AHRS with
+FlightGear to create a real time synthetic vision systemm for full
+scale aircraft.
+<P>
+
+By tweaking some FlightGear source codes and addition of other
+software tools Phil was able to add a 3d rendering of translucent
+airspace boundaries to FlightGear (such as the Las Vegas Nevada area
+depicted here).
+<P>
+
+Source codes are available for download from the site including DAFIF
+based software for generating translucent 3d airspace boundaries, 3d
+glide slope ramps etc.  The project source codes are adaptable for use
+with any GPS, AHRS, or other inertial sensors with a published
+communication protocol.
+
+</BODY>
