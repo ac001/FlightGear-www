@@ -1,18 +1,46 @@
-
+ 
 <!-- Standard Header Begin -->
 
 <html>
 
 <head>
   <title>FlightGear Flight Simulator</title>
-  <link rel="stylesheet" type="text/css" href="/default.css"> 
+  <link rel="stylesheet" type="text/css" href="./default.css"> 
   <meta http-equiv="Content-Script-Type" Content="text/javascript">
-  <script src="/templates.js"></script>
+  <script src="./templates.js"></script>
 </head>
 
 <body>
   <!-- Display the main logo -->
-  <script>MainLogo();</script>
+  <table id="global">
+    <tbody>
+      <tr>
+        <td align="left">
+          <script>MainLogo(".");</script>
+        </td>
+      </tr>
+      <tr>
+       <td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2485404446552133";
+google_ad_width = 728;
+google_ad_height = 15;
+google_ad_format = "728x15_0ads_al_s";
+google_ad_channel ="9092124961";
+google_color_border = "efefef";
+google_color_bg = "efefef";
+google_color_link = "0f7a71";
+google_color_url = "0f0f7a";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+       </td>
+      </tr>
+    </tbody>
+  </table>
+  <P>
 
   <table id="global">
     <tbody><tr>
@@ -21,7 +49,7 @@
         <script>SiteSearchGoogle();</script>
 
         <!-- Display the main menu -->
-        <script>MainMenu();</script>
+        <script>MainMenu(".");</script>
       </td>
       <td id="page">
 
@@ -30,7 +58,251 @@
 <H1>FlightGear Flight Simulator Version Summary</H1>
 
 
-<H3>November 9, 2005: Version 0.9.9-pre2 released</H3>
+<H3>May 14, 2007: Version 0.9.11-pre1 released</H3>
+  <UL>
+    <LI> CODE CHANGES:
+    <LI> Upgrade to JSBSim 1.0: improved gear handling.
+    <LI> Major update to the YASim helicopter FDM: highly increased realism
+    <LI> Improved gliding (YASIM), with winch launching and aerotowing (by
+  either AI or MP pilots) 
+    <LI> Improved soaring scenarios, new aerotowing scenario
+    <LI> Support for water planes (YASim): realistic float friction and
+  anchor support 
+    <LI> Surface material aware gear in YASim: friction and "bumpiness",
+  aircraft sink in water 
+    <LI> Improved model placement using the UFO: It is now possible to select
+  and edit multiple objects at the same time, moves are relative to
+  the viewer position. 
+    <LI> Improvements to Air-To-Air refueling, with air-to-air TACAN for
+  easier locating, and KC135 and KA6-D AI models. KC135 can also be
+  used as an MP tanker 
+    <LI> New waypoint manager for autopilot/HUD
+    <LI> New property browser dialog, which can be opened multiple times. See
+  Docs/README.gui for a a list of more features, like enabling verbose
+  mode etc. 
+    <LI> Addition of new MIL-STD HUD
+    <LI> Improved viewpoints, including a fly-by view and a dynamic cockpit
+  view. The latter allows 3D cockpits to move a bit relative to the
+  pilot's head, which stabilizes the pilot's view at terrain and makes
+  turbulence look more realistic.
+    <LI> Improved fuel and payload dialog for YASim
+    <LI> Multiplayer chat, text and voice (using Asterisk)
+    <LI> Improved Carrier Operations - FNS Foch added, new carrier-capable
+  aircraft 
+    <LI> AI improvements, including ground networks for airports, flightplans
+  and boats 
+    <LI> Major improvements in taxiing and ground operations of AI aircraft
+    <LI> AIShips wakes, etc
+    <LI> Interactive/scripted control of AI aircraft
+    <LI> Many Nasal enhancements, including debugging console, XML file
+  parsing, improvements to listener model. New extension functions
+  getAttribute(), setAttribute(), systime() for benchmarking. 
+    <LI> Use of all textured fonts on panels
+    <LI> Fixed initial texture path problems
+    <LI> Improved dynamic sun colors
+    <LI> Update to World Magnetic Model 2005
+    <LI> Path cache for aircraft configuration files to shorten startup time
+    <LI> Submodels added to all AI Objects - MP aircraft can now have
+  contrails, 
+    <LI> Addition of protocol for Garmin 400 series
+    <LI> Addition of fluxgate compass
+    <LI> Addition of GSDI for helicopters
+    <LI> New altimetry method
+    <LI> "Passive" mode for autopilot
+    <LI> Tutorial system improvements
+    <LI> Updates to The Manual
+    <LI> More stringent header dependencies 
+    <P>
+    <LI> NEW AIRCRAFT:
+    <LI> Boeing 787-8
+    <LI> Northrop Grumman A-6E (Intruder)
+    <LI> Airbus A320
+    <LI> Nakajima A6M2
+    <LI> Antonov An-2
+    <LI> Northrop B-2 (Spirit)
+    <LI> Bristol Beaufighter
+    <LI> Bielsko SZD-9 Bocian
+    <LI> Lockheed C130 (Hercules)
+    <LI> Cessna C182 RG
+    <LI> Sikorski CH-53 E (Super Stallion)
+    <LI> Cessna Citation X
+    <LI> Dornier DO-335
+    <LI> Boeing E-3B (Sentry)
+    <LI> Eurocopter EC 135
+    <LI> McDonnell Douglas F-15 C (Eagle)
+    <LI> McDonnell Douglas F-18 (Hornet)
+    <LI> Chance Vought F4U (Corsair)
+    <LI> Mainair Flash 2 Alpha
+    <LI> Hughes H4-Hercules
+    <LI> Kyushu J7W (Shinden)
+    <LI> Junkers Ju 52
+    <LI> Nakajima Ki-84 (Hayate)
+    <LI> Messerschmidt Me 262
+    <LI> Dassault Mirage 2000
+    <LI> de Havilland Mosquito
+    <LI> NTPS
+    <LI> De Havilland D.H.110 (Sea Vixen)
+    <LI> Sikorsky S-76 C
+    <LI> Sukhoi Su-37 (Flanker-F)
+    <LI> Avro Vulcan B.2
+    <LI> Sikorsky S-70 (UH-60, Black Hawk) 
+    <P>
+
+    <LI> ENHANCED AIRCRAFT
+    <LI> 737
+    <LI> 747-200
+    <LI> A-10 - Major model improvements
+    <LI> a300
+    <LI> a4f
+    <LI> Aerostar-700 - cockpit, systems, model, FDM
+    <LI> as350 - FDM
+    <LI> B-52F
+    <LI> B1900D - new primus 1000 flight director
+    <LI> bell206 - FDM
+    <LI> bf109
+    <LI> bo105 - cockpit, systems, model, FDM
+    <LI> Boeing314A
+    <LI> c182 - model, panel
+    <LI> ch47 - FDM
+    <LI> Citation-Bravo - autopilot/flight director, FDM
+    <LI> Concorde - panel, FDM, systems
+    <LI> dhc2 - amphibious and wheels only versions added
+    <LI> harrier - new external model and 3-D cockpit
+    <LI> Hunter
+    <LI> Lightning - startup tutorial, model improvements
+    <LI> Lockheed1049
+    <LI> MiG-15
+    <LI> OV10 - 3D cockpit, weapons, NASA variant added
+    <LI> pa24-250 - 3-D model improvements
+    <LI> pc7 - panel
+    <LI> SenecaII
+    <LI> sgs233
+    <LI> sopwithCamel - completely new model
+    <LI> Spitfire
+    <LI> ufo
+    <LI> YardStik 
+
+  </UL>
+
+
+<H3>April 5, 2006: Version 0.9.10 released</H3>
+  <UL>
+    <LI> Many improvements to the multi-player mode.  Other airplanes are now
+  updated smoothly.  There is a really nifty google maps based moving
+  map that anyone can use to track all online activity.
+    <LI> AI planes have improved ground following and are smarter about
+  selecting the active runway.
+    <LI> Include the ability to send ATC and AI aircraft communication to a
+  local festival server to be converted to spoken speech output.
+    <LI> Added a detailed model of the Honeywell MK VIII EGPWS ground
+  proximity warning system.
+    <LI> Added background ATC chatter.
+    <LI> Updated/improved rain cone rendering.
+    <LI> Complete overhaul/redo of terrain textures based on USGS
+         satellite imagery.
+    <LI> Updated manual.
+    <P>
+
+    <LI> Upgraded to v2.0 of the JSBSim config file format.
+    <LI> Fix a discrepancy in sign of twist and incidence values in YASim
+  between code and documentation.
+    <LI> Updates to YASim for more fine grained propeller modeling.
+    <LI> UFO will now honor elevator trim value so that it will respond to
+  the autopilot altitude hold module.
+    <LI> UFO can adjust it's speed range so you can use it for super high
+  speed world exploration, or extremly fine grained precise positioning.
+    <LI> Much work and progress with carrier interaction and launch/recovery
+  modeling.
+    <P>
+
+    <LI> Add a feature that allows the end user to click any where on the
+  terrain.  The system will compute a ground intersection and report
+  back the lon, lat, and elevation of the click point.  The click
+  point is reported in the property system so it can be read by just
+  about anything including external programs.  Later we added the
+  ability to place an object at the click point as well.
+    <LI> Add a feature to play one-off wav files.  These are qeued and played
+  sequentially.  This was then leveraged to build an ATC background
+  chatter module in nasal that can be turned on/off at run time.  This
+  could also be leveraged for tutorials or other interactive type
+  scripts to play prerecorded messages at specific times or under
+  specific conditions..
+    <LI> Allow clock to report local time as well as universal.
+    <LI> Add a model of a KLN89 GPS.
+    <LI> Allow nav radios to be slaved to the gps.
+    <LI> Allow enabling/disabling of menu entries.
+    <LI> Replace old hardcoded frame rate display with a much more flexible
+  nasal/gui version.
+    <LI> Add a listener function to properties so that nasal code can be
+  triggered whenever a property changes.  This is more efficient than
+  polling.
+    <LI> Add a save-on-exit option to save user preferences.
+    <LI> Add support for point sprites.
+    <LI> Add support for emissive layers (such as lights) on 2d panels.
+    <LI> Updated gui styles.
+    <LI> Updated airport and navaid data.
+    <LI> Added a new Nasal/XML based tutorial system.
+    <P>
+
+    <LI> Fix a bug in the metar (real weather) threading that could lead to
+  long pauses and even crashes.
+    <LI> Various compiler/platform fixes.
+    <LI> Fix various valgrind complaints.
+    <LI> Better use of exceptions in places.
+    <LI> Fix the 2d compass texture handling.
+    <LI> Many tweaks and improvements to our keyboard input handling
+  system.
+    <LI> Added a first attempt at MS-VC8 project files.
+    <P>
+
+    <LI> Updated aircraft:
+      <UL>
+        <LI> A4/A3F (cleanups and updates, functional drag chute)
+        <LI> A-10 (3d cockpit, fdm tuning, munitions, drop tanks)
+        <LI> AN-225 (fdm tuning)
+        <LI> B1900D
+        <LI> BO105 Eurocopter (new livry/logo options.)
+        <LI> B-29
+        <LI> B-52F (major overhaul)
+        <LI> Boeing 314 (3d cockpit, fdm updates)
+        <LI> 747 (modeling fixes)
+        <LI> Cirrus SR20 (improve interior a bit)
+        <LI> C172 (added KLN89 gps)
+        <LI> C310 (many modeling updates)
+        <LI> Citation Bravo (many modeling updates, Primus 1000 PFD)
+        <LI> Concorde (updated to v2.1, new views, sounds autopilot, fdm
+    updates, new systems)
+        <LI> DHC2 Beaver
+        <LI> F-16 (modeling and munitions updates)
+        <LI> Hurricane
+        <LI> Hunter
+        <LI> MiG-15bis (adds some 3d cockpit instruments)
+        <LI> PC7 (various cleanups)
+        <LI> Seafire/Spitfire
+        <LI> Seahawk (general tidy up, cannon, heat haze, catapault launch strop)
+        <LI> T37 (geometry, sound, fdm updates)
+        <LI> YF-23 (misc model updates)
+      </UL>
+    <P>
+
+    <LI> New aircraft available:
+      <UL>
+        <LI> Boeing 707
+        <LI> 737-300 (Brand new version)
+        <LI> Canberra BI8
+        <LI> English Electric Lightning (F.1A)
+        <LI> Lockheed 1049 Constellation
+        <LI> Lockheed F-80C Shooting Star
+        <LI> Messerschmitt Bf 109
+        <LI> Ogel (a for-fun fantasy airplane.)
+        <LI> New OV-10 with Clickable 3D cockpit
+        <LI> Piper PA24-250 Comanche 250 (N7764P)
+        <LI> Piper Aerostar 700
+      </UL>
+  </UL>
+
+
+<H3>November 17, 2005: Version 0.9.9 released</H3>
   <UL>
     <LI> New well integrated volumetric clouds by Harald Johnsen
     <LI> Removed 'old' 3D clouds code.
@@ -109,12 +381,12 @@
   several memory leaks fixed.
 
     <LI> New aircraft available (in various stages of developement): A380,
-  Boeing 314 (seaplane), Citation Bravo (glass cockpit), F-8E
-  Crusader, Hurricane IIb, MiG-15bis, TU-114, B29, C150, and SR20.
+  Boeing 314 (seaplane), Citation Bravo (glass cockpit), Hurricane IIb,
+  MiG-15bis, TU-114, B29, C150, and SR20.
 
     <LI> Aircraft that have had updates since the last release: 737, A-10,
   AN-225, B-52F, BAC-TSR2, Citation-II (550), Comper Swift, Concorde,
-  Hunter, OV10, Spitfire, T37, B1900d, bo105, C172 et. al., DHC2F
+  Hunter, OV10, Spitfire, T37, B1900d, bo105, C172 et. al., C182, DHC2F
   (Beaver), F16, Fokker DR1 Triplane, Fokker 50 (turboprop), Fokker
   100 (jet), J3 Cub, P51, Santa, Seahawk, and 1903 Wright Flyer.
   </UL>
@@ -790,7 +1062,7 @@
       <LI> Fix --time-offset in the man page and options help.
       <LI> Fixed the spelling of Celsius.
       <LI> Cleaned up some stray cout's
-      <LI> Removed some redundant FG* class qualifiers in various headers.
+      <LI> Removed some redundant FG... class qualifiers in various headers.
       <LI> GUI dialog box fixes for autopilot.
       <LI> Ensure that initial engine settings are copied over from FlightGear
            to JSBSim.

@@ -27,11 +27,11 @@ google_ad_width = 728;
 google_ad_height = 15;
 google_ad_format = "728x15_0ads_al_s";
 google_ad_channel ="9092124961";
-google_color_border = "FFFFFF";
-google_color_bg = "EFEFEF";
-google_color_link = "0000FF";
+google_color_border = "efefef";
+google_color_bg = "efefef";
+google_color_link = "0f7a71";
+google_color_url = "0f0f7a";
 google_color_text = "000000";
-google_color_url = "008000";
 //--></script>
 <script type="text/javascript"
   src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
@@ -63,62 +63,38 @@ google_color_url = "008000";
    [<A HREF="http://www.flightgear.org/">English</A>]
    [<A HREF="http://fr.flightgear.tuxfamily.org/">French</A>]
    [<A HREF="http://www.jp.flightgear.org/">Japanese</A>]
+   [<A HREF="http://www.br.flightgear.org/">Portuguese</A>]
    [<A HREF="http://flightgear.paraisoft.com/">Spanish</A>]
  </DIV>
  <P>
 
  <DIV ID="topscreens" ALIGN="center">
-  <A HREF="Gallery-v0.9.10/Link/Citation-II-weather.html"><IMG CLASS="mainscreen" WIDTH="160" HEIGHT="120" SRC="Gallery-v0.9.10/Small/Citation-II-weather.jpg" ALT="Citation II flirting with a thundersorm"></A> 
-  <A HREF="Gallery-v0.9.10/Link/winter-clouds-bo105.html"><IMG CLASS="mainscreen" WIDTH="160" HEIGHT="120" SRC="Gallery-v0.9.10/Small/winter-clouds-bo105.jpg" ALT="Winter clouds bo105"></A> 
-  <A HREF="Gallery-v0.9.10/Link/concorde-gui.html"><IMG CLASS="mainscreen" WIDTH="160" HEIGHT="120" SRC="Gallery-v0.9.10/Small/concorde-gui.jpg" ALT="Concorde + GUI"></A> 
-  <A HREF="Gallery-v0.9.10/Link/seafire-nimitz01.html"><IMG CLASS="mainscreen" WIDTH="160" HEIGHT="120" SRC="Gallery-v0.9.10/Small/seafire-nimitz01.jpg" ALT="Seafire over the Nimitz"></A> 
-  <A HREF="Gallery-v0.9.10/Link/contrails_001.html"><IMG CLASS="mainscreen" WIDTH="160" HEIGHT="120" SRC="Gallery-v0.9.10/Small/contrails_001.jpg" ALT="737 Contrails"></A> 
-  <A HREF="Gallery-v0.9.10/Link/bravo-cockpit.html"><IMG CLASS="mainscreen" WIDTH="160" HEIGHT="120" SRC="Gallery-v0.9.10/Small/bravo-cockpit.jpg" ALT="Citation Bravo 3d cockpit"></A> 
+  <SCRIPT>RandomFrontImages();</SCRIPT>
  </DIV>
 
  <TABLE>
   <TR>
-   <TD VALIGN="TOP">
-    <DIV ID="page">
-     <H3>Announcements</H3>
-     <UL>
-
-      <LI> <B>Oct 30</B> - FlightGear cuts over to
-           <A HREF="http://www.openscenegraph.org">OpenSceneGraph</A> in CVS
-           HEAD.
-
-      <LI> <A HREF="announce.html#atlas-0.3.1"><B>Oct 30</B> -
-           Atlas-0.3.1 released.</A>
-
-      <LI> <A HREF="http://www.freesoftwaremagazine.com/articles/flightgear">
-           <B>Oct 18</B> - Free Software Magazine reviews FlightGear.</A>
-
-      <LI> <A HREF="announce.html#fgflightplanner"><B>Oct 9</B> -
-           Trevor Cambell announces the latest version of his
-           FlightGear Flight Planner.</A>
-
-      <LI> <A HREF="hardwarereq.html"><B>Sep 28</B> - WidowPC offers
-           ultra high end PC's with FlightGear preloaded.</A>
-
-      <LI> <A HREF="announce.html#manual"><B>Jun 8</B> -
-           Major updates to "The FlightGear Manual".</A>
-      <LI> <A HREF="announce.html#softpedia"><B>Jun 3</B> -
-           FlightGear-0.9.10 wins Softpedia's 5/5 Pick award and 100% clean
-           of adware/spyware award".</A>
-      <LI> <A HREF="announce.html#wiki"><B>May 28</B> -
-           FlightGear wiki site is online.</A>
-      <LI> <A HREF="announce.html#fglive-0.1-linuxtag"><B>May 5</B> -
-           FlightGear Live-CD 0.1 LinuxTag edition available.</A>
-      <LI> <A HREF="announce.html#v0.9.10"><B>Apr 5</B> -
-           FlightGear v0.9.10 (source code) released.</A>
-      <LI> <A HREF="announce.html#scenery-v0.9.10"><B>Jan 17</B> - A
-           new world build (v0.9.10) has just been released!  Click
-           for details.</A>
-    </UL>
-   </TD>
 
    <TD VALIGN="TOP">
     <DIV ID="page">
+     <DIV ALIGN="center">
+<SCRIPT TYPE="text/javascript"><!--
+google_ad_client = "pub-2485404446552133";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_channel ="0342433177";
+google_color_border = "ffffff";
+google_color_bg = "ffffff";
+google_color_link = "0f7a71";
+google_color_url = "0f0f7a";
+google_color_text = "000000";
+//--></SCRIPT>
+<SCRIPT TYPE="text/javascript"
+ SRC="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</SCRIPT>
+     </DIV>
+
      <H3>Quick Links</H3>
      <UL>
       <LI> Download FlightGear v0.9.10 for Windows Now:
@@ -140,21 +116,91 @@ google_color_url = "008000";
 
      <H3>Events</H3>
      <UL>
+
+      <LI> <A HREF="events.html#linuxtag07"><B>May 30 - June 2, 2007</B> -
+           <B>FlightGear on LinuxTag</B> at the Messegel&auml;nde Berlin,
+           Germany.
+           The world's No. 1 Linux Expo and Conference since 1996.</A>
+      <P>
+
+      <LI> Please submit your upcoming FlightGear related events for
+           inclusion on the web site.
+
+      <!--
       <LI> <A HREF="events.html#justice"><B>Oct 30</B> -
            JUSTICE will show FlightGear in a court room demonstration.</A>
 
       <LI> <A HREF="events.html#flightsimweekend"><B>Nov 4-5</B> -
            Flight Sim Weekend.</A>
-      <!--
-      <LI> <A HREF="events.html#ieee06"><B>Sep 12, 7:30pm</B> - IEEE talk by
-           Alex Perry - Introduction to the FlightGear Flight Simulator.</A>
-      <LI> <A HREF="events.html#linuxtag06"><B>May 3-6</B> - Linux-Tag,
-           at the Rhein-Main-Hallen in Wiesbaden.</A>
       -->
-     </UL>
-
+    </UL>
     </DIV>
    </TD>
+
+   <TD VALIGN="TOP" WIDTH="40%">
+    <DIV ID="page">
+     <H3>Announcements</H3>
+     <UL>
+
+      <LI> <A HREF="announce.html#flightsim.com"><B>May 26</B> -
+           New FlightGear review on FlightSim.com.</A>
+
+      <LI> <A HREF="announce.html#sourcetrunk"><B>May 16</B> -
+           Sourcetrunk Podcast review of FlightGear.</A>
+
+      <LI> <A HREF="announce.html#v0.9.11"><B>May 14</B> -
+           FlightGear v0.9.11-pre1 (source code) released.</A>
+
+      <LI> <A HREF="http://www.bomots.de/flightgear/"><B>Jan 29</B> -
+           FlightGear kompakt - a new German langauge FlightGear handbook
+           published by Bomots.de is available for purchase.</A>
+
+      <LI> <A HREF="http://www.flightgear.org/Downloads/binary.shtml#linux">
+           <B>Jan 29</B> - FlightGear binary packages are now available for
+           the <A HREF="http://pardus.org.tr/eng/index.html">Pardus
+           Linux distribution</A>.
+
+      <LI> <A HREF="http://macflightgear.sourceforge.net/"><B>Dec 19, 2006</B>
+           - 
+           FlightGear v0.9.10 is now available for Mac OSX!</A>
+
+      <LI> <A HREF="http://www.linux.com/article.pl?sid=06/11/20/0533247">
+	   <B>Dec 4, 2006</B> - Read a Linux.com review of FlightGear.
+           </A>  Update:
+           <A HREF="http://www.hispalibertas.com/noticias/2006/07/24/a-volar.html">
+           A Spanish language review of FlightGear (with nice pictures.)
+           </A>
+
+      <LI> <B>Oct 30, 2006</B> - FlightGear cuts over to
+           <A HREF="http://www.openscenegraph.org">OpenSceneGraph</A> in CVS
+           HEAD.
+
+      <LI> <A HREF="announce.html#atlas-0.3.1"><B>Oct 30, 2006</B> -
+           Atlas-0.3.1 released.</A>
+
+      <LI> <A HREF="announce.html#fgflightplanner"><B>Oct 9, 2006</B> -
+           Trevor Cambell announces the latest version of his
+           FlightGear Flight Planner.</A>
+
+      <LI> <A HREF="hardwarereq.html"><B>Sep 28, 2006</B> - WidowPC offers
+           ultra high end PC's with FlightGear preloaded.</A>
+
+      <LI> <A HREF="announce.html#manual"><B>Jun 8, 2006</B> -
+           Major updates to "The FlightGear Manual".</A>
+
+      <LI> <A HREF="announce.html#wiki"><B>May 28, 2006</B> -
+           FlightGear wiki site is online.</A>
+
+      <LI> <A HREF="announce.html#v0.9.10"><B>Apr 5, 2006</B> -
+           FlightGear v0.9.10 (source code) released.</A>
+
+      <LI> <A HREF="announce.html#scenery-v0.9.10"><B>Jan 17, 2006</B> - A
+           new world build (v0.9.10) has just been released!  Click
+           for details.</A>
+    </UL>
+
+   </TD>
+
   </TR>
  </TABLE>
 
@@ -167,14 +213,14 @@ google_color_url = "008000";
 
 <script type="text/javascript"><!--
 google_ad_client = "pub-2485404446552133";
-google_ad_width = 160;
+google_ad_width = 120;
 google_ad_height = 600;
-google_ad_format = "160x600_as";
+google_ad_format = "120x600_as";
 google_ad_channel ="9092124961";
 google_color_border = "efefef";
 google_color_bg = "efefef";
-google_color_link = "720c0c";
-google_color_url = "0f7a71";
+google_color_link = "0f7a71";
+google_color_url = "0f0f7a";
 google_color_text = "000000";
 //--></script>
 <script type="text/javascript"
@@ -201,7 +247,7 @@ google_color_text = "000000";
           </A>
         </td>
         <td>
-          Last modified:  10/30/2006 <BR>
+          Last modified:  5/28/2007 <BR>
           <A HREF="http://www.flightgear.org/~curt/">
             Curtis L. Olson
             <IMG ALIGN="MIDDLE" SRC="./email-fg.png">

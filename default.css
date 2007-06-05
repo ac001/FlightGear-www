@@ -38,7 +38,8 @@ h1{
 	padding-bottom:2px;
 	padding-left:2px;
 	padding-right:2px;
-	font-size:100%;
+	font-size:95%;
+	font-weight:bold;
 	text-align:center;
 }
 /*News date header*/
@@ -53,7 +54,8 @@ h2{
 	padding-left:2px;
 	padding-right:2px;
 	width: 22%;
-	font-size:80%;
+	font-size:75%;
+	font-weight:bold;
 	text-align:center;
 }
 /*Menu subheadings*/
@@ -64,15 +66,16 @@ h3{
 	border-color:#d9e2e2;
 	border-width:1px;
 	padding:1px;
-	font-size:90%;
+	font-size:85%;
+	font-weight:bold;
 	color: #720c0c;
 	text-align:center;
 }
-/*Menu desing*/
+/*Menu design*/
 #menu{
 background:#efefef;
 font-weight:bold;
-font-size:85%;
+font-size:75%;
 padding:12px;
 vertical-align:top;
 white-space:nowrap;
@@ -100,7 +103,7 @@ width:100%;
 }
 
 table#caption{
-font-size: 80%;
+font-size: 70%;
 }
 
 div#page{
@@ -118,7 +121,7 @@ border-top-width:1px;
 border-bottom-width:1px;
 border-left-width:1px;
 border-right-width:1px;
-font-size:93%;
+font-size:80%;
 }
 
 #section{
@@ -131,7 +134,7 @@ border-top-width:1px;
 border-bottom-width:1px;
 border-left-width:1px;
 border-right-width:1px;
-font-size:93%;
+font-size:80%;
 }
 
 td#section{
@@ -149,7 +152,7 @@ padding-top:5xp;
 padding-bottom:5xp;
 font-weight:bold;
 text-align:center;
-font-size:80%;
+font-size:70%;
 }
 
 }

@@ -2,7 +2,7 @@
 
 <H3>INTRODUCTION</H3>
 
-Two years ago Curtis posted a query to see if anyone was interested in
+Three years ago Curtis posted a query to see if anyone was interested in
 developing glass displays for FlightGear based on the OpenGC
 project. One thing led to another and after developing some early
 software (<A HREF="http://www.opengc.org">http://www.opengc.org</A>)
@@ -20,28 +20,18 @@ simulator with a cluster of Linux based PCs.
 
 <H3>FUNCTIONAL DESCRIPTION</H3>
 
-The preliminary design consists of four PCs connected with a LAN,
-display monitors, and a prototype interface board for driving LED
-displays and reading the wide variety of switches and controls that
-populate a modern flightdeck.
-<P>
+<P>Since the intial architecture in 2004 employing 4 PCs to run the simulator and an additional machine to host the
+flightgear program, the project has made significant strides.  The goal to host the entire simulator cockpit on a
+single PC was achieved in late 2006 with the software redesign to employ shared memory and multiple graphics cards.
+A side effect of this redesign was a large reduction in network traffic and a simplification of the interfaces between 
+the programs resulting in increased frame rates. It also provides the basic structure to build a highly interactive
+and sophisticated instructors console for remote control of the simulator.
 
-The Captain's PC (CAP_PC) operates the left joystick,
-captain's primary displays, standby instruments, primary
-EICAS, and left FMC #1 . The First Officer's PC (FO_PC)
-operates the first officers primary displays, secondary EICAS, right
-joystick, throttles, and right FMC #2. The MCDU PC (MCDU_PC) operates
-the MCDU displays, FMC #3 and provides the primary interface to the
-cockpit hardware. It also serves as the network center or master
-controller and interface to the FlightGear PC (FG_PC) that provides
-all the scenery and flight dynamics and out-the-window view.
-<P>
-
-The network is built around the FlightGear options for sending state
-data to the display machines and receiving control data from the
-flightdeck to activate aircraft systems, avionics, flight controls,
-and throttles.
-<P>
+The electronics and hardware interfaces were also redesigned to allow for the expansion of cockpit switches, displays,
+and function by simply installing additional "slave" boards to a master controller. Those circuits are currently
+under testing and review and will be converted to high-grade PCBs and offered for purchase along with the supporting
+software and drivers. The PCBs will support a wide range of hardware configurations required for various aircraft cockpits.
+<P
  
 107_0705.JPG
 107_0719.jpg
@@ -70,10 +60,54 @@ interrupt driven linux device driver.
 
 <H3>BUILDING THE THROTTLE QUADRANT</H3>
 
-almost_done.jpg
-complete_unit.jpg
+The center pedestal houses the controls for the engines, flaps, and
+spoilers as well as most of the navigation and radio gear. A major
+component of this section are the throttle levers. The plastic
+knock-offs that can be found on the web (when one can find them) are
+just that -- knockoffs. Short of actual hardware salvaged from
+aircraft the knock-offs lack the feel and functions of real throttle
+levers. Building a functional set of throttle levers developed into a
+major project. The levers pictured here provide all the features of
+actual throttles including interlocks to prevent reverse thrust
+activation when forward throttles are above idle, movement of the
+forward throttles when the reverse system is active, a reverse idle
+detent postion that activates the reverse thrust configuration prior
+and delays engine acceleration until the configuration is set and,
+conversely, prevents forward movement and reverse lever OFF position
+until the system is fully stowed.
+<P>
+
+As the pictures show, the construction is heavy duty consisting of
+milled aluminum parts and internally milled levers to hold the linkage
+and mechanisms for each throttle. The auto-throttles were first
+operated with standard RC type servos and a phidget board via a USB
+interface. A new design is being installed using gears and DC
+gear-drive motors (200:1) to provide a greater amount of torque, a
+smoother action and throttle movement, and a tighter control of
+throttle positioning. RC type servos are a little light on the amount
+of torque they produce and have travel limits that restrict the amount
+of leverage you can apply and still get sufficient throttle
+travel. Plus response times can create a bit of a lag that complicates
+the design of a feedback type controller.
+<P>
+
 ready_for_cover.jpg
 sitting_in_the_well.jpg
+onemore.jpg
+almost_done.jpg
+complete_unit.jpg
+usb_ad.jpg
+single2.jpg
+<P>
+
+A USB port is provided to read the throttle lever positions. The
+circuit board pictured here provides the USB chip that controls the
+8-channel A/D chip. The chip provides a 12-bit data word for each
+channel and once initialized and programmed operates
+independently. The board provides a jumper to select the voltage for
+the pots; either +5V provided by the USB port or the option to connect
+an external power supply of a higher voltage
+<P>
 
 
 <H3>Scale 3X (Los Angeles, CA; Feb 12-13, 2005)</H3>
@@ -100,6 +134,14 @@ this to mpg or avi, it will most likely require a recent windows media player
 to view):
 <P>
 <A HREF="747-Scale3X.wmv">747 Movie (wmv)</A>
+<P>
+
+Here is a picture of Jack and Curt sitting in the Scale 2006 version of the
+simulator:
+<P>
+
+129_2957.jpg
+<P>
 
 
 <H3>2005 PLANS</H3>
@@ -146,9 +188,3 @@ The FlightGear community and user groups for providing a wealth of
 ideas, discussions, and opinions through their emails on every aspect
 of computer modeling.
 <P>
-
-Here are a couple additional pictures:
-
-107_0701.JPG
-107_0704.JPG
-107_0716.jpg

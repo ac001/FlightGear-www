@@ -4,9 +4,9 @@
 
 <head>
   <title>FlightGear Flight Simulator</title>
-  <link rel="stylesheet" type="text/css" href="/default.css"> 
+  <link rel="stylesheet" type="text/css" href="./default.css"> 
   <meta http-equiv="Content-Script-Type" Content="text/javascript">
-  <script src="/templates.js"></script>
+  <script src="./templates.js"></script>
 </head>
 
 <body>
@@ -15,14 +15,32 @@
     <tbody>
       <tr>
         <td align="left">
-          <script>MainLogo();</script>
+          <script>MainLogo(".");</script>
         </td>
-        <td align="right">
-          <script>GlobalSpec();</script>
-        </td>
+      </tr>
+      <tr>
+       <td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2485404446552133";
+google_ad_width = 728;
+google_ad_height = 15;
+google_ad_format = "728x15_0ads_al_s";
+google_ad_channel ="9092124961";
+google_color_border = "efefef";
+google_color_bg = "efefef";
+google_color_link = "0f7a71";
+google_color_url = "0f0f7a";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+       </td>
       </tr>
     </tbody>
   </table>
+  <P>
+
   <table id="global">
     <tbody><tr>
       <td id="menu">
@@ -30,7 +48,7 @@
         <script>SiteSearchGoogle();</script>
 
         <!-- Display the main menu -->
-        <script>MainMenu();</script>
+        <script>MainMenu(".");</script>
       </td>
       <td id="page">
 
@@ -45,6 +63,73 @@ FlightGear or FlightGear developers, please notify
 
 <H1>Upcoming FlightGear Events</H1>
 
+<B><A NAME="linuxtag07"></A>May 30 - June 2, 2007 -
+<A HREF="http://www.linuxtag.org">FlightGear on LinuxTag</A></B>
+at the Messegel&auml;nde Berlin, Germany.
+The world's No. 1 Linux Expo and Conference since 1996.
+<BR>
+<A HREF="http://www.linuxtag.org">
+<IMG SRC="http://www.linuxtag.org/2007/banner/LinuxTag-medium.gif"
+ALT="LinuxTag 2007"></A>
+<P> 
+<IMG ALIGN="LEFT" SRC="images/powered_blue.png"/>
+For this years LinuxTag booth, SUN Microsystems GmbH
+(<A HREF="http://www.sun.de">http://www.sun.de</A>)
+is sponsoring and providing the booth hardware: Two SUN Ultra 40 Workstations
+each equipped with two Dual Core AMD Opteron 280 CPUs, 8GB memory and two
+NVIDIA Quadro 3500 graphic cards for connecting four 21,1" monitors.
+<P>
+
+<IMG ALIGN="LEFT" SRC="images/sc64pixel.png"/>
+In addition, "Science + Computing AG"
+(<A HREF="http://www.science-computing.de">http://www.science-computing.de</A>),
+an IT company from Tuebingen, Germany, is providing 500 Euro to help
+offset the costs of the FlightGear booth.
+<P>
+
+<H1>Past FlightGear Events</H1>
+
+<B><A NAME="justice"></A>October 30 - <A HREF="http://www.fox.com/justice">
+JUSTICE</A></B><BR>
+When the son of a millionaire is killed in a small engine plane
+crash with his blue-collar girlfriend, TNT&G represents the girlfriend's
+grieving parents in their wrongful death suit against the wealthy matriarch.
+<P>
+Watch for a few glimpses FlightGear in a courtroom demonstration near the
+end of the episode!
+<P>
+
+<B><A NAME="flightsimweekend"></A>November 4-5, 2006 -
+<A HREF="http://www.fsweekend.com/">Flight Sim Weekend</A></B><BR>
+Location: Aviodrome Air and Space Museum, Lelystad airport, the Netherlands
+<BR>
+FSWeekend is the largest annual Flight Simulator event in the Netherlands,
+with over 92 exhibitors. FlightGear will be present as one of the exhibitors
+at the event.
+<P> 
+
+<B><A NAME="ieee06"></A>September 12, 2006 -
+The Coastal Los Angeles IEEE Section Computer Society Chapter presents ...</B>
+<BR>
+Introduction to the FlightGear Flight Simulator<BR>
+Time: September 12, 2006 at 7:30pm<BR>
+Speaker: Alex Perry, Google<BR>
+Location: 604 Arizona, Santa Monica, CA 90401<BR>
+IEEE membership is not required to attend this talk; we're always
+looking to grow our membership:
+<A HREF="http://www.ieee.org/membership/join/">http://www.ieee.org/membership/join/</A>
+<P> 
+
+<B><A NAME="linuxtag06"></A>May 3-6, 2006 -
+<A HREF="http://www.linuxtag.org">Linux-Tag</A></B>
+at the Rhein-Main-Hallen in Wiesbaden, Germany, booth 128a.
+The world's No. 1 Linux Expo and Conference since 1996.
+<BR>
+<A HREF="http://www.linuxtag.org"><IMG
+SRC="/images/LT-banner-234x60-fgfs.png" STYLE="width: 234px; height:
+60PX; BORDER: 0" alt="LINUXTAG 2006 BANNER"></A>
+<P> 
+
 <B><A NAME="scale06"></A>February 11-12, 2006 -
 <A HREF="http://www.socallinuxexpo.org/">Southern California Linux Expo.</A>
 Westin Los Angeles Airport, CA.</B><BR>
@@ -57,10 +142,6 @@ real-time execution and performance.  LFS provides products and services
 that are adaptable to many commercial applications and affordable for the
 dedicated hobbyist.
 <P>
-
-<P>
-
-<H1>Past FlightGear Events</H1>
 
 <B><A NAME="scale05"></A>February 12-13, 2005 -
 <A HREF="http://www.socallinuxexpo.org/">Southern California Linux Expo.</A>
@@ -159,249 +240,4 @@ you're not already registered to attend the conference that day.
 <B>April 20 & 21, 2004 -
 <A HREF="http://www.linuxuser.co.uk/expo/">LinuxUser & Developer
 Expo 2004</A> - London, UK</B><BR>
-The FlightGear project has been given free .org booth space by the
-conference organizers (thanks!) so we will host a booth and give
-demos.  It may be possible that we will have an LCD projector and big
-screen for additional demos in a separate room.
-<P>
-
-<B>December 18, 2002 -
-<A HREF="http://dsc.discovery.com">Discovery Channel Unsolved
-History show</A></B><BR>
-<BLOCKQUOTE>
-Michael Selig (A UIUC aero professor who is heavily involved with the
-FlightGear project) sent me the following interesting tidbit.
-<P>
-
-On Wednesday, 18 Dec is the Discovery Channel Unsolved History show:
-<P>
-
-The Death of the Red Baron.
-<P>
-
-FlightGear was used in the model development for some of the computer
-generated footage that went into the production of this show.
-However, they they didn't use FG for the final rendering w/ machine
-guns blaring away.  When they went to UIUC to do some of the filming,
-they took footage of Michael S. flying w/ FlightGear, so it may
-possibly appear in the show.  One never knows, however, what will get
-lost on the cutting room floor.
-<P>
-So, if you have nothing better to do, this one might be interesting to
-watch.
-</BLOCKQUOTE>
-
-<B>August 12 - 15, 2002 -
-<A HREF="http://www.linuxworldexpo.com">LinuxWorld Conference and
-Expo</A> - San Francisco, CA</B><BR>
-We will be hosting a FlightGear booth at the Summer 2002 LinuxWorld
-Expo in San Francisco, CA.  
-<P>
-
-<B>May 7, 2002, 6:30pm -
-<A HREF="http://www.lugod.org">Linux Users' Group of Davis</A></B><BR>
-<BLOCKQUOTE>
-Z-World<BR>
-2900 Spafford Street<BR>
-Davis, CA 95616</H2> <P>
-
-Who:<BR>
- Andy Ross, of the FlightGear project
-<P>
-
-What:<BR>
-  FlightGear is a completely Open Source multi-platform, cooperative
-  flight simulation development project.  The FlightGear project is working
-  to create a sophisticated flight simulator framework for the development
-  and pursuit of interesting flight simulator ideas. It is a solid, basic
-  simulator that can be expanded and improved upon by anyone interested
-  in contributing.
-</BLOCKQUOTE>
-<P>
-
-<B>January, 2002 -
-<A HREF="http://www.linuxworldexpo.com">LinuxWorld Conference and
-Expo</A> - New York City, NY</B><BR>
-We are planning to host a FlightGear booth at the Winter, 2002
-LinuxWorld Expo in New York City.
-<P>
-
-<B>November 26 - 29, 2001 -
-<A HREF="http://www.iitsec.org">I/ITSEC</A> - Orlando, Florida</B><BR>
-<BLOCKQUOTE>
-Panoram and Cobra plan to exhibit the Micro Simulator, featuring the
-FlightGear project software.
-<P>
-
-<A HREF="Projects/RayChair/raychair.html">Project information</A> <BR>
-<A HREF="ftp://flightgear.sf.net/pub/flightgear/Promotional/MIcroSim.PDF">
-MicroSim Flyer</A>
-</BLOCKQUOTE>
-<P>
-
-<B>August 27-30, 2001 -
-<A HREF="http://www.linuxworldexpo.com">LinuxWorld Conference and
-Expo</A> - San Francisco, CA</B><BR>
-We will be hosting a FlightGear booth at the Summer 2001 LinuxWorld
-Expo in San Francisco, CA.  FWIW, I (Curt) am planning to attend this
-event.
-<P>
-
-<B>July 23-27, 2001 -
-<A HREF="http://conferences.oreilly.com/">O'Reilly Open Source
-Convention</A> - San Diego, California</B><BR>
-Open Source Software solves problems quickly,
-elegantly, and cost effectively - come find out how!
-16 technology tracks, pioneering keynotes,
-technology Expo Hall
-<P>
-
-<B>July 5-8, 2001 -
-<A HREF="http://www.linuxtag.org">LinuxTag</A> - Stuttgart, Germany</B><BR>
-Alex Perry will be presenting a paper written about FlightGear, simulating
-the pilot, simulating the aircraft, and simulating the world.  The
-FlightGear project will host a booth and several FlightGear developers
-are planning to attend.  <A HREF="http://www.flightgear.org/Papers/linuxtag-paper.pdf">Click
-here for the paper.</A>
-<P>
-
-<B>June 29 - July 1, 2001 -
-<A HREF="http://www.ukuug.org/events/linux2001/">UKUUG Linux 2001 -
-Linux Developers' Conference</A> - Manchester, England</B><BR>
-Alex Perry will be presenting a talk entitled,
-<A HREF="http://www.ukuug.org/events/linux2001/prog/abstract-APerry-1.shtml">
-The FlightGear Flight Simulator - Realism through Adaptability</A>.
-No booth is planned.
-<A HREF="http://www.flightgear.org/Papers/ukuug-paper.pdf">Click here for slides.</A>
-<P>
-
-<B>June 12-15, 2001 -
-<A HREF="http://www.infocomm.org">INFOCOMM</A> - Las Vegas, Nevada</B><BR>
-<BLOCKQUOTE>
-Panoram and Cobra plan to exhibit the Micro Simulator, featuring the
-FlightGear project software.
-<P>
-
-<A HREF="Projects/RayChair/raychair.html">Project information</A> <BR>
-<A HREF="ftp://flightgear.sf.net/pub/flightgear/Promotional/MIcroSim.PDF">
-MicroSim Flyer</A>
-</BLOCKQUOTE>
-<P>
-
-<B>May 24-25, 2001 -
-Flight Simulation Conference - Moscow, Russia</B><BR>
-<BLOCKQUOTE>
-FlightGear will be featured as part of a submitted paper on using PC's
-for flight simulation research.
-<P>
-
-<H2>Abstract</H2>
-<P>
-
-Light Combat Aircraft (LCA) programme has so far effectively used
-high-end image generators for research, development and qualification
-work on handling qualities. The flight simulation requirement for
-naval variant of LCA presented an opportunity to reassess the fidelity
-requirement of each and every component of the simulator considering
-technological advancements in PC hardware and graphics
-accelerators. The pressing need to innovate solutions which remain
-unaffected by import barriers whilst offering unlimited scope for
-upgradation led to configuring LCA(Navy) simulator around PCs with
-graphics accelerator cards and an OpenSource image generator software
-FlightGear <WWW.FLIGHTGEAR.ORG> suitably modified to suit our
-requirements. This paper discusses the price/performance advantage of
-PC based part-task simulator based on our experience on ski-jump
-launch and recovery simulation of LCA (Navy). This simulator has been
-successful in providing realistic simulation of carrier-based launch
-and recovery for the evaluation and refinement of flight control law.
-Essential visual simulation features are identified and their
-importance towards achieving visual fidelity are discussed
-<P>
-<A HREF="Projects/ADA/index.html">More information about this project.</A>
-</BLOCKQUOTE>
-<P>
-
-<B>April 24-26, 2001 -
-<A HREF="http://www.itec.co.uk/">ITEC</A> - Lille, France</B><BR>
-FlightGear will have a presence at this conference as part of the
-Micro Simulator project sponsered by Panoram Technologies, Cobra
-Technologies, and Loki Software.  Have a look at the
-<A HREF="ftp://ftp.sunsite.org.uk/sites/ftp.flightgear.org/flightgear-ftp/Promotional/MIcroSim.PDF">
-booth handout</A> for additional details.
-<P>
-
-<B>April 10, 2001 -
-Long Island Linux Users Group (LILUG) - SUNY Farmingdale</B><BR>
-John is scheduled to give a talk about FGFS to the
-<A HREF="http://lilug.org">LILUG</A> on April 10.
-<P>
-
-<B>Jan 30 - Feb 2, 2001 -
-LinuxWorld Conference and Expo - New York City</B><BR>
-In August, 2000, the FlightGear project set up it's first LinuxWorld
-Expo booth.  Alex Perry did such a fine job of organizing things, and
-we received so much positive feedback, that we are doing it again.
-This time at the Winter LWCE in New York City.  Here is the conference
-page:
-<A HREF="http://www.linuxworldexpo.com">http://www.linuxworldexpo.com</A>
-<P>
-
-<!-- Standard Footer Begin -->
-      </td>
-      <td id="googleads" valign="top">
-       <!-- insert google add here if we decide to do that sort of thing -->
-
-<script type="text/javascript"><!--
-google_ad_client = "pub-2485404446552133";
-google_ad_width = 120;
-google_ad_height = 120;
-google_ad_format = "120x90_0ads_al_s";
-google_ad_channel ="";
-google_color_border = "2D5893";
-google_color_bg = "99AACC";
-google_color_link = "000000";
-google_color_url = "000099";
-google_color_text = "003366";
-//--></script>
-<script type="text/javascript"
-  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
-<BR>
-
-<script type="text/javascript"><!--
-google_ad_client = "pub-2485404446552133";
-google_ad_width = 120;
-google_ad_height = 600;
-google_ad_format = "120x600_as";
-google_ad_channel ="";
-google_color_border = "2D5893";
-google_color_bg = "99AACC";
-google_color_link = "000000";
-google_color_url = "000099";
-google_color_text = "003366";
-//--></script>
-<script type="text/javascript"
-  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
-<BR>
-
-      </td>
-     </tr>
-    </tbody>
-  </table>
-  <br>
-  <div id="bottom">
-    <!-- Bottom menu -->
-    <script>BottomMenu();</script>
-
-    <br>
-    <br>
-    Last modified:  12/09/2005 <BR>
-    <A HREF="http://www.flightgear.org/~curt/">Curtis L. Olson</A>
-    <IMG ALIGN="MIDDLE" SRC="/email-fg.png">
-  </div>
-</body>
-
-</html>
-<!-- Standard Footer End -->
-
+The FlightGear

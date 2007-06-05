@@ -12,6 +12,20 @@ A1 Free Sounds <techie@mail.ev1.net> http://www.a1freesoundeffects.com
   sound effects from their site.
 
 
+Syd Adams:
+  Added clipping to 2d instruments.  Added volume control to ATC-chatter.
+  Created and maintain: DHC2, B1900D, Aerostar 700, S76C+ helicopter,
+  Cessna Citation Bravo & CitationX, A6M2 'Zero'.  Assisted with Cessna
+  Citation II with Curt and 777-200 with Justin Smithies.
+
+
+Mark Akermann <flightgear@akermann.org>
+  Redone sun code. The sun now consists of three textures with individual 
+  colors which are calculated based on the effect of light scattering.
+  This is accomplished by using various environmental data and by 
+  calculating the distance the light travels through the atmosphere.
+
+
 Raul Alonzo <amil@las.es>
   Mr. Alonzo is the author of Ssystem and provided his kind permission 
   for using the moon texture. I also used parts of his code as a template
@@ -121,6 +135,11 @@ Dave Eberly <eberly@magic-software.com>
   http://www.magic-software.com
 
 
+Olaf Flebbe
+  Improved the build system for Windows and provided pre-built
+  dependencies.
+
+
 Jean-Francois Doue
   Vector 2D, 3D, 4D and Matrix 3D and 4D inlined C++ classes.  (Based on
   Graphics Gems IV ed. Paul S. Heckbert)
@@ -138,21 +157,24 @@ Oscar Everitt <bigoc@premier.net>
   them to our little project.
 
 
+Leidson Campos A. Ferreira <leidson@planetamessenger.org>
+  Rewrote the Jpeg screen httpd streaming (--jpg-httpd option)
+
+
 Bruce Finney <bfinney@gte.net>
   MSVC5 compatibility.
 
 
 Melchior Franz <mfranz@aon.at>
-  Made that joystick high/low support for joystick hats.
-  Nasal-ified the Saitek Cyborg Gold 3D (USB) joystick which now forms
-  the basis of a lot of programmable joysticks.
-  Created the led.txf font.
+  Reworked the joystick driver detection code, added high/low support for
+  "hats".  Nasal-ified the Saitek Cyborg Gold 3D (USB) joystick which now
+  forms the basis of a lot of programmable joysticks.
   Ruthlessly hunted down memory leaks in FlightGear, SimGear, and JSBSim.
   Maintains the only fully working helicopter model in FlightGear (Bolkow 105).
-  Made the GUI code fully XML configurable and added support for themes.
-  Started the Nasal library for easy model animation.
-  Reorganized the joystick code so it won't leave configuration data resident
-  for joysticks that aren't present.
+  Made the GUI code fully XML configurable and added support for themes,
+  reworked property browser, route manager and several other dialogs.
+  Wrote Dynamic Cockpit View, Fly-By view and lots of other Nasal code.
+  Implemented Nasal "listeners".
 
 
 Jean-loup Gailly and Mark Adler <zlib@gzip.org>
@@ -217,6 +239,8 @@ Bruce Jackson of NASA <e.b.jackson@larc.nasa.gov>
 
 Maik Justus <fg@mjustus.de>
   Developed YASim's helicopter/rotor logic.
+  Implemented aerotowing, water plane and anchor support for YASim, and
+  made its gear aware of the surface material.
   Wrote the Bo105 helicopter FDM configuration file.
 
 
@@ -582,6 +606,10 @@ Innis Cunningham <innisc@hotmail.com>
 Vivian Meazza <vivian.meazza@lineone.net>
   Added a number of excellent aircraft models including the Hawker Hunter
   and Seahawk.
+  Provided realistic wind, gravity and drag calculations for AIBallistic models,
+  as well as terrain intersections (impacts) of submodels.
+  Added the Fresnel Lens Optical Landing System and AI code for AICarrier and
+  AIShip, and implemented the TACAN navigation instrument
 
 
 David Culp <davidculp2@comcast.net>
@@ -616,6 +644,17 @@ Roy Vegard Ovesen <rvovesen@tiscali.no>
   include instruments that are actually present.
   Added several high level, configurable filter implementations for use by
   autopilot designers.
+
+
+Stuart Buchanan <stuart_d_buchanan@yahoo.co.uk>
+  Substantial additions to the Getting Started Manual
+  Enhancements to the Cessna-310 3d model.
+  Added a generic yoke model, a generic throttle quadrant model and a 
+  generic pedal set model.
+
+
+Stefan Seifert <nine@detonation.org>
+  Added the save-on-exit option to save the user preferences at program exit.
 
 
 Space Imaging, Inc  http://www.spaceimaging.com/

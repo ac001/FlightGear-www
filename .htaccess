@@ -1,0 +1,2 @@
+RedirectMatch permanent ^/~curt$ http://baron.flightgear.org/~curt/
+RedirectMatch permanent ^/~curt/(.*)$ http://baron.flightgear.org/~curt/
