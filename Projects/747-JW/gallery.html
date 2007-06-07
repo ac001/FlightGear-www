@@ -1,0 +1,380 @@
+<H1>John Wojnaroski's 747 Project</H1>
+
+<H3>INTRODUCTION</H3>
+
+Three years ago Curtis posted a query to see if anyone was interested in
+developing glass displays for FlightGear based on the OpenGC
+project. One thing led to another and after developing some early
+software (<A HREF="http://www.opengc.org">http://www.opengc.org</A>)
+and meeting with Jim Brennan and several months browsing websites of
+sim developers and cockpit builders I decided to take it one step
+further and build some hardware.  <P>
+
+Curtis has graciously offered the services and resources of the
+FlightGear website to publish the results of the project and on-going
+progress towards a fully functional system.  Here is an initial, brief
+description of a work in progress to build a functional flight
+simulator with a cluster of Linux based PCs.
+<P>
+
+
+<H3>FUNCTIONAL DESCRIPTION</H3>
+
+<P>Since the intial architecture in 2004 employing 4 PCs to run the simulator and an additional machine to host the
+flightgear program, the project has made significant strides.  The goal to host the entire simulator cockpit on a
+single PC was achieved in late 2006 with the software redesign to employ shared memory and multiple graphics cards.
+A side effect of this redesign was a large reduction in network traffic and a simplification of the interfaces between 
+the programs resulting in increased frame rates. It also provides the basic structure to build a highly interactive
+and sophisticated instructors console for remote control of the simulator.
+
+The electronics and hardware interfaces were also redesigned to allow for the expansion of cockpit switches, displays,
+and function by simply installing additional "slave" boards to a master controller. Those circuits are currently
+under testing and review and will be converted to high-grade PCBs and offered for purchase along with the supporting
+software and drivers. The PCBs will support a wide range of hardware configurations required for various aircraft cockpits.
+<P
+ 
+<!-- Begin Row -->
+<TABLE ALIGN=CENTER>
+<TR VALIGN=TOP>
+<TD WIDTH=320 HEIGHT=233>
+<A HREF="Link/107_0705.html"><IMG WIDTH=320 HEIGHT=240 SRC="Small/107_0705.JPG" ALT="107_0705"></A><BR>
+<FONT SIZE=-1 id="fgfs">
+107_0705
+</FONT>
+</TD>
+<TD WIDTH=320 HEIGHT=233>
+<A HREF="Link/107_0719.html"><IMG WIDTH=320 HEIGHT=228 SRC="Small/107_0719.jpg" ALT="107_0719"></A><BR>
+<FONT SIZE=-1 id="fgfs">
+107_0719
+</FONT>
+</TD>
+</TR>
+</TABLE>
+
+
+<H3>GLARESHIELD DESCRIPTION</H3>
+
+The row of switches and panels located above the displays provide for
+aircrew control and selection of a variety of display modes,
+navigation and system data, and data entry to the autopilot systems. A
+good description of flightdecks and glass displays is available at <A
+REF="http://www.meriweather.com/flightdeck.html">http://www.meriweather.com/flightdeck.html</A>
+<P>
+
+The panels were provided by Advanced Graphics Technologies <A
+HREF="http://www.aircraftsimulators.com">http://www.aircraftsimulators.com</A>
+and the electronics provide for interfacing 48 momentary switches, 128
+static switches, and six rotary encoders, plus the drivers for 16
+7-segment LEDs. The interface to the PC is via a parallel port and an
+interrupt driven linux device driver.
+<P>
+
+<!-- Begin Row -->
+<TABLE ALIGN=CENTER>
+<TR VALIGN=TOP>
+<TD WIDTH=320 HEIGHT=233>
+<A HREF="Link/107_0726.html"><IMG WIDTH=320 HEIGHT=240 SRC="Small/107_0726.jpg" ALT="107_0726"></A><BR>
+<FONT SIZE=-1 id="fgfs">
+107_0726
+</FONT>
+</TD>
+<TD WIDTH=320 HEIGHT=233>
+<A HREF="Link/107_0728.html"><IMG WIDTH=320 HEIGHT=240 SRC="Small/107_0728.jpg" ALT="107_0728"></A><BR>
+<FONT SIZE=-1 id="fgfs">
+107_0728
+</FONT>
+</TD>
+</TR>
+</TABLE>
+
+
+<H3>BUILDING THE THROTTLE QUADRANT</H3>
+
+The center pedestal houses the controls for the engines, flaps, and
+spoilers as well as most of the navigation and radio gear. A major
+component of this section are the throttle levers. The plastic
+knock-offs that can be found on the web (when one can find them) are
+just that -- knockoffs. Short of actual hardware salvaged from
+aircraft the knock-offs lack the feel and functions of real throttle
+levers. Building a functional set of throttle levers developed into a
+major project. The levers pictured here provide all the features of
+actual throttles including interlocks to prevent reverse thrust
+activation when forward throttles are above idle, movement of the
+forward throttles when the reverse system is active, a reverse idle
+detent postion that activates the reverse thrust configuration prior
+and delays engine acceleration until the configuration is set and,
+conversely, prevents forward movement and reverse lever OFF position
+until the system is fully stowed.
+<P>
+
+As the pictures show, the construction is heavy duty consisting of
+milled aluminum parts and internally milled levers to hold the linkage
+and mechanisms for each throttle. The auto-throttles were first
+operated with standard RC type servos and a phidget board via a USB
+interface. A new design is being installed using gears and DC
+gear-drive motors (200:1) to provide a greater amount of torque, a
+smoother action and throttle movement, and a tighter control of
+throttle positioning. RC type servos are a little light on the amount
+of torque they produce and have travel limits that restrict the amount
+of leverage you can apply and still get sufficient throttle
+travel. Plus response times can create a bit of a lag that complicates
+the design of a feedback type controller.
+<P>
+
+<!-- Begin Row -->
+<TABLE ALIGN=CENTER>
+<TR VALIGN=TOP>
+<TD WIDTH=175 HEIGHT=233>
+<A HREF="Link/ready_for_cover.html"><IMG WIDTH=175 HEIGHT=233 SRC="Small/ready_for_cover.jpg" ALT="ready_for_cover"></A><BR>
+<FONT SIZE=-1 id="fgfs">
+ready_for_cover
+</FONT>
+</TD>
+<TD WIDTH=320 HEIGHT=233>
+<A HREF="Link/sitting_in_the_well.html"><IMG WIDTH=320 HEIGHT=240 SRC="Small/sitting_in_the_well.jpg" ALT="sitting_in_the_well"></A><BR>
+<FONT SIZE=-1 id="fgfs">
+sitting_in_the_well
+</FONT>
+</TD>
+</TR>
+</TABLE>
+<!-- Begin Row -->
+<TABLE ALIGN=CENTER>
+<TR VALIGN=TOP>
+<TD WIDTH=311 HEIGHT=233>
+<A HREF="Link/onemore.html"><IMG WIDTH=311 HEIGHT=233 SRC="Small/onemore.jpg" ALT="onemore"></A><BR>
+<FONT SIZE=-1 id="fgfs">
+onemore
+</FONT>
+</TD>
+<TD WIDTH=311 HEIGHT=233>
+<A HREF="Link/almost_done.html"><IMG WIDTH=311 HEIGHT=233 SRC="Small/almost_done.jpg" ALT="almost_done"></A><BR>
+<FONT SIZE=-1 id="fgfs">
+almost_done
+</FONT>
+</TD>
+</TR>
+</TABLE>
+<!-- Begin Row -->
+<TABLE ALIGN=CENTER>
+<TR VALIGN=TOP>
+<TD WIDTH=320 HEIGHT=233>
+<A HREF="Link/complete_unit.html"><IMG WIDTH=320 HEIGHT=240 SRC="Small/complete_unit.jpg" ALT="complete_unit"></A><BR>
+<FONT SIZE=-1 id="fgfs">
+complete_unit
+</FONT>
+</TD>
+<TD WIDTH=311 HEIGHT=233>
+<A HREF="Link/usb_ad.html"><IMG WIDTH=311 HEIGHT=233 SRC="Small/usb_ad.jpg" ALT="usb_ad"></A><BR>
+<FONT SIZE=-1 id="fgfs">
+usb_ad
+</FONT>
+</TD>
+</TR>
+</TABLE>
+<!-- Begin Row -->
+<TABLE ALIGN=CENTER>
+<TR VALIGN=TOP>
+<TD WIDTH=175 HEIGHT=233>
+<A HREF="Link/single2.html"><IMG WIDTH=175 HEIGHT=233 SRC="Small/single2.jpg" ALT="single2"></A><BR>
+<FONT SIZE=-1 id="fgfs">
+single2
+</FONT>
+</TD>
+</TR>
+</TABLE>
+<P>
+
+A USB port is provided to read the throttle lever positions. The
+circuit board pictured here provides the USB chip that controls the
+8-channel A/D chip. The chip provides a 12-bit data word for each
+channel and once initialized and programmed operates
+independently. The board provides a jumper to select the voltage for
+the pots; either +5V provided by the USB port or the option to connect
+an external power supply of a higher voltage
+<P>
+
+
+<H3>Scale 3X (Los Angeles, CA; Feb 12-13, 2005)</H3>
+
+Jack, Jim, and Curt dismantled the sim and carted it down to the Scale 3X expo
+at the Los Angeles convention center.  Here are a few pictures from the event:
+
+<!-- Begin Row -->
+<TABLE ALIGN=CENTER>
+<TR VALIGN=TOP>
+<TD WIDTH=320 HEIGHT=233>
+<A HREF="Link/img_2327.html"><IMG WIDTH=320 HEIGHT=240 SRC="Small/img_2327.jpg" ALT="img_2327"></A><BR>
+<FONT SIZE=-1 id="fgfs">
+img_2327
+</FONT>
+</TD>
+<TD WIDTH=320 HEIGHT=233>
+<A HREF="Link/img_2335.html"><IMG WIDTH=320 HEIGHT=240 SRC="Small/img_2335.jpg" ALT="img_2335"></A><BR>
+<FONT SIZE=-1 id="fgfs">
+img_2335
+</FONT>
+</TD>
+</TR>
+</TABLE>
+<!-- Begin Row -->
+<TABLE ALIGN=CENTER>
+<TR VALIGN=TOP>
+<TD WIDTH=320 HEIGHT=233>
+<A HREF="Link/img_2336.html"><IMG WIDTH=320 HEIGHT=240 SRC="Small/img_2336.jpg" ALT="img_2336"></A><BR>
+<FONT SIZE=-1 id="fgfs">
+img_2336
+</FONT>
+</TD>
+<TD WIDTH=320 HEIGHT=233>
+<A HREF="Link/img_2338.html"><IMG WIDTH=320 HEIGHT=240 SRC="Small/img_2338.jpg" ALT="img_2338"></A><BR>
+<FONT SIZE=-1 id="fgfs">
+img_2338
+</FONT>
+</TD>
+</TR>
+</TABLE>
+<!-- Begin Row -->
+<TABLE ALIGN=CENTER>
+<TR VALIGN=TOP>
+<TD WIDTH=320 HEIGHT=233>
+<A HREF="Link/img_2343.html"><IMG WIDTH=320 HEIGHT=240 SRC="Small/img_2343.jpg" ALT="img_2343"></A><BR>
+<FONT SIZE=-1 id="fgfs">
+img_2343
+</FONT>
+</TD>
+<TD WIDTH=320 HEIGHT=233>
+<A HREF="Link/img_2344.html"><IMG WIDTH=320 HEIGHT=240 SRC="Small/img_2344.jpg" ALT="img_2344"></A><BR>
+<FONT SIZE=-1 id="fgfs">
+img_2344
+</FONT>
+</TD>
+</TR>
+</TABLE>
+<!-- Begin Row -->
+<TABLE ALIGN=CENTER>
+<TR VALIGN=TOP>
+<TD WIDTH=320 HEIGHT=233>
+<A HREF="Link/img_2347.html"><IMG WIDTH=320 HEIGHT=240 SRC="Small/img_2347.jpg" ALT="img_2347"></A><BR>
+<FONT SIZE=-1 id="fgfs">
+img_2347
+</FONT>
+</TD>
+</TR>
+</TABLE>
+
+Here is an interview of the various developers at the booth conducted by
+Harold Johnson, who gave his permission to post his interview here:
+<P>
+<A HREF="SCALE_2005-02-12_FlightGear.mp3">FlightGear/Scale3X Interview (mp3)</A>
+<P>
+
+Here is a movie of Jack's simulator in action (note until someone converts
+this to mpg or avi, it will most likely require a recent windows media player
+to view):
+<P>
+<A HREF="747-Scale3X.wmv">747 Movie (wmv)</A>
+<P>
+
+Here is a picture of Jack and Curt sitting in the Scale 2006 version of the
+simulator:
+<P>
+
+<!-- Begin Row -->
+<TABLE ALIGN=CENTER>
+<TR VALIGN=TOP>
+<TD WIDTH=320 HEIGHT=233>
+<A HREF="Link/129_2957.html"><IMG WIDTH=320 HEIGHT=240 SRC="Small/129_2957.jpg" ALT="129_2957"></A><BR>
+<FONT SIZE=-1 id="fgfs">
+129_2957
+</FONT>
+</TD>
+</TR>
+</TABLE>
+<P>
+
+
+<H3>2005 PLANS</H3>
+
+A complete rebuild!  Here are some pictures that are current as of June '05:
+<P>
+<!-- Begin Row -->
+<TABLE ALIGN=CENTER>
+<TR VALIGN=TOP>
+<TD WIDTH=320 HEIGHT=233>
+<A HREF="Link/121_2189.html"><IMG WIDTH=320 HEIGHT=240 SRC="Small/121_2189.JPG" ALT="121_2189"></A><BR>
+<FONT SIZE=-1 id="fgfs">
+121_2189
+</FONT>
+</TD>
+<TD WIDTH=320 HEIGHT=233>
+<A HREF="Link/122_2247.html"><IMG WIDTH=320 HEIGHT=240 SRC="Small/122_2247.JPG" ALT="122_2247"></A><BR>
+<FONT SIZE=-1 id="fgfs">
+122_2247
+</FONT>
+</TD>
+</TR>
+</TABLE>
+<!-- Begin Row -->
+<TABLE ALIGN=CENTER>
+<TR VALIGN=TOP>
+<TD WIDTH=320 HEIGHT=233>
+<A HREF="Link/122_2248.html"><IMG WIDTH=320 HEIGHT=240 SRC="Small/122_2248.JPG" ALT="122_2248"></A><BR>
+<FONT SIZE=-1 id="fgfs">
+122_2248
+</FONT>
+</TD>
+<TD WIDTH=320 HEIGHT=233>
+<A HREF="Link/122_2250.html"><IMG WIDTH=320 HEIGHT=240 SRC="Small/122_2250.JPG" ALT="122_2250"></A><BR>
+<FONT SIZE=-1 id="fgfs">
+122_2250
+</FONT>
+</TD>
+</TR>
+</TABLE>
+
+Continue the endless scavenge hunt for spare parts and equipment.
+<P>
+<!-- Begin Row -->
+<TABLE ALIGN=CENTER>
+<TR VALIGN=TOP>
+<TD WIDTH=320 HEIGHT=233>
+<A HREF="Link/747hull.html"><IMG WIDTH=320 HEIGHT=240 SRC="Small/747hull.jpg" ALT="747hull"></A><BR>
+<FONT SIZE=-1 id="fgfs">
+747hull
+</FONT>
+</TD>
+</TR>
+</TABLE>
+
+
+<H3>ACKNOWLEDGEMENTS</H3>
+
+Special thanks to the following for their time and support:
+<P>
+
+Curtis Olson, who provided assistance and help in my understanding of
+the FlightGear architecture and C++
+<P>
+
+Jim Brennan, who provided volumes of data, manuals, and information on
+the 747 and its systems
+<P>
+
+Damion Shelton, the author of OpenGC, for his critique and assistance
+in the early development of the display software
+<P>
+
+Mark Harris, for the sophisticated and elegant 3D cloud software,
+I'm still trying to fully comprehend,
+<P>
+
+David Culp, who provided information on current cockpit procedures
+required to execute instrument approaches and engine start sequences,
+and finally
+<P>
+
+The FlightGear community and user groups for providing a wealth of
+ideas, discussions, and opinions through their emails on every aspect
+of computer modeling.
+<P>

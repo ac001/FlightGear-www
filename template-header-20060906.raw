@@ -1,0 +1,55 @@
+<!-- Standard Header Begin -->
+
+<html>
+
+<head>
+  <title>FlightGear Flight Simulator</title>
+  <link rel="stylesheet" type="text/css" href="${ROOT}/default.css"> 
+  <meta http-equiv="Content-Script-Type" Content="text/javascript">
+  <script src="${ROOT}/templates.js"></script>
+</head>
+
+<body>
+  <!-- Display the main logo -->
+  <table id="global">
+    <tbody>
+      <tr>
+        <td align="left">
+          <script>MainLogo("${ROOT}");</script>
+        </td>
+      </tr>
+      <tr>
+       <td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2485404446552133";
+google_ad_width = 728;
+google_ad_height = 15;
+google_ad_format = "728x15_0ads_al_s";
+google_ad_channel ="9092124961";
+google_color_border = "FFFFFF";
+google_color_bg = "EFEFEF";
+google_color_link = "0000FF";
+google_color_text = "000000";
+google_color_url = "008000";
+//--></script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+       </td>
+      </tr>
+    </tbody>
+  </table>
+  <P>
+
+  <table id="global">
+    <tbody><tr>
+      <td id="menu">
+        <!-- SiteSearch Google -->
+        <script>SiteSearchGoogle();</script>
+
+        <!-- Display the main menu -->
+        <script>MainMenu("${ROOT}");</script>
+      </td>
+      <td id="page">
+
+<!-- Standard Header End -->

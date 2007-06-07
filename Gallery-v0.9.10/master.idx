@@ -1,0 +1,118 @@
+<H1>FGFS Photo Gallery</H1>
+
+<FONT SIZE=-1>
+ <UL>
+  <LI> <A HREF="/Gallery-v0.9.8">Screenshots from v0.8.0 - v0.9.8</A>
+  <LI> <A HREF="/Gallery-v0.7.9">Screenshots from v0.0.0 - v0.7.9</A>
+ </UL>
+</FONT>
+
+<H3>June 2006, 777-200 Flying at Dusk</H3>
+
+777-dusk-1.jpg
+777-dusk-2.jpg
+777-dusk-3.jpg
+777-dusk-4.jpg
+
+
+<H3>April 2006, Screenshots from v0.9.10</H3>
+
+Version 0.9.10 has completely redone terrain textures derived from
+satellite imagery.  Here is a Comanche pa24 flying in the Colorado Rockies
+area.
+
+longs-peak.jpg
+grand-lake.jpg
+depart-gramby.jpg
+<P>
+
+Version 0.9.10 has much improved multiplayer support.  There is even a
+multiplayer map server (based on google map technology) that can show
+all the active pilots superimposed on top of a google map.
+ 
+fgmap-0.0-03.jpg
+<P>
+
+The following are screen shots from the
+<A HREF="http://www.custom-scenery.org/">South Germany custom scenery
+project</A>:
+
+south_germany_01.jpg
+south_germany_04.jpg
+south_germany_05.jpg
+<P>
+
+
+<H3>November 2005, Screenshots from v0.9.9</H3>
+
+FlightGear aircraft can have fully 3d, fully animated, fully
+clickable/interactive cockpits
+
+bravo-cockpit.jpg
+<P>
+
+
+Picture of the Concorde showing our new "theme-able" gui system as well
+as our new shadow system where an aircraft will cast shadows on itself
+and the ground.
+
+concorde-gui.jpg
+<P>
+
+We now have support for seasonal texture sets, 3d clouds, and users
+can submit models of buildings, landmarks, towers, or bridges from
+around the world for inclusion in the FlightGear scenery.
+
+winter-clouds-bo105.jpg
+<P>
+
+We have a nicely modeled carrier with a variety of aircraft that can
+launch and land with an arrestor hook.
+
+seafire-nimitz01.jpg
+<P>
+
+We have new weather effects, thunderstorms, lightning, and rain.  And you
+can see the ground and self shadowing effects.  The approach shot shows the
+b1900d with it's full 3d clickable instrument panel on approach to Birmingham
+International (EGBB) at dusk.
+
+Citation-II-weather.jpg
+lightning-rain-b1900d.jpg
+b1900d-01.jpg
+b1900d-02.jpg
+<P>
+
+We can setup aircraft to emit contrails.
+
+contrails_001.jpg
+<P>
+
+On occasion FlightGear is spotting doing interesting things in the real world.
+Here FlightGear is being used as a real time synthetic display for a
+University of Minnesota UAV project.  The two images (live video + synthetic
+view) were captured at the same time from the same perspective.  You can see
+how closely they match.  One of the goals of this project is to pilot the
+aircraft solely from the synthetic view.  More details on this project
+can be found starting on <A HREF="http://www.flightgear.org/~curt/">my home
+page</A> in my 'news' postings.  FlightGear supports insertion of custom,
+highly detailed, photo-real scenery models for small areas.
+
+jensen2-vid.jpg
+jensen2-synth.jpg
+<P>
+
+The following pictures show FlightGear as part of a 747 cockpit simulator
+with columnated visuals.  You can see more about this project
+<A HREF="/Projects/747-JW/">here</A>.
+
+125_2561.jpg
+125_2566.jpg
+125_2572.jpg
+<P>
+
+3D visualization of the Class C and Class D airspaces over the northwest
+region of Milwaukee, WI.
+
+airspace01.jpg
+

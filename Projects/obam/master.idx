@@ -1,0 +1,72 @@
+<H1>OV-10 Bronco Association Museum Simulator Project</H1>
+
+<H3>INTRODUCTION</H3>
+
+The <A href="http://www.ov-10bronco.net/OBA/">OV-10 Bronco Association</A>
+ is a non-profit organization dedicated to preserving the history of the OV-10 
+ Bronco and the Forward Air Controller (FAC) mission.  The association is based 
+ at Meacham Field in Fort Worth, Texas, and has established a museum there.  The
+ museum's collection is growing rapidly and includes two recently purchased Broncos.  
+ In 2005 Dave Culp, a former USAF Bronco pilot, put together a PC-based flight 
+ simulation station for the museum, based on FlightGear.<p>
+
+
+<H3>FUNCTIONAL DESCRIPTION</H3>
+
+The OV-10 simulator hardware consists of a standard PC with an AMD 2300+ CPU, 
+512 MB RAM, GeForce MX4000 video card, standard peripherals with speakers and
+a USB joystick.  The monitor was supplied by the museum, which helped keep the 
+shipping costs down.<p>
+
+The operating system is linux, Mandrake 10.1, with the latest nVidia video driver,
+the KDE desktop, and can be used as a workstation if need be.<p>
+
+The simulator software is a slightly modified version of FlightGear 0.9.8, optimized 
+for use by the general public by simplifying some controls and adding automatic 
+crash detection and reset.  The simulation starts with the user OV-10 on the runway 
+at Ramstein Airbase, Germany, with engines running.  The user experience is enhanced 
+with the addition of over forty Artificial Intelligence (AI) aircraft which fly in 
+the vicinity of Ramstein.  The types of AI aircraft used in the simulation were 
+chosen to reflect the usual air traffic in southwest Germany circa 1980.<p>
+
+
+Below is a photo of some museum visitors flying the OV-10.<br><br>
+
+OV-10_Simulator.jpg
+
+<br><br><br>
+
+Below is a screen capture of the user OV-10 over the German terrain.
+<br><br>
+
+OV10-screen-001.jpg
+
+<br><br><br>
+
+Below is a screen capture of the user OV-10 in formation with an AI aircraft.
+<br><br>
+
+2ship.jpg
+
+<br><br><br>
+
+Here is a look at the types of AI aircraft that inhabit the simulation.
+<br><br>
+
+traffic.jpg
+
+<br><br><br>
+
+
+<H3>Future Plans</H3>
+
+The obvious next step will be to build a replica OV-10 cockpit with 
+functioning stick, rudder pedals, and power and condition levers, and
+to install a big-screen display!<p>
+
+<h3>Acknowledgments</h3>
+
+The FlightGear community, who have built a wonderful open source 
+simulator and have designed dozens of realistic models of aircraft. 
+<P>
+
