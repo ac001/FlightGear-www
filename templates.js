@@ -160,6 +160,7 @@ function RandomURLS()
   //   at kingmont dt com
   // http://flight.frozenwebhost.com/ - Steve support at
   //   frozenwebhost dt com
+  // http://mirror.fslutd.org/ - Philip White pmw at qnan dt org
 
   var base = arguments[0];
 
@@ -169,7 +170,8 @@ function RandomURLS()
                 'http://mirrors.ibiblio.org/pub/mirrors/flightgear/ftp/',
                 'ftp://ftp.planetmirror.com/pub/fgfs/',
                 'ftp://ftp.de.flightgear.org/pub/fgfs/',
-                'http://flight.frozenwebhost.com/'
+                'http://flight.frozenwebhost.com/',
+		'http://mirror.fslutd.org/flightgear/'
               ];
 
   // requested not to be in the round robin, but is a full mirror
