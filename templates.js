@@ -48,35 +48,6 @@ function SiteSearchGoogle()
   document.write("</form>");
 }
 
-/* Display GlobalSpec.com 120x120 search box */
-function GlobalSpec120x120()
-{
-  document.write("<!-- Begin GS SWF -->");
-  document.write("<object classid=\"clsid:d27cdb6e-ae6d-11cf-96b8-444553540000\" codebase=\"http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0\" width=\"120\" height=\"120\" id=\"GlobalSpec_120x120_pf\" align=\"middle\">");
-  document.write("            <param name=\"allowScriptAccess\" value=\"sameDomain\" />");
-  document.write("            <param name=\"movie\" value=\"http://affiliates.globalspec.com/pix/affiliate/GlobalSpec_120x120_pf.swf?img=71&kbid=1417&frmtrk=affiliate&version=GlobalSpec_120x120_pf051228\" />");
-  document.write("            <param name=\"quality\" value=\"high\" />");
-  document.write("            <param name=\"bgcolor\" value=\"#4C699E\" />");
-  document.write("            <embed src=\"http://affiliates.globalspec.com/pix/affiliate/GlobalSpec_120x120_pf.swf?img=71&kbid=1417&frmtrk=affiliate&version=GlobalSpec_120x120_pf051228\" quality=\"high\" bgcolor=\"#4C699E\" width=\"120\" height=\"120\" name=\"GlobalSpec_120x120_pf\" align=\"middle\" allowScriptAccess=\"sameDomain\" type=\"application/x-shockwave-flash\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\" />");
-  document.write("</object><span style=\"position:absolute;\"><img src = \"http://www.myaffiliateprogram.com/u/globalsp/se.asp?e=71&id=1417\"></span>");
-  document.write("<!-- End GS SWF -->");
-}
-
-/* Display GlobalSpec.com 125x125 search box */
-function GlobalSpec125x125()
-{
-  document.write("<!-- Begin GS SWF -->");
-  document.write("<object classid=\"clsid:d27cdb6e-ae6d-11cf-96b8-444553540000\" codebase=\"http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0\" width=\"125\" height=\"125\" id=\"GlobalSpec_125x125_02\" align=\"middle\">");
-  document.write("        <param name=\"allowScriptAccess\" value=\"sameDomain\" />");
-  document.write("        <param name=\"movie\" value=\"http://affiliates.globalspec.com/pix/affiliate/GlobalSpec_125x125_02.swf?img=45&kbid=1417&frmtrk=affiliate&version=GlobalSpec_125x125_02050329\" />");
-  document.write("        <param name=\"quality\" value=\"high\" />");
-  document.write("        <param name=\"bgcolor\" value=\"#000000\" />");
-  document.write("        <embed src=\"http://affiliates.globalspec.com/pix/affiliate/GlobalSpec_125x125_02.swf?img=45&kbid=1417&frmtrk=affiliate&version=GlobalSpec_125x125_02050329\" quality=\"high\" bgcolor=\"#000000\" width=\"125\" height=\"125\" name=\"GlobalSpec_125x125_02\" align=\"middle\" allowScriptAccess=\"sameDomain\" type=\"application/x-shockwave-flash\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\" />");
-  document.write("</object><span style=\"position:absolute;\"><img src = \"http://www.myaffiliateprogram.com/u/globalsp/se.asp?e=45&id=1417\"></span>");
-  document.write("<!-- End GS SWF -->");
-}
-
-
 /* Display the main menu */
 function MainMenu()
 {
@@ -88,7 +59,7 @@ function MainMenu()
   document.write("<a href=\"" + root + "/features.html\">Features</a><br>");
   document.write("<a href=\"" + root + "/Gallery-v0.9.10/\">Screenshots</a><br>");
   document.write("<a href=\"" + root + "/Downloads/\">Downloads</a><br>");
-  document.write("<a href=\"http://cdrom.flightgear.org\">FG CD & DVD's</a><br>");
+  document.write("<a href=\"http://www.flightgear.org/cdrom/\">CD's & DVD's</a><br>");
   document.write("<h3>Support</h3>");
   document.write("<a href=\"" + root + "/version.html\">Version Change Log</a><br>");
   document.write("<a href=\"" + root + "/hardwarereq.html\">Hardware Requirements</a><br>");
@@ -161,6 +132,8 @@ function RandomURLS()
   // http://flight.frozenwebhost.com/ - Steve support at
   //   frozenwebhost dt com
   // http://mirror.fslutd.org/ - Philip White pmw at qnan dt org
+  // http://flightgear.mxchange.org/pub/fgfs/ - Roland Hadar r.haeder
+  //   at will-hier-weg dt de
 
   var base = arguments[0];
 
@@ -171,7 +144,8 @@ function RandomURLS()
                 'ftp://ftp.planetmirror.com/pub/fgfs/',
                 'ftp://ftp.de.flightgear.org/pub/fgfs/',
                 'http://flight.frozenwebhost.com/',
-		'http://mirror.fslutd.org/flightgear/'
+		'http://mirror.fslutd.org/flightgear/',
+		'http://flightgear.mxchange.org/pub/fgfs/'
               ];
 
   // requested not to be in the round robin, but is a full mirror

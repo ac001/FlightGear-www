@@ -63,8 +63,17 @@ google_color_text = "000000";
    [<A HREF="http://www.flightgear.org/">English</A>]
    [<A HREF="http://fr.flightgear.tuxfamily.org/">French</A>]
    [<A HREF="http://www.jp.flightgear.org/">Japanese</A>]
+   [<A HREF="http://www.flightgear.yoyo.pl/">Polish</A>]
    [<A HREF="http://www.br.flightgear.org/">Portuguese</A>]
    [<A HREF="http://flightgear.paraisoft.com/">Spanish</A>]
+ </DIV>
+
+ <DIV ALIGN="CENTER">
+   <B>New to FlightGear? Check out the
+       <A HREF="http://wiki.flightgear.org/flightgear_wiki/index.php?title=Main_Page" TARGET="_blank">Wiki</A>
+       and
+       <A HREF="http://wiki.flightgear.org/flightgear_wiki/index.php?title=FAQ" TARGET="_blank"> FAQ</A>!
+   </B>
  </DIV>
  <P>
 
@@ -77,6 +86,9 @@ google_color_text = "000000";
 
    <TD VALIGN="TOP">
     <DIV ID="page">
+
+     <H3>Marketplace</H3>
+
      <DIV ALIGN="center">
 <SCRIPT TYPE="text/javascript"><!--
 google_ad_client = "pub-2485404446552133";
@@ -110,28 +122,27 @@ google_color_text = "000000";
       <LI> <A HREF="Downloads/aircraft/">Download Aircraft.</A>
       <LI> <A HREF="Downloads/scenery.html">Download World Scenery.</A>
       <LI> <A HREF="Downloads/source.shtml">Download Source Code.</A>
-      <LI> <A HREF="http://cdrom.flightgear.org">Purchase a FlightGear CDROM
-           or DVD set.</A>
+      <LI> <A HREF="cdrom/">Purchase a FlightGear CDROM or DVD set.</A>
      </UL>
 
-     <H3>Events</H3>
+     <H3>Upcoming Events</H3>
      <UL>
 
-      <LI> <A HREF="events.html#linuxtag07"><B>May 30 - June 2, 2007</B> -
-           <B>FlightGear on LinuxTag</B> at the Messegel&auml;nde Berlin,
-           Germany.
-           The world's No. 1 Linux Expo and Conference since 1996.</A>
+      <LI> <A HREF="events.html#scale08"><B>Feb 8-10, 2008</B> -
+           Southern California Linux Expo.</A>
       <P>
 
       <LI> Please submit your upcoming FlightGear related events for
            inclusion on the web site.
 
       <!--
+      <LI> <A HREF="events.html#linuxtag07"><B>May 30 - June 2, 2007</B> -
+           <B>FlightGear on LinuxTag</B> at the Messegel&auml;nde Berlin,
+           Germany.
+           The world's No. 1 Linux Expo and Conference since 1996.</A>
       <LI> <A HREF="events.html#justice"><B>Oct 30</B> -
            JUSTICE will show FlightGear in a court room demonstration.</A>
 
-      <LI> <A HREF="events.html#flightsimweekend"><B>Nov 4-5</B> -
-           Flight Sim Weekend.</A>
       -->
     </UL>
     </DIV>
@@ -204,6 +215,11 @@ google_color_text = "000000";
   </TR>
  </TABLE>
 
+<DIV ALIGN="CENTER">
+   Bored?  How about watching some: <A HREF="silliness.html">silly youtube
+   videos</A>.
+</DIV>
+
  <H3><IMG ALIGN="MIDDLE" SRC="http://baron.flightgear.org/cgi-bin/wwwcount.cgi?df=curt_flightgear.dat&amp;dd=fatpt&amp;ft=3" ALT="counter"></H3>
 
 <!-- Standard Footer Begin -->
@@ -228,8 +244,6 @@ google_color_text = "000000";
 </script>
 <BR>
 
-       <script>GlobalSpec120x120();</script>
-
       </td>
      </tr>
     </tbody>
@@ -247,7 +261,7 @@ google_color_text = "000000";
           </A>
         </td>
         <td>
-          Last modified:  5/28/2007 <BR>
+          Last modified:  11/26/2007 <BR>
           <A HREF="http://www.flightgear.org/~curt/">
             Curtis L. Olson
             <IMG ALIGN="MIDDLE" SRC="./email-fg.png">

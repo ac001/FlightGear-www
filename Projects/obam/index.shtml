@@ -78,8 +78,6 @@ google_color_text = "000000";
 </script>
 <BR>
 
-       <script>GlobalSpec120x120();</script>
-
       </td>
      </tr>
     </tbody>
@@ -97,7 +95,7 @@ google_color_text = "000000";
           </A>
         </td>
         <td>
-          Last modified:  9/19/2005 <BR>
+          Last modified:  6/07/2007 <BR>
           <A HREF="http://www.flightgear.org/~curt/">
             Curtis L. Olson
             <IMG ALIGN="MIDDLE" SRC="../../email-fg.png">
