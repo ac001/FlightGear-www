@@ -7,7 +7,10 @@
   <title>FlightGear Flight Simulator</title>
   <link rel="stylesheet" type="text/css" href="../default.css"> 
   <meta http-equiv="Content-Script-Type" Content="text/javascript">
-  <script src="../templates.js"></script>
+  <script language="javascript" src="../templates.js"></script>
+  <script language="javascript" src="../JSZenMenu.js"></script>
+  <script language="javascript" src="../JSZenMenuItems.js"></script>
+  <link href="../ZMFGTheme/theme.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -23,9 +26,9 @@
        <td>
 <script type="text/javascript"><!--
 google_ad_client = "pub-2485404446552133";
-google_ad_width = 728;
+google_ad_width = 468;
 google_ad_height = 15;
-google_ad_format = "728x15_0ads_al_s";
+google_ad_format = "468x15_0ads_al_s";
 google_ad_channel ="9092124961";
 google_color_border = "efefef";
 google_color_bg = "efefef";
@@ -42,15 +45,21 @@ google_color_text = "000000";
   </table>
   <P>
 
+  <div id='fgfsmenuid' ></div>
+  <script language="javascript">
+  createMenu(fgfsmenu, 'fgfsmenuid', 'fgfsmenu', 'ZMFGTheme', 0, 'static', '../');
+  </script>
+
   <table id="global">
     <tbody><tr>
-      <td id="menu">
+      <!-- <td id="menu"> -->
         <!-- SiteSearch Google -->
-        <script>SiteSearchGoogle();</script>
+        <!-- <script>SiteSearchGoogle();</script> -->
 
         <!-- Display the main menu -->
-        <script>MainMenu("..");</script>
-      </td>
+        <!-- <script>MainMenu("..");</script> -->
+      <!-- </td> -->
+
       <td id="page">
 
 <!-- Standard Header End -->
@@ -74,6 +83,34 @@ google_color_text = "000000";
 </UL>
 </FONT>
 
+<H3>Source Code Release: Version 1.0.0 (Updated December 17, 2007)</H3>
+
+<UL>
+  <LI> Download the latest source code release:
+       <SCRIPT>RandomURLS("Source/FlightGear-1.0.0.tar.gz");</SCRIPT>
+  <LI> Download the latest base package release (182Mb).  (Includes Textures,
+       models, data, aircraft, sample scenery, and config files.)
+       <SCRIPT>RandomURLS("Shared/fgfs-base-1.0.0.tar.bz2");</SCRIPT>
+       <BR>
+       Or download a patch to upgrade the base package from version
+       0.9.10 to 1.0.0. (77Mb):
+       <SCRIPT>RandomURLS("Shared/fgfs-base-0.9.10-to-1.0.0.tar.bz2");</SCRIPT>
+  <LI> Prerequisite: <A HREF="http://freeglut.sf.net">Glut (FreeGlut)</A> -
+       OpenGL Utility Toolkit (GLUT) library.
+  <LI> Prerequisite: <A HREF="http://www.openal.org">OpenAL</A> -
+       Cross Platform 3D Audio.  Strangely, OpenAL doesn't do
+       versioned releases so you generally have to grab the latest CVS.
+  <LI> Prerequisite: <A HREF="http://plib.sourceforge.net">plib</A> -
+       portability libraries and scene graph.  You need plib-1.8.4 or
+       newer to build FlightGear 1.0.0.
+  <LI> Prerequisite: <A HREF="http://www.simgear.org">SimGear</A> - simulation
+       construction tools.  You need SimGear-1.0.0 to build
+       FlightGear-1.0.0.
+  <LI> Documentation is included with the base package.
+</UL>
+
+
+<!--
 <H3>Source Code Release: Version 0.9.11-pre1 (Updated May 14, 2007)</H3>
 
 <UL>
@@ -99,33 +136,7 @@ google_color_text = "000000";
        FlightGear-0.9.11-pre1.
   <LI> Documentation is included with the base package.
 </UL>
-
-
-<H3>Source Code Release: Version 0.9.10 (Updated April 5, 2006)</H3>
-
-<UL>
-  <LI> Download the latest source code release:
-       <SCRIPT>RandomURLS("Source/FlightGear-0.9.10.tar.gz");</SCRIPT>
-  <LI> Download the latest base package release (143Mb).  (Includes Textures,
-       models, data, aircraft, sample scenery, and config files.)
-       <SCRIPT>RandomURLS("Shared/fgfs-base-0.9.10.tar.bz2");</SCRIPT>
-       <BR>
-       Or download a patch to upgrade the base package from version
-       0.9.9 to 0.9.10. (77Mb):
-       <SCRIPT>RandomURLS("Shared/fgfs-base-0.9.9-to-0.9.10.tar.bz2");</SCRIPT>
-  <LI> Prerequisite: <A HREF="http://freeglut.sf.net">Glut (FreeGlut)</A> -
-       OpenGL Utility Toolkit (GLUT) library.
-  <LI> Prerequisite: <A HREF="http://www.openal.org">OpenAL</A> -
-       Cross Platform 3D Audio.  Strangely, OpenAL doesn't do
-       versioned releases so you generally have to grab the latest CVS.
-  <LI> Prerequisite: <A HREF="http://plib.sourceforge.net">plib</A> -
-       portability libraries and scene graph.  You need plib-1.8.4 or
-       newer to build FlightGear 0.9.10.
-  <LI> Prerequisite: <A HREF="http://www.simgear.org">SimGear</A> - simulation
-       construction tools.  You need SimGear-0.3.10 to build
-       FlightGear-0.9.10.
-  <LI> Documentation is included with the base package.
-</UL>
+-->
 
 
 <H3>Developers</H3>
@@ -187,7 +198,7 @@ google_color_text = "000000";
           </A>
         </td>
         <td>
-          Last modified:  5/15/2007 <BR>
+          Last modified:  12/17/2007 <BR>
           <A HREF="http://www.flightgear.org/~curt/">
             Curtis L. Olson
             <IMG ALIGN="MIDDLE" SRC="../email-fg.png">

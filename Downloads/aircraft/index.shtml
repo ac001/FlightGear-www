@@ -6,7 +6,10 @@
   <title>FlightGear Flight Simulator</title>
   <link rel="stylesheet" type="text/css" href="../../default.css"> 
   <meta http-equiv="Content-Script-Type" Content="text/javascript">
-  <script src="../../templates.js"></script>
+  <script language="javascript" src="../../templates.js"></script>
+  <script language="javascript" src="../../JSZenMenu.js"></script>
+  <script language="javascript" src="../../JSZenMenuItems.js"></script>
+  <link href="../../ZMFGTheme/theme.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -22,9 +25,9 @@
        <td>
 <script type="text/javascript"><!--
 google_ad_client = "pub-2485404446552133";
-google_ad_width = 728;
+google_ad_width = 468;
 google_ad_height = 15;
-google_ad_format = "728x15_0ads_al_s";
+google_ad_format = "468x15_0ads_al_s";
 google_ad_channel ="9092124961";
 google_color_border = "efefef";
 google_color_bg = "efefef";
@@ -41,26 +44,30 @@ google_color_text = "000000";
   </table>
   <P>
 
+  <div id='fgfsmenuid' ></div>
+  <script language="javascript">
+  createMenu(fgfsmenu, 'fgfsmenuid', 'fgfsmenu', 'ZMFGTheme', 0, 'static', '../../');
+  </script>
+
   <table id="global">
     <tbody><tr>
-      <td id="menu">
+      <!-- <td id="menu"> -->
         <!-- SiteSearch Google -->
-        <script>SiteSearchGoogle();</script>
+        <!-- <script>SiteSearchGoogle();</script> -->
 
         <!-- Display the main menu -->
-        <script>MainMenu("../..");</script>
-      </td>
+        <!-- <script>MainMenu("../..");</script> -->
+      <!-- </td> -->
+
       <td id="page">
 
 <!-- Standard Header End -->
 
 <H1>FlightGear Aircraft Downloads</H1>
-To install these aircraft, download the .tgz archive to your
+To install these aircraft, download the .zip archive to your
 local hard drive, and extract them into your Aircraft folder.
 For windows users, this will be located in
 C:\Program Files\FlightGear\data\Aircraft<BR>
-<P>
-If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org/">http://www.7-zip.org/</A>
 <P>
 <TABLE ID="page">
  <TR>
@@ -84,14 +91,32 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
     <B>737-300</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="737-300.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/737-300_20060220.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/737-300_20071217.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>737-300</B>: Boeing 737-300<BR>
   <B>Author:</B> David Culp (FDM), Innis Cunningham (3D and Panel)<BR>
-  <B>Version:</B> v20060220<BR>
+  <B>Version:</B> v20071217<BR>
   <B>Status:</B> early-production<BR>
   </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="747-200"></A>
+   <DIV ALIGN="center">
+    <B>747-200</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="747-200.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/747-200_1.0.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>747-200</B>: Boeing 747-200<BR>
+  <B>Author:</B> unknown<BR>
+  <B>Version:</B> v1.0<BR>
+  <B>Status:</B> early-production<BR>
+  </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="747"></A>
    <DIV ALIGN="center">
@@ -106,38 +131,54 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
   <B>Author:</B> Jim Wilson (3D), Andy Ross (FDM)<BR>
   <B>Version:</B> v20060315<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
-  <TD ID="section" VALIGN="top">
-   <A NAME="777-200"></A>
-   <DIV ALIGN="center">
-    <B>777-200</B><BR>
-    <IMG WIDTH=171 HEIGHT=128 SRC="777-200.jpg"><BR>
-    <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/777-200_20060701.zip");</SCRIPT>
-    </B><BR>
-   </DIV>
-   <B>777-200</B>: Boeing 777-200 (YASim)<BR>
-  <B>Author:</B> Justin Smithies and Syd Adams<BR>
-  <B>Version:</B> v20060701<BR>
-  <B>Status:</B> Development<BR>
-  </TD>
   <TD ID="section" VALIGN="top">
    <A NAME="A-10"></A>
    <DIV ALIGN="center">
     <B>A-10</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="A-10.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/A-10_20060625.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/A-10_20071218.zip");</SCRIPT>
     </B><BR>
    </DIV>
-   <B>A-10</B>: Fairchild A-10 (YASim FDM)<BR>
+   <B>A-10</B>: Fairchild A-10 (YASim FDM)
+						<DESCRIPTION TYPE="string">tank-600-gals</DESCRIPTION>
+						<DESCRIPTION TYPE="string">AN-ALQ-131</DESCRIPTION>
+						<DESCRIPTION TYPE="string">dual-AIM-9</DESCRIPTION>
+						<DESCRIPTION TYPE="string">LAU-68</DESCRIPTION>
+						<DESCRIPTION TYPE="string">triple-MK-82-LD</DESCRIPTION>
+						<DESCRIPTION TYPE="string">single-MK-82-LD</DESCRIPTION>
+							<DESCRIPTION TYPE="string">none</DESCRIPTION>
+							<DESCRIPTION TYPE="string">none</DESCRIPTION>
+							<DESCRIPTION TYPE="string">none</DESCRIPTION>
+							<DESCRIPTION TYPE="string">none</DESCRIPTION>
+							<DESCRIPTION TYPE="string">none</DESCRIPTION>
+							<DESCRIPTION TYPE="string">none</DESCRIPTION>
+							<DESCRIPTION TYPE="string">none</DESCRIPTION>
+							<DESCRIPTION TYPE="string">none</DESCRIPTION>
+							<DESCRIPTION TYPE="string">none</DESCRIPTION>
+							<DESCRIPTION TYPE="string">none</DESCRIPTION>
+							<DESCRIPTION TYPE="string">none</DESCRIPTION><BR>
   <B>Author:</B> Lee Elliott - Alexis Bory<BR>
-  <B>Version:</B> v20060625<BR>
+  <B>Version:</B> v20071218<BR>
   <B>Status:</B> beta<BR>
   </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="A24-Viking"></A>
+   <DIV ALIGN="center">
+    <B>A24-Viking</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="A24-Viking.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/A24-Viking_20071210.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>a24-yasim</B>: A 24 Viking (YASim)<BR>
+  <B>Author:</B> unknown<BR>
+  <B>Version:</B> v20071210<BR>
+  </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="A300"></A>
    <DIV ALIGN="center">
@@ -151,58 +192,101 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
   <B>Author:</B> unknown<BR>
   <B>Version:</B> v20061009<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="A320"></A>
    <DIV ALIGN="center">
     <B>A320</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="A320.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/A320_20060405.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/A320_20070119.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>A320</B>: Airbus A320-200<BR>
   <B>Author:</B> David Culp (FDM), Frederic Bouvier (3D)<BR>
-  <B>Version:</B> v20060405<BR>
+  <B>Version:</B> v20070119<BR>
   <B>Status:</B> beta<BR>
   </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="A320-family"></A>
+   <DIV ALIGN="center">
+    <B>A320-family</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="nothumbnail.jpg"></A><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/A320-family_20070119.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>A320-111</B>: Airbus A320-100 with CFM56-5A1 engines<BR>
+   <B>A320-131</B>: Airbus A320-100 with IAE V2500 engines<BR>
+  <B>Author:</B> unknown<BR>
+  <B>Version:</B> v20070119<BR>
+  </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="a4"></A>
    <DIV ALIGN="center">
     <B>a4</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="a4.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/a4_20060530.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/a4_20071029.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>a4f</B>: Douglas A4F Skyhawk (YASim)<BR>
    <B>a4</B>: Douglas A4 Skyhawk (YASim)<BR>
    <B>a4-uiuc</B>: A4D (A-4C) Skyhawk attack aircraft (UIUC aero model)<BR>
   <B>Author:</B> Lewis Magruder, Dean Baunton, Jim Wilson, Andy Ross, Vivian Meazza<BR>
-  <B>Version:</B> v20060530<BR>
+  <B>Version:</B> v20071029<BR>
   <B>Status:</B> early-production<BR>
   </TD>
   <TD ID="section" VALIGN="top">
-   <A NAME="Aerostar-700"></A>
+   <A NAME="A-6E"></A>
    <DIV ALIGN="center">
-    <B>Aerostar-700</B><BR>
-    <IMG WIDTH=171 HEIGHT=128 SRC="Aerostar-700.jpg"><BR>
+    <B>A-6E</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="A-6E.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/Aerostar-700_20060216.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/A-6E_20071121.zip");</SCRIPT>
     </B><BR>
    </DIV>
-   <B>aerostar-yasim</B>: Aerostar Super 700 / 3d cockpit / (YASim)<BR>
+   <B>A-6E</B>: Grumman A-6E (YASim FDM)<BR>
+  <B>Author:</B> Alexis Bory<BR>
+  <B>Version:</B> v20071121<BR>
+  <B>Status:</B> alpha<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="A6M2"></A>
+   <DIV ALIGN="center">
+    <B>A6M2</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="A6M2.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/A6M2_20070509.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>A6M2b</B>: A6M2 Zero<BR>
+   <B>A6M2</B>: A6M2 Zero<BR>
   <B>Author:</B> Syd Adams<BR>
-  <B>Version:</B> v20060216<BR>
+  <B>Version:</B> v20070509<BR>
   <B>Status:</B> development<BR>
   </TD>
  </TR>
  <TR><TD> </TD></TR>
  <TR><TD> </TD></TR>
  <TR>
+  <TD ID="section" VALIGN="top">
+   <A NAME="Aerostar-700"></A>
+   <DIV ALIGN="center">
+    <B>Aerostar-700</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="Aerostar-700.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/Aerostar-700_20071217.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>aerostar700</B>: Aerostar Super 700<BR>
+  <B>Author:</B> Syd Adams<BR>
+  <B>Version:</B> v20071217<BR>
+  <B>Status:</B> development<BR>
+  </TD>
   <TD ID="section" VALIGN="top">
    <A NAME="airwaveXtreme150"></A>
    <DIV ALIGN="center">
@@ -218,31 +302,111 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
   <B>Version:</B> v20050502<BR>
   </TD>
   <TD ID="section" VALIGN="top">
+   <A NAME="Albatross"></A>
+   <DIV ALIGN="center">
+    <B>Albatross</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="Albatross.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/Albatross_20071217.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>Albatross</B>: Grumman Albatross<BR>
+  <B>Author:</B> Detlef Faber<BR>
+  <B>Version:</B> v20071217<BR>
+  <B>Status:</B> beta<BR>
+  </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
+  <TD ID="section" VALIGN="top">
+   <A NAME="Alouette-II"></A>
+   <DIV ALIGN="center">
+    <B>Alouette-II</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="Alouette-II.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/Alouette-II_20071128.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>alouette2F</B>: Alouette II with floats (Yasim)<BR>
+   <B>alouette2</B>: Alouette II (Yasim)<BR>
+  <B>Author:</B> BARANGER Emmanuel (3D), Reagan Thomas, Maik Justus (FDM)<BR>
+  <B>Version:</B> v20071128<BR>
+  <B>Status:</B> alpha<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="Alouette-III"></A>
+   <DIV ALIGN="center">
+    <B>Alouette-III</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="Alouette-III.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/Alouette-III_20071217.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>Alouette-III</B>: Alouette_III_Helicopter<BR>
+  <B>Author:</B> Gerard Robin<BR>
+  <B>Version:</B> v20071217<BR>
+  <B>Status:</B> alpha, "GPL Copyright"<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="an2"></A>
+   <DIV ALIGN="center">
+    <B>an2</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="an2.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/an2_20070607.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>an2</B>: Legendary Russian AN-2<BR>
+  <B>Author:</B> Yurik V. Nikiforoff aka Yurik_nsk - port to FlightGear
+         <AUTHOR>Anton Nikolaev aka Xomer - original model for MSFS</AUTHOR><BR>
+  <B>Version:</B> v20070607<BR>
+  <B>Status:</B> early-production<BR>
+  </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
+  <TD ID="section" VALIGN="top">
    <A NAME="AN-225"></A>
    <DIV ALIGN="center">
     <B>AN-225</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="AN-225.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/AN-225_20060511.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/AN-225_20071107.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>AN-225</B>: Antonov AN-225 heavy/outsize cargo aircraft (YASim fdm)<BR>
   <B>Author:</B> Lee Elliott<BR>
-  <B>Version:</B> v20060511<BR>
+  <B>Version:</B> v20071107<BR>
   <B>Status:</B> beta<BR>
   </TD>
   <TD ID="section" VALIGN="top">
-   <A NAME="as350"></A>
+   <A NAME="Arsenal-VG33"></A>
    <DIV ALIGN="center">
-    <B>as350</B><BR>
-    <IMG WIDTH=171 HEIGHT=128 SRC="nothumbnail.jpg"></A><BR>
+    <B>Arsenal-VG33</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="Arsenal-VG33.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/as350_20050502.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/Arsenal-VG33_20071129.zip");</SCRIPT>
     </B><BR>
    </DIV>
-   <B>as350</B>: Ecureuil AS 350 Helicopter<BR>
+   <B>vg33-yasim</B>: Arsenal VG 33 (YASim)<BR>
   <B>Author:</B> unknown<BR>
-  <B>Version:</B> v20050502<BR>
+  <B>Version:</B> v20071129<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="ASK21"></A>
+   <DIV ALIGN="center">
+    <B>ASK21</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="ASK21.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/ASK21_20070701.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>ask21</B>: Schleicher ASK 21 Glider<BR>
+  <B>Author:</B> Heiko Schulz, AJ MacLeod<BR>
+  <B>Version:</B> v20070701<BR>
+  <B>Status:</B> early-production<BR>
   </TD>
  </TR>
  <TR><TD> </TD></TR>
@@ -268,13 +432,45 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
     <B>b1900d</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="b1900d.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/b1900d_20060410.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/b1900d_20071217.zip");</SCRIPT>
     </B><BR>
    </DIV>
-   <B>b1900d</B>: Beechcraft B1900D  (YASim) w 3d panel<BR>
-  <B>Author:</B> Syd Adams (3d model/FDM)<BR>
-  <B>Version:</B> v20060410<BR>
+   <B>b1900d</B>: Beechcraft B1900D<BR>
+  <B>Author:</B> Syd Adams (3d model/FDM) - Jean-Yves Lefort (MKVIII gpws)<BR>
+  <B>Version:</B> v20071217<BR>
   <B>Status:</B> developement<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="B-1B"></A>
+   <DIV ALIGN="center">
+    <B>B-1B</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="B-1B.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/B-1B_20071128.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>B-1B</B>: Rockwell B-1B Lancer<BR>
+  <B>Author:</B> Markus Zojer<BR>
+  <B>Version:</B> v20071128<BR>
+  <B>Status:</B> alpha<BR>
+  </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
+  <TD ID="section" VALIGN="top">
+   <A NAME="B-2"></A>
+   <DIV ALIGN="center">
+    <B>B-2</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="B-2.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/B-2_20071108.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>B-2</B>: Northrop B-2 Spirit<BR>
+  <B>Author:</B> Markus Zojer<BR>
+  <B>Version:</B> v20071108<BR>
+  <B>Status:</B> alpha<BR>
   </TD>
   <TD ID="section" VALIGN="top">
    <A NAME="b29"></A>
@@ -292,36 +488,52 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
   <B>Author:</B> unknown<BR>
   <B>Version:</B> v20060324<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="B-52F"></A>
    <DIV ALIGN="center">
     <B>B-52F</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="B-52F.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/B-52F_20060702.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/B-52F_20071203.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>B-52F</B>: Boeing B-52 F in Arclight colour scheme<BR>
   <B>Author:</B> Lee Elliott<BR>
-  <B>Version:</B> v20060702<BR>
-  <B>Status:</B> beta<BR>
+  <B>Version:</B> v20071203<BR>
+  <B>Status:</B> beta
+        <COLLISION-STATUS TYPE="string">initialised</COLLISION-STATUS><BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="BAC-TSR2"></A>
    <DIV ALIGN="center">
     <B>BAC-TSR2</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="BAC-TSR2.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/BAC-TSR2_20060220.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/BAC-TSR2_20071218.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>BAC-TSR2</B>: BAC TSR2 Prototype (YASim FDM)<BR>
   <B>Author:</B> Lee Elliott<BR>
-  <B>Version:</B> v20060220<BR>
+  <B>Version:</B> v20071218<BR>
+  <B>Status:</B> alpha
+        <COLLISION-STATUS TYPE="string">initialised</COLLISION-STATUS><BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="beaufighter"></A>
+   <DIV ALIGN="center">
+    <B>beaufighter</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="beaufighter.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/beaufighter_20071217.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>beaufighter</B>: Bristol Beaufighter TF X<BR>
+  <B>Author:</B> Detlef Faber<BR>
+  <B>Version:</B> v20071217<BR>
   <B>Status:</B> beta<BR>
   </TD>
   <TD ID="section" VALIGN="top">
@@ -343,30 +555,31 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
  <TR><TD> </TD></TR>
  <TR>
   <TD ID="section" VALIGN="top">
-   <A NAME="bell206"></A>
-   <DIV ALIGN="center">
-    <B>bell206</B><BR>
-    <IMG WIDTH=171 HEIGHT=128 SRC="nothumbnail.jpg"></A><BR>
-    <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/bell206_20050502.zip");</SCRIPT>
-    </B><BR>
-   </DIV>
-   <B>bell206</B>: Bell 206 JetRanger Helicopter<BR>
-  <B>Author:</B> unknown<BR>
-  <B>Version:</B> v20050502<BR>
-  </TD>
-  <TD ID="section" VALIGN="top">
    <A NAME="bf109"></A>
    <DIV ALIGN="center">
     <B>bf109</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="bf109.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/bf109_20060324.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/bf109_20071217.zip");</SCRIPT>
     </B><BR>
    </DIV>
-   <B>bf109</B>: Messerschmitt BF-109 G14<BR>
+   <B>bf109g</B>: Messerschmitt BF-109 G14<BR>
   <B>Author:</B> Detlef Faber<BR>
-  <B>Version:</B> v20060324<BR>
+  <B>Version:</B> v20071217<BR>
+  <B>Status:</B> production<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="bleriot-XI"></A>
+   <DIV ALIGN="center">
+    <B>bleriot-XI</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="bleriot-XI.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/bleriot-XI_20071217.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>bleriot-XI-yasim</B>: <DESCRIPTION TYPE="string">Bleriot XI (YASim)<BR>
+  <B>Author:</B> unknown<BR>
+  <B>Version:</B> v20071217<BR>
   </TD>
   <TD ID="section" VALIGN="top">
    <A NAME="bo105"></A>
@@ -374,58 +587,106 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
     <B>bo105</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="bo105.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/bo105_0.1.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/bo105_20071218.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>bo105</B>: Eurocopter Bo105<BR>
   <B>Author:</B> Melchior Franz, Maik Justus (FDM)<BR>
-  <B>Version:</B> v0.1<BR>
-  <B>Status:</B> beta<BR>
+  <B>Version:</B> v20071218<BR>
+  <B>Status:</B> early-production<BR>
   </TD>
  </TR>
  <TR><TD> </TD></TR>
  <TR><TD> </TD></TR>
  <TR>
   <TD ID="section" VALIGN="top">
+   <A NAME="bocian"></A>
+   <DIV ALIGN="center">
+    <B>bocian</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="bocian.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/bocian_20070709.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>bocian</B>: Bocian 1E<BR>
+  <B>Author:</B> AJ MacLeod<BR>
+  <B>Version:</B> v20070709<BR>
+  <B>Status:</B> alpha<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
    <A NAME="Boeing314"></A>
    <DIV ALIGN="center">
     <B>Boeing314</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="Boeing314.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/Boeing314_1.2.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/Boeing314_1.3.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>Boeing314A</B>: Boeing 314-A<BR>
+   <B>Boeing314</B>: Boeing 314 (alias)<BR>
   <B>Author:</B> unknown<BR>
-  <B>Version:</B> v1.2<BR>
+  <B>Version:</B> v1.3<BR>
   <B>Status:</B> early-production<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="Buccaneer"></A>
+   <DIV ALIGN="center">
+    <B>Buccaneer</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="Buccaneer.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/Buccaneer_0.1.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>buccaneer-obs</B>: <DESCRIPTION TYPE="string" >Blackburn Buccaneer S2(Observer)<BR>
+   <B>buccaneer</B>: <DESCRIPTION TYPE="string" >Blackburn Buccaneer S2(YASim)<BR>
+  <B>Author:</B> <AUTHOR TYPE="string">Vivian Meazza<BR>
+  <B>Version:</B> v0.1<BR>
+  <B>Status:</B> <STATUS TYPE="string">alpha<BR>
+  </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
+  <TD ID="section" VALIGN="top">
+   <A NAME="BV-141"></A>
+   <DIV ALIGN="center">
+    <B>BV-141</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="BV-141.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/BV-141_20071128.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>bv141-yasim</B>: Blohm und Voss BV141 (YASim)<BR>
+  <B>Author:</B> BARANGER Emmanuel (3D)<BR>
+  <B>Version:</B> v20071128<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="C130"></A>
+   <DIV ALIGN="center">
+    <B>C130</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="C130.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/C130_20070731.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>c130-jsbsim</B>: C130 Hercules (JSBSim)<BR>
+   <B>c130</B>: <BR>
+  <B>Author:</B> unknown<BR>
+  <B>Version:</B> v20070731<BR>
   </TD>
   <TD ID="section" VALIGN="top">
    <A NAME="c150"></A>
    <DIV ALIGN="center">
     <B>c150</B><BR>
-    <IMG WIDTH=171 HEIGHT=128 SRC="nothumbnail.jpg"></A><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="c150.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/c150_20051116.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/c150_20071218.zip");</SCRIPT>
     </B><BR>
    </DIV>
-   <B>c150</B>: Cessna 150x prototype<BR>
+   <B>c150</B>: Cessna 150L<BR>
   <B>Author:</B> Harald Johnsen<BR>
-  <B>Version:</B> v20051116<BR>
+  <B>Version:</B> v20071218<BR>
   <B>Status:</B> alpha<BR>
-  </TD>
-  <TD ID="section" VALIGN="top">
-   <A NAME="c172-le"></A>
-   <DIV ALIGN="center">
-    <B>c172-le</B><BR>
-    <IMG WIDTH=171 HEIGHT=128 SRC="nothumbnail.jpg"></A><BR>
-    <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/c172-le_20031220.zip");</SCRIPT>
-    </B><BR>
-   </DIV>
-   <B>c172-le</B>: <BR>
-  <B>Author:</B> unknown<BR>
-  <B>Version:</B> v20031220<BR>
   </TD>
  </TR>
  <TR><TD> </TD></TR>
@@ -437,13 +698,14 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
     <B>c172p</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="c172p.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/c172p_20060405.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/c172p_20070529.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>c172p-2dpanel</B>: Cessna 172P Skyhawk (1981 model), 2D panel<BR>
+   <B>c172p-panel-only</B>: Panel only for IFR-training (Cessna 172P)<BR>
    <B>c172p</B>: Cessna 172P Skyhawk (1981 model)<BR>
   <B>Author:</B> David Megginson<BR>
-  <B>Version:</B> v20060405<BR>
+  <B>Version:</B> v20070529<BR>
   <B>Status:</B> production<BR>
   </TD>
   <TD ID="section" VALIGN="top">
@@ -466,13 +728,13 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
     <B>c182</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="c182.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/c182_20060315.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/c182_20070709.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>c182-2dpanel</B>: Cessna 182 (2D panel)<BR>
    <B>c182</B>: Cessna 182<BR>
   <B>Author:</B> Stuart Buchanan<BR>
-  <B>Version:</B> v20060315<BR>
+  <B>Version:</B> v20070709<BR>
   <B>Status:</B> production<BR>
   </TD>
  </TR>
@@ -480,19 +742,34 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
  <TR><TD> </TD></TR>
  <TR>
   <TD ID="section" VALIGN="top">
+   <A NAME="c182rg"></A>
+   <DIV ALIGN="center">
+    <B>c182rg</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="nothumbnail.jpg"></A><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/c182rg_20070709.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>c182rg</B>: Cessna 182RG<BR>
+  <B>Author:</B> Stuart Buchanan
+  <AUTHOR>Ron Jensen</AUTHOR><BR>
+  <B>Version:</B> v20070709<BR>
+  <B>Status:</B> alpha<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
    <A NAME="c310"></A>
    <DIV ALIGN="center">
     <B>c310</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="c310.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/c310_20060327.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/c310_20070119.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>c310dpm-3d</B>: Cessna 310R (1979 model) with 3D cockpit<BR>
    <B>c310</B>: Cessna 310 (civilian) with 3D cockpit<BR>
    <B>c310-yasim</B>: Cessna 310 (YASim)<BR>
   <B>Author:</B> David Megginson (maintained by Stuart Buchanan)<BR>
-  <B>Version:</B> v20060327<BR>
+  <B>Version:</B> v20070119<BR>
   <B>Status:</B> production<BR>
   </TD>
   <TD ID="section" VALIGN="top">
@@ -501,7 +778,7 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
     <B>c310u3a</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="c310u3a.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/c310u3a_20060124.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/c310u3a_20070212.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>c310-ifr</B>: Cessna 310 with IFR panel<BR>
@@ -509,39 +786,39 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
    <B>c310u3a-jsbsim</B>: Cessna 310U3A<BR>
    <B>c310u3a</B>: Cessna 310U3A w. 3D cockpit<BR>
   <B>Author:</B> Chris Lampard (3D), Jim Wilson (3D, Panel), John Check (Panel), David Megginson (FDM), Tony Peden (FDM)<BR>
-  <B>Version:</B> v20060124<BR>
-  </TD>
-  <TD ID="section" VALIGN="top">
-   <A NAME="CanberraBI8"></A>
-   <DIV ALIGN="center">
-    <B>CanberraBI8</B><BR>
-    <IMG WIDTH=171 HEIGHT=128 SRC="CanberraBI8.jpg"><BR>
-    <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/CanberraBI8_20060604.zip");</SCRIPT>
-    </B><BR>
-   </DIV>
-   <B>CanberraBI8</B>: English Electric Canberra B(I)8 (YASim FDM)<BR>
-  <B>Author:</B> Lee Elliott, Josh Babcock<BR>
-  <B>Version:</B> v20060604<BR>
-  <B>Status:</B> alpha<BR>
+  <B>Version:</B> v20070212<BR>
   </TD>
  </TR>
  <TR><TD> </TD></TR>
  <TR><TD> </TD></TR>
  <TR>
   <TD ID="section" VALIGN="top">
+   <A NAME="CanberraBI8"></A>
+   <DIV ALIGN="center">
+    <B>CanberraBI8</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="CanberraBI8.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/CanberraBI8_20071108.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>CanberraBI8</B>: English Electric Canberra B(I)8 (YASim FDM)<BR>
+  <B>Author:</B> Lee Elliott, Josh Babcock<BR>
+  <B>Version:</B> v20071108<BR>
+  <B>Status:</B> alpha<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
    <A NAME="ch47"></A>
    <DIV ALIGN="center">
     <B>ch47</B><BR>
-    <IMG WIDTH=171 HEIGHT=128 SRC="nothumbnail.jpg"></A><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="ch47.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/ch47_20051128.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/ch47_0.1.zip");</SCRIPT>
     </B><BR>
    </DIV>
-   <B>ch47</B>: Alias default ch47 for ch47-yasim<BR>
-   <B>ch47-yasim</B>: CH-47 Chinook Helicopter<BR>
-  <B>Author:</B> unknown<BR>
-  <B>Version:</B> v20051128<BR>
+   <B>ch47</B>: CH-47 Chinook<BR>
+  <B>Author:</B> Melchior Franz, Maik Justus (FDM),Syd Adams (3D)<BR>
+  <B>Version:</B> v0.1<BR>
+  <B>Status:</B> alpha<BR>
   </TD>
   <TD ID="section" VALIGN="top">
    <A NAME="ch53e"></A>
@@ -557,49 +834,67 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
   <B>Version:</B> v0.1<BR>
   <B>Status:</B> early alpha<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="Citation"></A>
    <DIV ALIGN="center">
     <B>Citation</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="Citation.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/Citation_20051216.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/Citation_20071203.zip");</SCRIPT>
     </B><BR>
    </DIV>
-   <B>Citation-II</B>: Cessna 550 Citation-II w. 3d cockpit (YASim)<BR>
-  <B>Author:</B> unknown<BR>
-  <B>Version:</B> v20051216<BR>
+   <B>Citation-II</B>: Cessna 550 Citation-II<BR>
+  <B>Author:</B> Curt Olson - Syd Adams<BR>
+  <B>Version:</B> v20071203<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="Citation-Bravo"></A>
    <DIV ALIGN="center">
     <B>Citation-Bravo</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="Citation-Bravo.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/Citation-Bravo_20060622.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/Citation-Bravo_20071217.zip");</SCRIPT>
     </B><BR>
    </DIV>
-   <B>Bravo</B>: Cessna Citation-Bravo - 3d cockpit (YASim)<BR>
+   <B>Bravo</B>: Cessna 550B - Citation-Bravo<BR>
   <B>Author:</B> Syd Adams<BR>
-  <B>Version:</B> v20060622<BR>
+  <B>Version:</B> v20071217<BR>
   <B>Status:</B> development<BR>
   </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="CitationX"></A>
+   <DIV ALIGN="center">
+    <B>CitationX</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="CitationX.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/CitationX_20071001.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>CitationX</B>: Cessna Citation-X<BR>
+  <B>Author:</B> Syd Adams<BR>
+  <B>Version:</B> v20071001<BR>
+  <B>Status:</B> devel<BR>
+  </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="colditz"></A>
    <DIV ALIGN="center">
     <B>colditz</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="colditz.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/colditz_20051108.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/colditz_20070515.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>colditz</B>: Colditz Escape Glider<BR>
   <B>Author:</B> Steve Hosgood, Josh Babcock<BR>
-  <B>Version:</B> v20051108<BR>
+  <B>Version:</B> v20070515<BR>
   <B>Status:</B> false<BR>
   </TD>
   <TD ID="section" VALIGN="top">
@@ -608,32 +903,32 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
     <B>ComperSwift</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="ComperSwift.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/ComperSwift_20060220.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/ComperSwift_20071108.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>ComperSwift</B>: Comper Swift<BR>
   <B>Author:</B> Lee Elliott<BR>
-  <B>Version:</B> v20060220<BR>
+  <B>Version:</B> v20071108<BR>
   <B>Status:</B> beta<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="Concorde"></A>
    <DIV ALIGN="center">
     <B>Concorde</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="Concorde.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/Concorde_2.2.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/Concorde_2.4.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>Concorde</B>: Concorde<BR>
   <B>Author:</B> unknown<BR>
-  <B>Version:</B> v2.2<BR>
+  <B>Version:</B> v2.4<BR>
   <B>Status:</B> early-production<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="dc3"></A>
    <DIV ALIGN="center">
@@ -648,34 +943,108 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
   <B>Version:</B> v20050616<BR>
   </TD>
   <TD ID="section" VALIGN="top">
+   <A NAME="DH-89"></A>
+   <DIV ALIGN="center">
+    <B>DH-89</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="DH-89.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/DH-89_20070731.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>dh89-yasim</B>: De Havilland DH 89 (YASim)<BR>
+  <B>Author:</B> unknown<BR>
+  <B>Version:</B> v20070731<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
    <A NAME="dhc2"></A>
    <DIV ALIGN="center">
     <B>dhc2</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="dhc2.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/dhc2_20060315.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/dhc2_20071217.zip");</SCRIPT>
     </B><BR>
    </DIV>
-   <B>dhc2F</B>: de Havilland Beaver (YASim) 3D cockpit<BR>
+   <B>dhc2F</B>: de Havilland Beaver - Floats<BR>
+   <B>dhc2W</B>: de Havilland Beaver - Wheels<BR>
   <B>Author:</B> Syd Adams<BR>
-  <B>Version:</B> v20060315<BR>
+  <B>Version:</B> v20071217<BR>
   </TD>
  </TR>
  <TR><TD> </TD></TR>
  <TR><TD> </TD></TR>
  <TR>
   <TD ID="section" VALIGN="top">
+   <A NAME="DO-335"></A>
+   <DIV ALIGN="center">
+    <B>DO-335</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="DO-335.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/DO-335_20070607.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>do335-yasim</B>: Dornier Do 335 (Yasim)<BR>
+  <B>Author:</B> unknown<BR>
+  <B>Version:</B> v20070607<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="Dragonfly"></A>
+   <DIV ALIGN="center">
+    <B>Dragonfly</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="Dragonfly.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/Dragonfly_0.4.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>Dragonfly</B>: Moyes Dragonfly<BR>
+  <B>Author:</B> Torsten Dreyer<BR>
+  <B>Version:</B> v0.4<BR>
+  <B>Status:</B> early-production<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="E3B"></A>
+   <DIV ALIGN="center">
+    <B>E3B</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="E3B.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/E3B_20070509.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>E3B</B>: Boeing E-3B<BR>
+  <B>Author:</B> <AUTHOR TYPE="string">Innis Cunningham, Vivian Meazza, David Culp
+		and Julien Pierru<BR>
+  <B>Version:</B> v20070509<BR>
+  <B>Status:</B> early production<BR>
+  </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
+  <TD ID="section" VALIGN="top">
+   <A NAME="ec135"></A>
+   <DIV ALIGN="center">
+    <B>ec135</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="ec135.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/ec135_0.2.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>ec135</B>: Eurocopter EC135<BR>
+  <B>Author:</B> Heiko Schulz, Maik Justus (FDM)<BR>
+  <B>Version:</B> v0.2<BR>
+  <B>Status:</B> alpha<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
    <A NAME="f104"></A>
    <DIV ALIGN="center">
     <B>f104</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="f104.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/f104_20060315.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/f104_20070718.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>f104</B>: Lockheed F-104 Starfighter<BR>
   <B>Author:</B> Erik Hofman<BR>
-  <B>Version:</B> v20060315<BR>
+  <B>Version:</B> v20070718<BR>
   <B>Status:</B> beta<BR>
   </TD>
   <TD ID="section" VALIGN="top">
@@ -692,13 +1061,32 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
   <B>Version:</B> v20060112<BR>
   <B>Status:</B> alpha<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
+  <TD ID="section" VALIGN="top">
+   <A NAME="f15c"></A>
+   <DIV ALIGN="center">
+    <B>f15c</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="f15c.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/f15c_20070129.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>f15c3d</B>: F-15C Eagle (3D Cockpit)<BR>
+   <B>f15c</B>: F-15C Eagle<BR>
+  <B>Author:</B> Fabrice Kauffmann<BR>
+  <B>Version:</B> v20070129<BR>
+  <B>Status:</B> Early production<BR>
+  </TD>
   <TD ID="section" VALIGN="top">
    <A NAME="f16"></A>
    <DIV ALIGN="center">
     <B>f16</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="f16.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/f16_20060619.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/f16_20070119.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>f16-3d</B>: General Dynamics F-16 w. 3d cockpit<BR>
@@ -706,26 +1094,99 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
    <B>f16-mlu</B>: General Dynamics F-16AM<BR>
    <B>f16</B>: General Dynamics F-16<BR>
   <B>Author:</B> Erik Hofman, Martin "Pegasus" Schmitt (panel textures)<BR>
-  <B>Version:</B> v20060619<BR>
+  <B>Version:</B> v20070119<BR>
   <B>Status:</B> early-production<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="f18"></A>
+   <DIV ALIGN="center">
+    <B>f18</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="f18.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/f18_20070404.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>f183d</B>: F-18 Hornet Canadian Royal Air Force (3D Cockpit)<BR>
+   <B>f18</B>: F-18 Hornet Royal Canadian Air Force<BR>
+  <B>Author:</B> Fabrice Kauffmann<BR>
+  <B>Version:</B> v20070404<BR>
+  <B>Status:</B> Early production<BR>
   </TD>
  </TR>
  <TR><TD> </TD></TR>
  <TR><TD> </TD></TR>
  <TR>
   <TD ID="section" VALIGN="top">
+   <A NAME="F4U"></A>
+   <DIV ALIGN="center">
+    <B>F4U</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="F4U.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/F4U_20071217.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>f4u</B>: Vought F4U-1 Corsair<BR>
+  <B>Author:</B> Detlef Faber<BR>
+  <B>Version:</B> v20071217<BR>
+  <B>Status:</B> beta<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
    <A NAME="F80C"></A>
    <DIV ALIGN="center">
     <B>F80C</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="F80C.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/F80C_20060324.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/F80C_20070521.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>F80C</B>: Lockheed F-80C Shooting Star<BR>
   <B>Author:</B> David Culp (FDM), Massimo Taccoli, David Culp(3D)<BR>
-  <B>Version:</B> v20060324<BR>
+  <B>Version:</B> v20070521<BR>
   <B>Status:</B> production<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="F-86"></A>
+   <DIV ALIGN="center">
+    <B>F-86</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="F-86.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/F-86_20071217.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>F-86f</B>: North American F-86 F Sabre<BR>
+  <B>Author:</B> Detlef Faber<BR>
+  <B>Version:</B> v20071217<BR>
+  <B>Status:</B> beta<BR>
+  </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
+  <TD ID="section" VALIGN="top">
+   <A NAME="Farman-IV"></A>
+   <DIV ALIGN="center">
+    <B>Farman-IV</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="Farman-IV.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/Farman-IV_20071009.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>farman-IV-yasim</B>: <DESCRIPTION TYPE="string">Farman IV (YASim)<BR>
+  <B>Author:</B> unknown<BR>
+  <B>Version:</B> v20071009<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="FK9MK2"></A>
+   <DIV ALIGN="center">
+    <B>FK9MK2</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="FK9MK2.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/FK9MK2_20071114.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>fk9mk2-yasim</B>: FK 9 Mark 2 (YASim)<BR>
+  <B>Author:</B> unknown<BR>
+  <B>Version:</B> v20071114<BR>
   </TD>
   <TD ID="section" VALIGN="top">
    <A NAME="fkdr1"></A>
@@ -740,6 +1201,24 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
   <B>Author:</B> Michael Selig (FDM), Erik Hofman (3D model)<BR>
   <B>Version:</B> v20050502<BR>
   <B>Status:</B> production<BR>
+  </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
+  <TD ID="section" VALIGN="top">
+   <A NAME="flash2a"></A>
+   <DIV ALIGN="center">
+    <B>flash2a</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="flash2a.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/flash2a_20070509.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>flash2a</B>: Mainair Flash 2 Alpha<BR>
+  <B>Author:</B> Stuart Buchanan<BR>
+  <B>Version:</B> v20070509<BR>
+  <B>Status:</B> beta<BR>
   </TD>
   <TD ID="section" VALIGN="top">
    <A NAME="fokker100"></A>
@@ -756,10 +1235,6 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
   <B>Version:</B> v20060315<BR>
   <B>Status:</B> beta<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="fokker50"></A>
    <DIV ALIGN="center">
@@ -774,53 +1249,147 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
   <B>Version:</B> v20060228<BR>
   <B>Status:</B> beta<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
-   <A NAME="harrier"></A>
+   <A NAME="fw190"></A>
    <DIV ALIGN="center">
-    <B>harrier</B><BR>
-    <IMG WIDTH=171 HEIGHT=128 SRC="harrier.jpg"><BR>
+    <B>fw190</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="fw190.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/harrier_20060530.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/fw190_20071217.zip");</SCRIPT>
     </B><BR>
    </DIV>
-   <B>harrier</B>: Alias for harrier-yasim.<BR>
-   <B>harrier-yasim</B>: British Aerospace Harrier (YASim)<BR>
-  <B>Author:</B> Andy Ross(FDM), Steve Havlir(3d Model, Panel)<BR>
-  <B>Version:</B> v20060530<BR>
+   <B>fw190a8</B>: Focke-Wulf FW-190 A8<BR>
+  <B>Author:</B> Detlef Faber<BR>
+  <B>Version:</B> v20071217<BR>
+  <B>Status:</B> beta<BR>
   </TD>
   <TD ID="section" VALIGN="top">
-   <A NAME="Hunter"></A>
+   <A NAME="Grob-G115"></A>
    <DIV ALIGN="center">
-    <B>Hunter</B><BR>
-    <IMG WIDTH=171 HEIGHT=128 SRC="Hunter.jpg"><BR>
+    <B>Grob-G115</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="Grob-G115.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/Hunter_20060315.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/Grob-G115_20071203.zip");</SCRIPT>
     </B><BR>
    </DIV>
-   <B>hunter-2tanks</B>: Hawker Hunter 2 Tanks<BR>
-   <B>hunter</B>: Hawker Hunter GA11 (YASim)<BR>
-  <B>Author:</B> Vivian Meazza<BR>
-  <B>Version:</B> v20060315<BR>
-  <B>Status:</B> early-production<BR>
+   <B>g115-yasim</B>: Grob G115 (YASim)<BR>
+  <B>Author:</B> unknown<BR>
+  <B>Version:</B> v20071203<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="H-21C-Shawnee"></A>
+   <DIV ALIGN="center">
+    <B>H-21C-Shawnee</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="H-21C-Shawnee.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/H-21C-Shawnee_20071217.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>H-21C</B>: Piasecki_H-21C_Helicopter<BR>
+  <B>Author:</B> Gerard Robin<BR>
+  <B>Version:</B> v20071217<BR>
+  <B>Status:</B> alpha, "GPL Copyright"<BR>
   </TD>
  </TR>
  <TR><TD> </TD></TR>
  <TR><TD> </TD></TR>
  <TR>
   <TD ID="section" VALIGN="top">
+   <A NAME="H4-Hercules"></A>
+   <DIV ALIGN="center">
+    <B>H4-Hercules</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="H4-Hercules.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/H4-Hercules_0.66.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>h4-hercules-jsbsim</B>: Hughes H4 Hercules (JSBSim)<BR>
+   <B>h4-hercules-yasim</B>: Hughes H4 Hercules (YASim)<BR>
+  <B>Author:</B> unknown<BR>
+  <B>Version:</B> v0.66<BR>
+  <B>Status:</B> BD/BE<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="harrier"></A>
+   <DIV ALIGN="center">
+    <B>harrier</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="harrier.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/harrier_20070618.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>harrier</B>: British Aerospace Harrier (YASim)<BR>
+  <B>Author:</B> Andy Ross(FDM), Steve Havlir(3d Model, Panel)<BR>
+  <B>Version:</B> v20070618<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="Hornet"></A>
+   <DIV ALIGN="center">
+    <B>Hornet</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="Hornet.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/Hornet_20070709.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>hornet-yasim</B>: Autogiro Hornet (YASim)<BR>
+  <B>Author:</B> unknown<BR>
+  <B>Version:</B> v20070709<BR>
+  </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
+  <TD ID="section" VALIGN="top">
+   <A NAME="Hunter"></A>
+   <DIV ALIGN="center">
+    <B>Hunter</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="Hunter.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/Hunter_20070904.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>hunter-2tanks</B>: <DESCRIPTION TYPE="string" >Hawker Hunter GA11 (2 Tanks)<BR>
+   <B>hunter</B>: <DESCRIPTION TYPE="string" >Hawker Hunter GA11 (YASim)<BR>
+  <B>Author:</B> <AUTHOR TYPE="string">Vivian Meazza<BR>
+  <B>Version:</B> v20070904<BR>
+  <B>Status:</B> <STATUS TYPE="string">early-production<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="HUP-Retriever"></A>
+   <DIV ALIGN="center">
+    <B>HUP-Retriever</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="HUP-Retriever.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/HUP-Retriever_20071217.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>HUP</B>: Piasecki_HUP_Helicopter<BR>
+  <B>Author:</B> Gerard Robin<BR>
+  <B>Version:</B> v20071217<BR>
+  <B>Status:</B> alpha, "GPL Copyright"<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
    <A NAME="Hurricane"></A>
    <DIV ALIGN="center">
     <B>Hurricane</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="Hurricane.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/Hurricane_20060419.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/Hurricane_20070620.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>hurricaneIIb</B>: <DESCRIPTION TYPE="string">Hawker Hurricane IIb<BR>
-  <B>Author:</B> Vivian Meazza<BR>
-  <B>Version:</B> v20060419<BR>
+  <B>Author:</B> <AUTHOR TYPE="string">Vivian Meazza<BR>
+  <B>Version:</B> v20070620<BR>
   <B>Status:</B> early-production<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="j22"></A>
    <DIV ALIGN="center">
@@ -840,45 +1409,90 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
     <B>j3cub</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="j3cub.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/j3cub_20060303.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/j3cub_20071029.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>j3cub</B>: Piper J3 Cub (J3C-65, 1946 model)<BR>
   <B>Author:</B> David Megginson (3D, FDM), Jim Wilson (Instruments)<BR>
-  <B>Version:</B> v20060303<BR>
+  <B>Version:</B> v20071029<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="j7w"></A>
+   <DIV ALIGN="center">
+    <B>j7w</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="j7w.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/j7w_20070404.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>j7w</B>: J7W Shinden<BR>
+  <B>Author:</B> Tat Nishioka<BR>
+  <B>Version:</B> v20070404<BR>
+  <B>Status:</B> development<BR>
   </TD>
  </TR>
  <TR><TD> </TD></TR>
  <TR><TD> </TD></TR>
  <TR>
   <TD ID="section" VALIGN="top">
+   <A NAME="jeep"></A>
+   <DIV ALIGN="center">
+    <B>jeep</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="jeep.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/jeep_20071217.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>jeep</B>: Willys Jeep<BR>
+  <B>Author:</B> Detlef Faber<BR>
+  <B>Version:</B> v20071217<BR>
+  <B>Status:</B> alpha<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="ju52"></A>
+   <DIV ALIGN="center">
+    <B>ju52</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="ju52.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/ju52_20071217.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>ju52</B>: Junkers Ju-52-3m<BR>
+  <B>Author:</B> Detlef Faber<BR>
+  <B>Version:</B> v20071217<BR>
+  <B>Status:</B> beta<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
    <A NAME="KC135"></A>
    <DIV ALIGN="center">
     <B>KC135</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="nothumbnail.jpg"></A><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/KC135_20060710.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/KC135_20070718.zip");</SCRIPT>
     </B><BR>
    </DIV>
-   <B>KC135</B>: Boeing KC-135E<BR>
-  <B>Author:</B> <AUTHOR TYPE="string">Innis Cunningham, Vivian Meazza, David Culp
-		and Julien Pierru<BR>
-  <B>Version:</B> v20060710<BR>
-  <B>Status:</B> early production<BR>
+   <B>KC135</B>: <DESCRIPTION TYPE="string">Boeing KC-135E<BR>
+  <B>Author:</B> <AUTHOR TYPE="string"><BR>
+  <B>Version:</B> v20070718<BR>
+  <B>Status:</B> <STATUS TYPE="string">>early production<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
-   <A NAME="l410"></A>
+   <A NAME="Ki-84"></A>
    <DIV ALIGN="center">
-    <B>l410</B><BR>
-    <IMG WIDTH=171 HEIGHT=128 SRC="nothumbnail.jpg"></A><BR>
+    <B>Ki-84</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="Ki-84.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/l410_20050227.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/Ki-84_20070122.zip");</SCRIPT>
     </B><BR>
    </DIV>
-   <B>l410p-3d-jsbsim</B>: Let l410 (JSBSim, 3D cockpit)<BR>
-   <B>l410</B>: Alias for l410p-3d-jsbsim.<BR>
-  <B>Author:</B> unknown<BR>
-  <B>Version:</B> v20050227<BR>
+   <B>Ki-84</B>: Ki-84 Hayate<BR>
+  <B>Author:</B> Tat Nishioka<BR>
+  <B>Version:</B> v20070122<BR>
+  <B>Status:</B> development<BR>
   </TD>
   <TD ID="section" VALIGN="top">
    <A NAME="Lightning"></A>
@@ -886,13 +1500,26 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
     <B>Lightning</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="Lightning.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/Lightning_20060530.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/Lightning_20071217.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>lightning</B>: English Electric Lightning F.1A<BR>
   <B>Author:</B> AJ MacLeod<BR>
-  <B>Version:</B> v20060530<BR>
-  <B>Status:</B> beta<BR>
+  <B>Version:</B> v20071217<BR>
+  <B>Status:</B> production<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="Lionceau"></A>
+   <DIV ALIGN="center">
+    <B>Lionceau</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="Lionceau.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/Lionceau_20071217.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>lionceau-yasim</B>: Lionceau APM20 (YASim)<BR>
+  <B>Author:</B> unknown<BR>
+  <B>Version:</B> v20071217<BR>
   </TD>
  </TR>
  <TR><TD> </TD></TR>
@@ -904,26 +1531,70 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
     <B>Lockheed1049</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="Lockheed1049.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/Lockheed1049_1.1.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/Lockheed1049_1.2.zip");</SCRIPT>
     </B><BR>
    </DIV>
-   <B>Lockheed1049</B>: Lockheed 1049<BR>
+   <B>Lockheed1049</B>: Lockheed 1049 Super Constellation<BR>
   <B>Author:</B> unknown<BR>
-  <B>Version:</B> v1.1<BR>
+  <B>Version:</B> v1.2<BR>
   <B>Status:</B> early-production<BR>
   </TD>
   <TD ID="section" VALIGN="top">
-   <A NAME="Manta"></A>
+   <A NAME="Lockheed-SR71"></A>
    <DIV ALIGN="center">
-    <B>Manta</B><BR>
-    <IMG WIDTH=171 HEIGHT=128 SRC="nothumbnail.jpg"></A><BR>
+    <B>Lockheed-SR71</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="Lockheed-SR71.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/Manta_20060206.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/Lockheed-SR71_20070615.zip");</SCRIPT>
     </B><BR>
    </DIV>
-   <B>Manta</B>: Manta<BR>
-  <B>Author:</B> Sam Heyman<BR>
-  <B>Version:</B> v20060206<BR>
+   <B>sr71-yasim</B>: Lockheed SR 71 Blackbird (YASim)<BR>
+  <B>Author:</B> unknown<BR>
+  <B>Version:</B> v20070615<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="Lynx-WG13"></A>
+   <DIV ALIGN="center">
+    <B>Lynx-WG13</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="Lynx-WG13.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/Lynx-WG13_20071218.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>Lynx</B>: Lynx-WG13_Helicopter<BR>
+  <B>Author:</B> Gerard Robin<BR>
+  <B>Version:</B> v20071218<BR>
+  <B>Status:</B> alpha, "GPL Copyright"<BR>
+  </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
+  <TD ID="section" VALIGN="top">
+   <A NAME="Macchi-Castoldi-MC72"></A>
+   <DIV ALIGN="center">
+    <B>Macchi-Castoldi-MC72</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="Macchi-Castoldi-MC72.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/Macchi-Castoldi-MC72_20071114.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>mc72-yasim</B>: Macchi Castoldi M.C. 72 (YASim)<BR>
+  <B>Author:</B> unknown<BR>
+  <B>Version:</B> v20071114<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="Malolo1"></A>
+   <DIV ALIGN="center">
+    <B>Malolo1</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="Malolo1.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/Malolo1_0.0.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>Malolo1</B>: Malolo1(R/C)<BR>
+  <B>Author:</B> Innis Cunningham, Josh Wilson<BR>
+  <B>Version:</B> v0.0<BR>
   </TD>
   <TD ID="section" VALIGN="top">
    <A NAME="marchetti"></A>
@@ -949,15 +1620,29 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
     <B>MD11</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="MD11.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/MD11_20060315.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/MD11_20061018.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>MD11-FINNAIR</B>: McDonnel Douglas MD11<BR>
    <B>MD11-KLM</B>: McDonnel Douglas MD11<BR>
    <B>MD11</B>: McDonnel Douglas MD11<BR>
   <B>Author:</B> Ampere Hardraade<BR>
-  <B>Version:</B> v20060315<BR>
+  <B>Version:</B> v20061018<BR>
   <B>Status:</B> alpha<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="ME-262"></A>
+   <DIV ALIGN="center">
+    <B>ME-262</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="ME-262.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/ME-262_20071203.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>me262</B>: <BR>
+   <B>me262-yasim</B>: Messerschmitt Me-262 (YASim)<BR>
+  <B>Author:</B> Michael Koehne (FDM) / BARANGER Emmanuel (3D model)<BR>
+  <B>Version:</B> v20071203<BR>
   </TD>
   <TD ID="section" VALIGN="top">
    <A NAME="MiG-15"></A>
@@ -965,14 +1650,65 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
     <B>MiG-15</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="MiG-15.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/MiG-15_20060623.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/MiG-15_20071108.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>MiG-15bis</B>: MiG-15bis (YASim FDM)<BR>
   <B>Author:</B> Lee Elliott<BR>
-  <B>Version:</B> v20060623<BR>
+  <B>Version:</B> v20071108<BR>
   <B>Status:</B> alpha<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
+  <TD ID="section" VALIGN="top">
+   <A NAME="mirage2000"></A>
+   <DIV ALIGN="center">
+    <B>mirage2000</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="mirage2000.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/mirage2000_20070103.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>mirage2000</B>: Mirage 2000C/RDI<BR>
+  <B>Author:</B> Fabrice Kauffmann<BR>
+  <B>Version:</B> v20070103<BR>
+  <B>Status:</B> Early development<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="mosquito"></A>
+   <DIV ALIGN="center">
+    <B>mosquito</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="mosquito.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/mosquito_20071217.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>mosquito</B>: de Havilland Mosquito B Mk 16<BR>
+  <B>Author:</B> Detlef Faber<BR>
+  <B>Version:</B> v20071217<BR>
+  <B>Status:</B> beta<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="Noratlas"></A>
+   <DIV ALIGN="center">
+    <B>Noratlas</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="Noratlas.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/Noratlas_20071108.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>N2501</B>: Nord-2501  Noratlas<BR>
+   <B>N2502</B>: Nord-2502  Noratlas<BR>
+  <B>Author:</B> Gerard ROBIN<BR>
+  <B>Version:</B> v20071108<BR>
+  <B>Status:</B> alpha, "GPL Copyright"<BR>
+  </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="ogel"></A>
    <DIV ALIGN="center">
@@ -988,10 +1724,6 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
   <B>Version:</B> v20060509<BR>
   <B>Status:</B> early-production<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="ornithopter"></A>
    <DIV ALIGN="center">
@@ -1011,28 +1743,14 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
     <B>OV10</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="OV10.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/OV10_20060619.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/OV10_20070509.zip");</SCRIPT>
     </B><BR>
    </DIV>
-   <B>OV10_CDF</B>: California Department of Forestry North American OV-10A Bronco<BR>
-   <B>OV10_NASA</B>: NASA North American OV-10A Bronco<BR>
+   <B>OV10_CDF</B>: US Air Force Europe North American OV-10A Bronco<BR>
+   <B>OV10_NASA</B>: US Air Force Europe North American OV-10A Bronco<BR>
    <B>OV10_USAFE</B>: US Air Force Europe North American OV-10A Bronco<BR>
   <B>Author:</B> David Culp (FDM), Jens Thoms Toerring/Capt. Slug/David Culp (3D)<BR>
-  <B>Version:</B> v20060619<BR>
-  <B>Status:</B> beta<BR>
-  </TD>
-  <TD ID="section" VALIGN="top">
-   <A NAME="OV10_USAFE"></A>
-   <DIV ALIGN="center">
-    <B>OV10_USAFE</B><BR>
-    <IMG WIDTH=171 HEIGHT=128 SRC="OV10_USAFE.jpg"><BR>
-    <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/OV10_USAFE_20060216.zip");</SCRIPT>
-    </B><BR>
-   </DIV>
-   <B>OV10_USAFE</B>: North American OV-10A Bronco<BR>
-  <B>Author:</B> David Culp (FDM), Jens Thoms Toerring/Capt. Slug/David Culp (3D)<BR>
-  <B>Version:</B> v20060216<BR>
+  <B>Version:</B> v20070509<BR>
   <B>Status:</B> beta<BR>
   </TD>
  </TR>
@@ -1040,31 +1758,65 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
  <TR><TD> </TD></TR>
  <TR>
   <TD ID="section" VALIGN="top">
+   <A NAME="P180"></A>
+   <DIV ALIGN="center">
+    <B>P180</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="nothumbnail.jpg"></A><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/P180_20071010.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>P180-YASim</B>: Piaggio P180 Avanti II (YASim)<BR>
+  <B>Author:</B> Guillaume Chauvat<BR>
+  <B>Version:</B> v20071010<BR>
+  <B>Status:</B> alpha<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="P-38-Lightning"></A>
+   <DIV ALIGN="center">
+    <B>P-38-Lightning</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="P-38-Lightning.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/P-38-Lightning_20071218.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>F-5B</B>: F-5B_Lightning<BR>
+   <B>P-38L</B>: P-38L_Lightning<BR>
+  <B>Author:</B> Gerard ROBIN<BR>
+  <B>Version:</B> v20071218<BR>
+  <B>Status:</B> alpha, "GPL Copyright"<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
    <A NAME="p51d"></A>
    <DIV ALIGN="center">
     <B>p51d</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="p51d.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/p51d_20060320.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/p51d_20070514.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>p51d</B>: P-51D<BR>
   <B>Author:</B> Jim Wilson<BR>
-  <B>Version:</B> v20060320<BR>
+  <B>Version:</B> v20070514<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="pa24-250"></A>
    <DIV ALIGN="center">
     <B>pa24-250</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="pa24-250.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/pa24-250_20060324.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/pa24-250_20071218.zip");</SCRIPT>
     </B><BR>
    </DIV>
+   <B>pa24-250-CIIB</B>: Piper Comanche 250 with Century IIB Autopilot<BR>
    <B>pa24-250</B>: Piper Comanche 250 (1962 model)<BR>
   <B>Author:</B> Dave Perry<BR>
-  <B>Version:</B> v20060324<BR>
-  <B>Status:</B> early-production<BR>
+  <B>Version:</B> v20071218<BR>
+  <B>Status:</B> production<BR>
   </TD>
   <TD ID="section" VALIGN="top">
    <A NAME="pa28-161"></A>
@@ -1072,17 +1824,13 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
     <B>pa28-161</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="pa28-161.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/pa28-161_20060216.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/pa28-161_20071203.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>pa28-161</B>: Piper Cherokee Warrior II (1979 model)<BR>
   <B>Author:</B> David Megginson<BR>
-  <B>Version:</B> v20060216<BR>
+  <B>Version:</B> v20071203<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="paraglider"></A>
    <DIV ALIGN="center">
@@ -1098,19 +1846,84 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
   <B>Version:</B> v20060112<BR>
   <B>Status:</B> beta<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
+  <TD ID="section" VALIGN="top">
+   <A NAME="payen-pa100"></A>
+   <DIV ALIGN="center">
+    <B>payen-pa100</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="payen-pa100.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/payen-pa100_20070708.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>pa100-fire</B>: PAYEN Pa 100 (YASim)<BR>
+   <B>pa100-yasim</B>: PAYEN Pa 100 (YASim)<BR>
+  <B>Author:</B> unknown<BR>
+  <B>Version:</B> v20070708<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="PBY-Catalina"></A>
+   <DIV ALIGN="center">
+    <B>PBY-Catalina</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="PBY-Catalina.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/PBY-Catalina_20071217.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>Catalina_onsea</B>: <BR>
+   <B>Catalina-OSG</B>: Catalina PBY-6<BR>
+   <B>Catalina</B>: <BR>
+  <B>Author:</B> Gerard ROBIN<BR>
+  <B>Version:</B> v20071217<BR>
+  <B>Status:</B> alpha, "GPL Copyright"<BR>
+  </TD>
   <TD ID="section" VALIGN="top">
    <A NAME="pc7"></A>
    <DIV ALIGN="center">
     <B>pc7</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="pc7.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/pc7_20060315.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/pc7_20070122.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>pc7</B>: Pilatus PC-7<BR>
   <B>Author:</B> David Culp, Erik Hofman (based on Capt. Slug 3D model)<BR>
-  <B>Version:</B> v20060315<BR>
+  <B>Version:</B> v20070122<BR>
   <B>Status:</B> beta<BR>
+  </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
+  <TD ID="section" VALIGN="top">
+   <A NAME="pittss1c"></A>
+   <DIV ALIGN="center">
+    <B>pittss1c</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="pittss1c.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/pittss1c_20071218.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>pittss1c</B>: Pitts S1C<BR>
+  <B>Author:</B> Stuart Buchanan, Dave Perry<BR>
+  <B>Version:</B> v20071218<BR>
+  <B>Status:</B> beta<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="R22"></A>
+   <DIV ALIGN="center">
+    <B>R22</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="R22.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/R22_20071218.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>R22</B>: Robinson R22 Beta II<BR>
+  <B>Author:</B> Syd Adams, Maik Justus<BR>
+  <B>Version:</B> v20071218<BR>
   </TD>
   <TD ID="section" VALIGN="top">
    <A NAME="Rascal"></A>
@@ -1131,6 +1944,34 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
  <TR><TD> </TD></TR>
  <TR>
   <TD ID="section" VALIGN="top">
+   <A NAME="S-51-Dragonfly"></A>
+   <DIV ALIGN="center">
+    <B>S-51-Dragonfly</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="S-51-Dragonfly.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/S-51-Dragonfly_20071218.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>S-51</B>: Sikorsky-S51_Helicopter<BR>
+  <B>Author:</B> Gerard Robin and Maik Justus (FDM)<BR>
+  <B>Version:</B> v20071218<BR>
+  <B>Status:</B> alpha, "GPL Copyright"<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="SaabJ35Draken"></A>
+   <DIV ALIGN="center">
+    <B>SaabJ35Draken</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="SaabJ35Draken.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/SaabJ35Draken_20071218.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>SaabJ35OeDraken</B>: Saab J35Oe Draken<BR>
+  <B>Author:</B> Oliver Reischl<BR>
+  <B>Version:</B> v20071218<BR>
+  <B>Status:</B> alpha<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
    <A NAME="santa"></A>
    <DIV ALIGN="center">
     <B>santa</B><BR>
@@ -1143,20 +1984,38 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
   <B>Author:</B> unknown<BR>
   <B>Version:</B> v20051027<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="seahawk"></A>
    <DIV ALIGN="center">
     <B>seahawk</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="seahawk.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/seahawk_20060320.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/seahawk_20071217.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>carrier</B>: <BR>
-   <B>seahawk</B>: Seahawk<BR>
-  <B>Author:</B> Lee Elliott, Vivian Meazza<BR>
-  <B>Version:</B> v20060320<BR>
-  <B>Status:</B> early-production<BR>
+   <B>seahawk</B>: <DESCRIPTION TYPE="string">Hawker Seahawk FGA6<BR>
+  <B>Author:</B> <AUTHOR TYPE="string">Lee Elliott, Vivian Meazza<BR>
+  <B>Version:</B> v20071217<BR>
+  <B>Status:</B> <STATUS TYPE="string">early-production<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="SeaVixen"></A>
+   <DIV ALIGN="center">
+    <B>SeaVixen</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="SeaVixen.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/SeaVixen_20071217.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>sea-vixen</B>: <DESCRIPTION TYPE="string">de Havilland SeaVixen FAW2 (YASim)<BR>
+  <B>Author:</B> <AUTHOR TYPE="string">Vivian Meazza<BR>
+  <B>Version:</B> v20071217<BR>
+  <B>Status:</B> <STATUS TYPE="string">alpha<BR>
   </TD>
   <TD ID="section" VALIGN="top">
    <A NAME="SenecaII"></A>
@@ -1164,13 +2023,12 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
     <B>SenecaII</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="SenecaII.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/SenecaII_0.3.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/SenecaII_0.5.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>SenecaII-jsbsim</B>: PA34-200T Seneca II (jsbsim)<BR>
-   <B>SenecaII-yasim</B>: PA34-200T Seneca II (yasim)<BR>
-  <B>Author:</B> unknown<BR>
-  <B>Version:</B> v0.3<BR>
+  <B>Author:</B> Torsten Dreyer<BR>
+  <B>Version:</B> v0.5<BR>
   <B>Status:</B> early-production<BR>
   </TD>
  </TR>
@@ -1183,12 +2041,12 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
     <B>sgs233</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="sgs233.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/sgs233_20060511.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/sgs233_20070509.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>sgs233</B>: Schweizer 2-33<BR>
   <B>Author:</B> David Culp, Captain Slug (3D)<BR>
-  <B>Version:</B> v20060511<BR>
+  <B>Version:</B> v20070509<BR>
   <B>Status:</B> true<BR>
   </TD>
   <TD ID="section" VALIGN="top">
@@ -1206,19 +2064,65 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
   <B>Version:</B> v20060112<BR>
   </TD>
   <TD ID="section" VALIGN="top">
+   <A NAME="Sikorsky-76C"></A>
+   <DIV ALIGN="center">
+    <B>Sikorsky-76C</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="Sikorsky-76C.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/Sikorsky-76C_20071218.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>s76c</B>: Sikorsky S76C++<BR>
+  <B>Author:</B> Syd Adams(Model), Maik Justus (FDM)<BR>
+  <B>Version:</B> v20071218<BR>
+  </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
+  <TD ID="section" VALIGN="top">
+   <A NAME="Sikorsky-S58"></A>
+   <DIV ALIGN="center">
+    <B>Sikorsky-S58</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="Sikorsky-S58.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/Sikorsky-S58_20071203.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>s58</B>: Sikorsky S58 (Yasim)<BR>
+  <B>Author:</B> BARANGER Emmanuel (3D), Reagan Thomas, Maik Justus (FDM)<BR>
+  <B>Version:</B> v20071203<BR>
+  <B>Status:</B> alpha<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="snowplow"></A>
+   <DIV ALIGN="center">
+    <B>snowplow</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="snowplow.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/snowplow_1.0.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>snowplow</B>: Snow Plow<BR>
+  <B>Author:</B> Detlef Faber<BR>
+  <B>Version:</B> v1.0<BR>
+  <B>Status:</B> alpha<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
    <A NAME="sopwithCamel"></A>
    <DIV ALIGN="center">
     <B>sopwithCamel</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="sopwithCamel.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/sopwithCamel_20050502.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/sopwithCamel_20071217.zip");</SCRIPT>
     </B><BR>
    </DIV>
-   <B>sopwithCamel</B>: Alias for sopwithCamel-v1-nl-uiuc<BR>
+   <B>sopwithCamel</B>: <DESCRIPTION TYPE="string">Sopwith Camel 1F.1 (uiuc)<BR>
    <B>sopwithCamel-v1-nl-uiuc</B>: Sopwith Camel<BR>
-  <B>Author:</B> A.F.Scrub "Scrubby PC" (3D), Michael Selig (FDM)<BR>
-  <B>Version:</B> v20050502<BR>
-  <B>Status:</B> production<BR>
+   <B>sopwithCamel-YASim</B>: <DESCRIPTION TYPE="string">Sopwith Camel 1F.1 (YASim)<BR>
+  <B>Author:</B> <AUTHOR TYPE="string">AJ MacLeod, Vivian Meazza, Michael Selig(FDM)<BR>
+  <B>Version:</B> v20071217<BR>
+  <B>Status:</B> <STATUS TYPE="string">early production<BR>
   </TD>
  </TR>
  <TR><TD> </TD></TR>
@@ -1230,14 +2134,28 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
     <B>Spitfire</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="Spitfire.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/Spitfire_20060419.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/Spitfire_20070618.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>seafireIIIc</B>: Supermarine Seafire MkIIIc<BR>
-   <B>spitfireIIa</B>: Supermarine Spitfire IIa<BR>
+   <B>spitfireIIa</B>: <DESCRIPTION TYPE="string">Supermarine Spitfire IIa<BR>
   <B>Author:</B> Vivian Meazza<BR>
-  <B>Version:</B> v20060419<BR>
+  <B>Version:</B> v20070618<BR>
   <B>Status:</B> early-production<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="spitfireIX"></A>
+   <DIV ALIGN="center">
+    <B>spitfireIX</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="spitfireIX.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/spitfireIX_20071217.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>spitfireIX</B>: Supermarine Spitfire Mk IX<BR>
+  <B>Author:</B> Detlef Faber<BR>
+  <B>Version:</B> v20071217<BR>
+  <B>Status:</B> beta<BR>
   </TD>
   <TD ID="section" VALIGN="top">
    <A NAME="sr20"></A>
@@ -1252,6 +2170,102 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
   <B>Author:</B> Erik Hofman (3D)<BR>
   <B>Version:</B> v20051009<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
+  <TD ID="section" VALIGN="top">
+   <A NAME="SR71-BlackBird"></A>
+   <DIV ALIGN="center">
+    <B>SR71-BlackBird</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="SR71-BlackBird.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/SR71-BlackBird_20071121.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>Blackbird-A</B>: SR-71A_BlackBird<BR>
+   <B>Blackbird-B</B>: SR-71B_BlackBird<BR>
+   <B>Blackbird</B>: <BR>
+  <B>Author:</B> Gerard ROBIN<BR>
+  <B>Version:</B> v20071121<BR>
+  <B>Status:</B> alpha, "GPL Copyright"<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="Starship"></A>
+   <DIV ALIGN="center">
+    <B>Starship</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="Starship.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/Starship_20070914.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>starship-yasim</B>: Beechcraft Starship I (YASim)<BR>
+  <B>Author:</B> unknown<BR>
+  <B>Version:</B> v20070914<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="Storch"></A>
+   <DIV ALIGN="center">
+    <B>Storch</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="Storch.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/Storch_20071217.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>Fi-156</B>: Fi-156 Storch<BR>
+  <B>Author:</B> Ron Jensen<BR>
+  <B>Version:</B> v20071217<BR>
+  </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
+  <TD ID="section" VALIGN="top">
+   <A NAME="Su-26M"></A>
+   <DIV ALIGN="center">
+    <B>Su-26M</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="nothumbnail.jpg"></A><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/Su-26M_1.0.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>Su-26M</B>: Sukhoi Su-26M<BR>
+  <B>Author:</B> unknown<BR>
+  <B>Version:</B> v1.0<BR>
+  <B>Status:</B> alpha<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="SU-37"></A>
+   <DIV ALIGN="center">
+    <B>SU-37</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="SU-37.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/SU-37_20071218.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>SU-37</B>: Sukoi SU-37 type aircraft (YASim FDM)<BR>
+  <B>Author:</B> Lee Elliott<BR>
+  <B>Version:</B> v20071218<BR>
+  <B>Status:</B> experimental<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="Super-Frelon"></A>
+   <DIV ALIGN="center">
+    <B>Super-Frelon</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="Super-Frelon.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/Super-Frelon_20071120.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>superfrelon</B>: Super Frelon (Yasim)<BR>
+  <B>Author:</B> BARANGER Emmanuel (3D), Reagan Thomas, Maik Justus (FDM)<BR>
+  <B>Version:</B> v20071120<BR>
+  <B>Status:</B> alpha<BR>
+  </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="T37"></A>
    <DIV ALIGN="center">
@@ -1266,38 +2280,38 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
   <B>Version:</B> v20060315<BR>
   <B>Status:</B> beta<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="T38"></A>
    <DIV ALIGN="center">
     <B>T38</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="T38.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/T38_20060530.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/T38_20070501.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>T38</B>: Northrop T-38<BR>
   <B>Author:</B> David Culp (FDM), Erik Hofman/Innis Cunningham/Capt. Slug (3D)<BR>
-  <B>Version:</B> v20060530<BR>
+  <B>Version:</B> v20070501<BR>
   <B>Status:</B> early production<BR>
   </TD>
   <TD ID="section" VALIGN="top">
    <A NAME="TU-114"></A>
    <DIV ALIGN="center">
     <B>TU-114</B><BR>
-    <IMG WIDTH=171 HEIGHT=128 SRC="nothumbnail.jpg"></A><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="TU-114.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/TU-114_20051027.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/TU-114_20071218.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>TU-114</B>: Tupolev TU-114 airliner (YASim fdm)<BR>
   <B>Author:</B> Lee Elliott<BR>
-  <B>Version:</B> v20051027<BR>
+  <B>Version:</B> v20071218<BR>
   <B>Status:</B> beta<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="tu154"></A>
    <DIV ALIGN="center">
@@ -1311,22 +2325,66 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
   <B>Author:</B> Ilia Pavlenko, Ilja Moderau, Denis Okan and Mike Savchenko<BR>
   <B>Version:</B> v20060501<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="ufo"></A>
    <DIV ALIGN="center">
     <B>ufo</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="ufo.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/ufo_20060710.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/ufo_20071217.zip");</SCRIPT>
     </B><BR>
    </DIV>
+   <B>mibs</B>: FG video assistant<BR>
    <B>ufo</B>: UFO from the 'White Project' of the UNESCO<BR>
-  <B>Author:</B> ET<BR>
-  <B>Version:</B> v20060710<BR>
+  <B>Author:</B> Syd Adams, Melchior Franz<BR>
+  <B>Version:</B> v20071217<BR>
+  <B>Status:</B> alpha<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="UH-60"></A>
+   <DIV ALIGN="center">
+    <B>UH-60</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="UH-60.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/UH-60_20071121.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>uh60</B>: Sikorsky UH60 BlackHawk<BR>
+  <B>Author:</B> BARANGER Emmanuel (3D), Reagan Thomas, Maik Justus (FDM)<BR>
+  <B>Version:</B> v20071121<BR>
+  <B>Status:</B> alpha<BR>
+  </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
+  <TD ID="section" VALIGN="top">
+   <A NAME="V22-Osprey"></A>
+   <DIV ALIGN="center">
+    <B>V22-Osprey</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="V22-Osprey.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/V22-Osprey_0.1.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>v22</B>: Bell Boeing V22 Osprey (Yasim)<BR>
+  <B>Author:</B> BARANGER Emmanuel (3D), Maik Justus (FDM)<BR>
+  <B>Version:</B> v0.1<BR>
+  <B>Status:</B> alpha<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="vulcanb2"></A>
+   <DIV ALIGN="center">
+    <B>vulcanb2</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="vulcanb2.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/vulcanb2_20071010.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>vulcanb2</B>: Avro Vulcan B.2<BR>
+  <B>Author:</B> Stuart Buchanan<BR>
+  <B>Version:</B> v20071010<BR>
+  <B>Status:</B> alpha<BR>
   </TD>
   <TD ID="section" VALIGN="top">
    <A NAME="wrightFlyer1903"></A>
@@ -1341,23 +2399,24 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
   <B>Author:</B> Jim Wilson (3D), Michael Selig, PhD (FDM)<BR>
   <B>Version:</B> v20050502<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="X15"></A>
    <DIV ALIGN="center">
     <B>X15</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="X15.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/X15_20060112.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/X15_20061204.zip");</SCRIPT>
     </B><BR>
    </DIV>
+   <B>X15-new</B>: North American X-15<BR>
    <B>X15</B>: North American X-15<BR>
   <B>Author:</B> Mike Hill, Jon S. Berndt (FDM), John Check<BR>
-  <B>Version:</B> v20060112<BR>
+  <B>Version:</B> v20061204<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="x24b"></A>
    <DIV ALIGN="center">
@@ -1374,17 +2433,35 @@ If you need a .tgz extractor for windows, consider <A HREF="http://www.7-zip.org
   <B>Version:</B> v20060112<BR>
   </TD>
   <TD ID="section" VALIGN="top">
+   <A NAME="YardStik"></A>
+   <DIV ALIGN="center">
+    <B>YardStik</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="YardStik.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/YardStik_0.0.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>YardStik</B>: Yard Stik (R/C)<BR>
+  <B>Author:</B> Innis Cunningham<BR>
+  <B>Version:</B> v0.0<BR>
+  </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
+  <TD ID="section" VALIGN="top">
    <A NAME="YF-23"></A>
    <DIV ALIGN="center">
     <B>YF-23</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="YF-23.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/YF-23_20060226.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/YF-23_20060821.zip");</SCRIPT>
     </B><BR>
    </DIV>
+   <B>NTPS</B>: Northrop/McDonnell Douglas YF-23 ATF prototype (YASim FDM)<BR>
    <B>YF-23</B>: Northrop/McDonnell Douglas YF-23 ATF prototype (YASim FDM)<BR>
   <B>Author:</B> Lee Elliott<BR>
-  <B>Version:</B> v20060226<BR>
+  <B>Version:</B> v20060821<BR>
   <B>Status:</B> beta<BR>
   </TD>
  </TR>
@@ -1428,7 +2505,7 @@ google_color_text = "000000";
           </A>
         </td>
         <td>
-          Last modified:  10/09/2006 <BR>
+          Last modified:  12/18/2007 <BR>
           <A HREF="http://www.flightgear.org/~curt/">
             Curtis L. Olson
             <IMG ALIGN="MIDDLE" SRC="../../email-fg.png">

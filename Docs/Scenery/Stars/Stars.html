@@ -7,7 +7,10 @@
   <title>FlightGear Flight Simulator</title>
   <link rel="stylesheet" type="text/css" href="../../../default.css"> 
   <meta http-equiv="Content-Script-Type" Content="text/javascript">
-  <script src="../../../templates.js"></script>
+  <script language="javascript" src="../../../templates.js"></script>
+  <script language="javascript" src="../../../JSZenMenu.js"></script>
+  <script language="javascript" src="../../../JSZenMenuItems.js"></script>
+  <link href="../../../ZMFGTheme/theme.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -23,9 +26,9 @@
        <td>
 <script type="text/javascript"><!--
 google_ad_client = "pub-2485404446552133";
-google_ad_width = 728;
+google_ad_width = 468;
 google_ad_height = 15;
-google_ad_format = "728x15_0ads_al_s";
+google_ad_format = "468x15_0ads_al_s";
 google_ad_channel ="9092124961";
 google_color_border = "efefef";
 google_color_bg = "efefef";
@@ -42,15 +45,21 @@ google_color_text = "000000";
   </table>
   <P>
 
+  <div id='fgfsmenuid' ></div>
+  <script language="javascript">
+  createMenu(fgfsmenu, 'fgfsmenuid', 'fgfsmenu', 'ZMFGTheme', 0, 'static', '../../../');
+  </script>
+
   <table id="global">
     <tbody><tr>
-      <td id="menu">
+      <!-- <td id="menu"> -->
         <!-- SiteSearch Google -->
-        <script>SiteSearchGoogle();</script>
+        <!-- <script>SiteSearchGoogle();</script> -->
 
         <!-- Display the main menu -->
-        <script>MainMenu("../../..");</script>
-      </td>
+        <!-- <script>MainMenu("../../..");</script> -->
+      <!-- </td> -->
+
       <td id="page">
 
 <!-- Standard Header End -->

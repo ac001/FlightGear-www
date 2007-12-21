@@ -7,7 +7,10 @@
   <title>FlightGear Flight Simulator</title>
   <link rel="stylesheet" type="text/css" href="./default.css"> 
   <meta http-equiv="Content-Script-Type" Content="text/javascript">
-  <script src="./templates.js"></script>
+  <script language="javascript" src="./templates.js"></script>
+  <script language="javascript" src="./JSZenMenu.js"></script>
+  <script language="javascript" src="./JSZenMenuItems.js"></script>
+  <link href="./ZMFGTheme/theme.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -23,9 +26,9 @@
        <td>
 <script type="text/javascript"><!--
 google_ad_client = "pub-2485404446552133";
-google_ad_width = 728;
+google_ad_width = 468;
 google_ad_height = 15;
-google_ad_format = "728x15_0ads_al_s";
+google_ad_format = "468x15_0ads_al_s";
 google_ad_channel ="9092124961";
 google_color_border = "efefef";
 google_color_bg = "efefef";
@@ -42,15 +45,21 @@ google_color_text = "000000";
   </table>
   <P>
 
+  <div id='fgfsmenuid' ></div>
+  <script language="javascript">
+  createMenu(fgfsmenu, 'fgfsmenuid', 'fgfsmenu', 'ZMFGTheme', 0, 'static', './');
+  </script>
+
   <table id="global">
     <tbody><tr>
-      <td id="menu">
+      <!-- <td id="menu"> -->
         <!-- SiteSearch Google -->
-        <script>SiteSearchGoogle();</script>
+        <!-- <script>SiteSearchGoogle();</script> -->
 
         <!-- Display the main menu -->
-        <script>MainMenu(".");</script>
-      </td>
+        <!-- <script>MainMenu(".");</script> -->
+      <!-- </td> -->
+
       <td id="page">
 
 <!-- Standard Header End -->
@@ -109,8 +118,8 @@ google_color_text = "000000";
 
      <H3>Quick Links</H3>
      <UL>
-      <LI> Download FlightGear v0.9.10 for Windows Now:
-           <SCRIPT>RandomURLS("Win32/fgsetup-0.9.10.exe");</SCRIPT>
+      <LI> Download FlightGear v1.0.0 for Windows Now:
+           <SCRIPT>RandomURLS("Win32/fgsetup-1.0.0.exe");</SCRIPT>
       <LI> Download Live-CD [bootable, run FG directly from CD,
            doesn't touch your HD] via 
            <A HREF="//pigeond.net/flightgear/fglive-0.1-linuxtag.torrent">
@@ -153,14 +162,14 @@ google_color_text = "000000";
      <H3>Announcements</H3>
      <UL>
 
+      <LI><A HREF="announce.html#v1.0.0"><B>Dec 17</B> -
+           FlightGear v1.0.0 released.</A>
+
       <LI> <A HREF="announce.html#flightsim.com"><B>May 26</B> -
            New FlightGear review on FlightSim.com.</A>
 
       <LI> <A HREF="announce.html#sourcetrunk"><B>May 16</B> -
            Sourcetrunk Podcast review of FlightGear.</A>
-
-      <LI> <A HREF="announce.html#v0.9.11"><B>May 14</B> -
-           FlightGear v0.9.11-pre1 (source code) released.</A>
 
       <LI> <A HREF="http://www.bomots.de/flightgear/"><B>Jan 29</B> -
            FlightGear kompakt - a new German langauge FlightGear handbook
@@ -201,9 +210,6 @@ google_color_text = "000000";
 
       <LI> <A HREF="announce.html#wiki"><B>May 28, 2006</B> -
            FlightGear wiki site is online.</A>
-
-      <LI> <A HREF="announce.html#v0.9.10"><B>Apr 5, 2006</B> -
-           FlightGear v0.9.10 (source code) released.</A>
 
       <LI> <A HREF="announce.html#scenery-v0.9.10"><B>Jan 17, 2006</B> - A
            new world build (v0.9.10) has just been released!  Click
@@ -261,7 +267,7 @@ google_color_text = "000000";
           </A>
         </td>
         <td>
-          Last modified:  11/26/2007 <BR>
+          Last modified:  12/18/2007 <BR>
           <A HREF="http://www.flightgear.org/~curt/">
             Curtis L. Olson
             <IMG ALIGN="MIDDLE" SRC="./email-fg.png">

@@ -7,7 +7,10 @@
   <title>FlightGear Flight Simulator</title>
   <link rel="stylesheet" type="text/css" href="./default.css"> 
   <meta http-equiv="Content-Script-Type" Content="text/javascript">
-  <script src="./templates.js"></script>
+  <script language="javascript" src="./templates.js"></script>
+  <script language="javascript" src="./JSZenMenu.js"></script>
+  <script language="javascript" src="./JSZenMenuItems.js"></script>
+  <link href="./ZMFGTheme/theme.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -23,9 +26,9 @@
        <td>
 <script type="text/javascript"><!--
 google_ad_client = "pub-2485404446552133";
-google_ad_width = 728;
+google_ad_width = 468;
 google_ad_height = 15;
-google_ad_format = "728x15_0ads_al_s";
+google_ad_format = "468x15_0ads_al_s";
 google_ad_channel ="9092124961";
 google_color_border = "efefef";
 google_color_bg = "efefef";
@@ -42,20 +45,35 @@ google_color_text = "000000";
   </table>
   <P>
 
+  <div id='fgfsmenuid' ></div>
+  <script language="javascript">
+  createMenu(fgfsmenu, 'fgfsmenuid', 'fgfsmenu', 'ZMFGTheme', 0, 'static', './');
+  </script>
+
   <table id="global">
     <tbody><tr>
-      <td id="menu">
+      <!-- <td id="menu"> -->
         <!-- SiteSearch Google -->
-        <script>SiteSearchGoogle();</script>
+        <!-- <script>SiteSearchGoogle();</script> -->
 
         <!-- Display the main menu -->
-        <script>MainMenu(".");</script>
-      </td>
+        <!-- <script>MainMenu(".");</script> -->
+      <!-- </td> -->
+
       <td id="page">
 
 <!-- Standard Header End -->
 
  <H1>FlightGear Announcements</H1>
+
+ <B><A NAME="v1.0.0"></A>December 17, 2007 - FlightGear v1.0.0
+    released.</B><BR>
+    Version 1.0.0 is now available for download.<BR>  An updated set
+    of aircraft are also available on the aircraft downloads page.
+    <!-- <A HREF="/Downloads/">Download a ready to run version for your platform</A> (as they become available.)<BR>  You can also download additional aircraft, scenery, and the entire source code. -->
+    (Requires SimGear-1.0.0 to compile from source.)<BR>
+    <A HREF="Downloads/">Download FlightGear here.</A>
+    <P>
 
  <B><A NAME="flightsim.com"></A>May 26, 2007 - FlightGear review on
     FlightSim.com.</B><BR>
@@ -142,14 +160,6 @@ google_color_text = "000000";
     Please verify the
     <A HREF="ftp://ftp.ihg.uni-duisburg.de/FlightGear/FGLive/MD5SUM">
     MD5 checksum</A>.
-    <P>
-
- <B><A NAME="v0.9.10"></A>April 5, 2006 - FlightGear v0.9.10
-    released.</B><BR>
-    Version 0.9.10 is available for download (source
-    code available.)<BR>
-    <!-- <A HREF="/Downloads/">Download a ready to run version for your platform</A> (as they become available.)<BR>  You can also download additional aircraft, scenery, and the entire source code. -->
-    (requires SimGear-0.3.10)
     <P>
 
  <B><A NAME="scenery-0.9.10"></A>January 17, 2006 - World Scenery
@@ -325,7 +335,7 @@ google_color_text = "000000";
           </A>
         </td>
         <td>
-          Last modified:  5/28/2007 <BR>
+          Last modified:  12/20/2007 <BR>
           <A HREF="http://www.flightgear.org/~curt/">
             Curtis L. Olson
             <IMG ALIGN="MIDDLE" SRC="./email-fg.png">

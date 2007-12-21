@@ -7,7 +7,10 @@
   <title>FlightGear Flight Simulator</title>
   <link rel="stylesheet" type="text/css" href="../default.css"> 
   <meta http-equiv="Content-Script-Type" Content="text/javascript">
-  <script src="../templates.js"></script>
+  <script language="javascript" src="../templates.js"></script>
+  <script language="javascript" src="../JSZenMenu.js"></script>
+  <script language="javascript" src="../JSZenMenuItems.js"></script>
+  <link href="../ZMFGTheme/theme.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -23,9 +26,9 @@
        <td>
 <script type="text/javascript"><!--
 google_ad_client = "pub-2485404446552133";
-google_ad_width = 728;
+google_ad_width = 468;
 google_ad_height = 15;
-google_ad_format = "728x15_0ads_al_s";
+google_ad_format = "468x15_0ads_al_s";
 google_ad_channel ="9092124961";
 google_color_border = "efefef";
 google_color_bg = "efefef";
@@ -42,15 +45,21 @@ google_color_text = "000000";
   </table>
   <P>
 
+  <div id='fgfsmenuid' ></div>
+  <script language="javascript">
+  createMenu(fgfsmenu, 'fgfsmenuid', 'fgfsmenu', 'ZMFGTheme', 0, 'static', '../');
+  </script>
+
   <table id="global">
     <tbody><tr>
-      <td id="menu">
+      <!-- <td id="menu"> -->
         <!-- SiteSearch Google -->
-        <script>SiteSearchGoogle();</script>
+        <!-- <script>SiteSearchGoogle();</script> -->
 
         <!-- Display the main menu -->
-        <script>MainMenu("..");</script>
-      </td>
+        <!-- <script>MainMenu("..");</script> -->
+      <!-- </td> -->
+
       <td id="page">
 
 <!-- Standard Header End -->
@@ -84,15 +93,15 @@ google_color_text = "000000";
 </UL>
 </FONT>
 
-<H3><A NAME="windows"></A>Windows 98, 2000, ME, XP (v0.9.10)</H3>
+<H3><A NAME="windows"></A>Windows 98, 2000, ME, XP, Vista (v1.0.0)</H3>
 
 <UL>
   <LI> Download the self extracting/installing
-       fgsetup-0.9.10.exe (135 Mb):
-       <SCRIPT>RandomURLS("Win32/fgsetup-0.9.10.exe");</SCRIPT>
+       fgsetup-1.0.0.exe (172 Mb):
+       <SCRIPT>RandomURLS("Win32/fgsetup-1.0.0.exe");</SCRIPT>
        <P>
 
-  <LI> After downloading the fgsetup-0.9.10.exe file, launch it and
+  <LI> After downloading the fgsetup-1.0.0.exe file, launch it and
        follow the on screen instructions to complete the installation.
        The installer will create start menu entries, install
        documentation, optionally install a desktop icon, and also will
@@ -118,7 +127,7 @@ google_color_text = "000000";
 <UL>
   <LI> Download
        <A HREF="http://flightgear.stockill.org.uk/">
-       pre-built Slackware packages</A> courtesy of Jon Stockill. (v0.9.10)
+       pre-built Slackware packages</A> courtesy of Jon Stockill. (v1.0.0)
   <LI> Download pre-built Fedora Core [2,3,4] packages courtesy of Steve
        Hosgood.  (v0.9.10)
        <SCRIPT>RandomURLS("Fedora");</SCRIPT>
@@ -136,6 +145,15 @@ google_color_text = "000000";
 
 
 
+<H3><A NAME="mac"></A>Macintosh OS X (requires 10.4)</H3>
+
+<UL>
+  <LI> Download prebuilt Mac OS X binaries courtesy of Tatsuhiro Nishioka.
+       <A HREF="http://macflightgear.sourceforge.net/">Available from the
+       macflightgear.sourceForge.net project page.</A> (v1.0.0)
+</UL>
+
+
 <H3><A NAME="sun"></A>Solaris (Sparc/x86)</H3>
 
 <UL>
@@ -144,10 +162,10 @@ google_color_text = "000000";
        pre-built Solaris (sparc) binaries</A> courtesy of Martin
        Spott. (v0.9.8)
   <LI> (Sparc Alternate) Download
-       <A HREF="http://blastwave.informatik.uni-erlangen.de/csw/users/kenmays/">
+       <A HREF="http://www.blastwave.org/packages.php/flightgear">
        pre-built Solaris (Sparc) binaries</A> courtesy of Ken Mays. (v0.9.9)
   <LI> Download
-       <A HREF="http://blastwave.informatik.uni-erlangen.de/csw/users/kenmays/">
+       <A HREF="http://www.blastwave.org/packages.php/flightgear">
        pre-built Solaris (x86) binaries</A> courtesy of Ken Mays. (v0.9.9)
 </UL>
 
@@ -157,15 +175,6 @@ google_color_text = "000000";
 <UL>
   <LI> Download <A HREF="http://www.1stweb.nl/~ehofman/fgfs/">pre-built sgi
        binaries</A> courtesy of Erik Hofman.  (v0.9.9)
-</UL>
-
-
-<H3><A NAME="mac"></A>Macintosh OS X (requires 10.4)</H3>
-
-<UL>
-  <LI> Download prebuilt Mac OS X binaries courtesy of Tatsuhiro Nishioka.
-       <A HREF="http://macflightgear.sourceforge.net/">Available from the
-       macflightgear.sourceForge.net project page.</A> (Updated for v0.9.10)
 </UL>
 
 
@@ -225,7 +234,7 @@ google_color_text = "000000";
           </A>
         </td>
         <td>
-          Last modified:  10/14/2007 <BR>
+          Last modified:  12/20/2007 <BR>
           <A HREF="http://www.flightgear.org/~curt/">
             Curtis L. Olson
             <IMG ALIGN="MIDDLE" SRC="../email-fg.png">

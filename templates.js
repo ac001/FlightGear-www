@@ -57,7 +57,7 @@ function MainMenu()
   document.write("<a href=\"" + root + "/index.shtml\">Home</a><br>");
   document.write("<a href=\"" + root + "/introduction.html\">Introduction</a><br>");
   document.write("<a href=\"" + root + "/features.html\">Features</a><br>");
-  document.write("<a href=\"" + root + "/Gallery-v0.9.10/\">Screenshots</a><br>");
+  document.write("<a href=\"" + root + "/Gallery-v1.0/\">Gallery</a><br>");
   document.write("<a href=\"" + root + "/Downloads/\">Downloads</a><br>");
   document.write("<a href=\"http://www.flightgear.org/cdrom/\">CD's & DVD's</a><br>");
   document.write("<h3>Support</h3>");
@@ -86,7 +86,7 @@ function BottomMenu()
 
   // document.write("<a href=\"/\">Home</a> | ");
   // document.write("<a href=\"" + root + "/Downloads/\">Downloads</a> | ");
-  // document.write("<a href=\"" + root + "/Gallery-v0.9.10/index.shtml\">Screenshots</a> |");
+  // document.write("<a href=\"" + root + "/Gallery-v1.0/\">Gallery</a> |");
   // document.write("<a href=\"" + root + "/docs.html\">Documentation</a>");
 }
 
@@ -108,19 +108,37 @@ function RandomFrontImages()
   var base = arguments[0];
 
   var picts = [
-                'Citation-II-weather',
-                'concorde-gui',
-                'winter-clouds-bo105',
-                'seafire-nimitz01',
-                'contrails_001',
-                'bravo-cockpit'
+                'F-5B-image3',
+		'picture-0003',
+                'camel-ksfo',
+                'f4u-on-carrier',
+		'picture-0002',
+                'b1900d-panel',
+		'picture-0006',
+		'f4u-approach1',
+		'picture-0007',
+                'Blackbird-chute_1',
+                'S-51-on_carrier_2',
+		'Blackbird-aar_1',
+		'picture-0004',
+		'f4u-final',
+		'fgfs-xpl-paris-2',
+		'Noratlas-Para_1',
+		'Rescue_1',
+		'picture-0005',
+		'picture-0006',
+		'picture-0019',
+		'picture-0011',
+		'picture-0012',
+		'picture-0013',
+		'picture-0015'
               ];
 
   picts.fgshuffle();
 
-  document.write("<A HREF=\"Gallery-v0.9.10/Link/" + picts[0] + ".html\"><IMG CLASS=\"mainscreen\" WIDTH=\"160\" HEIGHT=\"120\" SRC=\"Gallery-v0.9.10/Small/" + picts[0] + ".jpg\" ALT=\"" + picts[0] + "\"></A>");
-  document.write("<A HREF=\"Gallery-v0.9.10/Link/" + picts[1] + ".html\"><IMG CLASS=\"mainscreen\" WIDTH=\"160\" HEIGHT=\"120\" SRC=\"Gallery-v0.9.10/Small/" + picts[1] + ".jpg\" ALT=\"" + picts[1] + "\"></A>");
-  document.write("<A HREF=\"Gallery-v0.9.10/Link/" + picts[2] + ".html\"><IMG CLASS=\"mainscreen\" WIDTH=\"160\" HEIGHT=\"120\" SRC=\"Gallery-v0.9.10/Small/" + picts[2] + ".jpg\" ALT=\"" + picts[2] + "\"></A>");
+  document.write("<A HREF=\"Gallery-v1.0/Link/" + picts[0] + ".html\"><IMG CLASS=\"mainscreen\" WIDTH=\"160\" HEIGHT=\"120\" SRC=\"Gallery-v1.0/Small/" + picts[0] + ".jpg\" ALT=\"" + picts[0] + "\"></A>");
+  document.write("<A HREF=\"Gallery-v1.0/Link/" + picts[1] + ".html\"><IMG CLASS=\"mainscreen\" WIDTH=\"160\" HEIGHT=\"120\" SRC=\"Gallery-v1.0/Small/" + picts[1] + ".jpg\" ALT=\"" + picts[1] + "\"></A>");
+  document.write("<A HREF=\"Gallery-v1.0/Link/" + picts[2] + ".html\"><IMG CLASS=\"mainscreen\" WIDTH=\"160\" HEIGHT=\"120\" SRC=\"Gallery-v1.0/Small/" + picts[2] + ".jpg\" ALT=\"" + picts[2] + "\"></A>");
 }
 
 
