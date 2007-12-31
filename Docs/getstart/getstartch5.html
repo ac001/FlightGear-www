@@ -7,7 +7,7 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
 <!-- html,2,info,next,sections+ --> 
 <meta name="src" content="getstart.tex"> 
-<meta name="date" content="2007-12-17 22:36:00"> 
+<meta name="date" content="2007-12-31 15:05:00"> 
 <link rel="stylesheet" type="text/css" href="getstart.css"> 
 </head><body 
 >
@@ -289,31 +289,30 @@ IP address.
 href="#x10-670005.3.2" id="x10-670005.3.2">Configuring your router</a></h5>
 <!--l. 236--><p class="noindent">This section ought to be unnecessary now with recent versions of the FG server. If you
 have problems though, it won&#8217;t hurt to follow through.
-<!--l. 239--><p class="indent">   Now, all(!) that remains is to configure your router to forward UDP port 5000 or
-5002 to the IP address you&#8217;ve just found. This is not something that can be described in
-step-by-step detail, because each manufacturer&#8217;s configuration interfaces differ greatly.
-Some tips are given here - if you get stuck, ask nicely on the FlightGear IRC channel for
-help (details on the flightgear website).
-<!--l. 244--><p class="indent">   You should know how to log on to your router&#8217;s configuration page, usually via a
+<!--l. 239--><p class="indent">   Now, all(!) that remains is to configure your router to forward UDP port 5000 to the
+IP address you&#8217;ve just found. This is not something that can be described in step-by-step
+detail, because each manufacturer&#8217;s configuration interfaces differ greatly. Some tips are
+given here - if you get stuck, ask nicely on the FlightGear IRC channel for help (details
+on the flightgear website).
+<!--l. 246--><p class="indent">   You should know how to log on to your router&#8217;s configuration page, usually via a
 web browser. You are looking for settings pertaining to "port forwarding" "virtual server"
 "Forwarding Rules" or similar. When you have found the relevant settings, you need to
-add a rule that forwards port 5000 or 5002 (depending on which server you
-wish to join - add both if you like) to the IP address you discovered earlier. If
+add a rule that forwards port 5000 to the IP address you discovered earlier. If
 there is a choice given, ensure it is UDP ports that are forwarded. If there is no
 choice, you may assume that both TCP and UDP are being forwarded. Save your
 configuration, and most routers will probably then need to be rebooted to apply the
 changes.
-<!--l. 251--><p class="indent">   Note: (for BSD users) If you are using a ADSL modem, you might have to put the
+<!--l. 256--><p class="indent">   Note: (for BSD users) If you are using a ADSL modem, you might have to put the
 port forward command into the ppp.conf file rather than firewall. This is because the
+firewall script will only run each time the machine is booted rather than the ppp line
                                                                      
 
                                                                      
-firewall script will only run each time the machine is booted rather than the ppp line
 coming back online.
-<!--l. 255--><p class="noindent">
+<!--l. 260--><p class="noindent">
    <h5 class="subsubsectionHead"><a 
 href="#x10-680005.3.2" id="x10-680005.3.2">Starting Multiplayer FlightGear</a></h5>
-<!--l. 257--><p class="noindent">Finally, start FG using the command line given right at the start (if you&#8217;re using the
+<!--l. 262--><p class="noindent">Finally, start FG using the command line given right at the start (if you&#8217;re using the
 windows launcher you will find entry boxes for Multiplayer arguments - insert the
 relevant details there). You will end up with something like this;
                                                                      
@@ -328,11 +327,11 @@ fgfs&#x00A0;--callsign=MyName
 &#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;--enable-ai-models
 </div>
 </td></tr></table>
-<!--l. 265--><p class="nopar">
-<!--l. 267--><p class="indent">   The current server IP address (in the "out" section) can be found by asking on the
+<!--l. 270--><p class="nopar">
+<!--l. 272--><p class="indent">   The current server IP address (in the "out" section) can be found by asking on the
 IRC channel, and likewise the relevant port number; 5000 is the default. Choose your
 own callsign - this is currently limited to seven characters.
-<!--l. 270--><p class="indent">   Once you have started FG, you should, if others are flying, see messages in the
+<!--l. 275--><p class="indent">   Once you have started FG, you should, if others are flying, see messages in the
 terminal from which FG was started, similar to the following;
                                                                      
 
@@ -345,63 +344,63 @@ Initialising&#x00A0;john51a&#x00A0;using&#x00A0;&#8217;Aircraft/ufo/Models/ufo.x
 &#x00A0;<br />Call:&#x00A0;john51a,model:&#x00A0;Aircraft/ufo/Models/ufo.xml
 </div>
 </td></tr></table>
-<!--l. 276--><p class="nopar">
-<!--l. 278--><p class="indent">   The MultiPlayer Map is available at <a 
+<!--l. 281--><p class="nopar">
+<!--l. 283--><p class="indent">   The MultiPlayer Map is available at <a 
 href="http://mpmap02.flightgear.org" >http://mpmap02.flightgear.org</a> - this should show
 you if anyone else is currently flying, and where.
-<!--l. 281--><p class="noindent">
+<!--l. 286--><p class="noindent">
    <h5 class="subsubsectionHead"><a 
 href="#x10-690005.3.2" id="x10-690005.3.2">If It Still Doesn&#8217;t Work</a></h5>
-<!--l. 283--><p class="noindent">You MUST give your local, behind-the-router IP address for MultiPlayer to work. Trust
+<!--l. 288--><p class="noindent">You MUST give your local, behind-the-router IP address for MultiPlayer to work. Trust
 me on this one!
-<!--l. 285--><p class="indent">   You should check that your firewall is not causing problems - either turn it off
-temporarily or add an exception to allow incoming connections on port 5000 and
-5002.
-<!--l. 288--><p class="indent">   If it&#8217;s still just not working for you, ask nicely on the FlightGear IRC channel and
+<!--l. 290--><p class="indent">   You should check that your firewall is not causing problems - either turn it
+off temporarily or add an exception to allow incoming connections on port
+5000.
+<!--l. 293--><p class="indent">   If it&#8217;s still just not working for you, ask nicely on the FlightGear IRC channel and
 someone should be able to assist.
-<!--l. 290--><p class="noindent">
+<!--l. 295--><p class="noindent">
    <h3 class="sectionHead"><span class="titlemark">5.4    </span> <a 
 href="getstart.html#QQ2-10-71" id="x10-700005.4">Multiple Displays</a></h3>
 <a 
  id="dx10-70001"></a>
-<!--l. 292--><p class="noindent"><span 
+<!--l. 297--><p class="noindent"><span 
 class="ptmri8t-x-x-109">FlightGear </span>allows you to connect multiple instances of the program together to display
 different views of the simulation though a highly flexible I/O subsystem.
-<!--l. 296--><p class="indent">   For example, you may want to have the aircraft panel displayed on a screen
+<!--l. 301--><p class="indent">   For example, you may want to have the aircraft panel displayed on a screen
 right infront of you, while the view forward is displayed on a separate screen or
 using a projector. Using multiple displays can vastly improve the realism of the
 simulation.
-<!--l. 301--><p class="indent">   Given enough hardware, you can create sophisticated simulation environments with
+<!--l. 306--><p class="indent">   Given enough hardware, you can create sophisticated simulation environments with
 mock-up cockpits, panels, multiple views, and even a separate control station allowing an
 instructor to fail instruments, change the weather etc. An example of this is the 747
 cockpit project.
-<!--l. 308--><p class="noindent"><a 
+<!--l. 313--><p class="noindent"><a 
 href="http://www.flightgear.org/Projects/747-JW/" >http://www.flightgear.org/Projects/747-JW/</a>
-<!--l. 311--><p class="noindent">
+<!--l. 316--><p class="noindent">
    <h4 class="subsectionHead"><span class="titlemark">5.4.1    </span> <a 
 href="getstartli1.html#QQ2-10-72" id="x10-710005.4.1">Hardware</a></h4>
                                                                      
 
                                                                      
-<!--l. 313--><p class="noindent">Each instance of <span 
+<!--l. 318--><p class="noindent">Each instance of <span 
 class="ptmri8t-x-x-109">FlightGear </span>can support a single display. Due to the complexity of the
 FDM and graphics, <span 
 class="ptmri8t-x-x-109">FlightGear </span>is very processor-intensive, so running multiple instances
 of <span 
 class="ptmri8t-x-x-109">FlightGear </span>on a single machine is not recommended.
-<!--l. 318--><p class="indent">   You will therefore need a computer for each view of the simulation you wish to
+<!--l. 323--><p class="indent">   You will therefore need a computer for each view of the simulation you wish to
 display, including the panel. The computers obviously must be networked and for
 simplicity should be on the same subnet.
-<!--l. 322--><p class="indent">   One computer is designated as the master. This computer will run the FDM and be
+<!--l. 327--><p class="indent">   One computer is designated as the master. This computer will run the FDM and be
 connected to controls such as yokes, joysticks and pedals. As the machine is running the
 FDM, it usually only displays a simple view, typically the main panel, to maximize
 performance.
-<!--l. 327--><p class="indent">   All other computers are designated as slaves. They are purely used for display
+<!--l. 332--><p class="indent">   All other computers are designated as slaves. They are purely used for display
 purposes and receive FDM information from the master.
-<!--l. 330--><p class="noindent">
+<!--l. 335--><p class="noindent">
    <h4 class="subsectionHead"><span class="titlemark">5.4.2    </span> <a 
 href="getstartli1.html#QQ2-10-73" id="x10-720005.4.2">Basic Configuration</a></h4>
-<!--l. 332--><p class="noindent">Creating a basic configuration for multiple displays is straightforward. The master
+<!--l. 337--><p class="noindent">Creating a basic configuration for multiple displays is straightforward. The master
 computer needs to broadcast the FDM and control information to the slaves. This is done
 using the following command line options:
                                                                      
@@ -414,8 +413,8 @@ class="verbatim"><div class="verbatim">
 &#x00A0;<br />--native-ctrls=socket,out,60,,5506,udp
 </div>
 </td></tr></table>
-<!--l. 339--><p class="nopar">
-<!--l. 341--><p class="indent">   The slave computers need to listen for the information, and also need to have their
+<!--l. 344--><p class="nopar">
+<!--l. 346--><p class="indent">   The slave computers need to listen for the information, and also need to have their
 own FDMs switched off:
                                                                      
 
@@ -428,11 +427,11 @@ class="verbatim"><div class="verbatim">
 &#x00A0;<br />--fdm=null
 </div>
 </td></tr></table>
-<!--l. 348--><p class="nopar">
-<!--l. 350--><p class="noindent">
+<!--l. 353--><p class="nopar">
+<!--l. 355--><p class="noindent">
    <h4 class="subsectionHead"><span class="titlemark">5.4.3    </span> <a 
 href="getstartli1.html#QQ2-10-74" id="x10-730005.4.3">Advanced Configuration</a></h4>
-<!--l. 352--><p class="noindent">The options listed above will simply show the same view on both machines. You will
+<!--l. 357--><p class="noindent">The options listed above will simply show the same view on both machines. You will
 probably also want to set the following command-line options on both master and slave
 computers.
                                                                      
@@ -449,8 +448,8 @@ class="verbatim"><div class="verbatim">
 &#x00A0;<br />--prop:/sim/rendering/bump-mapping=false
 </div>
 </td></tr></table>
-<!--l. 362--><p class="nopar">
-<!--l. 364--><p class="indent">   If using the master computer to display a panel only, you may wish to create a
+<!--l. 367--><p class="nopar">
+<!--l. 369--><p class="indent">   If using the master computer to display a panel only, you may wish to create a
 full-screen panel for the aircraft you wish to fly (one is already available for the Cessna
 172), and use the following options.
                                                                      
@@ -463,8 +462,8 @@ class="verbatim"><div class="verbatim">
 &#x00A0;<br />--enable-panel
 </div>
 </td></tr></table>
-<!--l. 370--><p class="nopar">
-<!--l. 372--><p class="indent">   For slave computers displaying side-views, use the following options.
+<!--l. 375--><p class="nopar">
+<!--l. 377--><p class="indent">   For slave computers displaying side-views, use the following options.
                                                                      
 
                                                                      
@@ -476,16 +475,16 @@ class="verbatim"><div class="verbatim">
 &#x00A0;<br />--prop:/sim/view/config/pitch-offset-deg=3
 </div>
 </td></tr></table>
-<!--l. 378--><p class="nopar">
-<!--l. 380--><p class="noindent">
+<!--l. 383--><p class="nopar">
+<!--l. 385--><p class="noindent">
    <h3 class="sectionHead"><span class="titlemark">5.5    </span> <a 
 href="getstart.html#QQ2-10-75" id="x10-740005.5">Recording and Playback</a></h3>
 <a 
  id="dx10-74001"></a>
-<!--l. 382--><p class="noindent">Another feature of the I/O system is the ability to record your flight for later analysis or
+<!--l. 387--><p class="noindent">Another feature of the I/O system is the ability to record your flight for later analysis or
 playback. Technical details of how to record specific FDM information can be found in
 the $FG_ROOT/protocol/README.protocol file.
-<!--l. 386--><p class="indent">   To record a flight, use the following command line options:
+<!--l. 391--><p class="indent">   To record a flight, use the following command line options:
                                                                      
 
                                                                      
@@ -495,10 +494,10 @@ class="verbatim"><div class="verbatim">
 --generic=file,out,20,flight.out,playback
 </div>
 </td></tr></table>
-<!--l. 390--><p class="nopar">
-<!--l. 392--><p class="indent">   This will record the FDM state at 20Hz (20 times per second), using the playback
+<!--l. 395--><p class="nopar">
+<!--l. 397--><p class="indent">   This will record the FDM state at 20Hz (20 times per second), using the playback
 protocol and write it to a file flight.out.
-<!--l. 395--><p class="indent">   To play it back later, use the following command line options:
+<!--l. 400--><p class="indent">   To play it back later, use the following command line options:
                                                                      
 
                                                                      
@@ -509,25 +508,25 @@ class="verbatim"><div class="verbatim">
 &#x00A0;<br />--fdm=external
 </div>
 </td></tr></table>
-<!--l. 400--><p class="nopar">
-<!--l. 402--><p class="indent">   The playback.xml protocol file does not include information such as plane type, time
+<!--l. 405--><p class="nopar">
+<!--l. 407--><p class="indent">   The playback.xml protocol file does not include information such as plane type, time
 of day, so you should use the same set of command line options as you did when
 recording.
-<!--l. 406--><p class="noindent">
+<!--l. 411--><p class="noindent">
    <h3 class="sectionHead"><span class="titlemark">5.6    </span> <a 
 href="getstart.html#QQ2-10-76" id="x10-750005.6">Text to Speech with Festival</a></h3>
 <a 
  id="dx10-75001"></a>
-<!--l. 408--><p class="noindent"><span 
+<!--l. 413--><p class="noindent"><span 
 class="ptmri8t-x-x-109">FlightGear </span>supports Text To Speech (TTS) for ATC and tutorial messages through the
 festival TTS engine (<a 
 href="http://www.cstr.ed.ac.uk/projects/festival/" >http://www.cstr.ed.ac.uk/projects/festival/</a>). This is available on
 many Linux distros, and can also be installed easily on a Cygwin Windows system. At
 time of writing, support on other platforms is unknown.
-<!--l. 413--><p class="noindent">
+<!--l. 418--><p class="noindent">
    <h4 class="subsectionHead"><span class="titlemark">5.6.1    </span> <a 
 href="getstartli1.html#QQ2-10-77" id="x10-760005.6.1">Installing the Festival system</a></h4>
-<!--l. 415--><p class="noindent">
+<!--l. 420--><p class="noindent">
      <ol  class="enumerate1" >
      <li class="enumerate"><a 
  id="x10-76002x1"></a>Install festival from <a 
@@ -547,13 +546,13 @@ class="verbatim"><div class="verbatim">
      &#x00A0;<br />festival&#x003E;&#x00A0;(quit)
 </div>
      </td></tr></table>
-     <!--l. 425--><p class="nopar">
+     <!--l. 430--><p class="nopar">
      </li>
      <li class="enumerate"><a 
  id="x10-76006x3"></a>Check if MBROLA is installed, or download it from here:
-     <!--l. 429--><p class="noindent"><a 
+     <!--l. 434--><p class="noindent"><a 
 href="http://tcts.fpms.ac.be/synthesis/mbrola/" >http://tcts.fpms.ac.be/synthesis/mbrola/</a>
-     <!--l. 431--><p class="noindent">See under "Downloads"m "MBROLA binary and voices" (link at the bottom; hard
+     <!--l. 436--><p class="noindent">See under "Downloads"m "MBROLA binary and voices" (link at the bottom; hard
      to find). Choose the binary for your platform. Unfortunately, there&#8217;s no source
      code available. If you don&#8217;t like that, then you can skip the whole MBROLA setup.
      But then you can&#8217;t use the more realistic voices. See below for details of more
@@ -568,11 +567,11 @@ class="verbatim"><div class="verbatim">
      $&#x00A0;mbrola&#x00A0;-h
 </div>
      </td></tr></table>
-     <!--l. 439--><p class="nopar"></li></ol>
-<!--l. 442--><p class="noindent">
+     <!--l. 444--><p class="nopar"></li></ol>
+<!--l. 447--><p class="noindent">
    <h4 class="subsectionHead"><span class="titlemark">5.6.2    </span> <a 
 href="getstartli1.html#QQ2-10-78" id="x10-770005.6.2">Running FlightGear with Voice Support</a></h4>
-<!--l. 444--><p class="noindent">First start the festival server:
+<!--l. 449--><p class="noindent">First start the festival server:
                                                                      
 
                                                                      
@@ -582,8 +581,8 @@ class="verbatim"><div class="verbatim">
 $&#x00A0;festival&#x00A0;--server
 </div>
 </td></tr></table>
-<!--l. 448--><p class="nopar">
-<!--l. 450--><p class="indent">   Now, start <span 
+<!--l. 453--><p class="nopar">
+<!--l. 455--><p class="indent">   Now, start <span 
 class="ptmri8t-x-x-109">FlightGear </span>with voice support enabled. This is set through the
 /sim/sound/voices/enabled property. You can do this through the command line as
 follows.
@@ -598,23 +597,23 @@ $&#x00A0;fgfs&#x00A0;--aircraft=j3cub&#x00A0;\
 &#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;--prop:/sim/sound/voices/enabled=true
 </div>
 </td></tr></table>
-<!--l. 457--><p class="nopar">
-<!--l. 459--><p class="indent">   Of course, you can put this option into your personal configuration file. This doesn&#8217;t
+<!--l. 462--><p class="nopar">
+<!--l. 464--><p class="indent">   Of course, you can put this option into your personal configuration file. This doesn&#8217;t
 mean that you then always have to use FlightGear together with Festival. You&#8217;ll just get a
 few error messages in the terminal window, but that&#8217;s it. You cannot enable the voice
 subsystem when FlightGear is running.
-<!--l. 464--><p class="indent">   To test it is all working, contact the KSFO ATC using the &#8217; key. You should hear
+<!--l. 469--><p class="indent">   To test it is all working, contact the KSFO ATC using the &#8217; key. You should hear
 "your" voice first (and see the text in yellow color on top of the screen), then
 you should hear ATC answer with a different voice (and see it in light-green
 color).
-<!--l. 468--><p class="indent">   ou can edit the voice parameters in the preferences.xml file, and select different
+<!--l. 473--><p class="indent">   ou can edit the voice parameters in the preferences.xml file, and select different
 screen colors and voice assignments in $FG_ROOT/Nasal/voice.nas. The messages
 aren&#8217;t written to the respective /sim/sound/voices/voice[*]/text properties directly, but
 rather to aliases /sim/sound/voices/atc,approach,ground,pilot,ai-plane.
-<!--l. 473--><p class="noindent">
+<!--l. 478--><p class="noindent">
    <h4 class="subsectionHead"><span class="titlemark">5.6.3    </span> <a 
 href="getstartli1.html#QQ2-10-79" id="x10-780005.6.3">Troubleshooting</a></h4>
-<!--l. 475--><p class="noindent">On some Linux distros, festival access is restricted, and you will get message like the
+<!--l. 480--><p class="noindent">On some Linux distros, festival access is restricted, and you will get message like the
 following.
                                                                      
 
@@ -627,11 +626,11 @@ client(1)&#x00A0;Tue&#x00A0;Feb&#x00A0;21&#x00A0;13:29:46&#x00A0;2006&#x00A0;:&#
 &#x00A0;<br />not&#x00A0;in&#x00A0;access&#x00A0;list
 </div>
 </td></tr></table>
-<!--l. 481--><p class="nopar">
-<!--l. 483--><p class="indent">   Details on this can be found from:
-<!--l. 485--><p class="indent">   <a 
+<!--l. 486--><p class="nopar">
+<!--l. 488--><p class="indent">   Details on this can be found from:
+<!--l. 490--><p class="indent">   <a 
 href="http://www.cstr.ed.ac.uk/projects/festival/manual/festival_28.html#SEC130" >http://www.cstr.ed.ac.uk/projects/festival/manual/festival_28.html#SEC130</a>.
-<!--l. 487--><p class="indent">   You can disable access restrictions from localhost and localhost.localdomain by
+<!--l. 492--><p class="indent">   You can disable access restrictions from localhost and localhost.localdomain by
 adding the following to a .festivalrc file in $HOME:
                                                                      
 
@@ -643,8 +642,8 @@ class="verbatim"><div class="verbatim">
 &#x00A0;<br />(set!&#x00A0;server_access_list&#x00A0;&#8217;(~localhost.localdomain~))
 </div>
 </td></tr></table>
-<!--l. 492--><p class="nopar">
-<!--l. 494--><p class="indent">   Or, you can just disable the access list altogether:
+<!--l. 497--><p class="nopar">
+<!--l. 499--><p class="indent">   Or, you can just disable the access list altogether:
                                                                      
 
                                                                      
@@ -654,17 +653,17 @@ class="verbatim"><div class="verbatim">
 (set!&#x00A0;server_access_list&#x00A0;nil)
 </div>
 </td></tr></table>
-<!--l. 498--><p class="nopar">
-<!--l. 500--><p class="indent">   This will allow connections from anywhere, but should be OK if your machine is
+<!--l. 503--><p class="nopar">
+<!--l. 505--><p class="indent">   This will allow connections from anywhere, but should be OK if your machine is
 behind a firewall.
-<!--l. 503--><p class="noindent">
+<!--l. 508--><p class="noindent">
    <h4 class="subsectionHead"><span class="titlemark">5.6.4    </span> <a 
 href="getstartli1.html#QQ2-10-80" id="x10-790005.6.4">Installing more voices</a></h4>
-<!--l. 505--><p class="noindent">I&#8217;m afraid this is a bit tedious. You can skip it if you are happy with the default voice.
+<!--l. 510--><p class="noindent">I&#8217;m afraid this is a bit tedious. You can skip it if you are happy with the default voice.
 First find the Festival data directory. All Festival data goes to a common file tree, like in
 FlightGear. This can be /usr/local/share/festival/ on Unices. We&#8217;ll call that directory
 $FESTIVAL for now.
-<!--l. 510--><p class="indent">
+<!--l. 515--><p class="indent">
      <ol  class="enumerate1" >
      <li class="enumerate"><a 
  id="x10-79002x1"></a>Check which voices are available. You can test them by prepending "voice_":
@@ -685,13 +684,13 @@ class="verbatim"><div class="verbatim">
      &#x00A0;<br />festival&#x003E;&#x00A0;(quit)
 </div>
      </td></tr></table>
-     <!--l. 523--><p class="nopar">
+     <!--l. 528--><p class="nopar">
      </li>
      <li class="enumerate"><a 
  id="x10-79004x2"></a>Festival voices and MBROLA wrappers can be downloaded here:
-     <!--l. 527--><p class="noindent"><a 
+     <!--l. 532--><p class="noindent"><a 
 href="http://festvox.org/packed/festival/1.95/" >http://festvox.org/packed/festival/1.95/</a>
-     <!--l. 529--><p class="noindent">The "don_diphone" voice isn&#8217;t the best, but it&#8217;s comparatively small and
+     <!--l. 534--><p class="noindent">The "don_diphone" voice isn&#8217;t the best, but it&#8217;s comparatively small and
      well suited for "ai-planes". If you install it, it should end up as directory
      $FESTIVAL/voices/english/don_diphone/. You also need to install
      "festlex_OALD.tar.gz" for it as $FESTIVAL/dicts/oald/ and run the Makefile in
@@ -714,15 +713,15 @@ href="http://festvox.org/packed/festival/1.95/" >http://festvox.org/packed/festi
                                                                      
 
                                                                      
-<!--l. 547--><p class="noindent">
+<!--l. 552--><p class="noindent">
    <h3 class="sectionHead"><span class="titlemark">5.7    </span> <a 
 href="getstart.html#QQ2-10-81" id="x10-800005.7">Air-Air Refuelling</a></h3>
 <a 
  id="dx10-80001"></a>
-<!--l. 550--><p class="noindent">
+<!--l. 555--><p class="noindent">
    <h4 class="subsectionHead"><span class="titlemark">5.7.1    </span> <a 
 href="getstartli1.html#QQ2-10-82" id="x10-810005.7.1">What&#8217;s possible</a></h4>
-<!--l. 552--><p class="noindent">At present, there are two tanker aircraft (KC135-E and KA6-D) and three receiving
+<!--l. 557--><p class="noindent">At present, there are two tanker aircraft (KC135-E and KA6-D) and three receiving
 aircraft (A4F, Lightning and T38) capable of in-air refuelling. When flying one of these
 aircraft in the default scenery area, one can locate the tanker aircraft using air-air TACAN
 and/or radar and then receive a full or partial load of fuel by flying in close
@@ -732,50 +731,50 @@ The A4F and Lightning are both fitted with a probe for hose refuelling while
 the T38 is fitted with a boom receiver. At the moment, either type can refuel
 from any tanker, but in the future it is likely that the correct type will have to be
 used.
-<!--l. 564--><p class="noindent">
+<!--l. 569--><p class="noindent">
    <h4 class="subsectionHead"><span class="titlemark">5.7.2    </span> <a 
 href="getstartli1.html#QQ2-10-83" id="x10-820005.7.2">Necessary preparations</a></h4>
-<!--l. 566--><p class="noindent">Like the aircraft carriers, AAR is implemented as an "AI scenario". Selecting
+<!--l. 571--><p class="noindent">Like the aircraft carriers, AAR is implemented as an "AI scenario". Selecting
 these normally requires editing the "preferences.xml" file in the flightgear data
 directory.
-<!--l. 570--><p class="indent">   There is a shortcut in this case though; simply selecting the Lightning, A4F or T38
+<!--l. 575--><p class="indent">   There is a shortcut in this case though; simply selecting the Lightning, A4F or T38
 should automatically load a scenario containing a tanker, assuming you haven&#8217;t changed
 anything in your preferences.xml file.
-<!--l. 575--><p class="indent">   Assuming this is the case, choose one of the aforementioned aircraft, make sure that
+<!--l. 580--><p class="indent">   Assuming this is the case, choose one of the aforementioned aircraft, make sure that
 "AI models" are enabled and start at KSFO (the default airport.)
-<!--l. 579--><p class="indent">   Depending on the scenario, you might see the tanker crossing overhead when the sim
+<!--l. 584--><p class="indent">   Depending on the scenario, you might see the tanker crossing overhead when the sim
 starts; if not, don&#8217;t worry.
-<!--l. 582--><p class="noindent">
+<!--l. 587--><p class="noindent">
    <h4 class="subsectionHead"><span class="titlemark">5.7.3    </span> <a 
 href="getstartli1.html#QQ2-10-84" id="x10-830005.7.3">In the cockpit</a></h4>
-<!--l. 584--><p class="noindent">Perhaps the first thing to do after starting the engines if necessary is to select the
+<!--l. 589--><p class="noindent">Perhaps the first thing to do after starting the engines if necessary is to select the
 appropriate TACAN channel if your aircraft is so equipped (the A4F and Lightning both
 are). For the KC135 (by default used by the Lightning and T37) this is currently "040X",
 and for the KA6D (used by the A4F) it is "050X". Enter this channel using the relevant
 dropdown boxes in the "radios" dialogue (from the menus, "equipment/radios" or press
 control-r).
-<!--l. 592--><p class="indent">   You should now see the current bearing to the tanker indicated in the nav display of
+<!--l. 597--><p class="indent">   You should now see the current bearing to the tanker indicated in the nav display of
 the A4 or the TACAN indicator (green needle) in the Lightning. If the tanker is within
                                                                      
 
                                                                      
 range, it will also appear on the radar display of the T38 or Lightning. Take
 off...
-<!--l. 597--><p class="noindent">
+<!--l. 602--><p class="noindent">
    <h4 class="subsectionHead"><span class="titlemark">5.7.4    </span> <a 
 href="getstartli1.html#QQ2-10-85" id="x10-840005.7.4">In the Air</a></h4>
-<!--l. 599--><p class="noindent">Turn to an appropriate heading, guided by the TACAN bearing (you should try a
+<!--l. 604--><p class="noindent">Turn to an appropriate heading, guided by the TACAN bearing (you should try a
 "leading" approach to close in on the tanker) and look for the tanker on the radar or nav.
 screen. Around 5nm away, you should reduce your speed to around 20kts faster than the
 tanker (these fly at 280 kts TAS) - a "slow overtake". The KC135 will be visible
 from about 10nm, the KA6-D, being smaller, just over 1 nm. You should use
 airbrakes as necessary to keep control of your speed should you find yourself
 overshooting.
-<!--l. 608--><p class="indent">   Close to within 50ft of the tanker (don&#8217;t get too close, or visual artifacts might hide
+<!--l. 613--><p class="indent">   Close to within 50ft of the tanker (don&#8217;t get too close, or visual artifacts might hide
 the boom from view). You should see indication in the cockpit that you are receiving fuel
 - there is a green light in the A4 fuel gauge, and you should see the indicated tank load
 increase.
-<!--l. 613--><p class="indent">   Getting to this stage is not necessarily easy - it can take a lot of practice.
+<!--l. 618--><p class="indent">   Getting to this stage is not necessarily easy - it can take a lot of practice.
 As with carrier landings, this is not an easy manoeuver in real life either and
 there are additional complications in the sim; the tanker, being an AI model, is
 unaffected by the wind and flies TAS (True Air Speed), while you are flying IAS
@@ -784,21 +783,21 @@ aircraft will also steadily increase in weight as the tanks fill which will affe
 trim of the aircraft. (You might find it helpful to use the autothrottle to help
 control your speed - ctrl-a then Page Up/Down to increase and decrease the set
 speed.)
-<!--l. 624--><p class="indent">   Once your tanks are full, or you have taken as much fuel as you wish, close the
+<!--l. 629--><p class="indent">   Once your tanks are full, or you have taken as much fuel as you wish, close the
 throttle a little, back away from the tanker and continue your intended flight.
-<!--l. 628--><p class="noindent">
+<!--l. 633--><p class="noindent">
    <h4 class="subsectionHead"><span class="titlemark">5.7.5    </span> <a 
 href="getstartli1.html#QQ2-10-86" id="x10-850005.7.5">More advanced topics</a></h4>
-<!--l. 630--><p class="noindent">
+<!--l. 635--><p class="noindent">
      <ol  class="enumerate1" >
      <li class="enumerate"><a 
  id="x10-85002x1"></a>Multiplayer Refuelling
-     <!--l. 634--><p class="noindent">Refuelling is possible within a MultiPlayer session given certain conditions.
+     <!--l. 639--><p class="noindent">Refuelling is possible within a MultiPlayer session given certain conditions.
      A basic flyable KC135 model is available - the pilot of this aircraft should
      use the callsign "MOBIL1", "MOBIL2" or "MOBIL3". Other numbers are
      acceptable, but only these three have A-A TACAN channels assigned. These
      are 060X, 061X and 062X respectively.
-     <!--l. 640--><p class="noindent">If   the   receiving   aircraft   uses   a   YASim   FDM,   there   are   no   further
+     <!--l. 645--><p class="noindent">If   the   receiving   aircraft   uses   a   YASim   FDM,   there   are   no   further
      complications.  Should  the  receiving  aircraft  be  JSBSim  based,  the  user
                                                                      
 
@@ -806,7 +805,7 @@ href="getstartli1.html#QQ2-10-86" id="x10-850005.7.5">More advanced topics</a></
      must  make  sure  that  there  are  no  AI  tankers  in  their  configuration.  This
      means disabling (commenting out) all refuelling "scenarios" in the relevant
      aircraft-set.xml and in preferences.xml.
-     <!--l. 646--><p class="noindent">MP refuelling works in exactly the same way as AI refuelling and is a fun
+     <!--l. 651--><p class="noindent">MP refuelling works in exactly the same way as AI refuelling and is a fun
      challenge. It is best to ensure that your network connection is as free from
      interruptions as possible; the MP code does a degree of prediction if there
      is a "blip" in the stream of packets and this can make close formation flight
@@ -814,7 +813,7 @@ href="getstartli1.html#QQ2-10-86" id="x10-850005.7.5">More advanced topics</a></
      </li>
      <li class="enumerate"><a 
  id="x10-85004x2"></a>Selecting Different Scenarios
-     <!--l. 654--><p class="noindent">There are several AAR scenarios available in the AI directory:
+     <!--l. 659--><p class="noindent">There are several AAR scenarios available in the AI directory:
           <ol  class="enumerate2" >
           <li class="enumerate"><a 
  id="x10-85006x1"></a>refueling_demo.xml has a KC135 circling near KSFO at 3000ft,
@@ -825,7 +824,7 @@ href="getstartli1.html#QQ2-10-86" id="x10-850005.7.5">More advanced topics</a></
           </li>
           <li class="enumerate"><a 
  id="x10-85010x3"></a>refueling_demo_2.xml the KA6D on a similar N/S path but at 8500ft.</li></ol>
-     <!--l. 661--><p class="noindent">These can be selected by editing preferences.xml (use your operating system&#8217;s
+     <!--l. 666--><p class="noindent">These can be selected by editing preferences.xml (use your operating system&#8217;s
      search facility to locate this if you don&#8217;t know where it is). Open preferences.xml
      in a text editor (e.g. notepad if on windows) and search for the &#x003C;ai&#x003E; &#x003C;/ai&#x003E; tags.
      Place a line like
@@ -838,7 +837,7 @@ class="verbatim"><div class="verbatim">
      &#x003C;scenario&#x003E;refueling\_demo&#x003C;/scenario&#x003E;
 </div>
      </td></tr></table>
-     <!--l. 667--><p class="nopar"> somewhere within the &#x003C;ai&#x003E; tags; you should see other scenarios already there too,
+     <!--l. 672--><p class="nopar"> somewhere within the &#x003C;ai&#x003E; tags; you should see other scenarios already there too,
      perhaps commented out (i.e. with &#x003C;!&#8211; &#8211;&#x003E;).
      </li></ol>
                                                                      
