@@ -124,6 +124,8 @@ function clearTimeOut(n) {
 }
 
 function posAr(ar){
+	if(ar==null)
+		return null;
 	for(var i=0;i<ar.length;i++)
 		if(ar[i] instanceof Array)
 			return i;

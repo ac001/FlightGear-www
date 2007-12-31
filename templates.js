@@ -32,7 +32,7 @@ function SiteSearchGoogle()
   document.write("</td>");
   document.write("<td>");
   document.write("<input type=\"radio\" name=\"sitesearch\" value=\"flightgear.org\" checked=\"checked\"></input>");
-  document.write("<font size=\"-1\" color=\"#000000\">FlightGear</font>");
+  document.write("<font size=\"-1\" color=\"#000000\">FlightGear.org</font>");
   document.write("</td>");
   document.write("</tr>");
   document.write("</table>");

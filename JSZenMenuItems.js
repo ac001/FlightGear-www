@@ -3,41 +3,51 @@
 */
 
 
+/* fgfsmenu = menu([['home', '/']]); */
+
 fgfsmenu = menu([
-  ['Home', '/', 'Main Home Page', '_self', null,
+  ['Main', '/', 'Main Home Page', '_self', null,
     ['Home Page', '/'],
+    _split,
     ['Introduction', '/introduction.html'],
     ['Features', '/features.html'],
-    ['Gallery', '/Gallery-v1.0/'],
+    ['Gallery v1.0', '/Gallery-v1.0/'],
+    _split,
     ['Announcements', '/announce.html'],
     ['Events', '/events.html']
   ],
   ['Get FlightGear',
-    ['Download FlightGear',
-      ['FlightGear Program', '/Downloads/binary.shtml'],
-      ['Additional Aircraft', '/Downloads/aircraft/'],
-      ['World Scenery', '/Downloads/scenery.html'],
-      ['Source Code', '/Downloads/source.shtml'],
-      ['Main Download Page', '/Downloads/'],
-    ],
-    ['Purchase a CD or DVD set', 'http://www.flightgear.org/cdrom/']
+    ['Download Central', '/Downloads/'],
+    _split,
+    ['  Download Main Program', '/Downloads/binary.shtml'],
+    ['  Download More Aircraft', '/Downloads/aircraft/'],
+    ['  Download World Scenery', '/Downloads/scenery.html'],
+    ['  Download Source Code', '/Downloads/source.shtml'],
+    _split,
+    ['Purchase a CD or DVD set', 'http://www.flightgear.org/cdrom/'],
+    _split,
+    ['Version Change Log', '/version.html'],
+    ['Hardware Requirements', '/hardwarereq.html']
   ],
   ['Support',
-    ['Version Change Log', '/version.html'],
-    ['Hardware Requirements', '/hardwarereq.html'],
-    ['Documentation', '/docs.html'],
-    ['Places to Fly', '/places.html'],
-    ['Mailing Lists, Forums, and IRC', '/mail.html'],
-    ['Wiki', 'http://wiki.flightgear.org/flightgear_wiki/index.php?title=Main_Page'],
-    ['FAQ', '/Docs/FAQ.shtml']
+    ['The Official Manual (html)', '/Docs/getstart/getstart.html'],
+    ['Wiki Collaborative Documentation',
+     'http://wiki.flightgear.org/flightgear_wiki/index.php?title=Main_Page'],
+    ['Frequently Asked Questions', '/Docs/FAQ.shtml'],
+    ['Links to all Documentation', '/docs.html'],
+    ['Mailing Lists, Forums, and IRC', '/mail.html']
   ],
   ['Links',
     ['Related Websites', '/links.html'],
     ['Related Projects', '/Projects/']
   ],
+  ['Users',
+    ['Live Multiplayer Map', 'http://mpmap02.flightgear.org'],
+    ['Places to Fly', '/places.html']
+  ],
   ['Developers',
     ['CVS Resource', '/cvs.html'],
-    ['Source Code', '/Downloads/source.shtml'],
+    ['Source Code ', '/Downloads/source.shtml'],
     ['Goals/Wish list', '/goals.html'],
     ['Contributors', '/thanks.shtml'],
     ['Design Proposals', '/design.html']
