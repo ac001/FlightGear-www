@@ -99,6 +99,14 @@ google_color_text = "000000";
    <FONT SIZE="+1" COLOR="#301010">FlightGear v1.0 is now available.
    Check out the <A HREF="Gallery-v1.0">new gallery page</A>
    and start downloading now!</FONT><P>
+   <P>
+   <B>Results from the <A HREF="http://baron.flightgear.org/~curt/funfly/">
+   New Years Day Fun Fly</A> are posted!
+   <A HREF="http://www.jentronics.com/fgfs/funfly/">See the pictures here!</A>
+   And see <A HREF="http://www.hoerbird.net/FunFly2008/">More pictures
+   here!</A> and
+   <A HREF="http://picasaweb.google.com/Csaba.Halasz/2008NewYearSEveTrophy">
+   More Pictures.</A></B>
  </DIV>
 
  <TABLE>
@@ -148,8 +156,10 @@ google_color_text = "000000";
      <H3>Upcoming Events</H3>
      <UL>
 
-      <LI> <A HREF="events.html#scale08"><B>Feb 8-10, 2008</B> -
-           Southern California Linux Expo.</A>
+      <LI> <A HREF="events.html#linuxtag08"><B>May 28 - 31, 2008</B> -
+           <B>FlightGear on LinuxTag</B> at Berlin's Messezentrum unter dem
+           Funkturm.</A><BR>
+           The world's No. 1 Linux Expo and Conference since 1996.
       <P>
 
       <LI> Please submit your upcoming FlightGear related events for
@@ -249,7 +259,7 @@ google_color_text = "000000";
           </A>
         </td>
         <td>
-          Last modified:  12/25/2007 <BR>
+          Last modified:  1/01/2008 <BR>
           <A HREF="http://www.flightgear.org/~curt/">
             Curtis L. Olson
             <IMG ALIGN="MIDDLE" SRC="./email-fg.png">
