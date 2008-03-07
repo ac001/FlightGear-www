@@ -183,6 +183,9 @@ google_color_text = "000000";
      <H3>Recent Announcements</H3>
      <UL>
 
+      <LI><A HREF="announce.html#scenery-1.0.0"><B>Mar 4</B> -
+           World Scenery v1.0.0 released.</A>
+
       <LI><A HREF="announce.html#v1.0.0"><B>Dec 17</B> -
            FlightGear v1.0.0 released.</A>
 
@@ -259,7 +262,7 @@ google_color_text = "000000";
           </A>
         </td>
         <td>
-          Last modified:  1/01/2008 <BR>
+          Last modified:  03/07/2008 <BR>
           <A HREF="http://www.flightgear.org/~curt/">
             Curtis L. Olson
             <IMG ALIGN="MIDDLE" SRC="./email-fg.png">
