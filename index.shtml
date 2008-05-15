@@ -117,7 +117,7 @@ google_color_text = "000000";
 
      <H3>Marketplace</H3>
 
-     <DIV ALIGN="center">
+     <DIV ALIGN="CENTER">
 <SCRIPT TYPE="text/javascript"><!--
 google_ad_client = "pub-2485404446552133";
 google_ad_width = 300;
@@ -125,6 +125,7 @@ google_ad_height = 250;
 google_ad_format = "300x250_as";
 google_ad_channel ="0342433177";
 google_color_border = "ffffff";
+google_color_border = "0f7a71";
 google_color_bg = "ffffff";
 google_color_link = "0f7a71";
 google_color_url = "0f0f7a";
@@ -133,7 +134,42 @@ google_color_text = "000000";
 <SCRIPT TYPE="text/javascript"
  SRC="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </SCRIPT>
-     </DIV>
+    </DIV>
+
+   </TD>
+
+   <TD VALIGN="TOP" WIDTH="35%">
+    <DIV ID="page">
+     <H3>Recent Announcements</H3>
+     <UL>
+
+      <LI><A HREF="announce.html#scenery-1.0.0"><B>Mar 4</B> -
+           World Scenery v1.0.0 released.</A>
+
+      <LI><A HREF="announce.html#v1.0.0"><B>Dec 17</B> -
+           FlightGear v1.0.0 released.</A>
+
+      <LI> <A HREF="announce.html#flightsim.com"><B>May 26</B> -
+           New FlightGear review on FlightSim.com.</A>
+
+      <LI> <A HREF="announce.html#sourcetrunk"><B>May 16</B> -
+           Sourcetrunk Podcast review of FlightGear.</A>
+
+      <LI> <A HREF="http://www.bomots.de/flightgear/"><B>Jan 29</B> -
+           FlightGear kompakt - a new German langauge FlightGear handbook
+           published by Bomots.de is available for purchase.</A>
+
+      <LI> <A HREF="http://www.linux.com/article.pl?sid=06/11/20/0533247">
+	   <B>Dec 4, 2006</B> - Read a Linux.com review of FlightGear.
+           </A>  Update:
+           <A HREF="http://www.hispalibertas.com/noticias/2006/07/24/a-volar.html">
+           A Spanish language review of FlightGear (with nice pictures.)
+           </A>
+
+      <P>
+
+      <LI> <A HREF="announce.html">Complete list of announcements ...</A>
+    </UL>
 
      <H3>Quick Links</H3>
      <UL>
@@ -176,41 +212,6 @@ google_color_text = "000000";
       -->
     </UL>
     </DIV>
-   </TD>
-
-   <TD VALIGN="TOP" WIDTH="40%">
-    <DIV ID="page">
-     <H3>Recent Announcements</H3>
-     <UL>
-
-      <LI><A HREF="announce.html#scenery-1.0.0"><B>Mar 4</B> -
-           World Scenery v1.0.0 released.</A>
-
-      <LI><A HREF="announce.html#v1.0.0"><B>Dec 17</B> -
-           FlightGear v1.0.0 released.</A>
-
-      <LI> <A HREF="announce.html#flightsim.com"><B>May 26</B> -
-           New FlightGear review on FlightSim.com.</A>
-
-      <LI> <A HREF="announce.html#sourcetrunk"><B>May 16</B> -
-           Sourcetrunk Podcast review of FlightGear.</A>
-
-      <LI> <A HREF="http://www.bomots.de/flightgear/"><B>Jan 29</B> -
-           FlightGear kompakt - a new German langauge FlightGear handbook
-           published by Bomots.de is available for purchase.</A>
-
-      <LI> <A HREF="http://www.linux.com/article.pl?sid=06/11/20/0533247">
-	   <B>Dec 4, 2006</B> - Read a Linux.com review of FlightGear.
-           </A>  Update:
-           <A HREF="http://www.hispalibertas.com/noticias/2006/07/24/a-volar.html">
-           A Spanish language review of FlightGear (with nice pictures.)
-           </A>
-
-      <P>
-
-      <LI> <A HREF="announce.html">Complete list of announcements ...</A>
-    </UL>
-
    </TD>
 
   </TR>
@@ -262,7 +263,7 @@ google_color_text = "000000";
           </A>
         </td>
         <td>
-          Last modified:  03/07/2008 <BR>
+          <!-- Last modified:  5/14/2008 <BR> -->
           <A HREF="http://www.flightgear.org/~curt/">
             Curtis L. Olson
             <IMG ALIGN="MIDDLE" SRC="./email-fg.png">

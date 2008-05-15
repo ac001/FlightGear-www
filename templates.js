@@ -136,9 +136,9 @@ function RandomFrontImages()
 
   picts.fgshuffle();
 
-  document.write("<A HREF=\"Gallery-v1.0/Link/" + picts[0] + ".html\"><IMG CLASS=\"mainscreen\" WIDTH=\"160\" HEIGHT=\"120\" SRC=\"Gallery-v1.0/Small/" + picts[0] + ".jpg\" ALT=\"" + picts[0] + "\"></A>");
-  document.write("<A HREF=\"Gallery-v1.0/Link/" + picts[1] + ".html\"><IMG CLASS=\"mainscreen\" WIDTH=\"160\" HEIGHT=\"120\" SRC=\"Gallery-v1.0/Small/" + picts[1] + ".jpg\" ALT=\"" + picts[1] + "\"></A>");
-  document.write("<A HREF=\"Gallery-v1.0/Link/" + picts[2] + ".html\"><IMG CLASS=\"mainscreen\" WIDTH=\"160\" HEIGHT=\"120\" SRC=\"Gallery-v1.0/Small/" + picts[2] + ".jpg\" ALT=\"" + picts[2] + "\"></A>");
+  document.write("<A HREF=\"/Gallery-v1.0/Link/" + picts[0] + ".html\"><IMG CLASS=\"mainscreen\" WIDTH=\"160\" HEIGHT=\"120\" SRC=\"/Gallery-v1.0/Small/" + picts[0] + ".jpg\" ALT=\"" + picts[0] + "\"></A>");
+  document.write("<A HREF=\"/Gallery-v1.0/Link/" + picts[1] + ".html\"><IMG CLASS=\"mainscreen\" WIDTH=\"160\" HEIGHT=\"120\" SRC=\"/Gallery-v1.0/Small/" + picts[1] + ".jpg\" ALT=\"" + picts[1] + "\"></A>");
+  document.write("<A HREF=\"/Gallery-v1.0/Link/" + picts[2] + ".html\"><IMG CLASS=\"mainscreen\" WIDTH=\"160\" HEIGHT=\"120\" SRC=\"/Gallery-v1.0/Small/" + picts[2] + ".jpg\" ALT=\"" + picts[2] + "\"></A>");
 }
 
 
@@ -152,6 +152,8 @@ function RandomURLS()
   // http://mirror.fslutd.org/ - Philip White pmw at qnan dt org
   // http://flightgear.mxchange.org/pub/fgfs/ - Roland Hadar r.haeder
   //   at will-hier-weg dt de
+  // ftp://ftp.linux.kiev.ua/pub/mirrors/ftp.flightgear.org/ - Michael
+  //   Shigorin mike at osdn dt org dt ua
 
   var base = arguments[0];
 
@@ -163,7 +165,9 @@ function RandomURLS()
                 'ftp://ftp.de.flightgear.org/pub/fgfs/',
                 'http://flight.frozenwebhost.com/',
 		'http://mirror.fslutd.org/flightgear/',
-		'http://flightgear.mxchange.org/pub/fgfs/'
+		'http://flightgear.mxchange.org/pub/fgfs/',
+		'ftp://ftp.linux.kiev.ua/pub/mirrors/ftp.flightgear.org/flightgear/',
+		'http://ftp3.linux.kiev.ua/pub/fgfs/'
               ];
 
   // requested not to be in the round robin, but is a full mirror

@@ -136,12 +136,28 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20060315<BR>
   </TD>
   <TD ID="section" VALIGN="top">
+   <A NAME="787"></A>
+   <DIV ALIGN="center">
+    <B>787</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="787.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/787_200708.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>787-ANA</B>: ANA 787-8<BR>
+   <B>787-CO</B>: Continental 787-8<BR>
+   <B>787-FC</B>: First Choice 787-8<BR>
+  <B>Author:</B> Joshua Wilson<BR>
+  <B>Version:</B> v200708<BR>
+  <B>Status:</B> Development<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
    <A NAME="A-10"></A>
    <DIV ALIGN="center">
     <B>A-10</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="A-10.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/A-10_20071218.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/A-10_20080212.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>A-10</B>: Fairchild A-10 (YASim FDM)
@@ -163,26 +179,27 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
 							<DESCRIPTION TYPE="string">none</DESCRIPTION>
 							<DESCRIPTION TYPE="string">none</DESCRIPTION><BR>
   <B>Author:</B> Lee Elliott - Alexis Bory<BR>
-  <B>Version:</B> v20071218<BR>
+  <B>Version:</B> v20080212<BR>
   <B>Status:</B> beta<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="A24-Viking"></A>
    <DIV ALIGN="center">
     <B>A24-Viking</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="A24-Viking.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/A24-Viking_20071210.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/A24-Viking_20080102.zip");</SCRIPT>
     </B><BR>
    </DIV>
+   <B>a24</B>: Aeroprakt A 24 Viking<BR>
    <B>a24-yasim</B>: A 24 Viking (YASim)<BR>
-  <B>Author:</B> unknown<BR>
-  <B>Version:</B> v20071210<BR>
+  <B>Author:</B> BARANGER Emmanuel (3D), GEOFFROY Pierre (FDM)<BR>
+  <B>Version:</B> v20080102<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="A300"></A>
    <DIV ALIGN="center">
@@ -210,6 +227,10 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20070119<BR>
   <B>Status:</B> beta<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="A320-family"></A>
    <DIV ALIGN="center">
@@ -224,10 +245,6 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Author:</B> unknown<BR>
   <B>Version:</B> v20070119<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="a4"></A>
    <DIV ALIGN="center">
@@ -250,45 +267,44 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
     <B>A-6E</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="A-6E.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/A-6E_20071121.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/A-6E_20080212.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>A-6E</B>: Grumman A-6E (YASim FDM)<BR>
   <B>Author:</B> Alexis Bory<BR>
-  <B>Version:</B> v20071121<BR>
+  <B>Version:</B> v20080212<BR>
   <B>Status:</B> alpha<BR>
-  </TD>
-  <TD ID="section" VALIGN="top">
-   <A NAME="A6M2"></A>
-   <DIV ALIGN="center">
-    <B>A6M2</B><BR>
-    <IMG WIDTH=171 HEIGHT=128 SRC="A6M2.jpg"><BR>
-    <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/A6M2_20070509.zip");</SCRIPT>
-    </B><BR>
-   </DIV>
-   <B>A6M2b</B>: A6M2 Zero<BR>
-   <B>A6M2</B>: A6M2 Zero<BR>
-  <B>Author:</B> Syd Adams<BR>
-  <B>Version:</B> v20070509<BR>
-  <B>Status:</B> development<BR>
   </TD>
  </TR>
  <TR><TD> </TD></TR>
  <TR><TD> </TD></TR>
  <TR>
   <TD ID="section" VALIGN="top">
+   <A NAME="A6M2"></A>
+   <DIV ALIGN="center">
+    <B>A6M2</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="A6M2.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/A6M2_20080123.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>A6M2</B>: A6M2 Zero<BR>
+  <B>Author:</B> Syd Adams - Tat Nishioka<BR>
+  <B>Version:</B> v20080123<BR>
+  <B>Status:</B> development<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
    <A NAME="Aerostar-700"></A>
    <DIV ALIGN="center">
     <B>Aerostar-700</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="Aerostar-700.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/Aerostar-700_20071217.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/Aerostar-700_20071227.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>aerostar700</B>: Aerostar Super 700<BR>
   <B>Author:</B> Syd Adams<BR>
-  <B>Version:</B> v20071217<BR>
+  <B>Version:</B> v20071227<BR>
   <B>Status:</B> development<BR>
   </TD>
   <TD ID="section" VALIGN="top">
@@ -305,6 +321,10 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Author:</B> Michael Selig, Captain Slug<BR>
   <B>Version:</B> v20050502<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="Albatross"></A>
    <DIV ALIGN="center">
@@ -319,23 +339,19 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20071217<BR>
   <B>Status:</B> beta<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="Alouette-II"></A>
    <DIV ALIGN="center">
     <B>Alouette-II</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="Alouette-II.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/Alouette-II_20071128.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/Alouette-II_20080107.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>alouette2F</B>: Alouette II with floats (Yasim)<BR>
    <B>alouette2</B>: Alouette II (Yasim)<BR>
   <B>Author:</B> BARANGER Emmanuel (3D), Reagan Thomas, Maik Justus (FDM)<BR>
-  <B>Version:</B> v20071128<BR>
+  <B>Version:</B> v20080107<BR>
   <B>Status:</B> alpha<BR>
   </TD>
   <TD ID="section" VALIGN="top">
@@ -352,6 +368,24 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20071217<BR>
   <B>Status:</B> alpha, "GPL Copyright"<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
+  <TD ID="section" VALIGN="top">
+   <A NAME="Alphajet"></A>
+   <DIV ALIGN="center">
+    <B>Alphajet</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="Alphajet.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/Alphajet_20080102.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>alphajet</B>: Dassault/Dornier Alphajet<BR>
+   <B>alphajet-yasim</B>: Dassult/Dornier Alphajet (YASim)<BR>
+  <B>Author:</B> BARANGER Emmanuel (3D), NISHIOKA Tatsuhiro (FDM)<BR>
+  <B>Version:</B> v20080102<BR>
+  </TD>
   <TD ID="section" VALIGN="top">
    <A NAME="an2"></A>
    <DIV ALIGN="center">
@@ -367,10 +401,6 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20070607<BR>
   <B>Status:</B> early-production<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="AN-225"></A>
    <DIV ALIGN="center">
@@ -385,6 +415,10 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20071107<BR>
   <B>Status:</B> beta<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="Arsenal-VG33"></A>
    <DIV ALIGN="center">
@@ -412,10 +446,6 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20070701<BR>
   <B>Status:</B> early-production<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="asw20"></A>
    <DIV ALIGN="center">
@@ -430,18 +460,22 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Author:</B> Michael Selig, Roland Stuck (3D)<BR>
   <B>Version:</B> v20050502<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="b1900d"></A>
    <DIV ALIGN="center">
     <B>b1900d</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="b1900d.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/b1900d_20071217.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/b1900d_20080123.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>b1900d</B>: Beechcraft B1900D<BR>
   <B>Author:</B> Syd Adams (3d model/FDM) - Jean-Yves Lefort (MKVIII gpws)<BR>
-  <B>Version:</B> v20071217<BR>
+  <B>Version:</B> v20080123<BR>
   <B>Status:</B> developement<BR>
   </TD>
   <TD ID="section" VALIGN="top">
@@ -458,10 +492,6 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20071128<BR>
   <B>Status:</B> alpha<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="B-2"></A>
    <DIV ALIGN="center">
@@ -476,6 +506,10 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20071108<BR>
   <B>Status:</B> alpha<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="b29"></A>
    <DIV ALIGN="center">
@@ -507,25 +541,25 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Status:</B> beta
         <COLLISION-STATUS TYPE="string">initialised</COLLISION-STATUS><BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="BAC-TSR2"></A>
    <DIV ALIGN="center">
     <B>BAC-TSR2</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="BAC-TSR2.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/BAC-TSR2_20071218.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/BAC-TSR2_20080102.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>BAC-TSR2</B>: BAC TSR2 Prototype (YASim FDM)<BR>
   <B>Author:</B> Lee Elliott<BR>
-  <B>Version:</B> v20071218<BR>
+  <B>Version:</B> v20080102<BR>
   <B>Status:</B> alpha
         <COLLISION-STATUS TYPE="string">initialised</COLLISION-STATUS><BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="beaufighter"></A>
    <DIV ALIGN="center">
@@ -546,18 +580,15 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
     <B>beech99</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="beech99.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/beech99_20050502.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/beech99_20080107.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>beech99-v1-uiuc</B>: Beech 99<BR>
    <B>beech99-yasim</B>: Beech 99 (YASim)<BR>
   <B>Author:</B> Chuck Dome, Michael Selig (FDM)<BR>
-  <B>Version:</B> v20050502<BR>
+  <B>Version:</B> v20080107<BR>
+  <B>Status:</B> Development<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="bf109"></A>
    <DIV ALIGN="center">
@@ -572,18 +603,39 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20071217<BR>
   <B>Status:</B> production<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="bleriot-XI"></A>
    <DIV ALIGN="center">
     <B>bleriot-XI</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="bleriot-XI.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/bleriot-XI_20071217.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/bleriot-XI_20080102.zip");</SCRIPT>
     </B><BR>
    </DIV>
+   <B>bleriot-XI</B>: Bleriot XI<BR>
    <B>bleriot-XI-yasim</B>: <DESCRIPTION TYPE="string">Bleriot XI (YASim)<BR>
-  <B>Author:</B> unknown<BR>
-  <B>Version:</B> v20071217<BR>
+  <B>Author:</B> BARANGER Emmanuel<BR>
+  <B>Version:</B> v20080102<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="bluebird"></A>
+   <DIV ALIGN="center">
+    <B>bluebird</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="bluebird.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/bluebird_5.0.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>bluebird-09</B>: Bluebird Explorer for v.0.9.10<BR>
+   <B>bluebird-osg</B>: Bluebird Explorer for OSG<BR>
+   <B>bluebird</B>: Bluebird Explorer for PLIB 1.0<BR>
+  <B>Author:</B> Stewart Andreason<BR>
+  <B>Version:</B> v5.0<BR>
+  <B>Status:</B> early-production<BR>
   </TD>
   <TD ID="section" VALIGN="top">
    <A NAME="bo105"></A>
@@ -591,12 +643,12 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
     <B>bo105</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="bo105.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/bo105_20071218.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/bo105_20080123.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>bo105</B>: Eurocopter Bo105<BR>
   <B>Author:</B> Melchior Franz, Maik Justus (FDM)<BR>
-  <B>Version:</B> v20071218<BR>
+  <B>Version:</B> v20080123<BR>
   <B>Status:</B> early-production<BR>
   </TD>
  </TR>
@@ -643,6 +695,7 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
    </DIV>
    <B>buccaneer-obs</B>: <DESCRIPTION TYPE="string" >Blackburn Buccaneer S2(Observer)<BR>
    <B>buccaneer</B>: <DESCRIPTION TYPE="string" >Blackburn Buccaneer S2(YASim)<BR>
+   <B>buccaneer-wingman</B>: <DESCRIPTION TYPE="string" >Blackburn Buccaneer S2(Wingman)<BR>
   <B>Author:</B> <AUTHOR TYPE="string">Vivian Meazza<BR>
   <B>Version:</B> v0.1<BR>
   <B>Status:</B> <STATUS TYPE="string">alpha<BR>
@@ -652,17 +705,32 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
  <TR><TD> </TD></TR>
  <TR>
   <TD ID="section" VALIGN="top">
+   <A NAME="Bugatti"></A>
+   <DIV ALIGN="center">
+    <B>Bugatti</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="Bugatti.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/Bugatti_20080212.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>bugatti</B>: Bugatti model 100P<BR>
+   <B>bugatti-yasim</B>: Bugatti 100P (YASim)<BR>
+  <B>Author:</B> Emmanuel BARANGER (3D/FDM), Pierre GEOFFROY (FDM)<BR>
+  <B>Version:</B> v20080212<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
    <A NAME="BV-141"></A>
    <DIV ALIGN="center">
     <B>BV-141</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="BV-141.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/BV-141_20071128.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/BV-141_20071228.zip");</SCRIPT>
     </B><BR>
    </DIV>
+   <B>bv141</B>: Blohm und Voss BV141<BR>
    <B>bv141-yasim</B>: Blohm und Voss BV141 (YASim)<BR>
   <B>Author:</B> BARANGER Emmanuel (3D)<BR>
-  <B>Version:</B> v20071128<BR>
+  <B>Version:</B> v20071228<BR>
   </TD>
   <TD ID="section" VALIGN="top">
    <A NAME="C130"></A>
@@ -670,14 +738,19 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
     <B>C130</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="C130.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/C130_20070731.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/C130_20080212.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>c130-jsbsim</B>: C130 Hercules (JSBSim)<BR>
-   <B>c130</B>: <BR>
-  <B>Author:</B> unknown<BR>
-  <B>Version:</B> v20070731<BR>
+   <B>c130</B>: C130 Hercules<BR>
+   <B>c130-yasim</B>: C130 Hercules (YASim)<BR>
+  <B>Author:</B> BARANGER Emmanuel (3D), FABERT Didier (texture), Jettoo (FDM), GEOFFROY Pierre (Engines)<BR>
+  <B>Version:</B> v20080212<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="c150"></A>
    <DIV ALIGN="center">
@@ -692,10 +765,6 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20071218<BR>
   <B>Status:</B> alpha<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="c172p"></A>
    <DIV ALIGN="center">
@@ -726,6 +795,10 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20060315<BR>
   <B>Status:</B> early-production<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="c182"></A>
    <DIV ALIGN="center">
@@ -741,23 +814,19 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20070709<BR>
   <B>Status:</B> production<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="c182rg"></A>
    <DIV ALIGN="center">
     <B>c182rg</B><BR>
-    <IMG WIDTH=171 HEIGHT=128 SRC="nothumbnail.jpg"></A><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="c182rg.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/c182rg_20070709.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/c182rg_20071218.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>c182rg</B>: Cessna 182RG<BR>
   <B>Author:</B> Stuart Buchanan
   <AUTHOR>Ron Jensen</AUTHOR><BR>
-  <B>Version:</B> v20070709<BR>
+  <B>Version:</B> v20071218<BR>
   <B>Status:</B> alpha<BR>
   </TD>
   <TD ID="section" VALIGN="top">
@@ -776,6 +845,10 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20070119<BR>
   <B>Status:</B> production<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="c310u3a"></A>
    <DIV ALIGN="center">
@@ -792,10 +865,6 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Author:</B> Chris Lampard (3D), Jim Wilson (3D, Panel), John Check (Panel), David Megginson (FDM), Tony Peden (FDM)<BR>
   <B>Version:</B> v20070212<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="CanberraBI8"></A>
    <DIV ALIGN="center">
@@ -824,6 +893,10 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v0.1<BR>
   <B>Status:</B> alpha<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="ch53e"></A>
    <DIV ALIGN="center">
@@ -838,10 +911,6 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v0.1<BR>
   <B>Status:</B> early alpha<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="Citation"></A>
    <DIV ALIGN="center">
@@ -861,14 +930,18 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
     <B>Citation-Bravo</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="Citation-Bravo.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/Citation-Bravo_20071217.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/Citation-Bravo_20071227.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>Bravo</B>: Cessna 550B - Citation-Bravo<BR>
   <B>Author:</B> Syd Adams<BR>
-  <B>Version:</B> v20071217<BR>
+  <B>Version:</B> v20071227<BR>
   <B>Status:</B> development<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="CitationX"></A>
    <DIV ALIGN="center">
@@ -883,10 +956,6 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20071001<BR>
   <B>Status:</B> devel<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="colditz"></A>
    <DIV ALIGN="center">
@@ -915,6 +984,10 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20071108<BR>
   <B>Status:</B> beta<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="Concorde"></A>
    <DIV ALIGN="center">
@@ -929,10 +1002,19 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v2.4<BR>
   <B>Status:</B> early-production<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
+  <TD ID="section" VALIGN="top">
+   <A NAME="cri-cri"></A>
+   <DIV ALIGN="center">
+    <B>cri-cri</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="cri-cri.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/cri-cri_20080112.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>MC-15</B>: Colomban MC-15 Cri-Cri (YASim)<BR>
+  <B>Author:</B> unknown<BR>
+  <B>Version:</B> v20080112<BR>
+  </TD>
   <TD ID="section" VALIGN="top">
    <A NAME="dc3"></A>
    <DIV ALIGN="center">
@@ -946,18 +1028,23 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Author:</B> David Megginson<BR>
   <B>Version:</B> v20050616<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="DH-89"></A>
    <DIV ALIGN="center">
     <B>DH-89</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="DH-89.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/DH-89_20070731.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/DH-89_20080102.zip");</SCRIPT>
     </B><BR>
    </DIV>
+   <B>dh89</B>: De Havilland DH 89<BR>
    <B>dh89-yasim</B>: De Havilland DH 89 (YASim)<BR>
-  <B>Author:</B> unknown<BR>
-  <B>Version:</B> v20070731<BR>
+  <B>Author:</B> BARANGER Emmanuel (3D), FABER Detlef (FDM, 3D panel)<BR>
+  <B>Version:</B> v20080102<BR>
   </TD>
   <TD ID="section" VALIGN="top">
    <A NAME="dhc2"></A>
@@ -973,6 +1060,21 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Author:</B> Syd Adams<BR>
   <B>Version:</B> v20071217<BR>
   </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="dhc6"></A>
+   <DIV ALIGN="center">
+    <B>dhc6</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="nothumbnail.jpg"></A><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/dhc6_20080209.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>dhc6F</B>: de Havilland Twin Otter (floats)<BR>
+   <B>dhc6</B>: de Havilland Twin Otter (wheels)<BR>
+  <B>Author:</B> Syd Adams<BR>
+  <B>Version:</B> v20080209<BR>
+  <B>Status:</B> developement<BR>
+  </TD>
  </TR>
  <TR><TD> </TD></TR>
  <TR><TD> </TD></TR>
@@ -983,12 +1085,27 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
     <B>DO-335</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="DO-335.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/DO-335_20070607.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/DO-335_20080212.zip");</SCRIPT>
     </B><BR>
    </DIV>
+   <B>do335</B>: Dornier Do 335<BR>
    <B>do335-yasim</B>: Dornier Do 335 (Yasim)<BR>
-  <B>Author:</B> unknown<BR>
-  <B>Version:</B> v20070607<BR>
+  <B>Author:</B> Emmanuel BARANGER (3D/FDM), Pierre GEOFFROY (FDM)<BR>
+  <B>Version:</B> v20080212<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="DO-X"></A>
+   <DIV ALIGN="center">
+    <B>DO-X</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="DO-X.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/DO-X_20080212.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>dox</B>: Dornier Do X<BR>
+   <B>dox-yasim</B>: Dornier Do X (YASim)<BR>
+  <B>Author:</B> Emmanuel BARANGER (3D/FDM), Pierre GEOFFROY (FDM)<BR>
+  <B>Version:</B> v20080212<BR>
   </TD>
   <TD ID="section" VALIGN="top">
    <A NAME="Dragonfly"></A>
@@ -1004,6 +1121,10 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v0.4<BR>
   <B>Status:</B> early-production<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="E3B"></A>
    <DIV ALIGN="center">
@@ -1019,10 +1140,6 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20070509<BR>
   <B>Status:</B> early production<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="ec135"></A>
    <DIV ALIGN="center">
@@ -1051,6 +1168,10 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20070718<BR>
   <B>Status:</B> beta<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="f15"></A>
    <DIV ALIGN="center">
@@ -1065,10 +1186,6 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20060112<BR>
   <B>Status:</B> alpha<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="f15c"></A>
    <DIV ALIGN="center">
@@ -1101,6 +1218,10 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20070119<BR>
   <B>Status:</B> early-production<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="f18"></A>
    <DIV ALIGN="center">
@@ -1116,10 +1237,6 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20070404<BR>
   <B>Status:</B> Early production<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="F4U"></A>
    <DIV ALIGN="center">
@@ -1148,6 +1265,10 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20070521<BR>
   <B>Status:</B> production<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="F-86"></A>
    <DIV ALIGN="center">
@@ -1162,10 +1283,6 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20071217<BR>
   <B>Status:</B> beta<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="Farman-IV"></A>
    <DIV ALIGN="center">
@@ -1192,6 +1309,10 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Author:</B> unknown<BR>
   <B>Version:</B> v20071114<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="fkdr1"></A>
    <DIV ALIGN="center">
@@ -1206,10 +1327,6 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20050502<BR>
   <B>Status:</B> production<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="flash2a"></A>
    <DIV ALIGN="center">
@@ -1239,6 +1356,10 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20060315<BR>
   <B>Status:</B> beta<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="fokker50"></A>
    <DIV ALIGN="center">
@@ -1253,10 +1374,6 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20060228<BR>
   <B>Status:</B> beta<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="fw190"></A>
    <DIV ALIGN="center">
@@ -1284,6 +1401,10 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Author:</B> unknown<BR>
   <B>Version:</B> v20071203<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="H-21C-Shawnee"></A>
    <DIV ALIGN="center">
@@ -1298,23 +1419,19 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20071217<BR>
   <B>Status:</B> alpha, "GPL Copyright"<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="H4-Hercules"></A>
    <DIV ALIGN="center">
     <B>H4-Hercules</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="H4-Hercules.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/H4-Hercules_0.66.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/H4-Hercules_0.68.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>h4-hercules-jsbsim</B>: Hughes H4 Hercules (JSBSim)<BR>
    <B>h4-hercules-yasim</B>: Hughes H4 Hercules (YASim)<BR>
   <B>Author:</B> unknown<BR>
-  <B>Version:</B> v0.66<BR>
+  <B>Version:</B> v0.68<BR>
   <B>Status:</B> BD/BE<BR>
   </TD>
   <TD ID="section" VALIGN="top">
@@ -1330,6 +1447,26 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Author:</B> Andy Ross(FDM), Steve Havlir(3d Model, Panel)<BR>
   <B>Version:</B> v20070618<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
+  <TD ID="section" VALIGN="top">
+   <A NAME="HondaJet"></A>
+   <DIV ALIGN="center">
+    <B>HondaJet</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="HondaJet.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/HondaJet_20080212.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>HondaJet-jsbsim</B>: HondaJet (JSBSim)<BR>
+   <B>HondaJet</B>: HondaJet<BR>
+   <B>HondaJet-yasim</B>: HondaJet (Yasim)<BR>
+  <B>Author:</B> Tatsuhiro Nishioka (FDM), Emmanuel BARANGER (3D)<BR>
+  <B>Version:</B> v20080212<BR>
+  <B>Status:</B> development<BR>
+  </TD>
   <TD ID="section" VALIGN="top">
    <A NAME="Hornet"></A>
    <DIV ALIGN="center">
@@ -1343,10 +1480,6 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Author:</B> unknown<BR>
   <B>Version:</B> v20070709<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="Hunter"></A>
    <DIV ALIGN="center">
@@ -1362,6 +1495,10 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20070904<BR>
   <B>Status:</B> <STATUS TYPE="string">early-production<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="HUP-Retriever"></A>
    <DIV ALIGN="center">
@@ -1390,10 +1527,6 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20070620<BR>
   <B>Status:</B> early-production<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="j22"></A>
    <DIV ALIGN="center">
@@ -1407,6 +1540,10 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Author:</B> Matevz Jekovec<BR>
   <B>Version:</B> v20050616<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="j3cub"></A>
    <DIV ALIGN="center">
@@ -1434,10 +1571,6 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20070404<BR>
   <B>Status:</B> development<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="jeep"></A>
    <DIV ALIGN="center">
@@ -1452,6 +1585,10 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20071217<BR>
   <B>Status:</B> alpha<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="ju52"></A>
    <DIV ALIGN="center">
@@ -1472,32 +1609,32 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
     <B>KC135</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="nothumbnail.jpg"></A><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/KC135_20070718.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/KC135_20080123.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>KC135</B>: <DESCRIPTION TYPE="string">Boeing KC-135E<BR>
   <B>Author:</B> <AUTHOR TYPE="string"><BR>
-  <B>Version:</B> v20070718<BR>
-  <B>Status:</B> <STATUS TYPE="string">>early production<BR>
+  <B>Version:</B> v20080123<BR>
+  <B>Status:</B> <STATUS TYPE="string">early production<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="Ki-84"></A>
    <DIV ALIGN="center">
     <B>Ki-84</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="Ki-84.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/Ki-84_20070122.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/Ki-84_20080212.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>Ki-84</B>: Ki-84 Hayate<BR>
   <B>Author:</B> Tat Nishioka<BR>
-  <B>Version:</B> v20070122<BR>
+  <B>Version:</B> v20080212<BR>
   <B>Status:</B> development<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="Lightning"></A>
    <DIV ALIGN="center">
@@ -1518,17 +1655,14 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
     <B>Lionceau</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="Lionceau.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/Lionceau_20071217.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/Lionceau_20080123.zip");</SCRIPT>
     </B><BR>
    </DIV>
+   <B>lionceau</B>: Lionceau APM20<BR>
    <B>lionceau-yasim</B>: Lionceau APM20 (YASim)<BR>
-  <B>Author:</B> unknown<BR>
-  <B>Version:</B> v20071217<BR>
+  <B>Author:</B> Emmanuel BARANGER (3D), Sebastien MARQUE (FDM/panel), Pierre GEOFFROY (FDM), Laurent HAYVEL (Texture)<BR>
+  <B>Version:</B> v20080123<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="Lockheed1049"></A>
    <DIV ALIGN="center">
@@ -1543,6 +1677,10 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v1.2<BR>
   <B>Status:</B> early-production<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="Lockheed-SR71"></A>
    <DIV ALIGN="center">
@@ -1570,10 +1708,6 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20071218<BR>
   <B>Status:</B> alpha, "GPL Copyright"<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="Macchi-Castoldi-MC72"></A>
    <DIV ALIGN="center">
@@ -1587,6 +1721,10 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Author:</B> unknown<BR>
   <B>Version:</B> v20071114<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="Malolo1"></A>
    <DIV ALIGN="center">
@@ -1614,10 +1752,6 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Author:</B> Michael Selig<BR>
   <B>Version:</B> v20050616<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="MD11"></A>
    <DIV ALIGN="center">
@@ -1634,19 +1768,23 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20061018<BR>
   <B>Status:</B> alpha<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="ME-262"></A>
    <DIV ALIGN="center">
     <B>ME-262</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="ME-262.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/ME-262_20071203.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/ME-262_20080102.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>me262</B>: <BR>
    <B>me262-yasim</B>: Messerschmitt Me-262 (YASim)<BR>
-  <B>Author:</B> Michael Koehne (FDM) / BARANGER Emmanuel (3D model)<BR>
-  <B>Version:</B> v20071203<BR>
+  <B>Author:</B> Emmanuel BARANGER (3D/ / Michael KOEHNE (FDM) / Laurent HAYVEL (Texture)<BR>
+  <B>Version:</B> v20080102<BR>
   </TD>
   <TD ID="section" VALIGN="top">
    <A NAME="MiG-15"></A>
@@ -1661,6 +1799,19 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Author:</B> Lee Elliott<BR>
   <B>Version:</B> v20071108<BR>
   <B>Status:</B> alpha<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="Mig-29"></A>
+   <DIV ALIGN="center">
+    <B>Mig-29</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="nothumbnail.jpg"></A><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/Mig-29_20080205.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>Mig-29</B>: MiG-29 Fulcrum<BR>
+  <B>Author:</B> Detlef Faber<BR>
+  <B>Version:</B> v20080205<BR>
   </TD>
  </TR>
  <TR><TD> </TD></TR>
@@ -1767,12 +1918,12 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
     <B>P180</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="nothumbnail.jpg"></A><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/P180_20071010.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/P180_20080212.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>P180-YASim</B>: Piaggio P180 Avanti II (YASim)<BR>
   <B>Author:</B> Guillaume Chauvat<BR>
-  <B>Version:</B> v20071010<BR>
+  <B>Version:</B> v20080212<BR>
   <B>Status:</B> alpha<BR>
   </TD>
   <TD ID="section" VALIGN="top">
@@ -1813,13 +1964,13 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
     <B>pa24-250</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="pa24-250.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/pa24-250_20071218.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/pa24-250_20080212.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>pa24-250-CIIB</B>: Piper Comanche 250 with Century IIB Autopilot<BR>
    <B>pa24-250</B>: Piper Comanche 250 (1962 model)<BR>
   <B>Author:</B> Dave Perry<BR>
-  <B>Version:</B> v20071218<BR>
+  <B>Version:</B> v20080212<BR>
   <B>Status:</B> production<BR>
   </TD>
   <TD ID="section" VALIGN="top">
@@ -1860,13 +2011,14 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
     <B>payen-pa100</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="payen-pa100.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/payen-pa100_20070708.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/payen-pa100_20080102.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>pa100-fire</B>: PAYEN Pa 100 (YASim)<BR>
+   <B>pa100</B>: PAYEN Pa 100<BR>
    <B>pa100-yasim</B>: PAYEN Pa 100 (YASim)<BR>
-  <B>Author:</B> unknown<BR>
-  <B>Version:</B> v20070708<BR>
+  <B>Author:</B> BARANGER Emmanuel (3D) David Megginson (FDM)<BR>
+  <B>Version:</B> v20080102<BR>
   </TD>
   <TD ID="section" VALIGN="top">
    <A NAME="PBY-Catalina"></A>
@@ -1948,6 +2100,20 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
  <TR><TD> </TD></TR>
  <TR>
   <TD ID="section" VALIGN="top">
+   <A NAME="Ryan-SoSL"></A>
+   <DIV ALIGN="center">
+    <B>Ryan-SoSL</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="Ryan-SoSL.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/Ryan-SoSL_20080107.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>ryan-sosl</B>: Ryan NYP "Spirit of St Louis"<BR>
+   <B>ryan-sosl-yasim</B>: Ryan NYP "Spirit of St Louis" (YASim)<BR>
+  <B>Author:</B> Emmanuel BARANGER (3D), Pierre GEOFFROY (FDM), Laurent HAYVEL (Texture)<BR>
+  <B>Version:</B> v20080107<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
    <A NAME="S-51-Dragonfly"></A>
    <DIV ALIGN="center">
     <B>S-51-Dragonfly</B><BR>
@@ -1975,6 +2141,10 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20071218<BR>
   <B>Status:</B> alpha<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="santa"></A>
    <DIV ALIGN="center">
@@ -1988,23 +2158,19 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Author:</B> unknown<BR>
   <B>Version:</B> v20051027<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="seahawk"></A>
    <DIV ALIGN="center">
     <B>seahawk</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="seahawk.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/seahawk_20071217.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/seahawk_20071227.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>carrier</B>: <BR>
    <B>seahawk</B>: <DESCRIPTION TYPE="string">Hawker Seahawk FGA6<BR>
   <B>Author:</B> <AUTHOR TYPE="string">Lee Elliott, Vivian Meazza<BR>
-  <B>Version:</B> v20071217<BR>
+  <B>Version:</B> v20071227<BR>
   <B>Status:</B> <STATUS TYPE="string">early-production<BR>
   </TD>
   <TD ID="section" VALIGN="top">
@@ -2021,6 +2187,10 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20071217<BR>
   <B>Status:</B> <STATUS TYPE="string">alpha<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="SenecaII"></A>
    <DIV ALIGN="center">
@@ -2035,10 +2205,6 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v0.5<BR>
   <B>Status:</B> early-production<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="sgs233"></A>
    <DIV ALIGN="center">
@@ -2067,23 +2233,23 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Author:</B> Jon S. Berndt<BR>
   <B>Version:</B> v20060112<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="Sikorsky-76C"></A>
    <DIV ALIGN="center">
     <B>Sikorsky-76C</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="Sikorsky-76C.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/Sikorsky-76C_20071218.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/Sikorsky-76C_20080102.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>s76c</B>: Sikorsky S76C++<BR>
   <B>Author:</B> Syd Adams(Model), Maik Justus (FDM)<BR>
-  <B>Version:</B> v20071218<BR>
+  <B>Version:</B> v20080102<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="Sikorsky-S58"></A>
    <DIV ALIGN="center">
@@ -2112,6 +2278,10 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v1.0<BR>
   <B>Status:</B> alpha<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="sopwithCamel"></A>
    <DIV ALIGN="center">
@@ -2128,10 +2298,6 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20071217<BR>
   <B>Status:</B> <STATUS TYPE="string">early production<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="Spitfire"></A>
    <DIV ALIGN="center">
@@ -2161,6 +2327,10 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20071217<BR>
   <B>Status:</B> beta<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="sr20"></A>
    <DIV ALIGN="center">
@@ -2174,10 +2344,6 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Author:</B> Erik Hofman (3D)<BR>
   <B>Version:</B> v20051009<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="SR71-BlackBird"></A>
    <DIV ALIGN="center">
@@ -2207,6 +2373,24 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Author:</B> unknown<BR>
   <B>Version:</B> v20070914<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
+  <TD ID="section" VALIGN="top">
+   <A NAME="Stiletto"></A>
+   <DIV ALIGN="center">
+    <B>Stiletto</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="Stiletto.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/Stiletto_20080116.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>stiletto</B>: Douglas X 3 Stiletto (YASim)<BR>
+   <B>stiletto-yasim</B>: Douglas X 3 Stiletto (YASim)<BR>
+  <B>Author:</B> BARANGER Emmanuel (3D), AJ (FDM)<BR>
+  <B>Version:</B> v20080116<BR>
+  </TD>
   <TD ID="section" VALIGN="top">
    <A NAME="Storch"></A>
    <DIV ALIGN="center">
@@ -2220,10 +2404,6 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Author:</B> Ron Jensen<BR>
   <B>Version:</B> v20071217<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="Su-26M"></A>
    <DIV ALIGN="center">
@@ -2238,19 +2418,24 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v1.0<BR>
   <B>Status:</B> alpha<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="SU-37"></A>
    <DIV ALIGN="center">
     <B>SU-37</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="SU-37.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/SU-37_20071218.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/SU-37_20080212.zip");</SCRIPT>
     </B><BR>
    </DIV>
    <B>SU-37</B>: Sukoi SU-37 type aircraft (YASim FDM)<BR>
   <B>Author:</B> Lee Elliott<BR>
-  <B>Version:</B> v20071218<BR>
-  <B>Status:</B> experimental<BR>
+  <B>Version:</B> v20080212<BR>
+  <B>Status:</B> experimental
+          <COLLISION-STATUS TYPE="string">initialised</COLLISION-STATUS><BR>
   </TD>
   <TD ID="section" VALIGN="top">
    <A NAME="Super-Frelon"></A>
@@ -2266,10 +2451,6 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20071120<BR>
   <B>Status:</B> alpha<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="T37"></A>
    <DIV ALIGN="center">
@@ -2284,6 +2465,10 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20060315<BR>
   <B>Status:</B> beta<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="T38"></A>
    <DIV ALIGN="center">
@@ -2299,18 +2484,34 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Status:</B> early production<BR>
   </TD>
   <TD ID="section" VALIGN="top">
+   <A NAME="T-4"></A>
+   <DIV ALIGN="center">
+    <B>T-4</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="T-4.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/T-4_20080211.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>T-4-jsbsim</B>: Kawasaki T-4 "Blue Impulse" (JSBSim)<BR>
+   <B>T-4-yasim</B>: Kawasaki T-4 "Blue Impulse (yasim)"<BR>
+  <B>Author:</B> Tatsuhiro Nishioka<BR>
+  <B>Version:</B> v20080211<BR>
+  <B>Status:</B> development<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
    <A NAME="TU-114"></A>
    <DIV ALIGN="center">
     <B>TU-114</B><BR>
     <IMG WIDTH=171 HEIGHT=128 SRC="TU-114.jpg"><BR>
     <B>Download:<BR>
-    <SCRIPT>RandomURLS("Aircraft/TU-114_20071218.zip");</SCRIPT>
+    <SCRIPT>RandomURLS("Aircraft/TU-114_20080101.zip");</SCRIPT>
     </B><BR>
    </DIV>
-   <B>TU-114</B>: Tupolev TU-114 airliner (YASim fdm)<BR>
+   <B>TU-114</B>: TU-114 Airliner (YASim FDM)<BR>
   <B>Author:</B> Lee Elliott<BR>
-  <B>Version:</B> v20071218<BR>
-  <B>Status:</B> beta<BR>
+  <B>Version:</B> v20080101<BR>
+  <B>Status:</B> development
+        <COLLISION-STATUS TYPE="string">initialised</COLLISION-STATUS><BR>
   </TD>
  </TR>
  <TR><TD> </TD></TR>
@@ -2377,6 +2578,20 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Status:</B> alpha<BR>
   </TD>
   <TD ID="section" VALIGN="top">
+   <A NAME="Vickers-Vimy"></A>
+   <DIV ALIGN="center">
+    <B>Vickers-Vimy</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="Vickers-Vimy.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/Vickers-Vimy_20080116.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>vimy</B>: Vickers Vimy<BR>
+   <B>vimy-yasim</B>: Vickers Vimy (YASim)<BR>
+  <B>Author:</B> Emmanuel BARANGER (3D)<BR>
+  <B>Version:</B> v20080116<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
    <A NAME="vulcanb2"></A>
    <DIV ALIGN="center">
     <B>vulcanb2</B><BR>
@@ -2390,6 +2605,10 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Version:</B> v20071010<BR>
   <B>Status:</B> alpha<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="wrightFlyer1903"></A>
    <DIV ALIGN="center">
@@ -2403,10 +2622,6 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Author:</B> Jim Wilson (3D), Michael Selig, PhD (FDM)<BR>
   <B>Version:</B> v20050502<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="X15"></A>
    <DIV ALIGN="center">
@@ -2436,6 +2651,10 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Author:</B> Jon S. Berndt<BR>
   <B>Version:</B> v20060112<BR>
   </TD>
+ </TR>
+ <TR><TD> </TD></TR>
+ <TR><TD> </TD></TR>
+ <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="YardStik"></A>
    <DIV ALIGN="center">
@@ -2449,10 +2668,6 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Author:</B> Innis Cunningham<BR>
   <B>Version:</B> v0.0<BR>
   </TD>
- </TR>
- <TR><TD> </TD></TR>
- <TR><TD> </TD></TR>
- <TR>
   <TD ID="section" VALIGN="top">
    <A NAME="YF-23"></A>
    <DIV ALIGN="center">
@@ -2467,6 +2682,21 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
   <B>Author:</B> Lee Elliott<BR>
   <B>Version:</B> v20060821<BR>
   <B>Status:</B> beta<BR>
+  </TD>
+  <TD ID="section" VALIGN="top">
+   <A NAME="Zlin-50lx"></A>
+   <DIV ALIGN="center">
+    <B>Zlin-50lx</B><BR>
+    <IMG WIDTH=171 HEIGHT=128 SRC="Zlin-50lx.jpg"><BR>
+    <B>Download:<BR>
+    <SCRIPT>RandomURLS("Aircraft/Zlin-50lx_20080205.zip");</SCRIPT>
+    </B><BR>
+   </DIV>
+   <B>z50lx-OSG</B>: Zlin 50 lx<BR>
+   <B>z50lx</B>: Zlin 50 lx<BR>
+   <B>z50lx-yasim</B>: Zlin 50 lx (YASim)<BR>
+  <B>Author:</B> Emmanuel BARANGER (3D), Pierre GEOFFROY (FDM), Sébatien MARQUE (Panel), Laurent HAYVEL (Texture)<BR>
+  <B>Version:</B> v20080205<BR>
   </TD>
  </TR>
 </TABLE>
@@ -2509,7 +2739,7 @@ google_color_text = "000000";
           </A>
         </td>
         <td>
-          Last modified:  12/18/2007 <BR>
+          <!-- Last modified:  2/12/2008 <BR> -->
           <A HREF="http://www.flightgear.org/~curt/">
             Curtis L. Olson
             <IMG ALIGN="MIDDLE" SRC="../../email-fg.png">
