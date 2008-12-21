@@ -145,6 +145,9 @@ function RandomFrontImages()
 function RandomURLS()
 {
   // Contacts
+  // ftp://mirrors.ibiblio.org/pub/mirrors/flightgear/ftp/
+  // ftp://ftp.ibiblio.org/pub/mirrors/flightgear/ftp/ Don Sizemore - dls
+  //   at metalab dt unc dt edu
   // ftp://ftp.kingmont.com/flightsims/flightgear/ - Jim Brennan jjb
   //   at kingmont dt com
   // http://flight.frozenwebhost.com/ - Steve support at
@@ -154,13 +157,16 @@ function RandomURLS()
   //   at will-hier-weg dt de
   // ftp://ftp.linux.kiev.ua/pub/mirrors/ftp.flightgear.org/ - Michael
   //   Shigorin mike at osdn dt org dt ua
+  // http://www.very-clever.com/download/flightgear/ - Ewald Kicker ewald
+  //   dot kicker at sozialprojekte dot com
 
   var base = arguments[0];
 
   var sites = [
-                'ftp://ftp.flightgear.org/pub/fgfs/',
-                'ftp://ftp.kingmont.com/flightsims/flightgear/',
+                'ftp://mirrors.ibiblio.org/pub/mirrors/flightgear/ftp/',
                 'http://mirrors.ibiblio.org/pub/mirrors/flightgear/ftp/',
+                'ftp://ftp.ibiblio.org/pub/mirrors/flightgear/ftp/',
+                'ftp://ftp.kingmont.com/flightsims/flightgear/',
                 'ftp://ftp.planetmirror.com/pub/fgfs/',
                 'ftp://ftp.de.flightgear.org/pub/fgfs/',
                 'http://flight.frozenwebhost.com/',
@@ -172,6 +178,7 @@ function RandomURLS()
 
   // requested not to be in the round robin, but is a full mirror
   // 'ftp://ftp.is.co.za/pub/games/flightgear/'
+  // 'ftp://ftp.flightgear.org/pub/fgfs/',
 
   sites.fgshuffle();
 

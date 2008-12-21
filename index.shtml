@@ -96,17 +96,10 @@ google_color_text = "000000";
  </DIV>
 
  <DIV ALIGN="center">
-   <FONT SIZE="+1" COLOR="#301010">FlightGear v1.0 is now available.
-   Check out the <A HREF="Gallery-v1.0">new gallery page</A>
-   and start downloading now!</FONT><P>
-   <P>
-   <B>Results from the <A HREF="http://baron.flightgear.org/~curt/funfly/">
-   New Years Day Fun Fly</A> are posted!
-   <A HREF="http://www.jentronics.com/fgfs/funfly/">See the pictures here!</A>
-   And see <A HREF="http://www.hoerbird.net/FunFly2008/">More pictures
-   here!</A> and
-   <A HREF="http://picasaweb.google.com/Csaba.Halasz/2008NewYearSEveTrophy">
-   More Pictures.</A></B>
+   <FONT SIZE="+1" COLOR="#301010">FlightGear v1.9.0 is now available.
+   Check out the <A HREF="Gallery-v1.0">gallery page</A> and start
+   downloading now:
+   <SCRIPT>RandomURLS("Win32/fgsetup-1.9.0.exe");</SCRIPT></FONT><P>
  </DIV>
 
  <TABLE>
@@ -143,29 +136,21 @@ google_color_text = "000000";
      <H3>Recent Announcements</H3>
      <UL>
 
-      <LI><A HREF="announce.html#scenery-1.0.0"><B>Mar 4</B> -
-           World Scenery v1.0.0 released.</A>
+      <LI><A HREF="announce.html#v1.9.0"><B>Dec 21, 2008</B> -
+           FlightGear v1.9.0 released.</A>
 
-      <LI><A HREF="announce.html#v1.0.0"><B>Dec 17</B> -
-           FlightGear v1.0.0 released.</A>
+      <LI><A HREF="announce.html#scenery-1.0.1"><B>Oct 27, 2008</B> -
+           World Scenery v1.0.1 released.</A>
 
-      <LI> <A HREF="announce.html#flightsim.com"><B>May 26</B> -
+      <LI> <A HREF="announce.html#flightsim.com"><B>May 26, 2007</B> -
            New FlightGear review on FlightSim.com.</A>
 
-      <LI> <A HREF="announce.html#sourcetrunk"><B>May 16</B> -
+      <LI> <A HREF="announce.html#sourcetrunk"><B>May 16, 2007</B> -
            Sourcetrunk Podcast review of FlightGear.</A>
 
-      <LI> <A HREF="http://www.bomots.de/flightgear/"><B>Jan 29</B> -
+      <LI> <A HREF="http://www.bomots.de/flightgear/"><B>Jan 29, 2007</B> -
            FlightGear kompakt - a new German langauge FlightGear handbook
            published by Bomots.de is available for purchase.</A>
-
-      <LI> <A HREF="http://www.linux.com/article.pl?sid=06/11/20/0533247">
-	   <B>Dec 4, 2006</B> - Read a Linux.com review of FlightGear.
-           </A>  Update:
-           <A HREF="http://www.hispalibertas.com/noticias/2006/07/24/a-volar.html">
-           A Spanish language review of FlightGear (with nice pictures.)
-           </A>
-
       <P>
 
       <LI> <A HREF="announce.html">Complete list of announcements ...</A>
@@ -173,9 +158,9 @@ google_color_text = "000000";
 
      <H3>Quick Links</H3>
      <UL>
-      <LI> Download FlightGear v1.0.0 for Windows Now:
-           <SCRIPT>RandomURLS("Win32/fgsetup-1.0.0.exe");</SCRIPT>
-      <LI> Download Live-CD [bootable, run FG directly from CD,
+      <LI> Download FlightGear v1.9.0 for Windows Now:
+           <SCRIPT>RandomURLS("Win32/fgsetup-1.9.0.exe");</SCRIPT>
+      <!-- <LI> Download Live-CD [bootable, run FG directly from CD,
            doesn't touch your HD] via 
            <A HREF="//pigeond.net/flightgear/fglive-0.1-linuxtag.torrent">
            BitTorrent</A> or
@@ -183,6 +168,7 @@ google_color_text = "000000";
            FTP</A>. Please verify the
            <A HREF="ftp://ftp.ihg.uni-duisburg.de/FlightGear/FGLive/MD5SUM">
            MD5 checksum</A>.
+      -->
       <LI> <A HREF="Downloads/aircraft/">Download Aircraft.</A>
       <LI> <A HREF="Downloads/scenery.html">Download World Scenery.</A>
       <LI> <A HREF="Downloads/source.shtml">Download Source Code.</A>
@@ -192,23 +178,33 @@ google_color_text = "000000";
      <H3>Upcoming Events</H3>
      <UL>
 
+       <LI> <B><A HREF="events.html#flightsimweekend2008"> Flight Sim
+ 	    Weekend - November 1-2, 2008</A></B><BR>
+
+	    Location: Aviodrome Air and Space Museum, Lelystad
+ 	    airport, the Netherlands<BR>
+
+	    "FSWeekend is the world's largest Flight Simulator
+ 	    exihibition. Held annually at the Aviodrome Aviation
+ 	    museum at Lelystad airport (EHLE), in the Netherlands, the
+ 	    event is unique in its kind. FlightGear will be showcasing
+ 	    it's latest developements during this event."
+
+	    <P>
+
+      <!--
       <LI> <A HREF="events.html#linuxtag08"><B>May 28 - 31, 2008</B> -
            <B>FlightGear on LinuxTag</B> at Berlin's Messezentrum unter dem
            Funkturm.</A><BR>
            The world's No. 1 Linux Expo and Conference since 1996.
-      <P>
 
       <LI> Please submit your upcoming FlightGear related events for
            inclusion on the web site.
 
-      <!--
       <LI> <A HREF="events.html#linuxtag07"><B>May 30 - June 2, 2007</B> -
            <B>FlightGear on LinuxTag</B> at the Messegel&auml;nde Berlin,
            Germany.
            The world's No. 1 Linux Expo and Conference since 1996.</A>
-      <LI> <A HREF="events.html#justice"><B>Oct 30</B> -
-           JUSTICE will show FlightGear in a court room demonstration.</A>
-
       -->
     </UL>
     </DIV>
@@ -263,7 +259,7 @@ google_color_text = "000000";
           </A>
         </td>
         <td>
-          <!-- Last modified:  5/14/2008 <BR> -->
+          <!-- Last modified:  12/21/2008 <BR> -->
           <A HREF="http://www.flightgear.org/~curt/">
             Curtis L. Olson
             <IMG ALIGN="MIDDLE" SRC="./email-fg.png">
