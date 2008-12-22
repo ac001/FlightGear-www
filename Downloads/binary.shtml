@@ -97,10 +97,10 @@ google_color_text = "000000";
        <A HREF="../cdrom/">FlightGear on CDROM</A>
        <P>
 
-  <LI> For a complete FGFS manual, please refer to the
-       <A HREF="../Docs/getstart/getstart.html">Installation and
-       Getting Started Guide</A> or download a pdf version:
-       <SCRIPT>RandomURLS("Docs/getstart.pdf");</SCRIPT>
+  <LI> For a complete FGFS manual, please refer to the official
+       <A HREF="../Docs/getstart/getstart.html">FlightGear Manual</A>.
+       Or download the 
+       <A HREF="../Docs/getstart/getstart.pdf">PDF Version</A>.
        <P>
 
   <LI> If you have trouble connecting, please visit one of our
