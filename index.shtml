@@ -81,10 +81,10 @@ google_color_text = "000000";
  </DIV>
 
  <DIV ALIGN="CENTER">
-   <B>New to FlightGear? Check out the
-       <A HREF="http://wiki.flightgear.org/flightgear_wiki/index.php?title=Main_Page" TARGET="_blank">Wiki</A>
-       and
-       <A HREF="http://wiki.flightgear.org/flightgear_wiki/index.php?title=FAQ" TARGET="_blank"> FAQ</A>!
+   <B>New to FlightGear? There is tons of information and help on the
+       <A HREF="http://wiki.flightgear.org/flightgear_wiki/index.php?title=Main_Page" TARGET="_blank">FlightGear Wiki</A>
+       and the
+       <A HREF="http://wiki.flightgear.org/flightgear_wiki/index.php?title=FAQ" TARGET="_blank"> FlightGear FAQ</A>!
    </B>
    <P>
 
@@ -98,7 +98,7 @@ google_color_text = "000000";
  <DIV ALIGN="center">
    <FONT SIZE="+1" COLOR="#301010">FlightGear v1.9.0 is now available.
    Check out the <A HREF="Gallery-v1.0">gallery page</A> and start
-   downloading now:
+   downloading here:
    <SCRIPT>RandomURLS("Win32/fgsetup-1.9.0.exe");</SCRIPT></FONT><P>
  </DIV>
 
@@ -158,7 +158,7 @@ google_color_text = "000000";
 
      <H3>Quick Links</H3>
      <UL>
-      <LI> Download FlightGear v1.9.0 for Windows Now:
+      <LI> Download FlightGear v1.9.0 for Windows:
            <SCRIPT>RandomURLS("Win32/fgsetup-1.9.0.exe");</SCRIPT>
       <!-- <LI> Download Live-CD [bootable, run FG directly from CD,
            doesn't touch your HD] via 
@@ -212,13 +212,6 @@ google_color_text = "000000";
 
   </TR>
  </TABLE>
-
-<DIV ALIGN="CENTER">
-   Bored?  How about watching some: <A HREF="silliness.html">silly youtube
-   videos</A>.
-</DIV>
-
- <H3><IMG ALIGN="MIDDLE" SRC="http://baron.flightgear.org/cgi-bin/wwwcount.cgi?df=curt_flightgear.dat&amp;dd=fatpt&amp;ft=3" ALT="counter"></H3>
 
 <!-- Standard Footer Begin -->
       </td>

@@ -175,24 +175,7 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
     <SCRIPT>RandomURLS("Aircraft/A-10_20081023.zip");</SCRIPT>
     </B><BR>
    </DIV>
-   <B>A-10</B>: Fairchild A-10 (YASim FDM)
-						<DESCRIPTION TYPE="string">tank-600-gals</DESCRIPTION>
-						<DESCRIPTION TYPE="string">AN-ALQ-131</DESCRIPTION>
-						<DESCRIPTION TYPE="string">dual-AIM-9</DESCRIPTION>
-						<DESCRIPTION TYPE="string">LAU-68</DESCRIPTION>
-						<DESCRIPTION TYPE="string">triple-MK-82-LD</DESCRIPTION>
-						<DESCRIPTION TYPE="string">single-MK-82-LD</DESCRIPTION>
-							<DESCRIPTION TYPE="string">none</DESCRIPTION>
-							<DESCRIPTION TYPE="string">none</DESCRIPTION>
-							<DESCRIPTION TYPE="string">none</DESCRIPTION>
-							<DESCRIPTION TYPE="string">none</DESCRIPTION>
-							<DESCRIPTION TYPE="string">none</DESCRIPTION>
-							<DESCRIPTION TYPE="string">none</DESCRIPTION>
-							<DESCRIPTION TYPE="string">none</DESCRIPTION>
-							<DESCRIPTION TYPE="string">none</DESCRIPTION>
-							<DESCRIPTION TYPE="string">none</DESCRIPTION>
-							<DESCRIPTION TYPE="string">none</DESCRIPTION>
-							<DESCRIPTION TYPE="string">none</DESCRIPTION><BR>
+   <B>A-10</B>: Fairchild A-10 (YASim FDM)<BR>
   <B>Author:</B> Lee Elliott - Alexis Bory - David Bastien<BR>
   <B>Version:</B> v20081023<BR>
   <B>Status:</B> beta<BR>
@@ -2325,8 +2308,7 @@ C:\Program Files\FlightGear\data\Aircraft<BR>
     <SCRIPT>RandomURLS("Aircraft/ogel_20080503.zip");</SCRIPT>
     </B><BR>
    </DIV>
-   <B>ogel</B>: ogeL experimental for JSBSim 2.x (fg after 0.9.9)
-        <DESCRIPTION>ogeL experimental for JSBSim 1.x (fg 0.9.9 and older)</DESCRIPTION><BR>
+   <B>ogel</B>: ogeL experimental for JSBSim 2.x (fg after 0.9.9)<BR>
   <B>Author:</B> Torsten Dreyer<BR>
   <B>Version:</B> v20080503<BR>
   <B>Status:</B> early-production<BR>
