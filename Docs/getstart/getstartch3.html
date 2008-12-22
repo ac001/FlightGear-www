@@ -7,7 +7,7 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
 <!-- html,2,info,next,sections+ --> 
 <meta name="src" content="getstart.tex"> 
-<meta name="date" content="2007-12-31 15:05:00"> 
+<meta name="date" content="2008-12-22 21:24:00"> 
 <link rel="stylesheet" type="text/css" href="getstart.css"> 
 </head><body 
 >
@@ -18,22 +18,22 @@ href="getstartpa2.html#tailgetstartpa2.html" >prev-tail</a>] [<a
 href="#tailgetstartch3.html">tail</a>] [<a 
 href="getstartpa2.html#getstartch3.html" >up</a>] </p></div>
    <h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;3</span><br /><a 
-href="getstart.html#QQ2-8-15" id="x8-150003">Takeoff: How to start the program</a></h2>
+href="getstart.html#QQ2-8-19" id="x8-190003">Takeoff: How to start the program</a></h2>
    <h3 class="sectionHead"><span class="titlemark">3.1    </span> <a 
-href="getstart.html#QQ2-8-16" id="x8-160003.1">Environmental Variables</a></h3>
+href="getstart.html#QQ2-8-20" id="x8-200003.1">Environmental Variables</a></h3>
 <a 
- id="dx8-16001"></a>
+ id="dx8-20001"></a>
 <!--l. 36--><p class="noindent">There are two environmental variables that must be defined to run <span 
 class="ptmri8t-x-x-109">FlightGear</span>. These tell
 <span 
-class="ptmri8t-x-x-109">FlightGear </span>where to find it&#8217;s data and scenery.
+class="ptmri8t-x-x-109">FlightGear </span>where to find its data and scenery.
 <!--l. 39--><p class="indent">   You can set them in a number of ways depending on your platform and
 requirements.
 <!--l. 41--><p class="noindent">
    <h4 class="subsectionHead"><span class="titlemark">3.1.1    </span> <a 
-href="getstartli1.html#QQ2-8-17" id="x8-170003.1.1">FG_ROOT</a></h4>
+href="getstartli1.html#QQ2-8-21" id="x8-210003.1.1">FG_ROOT</a></h4>
 <a 
- id="dx8-17001"></a>
+ id="dx8-21001"></a>
 <!--l. 43--><p class="noindent">This is where <span 
 class="ptmri8t-x-x-109">FlightGear </span>will find data files such as aircraft, navigational beacon
 locations, airport frequencies. This is the <span 
@@ -55,80 +55,58 @@ class="cmsy-10x-x-109">\</span><span
 class="pcrr8t-x-x-109">data</span>.
 <!--l. 49--><p class="noindent">
    <h4 class="subsectionHead"><span class="titlemark">3.1.2    </span> <a 
-href="getstartli1.html#QQ2-8-18" id="x8-180003.1.2">FG_SCENERY</a></h4>
+href="getstartli1.html#QQ2-8-22" id="x8-220003.1.2">FG_SCENERY</a></h4>
 <a 
- id="dx8-18001"></a>
+ id="dx8-22001"></a>
 <!--l. 51--><p class="noindent">This is where <span 
 class="ptmri8t-x-x-109">FlightGear </span>will look for scenery files. It consists of a list of directories that
 will be searched in order. The directories are separated by &#8220;:&#8221; on Unix and &#8220;;&#8221; on
-Windows.
-<!--l. 55--><p class="indent">   For example, a <span 
-class="pcrr8t-x-x-109">FG_SCENERY </span>value of
-<!--l. 57--><p class="noindent"><span 
-class="pcrr8t-x-x-109">c:</span><span 
-class="cmsy-10x-x-109">\</span><span 
-class="pcrr8t-x-x-109">Program Files</span><span 
-class="cmsy-10x-x-109">\</span><span 
-class="pcrr8t-x-x-109">FlightGear</span><span 
-class="cmsy-10x-x-109">\</span><span 
-class="pcrr8t-x-x-109">data</span><span 
-class="cmsy-10x-x-109">\</span><span 
-class="pcrr8t-x-x-109">WorldScenery;c:</span><span 
-class="cmsy-10x-x-109">\</span><span 
-class="pcrr8t-x-x-109">Program</span>
+Windows. e.g.
+<!--l. 55--><p class="noindent"><span 
+class="pcrr8t-x-x-90">/home/joebloggs/WorldScenery:/usr/local/share/FlightGear/data/Scenery</span>
+<!--l. 58--><p class="noindent">or
+<!--l. 61--><p class="noindent"><span 
+class="pcrr8t-x-x-90">c:</span><span 
+class="cmsy-9">\</span><span 
+class="pcrr8t-x-x-90">Program Files</span><span 
+class="cmsy-9">\</span><span 
+class="pcrr8t-x-x-90">FlightGear</span><span 
+class="cmsy-9">\</span><span 
+class="pcrr8t-x-x-90">data</span><span 
+class="cmsy-9">\</span><span 
+class="pcrr8t-x-x-90">Scenery;c:</span><span 
+class="cmsy-9">\</span><span 
+class="pcrr8t-x-x-90">Program</span>
 <span 
-class="pcrr8t-x-x-109">Files</span><span 
-class="cmsy-10x-x-109">\</span><span 
-class="pcrr8t-x-x-109">FlightGear</span><span 
-class="cmsy-10x-x-109">\</span><span 
-class="pcrr8t-x-x-109">data</span><span 
-class="cmsy-10x-x-109">\</span><span 
-class="pcrr8t-x-x-109">scenery</span>
-<!--l. 60--><p class="noindent">would search for scenery in
-<!--l. 63--><p class="noindent"><span 
-class="pcrr8t-x-x-109">c:</span><span 
-class="cmsy-10x-x-109">\</span><span 
-class="pcrr8t-x-x-109">Program Files</span><span 
-class="cmsy-10x-x-109">\</span><span 
-class="pcrr8t-x-x-109">FlightGear</span><span 
-class="cmsy-10x-x-109">\</span><span 
-class="pcrr8t-x-x-109">data</span><span 
-class="cmsy-10x-x-109">\</span><span 
-class="pcrr8t-x-x-109">WorldScenery</span>
-<!--l. 66--><p class="noindent">first, followed by
-<!--l. 69--><p class="noindent"><span 
-class="pcrr8t-x-x-109">c:</span><span 
-class="cmsy-10x-x-109">\</span><span 
-class="pcrr8t-x-x-109">Program Files</span><span 
-class="cmsy-10x-x-109">\</span><span 
-class="pcrr8t-x-x-109">FlightGear</span><span 
-class="cmsy-10x-x-109">\</span><span 
-class="pcrr8t-x-x-109">data</span><span 
-class="cmsy-10x-x-109">\</span><span 
-class="pcrr8t-x-x-109">scenery</span>.
-<!--l. 72--><p class="indent">   This means that you can download different scenery to different locations.
-<!--l. 75--><p class="noindent">
+class="pcrr8t-x-x-90">Files</span><span 
+class="cmsy-9">\</span><span 
+class="pcrr8t-x-x-90">FlightGear</span><span 
+class="cmsy-9">\</span><span 
+class="pcrr8t-x-x-90">data</span><span 
+class="cmsy-9">\</span><span 
+class="pcrr8t-x-x-90">WorldScenery</span>.
+<!--l. 65--><p class="noindent">
    <h3 class="sectionHead"><span class="titlemark">3.2    </span> <a 
-href="getstart.html#QQ2-8-19" id="x8-190003.2">Launching the simulator under Unix/Linux</a></h3>
+href="getstart.html#QQ2-8-23" id="x8-230003.2">Launching the simulator under Unix/Linux</a></h3>
 <a 
- id="dx8-19001"></a>
+ id="dx8-23001"></a>
 <a 
- id="dx8-19002"></a>
-                                                                     
-
-                                                                     
+ id="dx8-23002"></a>
    <div  
 class="centerline"><span class="fbox"> <img 
 src="getstart2x.png" alt="PIC" class="graphics" width="355.65944pt" height="280.85973pt" ><!--tex4ht:graphics  
 name="getstart2x.png" src="ksfo.eps"  
 --> </span> </div>
-<!--l. 83--><p class="noindent">Fig. 3: <span 
-class="ptmri8t-x-x-109">Ready for takeoff. Waiting at the default startup position at San Francisco Itl.,</span>
+<!--l. 73--><p class="noindent">Fig. 3: Ready for takeoff: <span 
+class="ptmri8t-x-x-109">Waiting at the default startup position at San Francisco Itl.,</span>
 <span 
 class="ptmri8t-x-x-109">KSFO.</span>
-<!--l. 88--><p class="indent">   Before you can run <span 
-class="ptmri8t-x-x-109">FlightGear</span>, you need to have a couple of environmental variables
-set.
+                                                                     
+
+                                                                     
+<!--l. 78--><p class="indent">   Before you can run <span 
+class="ptmri8t-x-x-109">FlightGear</span>, you need to set a couple of environmental
+variables:
      <ul class="itemize1">
      <li class="itemize">You   must   add   <span 
 class="pcrr8t-x-x-109">/usr/local/share/FlightGear/lib </span>to   your
@@ -145,9 +123,9 @@ class="pcrr8t-x-x-109">/usr/local/share/FlightGear/data</span>.
 class="pcrr8t-x-x-109">FG_SCENERY </span>should be a list of scenery directories, separated by &#8221;:&#8221;. This
      works like <span 
 class="pcrr8t-x-x-109">PATH </span>when searching for scenery.
-     <!--l. 95--><p class="noindent">e.g. <span 
+     <!--l. 85--><p class="noindent">e.g. <span 
 class="pcrr8t-x-x-109">$FG_ROOT/Scenery:$FG_ROOT/WorldScenery</span>.</li></ul>
-<!--l. 98--><p class="noindent">To add these in the Bourne shell (and compatibles):
+<!--l. 88--><p class="noindent">To add these in the Bourne shell (and compatibles):
                                                                      
 
                                                                      
@@ -164,7 +142,7 @@ LD_LIBRARY_PATH=/usr/local/share/FlightGear/lib:$LD_LIBRARY_PATH
 &#x00A0;<br />export&#x00A0;FG_SCENERY
 </div>
 </td></tr></table>
-<!--l. 109--><p class="nopar"> or in C shell (and compatibles):
+<!--l. 99--><p class="nopar"> or in C shell (and compatibles):
                                                                      
 
                                                                      
@@ -179,25 +157,25 @@ setenv&#x00A0;LD_LIBRARY_PATH=\
 &#x00A0;<br />&#x00A0;&#x00A0;$FG_HOME/Scenery:$FG_ROOT/Scenery:$FG_ROOT/WorldScenery
 </div>
 </td></tr></table>
-<!--l. 119--><p class="nopar"> Once you have these environmental variables set up, simply start <span 
+<!--l. 109--><p class="nopar"> Once you have these environmental variables set up, simply start <span 
 class="ptmri8t-x-x-109">FlightGear </span>by running
 <span 
 class="pcrr8t-x-x-109">fgfs --option1 --option2</span><span 
 class="pcrr8t-x-x-109">&#x2026;</span>. Command-line options are described in
 Chapter&#x00A0;<a 
-href="#x8-230003.5">3.5<!--tex4ht:ref: options --></a>.
-<!--l. 126--><p class="noindent">
+href="#x8-270003.5">3.5<!--tex4ht:ref: options --></a>.
+<!--l. 116--><p class="noindent">
    <h3 class="sectionHead"><span class="titlemark">3.3    </span> <a 
-href="getstart.html#QQ2-8-20" id="x8-200003.3">Launching the simulator under Windows</a></h3>
+href="getstart.html#QQ2-8-24" id="x8-240003.3">Launching the simulator under Windows</a></h3>
 <a 
- id="dx8-20001"></a>
+ id="dx8-24001"></a>
 <a 
- id="dx8-20002"></a>
-<!--l. 128--><p class="noindent">The pre-built windows binaries come complete with a graphical wizard to start
+ id="dx8-24002"></a>
+<!--l. 118--><p class="noindent">The pre-built windows binaries come complete with a graphical wizard to start
 <span 
 class="ptmri8t-x-x-109">FlightGear</span>. Simply double-click on the <span 
 class="pcrr8t-x-x-109">FlightGear Launcher </span>Start Menu item, or
-the icon on the Desktop. The launcher allows you to select
+the icon on the Desktop. The launcher allows you to select:
      <ul class="itemize1">
      <li class="itemize">your aircraft
      </li>
@@ -205,9 +183,9 @@ the icon on the Desktop. The launcher allows you to select
      </li>
      <li class="itemize">time of day
      </li>
-     <li class="itemize">current weather
+     <li class="itemize">current weather conditions
      </li>
-     <li class="itemize">&#x2026; and whole lot of other environmental settings</li></ul>
+     <li class="itemize">&#x2026; and a whole lot of other environmental settings</li></ul>
                                                                      
 
                                                                      
@@ -218,7 +196,7 @@ name="getstart3x.png" src="launcher.eps"
 --> </span> </div>
 Fig. 4: <span 
 class="ptmri8t-x-x-109">The FlightGear Launcher</span>
-<!--l. 146--><p class="indent">   The first time your run it, you will be asked to set your <span 
+<!--l. 136--><p class="indent">   The first time your run it, you will be asked to set your <span 
 class="pcrr8t-x-x-109">FG_ROOT </span>variable (normally
 <span 
 class="pcrr8t-x-x-109">c:</span><span 
@@ -229,39 +207,29 @@ class="pcrr8t-x-x-109">FlightGear</span><span
 class="cmsy-10x-x-109">\</span><span 
 class="pcrr8t-x-x-109">data</span>) and <span 
 class="pcrr8t-x-x-109">FG_SCENERY</span>. This should be a list
-of the directories where you have installed scenery, typically
-<!--l. 151--><p class="indent">   <span 
+of the directories where you have installed scenery, typically <span 
 class="pcrr8t-x-x-109">c:</span><span 
 class="cmsy-10x-x-109">\</span><span 
-class="pcrr8t-x-x-109">Program Files</span><span 
+class="pcrr8t-x-x-109">Program</span>
+<span 
+class="pcrr8t-x-x-109">Files</span><span 
 class="cmsy-10x-x-109">\</span><span 
 class="pcrr8t-x-x-109">FlightGear</span><span 
 class="cmsy-10x-x-109">\</span><span 
 class="pcrr8t-x-x-109">data</span><span 
 class="cmsy-10x-x-109">\</span><span 
-class="pcrr8t-x-x-109">scenery</span>
-<!--l. 154--><p class="indent">   and
-<!--l. 157--><p class="indent">   <span 
-class="pcrr8t-x-x-109">c:</span><span 
-class="cmsy-10x-x-109">\</span><span 
-class="pcrr8t-x-x-109">Program Files</span><span 
-class="cmsy-10x-x-109">\</span><span 
-class="pcrr8t-x-x-109">FlightGear</span><span 
-class="cmsy-10x-x-109">\</span><span 
-class="pcrr8t-x-x-109">data</span><span 
-class="cmsy-10x-x-109">\</span><span 
-class="pcrr8t-x-x-109">WorldScenery</span>.
-<!--l. 160--><p class="indent">   If you set invalid values or change your scenery directories later, you can
+class="pcrr8t-x-x-109">Scenery</span>.
+<!--l. 141--><p class="indent">   If you set invalid values or change your scenery directories later, you can
 change the settings by pressing the &#8221;Prev&#8221; button from the first page of the
 launcher.
-<!--l. 164--><p class="noindent">
+<!--l. 145--><p class="noindent">
    <h4 class="subsectionHead"><span class="titlemark">3.3.1    </span> <a 
-href="getstartli1.html#QQ2-8-21" id="x8-210003.3.1">Launching from the command line</a></h4>
-<!--l. 166--><p class="noindent">Alternatively, you can run FlightGear from the command line. To do this, you need to set
+href="getstartli1.html#QQ2-8-25" id="x8-250003.3.1">Launching from the command line</a></h4>
+<!--l. 147--><p class="noindent">Alternatively, you can run FlightGear from the command line. To do this, you need to set
 up the <span 
 class="pcrr8t-x-x-109">FG_ROOT </span>and <span 
 class="pcrr8t-x-x-109">FG_SCENERY </span>environmental variables manually.
-<!--l. 170--><p class="indent">   Open a command shell, change to the directory where your binary resides (typically
+<!--l. 151--><p class="indent">   Open a command shell, change to the directory where your binary resides (typically
 something like <span 
 class="pcrr8t-x-x-109">c:</span><span 
 class="cmsy-10x-x-109">\</span><span 
@@ -281,32 +249,31 @@ class="verbatim"><tr class="verbatim"><td
 class="verbatim"><div class="verbatim">
 SET&#x00A0;FG_HOME=~c:\Program&#x00A0;Files\FlightGear~
 &#x00A0;<br />SET&#x00A0;FG_ROOT=~c:\Program&#x00A0;Files\FlightGear\data~
-&#x00A0;<br />SET&#x00A0;FG_SCENERY=~c:\Program&#x00A0;Files\FlightGear\data\Scenery~;\
-&#x00A0;<br />&#x00A0;~c:\Program&#x00A0;Files\FlightGear\data\WorldScenery~
+&#x00A0;<br />SET&#x00A0;FG_SCENERY=~c:\Program&#x00A0;Files\FlightGear\data\Scenery~
 </div>
 </td></tr></table>
-<!--l. 181--><p class="nopar">
-<!--l. 184--><p class="noindent">and invoke <span 
+<!--l. 161--><p class="nopar">
+<!--l. 164--><p class="noindent">and invoke <span 
 class="ptmri8t-x-x-109">FlightGear </span>(within the same Command shell, as environment settings are
 only valid locally within the same shell) via
-<!--l. 189--><p class="indent">   <span 
+<!--l. 169--><p class="indent">   <span 
 class="pcrr8t-x-x-109">fgfs --option1 --option2</span><span 
 class="pcrr8t-x-x-109">&#x2026;</span>
-<!--l. 192--><p class="indent">   Of course, you can create a batch file with a Windows text editor (like notepad) using
+<!--l. 172--><p class="indent">   Of course, you can create a batch file with a Windows text editor (like notepad) using
 the lines above.
-<!--l. 195--><p class="indent">   For getting maximum performance it is recommended to minimize (iconize) the text
+<!--l. 175--><p class="indent">   For getting maximum performance it is recommended to minimize (iconize) the text
 output window while running <span 
 class="ptmri8t-x-x-109">FlightGear</span>.
-<!--l. 199--><p class="noindent">
+<!--l. 179--><p class="noindent">
    <h3 class="sectionHead"><span class="titlemark">3.4    </span> <a 
-href="getstart.html#QQ2-8-22" id="x8-220003.4">Launching the simulator under Mac OS X</a></h3>
+href="getstart.html#QQ2-8-26" id="x8-260003.4">Launching the simulator under Mac OS X</a></h3>
 <a 
- id="dx8-22001"></a>
+ id="dx8-26001"></a>
 <a 
- id="dx8-22002"></a>
-<!--l. 201--><p class="noindent">Say, you downloaded the base package and binary to your home directory. Then you can
-open <span 
-class="pcrr8t-x-x-109">Terminal.app </span>and execute the following sequence:
+ id="dx8-26002"></a>
+<!--l. 181--><p class="noindent">Say you downloaded the base package and binary to your home directory. Then you
+would open <span 
+class="pcrr8t-x-x-109">Terminal.app </span>and execute the following sequence of commands:
                                                                      
 
                                                                      
@@ -317,8 +284,8 @@ setenv&#x00A0;FG_ROOT&#x00A0;~/fgfs-base-X.X.X
 &#x00A0;<br />./fgfs-X.X.X.-date&#x00A0;--option1&#x00A0;--option&#x00A0;2
 </div>
 </td></tr></table>
-<!--l. 207--><p class="nopar">
-<!--l. 209--><p class="noindent">or
+<!--l. 187--><p class="nopar">
+<!--l. 189--><p class="noindent">or
                                                                      
 
                                                                      
@@ -328,30 +295,31 @@ class="verbatim"><div class="verbatim">
 ./fgfs-X.X.X-version-date&#x00A0;--fg-root=\~/fgfs-base-X.X.X&#x00A0;--option1
 </div>
 </td></tr></table>
-<!--l. 215--><p class="nopar">
-<!--l. 218--><p class="noindent">
+<!--l. 195--><p class="nopar">
+<!--l. 198--><p class="noindent">
    <h3 class="sectionHead"><span class="titlemark">3.5    </span> <a 
-href="getstart.html#QQ2-8-23" id="x8-230003.5">Command line parameters</a></h3>
+href="getstart.html#QQ2-8-27" id="x8-270003.5">Command line parameters</a></h3>
 <a 
- id="dx8-23001"></a>
-<!--l. 220--><p class="noindent">Following is a complete list and short description of the numerous command line options<a 
- id="dx8-23002"></a>
+ id="dx8-27001"></a>
+<!--l. 200--><p class="noindent">Following is a complete list and short description of the numerous command line options<a 
+ id="dx8-27002"></a>
 available for <span 
-class="ptmri8t-x-x-109">FlightGear</span>. Most of these options are exposed through the FlightGear
+class="ptmri8t-x-x-109">FlightGear</span>. Most of these options are exposed through the <span 
+class="ptmri8t-x-x-109">FlightGear</span>
 launcher delivered with the Windows binaries.
-<!--l. 224--><p class="indent">   If you have options you re-use continually, you can include them in a preferences file.
+<!--l. 204--><p class="indent">   If you have options you re-use continually, you can include them in a preferences file.
 As it depends on your preferences<a 
- id="dx8-23003"></a>, it is not delivered with <span 
+ id="dx8-27003"></a>, it is not delivered with <span 
 class="ptmri8t-x-x-109">FlightGear</span>, but can be created
 with any text editor (notepad, emacs, vi, if you like).
      <ul class="itemize1">
      <li class="itemize">On Unix systems, create a <span 
 class="pcrr8t-x-x-109">.fgfsrc</span><a 
- id="dx8-23004"></a> file in your home directory.
+ id="dx8-27004"></a> file in your home directory.
      </li>
      <li class="itemize">On Windows, create a <span 
 class="pcrr8t-x-x-109">system.fgfsrc</span>,<a 
- id="dx8-23005"></a> in the <span 
+ id="dx8-27005"></a> in the <span 
 class="pcrr8t-x-x-109">FG_ROOT </span>directory (e.g.
      <span 
 class="pcrr8t-x-x-109">c:</span><span 
@@ -361,19 +329,19 @@ class="cmsy-10x-x-109">\</span><span
 class="pcrr8t-x-x-109">FlightGear</span><span 
 class="cmsy-10x-x-109">\</span><span 
 class="pcrr8t-x-x-109">data</span>).</li></ul>
-<!--l. 234--><p class="noindent">
+<!--l. 214--><p class="noindent">
    <h4 class="subsectionHead"><span class="titlemark">3.5.1    </span> <a 
-href="getstartli1.html#QQ2-8-24" id="x8-240003.5.1">General Options</a></h4>
+href="getstartli1.html#QQ2-8-28" id="x8-280003.5.1">General Options</a></h4>
 <a 
- id="dx8-24001"></a>
+ id="dx8-28001"></a>
      <ul class="itemize1">
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--help</span>
-     <!--l. 239--><p class="noindent">Shows the most relevant command line options only.
+     <!--l. 219--><p class="noindent">Shows the most relevant command line options only.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--help-verbose</span>
-     <!--l. 243--><p class="noindent">Shows all command line options.
+     <!--l. 223--><p class="noindent">Shows all command line options.
                                                                      
 
                                                                      
@@ -381,16 +349,16 @@ class="pcrr8t-x-x-109">--help-verbose</span>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--fg-root=</span><span 
 class="ptmri8t-x-x-109">path</span>
-     <!--l. 247--><p class="noindent">Tells <span 
+     <!--l. 227--><p class="noindent">Tells <span 
 class="ptmri8t-x-x-109">FlightGear </span>where to look for its root data files if you didn&#8217;t compile it
      with the default settings<a 
- id="dx8-24002"></a>.
+ id="dx8-28002"></a>.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--fg-scenery=</span><span 
 class="ptmri8t-x-x-109">path</span>
-     <!--l. 252--><p class="noindent">Allows  specification  of  a  path  to  the  base  scenery  path  <a 
- id="dx8-24003"></a>,  in  case  scenery
+     <!--l. 232--><p class="noindent">Allows  specification  of  a  path  to  the  base  scenery  path  <a 
+ id="dx8-28003"></a>,  in  case  scenery
      is not at the default position under <span 
 class="pcrr8t-x-x-109">$FG</span><span class="underline"><span 
 class="pcrr8t-x-x-109">&#x00A0;</span></span><span 
@@ -399,41 +367,41 @@ class="pcrr8t-x-x-109">ROOT/Scenery</span>; this might be
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--disable-game-mode</span>
-     <!--l. 259--><p class="noindent">Disables full screen display<a 
- id="dx8-24004"></a>.
+     <!--l. 239--><p class="noindent">Disables full screen display<a 
+ id="dx8-28004"></a>.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--enable-game-mode</span>
-     <!--l. 263--><p class="noindent">Enables full screen display.
+     <!--l. 243--><p class="noindent">Enables full screen display.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--disable-splash-screen</span>
-     <!--l. 267--><p class="noindent">Turns off the rotating 3DFX logo when the accelerator board gets initialized
+     <!--l. 247--><p class="noindent">Turns off the rotating 3DFX logo when the accelerator board gets initialized
      (3DFX only).
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--enable-splash-screen</span>
-     <!--l. 272--><p class="noindent">If you like advertising, set this!
+     <!--l. 252--><p class="noindent">If you like advertising, set this!
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--disable-intro-music</span>
-     <!--l. 276--><p class="noindent">No audio sample is being played when <span 
+     <!--l. 256--><p class="noindent">No audio sample will be played when <span 
 class="ptmri8t-x-x-109">FlightGear </span>starts up. Suggested in
      case of trouble with playing the intro.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--enable-intro-music</span>
-     <!--l. 281--><p class="noindent">If your machine is powerful enough, enjoy this setting.
+     <!--l. 261--><p class="noindent">If your machine is powerful enough, enjoy this setting.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--disable-mouse-pointer</span>
-     <!--l. 285--><p class="noindent">Disables extra mouse pointer<a 
- id="dx8-24005"></a>.
+     <!--l. 265--><p class="noindent">Disables extra mouse pointer<a 
+ id="dx8-28005"></a>.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--enable-mouse-pointer</span>
-     <!--l. 289--><p class="noindent">Enables  extra  mouse  pointer<a 
- id="dx8-24006"></a>.  Useful  in  full  screen  mode  for  old  Voodoo
+     <!--l. 269--><p class="noindent">Enables  extra  mouse  pointer<a 
+ id="dx8-28006"></a>.  Useful  in  full  screen  mode  for  old  Voodoo
      based cards.
                                                                      
 
@@ -441,65 +409,65 @@ class="pcrr8t-x-x-109">--enable-mouse-pointer</span>
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--enable-random-objects</span>
-     <!--l. 294--><p class="noindent">Include random scenery objects (buildings/trees). This is the default.
+     <!--l. 274--><p class="noindent">Include random scenery objects (buildings/trees). This is the default.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--disable-random-objects</span>
-     <!--l. 298--><p class="noindent">Exclude random scenery objects (buildings/trees).
+     <!--l. 278--><p class="noindent">Exclude random scenery objects (buildings/trees).
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--disable-freeze</span>
-     <!--l. 302--><p class="noindent">This  will  put  you  into  <span 
+     <!--l. 282--><p class="noindent">This  will  put  you  into  <span 
 class="ptmri8t-x-x-109">FlightGear  </span>with  the  engine  running,  ready  for
      Take-Off.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--enable-freeze</span>
-     <!--l. 307--><p class="noindent">Starts <span 
+     <!--l. 287--><p class="noindent">Starts <span 
 class="ptmri8t-x-x-109">FlightGear </span>in frozen state<a 
- id="dx8-24007"></a>.
+ id="dx8-28007"></a>.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--disable-fuel-freeze</span>
-     <!--l. 311--><p class="noindent">Fuel is consumed normally.
+     <!--l. 291--><p class="noindent">Fuel is consumed normally.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--enable-fuel-freeze</span>
-     <!--l. 315--><p class="noindent">Fuel tank quantity is forced to remain constant.
+     <!--l. 295--><p class="noindent">Fuel tank quantity is forced to remain constant.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--disable-clock-freeze</span>
-     <!--l. 319--><p class="noindent">Time of day advances normally.
+     <!--l. 299--><p class="noindent">Time of day advances normally.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--enable-clock-freeze</span>
-     <!--l. 323--><p class="noindent">Do not advance time of day.
+     <!--l. 303--><p class="noindent">Do not advance time of day.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--control-mode</span>
-     <!--l. 327--><p class="noindent">Specify your control device<a 
- id="dx8-24008"></a> (joystick<a 
- id="dx8-24009"></a>, keyboard, mouse) Defaults to joystick<a 
- id="dx8-24010"></a>
+     <!--l. 307--><p class="noindent">Specify your control device<a 
+ id="dx8-28008"></a> (joystick<a 
+ id="dx8-28009"></a>, keyboard, mouse) Defaults to joystick<a 
+ id="dx8-28010"></a>
      (yoke<a 
- id="dx8-24011"></a>).
+ id="dx8-28011"></a>).
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--disable-auto-coordination</span>
-     <!--l. 332--><p class="noindent">Switches auto coordination<a 
- id="dx8-24012"></a> between aileron/rudder off (default).
+     <!--l. 312--><p class="noindent">Switches auto-co-ordination<a 
+ id="dx8-28012"></a> between aileron/rudder off (default).
                                                                      
 
                                                                      
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--enable-auto-coordination</span>
-     <!--l. 336--><p class="noindent">Switches   auto   coordination   between   aileron/rudder   on   (recommended
+     <!--l. 316--><p class="noindent">Switches   auto-co-ordination   between   aileron/rudder   on   (recommended
      without pedals).
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--browser-app=/path/to/app</span>
-     <!--l. 341--><p class="noindent">specify location of your web browser. Example: <span 
+     <!--l. 321--><p class="noindent">specify location of your web browser. Example: <span 
 class="pcrr8t-x-x-109">--browser-app=</span>
      <br class="newline" /><span 
 class="pcrr8t-x-x-109">&#8221;C:</span><span 
@@ -515,7 +483,7 @@ class="pcrr8t-x-x-109">iexplore.exe&#8221;</span>
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--prop:name=value</span>
-     <!--l. 348--><p class="noindent">set property <span 
+     <!--l. 328--><p class="noindent">set property <span 
 class="pcrr8t-x-x-109">name </span>to <span 
 class="pcrr8t-x-x-109">value</span>
      <br class="newline" />Example: <span 
@@ -527,73 +495,73 @@ class="pcrr8t-x-x-109">--aircraft=c172</span>
 class="pcrr8t-x-x-109">--prop:/consumables/fuels/tank[0]/level-gal=10</span>
      <br class="newline" /><span 
 class="pcrr8t-x-x-109">--prop:/consumables/fuels/tank[1]/level-gal=10</span>
-     <br class="newline" />filles the Cessna for a short flight.
+     <br class="newline" />fills the Cessna for a short flight.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--config=path</span>
-     <!--l. 357--><p class="noindent">Load additional properties from the given path. Example:
+     <!--l. 337--><p class="noindent">Load additional properties from the given path. Example:
      <br class="newline" /><span 
 class="pcrr8t-x-x-109">fgfs --config=./Aircraft/X15-set.xml</span>
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--units-feet</span>
-     <!--l. 362--><p class="noindent">Use feet for distances.
+     <!--l. 342--><p class="noindent">Use feet as the unit of measurement.
      </li>
      <li class="itemize"><span 
-class="pcrr8t-x-x-109">--units-meters </span>Use meters for distances.</li></ul>
-<!--l. 368--><p class="noindent">
+class="pcrr8t-x-x-109">--units-meters </span>Use meters as the unit of measurement.</li></ul>
+<!--l. 348--><p class="noindent">
    <h4 class="subsectionHead"><span class="titlemark">3.5.2    </span> <a 
-href="getstartli1.html#QQ2-8-25" id="x8-250003.5.2">Features</a></h4>
+href="getstartli1.html#QQ2-8-29" id="x8-290003.5.2">Features</a></h4>
 <a 
- id="dx8-25001"></a>
+ id="dx8-29001"></a>
      <ul class="itemize1">
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--disable-hud</span>: Switches off the HUD<a 
- id="dx8-25002"></a> (<span 
+ id="dx8-29002"></a> (<span 
 class="ptmb8t-x-x-109">H</span>ead <span 
 class="ptmb8t-x-x-109">U</span>p <span 
 class="ptmb8t-x-x-109">D</span>isplay).
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--enable-hud</span>: Turns the HUD<a 
- id="dx8-25003"></a> on.
+ id="dx8-29003"></a> on.
                                                                      
 
                                                                      
      </li>
      <li class="itemize"><span 
-class="pcrr8t-x-x-109">--enable-anti-aliased-hud</span>:  Turns  on  anti-aliaseded  HUD  lines<a 
- id="dx8-25004"></a>
-     for better quality, if hardware supports this.
+class="pcrr8t-x-x-109">--enable-anti-aliased-hud</span>: Turns on anti-aliased HUD lines<a 
+ id="dx8-29004"></a> for
+     better quality, if hardware supports this.
      </li>
      <li class="itemize"><span 
-class="pcrr8t-x-x-109">--disable-anti-aliased-hud</span>: Turns off anti-aliaseded HUD lines.
+class="pcrr8t-x-x-109">--disable-anti-aliased-hud</span>: Turns off anti-aliased HUD lines.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--enable-panel</span>: Turns the instrument panel<a 
- id="dx8-25005"></a> on (default).
+ id="dx8-29005"></a> on (default).
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--disable-panel</span>: Turns the instrument panel<a 
- id="dx8-25006"></a> off.
+ id="dx8-29006"></a> off.
      </li>
      <li class="itemize"><span 
-class="pcrr8t-x-x-109">--disable-sound</span>: Self explaining.
+class="pcrr8t-x-x-109">--disable-sound</span>: Self-explanatory.
      </li>
      <li class="itemize"><span 
-class="pcrr8t-x-x-109">--enable-sound</span>: See above.</li></ul>
-<!--l. 384--><p class="noindent">
+class="pcrr8t-x-x-109">--enable-sound</span>: As above.</li></ul>
+<!--l. 364--><p class="noindent">
    <h4 class="subsectionHead"><span class="titlemark">3.5.3    </span> <a 
-href="getstartli1.html#QQ2-8-26" id="x8-260003.5.3">Aircraft</a></h4>
+href="getstartli1.html#QQ2-8-30" id="x8-300003.5.3">Aircraft</a></h4>
 <a 
- id="dx8-26001"></a>
+ id="dx8-30001"></a>
      <ul class="itemize1">
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--aircraft=</span><span 
 class="ptmri8t-x-x-109">name                                    of                                    aircraft</span>
      <span 
 class="ptmri8t-x-x-109">definition file </span>Example: <span 
-class="pcrr8t-x-x-109">--aircraft=c310</span>. For possible choices check
+class="pcrr8t-x-x-109">--aircraft=c310</span>. For available choices check
      the  directory  <span 
 class="pcrr8t-x-x-109">/FlightGear/Aircraft</span>,  and  look  for  files  ending  in
      <span 
@@ -602,16 +570,16 @@ class="pcrr8t-x-x-109">&#8221;-set.xml&#8221; </span>from
      the filename. Alternatively, use the <span 
 class="pcrr8t-x-x-109">--show-aircraft </span>option described
      below. To download additional aircraft see Section <a 
-href="getstartch2.html#x6-120002.2">2.2<!--tex4ht:ref: install_aircraft --></a>.
+href="getstartch2.html#x6-160002.2">2.2<!--tex4ht:ref: install_aircraft --></a>.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--show-aircraft</span>: Print a sorted list of the currently available aircraft
      types.</li></ul>
-<!--l. 394--><p class="noindent">
+<!--l. 374--><p class="noindent">
    <h4 class="subsectionHead"><span class="titlemark">3.5.4    </span> <a 
-href="getstartli1.html#QQ2-8-27" id="x8-270003.5.4">Flight model</a></h4>
+href="getstartli1.html#QQ2-8-31" id="x8-310003.5.4">Flight model</a></h4>
 <a 
- id="dx8-27001"></a>
+ id="dx8-31001"></a>
                                                                      
 
                                                                      
@@ -619,7 +587,7 @@ href="getstartli1.html#QQ2-8-27" id="x8-270003.5.4">Flight model</a></h4>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--fdm=</span><span 
 class="ptmri8t-x-x-109">abcd </span>Select the core flight model<a 
- id="dx8-27002"></a>. Options are <span 
+ id="dx8-31002"></a>. Options are <span 
 class="pcrr8t-x-x-109">jsb, larcsim,</span>
      <span 
 class="pcrr8t-x-x-109">yasim, magic, balloon, external, pipe, ada,</span>
@@ -627,22 +595,22 @@ class="pcrr8t-x-x-109">yasim, magic, balloon, external, pipe, ada,</span>
 class="pcrr8t-x-x-109">null</span>. Default value is <span 
 class="pcrr8t-x-x-109">jsb </span>(<span 
 class="ptmri8t-x-x-109">JSBSim</span>)<a 
- id="dx8-27003"></a>. larcsim is the flight model which
+ id="dx8-31003"></a>. LaRCSim is the flight model which
      <span 
-class="ptmri8t-x-x-109">FlightGear </span>inherited from the LaRCSim simulator&#x1E8F;asim is Andy Ross&#8217; Yet
-     Another Flight Dynamics Simulator. Magic is a slew mode (which drives the
-     UFO aircraft). Balloon is a hot air balloon. External refers to remote control
-     of the simulator via TCP socket, pipe is for local control via named pipe.
-     Null selects no flight dynamics model at all. The UIUC flight model<a 
- id="dx8-27004"></a> is not
-     chosen this way but via the next option! For further information on flight
+class="ptmri8t-x-x-109">FlightGear </span>inherited from the LaRCSim simulator. YASIM is Andy Ross&#8217;
+     Yet Another Flight Dynamics Simulator. Magic is a slew mode (which drives
+     the  UFO  aircraft).  Balloon  is  a  hot  air  balloon.  External  refers  to  remote
+     control of the simulator via TCP socket, pipe is for local control via named
+     pipe. Null selects no flight dynamics model at all. The UIUC flight model<a 
+ id="dx8-31004"></a> is
+     not chosen this way but via the next option! For further information on flight
      models cf. Section&#x00A0;<a 
 href="getstartch1.html#x5-80001.4">1.4<!--tex4ht:ref: flightmodels --></a> and below.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--aero=</span><span 
 class="ptmri8t-x-x-109">abcd </span>Specifies the aircraft model<a 
- id="dx8-27005"></a> to load. Default is a Cessna c172.
+ id="dx8-31005"></a> to load. Default is a Cessna c172.
      Alternatives available depend on the flight model chosen.
      </li>
      <li class="itemize"><span 
@@ -673,30 +641,31 @@ class="ptmri8t-x-x-109">DIR@SPEED</span>: Specify wind coming from the direction
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--random-wind</span>: Adds random wind to make flying more challenging</li></ul>
-<!--l. 422--><p class="noindent">
+<!--l. 402--><p class="noindent">
    <h4 class="subsectionHead"><span class="titlemark">3.5.5    </span> <a 
-href="getstartli1.html#QQ2-8-28" id="x8-280003.5.5">Initial Position and Orientation</a></h4>
+href="getstartli1.html#QQ2-8-32" id="x8-320003.5.5">Initial Position and Orientation</a></h4>
 <a 
- id="dx8-28001"></a>
+ id="dx8-32001"></a>
                                                                      
 
                                                                      
 <a 
- id="dx8-28002"></a>
+ id="dx8-32002"></a>
      <ul class="itemize1">
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--airport-id=</span><span 
 class="ptmri8t-x-x-109">ABCD</span>: If you want to start directly at an airport<a 
- id="dx8-28003"></a>, enter its
+ id="dx8-32003"></a>, enter its
      international code,<a 
- id="dx8-28004"></a> i.e. KJFK for JFK airport in New York etc. A long/short
+ id="dx8-32004"></a> i.e. KJFK for JFK airport in New York etc. A long/short
      list of the IDs of the airports being implemented can be found in <span 
 class="pcrr8t-x-x-109">/Flight</span>
      <span 
 class="pcrr8t-x-x-109">Gear/Airports</span>. You only have to unpack one of the files with <span 
 class="pcrr8t-x-x-109">gunzip</span>.
-     Keep in mind, you need the terrain data for the relevant region, though!<a 
- id="dx8-28005"></a>
+     Bear in mind, however, that you will need the terrain data for the relevant
+     region!!<a 
+ id="dx8-32005"></a>
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--offset-distance=</span><span 
@@ -711,12 +680,12 @@ class="ptmri8t-x-x-109">deg</span>: Here you can specify the heading to threshol
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--lon=</span><span 
 class="ptmri8t-x-x-109">degrees</span>: This is the startup longitude<a 
- id="dx8-28006"></a> in degrees (west = -).
+ id="dx8-32006"></a> in degrees (west = -).
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--lat=</span><span 
 class="ptmri8t-x-x-109">degrees</span>: This is the startup latitude<a 
- id="dx8-28007"></a> in degrees (south = -).
+ id="dx8-32007"></a> in degrees (south = -).
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--altitude=</span><span 
@@ -729,17 +698,17 @@ class="pcrr8t-x-x-109">--units-meters</span>.
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--heading=</span><span 
 class="ptmri8t-x-x-109">degrees</span>: Sets the initial heading<a 
- id="dx8-28008"></a> (yaw angle) in degrees.
+ id="dx8-32008"></a> (yaw angle) in degrees.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--roll=</span><span 
 class="ptmri8t-x-x-109">degrees</span>: Sets the startup roll angle<a 
- id="dx8-28009"></a> (roll angle) in degrees.
+ id="dx8-32009"></a> (roll angle) in degrees.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--pitch=</span><span 
 class="ptmri8t-x-x-109">degrees</span>: Sets the startup pitch angle<a 
- id="dx8-28010"></a> (pitch angle) in degrees.
+ id="dx8-32010"></a> (pitch angle) in degrees.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--uBody=</span><span 
@@ -752,15 +721,15 @@ class="pcrr8t-x-x-109">--vBody=</span><span
 class="ptmri8t-x-x-109">feet per second</span>: Speed along the body Y axis in feet per second,
      unless you choose <span 
 class="pcrr8t-x-x-109">--units-meters</span>.
+                                                                     
+
+                                                                     
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--wBody=</span><span 
 class="ptmri8t-x-x-109">feet per second</span>: Speed along the body Z axis in feet per second,
      unless you choose <span 
 class="pcrr8t-x-x-109">--units-meters</span>.
-                                                                     
-
-                                                                     
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--vc=</span><span 
@@ -782,34 +751,34 @@ class="ptmri8t-x-x-109">degrees</span>: Allows specifying the flight path angle 
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--roc=</span><span 
 class="ptmri8t-x-x-109">fpm</span>: Allows specifying the initial climb rate (can be negative).</li></ul>
-<!--l. 459--><p class="noindent">
+<!--l. 438--><p class="noindent">
    <h4 class="subsectionHead"><span class="titlemark">3.5.6    </span> <a 
-href="getstartli1.html#QQ2-8-29" id="x8-290003.5.6">Rendering Options</a></h4>
+href="getstartli1.html#QQ2-8-33" id="x8-330003.5.6">Rendering Options</a></h4>
      <ul class="itemize1">
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--bpp=</span><span 
 class="ptmri8t-x-x-109">depth</span>: Specify the bits per pixel.
      </li>
      <li class="itemize"><span 
-class="pcrr8t-x-x-109">--fog-disable</span>: To cut down the rendering efforts, distant regions are
-     vanishing in fog<a 
- id="dx8-29001"></a> by default. If you disable fog<a 
- id="dx8-29002"></a>ging, you&#8217;ll see farther but your
-     frame rates will drop.
+class="pcrr8t-x-x-109">--fog-disable</span>: To cut down the rendering efforts, distant regions vanish
+     in fog<a 
+ id="dx8-33001"></a> by default. If you disable fog<a 
+ id="dx8-33002"></a> you&#8217;ll see farther, but your frame rates
+     will drop.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--fog-fastest</span>: The scenery will not look very nice but frame rate<a 
- id="dx8-29003"></a> will
+ id="dx8-33003"></a> will
      increase.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--fog-nicest</span>: This option will give you a fairly realistic view of flying
      on a hazy day.<a 
- id="dx8-29004"></a>
+ id="dx8-33004"></a>
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--enable-clouds</span>: Enable cloud layer<a 
- id="dx8-29005"></a> (default).
+ id="dx8-33005"></a> (default).
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--disable-clouds</span>: Disable cloud layer.
@@ -817,14 +786,14 @@ class="pcrr8t-x-x-109">--disable-clouds</span>: Disable cloud layer.
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--fov=</span><span 
 class="ptmri8t-x-x-109">degrees</span>: Sets the field of view<a 
- id="dx8-29006"></a> in degrees. Default is 55.0.
-     </li>
-     <li class="itemize"><span 
-class="pcrr8t-x-x-109">--disable-fullscreen</span>: Disable full screen mode<a 
- id="dx8-29007"></a> (default).
+ id="dx8-33006"></a> in degrees. Default is 55.0.
                                                                      
 
                                                                      
+     </li>
+     <li class="itemize"><span 
+class="pcrr8t-x-x-109">--disable-fullscreen</span>: Disable full screen mode<a 
+ id="dx8-33007"></a> (default).
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--enable-fullscreen</span>: Enable full screen mode.
@@ -839,12 +808,12 @@ class="pcrr8t-x-x-109">--shading-smooth</span>:  This  is  the  recommended  (an
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--disable-skyblend</span>: No fogging or haze<a 
- id="dx8-29008"></a>, sky will be displayed using
+ id="dx8-33008"></a>, sky will be displayed using
      just one color. Fast but ugly!
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--enable-skyblend</span>:  Fogging/haze  is  enabled,  sky  and  terrain<a 
- id="dx8-29009"></a>  look
+ id="dx8-33009"></a>  look
      realistic. This is the default and recommended setting.
      </li>
      <li class="itemize"><span 
@@ -855,10 +824,10 @@ class="pcrr8t-x-x-109">--disable-textures</span>: Terrain details will be disabl
 class="pcrr8t-x-x-109">--enable-textures</span>: Default and recommended.
      </li>
      <li class="itemize"><span 
-class="pcrr8t-x-x-109">--enable-wireframe</span>:   If   you   want   to   know   how   the   world   of
+class="pcrr8t-x-x-109">--enable-wireframe</span>:   If   you   want   to   know   what   the   world   of
      <span 
 class="ptmri8t-x-x-109">FlightGear </span>looks like internally, try this!<a 
- id="dx8-29010"></a>
+ id="dx8-33010"></a>
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--disable-wireframe</span>: No wireframe. Default.
@@ -871,7 +840,7 @@ class="pcrr8t-x-x-109">WWWxHHH </span>can be <span
 class="pcrr8t-x-x-109">640x480</span>, <span 
 class="pcrr8t-x-x-109">800x600</span>, or <span 
 class="pcrr8t-x-x-109">1024x768</span>.<a 
- id="dx8-29011"></a>
+ id="dx8-33011"></a>
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--view-offset=</span><span 
@@ -880,325 +849,328 @@ class="ptmri8t-x-x-109">xxx</span>: Allows setting the default forward view dire
 class="pcrr8t-x-x-109">LEFT, RIGHT,</span>
      <span 
 class="pcrr8t-x-x-109">CENTER</span>, or a specific number of degrees. Useful for multi-window display.<a 
- id="dx8-29012"></a>
+ id="dx8-33012"></a>
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--visibility=</span><span 
 class="ptmri8t-x-x-109">meters</span>:  You  can  specify  the  initial  visibility  in  meters
      here.
+                                                                     
+
+                                                                     
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--visibility-miles=</span><span 
 class="ptmri8t-x-x-109">miles</span>:  You  can  specify  the  initial  visibility  in
      miles here.</li></ul>
-                                                                     
-
-                                                                     
-<!--l. 498--><p class="noindent">
+<!--l. 476--><p class="noindent">
    <h4 class="subsectionHead"><span class="titlemark">3.5.7    </span> <a 
-href="getstartli1.html#QQ2-8-30" id="x8-300003.5.7">HUD Options</a></h4>
+href="getstartli1.html#QQ2-8-34" id="x8-340003.5.7">HUD Options</a></h4>
      <ul class="itemize1">
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--hud-tris</span>: HUD displays the number of triangles<a 
- id="dx8-30001"></a> rendered.
+ id="dx8-34001"></a> rendered.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--hud-culled</span>: HUD displays percentage of triangles culled.</li></ul>
-<!--l. 505--><p class="noindent">
+<!--l. 483--><p class="noindent">
    <h4 class="subsectionHead"><span class="titlemark">3.5.8    </span> <a 
-href="getstartli1.html#QQ2-8-31" id="x8-310003.5.8">Time Options</a></h4>
+href="getstartli1.html#QQ2-8-35" id="x8-350003.5.8">Time Options</a></h4>
 <a 
- id="dx8-31001"></a>
+ id="dx8-35001"></a>
 <a 
- id="dx8-31002"></a>
+ id="dx8-35002"></a>
      <ul class="itemize1">
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--time-match-real</span>
-     <!--l. 510--><p class="noindent">Synchronize time with real-world time
+     <!--l. 488--><p class="noindent">Synchronize time with real-world time
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--time-match-local</span>
-     <!--l. 514--><p class="noindent">Synchronize time with local real-world time
+     <!--l. 492--><p class="noindent">Synchronize time with local real-world time
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--start-date-sys=</span><span 
 class="ptmri8t-x-x-109">yyyy:mm:dd:hh:mm:ss</span>:
-     <!--l. 518--><p class="noindent">Specify a starting date/time with respect to system time
+     <!--l. 496--><p class="noindent">Specify a starting date/time with respect to system time
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--start-date-gmt=</span><span 
 class="ptmri8t-x-x-109">yyyy:mm:dd:hh:mm:ss</span>
-     <!--l. 522--><p class="noindent">Specify a starting date/time with respect to Greenwich Mean Time
+     <!--l. 500--><p class="noindent">Specify a starting date/time with respect to Greenwich Mean Time
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--start-date-lat=</span><span 
 class="ptmri8t-x-x-109">yyyy:mm:dd:hh:mm:ss</span>
-     <!--l. 526--><p class="noindent">Specify a starting date/time with respect to Local Aircraft Time</li></ul>
-<!--l. 529--><p class="noindent">--time-match-real, basically gives our initial behavior: Simulator time is read from the
+     <!--l. 504--><p class="noindent">Specify a starting date/time with respect to Local Aircraft Time</li></ul>
+                                                                     
+
+                                                                     
+<!--l. 507--><p class="noindent">--time-match-real, basically gives our initial behavior: Simulator time is read from the
 system clock, and is used as is. When your virtual flight is in the same timezone as where
 your computer is located, this may be desirable, because the clocks are synchronized.
 However, when you fly in a different part of the world, it may not be the case, because
 there is a number hours difference, between the position of your computer and the
 position of your virtual flight.
-                                                                     
-
-                                                                     
-<!--l. 537--><p class="indent">   The option --time-match-local takes care of this by computing the timezone
+<!--l. 515--><p class="indent">   The option --time-match-local takes care of this by computing the timezone
 difference between your real world time zone and the position of your virtual flight, and
 local clocks are synchronized.
-<!--l. 541--><p class="indent">   The next three options are meant to specify the exact startup time/date. The
-three functions differ in that the take either your computer systems local time,
-greenwich mean time, or the local time of your virtual flight as the reference
+<!--l. 519--><p class="indent">   The next three options are meant to specify the exact startup time/date. The
+three functions differ in that they take either your computer system&#8217;s local time,
+Greenwich Mean Time, or the local time of your virtual flight as the reference
 point.
-<!--l. 546--><p class="indent">   Each of these five options were designed to be used exclusively, however, the value
-set by these functions could be modified using the --time-offset function. The
+<!--l. 524--><p class="indent">   Each of these five options were designed to be used exclusively. However, the value
+set by these functions could be modified using the <span 
+class="pcrr8t-x-x-109">&#8211;time-offset </span>function. The
 latter would add a specified amount of time to the value already set by the other
 functions.
    <h4 class="subsectionHead"><span class="titlemark">3.5.9    </span> <a 
-href="getstartli1.html#QQ2-8-32" id="x8-320003.5.9">Network Options</a></h4>
+href="getstartli1.html#QQ2-8-36" id="x8-360003.5.9">Network Options</a></h4>
 <a 
- id="dx8-32001"></a>
+ id="dx8-36001"></a>
 <a 
- id="dx8-32002"></a>
+ id="dx8-36002"></a>
      <ul class="itemize1">
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--httpd=</span><span 
 class="ptmri8t-x-x-109">port</span>
-     <!--l. 556--><p class="noindent">Enable http server<a 
- id="dx8-32003"></a> on the specified port.
+     <!--l. 534--><p class="noindent">Enable http server<a 
+ id="dx8-36003"></a> on the specified port.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--telnet=</span><span 
 class="ptmri8t-x-x-109">port</span>
-     <!--l. 560--><p class="noindent">Enable telnet server<a 
- id="dx8-32004"></a> on the specified port.
+     <!--l. 538--><p class="noindent">Enable telnet server<a 
+ id="dx8-36004"></a> on the specified port.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--jpg-httpd=</span><span 
 class="ptmri8t-x-x-109">port</span>
-     <!--l. 564--><p class="noindent">Enable screen shot http server on the specified port.
+     <!--l. 542--><p class="noindent">Enable screen shot http server on the specified port.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--enable-network-olk</span>
-     <!--l. 568--><p class="noindent">Enables Oliver Delises&#8217;s multi-pilot mode.
+     <!--l. 546--><p class="noindent">Enables Oliver Delises&#8217;s multi-pilot mode.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--disable-network-olk</span>
-     <!--l. 572--><p class="noindent">Disables Oliver Delises&#8217;s multi-pilot mode (default).
+     <!--l. 550--><p class="noindent">Disables Oliver Delises&#8217;s multi-pilot mode (default).
+                                                                     
+
+                                                                     
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--net-hud</span>
-     <!--l. 576--><p class="noindent">HUD displays network info.
+     <!--l. 554--><p class="noindent">HUD displays network info.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--net-id=</span><span 
 class="ptmri8t-x-x-109">name </span>Specify your own callsign<a 
- id="dx8-32005"></a></li></ul>
-                                                                     
-
-                                                                     
-<!--l. 582--><p class="noindent">
+ id="dx8-36005"></a></li></ul>
+<!--l. 560--><p class="noindent">
    <h4 class="subsectionHead"><span class="titlemark">3.5.10    </span> <a 
-href="getstartli1.html#QQ2-8-33" id="x8-330003.5.10">Route/Waypoint Options</a></h4>
+href="getstartli1.html#QQ2-8-37" id="x8-370003.5.10">Route/Waypoint Options</a></h4>
 <a 
- id="dx8-33001"></a>
+ id="dx8-37001"></a>
 <a 
- id="dx8-33002"></a>
+ id="dx8-37002"></a>
      <ul class="itemize1">
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--wp=</span><span 
 class="ptmri8t-x-x-109">ID[@alt]</span>
-     <!--l. 587--><p class="noindent">Allows specifying a waypoint for the GC autopilot; it is possible to specify
+     <!--l. 565--><p class="noindent">Allows specifying a waypoint for the GC autopilot; it is possible to specify
      multiple waypoints (i.e&#x0227; route) via multiple instances of this command.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--flight-plan=</span><span 
 class="ptmri8t-x-x-109">[file]</span>
-     <!--l. 593--><p class="noindent">This is more comfortable if you have several waypoints. You can specify a
+     <!--l. 571--><p class="noindent">This is more comfortable if you have several waypoints. You can specify a
      file to read them from.</li></ul>
-<!--l. 597--><p class="noindent">Note: These options are rather geared to the advanced user who knows what he is
+<!--l. 575--><p class="noindent">NB: These options are rather geared to the advanced user who knows what he is
 doing.
-<!--l. 600--><p class="noindent">
+<!--l. 578--><p class="noindent">
    <h4 class="subsectionHead"><span class="titlemark">3.5.11    </span> <a 
-href="getstartli1.html#QQ2-8-34" id="x8-340003.5.11">IO Options</a></h4>
+href="getstartli1.html#QQ2-8-38" id="x8-380003.5.11">IO Options</a></h4>
 <a 
- id="dx8-34001"></a>
+ id="dx8-38001"></a>
      <ul class="itemize1">
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--garmin=</span><span 
 class="ptmri8t-x-x-109">params</span>
-     <!--l. 605--><p class="noindent">Open connection using the Garmin GPS protocol.
+     <!--l. 583--><p class="noindent">Open connection using the Garmin GPS protocol.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--joyclient=</span><span 
 class="ptmri8t-x-x-109">params</span>
-     <!--l. 609--><p class="noindent">Open connection to an Agwagon joystick.
+     <!--l. 587--><p class="noindent">Open connection to an Agwagon joystick.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--native-ctrls=</span><span 
 class="ptmri8t-x-x-109">params</span>
-     <!--l. 613--><p class="noindent">Open connection using the FG native Controls protocol.
+     <!--l. 591--><p class="noindent">Open connection using the FG native Controls protocol.
+                                                                     
+
+                                                                     
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--native-fdm=</span><span 
 class="ptmri8t-x-x-109">params</span>
-     <!--l. 617--><p class="noindent">Open connection using the FG Native FDM protocol.
+     <!--l. 595--><p class="noindent">Open connection using the FG Native FDM protocol.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--native=</span><span 
 class="ptmri8t-x-x-109">params</span>
-     <!--l. 621--><p class="noindent">Open connection using the FG Native protocol.
-                                                                     
-
-                                                                     
+     <!--l. 599--><p class="noindent">Open connection using the FG Native protocol.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--nmea=</span><span 
 class="ptmri8t-x-x-109">params</span>
-     <!--l. 625--><p class="noindent">Open connection using the NMEA protocol.
+     <!--l. 603--><p class="noindent">Open connection using the NMEA protocol.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--opengc=</span><span 
 class="ptmri8t-x-x-109">params</span>
-     <!--l. 629--><p class="noindent">Open connection using the OpenGC protocol.
+     <!--l. 607--><p class="noindent">Open connection using the OpenGC protocol.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--props=</span><span 
 class="ptmri8t-x-x-109">params</span>
-     <!--l. 633--><p class="noindent">Open connection using the interactive property manager.
+     <!--l. 611--><p class="noindent">Open connection using the interactive property manager.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--pve=</span><span 
 class="ptmri8t-x-x-109">params</span>
-     <!--l. 637--><p class="noindent">Open connection using the PVE protocol.
+     <!--l. 615--><p class="noindent">Open connection using the PVE protocol.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--ray=</span><span 
 class="ptmri8t-x-x-109">params</span>
-     <!--l. 641--><p class="noindent">Open connection using the RayWoodworth motion chair protocol.
+     <!--l. 619--><p class="noindent">Open connection using the RayWoodworth motion chair protocol.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--rul=</span><span 
 class="ptmri8t-x-x-109">params</span>
-     <!--l. 645--><p class="noindent">Open connection using the RUL protocol.
+     <!--l. 623--><p class="noindent">Open connection using the RUL protocol.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--atc610x</span>
-     <!--l. 649--><p class="noindent">Enable atc610x interface.</li></ul>
-<!--l. 653--><p class="noindent">
+     <!--l. 627--><p class="noindent">Enable atc610x interface.</li></ul>
+<!--l. 631--><p class="noindent">
    <h4 class="subsectionHead"><span class="titlemark">3.5.12    </span> <a 
-href="getstartli1.html#QQ2-8-35" id="x8-350003.5.12">Debugging options</a></h4>
+href="getstartli1.html#QQ2-8-39" id="x8-390003.5.12">Debugging options</a></h4>
 <a 
- id="dx8-35001"></a>
+ id="dx8-39001"></a>
+                                                                     
+
+                                                                     
      <ul class="itemize1">
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--trace-read=</span><span 
 class="ptmri8t-x-x-109">params</span>
-     <!--l. 658--><p class="noindent">Trace the reads for a property; multiple instances are allowed.
+     <!--l. 636--><p class="noindent">Trace the reads for a property; multiple instances are allowed.
      </li>
      <li class="itemize"><span 
 class="pcrr8t-x-x-109">--trace-write=</span><span 
 class="ptmri8t-x-x-109">params</span>
-     <!--l. 662--><p class="noindent">Trace the writes for a property; multiple instances are allowed.</li></ul>
-                                                                     
-
-                                                                     
-<!--l. 668--><p class="noindent">
+     <!--l. 640--><p class="noindent">Trace the writes for a property; multiple instances are allowed.</li></ul>
+<!--l. 646--><p class="noindent">
    <h3 class="sectionHead"><span class="titlemark">3.6    </span> <a 
-href="getstart.html#QQ2-8-36" id="x8-360003.6">Joystick support</a></h3>
+href="getstart.html#QQ2-8-40" id="x8-400003.6">Joystick support</a></h3>
 <a 
- id="dx8-36001"></a>
-<!--l. 670--><p class="noindent">Could you imagine a pilot in his or her Cessna controlling the machine with a keyboard
+ id="dx8-40001"></a>
+<!--l. 648--><p class="noindent">Could you imagine a pilot in his or her Cessna controlling the machine with a keyboard
 alone? For getting the proper feeling of flight you will need a joystick/yoke plus rudder
 pedals, right? However, the combination of numerous types of joystick<a 
- id="dx8-36002"></a>s, flightsticks,
+ id="dx8-40002"></a>s, flightsticks,
 yoke<a 
- id="dx8-36003"></a>s, pedal<a 
- id="dx8-36004"></a>s etc&#x022F;n the market with the several target operating systems, makes joystick
-support a nontrivial task in <span 
+ id="dx8-40003"></a>s, pedal<a 
+ id="dx8-40004"></a>s etc. on the market with the several target operating systems, makes joystick
+support a non-trivial task in <span 
 class="ptmri8t-x-x-109">FlightGear</span>.
-<!--l. 677--><p class="indent">   <span 
+<!--l. 655--><p class="indent">   <span 
 class="ptmri8t-x-x-109">FlightGear </span>has integrated joystick support, which automatically detects any joystick,
 yoke, or pedals attached. Just try it! If this does work for you, lean back and be happy!
 You can see what <span 
 class="ptmri8t-x-x-109">FlightGear </span>has detected your joystick as by selecting Help -&#x003E; Joystick
 Information from the menu.
-<!--l. 682--><p class="indent">   Unfortunately, given the several combinations of operating systems supported by
+<!--l. 660--><p class="indent">   Unfortunately, given the several combinations of operating systems supported by
 <span 
 class="ptmri8t-x-x-109">FlightGear </span>(possibly in foreign languages) and joysticks available, chances are your
 joystick does not work out of the box. Basically, there are two alternative approaches to
 get it going, with the first one being preferred.
-<!--l. 690--><p class="noindent">
+<!--l. 668--><p class="noindent">
    <h4 class="subsectionHead"><span class="titlemark">3.6.1    </span> <a 
-href="getstartli1.html#QQ2-8-37" id="x8-370003.6.1">Built-in joystick support</a></h4>
+href="getstartli1.html#QQ2-8-41" id="x8-410003.6.1">Built-in joystick support</a></h4>
 <a 
- id="dx8-37001"></a>
-<!--l. 694--><p class="noindent">
+ id="dx8-41001"></a>
+<!--l. 672--><p class="noindent">
    <h5 class="subsubsectionHead"><a 
-href="#x8-380003.6.1" id="x8-380003.6.1">General remarks</a></h5>
-<!--l. 696--><p class="noindent">In order for joystick auto-detection to work, a joystick bindings xml file must exist for
+href="#x8-420003.6.1" id="x8-420003.6.1">General remarks</a></h5>
+<!--l. 674--><p class="noindent">In order for joystick auto-detection to work, a joystick bindings xml file must exist for
 each joystick. This file describes what axes and buttons are to be used to control which
 functions in <span 
 class="ptmri8t-x-x-109">FlightGear</span>. The associations between functions and axes or buttons are
 called &#8220;bindings&#8221;. This bindings file can have any name as long as a corresponding entry
 exists in the joysticks description file
-<!--l. 704--><p class="indent">   <span 
+<!--l. 682--><p class="indent">   <span 
 class="pcrr8t-x-x-109">/FlightGear/joysticks.xml</span>
-<!--l. 707--><p class="noindent">which tells <span 
+                                                                     
+
+                                                                     
+<!--l. 685--><p class="noindent">which tells <span 
 class="ptmri8t-x-x-109">FlightGear </span>where to look for all the bindings files. We will look at examples
 later.
-<!--l. 711--><p class="indent">   <span 
+<!--l. 689--><p class="indent">   <span 
 class="ptmri8t-x-x-109">FlightGear </span>includes several such bindings files for several joystick manufacturers in
 folders named for each manufacturer. For example, if you have a CH Products joystick,
 look in the folder
-<!--l. 716--><p class="indent">   <span 
+<!--l. 694--><p class="indent">   <span 
 class="pcrr8t-x-x-109">/FlightGear/Input/Joysticks/CH</span>
-<!--l. 719--><p class="noindent">for a file that might work for your joystick. If such a file exists and your joystick is
+<!--l. 697--><p class="noindent">for a file that might work for your joystick. If such a file exists and your joystick is
 working with other applications, then it should work with <span 
 class="ptmri8t-x-x-109">FlightGear </span>the first time you
 run it. If such a file does not exist, then we will discuss in a later section how to create
 such a file by cutting and pasting bindings from the examples that are included with
 <span 
 class="ptmri8t-x-x-109">FlightGear</span>.
-                                                                     
-
-                                                                     
-<!--l. 727--><p class="noindent">
+<!--l. 705--><p class="noindent">
    <h5 class="subsubsectionHead"><a 
-href="#x8-390003.6.1" id="x8-390003.6.1">Verifying your joystick is working</a></h5>
-<!--l. 729--><p class="noindent">Does your computer see your joystick? One way to answer this question under
+href="#x8-430003.6.1" id="x8-430003.6.1">Verifying your joystick is working</a></h5>
+<!--l. 707--><p class="noindent">Does your computer see your joystick? One way to answer this question under
 Linux is to reboot your system and immediately enter on the command line
-<!--l. 732--><p class="indent">   <span 
+<!--l. 710--><p class="indent">   <span 
 class="pcrr8t-x-x-109">dmesg | grep Joystick</span>
-<!--l. 735--><p class="noindent">which pipes the boot message to grep which then prints every line in the boot message
+<!--l. 713--><p class="noindent">which pipes the boot message to grep which then prints every line in the boot message
 that contains the string &#8220;Joystick&#8221;. When you do this with a Saitek joystick attached, you
 will see a line similar to this one:
-<!--l. 742--><p class="noindent"><span 
+<!--l. 720--><p class="noindent"><span 
 class="pcrr8t-x-x-109">input0: USB HID v1.00 Joystick [SAITEK CYBORG 3D USB] on</span>
 <span 
 class="pcrr8t-x-x-109">usb2:3.0</span>
-<!--l. 747--><p class="noindent">This line tells us that a joystick has identified itself as SAITEK CYBORG 3D USB to the
+<!--l. 725--><p class="noindent">This line tells us that a joystick has identified itself as SAITEK CYBORG 3D USB to the
 operating system. It does not tell us that the joystick driver sees your joystick. If you are
 working under Windows, the method above does not work, but you can still go on with
 the next paragraph.
-<!--l. 751--><p class="noindent">
+<!--l. 729--><p class="noindent">
    <h5 class="subsubsectionHead"><a 
-href="#x8-400003.6.1" id="x8-400003.6.1">Confirming that the driver recognizes your joystick</a></h5>
-<!--l. 753--><p class="noindent"><span 
+href="#x8-440003.6.1" id="x8-440003.6.1">Confirming that the driver recognizes your joystick</a></h5>
+<!--l. 731--><p class="noindent"><span 
 class="ptmri8t-x-x-109">FlightGear </span>ships with a utility called js<span class="underline">&#x00A0;</span>demo. It will report the number of joysticks
 attached to a system, their respective &#8220;names&#8221;, and their capabilities. Under
 Linux, you can run js<span class="underline">&#x00A0;</span>demo from the folder <span 
 class="pcrr8t-x-x-109">/FlightGear/bin </span>as follows:
-<!--l. 756--><p class="noindent"><span 
+<!--l. 734--><p class="noindent"><span 
 class="pcrr8t-x-x-109">$ cd /usr/local/FlightGear/bin</span>
 <br class="newline" /><span 
 class="pcrr8t-x-x-109">$ </span><img 
-src="getstart4x.png" alt="°
-/  "  class="dot" ><span 
+src="getstart4x.png" alt="°/  "  class="dot" ><span 
 class="pcrr8t-x-x-109">js</span><span class="underline"><span 
 class="pcrr8t-x-x-109">&#x00A0;</span></span><span 
 class="pcrr8t-x-x-109">demo</span>
-<!--l. 761--><p class="noindent">Under Windows, open a command shell (Start<img 
+                                                                     
+
+                                                                     
+<!--l. 739--><p class="noindent">Under Windows, open a command shell (Start<img 
 src="getstart5x.png" alt="|"  class="left" align="middle">All Programs<img 
 src="getstart6x.png" alt="|"  class="left" align="middle">Accessories), go to the
 <span 
@@ -1208,7 +1180,7 @@ under <span
 class="pcrr8t-x-x-109">c:</span><span 
 class="cmsy-10x-x-109">\</span><span 
 class="pcrr8t-x-x-109">Flightgear</span>)
-<!--l. 765--><p class="noindent"><span 
+<!--l. 743--><p class="noindent"><span 
 class="pcrr8t-x-x-109">cd </span><span 
 class="cmsy-10x-x-109">\</span><span 
 class="pcrr8t-x-x-109">FlightGear</span><span 
@@ -1218,10 +1190,10 @@ class="pcrr8t-x-x-109">bin</span>
 class="pcrr8t-x-x-109">js</span><span class="underline"><span 
 class="pcrr8t-x-x-109">&#x00A0;</span></span><span 
 class="pcrr8t-x-x-109">demo.exe</span>
-<!--l. 770--><p class="indent">   On our system, the first few lines of output are (stop the program with <img 
+<!--l. 748--><p class="indent">   On our system, the first few lines of output are (stop the program with <img 
 src="getstart7x.png" alt="&#x02C6;  "  class="circ" >C if it is
 quickly scrolling past your window!) as follows:
-<!--l. 775--><p class="noindent"><span class="underline"><span 
+<!--l. 753--><p class="noindent"><span class="underline"><span 
 class="pcrr8t-x-x-60">Joystick test program</span></span><span 
 class="pcrr8t-x-x-60">.</span>
 <br class="newline" /><span 
@@ -1232,9 +1204,6 @@ class="pcrr8t-x-x-60">Joystick 1: &#8220;CH PRODUCTS CH PRO PEDALS USB&#8221;</s
 class="pcrr8t-x-x-60">Joystick 2 not detected</span>
 <br class="newline" /><span 
 class="pcrr8t-x-x-60">Joystick 3 not detected</span>
-                                                                     
-
-                                                                     
 <br class="newline" /><span 
 class="pcrr8t-x-x-60">Joystick 4 not detected</span>
 <br class="newline" /><span 
@@ -1252,21 +1221,21 @@ class="pcrr8t-x-x-60">+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&
 <br class="newline" /><span 
 class="pcrr8t-x-x-60">| 0000 +0.0 +0.0 +1.0 -1.0 -1.0 +0.0 +0.0 . | 0000 -1.0 -1.0 -1.0 . . . . . |</span>
 <br class="newline" />
-<!--l. 791--><p class="noindent">First note that js<span class="underline">&#x00A0;</span>demo reports which number is assigned to each joystick recognized by
+<!--l. 769--><p class="noindent">First note that js<span class="underline">&#x00A0;</span>demo reports which number is assigned to each joystick recognized by
 the driver. Also, note that the &#8220;name&#8221; each joystick reports is also included between
 quotes. We will need the names for each bindings file when we begin writing the binding
 xml files for each joystick.
-<!--l. 795--><p class="noindent">
+<!--l. 773--><p class="noindent">
    <h5 class="subsubsectionHead"><a 
-href="#x8-410003.6.1" id="x8-410003.6.1">Identifying the numbering of axes and buttons</a></h5>
-<!--l. 797--><p class="noindent">Axis and button numbers can be identified using js<span class="underline">&#x00A0;</span>demo as follows. By observing the
+href="#x8-450003.6.1" id="x8-450003.6.1">Identifying the numbering of axes and buttons</a></h5>
+<!--l. 775--><p class="noindent">Axis and button numbers can be identified using js<span class="underline">&#x00A0;</span>demo as follows. By observing the
 output of js<span class="underline">&#x00A0;</span>demo while working your joystick axes and buttons you can determine what
 axis and button numbers are assigned to each joystick axis and button. It should be noted
 that numbering generally starts with zero.
-<!--l. 799--><p class="indent">   The buttons are handled internally as a binary number in which bit 0 (the least
+<!--l. 777--><p class="indent">   The buttons are handled internally as a binary number in which bit 0 (the least
 significant bit) represents button 0, bit 1 represents button 1, etc., but this number is
 displayed on the screen in hexadecimal notation, so:
-<!--l. 802--><p class="noindent">0001 <span 
+<!--l. 780--><p class="noindent">0001 <span 
 class="cmsy-10x-x-109">&#x21D2; </span>button 0 pressed
 <br class="newline" />0002 <span 
 class="cmsy-10x-x-109">&#x21D2; </span>button 1 pressed
@@ -1276,6 +1245,9 @@ class="cmsy-10x-x-109">&#x21D2; </span>button 2 pressed
 class="cmsy-10x-x-109">&#x21D2; </span>button 3 pressed
 <br class="newline" />0010 <span 
 class="cmsy-10x-x-109">&#x21D2; </span>button 4 pressed
+                                                                     
+
+                                                                     
 <br class="newline" />0020 <span 
 class="cmsy-10x-x-109">&#x21D2; </span>button 5 pressed
 <br class="newline" />0040 <span 
@@ -1288,15 +1260,12 @@ class="cmsy-10x-x-109">&#x21D2; </span>button 15 pressed
 <br class="newline" />0014 <span 
 class="cmsy-10x-x-109">&#x21D2; </span>buttons 2 and 4 pressed simultaneously
 <br class="newline" />... etc.
-<!--l. 817--><p class="indent">   For Linux users, there is another option for identifying the &#8220;name&#8221; and the numbers
+<!--l. 795--><p class="indent">   For Linux users, there is another option for identifying the &#8220;name&#8221; and the numbers
 assigned to each axis and button. Most Linux distributions include a very handy program,
 &#8220;jstest&#8221;. With a CH Product Yoke plugged into the system, the following output lines are
 displayed by jstest:
-<!--l. 822--><p class="noindent"><span 
+<!--l. 800--><p class="noindent"><span 
 class="pcrr8t-x-x-60">jstest /dev/js3</span>
-                                                                     
-
-                                                                     
 <br class="newline" /><span 
 class="pcrr8t-x-x-60">Joystick (CH PRODUCTS CH FLIGHT SIM YOKE USB ) has 7 axes and 12 buttons. Driver version is 2.1.0</span>
 <br class="newline" /><span 
@@ -1307,24 +1276,27 @@ class="pcrr8t-x-x-60">Axes: 0:  0 1:  0 2:  0 3:  0 4:  0 5:  0 6:  0 Buttons: 0
 <span 
 class="pcrr8t-x-x-60">9:off 10:off 11:off</span>
 <br class="newline" />
-<!--l. 829--><p class="noindent">Note the &#8220;name&#8221; between parentheses. This is the name the system associates with your
+<!--l. 807--><p class="noindent">Note the &#8220;name&#8221; between parentheses. This is the name the system associates with your
 joystick.
-<!--l. 832--><p class="indent">   When you move any control, the numbers change after the axis number
+<!--l. 810--><p class="indent">   When you move any control, the numbers change after the axis number
 corresponding to that moving control and when you depress any button, the &#8220;off&#8221; after
 the button number corresponding to the button pressed changes to &#8220;on&#8221;. In this way, you
 can quickly write down the axes numbers and button numbers for each function without
 messing with binary.
-<!--l. 835--><p class="noindent">
+<!--l. 813--><p class="noindent">
    <h5 class="subsubsectionHead"><a 
-href="#x8-420003.6.1" id="x8-420003.6.1">Writing or editing joystick binding xml files</a></h5>
-<!--l. 837--><p class="noindent">At this point, you have confirmed that the operating system and the joystick driver both
+href="#x8-460003.6.1" id="x8-460003.6.1">Writing or editing joystick binding xml files</a></h5>
+<!--l. 815--><p class="noindent">At this point, you have confirmed that the operating system and the joystick driver both
 recognize your joystick(s). You also know of several ways to identify the joystick
 &#8220;name&#8221; your joystick reports to the driver and operating system. You will need a written
 list of what control functions you wish to have assigned to which axis and button and the
 corresponding numbers.
-<!--l. 839--><p class="indent">   Make the following table from what you learned from js<span class="underline">&#x00A0;</span>demo or jstest above (pencil
+<!--l. 817--><p class="indent">   Make the following table from what you learned from js<span class="underline">&#x00A0;</span>demo or jstest above (pencil
 and paper is fine). Here we assume there are 5 axes including 2 axes associated with the
 hat.
+                                                                     
+
+                                                                     
    <div class="tabular"><table class="tabular" 
 cellspacing="0" cellpadding="0" rules="groups" 
 ><colgroup id="TBL-3-1g"><col 
@@ -1367,7 +1339,7 @@ class="td11">decrease RPM = 6</td>
 class="td11">                         </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-9-2"  
 class="td11">increase RPM = 7</td> </tr></table>
 </div>
-<!--l. 856--><p class="indent">   We will assume that our hypothetical joystick supplies the &#8220;name&#8221; QUICK STICK
+<!--l. 834--><p class="indent">   We will assume that our hypothetical joystick supplies the &#8220;name&#8221; QUICK STICK
 3D USB to the system and driver. With all the examples included with <span 
 class="ptmri8t-x-x-109">FlightGear</span>,
 the easiest way to get a so far unsupported joystick to be auto detected, is to
@@ -1376,17 +1348,14 @@ edit an existing binding xml file. Look at the xml files in the sub-folders of
 class="pcrr8t-x-x-109">/FlightGear/Input/Joysticks/</span>. After evaluating several of the xml binding
 files supplied with <span 
 class="ptmri8t-x-x-109">FlightGear</span>, we decide to edit the file
-<!--l. 858--><p class="noindent"><span 
+<!--l. 836--><p class="noindent"><span 
 class="pcrr8t-x-x-109">/FlightGear/Input/Joysticks/Saitek/Cyborg-Gold-3d-USB.xml</span>.
-<!--l. 861--><p class="noindent">This file has all the axes functions above assigned to axes and all the button functions
+<!--l. 839--><p class="noindent">This file has all the axes functions above assigned to axes and all the button functions
 above assigned to buttons. This makes our editing almost trivial.
-                                                                     
-
-                                                                     
-<!--l. 864--><p class="indent">   Before we begin to edit, we need to choose a name for our bindings xml file, create
+<!--l. 842--><p class="indent">   Before we begin to edit, we need to choose a name for our bindings xml file, create
 the folder for the QS joysticks, and copy the original xml file into this directory with this
 name.
-<!--l. 869--><p class="noindent"><span 
+<!--l. 847--><p class="noindent"><span 
 class="pcrr8t-x-x-109">$ cd /usr/local/FlightGear/Input/Joysticks</span>
 <br class="newline" /><span 
 class="pcrr8t-x-x-109">$ mkdir QS</span>
@@ -1396,7 +1365,7 @@ class="pcrr8t-x-x-109">$ cd QS</span>
 class="pcrr8t-x-x-109">$ cp /usr/local/FlightGear/Input/Joysticks/Saitek/</span>
 <br class="newline" /><span 
 class="pcrr8t-x-x-109">Cyborg-Gold-3d-USB.xml QuickStick.xml</span>
-<!--l. 878--><p class="noindent">Here, we obviously have supposed a Linux/UNIX system with <span 
+<!--l. 856--><p class="noindent">Here, we obviously have supposed a Linux/UNIX system with <span 
 class="ptmri8t-x-x-109">FlightGear </span>being
 installed under <span 
 class="pcrr8t-x-x-109">/usr/local/FlightGear</span>. For a similar procedure under Windows
@@ -1404,7 +1373,7 @@ with <span
 class="ptmri8t-x-x-109">FlightGear </span>being installed under <span 
 class="pcrr8t-x-x-109">c:</span><span 
 class="pcrro8t-x-x-109">FlightGear</span>, open a command shell and type
-<!--l. 883--><p class="noindent"><span 
+<!--l. 861--><p class="noindent"><span 
 class="pcrr8t-x-x-109">c:</span>
 <br class="newline" /><span 
 class="pcrr8t-x-x-109">cd /FlightGear/Input/Joysticks</span>
@@ -1416,18 +1385,21 @@ class="pcrr8t-x-x-109">cd QS</span>
 class="pcrr8t-x-x-109">copy /FlightGear/Input/Joysticks/Saitek/</span>
 <br class="newline" /><span 
 class="pcrr8t-x-x-109">Cyborg-Gold-3d-USB.xml QuickStick.xml</span>
-<!--l. 893--><p class="noindent">Next, open <span 
+<!--l. 871--><p class="noindent">Next, open <span 
 class="pcrr8t-x-x-109">QuickStick.xml </span>with your favorite editor. Before we forget to change the
 joystick name, search for the line containing <span 
 class="cmmi-10x-x-109">&#x003C;</span>name<span 
 class="cmmi-10x-x-109">&#x003E;</span>. You should find the line
-<!--l. 897--><p class="indent">   <span 
+                                                                     
+
+                                                                     
+<!--l. 875--><p class="indent">   <span 
 class="pcrr8t-x-x-109">&#x003C;name&#x003E;SAITEK CYBORG 3D USB</span><span 
 class="cmmi-10x-x-109">&#x003C;</span><span 
 class="pcrr8t-x-x-109">/name</span><span 
 class="cmmi-10x-x-109">&#x003E;</span>
-<!--l. 900--><p class="noindent">and change it to
-<!--l. 904--><p class="indent">   <span 
+<!--l. 878--><p class="noindent">and change it to
+<!--l. 882--><p class="indent">   <span 
 class="cmmi-10x-x-109">&#x003C;</span><span 
 class="pcrr8t-x-x-109">name</span><span 
 class="cmmi-10x-x-109">&#x003E;</span><span 
@@ -1435,92 +1407,90 @@ class="pcrr8t-x-x-109">QUICK STICK 3D USB</span><span
 class="cmmi-10x-x-109">&#x003C;</span><span 
 class="pcrr8t-x-x-109">/name</span><span 
 class="cmmi-10x-x-109">&#x003E;</span>.
-<!--l. 907--><p class="noindent">This line illustrates a key feature of xml statements. They begin with a <span 
+<!--l. 885--><p class="noindent">This line illustrates a key feature of xml statements. They begin with a <span 
 class="cmmi-10x-x-109">&#x003C;</span>tag<span 
 class="cmmi-10x-x-109">&#x003E; </span>and end
 with a <span 
 class="cmmi-10x-x-109">&#x003C;</span>/tag<span 
 class="cmmi-10x-x-109">&#x003E;</span>.
-<!--l. 910--><p class="indent">   You can now compare your table to the comment table at the top of your file copy.
+<!--l. 888--><p class="indent">   You can now compare your table to the comment table at the top of your file copy.
 Note that the comments tell us that the Saitek elevator was assigned to axis 1. Search for
 the string
-<!--l. 913--><p class="indent">   <span 
+<!--l. 891--><p class="indent">   <span 
 class="cmmi-10x-x-109">&#x003C;</span><span 
 class="pcrr8t-x-x-109">axis n=~1~</span><span 
 class="cmmi-10x-x-109">&#x003E;</span>
-<!--l. 916--><p class="noindent">and change this to
-<!--l. 920--><p class="indent">   <span 
+<!--l. 894--><p class="noindent">and change this to
+<!--l. 898--><p class="indent">   <span 
 class="cmmi-10x-x-109">&#x003C;</span><span 
 class="pcrr8t-x-x-109">axis n=~0~</span><span 
 class="cmmi-10x-x-109">&#x003E;</span><span 
 class="pcrr8t-x-x-109">.</span>
-<!--l. 923--><p class="indent">   Next, note that the Saitek rudder was assigned to axis 2. Search for the string
-<!--l. 926--><p class="indent">   <span 
+<!--l. 901--><p class="indent">   Next, note that the Saitek rudder was assigned to axis 2. Search for the string
+<!--l. 904--><p class="indent">   <span 
 class="cmmi-10x-x-109">&#x003C;</span><span 
 class="pcrr8t-x-x-109">axis n=~2~</span><span 
 class="cmmi-10x-x-109">&#x003E;</span>
-<!--l. 928--><p class="noindent">and change this to
-                                                                     
-
-                                                                     
-<!--l. 932--><p class="indent">   <span 
+<!--l. 906--><p class="noindent">and change this to
+<!--l. 910--><p class="indent">   <span 
 class="cmmi-10x-x-109">&#x003C;</span><span 
 class="pcrr8t-x-x-109">axis n=~1~</span><span 
 class="cmmi-10x-x-109">&#x003E;</span><span 
 class="pcrr8t-x-x-109">.</span>
-<!--l. 935--><p class="noindent">Continue comparing your table with the comment table for the Saitek and changing the
+<!--l. 913--><p class="noindent">Continue comparing your table with the comment table for the Saitek and changing the
 axis numbers and button numbers accordingly. Since QUICKSTICK USB and the Saitek
 have the same number of axes but different number of buttons, you must delete the
-buttons left over. Just remember to double check that you have a closing tag for each
+buttons left over. Just remember to double-check that you have a closing tag for each
 opening tag or you will get an error using the file.
-<!--l. 938--><p class="indent">   Finally, be good to yourself (and others when you submit your new binding file to a
+<!--l. 916--><p class="indent">   Finally, be good to yourself (and others when you submit your new binding file to a
 <span 
-class="ptmri8t-x-x-109">FlightGear </span>developers or users archive!), take the time to change the comment table in
-the edited file to match your changed axis and button assignments. The new
+class="ptmri8t-x-x-109">FlightGear </span>developers or users archive!) by taking the time to change the comment table
+in the edited file to match your changed axis and button assignments. The new
 comments should match the table you made from the js<span class="underline">&#x00A0;</span>demo output. Save your
 edits.
-<!--l. 940--><p class="indent">   Several users have reported that the numbers of axes and buttons assigned to
+<!--l. 918--><p class="indent">   Several users have reported that the numbers of axes and buttons assigned to
 functions may be different with the same joystick under Windows and Linux. The above
 procedure should allow one to easily change a binding xml file created for a different
 operating system for use by their operating system.
-<!--l. 943--><p class="noindent">
+<!--l. 921--><p class="noindent">
    <h5 class="subsubsectionHead"><a 
-href="#x8-430003.6.1" id="x8-430003.6.1">Telling <span 
+href="#x8-470003.6.1" id="x8-470003.6.1">Telling <span 
 class="ptmri8t-x-x-109">FlightGear </span>about your new bindings xml file</a></h5>
-<!--l. 945--><p class="noindent">Before <span 
+<!--l. 923--><p class="noindent">Before <span 
 class="ptmri8t-x-x-109">FlightGear </span>can use your new xml file, you need to edit the file
-<!--l. 947--><p class="noindent"><span 
+<!--l. 925--><p class="noindent"><span 
 class="pcrr8t-x-x-109">/FlightGear/joysticks.xml</span>,
-<!--l. 951--><p class="noindent">adding a line that will include your new file if the &#8220;name&#8221; you entered between the name
+<!--l. 929--><p class="noindent">adding a line that will include your new file if the &#8220;name&#8221; you entered between the name
 tags matches the name supplied to the driver by your joystick. Add the following line to
 <span 
 class="pcrr8t-x-x-109">joysticks.xml</span>.
-<!--l. 955--><p class="noindent"><span 
-class="pcrr8t-x-x-109">&#x003C;js-named include=~Input/Joysticks/QS/QuickStick.xml~/&#x003E;</span>
-<!--l. 959--><p class="indent">   You can tell how <span 
-class="ptmri8t-x-x-109">FlightGear </span>has interpretted your joystick setup by selecting Help -&#x003E;
-Joystick Information from the Menu.
-<!--l. 963--><p class="noindent">
-   <h5 class="subsubsectionHead"><a 
-href="#x8-440003.6.1" id="x8-440003.6.1">Some hints for Windows users</a></h5>
-<!--l. 965--><p class="noindent">Basically, the procedures described above should work for Windows as well. If your
-joystick/yoke/pedals work out of the box or if you get it to work using the methods
-above, fine. Unfortunately there may be a few problems.
-<!--l. 967--><p class="indent">   The first one concerns users of non-US Windows versions. As stated above,
-you can get the name of the joystick from the program js<span class="underline">&#x00A0;</span>demo. If you have a
-non-US version of Windows and the joystick&#x00A0;.xml files named above do not
-contain that special name, just add it on top of the appropriate file in the style of
-<!--l. 970--><p class="indent">   <span 
-class="pcrr8t-x-x-109">&#x003C;name&#x003E;Microsoft-PC-Joysticktreiber &#x003C;/name&#x003E;</span>
                                                                      
 
                                                                      
-<!--l. 973--><p class="noindent">No new entry in the base <span 
+<!--l. 933--><p class="noindent"><span 
+class="pcrr8t-x-x-109">&#x003C;js-named include=~Input/Joysticks/QS/QuickStick.xml~/&#x003E;</span>
+<!--l. 937--><p class="indent">   You can tell how <span 
+class="ptmri8t-x-x-109">FlightGear </span>has interpreted your joystick setup by selecting Help -&#x003E;
+Joystick Information from the Menu.
+<!--l. 941--><p class="noindent">
+   <h5 class="subsubsectionHead"><a 
+href="#x8-480003.6.1" id="x8-480003.6.1">Some hints for Windows users</a></h5>
+<!--l. 943--><p class="noindent">Basically, the procedures described above should work for Windows as well. If
+your joystick/yoke/pedals work out of the box or if you get it to work using the
+methods above, fine. Unfortunately, however, it&#8217;s likely you may encounter a few
+problems.
+<!--l. 945--><p class="indent">   The first one concerns users of non-US Windows versions. As stated above,
+you can get the name of the joystick from the program js<span class="underline">&#x00A0;</span>demo. If you have a
+non-US version of Windows and the joystick&#x00A0;.xml files named above do not
+contain that special name, just add it on top of the appropriate file in the style of
+<!--l. 948--><p class="indent">   <span 
+class="pcrr8t-x-x-109">&#x003C;name&#x003E;Microsoft-PC-Joysticktreiber &#x003C;/name&#x003E;</span>
+<!--l. 951--><p class="noindent">No new entry in the base <span 
 class="pcrr8t-x-x-109">joysticks.xml </span>file is required.
-<!--l. 976--><p class="indent">   Unfortunately, there is one more loophole with Windows joystick support. In case
-you have two USB devices attached (for instance a yoke plus pedals), there may be
-cases, where the same driver name is reported twice. In this case, you can get
-at least the yoke to work by assigning it number 0 (out of 0 and 1). For this
+<!--l. 954--><p class="indent">   Unfortunately, there is one more loophole with Windows joystick support. In the case
+that you have two USB devices attached (for instance, a yoke plus pedals), it&#8217;s
+possible that the same driver name will be reported twice. In this case, you can at
+least get the yoke working by assigning it number 0 (out of 0 and 1). For this
 purpose, rotate the yoke (aileron control) and observe the output of js<span class="underline">&#x00A0;</span>demo. If
 figures in the first group of colons (for device 0) change, assignment is correct. If
 figures in the second group of colons (for device 1) change, you have to make
@@ -1529,39 +1499,41 @@ panel&#8221;, open &#8220;Game controllers&#8221; and select the &#8220;Advanced
 can select the yoke as the &#8220;Preferred&#8221; device. Afterward you can check that
 assignment by running js<span class="underline">&#x00A0;</span>demo again. The yoke should now control the first group of
 figures.
-<!--l. 991--><p class="indent">   Unfortunately, we did not find a way to get the pedals to work, too, that way. Thus, in
+<!--l. 967--><p class="indent">   Unfortunately, we did not find a way to get the pedals to work, too, that way. Thus, in
 cases like this one (and others) you may want to try an alternative method of assigning
 joystick controls.
-<!--l. 995--><p class="noindent">
+<!--l. 971--><p class="noindent">
    <h4 class="subsectionHead"><span class="titlemark">3.6.2    </span> <a 
-href="getstartli1.html#QQ2-8-45" id="x8-450003.6.2">Joystick support via .fgfsrc entries</a></h4>
+href="getstartli1.html#QQ2-8-49" id="x8-490003.6.2">Joystick support via .fgfsrc entries</a></h4>
 <a 
- id="dx8-45001"></a>
-<!--l. 997--><p class="noindent">Fortunately, there is a tool available now, which takes most of the burden from the
-average user who, maybe, is not that experienced with XML, the language which these
-files are written in.
-<!--l. 999--><p class="indent">   For configuring your joystick using this approach, open a command shell (command
-prompt under windows, to be found under Start|All programs|Accessories). Change to
+ id="dx8-49001"></a>
+<!--l. 973--><p class="noindent">Fortunately, there is now a utility available which makes things easier for the average,
+non-XML savvy user.
+                                                                     
+
+                                                                     
+<!--l. 975--><p class="indent">   To configure your joystick using this approach, open a command shell (command
+prompt under Windows, to be found under Start|All programs|Accessories). Change to
 the directory <span 
 class="pcrr8t-x-x-109">/FlightGear/bin </span>via e.g. (modify to your path)
-<!--l. 1001--><p class="noindent"><span 
+<!--l. 977--><p class="noindent"><span 
 class="pcrr8t-x-x-109">cd c:</span><span 
 class="cmsy-10x-x-109">\</span><span 
 class="pcrr8t-x-x-109">FlightGear</span><span 
 class="cmsy-10x-x-109">\</span><span 
 class="pcrr8t-x-x-109">bin</span>
-<!--l. 1004--><p class="indent">   and invoke the tool fgjs via
-<!--l. 1006--><p class="noindent"><span 
+<!--l. 980--><p class="indent">   and invoke the tool fgjs via
+<!--l. 982--><p class="noindent"><span 
 class="pcrr8t-x-x-109">./fgjs</span>
-<!--l. 1009--><p class="indent">   on a UNIX/Linux machine, or via
-<!--l. 1011--><p class="noindent"><span 
+<!--l. 985--><p class="indent">   on a UNIX/Linux machine, or via
+<!--l. 987--><p class="noindent"><span 
 class="pcrr8t-x-x-109">fgjs</span>
-<!--l. 1014--><p class="indent">   on a Windows machine. The program will tell you which joysticks, if any, were
-detected. Now follow the commands given on screen, i.e&#x1E41;ove the axis and press the
+<!--l. 990--><p class="indent">   on a Windows machine. The program will tell you which joysticks, if any, were
+detected. Now follow the commands given on screen, i.e. move the axis and press the
 buttons as required. Be careful, a minor touch already &#8220;counts&#8221; as a movement.
 Check the reports on screen. If you feel something went wrong, just re-start the
 program.
-<!--l. 1016--><p class="indent">   After you are done with all the axis and switches, the directory above will hold a file
+<!--l. 992--><p class="indent">   After you are done with all the axes and switches, the directory above will hold a file
 called <span 
 class="pcrr8t-x-x-109">fgfsrc.js</span>. If the <span 
 class="ptmri8t-x-x-109">FlightGear </span>base directory <span 
@@ -1570,45 +1542,41 @@ contain an options file <span
 class="pcrr8t-x-x-109">.fgfsrc </span>(under UNIX)/<span 
 class="pcrr8t-x-x-109">system.fgfsrc </span>(under Windows)
 mentioned above, just copy
-<!--l. 1019--><p class="noindent"><span 
+<!--l. 995--><p class="noindent"><span 
 class="pcrr8t-x-x-109">fgfsrc.js </span>into <span 
 class="pcrr8t-x-x-109">.fgfsrc </span>(UNIX)/<span 
 class="pcrr8t-x-x-109">system.fgfsrc </span>(Windows)
-<!--l. 1023--><p class="noindent">and place it into the directory <span 
+<!--l. 999--><p class="noindent">and place it into the directory <span 
 class="ptmri8t-x-x-109">FlightGear </span>base directory <span 
-class="pcrr8t-x-x-109">FlightGear</span>. In case you
-                                                                     
-
-                                                                     
-already wrote an options file, just open it as well as <span 
-class="pcrr8t-x-x-109">fgfsrc.js </span>with an editor and copy
-the entries from <span 
+class="pcrr8t-x-x-109">FlightGear</span>. If you already
+have an options file, just open it as well as <span 
+class="pcrr8t-x-x-109">fgfsrc.js </span>with an editor and copy the
+entries from <span 
 class="pcrr8t-x-x-109">fgfsrc.js </span>into <span 
 class="pcrr8t-x-x-109">.fgfsrc</span>/<span 
-class="pcrr8t-x-x-109">system.fgfsrc</span>. One hint: The output
-of <span 
-class="pcrr8t-x-x-109">fgjs </span>is UNIX formatted. As a result, Windows Editor may not display it the proper
-way. I suggest getting an editor being able to handle UNIX files as well (and oldie but
-goldie in this respect is PFE, just make a web search for it). My favorite freeware file
-editor for that purpose, although somewhat dated, is still PFE<a 
- id="dx8-45002"></a>, to be obtained
-from
-<!--l. 1026--><p class="indent">   <a 
+class="pcrr8t-x-x-109">system.fgfsrc</span>. One hint: The output of
+<span 
+class="pcrr8t-x-x-109">fgjs </span>is UNIX formatted. As a result, Windows Editor may not display it properly. It
+may be helpful to use an editor capable of handling UNIX files as well. My favorite
+freeware file editor for that purpose, although somewhat dated, is still PFE<a 
+ id="dx8-49002"></a>, to be
+obtained from
+<!--l. 1002--><p class="indent">   <a 
 href="http://www.lancs.ac.uk/people/cpaap/pfe/" >http://www.lancs.ac.uk/people/cpaap/pfe/</a>.
-<!--l. 1028--><p class="indent">   The the axis/button assignment of <span 
-class="pcrr8t-x-x-109">fgjs </span>should, at least, get the axis assignments
-right, its output may need some tweaking. There may be axes moving the opposite
+<!--l. 1004--><p class="indent">   The axis/button assignment of <span 
+class="pcrr8t-x-x-109">fgjs </span>should, at least, get the axis assignments right,
+its output may need some tweaking. There may be axes moving the opposite
 way they should, the dead zones may be too small etc. For instance, I had to
 change
-<!--l. 1030--><p class="indent">   <span 
+<!--l. 1006--><p class="indent">   <span 
 class="pcrr8t-x-x-109">&#8211;prop:/input/joysticks/js[1]/axis[1]/binding/factor=-1.0</span>
-<!--l. 1032--><p class="indent">   into
-<!--l. 1034--><p class="indent">   <span 
+<!--l. 1008--><p class="indent">   into
+<!--l. 1010--><p class="indent">   <span 
 class="pcrr8t-x-x-109">&#8211;prop:/input/joysticks/js[1]/axis[1]/binding/factor=1.0</span>
-<!--l. 1036--><p class="indent">   (USB CH Flightsim Yoke under Windows XP). Thus, here is a short introduction into
+<!--l. 1012--><p class="indent">   (USB CH Flightsim Yoke under Windows XP). Thus, here is a short introduction into
 the assignments of joystick properties.
-<!--l. 1038--><p class="indent">   Basically, all axes settings are specified via lines having the following structure:
-<!--l. 1041--><p class="noindent"><span 
+<!--l. 1014--><p class="indent">   Basically, all axes settings are specified via lines having the following structure:
+<!--l. 1017--><p class="noindent"><span 
 class="pcrr8t-x-x-109">--prop:/input/joysticks/js[</span><span 
 class="ptmri8t-x-x-109">n</span><span 
 class="pcrr8t-x-x-109">]/axis[</span><span 
@@ -1631,6 +1599,9 @@ class="ptmri8t-x-x-109">n</span><span
 class="pcrr8t-x-x-109">]/axis[</span><span 
 class="ptmri8t-x-x-109">m</span><span 
 class="pcrr8t-x-x-109">]/binding</span>
+                                                                     
+
+                                                                     
 <br class="newline" /><span 
 class="pcrr8t-x-x-109">/dead-band=</span><span 
 class="ptmri8t-x-x-109">db </span>(one line)
@@ -1653,7 +1624,7 @@ class="pcrr8t-x-x-109">]/binding</span>
 class="pcrr8t-x-x-109">/factor=</span><span 
 class="ptmri8t-x-x-109">fa </span>(one line)
 <br class="newline" />
-<!--l. 1054--><p class="noindent">where
+<!--l. 1030--><p class="noindent">where
    <div class="tabular"><table class="tabular" 
 cellspacing="0" cellpadding="0"  
 ><colgroup id="TBL-4-1g"><col 
@@ -1706,17 +1677,13 @@ class="td11">                        </td><td  style="white-space:nowrap; text-a
 class="td11">  </td><td  style="white-space:nowrap; text-align:left;" id="TBL-4-8-3"  
 class="td11">with a value of -1 reversing the behavior                    </td> </tr></table>
 </div>
-<!--l. 1070--><p class="indent">   You should be able to at least get your joystick working along these lines.
-Concerning all the finer points, for instance, getting the joystick buttons working, John
+<!--l. 1046--><p class="indent">   You should be able to at least get your joystick working along these lines.
+Concerning all the finer points, such as getting the joystick buttons working, John
 Check<a 
- id="dx8-45003"></a> has written a very useful README being included in the base package to be
-                                                                     
-
-                                                                     
-found under <span 
-class="pcrr8t-x-x-109">FlightGear/Docs/Readme/Joystick.html</span>. In case of any
-trouble with your input device, it is highly recommended to have a look into this
-document.
+ id="dx8-49003"></a> has written a very useful README included in the base package under
+<span 
+class="pcrr8t-x-x-109">FlightGear/Docs/Readme/Joystick.html</span>. In case of any trouble with your
+input device, it is highly recommended to read this document.
                                                                      
 
                                                                      
@@ -1733,5 +1700,5 @@ href="getstartpa2.html#tailgetstartpa2.html" >prev-tail</a>] [<a
 href="getstartch3.html" >front</a>] [<a 
 href="getstartpa2.html#getstartch3.html" >up</a>] </p></div>
 <!--l. 29--><p class="indent">   <a 
- id="tailgetstartch3.html"></a>   
+ id="tailgetstartch3.html"></a>    
 </body></html> 
