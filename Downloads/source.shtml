@@ -74,9 +74,9 @@ google_color_text = "000000";
 <FONT SIZE=-1>
 <UL>
   <LI> For a complete FGFS manual, please refer to the official
-       <A HREF="../Docs/getstart/getstart.html">FlightGear Manual</A>.
-       Or download the 
-       <A HREF="../Docs/getstart/getstart.pdf">PDF Version</A>.
+       <A HREF="../Docs/getstart/getstart.html">FlightGear Manual</A>
+       or download the 
+       <A HREF="http://mapserver.flightgear.org/getstart.pdf">PDF Version</A>.
        <P>
   <LI> If you have trouble connecting to ftp.flightgear.org, please
        visit one of our <A HREF="../mirrors.html#ftp">FTP mirrors</A>
