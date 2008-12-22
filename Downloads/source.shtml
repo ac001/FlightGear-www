@@ -75,8 +75,8 @@ google_color_text = "000000";
 <UL>
   <LI> For a complete FGFS manual, please refer to the
        <A HREF="../Docs/getstart/getstart.html">Installation and
-       Getting Started Guide</A>   
-       (<A HREF="http://mapserver.flightgear.org/getstart.pdf">PDF Version</A>)
+       Getting Started Guide</A> or download a pdf version:
+       <SCRIPT>RandomURLS("Docs/getstart.pdf");</SCRIPT>
   <LI> If you have trouble connecting to ftp.flightgear.org, please
        visit one of our <A HREF="../mirrors.html#ftp">FTP mirrors</A>
   <LI> FreeGlut 2.4.0 has a critical bug that crashes FlightGear.  If

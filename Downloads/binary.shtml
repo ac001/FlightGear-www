@@ -99,8 +99,8 @@ google_color_text = "000000";
 
   <LI> For a complete FGFS manual, please refer to the
        <A HREF="../Docs/getstart/getstart.html">Installation and
-       Getting Started Guide</A>   
-       (<A HREF="http://mapserver.flightgear.org/getstart.pdf">PDF Version</A>)
+       Getting Started Guide</A> or download a pdf version:
+       <SCRIPT>RandomURLS("Docs/getstart.pdf");</SCRIPT>
        <P>
 
   <LI> If you have trouble connecting, please visit one of our
@@ -114,15 +114,15 @@ google_color_text = "000000";
 </UL>
 </FONT>
 
-<H3><A NAME="windows"></A>Windows 98, 2000, ME, XP, Vista (v1.0.0)</H3>
+<H3><A NAME="windows"></A>Windows 98, 2000, ME, XP, Vista (v1.9.0)</H3>
 
 <UL>
   <LI> Download the self extracting/installing
-       fgsetup-1.0.0.exe (172 Mb):
-       <SCRIPT>RandomURLS("Win32/fgsetup-1.0.0.exe");</SCRIPT>
+       fgsetup-1.9.0.exe (230 Mb):
+       <SCRIPT>RandomURLS("Win32/fgsetup-1.9.0.exe");</SCRIPT>
        <P>
 
-  <LI> After downloading the fgsetup-1.0.0.exe file, launch it and
+  <LI> After downloading the fgsetup-1.9.0.exe file, launch it and
        follow the on screen instructions to complete the installation.
        The installer will create start menu entries, install
        documentation, optionally install a desktop icon, and also will
@@ -148,7 +148,7 @@ google_color_text = "000000";
 <UL>
   <LI> Download
        <A HREF="http://flightgear.stockill.org.uk/">
-       pre-built Slackware packages</A> courtesy of Jon Stockill. (v1.0.0)
+       pre-built Slackware packages</A> courtesy of Jon Stockill. (v1.9.0)
   <LI> Download
        <A HREF="http://packages.debian.org/sid/flightgear">
        pre-built Debian packages</A> courtesy of Ove Kaaven.
@@ -171,7 +171,7 @@ google_color_text = "000000";
 <UL>
   <LI> Download prebuilt Mac OS X binaries courtesy of Tatsuhiro Nishioka.
        <A HREF="http://macflightgear.sourceforge.net/">Available from the
-       macflightgear.sourceForge.net project page.</A> (v1.0.0)
+       macflightgear.sourceForge.net project page.</A> (v1.9.0)
 </UL>
 
 
@@ -255,7 +255,7 @@ google_color_text = "000000";
           </A>
         </td>
         <td>
-          <!-- Last modified:  5/23/2008 <BR> -->
+          <!-- Last modified:  12/22/2008 <BR> -->
           <A HREF="http://www.flightgear.org/~curt/">
             Curtis L. Olson
             <IMG ALIGN="MIDDLE" SRC="../email-fg.png">
