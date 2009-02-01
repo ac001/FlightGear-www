@@ -74,7 +74,7 @@ google_color_text = "000000";
    View the FlightGear web site in:
    [<A HREF="http://www.flightgear.org/">English</A>]
    [<A HREF="http://fr.flightgear.tuxfamily.org/">French</A>]
-   [<A HREF="http://www.jp.flightgear.org/">Japanese</A>]
+   [<A HREF="http://www.flightgear.jpn.org/">Japanese</A>]
    [<A HREF="http://www.flightgear.yoyo.pl/">Polish</A>]
    [<A HREF="http://www.br.flightgear.org/">Portuguese</A>]
    [<A HREF="http://flightgear.paraisoft.com/">Spanish</A>]
@@ -96,10 +96,10 @@ google_color_text = "000000";
  </DIV>
 
  <DIV ALIGN="center">
-   <FONT SIZE="+1" COLOR="#301010">FlightGear v1.9.0 is now available.
-   Check out the <A HREF="Gallery-v1.0">gallery page</A> and start
+   <FONT SIZE="+1" COLOR="#301010">FlightGear v1.9.1 is now available.
+   Check out the <A HREF="Gallery-v1.9">gallery page</A> and start
    downloading here:
-   <SCRIPT>RandomURLS("Win32/fgsetup-1.9.0.exe");</SCRIPT></FONT><P>
+   <SCRIPT>RandomURLS("Win32/fgsetup-1.9.1b.exe");</SCRIPT></FONT><P>
  </DIV>
 
  <TABLE>
@@ -136,6 +136,9 @@ google_color_text = "000000";
      <H3>Recent Announcements</H3>
      <UL>
 
+      <LI><A HREF="announce.html#v1.9.1"><B>Jan 25, 2009</B> -
+           FlightGear v1.9.1 released.</A>
+
       <LI><A HREF="announce.html#v1.9.0"><B>Dec 21, 2008</B> -
            FlightGear v1.9.0 released.</A>
 
@@ -147,10 +150,6 @@ google_color_text = "000000";
 
       <LI> <A HREF="announce.html#sourcetrunk"><B>May 16, 2007</B> -
            Sourcetrunk Podcast review of FlightGear.</A>
-
-      <LI> <A HREF="http://www.bomots.de/flightgear/"><B>Jan 29, 2007</B> -
-           FlightGear kompakt - a new German langauge FlightGear handbook
-           published by Bomots.de is available for purchase.</A>
       <P>
 
       <LI> <A HREF="announce.html">Complete list of announcements ...</A>
@@ -158,8 +157,8 @@ google_color_text = "000000";
 
      <H3>Quick Links</H3>
      <UL>
-      <LI> Download FlightGear v1.9.0 for Windows:
-           <SCRIPT>RandomURLS("Win32/fgsetup-1.9.0.exe");</SCRIPT>
+      <LI> Download FlightGear v1.9.1 for Windows:
+           <SCRIPT>RandomURLS("Win32/fgsetup-1.9.1b.exe");</SCRIPT>
       <!-- <LI> Download Live-CD [bootable, run FG directly from CD,
            doesn't touch your HD] via 
            <A HREF="//pigeond.net/flightgear/fglive-0.1-linuxtag.torrent">
@@ -172,7 +171,7 @@ google_color_text = "000000";
       <LI> <A HREF="Downloads/aircraft/">Download Aircraft.</A>
       <LI> <A HREF="Downloads/scenery.html">Download World Scenery.</A>
       <LI> <A HREF="Downloads/source.shtml">Download Source Code.</A>
-      <LI> <A HREF="cdrom/">Purchase a FlightGear CDROM or DVD set.</A>
+      <LI> <A HREF="dvd/">Purchase a FlightGear CDROM or DVD set.</A>
      </UL>
 
      <H3>Upcoming Events</H3>
@@ -252,7 +251,7 @@ google_color_text = "000000";
           </A>
         </td>
         <td>
-          <!-- Last modified:  12/21/2008 <BR> -->
+          <!-- Last modified:  1/27/2009 <BR> -->
           <A HREF="http://www.flightgear.org/~curt/">
             Curtis L. Olson
             <IMG ALIGN="MIDDLE" SRC="./email-fg.png">

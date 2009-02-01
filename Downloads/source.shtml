@@ -86,11 +86,11 @@ google_color_text = "000000";
 </UL>
 </FONT>
 
-<H3>Source Code Release: Version 1.9.0 (Updated December 21, 2008)</H3>
+<H3>Source Code Release: Version 1.9.1 (Updated January 25, 2009)</H3>
 
 <UL>
   <LI> Download the latest source code release:
-       <SCRIPT>RandomURLS("Source/FlightGear-1.9.0.tar.gz");</SCRIPT>
+       <SCRIPT>RandomURLS("Source/FlightGear-1.9.1.tar.gz");</SCRIPT>
   <LI> Download the latest base package release (234Mb).  (Includes Textures,
        models, data, aircraft, sample scenery, and config files.)
        <SCRIPT>RandomURLS("Shared/FlightGear-data-1.9.0.tar.bz2");</SCRIPT>
@@ -104,10 +104,10 @@ google_color_text = "000000";
        versioned releases so you generally have to grab the latest CVS.
   <LI> Prerequisite: <A HREF="http://plib.sourceforge.net">plib</A> -
        portability libraries and scene graph.  You need plib-1.8.5 or
-       newer to build FlightGear 1.9.0.
+       newer to build FlightGear 1.9.1.
   <LI> Prerequisite: <A HREF="http://www.simgear.org">SimGear</A> - simulation
-       construction tools.  You need SimGear-1.9.0 to build
-       FlightGear-1.9.0.
+       construction tools.  You need SimGear-1.9.1 to build
+       FlightGear-1.9.1.
   <LI> Documentation is included with the base package.
 </UL>
 
@@ -172,7 +172,7 @@ google_color_text = "000000";
           </A>
         </td>
         <td>
-          <!-- Last modified:  12/22/2008 <BR> -->
+          <!-- Last modified:  1/25/2009 <BR> -->
           <A HREF="http://www.flightgear.org/~curt/">
             Curtis L. Olson
             <IMG ALIGN="MIDDLE" SRC="../email-fg.png">

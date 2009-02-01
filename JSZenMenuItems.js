@@ -11,7 +11,7 @@ fgfsmenu = menu([
     _split,
     ['Introduction', '/introduction.html'],
     ['Features', '/features.html'],
-    ['Gallery v1.0', '/Gallery-v1.0/'],
+    ['Gallery v1.9', '/Gallery-v1.9/'],
     _split,
     ['Announcements', '/announce.html'],
     ['Events', '/events.html']
@@ -24,7 +24,7 @@ fgfsmenu = menu([
     ['  Download World Scenery', '/Downloads/scenery.html'],
     ['  Download Source Code', '/Downloads/source.shtml'],
     _split,
-    ['Purchase a CD or DVD set', 'http://www.flightgear.org/cdrom/'],
+    ['Purchase a DVD set', 'http://www.flightgear.org/dvd/'],
     _split,
     ['Version Change Log', '/version.html'],
     ['Hardware Requirements', '/hardwarereq.html']

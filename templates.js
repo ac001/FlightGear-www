@@ -57,9 +57,9 @@ function MainMenu()
   document.write("<a href=\"" + root + "/index.shtml\">Home</a><br>");
   document.write("<a href=\"" + root + "/introduction.html\">Introduction</a><br>");
   document.write("<a href=\"" + root + "/features.html\">Features</a><br>");
-  document.write("<a href=\"" + root + "/Gallery-v1.0/\">Gallery</a><br>");
+  document.write("<a href=\"" + root + "/Gallery-v1.9/\">Gallery</a><br>");
   document.write("<a href=\"" + root + "/Downloads/\">Downloads</a><br>");
-  document.write("<a href=\"http://www.flightgear.org/cdrom/\">CD's & DVD's</a><br>");
+  document.write("<a href=\"http://www.flightgear.org/dvd/\">DVD's</a><br>");
   document.write("<h3>Support</h3>");
   document.write("<a href=\"" + root + "/version.html\">Version Change Log</a><br>");
   document.write("<a href=\"" + root + "/hardwarereq.html\">Hardware Requirements</a><br>");
@@ -86,7 +86,7 @@ function BottomMenu()
 
   // document.write("<a href=\"/\">Home</a> | ");
   // document.write("<a href=\"" + root + "/Downloads/\">Downloads</a> | ");
-  // document.write("<a href=\"" + root + "/Gallery-v1.0/\">Gallery</a> |");
+  // document.write("<a href=\"" + root + "/Gallery-v1.9/\">Gallery</a> |");
   // document.write("<a href=\"" + root + "/docs.html\">Documentation</a>");
 }
 
@@ -108,37 +108,64 @@ function RandomFrontImages()
   var base = arguments[0];
 
   var picts = [
-                'F-5B-image3',
-		'picture-0003',
-                'camel-ksfo',
-                'f4u-on-carrier',
+		'picture-0001',
 		'picture-0002',
-                'b1900d-panel',
-		'picture-0006',
-		'f4u-approach1',
-		'picture-0007',
-                'Blackbird-chute_1',
-                'S-51-on_carrier_2',
-		'Blackbird-aar_1',
+		'picture-0003',
 		'picture-0004',
-		'f4u-final',
-		'fgfs-xpl-paris-2',
-		'Noratlas-Para_1',
-		'Rescue_1',
 		'picture-0005',
 		'picture-0006',
-		'picture-0019',
+		'picture-0007',
+		'picture-0008',
+		'picture-0009',
+		'picture-0010',
 		'picture-0011',
 		'picture-0012',
 		'picture-0013',
-		'picture-0015'
+		'picture-0014',
+		'picture-0015',
+		'picture-0016',
+		'picture-0017',
+		'picture-0018',
+		'picture-0019',
+		'picture-0020',
+		'picture-0021',
+		'picture-0022',
+		'picture-0026',
+		'picture-0027',
+		'picture-0028',
+		'picture-0029',
+		'picture-0032',
+		'picture-0033',
+		'picture-0034',
+		'slide_fgfs-screen-002',
+		'slide_fgfs-screen-008',
+		'slide_fgfs-screen-017',
+		'slide_fgfs-screen-036',
+		'slide_fgfs-screen-047',
+		'slide_fgfs-screen-062',
+		'slide_fgfs-screen-065',
+		'slide_fgfs-screen-096',
+		'slide_fgfs-screen-101',
+		'slide_fgfs-screen-114',
+		'slide_fgfs-screen-136',
+		'slide_fgfs-screen-137',
+		'slide_fgfs-screen-144',
+		'slide_fgfs-screen-155',
+		'slide_fgfs-screen-163',
+		'slide_fgfs-screen-166',
+		'slide_fgfs-screen-169',
+		'slide_fgfs-screen-215',
+		'slide_fgfs-screen-217'
               ];
 
   picts.fgshuffle();
 
-  document.write("<A HREF=\"/Gallery-v1.0/Link/" + picts[0] + ".html\"><IMG CLASS=\"mainscreen\" WIDTH=\"160\" HEIGHT=\"120\" SRC=\"/Gallery-v1.0/Small/" + picts[0] + ".jpg\" ALT=\"" + picts[0] + "\"></A>");
-  document.write("<A HREF=\"/Gallery-v1.0/Link/" + picts[1] + ".html\"><IMG CLASS=\"mainscreen\" WIDTH=\"160\" HEIGHT=\"120\" SRC=\"/Gallery-v1.0/Small/" + picts[1] + ".jpg\" ALT=\"" + picts[1] + "\"></A>");
-  document.write("<A HREF=\"/Gallery-v1.0/Link/" + picts[2] + ".html\"><IMG CLASS=\"mainscreen\" WIDTH=\"160\" HEIGHT=\"120\" SRC=\"/Gallery-v1.0/Small/" + picts[2] + ".jpg\" ALT=\"" + picts[2] + "\"></A>");
+  //document.write("<A HREF=\"/Gallery-v1.9/Link/" + picts[0] + ".html\"><IMG CLASS=\"mainscreen\" WIDTH=\"160\" HEIGHT=\"120\" SRC=\"/Gallery-v1.9/Small/" + picts[0] + ".jpg\" ALT=\"" + picts[0] + "\"></A>");
+  //document.write("<A HREF=\"/Gallery-v1.9/Link/" + picts[1] + ".html\"><IMG CLASS=\"mainscreen\" WIDTH=\"160\" HEIGHT=\"120\" SRC=\"/Gallery-v1.9/Small/" + picts[1] + ".jpg\" ALT=\"" + picts[1] + "\"></A>");
+  //document.write("<A HREF=\"/Gallery-v1.9/Link/" + picts[2] + ".html\"><IMG CLASS=\"mainscreen\" WIDTH=\"160\" HEIGHT=\"120\" SRC=\"/Gallery-v1.9/Small/" + picts[2] + ".jpg\" ALT=\"" + picts[2] + "\"></A>");
+  document.write("<A HREF=\"/Gallery-v1.9/Link/" + picts[0] + ".html\"><IMG CLASS=\"mainscreen\" WIDTH=\"240\" SRC=\"/Gallery-v1.9/Small/" + picts[0] + ".jpg\" ALT=\"" + picts[0] + "\"></A>");
+  document.write("<A HREF=\"/Gallery-v1.9/Link/" + picts[1] + ".html\"><IMG CLASS=\"mainscreen\" WIDTH=\"240\" SRC=\"/Gallery-v1.9/Small/" + picts[1] + ".jpg\" ALT=\"" + picts[1] + "\"></A>");
+  document.write("<A HREF=\"/Gallery-v1.9/Link/" + picts[2] + ".html\"><IMG CLASS=\"mainscreen\" WIDTH=\"240\" SRC=\"/Gallery-v1.9/Small/" + picts[2] + ".jpg\" ALT=\"" + picts[2] + "\"></A>");
 }
 
 
@@ -167,10 +194,7 @@ function RandomURLS()
                 'http://mirrors.ibiblio.org/pub/mirrors/flightgear/ftp/',
                 'ftp://ftp.ibiblio.org/pub/mirrors/flightgear/ftp/',
                 'ftp://ftp.kingmont.com/flightsims/flightgear/',
-                'ftp://ftp.planetmirror.com/pub/fgfs/',
                 'ftp://ftp.de.flightgear.org/pub/fgfs/',
-                'http://flight.frozenwebhost.com/',
-		'http://mirror.fslutd.org/flightgear/',
 		'http://flightgear.mxchange.org/pub/fgfs/',
 		'ftp://ftp.linux.kiev.ua/pub/mirrors/ftp.flightgear.org/flightgear/',
 		'http://ftp3.linux.kiev.ua/pub/fgfs/'
