@@ -186,6 +186,7 @@ function RandomURLS()
   //   Shigorin mike at osdn dt org dt ua
   // http://www.very-clever.com/download/flightgear/ - Ewald Kicker ewald
   //   dot kicker at sozialprojekte dot com
+  // ftp://flightgear.wo0t.de/flightgear-ftp - David Shulz - coby at fu110 dot de
 
   var base = arguments[0];
 
@@ -197,7 +198,8 @@ function RandomURLS()
                 'ftp://ftp.de.flightgear.org/pub/fgfs/',
 		'http://flightgear.mxchange.org/pub/fgfs/',
 		'ftp://ftp.linux.kiev.ua/pub/mirrors/ftp.flightgear.org/flightgear/',
-		'http://ftp3.linux.kiev.ua/pub/fgfs/'
+		'http://ftp3.linux.kiev.ua/pub/fgfs/',
+		'ftp://flightgear.wo0t.de/flightgear-ftp/'
               ];
 
   // requested not to be in the round robin, but is a full mirror

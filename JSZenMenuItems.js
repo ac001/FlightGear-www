@@ -14,6 +14,7 @@ fgfsmenu = menu([
     ['Gallery v1.9', '/Gallery-v1.9/'],
     _split,
     ['Announcements', '/announce.html'],
+    ['Calendar', '/calendar.html'],
     ['Events', '/events.html']
   ],
   ['Get FlightGear',

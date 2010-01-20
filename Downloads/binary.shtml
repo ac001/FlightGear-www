@@ -143,14 +143,22 @@ google_color_text = "000000";
 </UL>
 
 
+<H3><A NAME="mac"></A>Macintosh OS X (requires 10.4)</H3>
+
+<UL>
+  <LI> Download prebuilt Mac OS X binaries courtesy of Tatsuhiro Nishioka.
+       <A HREF="http://macflightgear.sourceforge.net/">Available from the
+       macflightgear.sourceForge.net project page.</A> (v1.9.1)
+</UL>
+
+
 <H3><A NAME="linux"></A>Linux</H3>
 
 <UL>
   <LI> Download
        <A HREF="http://flightgear.stockill.org.uk/">
        pre-built Slackware packages</A> courtesy of Jon Stockill. (v1.9.0)
-  <LI> Download <A HREF="http://www.proformatique.org/deb/">pre-built
-       Ubuntu packages</A> (v1.9.0)
+  <LI> Ubuntu: On Ubuntu, FlightGear can now be installed using the "synaptic" tool.
   <LI> Download
        <A HREF="http://packages.debian.org/sid/flightgear">
        pre-built Debian packages</A> courtesy of Ove Kaaven.
@@ -166,15 +174,6 @@ google_color_text = "000000";
        2. Program data</A>.
 </UL>
 
-
-
-<H3><A NAME="mac"></A>Macintosh OS X (requires 10.4)</H3>
-
-<UL>
-  <LI> Download prebuilt Mac OS X binaries courtesy of Tatsuhiro Nishioka.
-       <A HREF="http://macflightgear.sourceforge.net/">Available from the
-       macflightgear.sourceForge.net project page.</A> (v1.9.0)
-</UL>
 
 
 <H3><A NAME="sun"></A>Solaris (Sparc/x86)</H3>
@@ -257,7 +256,7 @@ google_color_text = "000000";
           </A>
         </td>
         <td>
-          <!-- Last modified:  1/28/2009 <BR> -->
+          <!-- Last modified:  9/15/2009 <BR> -->
           <A HREF="http://www.flightgear.org/~curt/">
             Curtis L. Olson
             <IMG ALIGN="MIDDLE" SRC="../email-fg.png">
