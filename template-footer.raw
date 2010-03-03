@@ -9,25 +9,11 @@
   </table>
   <br>
   <div align="center" id="bottom">
-    <!-- Bottom menu -->
-    <script>BottomMenu("${ROOT}");</script>
-
-    <table>
-      <tr>
-        <td>
-          <A HREF="http://www.frozenwebhost.com/">
-            <IMG SRC="http://www.frozenwebhost.com/images/frozen_mini.jpg" alt="FrozenWebHost.com">
-          </A>
-        </td>
-        <td>
-          %%INSERT_LAST_MODIFIED_DATE%%
-          <A HREF="http://www.flightgear.org/~curt/">
-            Curtis L. Olson
-            <IMG ALIGN="MIDDLE" SRC="${ROOT}/email-fg.png">
-          </A>
-        </td>
-      </tr>
-    </table>
+    %%INSERT_LAST_MODIFIED_DATE%%
+    <A HREF="http://www.flightgear.org/~curt/">
+      Curtis L. Olson<BR>
+      <IMG SRC="${ROOT}/email-fg.png">
+    </A>
   </div>
 
   <div id='fgfsmenuid' ></div>

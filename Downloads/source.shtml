@@ -11,17 +11,35 @@
   <script language="javascript" src="../JSZenMenu.js"></script>
   <script language="javascript" src="../JSZenMenuItems.js"></script>
   <link href="../ZMFGTheme/theme.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="./swfobject.js"></script>
 </head>
 
 <body>
   <!-- Display the main logo -->
   <table id="global">
     <tbody>
+
       <tr>
         <td align="left">
           <script>MainLogo("..");</script>
         </td>
       </tr>
+
+      <tr>
+       <td>
+        <div id='fgfsmenuid' ></div>
+        <script language="javascript">
+        createMenu(fgfsmenu, 'fgfsmenuid', 'fgfsmenu', 'ZMFGTheme', 0,
+                   'static', '../');
+        </script>
+        <noscript>
+          <B>Please enable JavaScript to see the site navigation menus!</B>
+          <p>
+        </noscript>
+	<P>
+       </td>
+      </tr>
+
       <tr>
        <td>
 <script type="text/javascript"><!--
@@ -45,25 +63,8 @@ google_color_text = "000000";
   </table>
   <P>
 
-  <div id='fgfsmenuid' ></div>
-  <script language="javascript">
-  createMenu(fgfsmenu, 'fgfsmenuid', 'fgfsmenu', 'ZMFGTheme', 0, 'static', '../');
-  </script>
-  <noscript>
-    <B>Please enable JavaScript to see the site navigation menus!</B>
-    <p>
-  </noscript>
-
   <table id="global">
     <tbody><tr>
-      <!-- <td id="menu"> -->
-        <!-- SiteSearch Google -->
-        <!-- <script>SiteSearchGoogle();</script> -->
-
-        <!-- Display the main menu -->
-        <!-- <script>MainMenu("..");</script> -->
-      <!-- </td> -->
-
       <td id="page">
 
 <!-- Standard Header End -->
@@ -82,32 +83,38 @@ google_color_text = "000000";
        visit one of our <A HREF="../mirrors.html#ftp">FTP mirrors</A>
   <LI> FreeGlut 2.4.0 has a critical bug that crashes FlightGear.  If
        you plan to use FreeGlut instead of SDL you will need to
-       downgrade to 2.2.0 or run the CVS version of FreeGlut.
+       upgrade to FreeGlut-2.6.0.
 </UL>
 </FONT>
 
-<H3>Source Code Release: Version 1.9.1 (Updated January 25, 2009)</H3>
+<H3>Source Code Release: Version 2.0.0 (Updated February 25, 2010)</H3>
 
 <UL>
   <LI> Download the latest source code release:
-       <SCRIPT>RandomURLS("Source/FlightGear-1.9.1.tar.gz");</SCRIPT>
-  <LI> Download the latest base package release (234Mb).  (Includes Textures,
+       <SCRIPT>RandomURLS("Source/FlightGear-2.0.0.tar.gz");</SCRIPT>
+  <LI> Download the latest base package release (295Mb).  (Includes Textures,
        models, data, aircraft, sample scenery, and config files.)
-       <SCRIPT>RandomURLS("Shared/FlightGear-data-1.9.0.tar.bz2");</SCRIPT>
+       <SCRIPT>RandomURLS("Shared/FlightGear-data-2.0.0.tar.bz2");</SCRIPT>
   <LI> Prerequisite: <A HREF="http://www.openscenegraph.org">Open
        Scene Graph</A> - An open source scene graph management and
        graphics effects library.
+  <LI> Prerequisite: <A HREF="http://www.boost.org">Boost</A> - free
+       peer-reviewed portable C++ source libraries.  You will need
+       boost-1.37.0 or newer.  (A suitable version is included with
+       many (most?) Linux distributions.)
   <LI> Prerequisite: <A HREF="http://freeglut.sf.net">Glut (FreeGlut)</A> -
        OpenGL Utility Toolkit (GLUT) library.
-  <LI> Prerequisite: <A HREF="http://www.openal.org">OpenAL</A> -
-       Cross Platform 3D Audio.  Strangely, OpenAL doesn't do
-       versioned releases so you generally have to grab the latest CVS.
+  <LI>
+       Prerequisite: <A HREF="http://kcat.strangesoft.net/openal.html">OpenAL</A>
+       - We recommend OpenAl Soft 1.11.753 (or higher).  Many current
+       Linux distributions now include OpenAL Soft so check and you
+       may already have this installed or available.
   <LI> Prerequisite: <A HREF="http://plib.sourceforge.net">plib</A> -
        portability libraries and scene graph.  You need plib-1.8.5 or
-       newer to build FlightGear 1.9.1.
+       newer to build FlightGear 2.0.0.
   <LI> Prerequisite: <A HREF="http://www.simgear.org">SimGear</A> - simulation
-       construction tools.  You need SimGear-1.9.1 to build
-       FlightGear-1.9.1.
+       construction tools.  You need SimGear-2.0.0 to compile
+       FlightGear-2.0.0.
   <LI> Documentation is included with the base package.
 </UL>
 
@@ -161,25 +168,11 @@ google_color_text = "000000";
   </table>
   <br>
   <div align="center" id="bottom">
-    <!-- Bottom menu -->
-    <script>BottomMenu("..");</script>
-
-    <table>
-      <tr>
-        <td>
-          <A HREF="http://www.frozenwebhost.com/">
-            <IMG SRC="http://www.frozenwebhost.com/images/frozen_mini.jpg" alt="FrozenWebHost.com">
-          </A>
-        </td>
-        <td>
-          <!-- Last modified:  1/25/2009 <BR> -->
-          <A HREF="http://www.flightgear.org/~curt/">
-            Curtis L. Olson
-            <IMG ALIGN="MIDDLE" SRC="../email-fg.png">
-          </A>
-        </td>
-      </tr>
-    </table>
+    <!-- Last modified:  2/25/2010 <BR> -->
+    <A HREF="http://www.flightgear.org/~curt/">
+      Curtis L. Olson<BR>
+      <IMG ALIGN="MIDDLE" SRC="../email-fg.png">
+    </A>
   </div>
 
 <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">

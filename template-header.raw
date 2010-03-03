@@ -10,17 +10,35 @@
   <script language="javascript" src="${ROOT}/JSZenMenu.js"></script>
   <script language="javascript" src="${ROOT}/JSZenMenuItems.js"></script>
   <link href="${ROOT}/ZMFGTheme/theme.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="./swfobject.js"></script>
 </head>
 
 <body>
   <!-- Display the main logo -->
   <table id="global">
     <tbody>
+
       <tr>
         <td align="left">
           <script>MainLogo("${ROOT}");</script>
         </td>
       </tr>
+
+      <tr>
+       <td>
+        <div id='fgfsmenuid' ></div>
+        <script language="javascript">
+        createMenu(fgfsmenu, 'fgfsmenuid', 'fgfsmenu', 'ZMFGTheme', 0,
+                   'static', '${ROOT}/');
+        </script>
+        <noscript>
+          <B>Please enable JavaScript to see the site navigation menus!</B>
+          <p>
+        </noscript>
+	<P>
+       </td>
+      </tr>
+
       <tr>
        <td>
 <script type="text/javascript"><!--
@@ -44,25 +62,8 @@ google_color_text = "000000";
   </table>
   <P>
 
-  <div id='fgfsmenuid' ></div>
-  <script language="javascript">
-  createMenu(fgfsmenu, 'fgfsmenuid', 'fgfsmenu', 'ZMFGTheme', 0, 'static', '${ROOT}/');
-  </script>
-  <noscript>
-    <B>Please enable JavaScript to see the site navigation menus!</B>
-    <p>
-  </noscript>
-
   <table id="global">
     <tbody><tr>
-      <!-- <td id="menu"> -->
-        <!-- SiteSearch Google -->
-        <!-- <script>SiteSearchGoogle();</script> -->
-
-        <!-- Display the main menu -->
-        <!-- <script>MainMenu("${ROOT}");</script> -->
-      <!-- </td> -->
-
       <td id="page">
 
 <!-- Standard Header End -->

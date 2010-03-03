@@ -11,17 +11,35 @@
   <script language="javascript" src="./JSZenMenu.js"></script>
   <script language="javascript" src="./JSZenMenuItems.js"></script>
   <link href="./ZMFGTheme/theme.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="./swfobject.js"></script>
 </head>
 
 <body>
   <!-- Display the main logo -->
   <table id="global">
     <tbody>
+
       <tr>
         <td align="left">
           <script>MainLogo(".");</script>
         </td>
       </tr>
+
+      <tr>
+       <td>
+        <div id='fgfsmenuid' ></div>
+        <script language="javascript">
+        createMenu(fgfsmenu, 'fgfsmenuid', 'fgfsmenu', 'ZMFGTheme', 0,
+                   'static', './');
+        </script>
+        <noscript>
+          <B>Please enable JavaScript to see the site navigation menus!</B>
+          <p>
+        </noscript>
+	<P>
+       </td>
+      </tr>
+
       <tr>
        <td>
 <script type="text/javascript"><!--
@@ -45,30 +63,73 @@ google_color_text = "000000";
   </table>
   <P>
 
-  <div id='fgfsmenuid' ></div>
-  <script language="javascript">
-  createMenu(fgfsmenu, 'fgfsmenuid', 'fgfsmenu', 'ZMFGTheme', 0, 'static', './');
-  </script>
-  <noscript>
-    <B>Please enable JavaScript to see the site navigation menus!</B>
-    <p>
-  </noscript>
-
   <table id="global">
     <tbody><tr>
-      <!-- <td id="menu"> -->
-        <!-- SiteSearch Google -->
-        <!-- <script>SiteSearchGoogle();</script> -->
-
-        <!-- Display the main menu -->
-        <!-- <script>MainMenu(".");</script> -->
-      <!-- </td> -->
-
       <td id="page">
 
 <!-- Standard Header End -->
 
+ <TABLE>
+  <TR>
+
+   <TD ID="page" VALIGN="TOP">
+     <DIV ALIGN="CENTER">
+<SCRIPT TYPE="text/javascript"><!--
+google_ad_client = "pub-2485404446552133";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_channel ="0342433177";
+google_color_border = "ffffff";
+google_color_border = "0f7a71";
+google_color_bg = "ffffff";
+google_color_link = "0f7a71";
+google_color_url = "0f0f7a";
+google_color_text = "000000";
+//--></SCRIPT>
+<SCRIPT TYPE="text/javascript"
+ SRC="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</SCRIPT>
+   </TD>
+
+   <TD ID="page" VALIGN="TOP" >
+    <DIV ALIGN="CENTER">
+     <DIV ID="slideshow">
+       <P>
+         <!--
+         You need to upgrade your Flash Player or to allow
+         javascript to enable Website menu.
+         <A HREF="http://www.adobe.com/go/getflashplayer">Get Flash
+           Player</A>
+         -->
+         <SCRIPT>RandomFrontImages();</SCRIPT>
+        </P>
+     </DIV>
+     <SCRIPT TYPE="text/javascript">
+       var so1 = new SWFObject("imagerotator.swf", "rotator", "652", "400", "8", "#ffffff");                                
+       so1.addParam("wmode", "opaque");
+       so1.addParam("allowfullscreen", "true");
+       so1.addVariable("file", "imagerotator.xml");    
+       so1.addVariable("width", "652");
+       so1.addVariable("height", "400");
+       so1.addVariable("rotatetime", "15");
+       so1.write("slideshow");
+     </SCRIPT>
+    </DIV>
+   </TD>
+
+  </TR>
+ </TABLE>
+
  <H1>FlightGear is an open-source flight simulator.</H1>
+
+ <DIV ALIGN="center">
+   <FONT SIZE="+1" COLOR="#301010">FlightGear v2.0 is now available.
+   Check out the <A HREF="Gallery-v2.0">gallery page</A> and start
+   downloading here:
+   <SCRIPT>RandomURLS("Win32/fgsetup-2.0.0.exe");</SCRIPT></FONT><P>
+ </DIV>
+ <P>
 
  <DIV ALIGN="CENTER">
    View the FlightGear web site in:
@@ -91,68 +152,26 @@ google_color_text = "000000";
  </DIV>
  <P>
 
- <DIV ID="topscreens" ALIGN="center">
-  <SCRIPT>RandomFrontImages();</SCRIPT>
- </DIV>
-
- <DIV ALIGN="center">
-   <FONT SIZE="+1" COLOR="#301010">FlightGear v1.9.1 is now available.
-   Check out the <A HREF="Gallery-v1.9">gallery page</A> and start
-   downloading here:
-   <SCRIPT>RandomURLS("Win32/fgsetup-1.9.1b.exe");</SCRIPT></FONT><P>
- </DIV>
-
  <TABLE>
   <TR>
-
-   <TD VALIGN="TOP">
-    <DIV ID="page">
-
-     <H3>Marketplace</H3>
-
-     <DIV ALIGN="CENTER">
-<SCRIPT TYPE="text/javascript"><!--
-google_ad_client = "pub-2485404446552133";
-google_ad_width = 300;
-google_ad_height = 250;
-google_ad_format = "300x250_as";
-google_ad_channel ="0342433177";
-google_color_border = "ffffff";
-google_color_border = "0f7a71";
-google_color_bg = "ffffff";
-google_color_link = "0f7a71";
-google_color_url = "0f0f7a";
-google_color_text = "000000";
-//--></SCRIPT>
-<SCRIPT TYPE="text/javascript"
- SRC="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</SCRIPT>
-    </DIV>
-
-   </TD>
 
    <TD VALIGN="TOP" WIDTH="35%">
     <DIV ID="page">
      <H3>Recent Announcements</H3>
      <UL>
 
+      <LI><A HREF="announce.html#v2.0.0"><B>Feb 25, 2010</B> -
+           FlightGear v2.0.0 released.</A>
+
       <LI><A HREF="http://wiki.flightgear.org/index.php/FlightGear_Newsletter_October_2009">
           <IMG SRC="http://wiki.flightgear.org/images/thumb/5/53/Clouds.jpg/270px-Clouds.jpg" HEIGHT="162" WIDTH="203" ALT="devel image"><BR>
           October, 2009: The newest issue of the newsletter is available!</A>
+
       <LI><A HREF="announce.html#v1.9.1"><B>Jan 25, 2009</B> -
            FlightGear v1.9.1 released.</A>
 
-      <LI><A HREF="announce.html#v1.9.0"><B>Dec 21, 2008</B> -
-           FlightGear v1.9.0 released.</A>
-
       <LI><A HREF="announce.html#scenery-1.0.1"><B>Oct 27, 2008</B> -
            World Scenery v1.0.1 released.</A>
-
-      <LI> <A HREF="announce.html#flightsim.com"><B>May 26, 2007</B> -
-           New FlightGear review on FlightSim.com.</A>
-
-      <LI> <A HREF="announce.html#sourcetrunk"><B>May 16, 2007</B> -
-           Sourcetrunk Podcast review of FlightGear.</A>
       <P>
 
       <LI> <A HREF="announce.html">Complete list of announcements ...</A>
@@ -160,8 +179,8 @@ google_color_text = "000000";
 
      <H3>Quick Links</H3>
      <UL>
-      <LI> Download FlightGear v1.9.1 for Windows:
-           <SCRIPT>RandomURLS("Win32/fgsetup-1.9.1b.exe");</SCRIPT>
+      <LI> Download FlightGear v2.0.0 for Windows:
+           <SCRIPT>RandomURLS("Win32/fgsetup-2.0.0.exe");</SCRIPT>
       <!-- <LI> Download Live-CD [bootable, run FG directly from CD,
            doesn't touch your HD] via 
            <A HREF="//pigeond.net/flightgear/fglive-0.1-linuxtag.torrent">
@@ -171,7 +190,7 @@ google_color_text = "000000";
            <A HREF="ftp://ftp.ihg.uni-duisburg.de/FlightGear/FGLive/MD5SUM">
            MD5 checksum</A>.
       -->
-      <LI> <A HREF="Downloads/aircraft/">Download Aircraft.</A>
+      <LI> <A HREF="Downloads/aircraft-2.0.0/">Download Aircraft.</A>
       <LI> <A HREF="Downloads/scenery.html">Download World Scenery.</A>
       <LI> <A HREF="Downloads/source.shtml">Download Source Code.</A>
       <LI> <A HREF="dvd/">Purchase a FlightGear CDROM or DVD set.</A>
@@ -247,25 +266,11 @@ google_color_text = "000000";
   </table>
   <br>
   <div align="center" id="bottom">
-    <!-- Bottom menu -->
-    <script>BottomMenu(".");</script>
-
-    <table>
-      <tr>
-        <td>
-          <A HREF="http://www.frozenwebhost.com/">
-            <IMG SRC="http://www.frozenwebhost.com/images/frozen_mini.jpg" alt="FrozenWebHost.com">
-          </A>
-        </td>
-        <td>
-          <!-- Last modified:  11/02/2009 <BR> -->
-          <A HREF="http://www.flightgear.org/~curt/">
-            Curtis L. Olson
-            <IMG ALIGN="MIDDLE" SRC="./email-fg.png">
-          </A>
-        </td>
-      </tr>
-    </table>
+    <!-- Last modified:  3/01/2010 <BR> -->
+    <A HREF="http://www.flightgear.org/~curt/">
+      Curtis L. Olson<BR>
+      <IMG ALIGN="MIDDLE" SRC="./email-fg.png">
+    </A>
   </div>
 
 <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">

@@ -11,17 +11,35 @@
   <script language="javascript" src="./JSZenMenu.js"></script>
   <script language="javascript" src="./JSZenMenuItems.js"></script>
   <link href="./ZMFGTheme/theme.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="./swfobject.js"></script>
 </head>
 
 <body>
   <!-- Display the main logo -->
   <table id="global">
     <tbody>
+
       <tr>
         <td align="left">
           <script>MainLogo(".");</script>
         </td>
       </tr>
+
+      <tr>
+       <td>
+        <div id='fgfsmenuid' ></div>
+        <script language="javascript">
+        createMenu(fgfsmenu, 'fgfsmenuid', 'fgfsmenu', 'ZMFGTheme', 0,
+                   'static', './');
+        </script>
+        <noscript>
+          <B>Please enable JavaScript to see the site navigation menus!</B>
+          <p>
+        </noscript>
+	<P>
+       </td>
+      </tr>
+
       <tr>
        <td>
 <script type="text/javascript"><!--
@@ -45,31 +63,115 @@ google_color_text = "000000";
   </table>
   <P>
 
-  <div id='fgfsmenuid' ></div>
-  <script language="javascript">
-  createMenu(fgfsmenu, 'fgfsmenuid', 'fgfsmenu', 'ZMFGTheme', 0, 'static', './');
-  </script>
-  <noscript>
-    <B>Please enable JavaScript to see the site navigation menus!</B>
-    <p>
-  </noscript>
-
   <table id="global">
     <tbody><tr>
-      <!-- <td id="menu"> -->
-        <!-- SiteSearch Google -->
-        <!-- <script>SiteSearchGoogle();</script> -->
-
-        <!-- Display the main menu -->
-        <!-- <script>MainMenu(".");</script> -->
-      <!-- </td> -->
-
       <td id="page">
 
 <!-- Standard Header End -->
 
 <H1>FlightGear Flight Simulator Version Summary</H1>
 
+
+<H3>February 25, 2010: Version 2.0.0 released</H3>
+  <UL>
+    FlightGear 2.0.0. reflects the maturation of the OpenSceneGraph
+    port that started with the previous 1.9.0 release. In addition to
+    many internal code improvements, FlightGear 2.0.0. marks the
+    introduction of many new exciting improvements in the graphics and
+    sound system, as well as improved usability of key features, and
+    improved behavior of exsisting features. Highlights of this new
+    version include: Dramatic new 3D clouds, dramatic lighting
+    conditions, improved support for custom scenery, and many many new
+    and detailed aircraft models.
+    <P>
+
+    Sound 
+    <P>
+
+    <LI> Complete overhaul of the sound code
+    <LI> doppler effects
+    <LI> distance attenuation
+    <LI> 3D positional sound sources
+    <LI> assignment of sound sources to external objects (i.e. AI controlled
+    aircraft)
+    <LI> User selection of the sound device
+    <P>
+
+    Visual Effects
+    <P>
+
+    <LI> Use of Shaders for dynamic textures
+    <LI> Use of Effects files
+    <LI> Improved 3D clouds
+    <LI> Color changes based on humidity and other weather effects
+    allow for very dramatic lighting conditions
+    <LI> Dynamic water textures
+    <LI> Text animation based on OSGText
+    <P>
+
+    Usability
+    <P>
+
+    <LI> Allow screenshots in more common file formats
+    <LI> User selectable sound device
+    <LI> More intuitive selection of the weather settings through the
+    GUI and/or commandline
+
+    Infrastructure
+    <P>
+
+    <LI> Airport geometry data can be read from the scenery, allowing
+    for more flexible regeneration of terrain tiles
+    <P>
+
+    Internals
+    <P>
+
+    <LI> Improved efficiency of the property tree
+    <LI> A more efficient ground cache
+    <LI> Many improvements to the route management code
+    <LI> Removed many compiler warnings
+    <LI> More realistic atmosphere model
+    <P>
+
+    Behavior
+    <P>
+
+    <LI> More realistic ILS behavior
+    <LI> Autopilot improvements
+    <LI> A generic autobrake function
+    <LI> Winds over mountainous areas cause up- and downdrafts that
+    can be used for gliding
+    <LI> More realistic behavior of the route manager
+    <LI> Wild fires, which can be extinguished by firefighter aircraft
+    operating across the multplayer server
+    <LI> Navaid frequencies and radials can be transmitted to Atlas
+    <P>
+
+    Utilities
+    <P>
+
+    <LI> A python script to visualize Yasim configuration files in
+    Blender
+    <P>
+
+    AI
+    <P>
+
+    <LI> Allow traffic departing and arriving at the same airport
+    <LI> Add Ground Vehicles - including automobiles, trucks,
+    articulated trucks, trains (including high speed trains)
+    <LI> ATC interactions between AI aircraft and ground controllers
+    <LI> Performance characteristics of AI aircraft can be specified
+    in a performance database
+    <LI> Push-back vehicles are available for a selected number of aircraft
+    <LI> Add escorts for AI carrier - frigates, guided missile
+    cruiser, amphibious warfare ships now make up the Vinson Battle
+    Group
+    <LI> Improved radar functionality - now detects AI escorts etc.
+    <LI> AI objects are now solid (i.e. users can collide with them)
+    <LI> Some preliminary support for SID/STAR procedures for AI aircraft
+  </UL>
 
 <H3>January 25, 2009: Version 1.9.1 released</H3>
   <UL>

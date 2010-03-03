@@ -11,17 +11,35 @@
   <script language="javascript" src="../JSZenMenu.js"></script>
   <script language="javascript" src="../JSZenMenuItems.js"></script>
   <link href="../ZMFGTheme/theme.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="./swfobject.js"></script>
 </head>
 
 <body>
   <!-- Display the main logo -->
   <table id="global">
     <tbody>
+
       <tr>
         <td align="left">
           <script>MainLogo("..");</script>
         </td>
       </tr>
+
+      <tr>
+       <td>
+        <div id='fgfsmenuid' ></div>
+        <script language="javascript">
+        createMenu(fgfsmenu, 'fgfsmenuid', 'fgfsmenu', 'ZMFGTheme', 0,
+                   'static', '../');
+        </script>
+        <noscript>
+          <B>Please enable JavaScript to see the site navigation menus!</B>
+          <p>
+        </noscript>
+	<P>
+       </td>
+      </tr>
+
       <tr>
        <td>
 <script type="text/javascript"><!--
@@ -45,25 +63,8 @@ google_color_text = "000000";
   </table>
   <P>
 
-  <div id='fgfsmenuid' ></div>
-  <script language="javascript">
-  createMenu(fgfsmenu, 'fgfsmenuid', 'fgfsmenu', 'ZMFGTheme', 0, 'static', '../');
-  </script>
-  <noscript>
-    <B>Please enable JavaScript to see the site navigation menus!</B>
-    <p>
-  </noscript>
-
   <table id="global">
     <tbody><tr>
-      <!-- <td id="menu"> -->
-        <!-- SiteSearch Google -->
-        <!-- <script>SiteSearchGoogle();</script> -->
-
-        <!-- Display the main menu -->
-        <!-- <script>MainMenu("..");</script> -->
-      <!-- </td> -->
-
       <td id="page">
 
 <!-- Standard Header End -->
@@ -106,17 +107,17 @@ google_color_text = "000000";
     <A HREF="binary.shtml#freebsd">FreeBSD</A><BR>
    </TD>
    <TD VALIGN="top" ID="section">
-    <H3><A HREF="aircraft/index.shtml">Download Aircraft</A></H3>
+    <H3><A HREF="aircraft-2.0.0/index.shtml">Download Aircraft</A></H3>
     The FlightGear base package includes only a few representative aircraft.
     Download more aircraft here:
     <P>
-    <A HREF="aircraft/index.shtml#Aerostar-700">Piper Aerostar 700.</A><BR>
-    <A HREF="aircraft/index.shtml#bf109">Bf109.</A><BR>
-    <A HREF="aircraft/index.shtml#CanberraBI8">Canberra BI8.</A><BR>
-    <A HREF="aircraft/index.shtml#Citation">Cessna Citation.</A><BR>
-    <A HREF="aircraft/index.shtml#dhc2">DHC2 Beaver.</A><BR>
-    <A HREF="aircraft/index.shtml#tu144">TU-144.</A><BR>
-    <A HREF="aircraft/index.shtml"><B>More aircraft ...</B></A>
+    <A HREF="aircraft-2.0.0/index.shtml#Aerostar-700">Piper Aerostar 700.</A><BR>
+    <A HREF="aircraft-2.0.0/index.shtml#bf109">Bf109.</A><BR>
+    <A HREF="aircraft-2.0.0/index.shtml#CanberraBI8">Canberra BI8.</A><BR>
+    <A HREF="aircraft-2.0.0/index.shtml#Citation">Cessna Citation.</A><BR>
+    <A HREF="aircraft-2.0.0/index.shtml#dhc2">DHC2 Beaver.</A><BR>
+    <A HREF="aircraft-2.0.0/index.shtml#tu144">TU-144.</A><BR>
+    <A HREF="aircraft-2.0.0/index.shtml"><B>More aircraft ...</B></A>
    </TD>
   </TR>
   <TR>
@@ -195,25 +196,11 @@ google_color_text = "000000";
   </table>
   <br>
   <div align="center" id="bottom">
-    <!-- Bottom menu -->
-    <script>BottomMenu("..");</script>
-
-    <table>
-      <tr>
-        <td>
-          <A HREF="http://www.frozenwebhost.com/">
-            <IMG SRC="http://www.frozenwebhost.com/images/frozen_mini.jpg" alt="FrozenWebHost.com">
-          </A>
-        </td>
-        <td>
-          <!-- Last modified:  12/23/2008 <BR> -->
-          <A HREF="http://www.flightgear.org/~curt/">
-            Curtis L. Olson
-            <IMG ALIGN="MIDDLE" SRC="../email-fg.png">
-          </A>
-        </td>
-      </tr>
-    </table>
+    <!-- Last modified:  3/01/2010 <BR> -->
+    <A HREF="http://www.flightgear.org/~curt/">
+      Curtis L. Olson<BR>
+      <IMG ALIGN="MIDDLE" SRC="../email-fg.png">
+    </A>
   </div>
 
 <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">

@@ -11,17 +11,35 @@
   <script language="javascript" src="./JSZenMenu.js"></script>
   <script language="javascript" src="./JSZenMenuItems.js"></script>
   <link href="./ZMFGTheme/theme.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="./swfobject.js"></script>
 </head>
 
 <body>
   <!-- Display the main logo -->
   <table id="global">
     <tbody>
+
       <tr>
         <td align="left">
           <script>MainLogo(".");</script>
         </td>
       </tr>
+
+      <tr>
+       <td>
+        <div id='fgfsmenuid' ></div>
+        <script language="javascript">
+        createMenu(fgfsmenu, 'fgfsmenuid', 'fgfsmenu', 'ZMFGTheme', 0,
+                   'static', './');
+        </script>
+        <noscript>
+          <B>Please enable JavaScript to see the site navigation menus!</B>
+          <p>
+        </noscript>
+	<P>
+       </td>
+      </tr>
+
       <tr>
        <td>
 <script type="text/javascript"><!--
@@ -45,25 +63,8 @@ google_color_text = "000000";
   </table>
   <P>
 
-  <div id='fgfsmenuid' ></div>
-  <script language="javascript">
-  createMenu(fgfsmenu, 'fgfsmenuid', 'fgfsmenu', 'ZMFGTheme', 0, 'static', './');
-  </script>
-  <noscript>
-    <B>Please enable JavaScript to see the site navigation menus!</B>
-    <p>
-  </noscript>
-
   <table id="global">
     <tbody><tr>
-      <!-- <td id="menu"> -->
-        <!-- SiteSearch Google -->
-        <!-- <script>SiteSearchGoogle();</script> -->
-
-        <!-- Display the main menu -->
-        <!-- <script>MainMenu(".");</script> -->
-      <!-- </td> -->
-
       <td id="page">
 
 <!-- Standard Header End -->
@@ -284,25 +285,11 @@ google_color_text = "000000";
   </table>
   <br>
   <div align="center" id="bottom">
-    <!-- Bottom menu -->
-    <script>BottomMenu(".");</script>
-
-    <table>
-      <tr>
-        <td>
-          <A HREF="http://www.frozenwebhost.com/">
-            <IMG SRC="http://www.frozenwebhost.com/images/frozen_mini.jpg" alt="FrozenWebHost.com">
-          </A>
-        </td>
-        <td>
-          <!-- Last modified:  10/27/2009 <BR> -->
-          <A HREF="http://www.flightgear.org/~curt/">
-            Curtis L. Olson
-            <IMG ALIGN="MIDDLE" SRC="./email-fg.png">
-          </A>
-        </td>
-      </tr>
-    </table>
+    <!-- Last modified:  10/27/2009 <BR> -->
+    <A HREF="http://www.flightgear.org/~curt/">
+      Curtis L. Olson<BR>
+      <IMG ALIGN="MIDDLE" SRC="./email-fg.png">
+    </A>
   </div>
 
 <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">

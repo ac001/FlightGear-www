@@ -11,17 +11,35 @@
   <script language="javascript" src="../JSZenMenu.js"></script>
   <script language="javascript" src="../JSZenMenuItems.js"></script>
   <link href="../ZMFGTheme/theme.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="./swfobject.js"></script>
 </head>
 
 <body>
   <!-- Display the main logo -->
   <table id="global">
     <tbody>
+
       <tr>
         <td align="left">
           <script>MainLogo("..");</script>
         </td>
       </tr>
+
+      <tr>
+       <td>
+        <div id='fgfsmenuid' ></div>
+        <script language="javascript">
+        createMenu(fgfsmenu, 'fgfsmenuid', 'fgfsmenu', 'ZMFGTheme', 0,
+                   'static', '../');
+        </script>
+        <noscript>
+          <B>Please enable JavaScript to see the site navigation menus!</B>
+          <p>
+        </noscript>
+	<P>
+       </td>
+      </tr>
+
       <tr>
        <td>
 <script type="text/javascript"><!--
@@ -45,25 +63,8 @@ google_color_text = "000000";
   </table>
   <P>
 
-  <div id='fgfsmenuid' ></div>
-  <script language="javascript">
-  createMenu(fgfsmenu, 'fgfsmenuid', 'fgfsmenu', 'ZMFGTheme', 0, 'static', '../');
-  </script>
-  <noscript>
-    <B>Please enable JavaScript to see the site navigation menus!</B>
-    <p>
-  </noscript>
-
   <table id="global">
     <tbody><tr>
-      <!-- <td id="menu"> -->
-        <!-- SiteSearch Google -->
-        <!-- <script>SiteSearchGoogle();</script> -->
-
-        <!-- Display the main menu -->
-        <!-- <script>MainMenu("..");</script> -->
-      <!-- </td> -->
-
       <td id="page">
 
 <!-- Standard Header End -->
@@ -114,15 +115,15 @@ google_color_text = "000000";
 </UL>
 </FONT>
 
-<H3><A NAME="windows"></A>Windows 98, 2000, ME, XP, Vista (v1.9.1)</H3>
+<H3><A NAME="windows"></A>Windows 98, 2000, ME, XP, Vista (v2.0.0)</H3>
 
 <UL>
   <LI> Download the self extracting/installing
-       fgsetup-1.9.1b.exe (230 Mb):
-       <SCRIPT>RandomURLS("Win32/fgsetup-1.9.1b.exe");</SCRIPT>
+       fgsetup-2.0.0.exe (298 Mb):
+       <SCRIPT>RandomURLS("Win32/fgsetup-2.0.0.exe");</SCRIPT>
        <P>
 
-  <LI> After downloading the fgsetup-1.9.1b.exe file, launch it and
+  <LI> After downloading the fgsetup-2.0.0.exe file, launch it and
        follow the on screen instructions to complete the installation.
        The installer will create start menu entries, install
        documentation, optionally install a desktop icon, and also will
@@ -134,9 +135,16 @@ google_color_text = "000000";
        aircraft, as well as a starting airport and runway.
        <P>
 
-  <LI> FlightGear ships with an extensive 109 page manual.  We
+  <LI> FlightGear ships with an extensive 218 page manual.  We
        encourage people to at least take a glance through it,
        especially if they have questions or problems.
+       <P>
+
+  <LI> 64-bit overlay: If you run 64-bit windows, you can download the
+       self extracting 64-bit version of FlightGear.  This installs
+       over the top of the standard 32 bit version so you will need to
+       install that first.  fgsetup64-2.0.0.exe (14 Mb overlay):
+       <SCRIPT>RandomURLS("Win32/fgsetup64-2.0.0.exe");</SCRIPT>
        <P>
 
   <LI> The MSVC Win32 build is provided courtesy of Frederic Bouvier</A>.
@@ -156,8 +164,8 @@ google_color_text = "000000";
 
 <UL>
   <LI> Download
-       <A HREF="http://flightgear.stockill.org.uk/">
-       pre-built Slackware packages</A> courtesy of Jon Stockill. (v1.9.0)
+       <A HREF="http://packages.flightgear.org.uk/">
+       pre-built Slackware packages</A> courtesy of Jon Stockill. (v2.0.0)
   <LI> Ubuntu: On Ubuntu, FlightGear can now be installed using the "synaptic" tool.
   <LI> Download
        <A HREF="http://packages.debian.org/sid/flightgear">
@@ -195,7 +203,7 @@ google_color_text = "000000";
 <H3><A NAME="sgi"></A>Sgi Irix</H3>
 
 <UL>
-  <LI> Download <A HREF="http://www.1stweb.nl/~ehofman/fgfs/">pre-built sgi
+  <LI> Download <A HREF="http://www.mechanics.citg.tudelft.nl/~everdij/nekoware/current/neko_flightgear-0.9.9.tardist">pre-built sgi
        binaries</A> courtesy of Erik Hofman.  (v0.9.9)
 </UL>
 
@@ -245,25 +253,11 @@ google_color_text = "000000";
   </table>
   <br>
   <div align="center" id="bottom">
-    <!-- Bottom menu -->
-    <script>BottomMenu("..");</script>
-
-    <table>
-      <tr>
-        <td>
-          <A HREF="http://www.frozenwebhost.com/">
-            <IMG SRC="http://www.frozenwebhost.com/images/frozen_mini.jpg" alt="FrozenWebHost.com">
-          </A>
-        </td>
-        <td>
-          <!-- Last modified:  9/15/2009 <BR> -->
-          <A HREF="http://www.flightgear.org/~curt/">
-            Curtis L. Olson
-            <IMG ALIGN="MIDDLE" SRC="../email-fg.png">
-          </A>
-        </td>
-      </tr>
-    </table>
+    <!-- Last modified:  3/03/2010 <BR> -->
+    <A HREF="http://www.flightgear.org/~curt/">
+      Curtis L. Olson<BR>
+      <IMG ALIGN="MIDDLE" SRC="../email-fg.png">
+    </A>
   </div>
 
 <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">

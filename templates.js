@@ -108,64 +108,80 @@ function RandomFrontImages()
   var base = arguments[0];
 
   var picts = [
-		'picture-0001',
-		'picture-0002',
-		'picture-0003',
-		'picture-0004',
-		'picture-0005',
-		'picture-0006',
-		'picture-0007',
-		'picture-0008',
-		'picture-0009',
-		'picture-0010',
-		'picture-0011',
-		'picture-0012',
-		'picture-0013',
-		'picture-0014',
-		'picture-0015',
-		'picture-0016',
-		'picture-0017',
-		'picture-0018',
-		'picture-0019',
-		'picture-0020',
-		'picture-0021',
-		'picture-0022',
-		'picture-0026',
-		'picture-0027',
-		'picture-0028',
-		'picture-0029',
-		'picture-0032',
-		'picture-0033',
-		'picture-0034',
-		'slide_fgfs-screen-002',
-		'slide_fgfs-screen-008',
-		'slide_fgfs-screen-017',
-		'slide_fgfs-screen-036',
-		'slide_fgfs-screen-047',
-		'slide_fgfs-screen-062',
-		'slide_fgfs-screen-065',
-		'slide_fgfs-screen-096',
-		'slide_fgfs-screen-101',
-		'slide_fgfs-screen-114',
-		'slide_fgfs-screen-136',
-		'slide_fgfs-screen-137',
-		'slide_fgfs-screen-144',
-		'slide_fgfs-screen-155',
-		'slide_fgfs-screen-163',
-		'slide_fgfs-screen-166',
-		'slide_fgfs-screen-169',
-		'slide_fgfs-screen-215',
-		'slide_fgfs-screen-217'
+                'fgfs-screen-001b.jpg',
+                'fgfs-screen-001.jpg',
+                'fgfs-screen-002b.jpg',
+                'fgfs-screen-002.jpg',
+                'fgfs-screen-006.jpg',
+                'fgfs-screen-007b.jpg',
+                'fgfs-screen-007.jpg',
+                'fgfs-screen-009b.jpg',
+                'fgfs-screen-009.jpg',
+                'fgfs-screen-014.jpg',
+                'fgfs-screen-015b.jpg',
+                'fgfs-screen-015.jpg',
+                'fgfs-screen-018b.jpg',
+                'fgfs-screen-018c.jpg',
+                'fgfs-screen-018.jpg',
+                'fgfs-screen-020b.jpg',
+                'fgfs-screen-020c.jpg',
+                'fgfs-screen-020.jpg',
+                'fgfs-screen-024.jpg',
+                'fgfs-screen-027.jpg',
+                'fgfs-screen-029.jpg',
+                'fgfs-screen-032.jpg',
+                'fgfs-screen-036.jpg',
+                'fgfs-screen-039b.jpg',
+                'fgfs-screen-039.jpg',
+                'fgfs-screen-042.jpg',
+                'fgfs-screen-043.jpg',
+                'fgfs-screen-044.jpg',
+                'fgfs-screen-047.jpg',
+                'fgfs-screen-049.jpg',
+                'fgfs-screen-058.jpg',
+                'fgfs-screen-063.jpg',
+                'fgfs-screen-069.jpg',
+                'fgfs-screen-077.jpg',
+                'fgfs-screen-079.jpg',
+                'fgfs-screen-084.jpg',
+                'fgfs-screen-086.jpg',
+                'fgfs-screen-090.jpg',
+                'fgfs-screen-096.jpg',
+                'fgfs-screen-103b.jpg',
+                'fgfs-screen-103.jpg',
+                'fgfs-screen-106.jpg',
+                'fgfs-screen-108.jpg',
+                'fgfs-screen-115.jpg',
+                'fgfs-screen-123.jpg',
+                'fgfs-screen-136.jpg',
+                'fgfs-screen-141.jpg',
+                'fgfs-screen-143.jpg',
+                'fgfs-screen-146b.jpg',
+                'fgfs-screen-146.jpg',
+                'fgfs-screen-147b.jpg',
+                'fgfs-screen-147.jpg',
+                'fgfs-screen-150.jpg',
+                'fgfs-screen-151.jpg',
+                'fgfs-screen-161.jpg',
+                'fgfs-screen-164.jpg',
+                'fgfs-screen-165.jpg',
+                'fgfs-screen-169.jpg',
+                'fgfs-screen-172.jpg',
+                'fgfs-screen-177.jpg',
+                'fgfs-screen-192.jpg',
+                'fgfs-screen-196.jpg',
+                'fgfs-screen-199.jpg',
+                'fgfs-screen-211.jpg',
+                'fgfs-screen-216.jpg',
+                'fgfs-screen-233.jpg',
+                'fgfs-screen-241.jpg'
               ];
 
   picts.fgshuffle();
 
-  //document.write("<A HREF=\"/Gallery-v1.9/Link/" + picts[0] + ".html\"><IMG CLASS=\"mainscreen\" WIDTH=\"160\" HEIGHT=\"120\" SRC=\"/Gallery-v1.9/Small/" + picts[0] + ".jpg\" ALT=\"" + picts[0] + "\"></A>");
-  //document.write("<A HREF=\"/Gallery-v1.9/Link/" + picts[1] + ".html\"><IMG CLASS=\"mainscreen\" WIDTH=\"160\" HEIGHT=\"120\" SRC=\"/Gallery-v1.9/Small/" + picts[1] + ".jpg\" ALT=\"" + picts[1] + "\"></A>");
-  //document.write("<A HREF=\"/Gallery-v1.9/Link/" + picts[2] + ".html\"><IMG CLASS=\"mainscreen\" WIDTH=\"160\" HEIGHT=\"120\" SRC=\"/Gallery-v1.9/Small/" + picts[2] + ".jpg\" ALT=\"" + picts[2] + "\"></A>");
-  document.write("<A HREF=\"/Gallery-v1.9/Link/" + picts[0] + ".html\"><IMG CLASS=\"mainscreen\" WIDTH=\"240\" SRC=\"/Gallery-v1.9/Small/" + picts[0] + ".jpg\" ALT=\"" + picts[0] + "\"></A>");
-  document.write("<A HREF=\"/Gallery-v1.9/Link/" + picts[1] + ".html\"><IMG CLASS=\"mainscreen\" WIDTH=\"240\" SRC=\"/Gallery-v1.9/Small/" + picts[1] + ".jpg\" ALT=\"" + picts[1] + "\"></A>");
-  document.write("<A HREF=\"/Gallery-v1.9/Link/" + picts[2] + ".html\"><IMG CLASS=\"mainscreen\" WIDTH=\"240\" SRC=\"/Gallery-v1.9/Small/" + picts[2] + ".jpg\" ALT=\"" + picts[2] + "\"></A>");
+  document.write("<A HREF=\"/Gallery-v2.0/Original/" + picts[0] + "\"><IMG CLASS=\"mainscreen\" WIDTH=\"240\" SRC=\"/Gallery-v2.0/Original/" + picts[0] + "\" ALT=\"" + picts[0] + "\"></A>");
+  document.write("<A HREF=\"/Gallery-v2.0/Original/" + picts[1] + "\"><IMG CLASS=\"mainscreen\" WIDTH=\"240\" SRC=\"/Gallery-v2.0/Original/" + picts[1] + "\" ALT=\"" + picts[1] + "\"></A>");
+  document.write("<A HREF=\"/Gallery-v2.0/Original/" + picts[2] + "\"><IMG CLASS=\"mainscreen\" WIDTH=\"240\" SRC=\"/Gallery-v2.0/Original/" + picts[2] + "\" ALT=\"" + picts[2] + "\"></A>");
 }
 
 
@@ -196,11 +212,16 @@ function RandomURLS()
                 'ftp://ftp.ibiblio.org/pub/mirrors/flightgear/ftp/',
                 'ftp://ftp.kingmont.com/flightsims/flightgear/',
                 'ftp://ftp.de.flightgear.org/pub/fgfs/',
-		'http://flightgear.mxchange.org/pub/fgfs/',
-		'ftp://ftp.linux.kiev.ua/pub/mirrors/ftp.flightgear.org/flightgear/',
-		'http://ftp3.linux.kiev.ua/pub/fgfs/',
-		'ftp://flightgear.wo0t.de/flightgear-ftp/'
+  		'ftp://ftp.linux.kiev.ua/pub/mirrors/ftp.flightgear.org/flightgear/',
+  		'http://ftp.linux.kiev.ua/pub/fgfs/'
               ];
+
+  // The following need to be checked and added back in once synced
+  //
+  // 'http://flightgear.mxchange.org/pub/fgfs/',
+  // 'http://ftp3.linux.kiev.ua/pub/fgfs/',
+  // 'ftp://flightgear.wo0t.de/flightgear-ftp/'
+  //
 
   // requested not to be in the round robin, but is a full mirror
   // 'ftp://ftp.is.co.za/pub/games/flightgear/'
